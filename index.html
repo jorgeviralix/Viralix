@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIRALIX — Lo que no sabías que necesitabas saber</title>
+<meta name="description" content="Curiosidades, misterios e historias que cambian tu forma de ver el mundo. VIRALIX: lo que nadie te contó.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #05060a;
+  --deep: #0a0c12;
+  --card: #0f1118;
+  --border: rgba(255,255,255,0.07);
+  --white: #f4f2ee;
+  --muted: rgba(244,242,238,0.45);
+  --accent: #e8321a;
+  --accent2: #ff6b35;
+  --gold: #d4a843;
+  --teal: #0ff4c6;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CURSOR */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  transition: transform .12s ease;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(232,50,26,0.5);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  transition: transform .25s ease, width .2s, height .2s;
+}
+body:has(a:hover) .cursor-ring,
+body:has(button:hover) .cursor-ring { width: 52px; height: 52px; border-color: var(--accent); }
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1000; opacity: 0.6;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+  background: rgba(5,6,10,0);
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  transition: all .4s ease;
+}
+nav.scrolled {
+  background: rgba(5,6,10,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+}
+.nav-logo span { color: var(--accent); }
+.nav-logo::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s ease;
+}
+.nav-logo:hover::after { transform: scaleX(1); }
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 12px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 2px;
+  letter-spacing: 1.5px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--accent2) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+  padding: 100px 40px 60px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,244,198,0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #05060a 0%, #08090f 100%);
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+  opacity: 0; animation: fadeUp .6s .2s forwards;
+}
+.hero-eyebrow::before {
+  content: ''; width: 40px; height: 1px; background: var(--accent);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 160px);
+  line-height: 0.88;
+  letter-spacing: 2px;
+  color: var(--white);
+  max-width: 900px;
+  opacity: 0; animation: fadeUp .8s .35s forwards;
+}
+.hero-title .accent { color: var(--accent); }
+.hero-title .outline {
+  -webkit-text-stroke: 1px rgba(244,242,238,0.3);
+  color: transparent;
+}
+
+.hero-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-style: italic;
+  color: var(--muted);
+  max-width: 520px;
+  margin-top: 28px; margin-bottom: 40px;
+  line-height: 1.5;
+  opacity: 0; animation: fadeUp .8s .5s forwards;
+}
+
+.hero-actions {
+  display: flex; gap: 16px; align-items: center;
+  opacity: 0; animation: fadeUp .8s .65s forwards;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 32px; border: none;
+  border-radius: 2px; cursor: pointer;
+  text-decoration: none;
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+.btn-ghost {
+  color: var(--muted);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: color .2s;
+}
+.btn-ghost:hover { color: var(--white); }
+.btn-ghost::after { content: '→'; transition: transform .2s; }
+.btn-ghost:hover::after { transform: translateX(4px); }
+
+.hero-stats {
+  position: absolute; right: 40px; bottom: 60px;
+  display: flex; flex-direction: column; gap: 24px;
+  opacity: 0; animation: fadeLeft .8s .8s forwards;
+}
+.stat { text-align: right; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 36px; letter-spacing: 2px; color: var(--white);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-top: 2px;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 30px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp .6s 1s forwards;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+.scroll-text { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+/* TICKER */
+.ticker {
+  background: var(--accent);
+  padding: 12px 0; overflow: hidden;
+  position: relative;
+}
+.ticker-inner {
+  display: flex; gap: 0;
+  animation: ticker 30s linear infinite;
+  white-space: nowrap;
+}
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 14px; letter-spacing: 3px;
+  padding: 0 40px; color: var(--white);
+  display: flex; align-items: center; gap: 40px;
+}
+.ticker-item::after { content: '✦'; opacity: 0.6; }
+
+/* SECTIONS */
+section { padding: 100px 40px; position: relative; }
+
+.section-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+.section-label {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: 2px; line-height: 0.9;
+  color: var(--white);
+}
+.section-link {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: color .2s; padding-bottom: 4px;
+}
+.section-link:hover { color: var(--accent); }
+.section-link::after { content: '→'; transition: transform .2s; }
+.section-link:hover::after { transform: translateX(4px); }
+
+/* FEATURED ARTICLE */
+.featured {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-bottom: 2px;
+}
+.featured-main {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 48px;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  transition: border-color .3s;
+  group: true;
+}
+.featured-main:hover { border-color: rgba(232,50,26,0.4); }
+.featured-main::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(232,50,26,0.06), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.featured-main:hover::before { opacity: 1; }
+
+.article-cat {
+  font-size: 10px; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.article-cat::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+
+.article-num {
+  font-family: var(--font-display);
+  font-size: 100px; letter-spacing: 0;
+  color: rgba(255,255,255,0.04);
+  line-height: 1; position: absolute;
+  top: 20px; right: 30px;
+}
+.article-title-big {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.15; color: var(--white);
+  margin-bottom: 16px;
+  transition: color .2s;
+}
+.featured-main:hover .article-title-big { color: rgba(244,242,238,0.9); }
+
+.article-excerpt {
+  font-size: 14px; line-height: 1.7;
+  color: var(--muted); margin-bottom: 24px;
+}
+.article-meta {
+  display: flex; align-items: center; gap: 16px;
+  font-size: 11px; letter-spacing: 1px; color: var(--muted);
+}
+.article-meta .dot { width: 3px; height: 3px; background: var(--muted); border-radius: 50%; }
+.read-more {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent);
+  text-decoration: none; margin-top: 24px;
+  transition: gap .2s;
+}
+.read-more:hover { gap: 14px; }
+
+/* ARTICLE GRID */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+}
+.article-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  transition: border-color .3s, transform .3s;
+}
+.article-card:hover {
+  border-color: rgba(232,50,26,0.3);
+  transform: translateY(-3px);
+}
+.card-img {
+  width: 100%; height: 180px;
+  background: var(--deep);
+  margin-bottom: 24px;
+  border-radius: 2px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-emoji { font-size: 48px; opacity: 0.7; }
+.card-glow {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .3s;
+}
+.article-card:hover .card-glow { opacity: 1; }
+
+.article-title {
+  font-family: var(--font-serif);
+  font-size: 20px; line-height: 1.25;
+  color: var(--white); margin-bottom: 12px;
+  transition: color .2s;
+}
+.article-card:hover .article-title { color: rgba(244,242,238,0.85); }
+
+.tag {
+  display: inline-block;
+  font-size: 9px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 2px; color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* CATEGORIES */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2px;
+}
+.cat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all .3s;
+  position: relative; overflow: hidden;
+  text-decoration: none; color: var(--white);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cat-card:hover { border-color: rgba(255,255,255,0.15); }
+.cat-card::after {
+  content: '→';
+  position: absolute; bottom: 20px; right: 20px;
+  font-size: 16px; color: var(--muted);
+  transition: all .2s;
+}
+.cat-card:hover::after { color: var(--accent); transform: translate(3px, -3px); }
+.cat-icon { font-size: 32px; }
+.cat-name {
+  font-family: var(--font-display);
+  font-size: 22px; letter-spacing: 2px;
+}
+.cat-count { font-size: 11px; color: var(--muted); }
+.cat-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.cat-card:hover .cat-bar { transform: scaleX(1); }
+
+/* NEWSLETTER */
+.newsletter {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 80px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.newsletter::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(232,50,26,0.06), transparent);
+}
+.newsletter-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px);
+  letter-spacing: 4px; line-height: 0.9;
+  color: var(--white); margin-bottom: 16px;
+}
+.newsletter-title span { color: var(--accent); }
+.newsletter-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px; color: var(--muted);
+  margin-bottom: 40px;
+}
+.newsletter-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+.newsletter-input {
+  flex: 1; background: var(--deep);
+  border: 1px solid var(--border); border-right: none;
+  color: var(--white); font-family: var(--font-body);
+  font-size: 14px; padding: 14px 20px;
+  outline: none; transition: border-color .2s;
+  border-radius: 2px 0 0 2px;
+}
+.newsletter-input:focus { border-color: rgba(232,50,26,0.4); }
+.newsletter-input::placeholder { color: var(--muted); }
+.newsletter-btn {
+  background: var(--accent); border: none;
+  color: var(--white); font-family: var(--font-body);
+  font-size: 12px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; padding: 14px 24px;
+  cursor: pointer; transition: background .2s;
+  border-radius: 0 2px 2px 0;
+}
+.newsletter-btn:hover { background: var(--accent2); }
+
+/* FOOTER */
+footer {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  padding: 60px 40px 30px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px; margin-bottom: 60px;
+}
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 48px; letter-spacing: 4px;
+  color: var(--white); line-height: 1;
+  margin-bottom: 16px;
+}
+.footer-brand-name span { color: var(--accent); }
+.footer-brand-desc {
+  font-size: 13px; line-height: 1.7;
+  color: var(--muted); max-width: 280px;
+}
+.footer-col-title {
+  font-size: 10px; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 20px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a {
+  font-size: 13px; color: var(--muted);
+  text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-links a::before { content: '–'; color: var(--border); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 12px; color: var(--muted); }
+.footer-socials { display: flex; gap: 16px; }
+.social-link {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color .2s;
+}
+.social-link:hover { color: var(--accent); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  section { padding: 60px 20px; }
+  .featured { grid-template-columns: 1fr; }
+  .featured-main { padding: 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .newsletter { padding: 40px 20px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input, .newsletter-btn { border-radius: 2px; border: 1px solid var(--border); }
+  .hero-stats { display: none; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">VIRAL<span>I</span>X</a>
+  <div class="nav-links">
+    <a href="#articulos">Artículos</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#cat-misterios">Misterios</a>
+    <a href="#cat-ciencia">Ciencia</a>
+    <a href="#newsletter" class="nav-cta">Suscribirse</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow">Lo que nadie te contó</div>
+
+  <h1 class="hero-title">
+    LO QUE<br>
+    <span class="accent">NO</span><br>
+    <span class="outline">SABÍAS</span>
+  </h1>
+
+  <p class="hero-sub">
+    Curiosidades, misterios e historias que cambian tu forma de ver el mundo. Cada día, una historia que no puedes dejar de leer.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#articulos" class="btn-primary">Explorar ahora</a>
+    <a href="#categorias" class="btn-ghost">Ver categorías</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">247</div>
+      <div class="stat-label">Historias publicadas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1.2M</div>
+      <div class="stat-label">Lectores al mes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Repiten visita</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">MISTERIOS SIN RESOLVER</span>
+    <span class="ticker-item">CIENCIA QUE ASOMBRA</span>
+    <span class="ticker-item">HISTORIA OCULTA</span>
+    <span class="ticker-item">EXPERIMENTOS SECRETOS</span>
+    <span class="ticker-item">LUGARES PROHIBIDOS</span>
+    <span class="ticker-item">HECHOS QUE CAMBIAN TODO</span>
+    <span class="ticker-item">MISTERIOS SIN RESOLVER</span>
+    <span class="ticker-item">CIENCIA QUE ASOMBRA</span>
+    <span class="ticker-item">HISTORIA OCULTA</span>
+    <span class="ticker-item">EXPERIMENTOS SECRETOS</span>
+    <span class="ticker-item">LUGARES PROHIBIDOS</span>
+    <span class="ticker-item">HECHOS QUE CAMBIAN TODO</span>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section id="articulos">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Lo más leído</div>
+      <div class="section-title">DESTACADOS</div>
+    </div>
+    <a href="#" class="section-link">Ver todos</a>
+  </div>
+
+  <div class="featured reveal">
+    <div class="featured-main" style="grid-row: span 1;">
+      <div class="article-num">01</div>
+      <div class="article-cat">Misterio</div>
+      <h2 class="article-title-big">El experimento que el gobierno español ocultó durante 40 años</h2>
+      <p class="article-excerpt">En 1962, un laboratorio en los Pirineos comenzó un proyecto que oficialmente nunca existió. Los documentos desclasificados en 2019 revelan algo que nadie esperaba encontrar.</p>
+      <div class="article-meta">
+        <span>14 May 2026</span>
+        <span class="dot"></span>
+        <span>8 min de lectura</span>
+        <span class="dot"></span>
+        <span>234.500 lecturas</span>
+      </div>
+      <a href="articulo-espana.html" class="read-more">Leer historia <span>→</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <div class="featured-main">
+        <div class="article-num">02</div>
+        <div class="article-cat">Historia</div>
+        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">Por qué los mayas desaparecieron de verdad</h2>
+        <p class="article-excerpt" style="font-size:13px">La teoría oficial tiene 3 agujeros enormes que los libros de texto ignoran.</p>
+        <a href="articulo-mayas.html" class="read-more">Leer <span>→</span></a>
+      </div>
+      <div class="featured-main">
+        <div class="article-num">03</div>
+        <div class="article-cat">Ciencia</div>
+        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">El sonido que puede matarte y que el ejército usa en secreto</h2>
+        <p class="article-excerpt" style="font-size:13px">Existe una frecuencia de 18,98 Hz que provoca terror irracional. Y hay pruebas de que se ha usado.</p>
+        <a href="articulo-sonido.html" class="read-more">Leer <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES GRID -->
+<section style="padding-top:0">
+  <div class="articles-grid">
+    <!-- Card 1 -->
+    <div class="article-card reveal" onclick="location.href='articulo-marianas.html'" style="cursor:pointer">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#1a0a0a);">
+        <span class="card-emoji">🌊</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(232,50,26,0.1), transparent)"></div>
+      </div>
+      <span class="tag">Océanos</span>
+      <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El 80% del océano sigue sin explorar. Lo que hay en la Fosa de las Marianas no está en ningún documental.</p>
+      <div class="article-meta">
+        <span>12 May</span><span class="dot"></span><span>6 min</span>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="article-card reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#0a120a);">
+        <span class="card-emoji">🧠</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(15,244,198,0.08), transparent)"></div>
+      </div>
+      <span class="tag">Mente</span>
+      <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Los falsos recuerdos afectan al 70% de la población. La ciencia acaba de descubrir por qué.</p>
+      <div class="article-meta">
+        <span>10 May</span><span class="dot"></span><span>5 min</span>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="article-card reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#0a0a1a);">
+        <span class="card-emoji">🏚️</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(212,168,67,0.08), transparent)"></div>
+      </div>
+      <span class="tag">Lugares</span>
+      <h3 class="article-title">El pueblo español abandonado que nadie puede explicar</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Sus 300 habitantes desaparecieron en una sola noche de 1938. No hay registro de adónde fueron.</p>
+      <div class="article-meta">
+        <span>8 May</span><span class="dot"></span><span>7 min</span>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="article-card reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#1a0a12);">
+        <span class="card-emoji">⚡</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(232,50,26,0.08), transparent)"></div>
+      </div>
+      <span class="tag">Tecnología</span>
+      <h3 class="article-title">Tesla tenía razón: la energía inalámbrica que suprimieron</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">En 1899 demostró que podía transmitir electricidad gratis a todo el planeta. Entonces desapareció su financiación.</p>
+      <div class="article-meta">
+        <span>6 May</span><span class="dot"></span><span>9 min</span>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="article-card reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#0d1a0a);">
+        <span class="card-emoji">🌍</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(15,244,198,0.07), transparent)"></div>
+      </div>
+      <span class="tag">Historia</span>
+      <h3 class="article-title">El mapa que prueba que alguien exploró la Antártida antes de 1820</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El mapa Piri Reis de 1513 muestra la costa antártica con un detalle imposible para su época.</p>
+      <div class="article-meta">
+        <span>4 May</span><span class="dot"></span><span>8 min</span>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="article-card reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#1a150a);">
+        <span class="card-emoji">💊</span>
+        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(212,168,67,0.07), transparent)"></div>
+      </div>
+      <span class="tag">Ciencia</span>
+      <h3 class="article-title">El medicamento que cura el cáncer que llevan 30 años sin aprobar</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Los estudios existen. Los resultados son extraordinarios. Y lleva tres décadas bloqueado en burocracia.</p>
+      <div class="article-meta">
+        <span>2 May</span><span class="dot"></span><span>10 min</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categorias" style="background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Explora por tema</div>
+      <div class="section-title">CATEGORÍAS</div>
+    </div>
+    <a href="#" class="section-link">Ver todas</a>
+  </div>
+
+  <div class="categories-grid reveal">
+    <a class="cat-card" href="#cat-misterios" id="cat-misterios" style="--c:#e8321a">
+      <span class="cat-icon">🔍</span>
+      <span class="cat-name">MISTERIOS</span>
+      <span class="cat-count">47 artículos</span>
+      <div class="cat-bar" style="background:var(--accent)"></div>
+    </a>
+    <a class="cat-card" href="#cat-ciencia" id="cat-ciencia" style="--c:#0ff4c6">
+      <span class="cat-icon">🧬</span>
+      <span class="cat-name">CIENCIA</span>
+      <span class="cat-count">38 artículos</span>
+      <div class="cat-bar" style="background:var(--teal)"></div>
+    </a>
+    <a class="cat-card" href="#" style="--c:#d4a843">
+      <span class="cat-icon">📜</span>
+      <span class="cat-name">HISTORIA</span>
+      <span class="cat-count">62 artículos</span>
+      <div class="cat-bar" style="background:var(--gold)"></div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🌌</span>
+      <span class="cat-name">UNIVERSO</span>
+      <span class="cat-count">29 artículos</span>
+      <div class="cat-bar" style="background:#7c3aed"></div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🏛️</span>
+      <span class="cat-name">LUGARES</span>
+      <span class="cat-count">41 artículos</span>
+      <div class="cat-bar" style="background:#2563a8"></div>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🧠</span>
+      <span class="cat-name">MENTE</span>
+      <span class="cat-count">33 artículos</span>
+      <div class="cat-bar" style="background:#0f6e56"></div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" style="padding:0 40px 100px;">
+  <div class="newsletter reveal">
+    <h2 class="newsletter-title">NO TE<br><span>PIERDAS</span><br>NADA</h2>
+    <p class="newsletter-sub">Una historia impactante cada semana. Sin spam. Sin ruido.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <button class="newsletter-btn">Suscribirse</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">VIRAL<span>I</span>X</div>
+      <p class="footer-brand-desc">Lo que no sabías que necesitabas saber. Curiosidades, misterios e historias extraordinarias cada día.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Categorías</div>
+      <div class="footer-links">
+        <a href="#">Misterios</a>
+        <a href="#">Ciencia</a>
+        <a href="#">Historia</a>
+        <a href="#">Universo</a>
+        <a href="#">Lugares</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Más leído</div>
+      <div class="footer-links">
+        <a href="articulo-espana.html">El experimento oculto</a>
+        <a href="articulo-mayas.html">Los mayas</a>
+        <a href="articulo-tesla.html">Tesla tenía razón</a>
+        <a href="articulo-marianas.html">Fosa de Marianas</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <div class="footer-links">
+        <a href="#">Sobre VIRALIX</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Cookies</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 VIRALIX — Todos los derechos reservados</span>
+    <div class="footer-socials">
+      <a href="#" class="social-link">TikTok</a>
+      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">YouTube</a>
+      <a href="#" class="social-link">X</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animCursor() {
+  cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+
+// NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// NEWSLETTER
+document.querySelector('.newsletter-btn').addEventListener('click', () => {
+  const inp = document.querySelector('.newsletter-input');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (emailRegex.test(inp.value.trim())) {
+    inp.value = '✓ ¡Suscrito! Bienvenido a VIRALIX';
+    inp.style.color = 'var(--teal)';
+    inp.style.borderColor = 'var(--teal)';
+    inp.disabled = true;
+    document.querySelector('.newsletter-btn').textContent = '✓ Hecho';
+    document.querySelector('.newsletter-btn').style.background = 'var(--teal)';
+    document.querySelector('.newsletter-btn').style.color = '#000';
+    document.querySelector('.newsletter-btn').disabled = true;
+  } else {
+    inp.style.borderColor = 'var(--accent)';
+    inp.placeholder = 'Introduce un email válido';
+    inp.value = '';
+    inp.focus();
+  }
+});
+
+// PARALLAX HERO GRID
+document.addEventListener('mousemove', e => {
+  const grid = document.querySelector('.hero-grid');
+  if (!grid) return;
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  grid.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+</body>
+</html>
