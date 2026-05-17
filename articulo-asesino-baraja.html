@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="El caso completo del Asesino de la Baraja: quién es Alfredo Galán, cómo mató a 6 personas en Madrid en 2003, por qué se entregó borracho y cuándo podría salir de prisión.">
+<meta name="keywords" content="asesino de la baraja, Alfredo Galán, caso asesino baraja Madrid, asesino serie España, asesino baraja sale prisión 2028, true crime España">
+<title>El Asesino de la Baraja: el caso completo de Alfredo Galán | VIRALIX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #080808;
+    --rojo: #e61515;
+    --blanco: #f2f2f2;
+    --gris: #888;
+    --gris-oscuro: #1a1a1a;
+    --sangre: #8b0000;
+    --sangre-light: rgba(139,0,0,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--negro); color: var(--blanco); font-family: 'Barlow', sans-serif; font-weight: 300; line-height: 1.8; cursor: none; overflow-x: hidden; }
+  .cursor { width: 12px; height: 12px; background: var(--rojo); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+  .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(230,21,21,0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.3; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s ease; }
+  nav.scrolled { background: rgba(8,8,8,0.95); border-bottom: 1px solid rgba(230,21,21,0.2); backdrop-filter: blur(10px); }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+  .logo span { color: var(--rojo); }
+  .nav-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); border: 1px solid var(--rojo); padding: 4px 12px; }
+
+  .hero-articulo { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 40px 80px; position: relative; overflow: hidden; background: linear-gradient(180deg, #0d0000 0%, var(--negro) 100%); }
+  .hero-articulo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(139,0,0,0.12) 0%, transparent 60%), radial-gradient(ellipse 30% 40% at 80% 70%, rgba(230,21,21,0.05) 0%, transparent 50%); }
+
+  .naipe-bg { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); font-size: 18rem; opacity: 0.04; pointer-events: none; animation: naipePulse 4s ease-in-out infinite; line-height: 1; }
+  @keyframes naipePulse { 0%, 100% { opacity: 0.04; } 50% { opacity: 0.07; } }
+
+  .categoria-tag { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rojo); border-left: 3px solid var(--rojo); padding-left: 12px; margin-bottom: 24px; position: relative; z-index: 2; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.92; letter-spacing: 2px; max-width: 900px; position: relative; z-index: 2; margin-bottom: 32px; }
+  h1 .highlight { color: var(--rojo); }
+  .meta-bar { display: flex; gap: 32px; align-items: center; position: relative; z-index: 2; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+  .meta-item { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+  .meta-item strong { color: var(--blanco); font-weight: 600; }
+  .lectura-tag { margin-left: auto; background: var(--rojo); color: var(--blanco); font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; padding: 6px 16px; }
+
+  .scroll-indicator { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; animation: floatBob 2s ease-in-out infinite; }
+  @keyframes floatBob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--rojo), transparent); }
+  .scroll-text { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); }
+
+  .contenido-wrapper { max-width: 780px; margin: 0 auto; padding: 80px 40px; }
+  .intro-grande { font-size: 1.3rem; font-weight: 400; line-height: 1.7; color: rgba(242,242,238,0.85); margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .intro-grande::first-letter { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 0.8; float: left; margin-right: 16px; color: var(--rojo); }
+
+  h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 60px 0 24px; color: var(--blanco); position: relative; padding-left: 20px; }
+  h2::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--rojo); }
+  p { margin-bottom: 24px; color: rgba(242,242,238,0.78); font-size: 1.05rem; }
+
+  /* FICHA CRIMINAL */
+  .ficha-criminal { background: var(--gris-oscuro); border: 1px solid rgba(230,21,21,0.2); padding: 36px; margin: 48px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ficha-criminal h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rojo); margin-bottom: 20px; grid-column: 1/-1; }
+  .ficha-item { display: flex; flex-direction: column; gap: 4px; }
+  .ficha-label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); }
+  .ficha-valor { font-size: 1rem; color: var(--blanco); font-weight: 400; }
+  .ficha-valor.rojo { color: var(--rojo); font-weight: 600; }
+
+  /* VICTIMAS */
+  .victima-card { background: rgba(139,0,0,0.08); border: 1px solid rgba(139,0,0,0.2); border-left: 4px solid var(--rojo); padding: 24px 28px; margin-bottom: 16px; display: grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: start; }
+  .victima-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: rgba(230,21,21,0.3); line-height: 1; }
+  .victima-nombre { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--blanco); margin-bottom: 4px; }
+  .victima-detalle { font-size: 0.85rem; color: rgba(242,242,238,0.6); line-height: 1.5; margin: 0; }
+  .victima-naipe { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--rojo); border: 1px solid rgba(230,21,21,0.3); padding: 2px 8px; margin-top: 6px; }
+
+  .caja-datos { background: var(--gris-oscuro); border-left: 4px solid var(--rojo); padding: 32px 36px; margin: 48px 0; position: relative; overflow: hidden; }
+  .caja-datos h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rojo); margin-bottom: 20px; }
+  .dato-item { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; font-size: 0.95rem; color: rgba(242,242,238,0.82); }
+  .dato-item::before { content: '▸'; color: var(--rojo); flex-shrink: 0; margin-top: 2px; }
+
+  /* TIMELINE */
+  .timeline { margin: 48px 0; }
+  .timeline-item { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.04); position: relative; }
+  .timeline-item:last-child { border: none; }
+  .timeline-fecha { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 1px; color: var(--rojo); text-align: right; padding-top: 4px; line-height: 1.3; }
+  .timeline-contenido h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--blanco); margin-bottom: 6px; }
+  .timeline-contenido p { font-size: 0.9rem; color: rgba(242,242,238,0.65); margin: 0; line-height: 1.5; }
+
+  .cita-destacada { margin: 56px 0; padding: 0 0 0 32px; border-left: 3px solid rgba(230,21,21,0.4); }
+  .cita-texto { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; line-height: 1.3; font-weight: 700; color: var(--blanco); margin-bottom: 12px; }
+  .cita-fuente { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+
+  .verificado { background: rgba(0,80,0,0.15); border: 1px solid rgba(0,180,0,0.2); border-left: 4px solid rgba(0,180,0,0.6); padding: 20px 24px; margin: 32px 0; font-size: 0.9rem; color: rgba(180,255,180,0.8); }
+  .verificado strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,200,0,0.7); margin-bottom: 8px; }
+
+  /* ALERTA SALIDA PRISIÓN */
+  .alerta-prision { background: rgba(230,21,21,0.08); border: 1px solid rgba(230,21,21,0.25); border-left: 4px solid var(--rojo); padding: 24px 28px; margin: 32px 0; }
+  .alerta-prision strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 10px; }
+  .alerta-prision p { color: rgba(255,200,200,0.85); margin: 0; font-size: 0.95rem; }
+
+  .separador { display: flex; align-items: center; gap: 20px; margin: 56px 0; color: var(--gris); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; }
+  .separador::before, .separador::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+
+  .conclusion { background: linear-gradient(135deg, var(--gris-oscuro) 0%, rgba(40,0,0,0.5) 100%); border-top: 3px solid var(--rojo); padding: 48px; margin: 60px 0 0; position: relative; overflow: hidden; }
+  .conclusion::before { content: '♠'; position: absolute; right: 20px; bottom: -20px; font-family: 'Bebas Neue', sans-serif; font-size: 16rem; color: rgba(230,21,21,0.04); line-height: 1; pointer-events: none; }
+  .conclusion h2 { margin-top: 0; border: none; padding: 0; }
+  .conclusion h2::before { display: none; }
+
+  .mas-articulos { background: var(--gris-oscuro); padding: 80px 40px; margin-top: 80px; }
+  .mas-titulo { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 4px; text-align: center; margin-bottom: 48px; }
+  .mas-titulo span { color: var(--rojo); }
+  .articulos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; max-width: 900px; margin: 0 auto; }
+  .articulo-link { background: rgba(8,8,8,0.8); padding: 28px; text-decoration: none; color: var(--blanco); transition: background 0.3s; border-left: 3px solid transparent; }
+  .articulo-link:hover { background: rgba(30,30,30,0.9); border-left-color: var(--rojo); }
+  .al-cat { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 12px; }
+  .al-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+
+  footer { background: #030303; padding: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+  .footer-logo span { color: var(--rojo); }
+  .footer-copy { font-size: 0.75rem; color: var(--gris); letter-spacing: 1px; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .hero-articulo { padding: 100px 20px 60px; }
+    h1 { font-size: 2.8rem; }
+    .contenido-wrapper { padding: 60px 20px; }
+    .ficha-criminal { grid-template-columns: 1fr; }
+    .conclusion { padding: 32px 24px; }
+    .mas-articulos { padding: 60px 20px; }
+    .naipe-bg { display: none; }
+    footer { padding: 24px 20px; }
+    .timeline-item { grid-template-columns: 80px 1fr; gap: 12px; }
+    .victima-card { grid-template-columns: 40px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">VIRA<span>LIX</span></a>
+  <span class="nav-tag">TRUE CRIME · ESPAÑA</span>
+</nav>
+
+<section class="hero-articulo">
+  <div class="naipe-bg">🃏</div>
+  <span class="categoria-tag">True Crime · España · Casos reales</span>
+  <h1>El Asesino de la Baraja: <span class="highlight">6 muertos</span>, una pistola de Bosnia y una confesión borracho</h1>
+  <div class="meta-bar">
+    <span class="meta-item">Por <strong>Equipo VIRALIX</strong></span>
+    <span class="meta-item">Actualizado <strong>2026</strong></span>
+    <span class="meta-item">Categoría <strong>True Crime</strong></span>
+    <span class="lectura-tag">10 min lectura</span>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">Leer el caso</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<article class="contenido-wrapper">
+
+  <p class="intro-grande reveal">
+    Madrid, invierno de 2003. En 53 días, un hombre mató a seis personas al azar, dejó naipes de la baraja española junto a los cuerpos y desapareció. La policía movilizó a 150 agentes. España entera miraba por encima del hombro. Y el asesino se entregó borracho en una comisaría de pueblo porque se había cansado de esperar a que le atraparan.
+  </p>
+
+  <div class="verificado reveal">
+    <strong>✓ Fuentes verificadas</strong>
+    Este artículo está basado en la documentación judicial del caso, el documental de Netflix "Baraja: la firma del asesino" (2023), la sentencia de la Audiencia Provincial de Madrid (2005), reportajes de El País, El Español y testimonios de investigadores que llevaron el caso.
+  </div>
+
+  <div class="ficha-criminal reveal">
+    <h3>🃏 Ficha del caso — El Asesino de la Baraja</h3>
+    <div class="ficha-item"><span class="ficha-label">Nombre real</span><span class="ficha-valor">Alfredo Galán Sotillo</span></div>
+    <div class="ficha-item"><span class="ficha-label">Nacimiento</span><span class="ficha-valor">22 diciembre 1977, Puertollano (Ciudad Real)</span></div>
+    <div class="ficha-item"><span class="ficha-label">Crímenes</span><span class="ficha-valor rojo">6 asesinatos · 3 intentos de homicidio</span></div>
+    <div class="ficha-item"><span class="ficha-label">Período</span><span class="ficha-valor">Enero — marzo 2003 (53 días)</span></div>
+    <div class="ficha-item"><span class="ficha-label">Arma</span><span class="ficha-valor">Pistola Tokarev TT-33 cal. 7.62 (traída de Bosnia)</span></div>
+    <div class="ficha-item"><span class="ficha-label">Condena</span><span class="ficha-valor">142 años de prisión (máximo efectivo: 25 años)</span></div>
+    <div class="ficha-item"><span class="ficha-label">Posible salida</span><span class="ficha-valor rojo">2028 si cumple requisitos penitenciarios</span></div>
+    <div class="ficha-item"><span class="ficha-label">Motivo declarado</span><span class="ficha-valor">Matar para saber qué se sentía y sentirse alguien</span></div>
+  </div>
+
+  <h2 class="reveal">Quién era Alfredo Galán antes de los crímenes</h2>
+
+  <p class="reveal">Alfredo Galán creció en Puertollano, una ciudad industrial de Ciudad Real. Sus profesores lo recuerdan como un estudiante introvertido y reservado. No consiguió el título de la ESO. Intentó entrar en la Guardia Civil, aprobó el examen teórico pero no superó las pruebas físicas. Ese fracaso le marcó.</p>
+
+  <p class="reveal">En septiembre de 1998 ingresó en el Ejército de Tierra, en la base militar de El Goloso, Madrid. Llegó a cabo primero. Participó en misiones internacionales en Bosnia, donde convivió con la violencia de los Balcanes. De allí se trajo, oculta dentro de un televisor, la pistola Tokarev soviética que usaría cinco años después para matar.</p>
+
+  <p class="reveal">A su vuelta de Bosnia, Galán era una persona diferente. Más huraño, con problemas de alcohol, incapaz de encajar en la vida civil. En 2003 le dieron la baja definitiva del ejército. Ese mismo mes empezó a matar.</p>
+
+  <div class="caja-datos reveal">
+    <h3>🧠 El perfil psicológico según los forenses</h3>
+    <div class="dato-item">No mató por dinero, venganza ni impulso emocional. Según su propia confesión, mataba para comprobar qué se sentía al hacerlo</div>
+    <div class="dato-item">Buscaba notoriedad y reconocimiento que nunca había conseguido en su vida. Los crímenes le daban una identidad que el ejército y la sociedad le habían negado</div>
+    <div class="dato-item">Los forenses descartaron cualquier patología psiquiátrica que anulara su responsabilidad. Era consciente de lo que hacía en todo momento</div>
+    <div class="dato-item">La muerte de su madre durante el parto de su hermana y el sentimiento de haber sido desplazado en la familia marcaron su infancia según la psicóloga forense Victoria Trabazo</div>
+    <div class="dato-item">El alcohol jugó un papel central en toda la historia: agravó su deterioro y también provocó su detención</div>
+  </div>
+
+  <h2 class="reveal">Los crímenes: 53 días de terror en Madrid</h2>
+
+  <p class="reveal">Entre el 27 de enero y el 21 de marzo de 2003, Alfredo Galán mató a seis personas en Madrid y sus alrededores. No había relación entre las víctimas. No había un patrón aparente. Eran personas al azar, en lugares públicos, asesinadas con un disparo en la cabeza o la nuca. Sin aviso. Sin resistencia posible.</p>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">01</div>
+    <div>
+      <div class="victima-nombre">Juan Francisco Ledesma, 50 años</div>
+      <p class="victima-detalle">Portero de una finca en la calle Alonso Cano, barrio de Chamberí, Madrid. Galán entró en su casa, le ordenó ponerse de rodillas y le disparó en la cabeza delante de su hijo de dos años. No hubo naipe en este primer crimen, por eso tardó en vincularse a los demás.</p>
+    </div>
+  </div>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">02</div>
+    <div>
+      <div class="victima-nombre">Juan Carlos Martín Estacio, 28 años</div>
+      <p class="victima-detalle">Empleado de limpieza del aeropuerto de Barajas. Asesinado en una parada de autobús en la Alameda de Osuna, Madrid, cuando volvía del trabajo. Junto a su cuerpo apareció el primer naipe: un as de copas de la baraja española. Este naipe bautizó al asesino.</p>
+      <span class="victima-naipe">🃏 As de copas</span>
+    </div>
+  </div>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">03</div>
+    <div>
+      <div class="victima-nombre">Mikel Jiménez, 18 años</div>
+      <p class="victima-detalle">Asesinado ese mismo día en el Bar Rojas de Alcalá de Henares junto a Juana Uclés. Galán entró al bar y disparó sin mediar palabra. La madre de Mikel, propietaria del bar, sobrevivió herida grave y fue clave en la investigación posterior. No se encontró naipe en este crimen.</p>
+    </div>
+  </div>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">04</div>
+    <div>
+      <div class="victima-nombre">Juana Uclés López, 57 años</div>
+      <p class="victima-detalle">Clienta del Bar Rojas de Alcalá de Henares. Asesinada junto a Mikel Jiménez. Mientras los medios estaban centrados en el misterio del naipe, esta mujer falleció sin que nadie reparase en ella. El documental de Netflix rescata su historia.</p>
+    </div>
+  </div>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">05</div>
+    <div>
+      <div class="victima-nombre">Santiago Eduardo, Tres Cantos</div>
+      <p class="victima-detalle">Asesinado el 7 de marzo en Tres Cantos, Madrid. Galán se acercó a él en la calle y disparó sin ningún intercambio previo. Junto al cuerpo apareció el dos de copas.</p>
+      <span class="victima-naipe">🃏 Dos de copas</span>
+    </div>
+  </div>
+
+  <div class="victima-card reveal">
+    <div class="victima-num">06</div>
+    <div>
+      <div class="victima-nombre">Víctima en Arganda del Rey</div>
+      <p class="victima-detalle">Último asesinato documentado, en Arganda del Rey, el 21 de marzo de 2003. Junto al cuerpo apareció el tres de copas. Después de este crimen, Galán dejó de matar. Tres meses y medio después se entregó.</p>
+      <span class="victima-naipe">🃏 Tres de copas</span>
+    </div>
+  </div>
+
+  <h2 class="reveal">Por qué usaba naipes de la baraja</h2>
+
+  <p class="reveal">Esta es una de las preguntas más frecuentes del caso y la respuesta es profundamente banal. Galán confesó que el uso de los naipes como firma nació por casualidad. Llevaba una baraja en el bolsillo el día que mató a Juan Carlos Martín y, en un impulso, dejó el as de copas junto al cuerpo.</p>
+
+  <p class="reveal">Cuando los medios de comunicación empezaron a hablar del "asesino de la baraja", a Galán le gustó el apodo. Le gustó tanto que decidió seguir dejando naipes. El monstruo que aterrorizó Madrid durante meses construyó su firma por vanidad mediática, no por ningún simbolismo oscuro que los periodistas intentaron descifrar durante semanas.</p>
+
+  <div class="cita-destacada reveal">
+    <p class="cita-texto">"El apodo le agradó y le alentó a buscar más víctimas sobre las que dejar su macabra firma."</p>
+    <span class="cita-fuente">Documentación judicial del caso — Audiencia Provincial de Madrid</span>
+  </div>
+
+  <h2 class="reveal">La investigación: 150 policías y meses sin pistas</h2>
+
+  <p class="reveal">La policía movilizó a 150 agentes entre la Brigada de Homicidios y la Guardia Civil. Establecieron líneas telefónicas de ayuda ciudadana que se colapsaron. Hicieron ruedas de reconocimiento que no llevaron a ningún sitio. Durante meses, el asesino estaba libre y seguía matando.</p>
+
+  <p class="reveal">La clave que finalmente les acercó a Galán fue la pistola. Los análisis balísticos determinaron que el arma era una Tokarev TT-33, una pistola soviética muy usada en los Balcanes. Eso les llevó a pedir al Ejército un listado de militares que hubieran estado en misiones en la antigua Yugoslavia y que estuvieran de baja por causas psicológicas o psiquiátricas. Alfredo Galán aparecía en ese listado.</p>
+
+  <p class="reveal">Sin embargo, la policía no llegó a tiempo de detenerle a partir de esa pista. Galán se les adelantó.</p>
+
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-fecha">27 Ene 2003</div>
+      <div class="timeline-contenido"><h4>Primer asesinato</h4><p>Juan Francisco Ledesma, portero en Chamberí. Sin naipe. La policía no lo vincula aún a una serie.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-fecha">5 Feb 2003</div>
+      <div class="timeline-contenido"><h4>El naipe aparece</h4><p>Asesina a Juan Carlos Martín en Alameda de Osuna y deja el as de copas. Ese mismo día mata a dos personas en el Bar Rojas de Alcalá de Henares. Nace el apodo.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-fecha">7 Mar 2003</div>
+      <div class="timeline-contenido"><h4>Tres Cantos</h4><p>Quinto asesinato. Deja el dos de copas. Madrid está en pánico. Se activa una investigación masiva con 150 agentes.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-fecha">21 Mar 2003</div>
+      <div class="timeline-contenido"><h4>Último crimen</h4><p>Arganda del Rey. Deja el tres de copas. Después de esta fecha, Galán deja de matar. Nadie sabe por qué.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-fecha">3 Jul 2003</div>
+      <div class="timeline-contenido"><h4>La entrega borracha</h4><p>Galán se presenta borracho en la comisaría de Puertollano y confiesa ser el asesino de la baraja. Revela el dato secreto de los puntos azules en las cartas. Lo detienen.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-fecha">2005</div>
+      <div class="timeline-contenido"><h4>La condena</h4><p>Condenado a 142 años de prisión. El juicio descarta cualquier atenuante. El máximo efectivo por la ley vigente es de 25 años.</p></div>
+    </div>
+    <div class="timeline-item" style="border:none">
+      <div class="timeline-fecha">2028</div>
+      <div class="timeline-contenido"><h4>Posible salida</h4><p>Si cumple los requisitos penitenciarios — buena conducta, tercer grado, evolución favorable — Alfredo Galán podría quedar en libertad.</p></div>
+    </div>
+  </div>
+
+  <h2 class="reveal">La confesión borracha que lo delató todo</h2>
+
+  <p class="reveal">El 3 de julio de 2003, más de tres meses después del último crimen, Alfredo Galán decidió entregarse. Estaba bebido. Se presentó primero ante un agente de la policía local de Puertollano, que no le tomó en serio por su estado de embriaguez. Horas después fue a la comisaría de la policía nacional.</p>
+
+  <p class="reveal">Allí confesó ser el asesino de la baraja y dijo que se entregaba porque estaba "harto de la ineficacia policial". Para demostrar que era quien decía ser, reveló un dato que no había trascendido a los medios y que solo conocían los investigadores: en el reverso de los naipes dejados en Tres Cantos y Arganda del Rey había un pequeño punto azul marcado con rotulador.</p>
+
+  <p class="reveal">La policía verificó el dato y le detuvo. Galán durmió la mona. Cuando se despertó, lo negó todo. Pero ya era demasiado tarde. Esa primera declaración, combinada con las pruebas balísticas y los testimonios de supervivientes, construyeron una condena de 142 años.</p>
+
+  <div class="cita-destacada reveal">
+    <p class="cita-texto">"Me entrego harto de la ineficacia policial."</p>
+    <span class="cita-fuente">Alfredo Galán Sotillo al presentarse en la comisaría de Puertollano — 3 julio 2003</span>
+  </div>
+
+  <div class="separador reveal">— el caso que aún no ha terminado —</div>
+
+  <h2 class="reveal">2028: el año en que podría salir libre</h2>
+
+  <div class="alerta-prision reveal">
+    <strong>⚠️ Actualización 2026 — posible salida en 2028</strong>
+    <p>Alfredo Galán tiene actualmente 48 años y lleva más de 20 en prisión. Aunque su condena suma 142 años, la legislación española vigente en el momento de los hechos limita el cumplimiento máximo efectivo a 25 años. Si cumple los requisitos — buena conducta, clasificación en tercer grado, evolución penitenciaria favorable — podría salir en libertad en 2028.</p>
+  </div>
+
+  <p class="reveal">Desde prisión, Galán ya dio señales de su peculiar psicología. En 2015, escribió una carta a la policía ofreciéndose a elaborar el perfil del asesino de Eva Blanco. En la misiva, aconsejaba a los investigadores que presionaran al sospechoso con "Datos Falsos" para hacerle cometer un error. Lo escribía con mayúsculas.</p>
+
+  <p class="reveal">Un asesino en serie que, desde su celda, asesora a la policía sobre cómo atrapar a otros asesinos. Si algo define el caso de Alfredo Galán es que nunca deja de ser perturbador.</p>
+
+  <div class="caja-datos reveal">
+    <h3>📋 Condiciones para la posible salida en 2028</h3>
+    <div class="dato-item">Cumplir los 25 años máximos de reclusión efectiva permitidos por la ley vigente en 2003</div>
+    <div class="dato-item">Acreditar buena conducta sostenida durante el período de internamiento</div>
+    <div class="dato-item">Obtener clasificación en tercer grado penitenciario por parte de la junta de tratamiento</div>
+    <div class="dato-item">Evaluación psicológica favorable que certifique la reinserción</div>
+    <div class="dato-item">La Fiscalía puede oponerse y recurrir cualquier beneficio penitenciario</div>
+  </div>
+
+  <div class="conclusion reveal">
+    <h2>El caso que España no ha cerrado</h2>
+    <p>Alfredo Galán mató a seis personas para sentirse alguien. Lo consiguió. Su nombre lleva más de veinte años en los libros de criminología, en los documentales, en las conversaciones de true crime. Es el asesino en serie más famoso de la historia reciente de España.</p>
+    <p>Las víctimas — Juan Francisco, Juan Carlos, Mikel, Juana, Santiago y la víctima de Arganda — son las grandes olvidadas de esta historia. El documental de Netflix intentó corregirlo. Esta web también.</p>
+    <p><strong>En 2028, si la ley no lo impide, el hombre que sembró el terror en Madrid volverá a caminar por las calles. Esa es la pregunta que España tendrá que responder pronto.</strong></p>
+  </div>
+
+</article>
+
+<section class="mas-articulos">
+  <h2 class="mas-titulo">SEGUIR <span>LEYENDO</span></h2>
+  <div class="articulos-grid">
+    <a href="articulo-marianas.html" class="articulo-link"><div class="al-cat">Ciencia</div><div class="al-titulo">Qué hay realmente en la Fosa de las Marianas</div></a>
+    <a href="articulo-hantavirus.html" class="articulo-link"><div class="al-cat">Actualidad</div><div class="al-titulo">Hantavirus en España: el brote del crucero Hondius</div></a>
+    <a href="articulo-falsos-recuerdos.html" class="articulo-link"><div class="al-cat">Mente</div><div class="al-titulo">El fenómeno que hace que recuerdes cosas que nunca pasaron</div></a>
+    <a href="articulo-maquina-tiempo.html" class="articulo-link"><div class="al-cat">Misterios</div><div class="al-titulo">El joven que construyó una máquina del tiempo y desapareció</div></a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">VIRA<span>LIX</span></a>
+  <span class="footer-copy">© 2026 VIRALIX — Contenido verificado para mentes curiosas</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function animCursor() {
+    rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+    cursor.style.left = mx - 6 + 'px'; cursor.style.top = my - 6 + 'px';
+    ring.style.left = rx - 18 + 'px'; ring.style.top = ry - 18 + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; });
+    a.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; });
+  });
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
