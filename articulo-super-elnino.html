@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="El Super El Niño de 2026 podría ser el más devastador desde 1877. La NOAA confirma un 82% de probabilidad. Qué es, qué va a pasar y cómo te afecta en España.">
+<meta name="keywords" content="super el niño 2026, qué es el niño 2026, super el niño españa, el niño godzilla 2026, alerta climatica 2026, el niño más fuerte desde 1877">
+<title>Super El Niño 2026: el fenómeno que podría ser el más devastador desde 1877 | VIRALIX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #080808;
+    --rojo: #e61515;
+    --blanco: #f2f2f2;
+    --gris: #888;
+    --gris-oscuro: #1a1a1a;
+    --naranja: #f97316;
+    --amarillo: #eab308;
+    --azul: #0ea5e9;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--negro); color: var(--blanco); font-family: 'Barlow', sans-serif; font-weight: 300; line-height: 1.8; cursor: none; overflow-x: hidden; }
+  .cursor { width: 12px; height: 12px; background: var(--naranja); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+  .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(249,115,22,0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.3; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s ease; }
+  nav.scrolled { background: rgba(8,8,8,0.95); border-bottom: 1px solid rgba(249,115,22,0.2); backdrop-filter: blur(10px); }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+  .logo span { color: var(--rojo); }
+  .nav-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--naranja); border: 1px solid var(--naranja); padding: 4px 12px; }
+
+  .alerta-actualidad { background: rgba(249,115,22,0.1); border-bottom: 2px solid var(--naranja); padding: 12px 40px; display: flex; align-items: center; gap: 12px; font-size: 0.8rem; letter-spacing: 1px; color: rgba(249,115,22,0.9); position: fixed; top: 72px; left: 0; right: 0; z-index: 499; }
+  .alerta-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--naranja); animation: blink 1s infinite; flex-shrink: 0; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+  .hero-articulo { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 160px 40px 80px; position: relative; overflow: hidden; background: linear-gradient(180deg, #0a0400 0%, #0a0200 50%, var(--negro) 100%); }
+  .hero-articulo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(249,115,22,0.08) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 20% 70%, rgba(230,21,21,0.05) 0%, transparent 50%); }
+
+  .tierra-bg { position: absolute; right: -5%; top: 50%; transform: translateY(-50%); font-size: 22rem; opacity: 0.04; pointer-events: none; animation: tierraPulse 5s ease-in-out infinite; line-height: 1; }
+  @keyframes tierraPulse { 0%, 100% { opacity: 0.04; transform: translateY(-50%) scale(1); } 50% { opacity: 0.07; transform: translateY(-50%) scale(1.03); } }
+
+  .categoria-tag { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--naranja); border-left: 3px solid var(--naranja); padding-left: 12px; margin-bottom: 24px; position: relative; z-index: 2; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.92; letter-spacing: 2px; max-width: 900px; position: relative; z-index: 2; margin-bottom: 32px; }
+  h1 .highlight { color: var(--naranja); }
+  .meta-bar { display: flex; gap: 32px; align-items: center; position: relative; z-index: 2; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+  .meta-item { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+  .meta-item strong { color: var(--blanco); font-weight: 600; }
+  .lectura-tag { margin-left: auto; background: var(--naranja); color: var(--blanco); font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; padding: 6px 16px; }
+  .actualidad-tag { background: var(--rojo); color: var(--blanco); font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; padding: 6px 16px; animation: blink 2s infinite; }
+
+  .scroll-indicator { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; animation: floatBob 2s ease-in-out infinite; }
+  @keyframes floatBob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--naranja), transparent); }
+  .scroll-text { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); }
+
+  .contenido-wrapper { max-width: 780px; margin: 0 auto; padding: 80px 40px; }
+  .intro-grande { font-size: 1.3rem; font-weight: 400; line-height: 1.7; color: rgba(242,242,238,0.85); margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .intro-grande::first-letter { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 0.8; float: left; margin-right: 16px; color: var(--naranja); }
+
+  h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 60px 0 24px; color: var(--blanco); position: relative; padding-left: 20px; }
+  h2::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--naranja); }
+  p { margin-bottom: 24px; color: rgba(242,242,238,0.78); font-size: 1.05rem; }
+
+  .alerta-roja { background: rgba(230,21,21,0.1); border: 1px solid rgba(230,21,21,0.3); border-left: 4px solid var(--rojo); padding: 24px 28px; margin: 32px 0; }
+  .alerta-roja strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 10px; }
+  .alerta-roja p { color: rgba(255,200,200,0.9); margin: 0; font-size: 0.95rem; }
+
+  .caja-datos { background: var(--gris-oscuro); border-left: 4px solid var(--naranja); padding: 32px 36px; margin: 48px 0; }
+  .caja-datos h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--naranja); margin-bottom: 20px; }
+  .dato-item { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; font-size: 0.95rem; color: rgba(242,242,238,0.82); }
+  .dato-item::before { content: '▸'; color: var(--naranja); flex-shrink: 0; margin-top: 2px; }
+
+  /* TERMÓMETRO VISUAL */
+  .termometro-visual { background: var(--gris-oscuro); border: 1px solid rgba(255,255,255,0.05); padding: 40px; margin: 48px 0; }
+  .termometro-visual h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--naranja); margin-bottom: 32px; }
+  .temp-item { margin-bottom: 24px; }
+  .temp-label { display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(242,242,238,0.7); margin-bottom: 8px; }
+  .temp-num { font-weight: 600; }
+  .temp-bar-bg { height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; }
+  .temp-bar { height: 6px; border-radius: 3px; }
+
+  /* EFECTOS CARD */
+  .efecto-card { background: rgba(15,15,15,0.8); border: 1px solid rgba(255,255,255,0.05); padding: 28px; margin-bottom: 16px; display: grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: start; transition: border-color 0.3s; }
+  .efecto-card:hover { border-color: rgba(249,115,22,0.3); }
+  .efecto-emoji { font-size: 2.5rem; line-height: 1; }
+  .efecto-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--blanco); margin-bottom: 8px; }
+  .efecto-desc { font-size: 0.9rem; color: rgba(242,242,238,0.65); line-height: 1.6; margin: 0; }
+
+  .cita-destacada { margin: 56px 0; padding: 0 0 0 32px; border-left: 3px solid rgba(249,115,22,0.4); }
+  .cita-texto { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; line-height: 1.3; font-weight: 700; color: var(--blanco); margin-bottom: 12px; }
+  .cita-fuente { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+
+  .verificado { background: rgba(0,80,0,0.15); border: 1px solid rgba(0,180,0,0.2); border-left: 4px solid rgba(0,180,0,0.6); padding: 20px 24px; margin: 32px 0; font-size: 0.9rem; color: rgba(180,255,180,0.8); }
+  .verificado strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,200,0,0.7); margin-bottom: 8px; }
+
+  .separador { display: flex; align-items: center; gap: 20px; margin: 56px 0; color: var(--gris); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; }
+  .separador::before, .separador::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+
+  .conclusion { background: linear-gradient(135deg, var(--gris-oscuro) 0%, rgba(40,15,0,0.6) 100%); border-top: 3px solid var(--naranja); padding: 48px; margin: 60px 0 0; position: relative; overflow: hidden; }
+  .conclusion h2 { margin-top: 0; border: none; padding: 0; }
+  .conclusion h2::before { display: none; }
+
+  .mas-articulos { background: var(--gris-oscuro); padding: 80px 40px; margin-top: 80px; }
+  .mas-titulo { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 4px; text-align: center; margin-bottom: 48px; }
+  .mas-titulo span { color: var(--rojo); }
+  .articulos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; max-width: 900px; margin: 0 auto; }
+  .articulo-link { background: rgba(8,8,8,0.8); padding: 28px; text-decoration: none; color: var(--blanco); transition: background 0.3s; border-left: 3px solid transparent; }
+  .articulo-link:hover { background: rgba(30,30,30,0.9); border-left-color: var(--rojo); }
+  .al-cat { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 12px; }
+  .al-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+
+  footer { background: #030303; padding: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+  .footer-logo span { color: var(--rojo); }
+  .footer-copy { font-size: 0.75rem; color: var(--gris); letter-spacing: 1px; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .alerta-actualidad { padding: 10px 20px; font-size: 0.7rem; top: 64px; }
+    .hero-articulo { padding: 150px 20px 60px; }
+    h1 { font-size: 2.8rem; }
+    .contenido-wrapper { padding: 60px 20px; }
+    .conclusion { padding: 32px 24px; }
+    .mas-articulos { padding: 60px 20px; }
+    .tierra-bg { display: none; }
+    footer { padding: 24px 20px; }
+    .efecto-card { grid-template-columns: 40px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">VIRA<span>LIX</span></a>
+  <span class="nav-tag">ALERTA CLIMÁTICA 2026</span>
+</nav>
+
+<div class="alerta-actualidad">
+  <div class="alerta-dot"></div>
+  NOAA CONFIRMA — 82% de probabilidad de Super El Niño — Octubre 2026 / Febrero 2027
+</div>
+
+<section class="hero-articulo">
+  <div class="tierra-bg">🌍</div>
+  <span class="categoria-tag">Ciencia · Clima · Actualidad</span>
+  <h1>Super El Niño 2026: el fenómeno que podría ser el más devastador desde <span class="highlight">1877</span></h1>
+  <div class="meta-bar">
+    <span class="actualidad-tag">● ALERTA ROJA</span>
+    <span class="meta-item">Por <strong>Equipo VIRALIX</strong></span>
+    <span class="meta-item">Actualizado <strong>Mayo 2026</strong></span>
+    <span class="lectura-tag">8 min lectura</span>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">Leer</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<article class="contenido-wrapper">
+
+  <p class="intro-grande reveal">
+    La NOAA, la agencia meteorológica más importante del mundo, acaba de confirmar que hay un 82% de probabilidad de que a finales de 2026 vivamos un Super El Niño. Los modelos climáticos apuntan a anomalías de temperatura en el Pacífico de hasta +3,1 grados centígrados. El último evento de esta magnitud fue en 1877 y mató a 50 millones de personas. Esta vez, los científicos dicen que tenemos tiempo de prepararnos. Pero solo si actuamos ya.
+  </p>
+
+  <div class="alerta-roja reveal">
+    <strong>⚠️ Alerta NOAA — 14 mayo 2026</strong>
+    <p>El Centro de Predicción Climática de la NOAA eleva la probabilidad de Super El Niño al 82% para el período octubre 2026 — febrero 2027. El índice Niño 3.4 del modelo europeo ECMWF ha entrado en "territorio récord" según el profesor Paul Roundy de la Universidad Estatal de Nueva York.</p>
+  </div>
+
+  <h2 class="reveal">Qué es El Niño y por qué este es diferente</h2>
+
+  <p class="reveal">El Niño es un fenómeno climático que ocurre cuando las aguas superficiales del océano Pacífico central y oriental se calientan por encima de lo normal. Sucede cada 2 a 7 años, dura entre 9 y 12 meses, y altera los patrones de lluvia, viento y temperatura en todo el planeta. No es nuevo: lleva ocurriendo miles de años.</p>
+
+  <p class="reveal">Lo que hace diferente al fenómeno de 2026 es su velocidad e intensidad. El calentamiento está siendo acelerado de una forma que los modelos no habían previsto hace apenas dos meses. Cuando la temperatura del Pacífico ecuatorial sube 2 grados o más por encima de la media histórica, los científicos lo clasifican como "muy fuerte". Los modelos actuales apuntan a +3,1 grados en noviembre. Eso sería territorio completamente desconocido desde hace 150 años.</p>
+
+  <div class="verificado reveal">
+    <strong>✓ Fuentes verificadas</strong>
+    Datos del Centro de Predicción Climática de la NOAA (informe 14 mayo 2026), North American Multi-Model Ensemble, Centro Europeo de Previsiones Meteorológicas a Plazo Medio (ECMWF), y declaraciones del profesor Paul Roundy (Universidad Estatal de Nueva York en Albany). Todos los datos son públicos y verificables.
+  </div>
+
+  <div class="termometro-visual reveal">
+    <h3>🌡️ Los Super El Niños más intensos de la historia — anomalía de temperatura</h3>
+    <div class="temp-item">
+      <div class="temp-label"><span>1877-1878 — El mayor registrado</span><span class="temp-num" style="color:#ef4444">+3.5°C</span></div>
+      <div class="temp-bar-bg"><div class="temp-bar" style="width:100%; background:linear-gradient(90deg,#f97316,#ef4444)"></div></div>
+    </div>
+    <div class="temp-item">
+      <div class="temp-label"><span>1997-1998 — El "Godzilla" moderno</span><span class="temp-num" style="color:#f97316">+2.8°C</span></div>
+      <div class="temp-bar-bg"><div class="temp-bar" style="width:80%; background:linear-gradient(90deg,#eab308,#f97316)"></div></div>
+    </div>
+    <div class="temp-item">
+      <div class="temp-label"><span>1982-1983 — El que nadie esperaba</span><span class="temp-num" style="color:#f97316">+2.4°C</span></div>
+      <div class="temp-bar-bg"><div class="temp-bar" style="width:68%; background:linear-gradient(90deg,#eab308,#f97316)"></div></div>
+    </div>
+    <div class="temp-item">
+      <div class="temp-label"><span>2015-2016 — El más reciente muy fuerte</span><span class="temp-num" style="color:#eab308">+2.3°C</span></div>
+      <div class="temp-bar-bg"><div class="temp-bar" style="width:65%; background:linear-gradient(90deg,#22c55e,#eab308)"></div></div>
+    </div>
+    <div class="temp-item">
+      <div class="temp-label"><span>2026-2027 — Proyección actual ECMWF</span><span class="temp-num" style="color:#ef4444">+3.1°C (proyectado)</span></div>
+      <div class="temp-bar-bg"><div class="temp-bar" style="width:88%; background:linear-gradient(90deg,#f97316,#ef4444); animation: pulse 1.5s ease-in-out infinite;"></div></div>
+    </div>
+  </div>
+
+  <h2 class="reveal">Qué pasó en 1877: la última vez que fue así de grave</h2>
+
+  <p class="reveal">El Super El Niño de 1877-1878 es el mayor evento climático de este tipo registrado en la historia moderna. La anomalía de temperatura superó los 3,5 grados centígrados. El resultado fue una sequía global que golpeó simultáneamente a China, India, Brasil y África subsahariana.</p>
+
+  <p class="reveal">Las hambrunas que siguieron mataron a entre 30 y 50 millones de personas según las estimaciones históricas, lo que equivalía al 4% de la población mundial en aquel momento. Sin embargo, los historiadores y climatólogos son claros en un punto importante: la magnitud de la catástrofe humana no fue solo culpa del clima. Las políticas coloniales de Gran Bretaña, que siguió exportando grano de India mientras la población moría de hambre, multiplicaron el número de muertos.</p>
+
+  <div class="cita-destacada reveal">
+    <p class="cita-texto">"La confianza está claramente aumentando en relación a lo que puede ser el mayor evento El Niño desde la década de 1870."</p>
+    <span class="cita-fuente">Paul Roundy, profesor de ciencias atmosféricas — Universidad Estatal de Nueva York, mayo 2026</span>
+  </div>
+
+  <h2 class="reveal">Qué va a pasar: los efectos concretos</h2>
+
+  <p class="reveal">Un Super El Niño no significa lo mismo en todas partes. Sus efectos son radicalmente diferentes según la región. Mientras unas zonas se ahogan en lluvias, otras sufren sequías extremas. Aquí están los efectos más probables para este evento:</p>
+
+  <div class="efecto-card reveal">
+    <span class="efecto-emoji">🔥</span>
+    <div>
+      <div class="efecto-titulo">Temperaturas récord globales en 2027</div>
+      <p class="efecto-desc">El El Niño de 2023-2024 fue el motor principal de los récords de calor de 2024. Si el de 2026 es significativamente más intenso, los científicos advierten que 2027 podría convertirse en el año más caluroso jamás registrado, superando todos los registros anteriores con facilidad.</p>
+    </div>
+  </div>
+
+  <div class="efecto-card reveal">
+    <span class="efecto-emoji">🌧️</span>
+    <div>
+      <div class="efecto-titulo">Lluvias torrenciales en el sur de Europa</div>
+      <p class="efecto-desc">España y el sur de Europa tienden a recibir más precipitaciones durante los eventos fuertes de El Niño, especialmente en otoño e invierno. El patrón histórico sugiere lluvias por encima de la media en la Península Ibérica entre noviembre 2026 y febrero 2027.</p>
+    </div>
+  </div>
+
+  <div class="efecto-card reveal">
+    <span class="efecto-emoji">🏜️</span>
+    <div>
+      <div class="efecto-titulo">Sequías devastadoras en Asia y África</div>
+      <p class="efecto-desc">India, Indonesia, Australia y buena parte de África subsahariana sufrirán sequías severas. Esto afecta directamente a la producción agrícola global, con el riesgo de desabastecimiento de productos básicos y subida de precios de alimentos en todo el mundo, incluida España.</p>
+    </div>
+  </div>
+
+  <div class="efecto-card reveal">
+    <span class="efecto-emoji">🌀</span>
+    <div>
+      <div class="efecto-titulo">Más huracanes en el Pacífico</div>
+      <p class="efecto-desc">El El Niño favorece la formación de más tormentas tropicales en el Pacífico oriental. CNN ha informado de que la temporada de huracanes en el Pacífico 2026 comenzó ya con esta incógnita sobre la mesa. Al mismo tiempo, el Atlántico suele tener una temporada de huracanes más tranquila.</p>
+    </div>
+  </div>
+
+  <div class="efecto-card reveal">
+    <span class="efecto-emoji">💰</span>
+    <div>
+      <div class="efecto-titulo">Impacto económico global</div>
+      <p class="efecto-desc">El El Niño de 1997-1998 drenó entre 32 y 96 mil millones de dólares de la economía global. El de 2026, si alcanza la intensidad proyectada, podría superar esa cifra. La subida de precios de alimentos, los daños en infraestructuras y las crisis humanitarias tienen un coste directo para todos.</p>
+    </div>
+  </div>
+
+  <div class="separador reveal">— lo que dice la ciencia —</div>
+
+  <h2 class="reveal">¿Hay motivos para el pánico?</h2>
+
+  <p class="reveal">La respuesta honesta es: hay motivos para la preocupación, pero no para el pánico. Los científicos son claros en que la situación de 2026 no es comparable a la de 1877 en términos de capacidad de respuesta humana. Tenemos sistemas de alerta temprana, reservas de alimentos, tecnología de irrigación y coordinación internacional que no existían hace 150 años.</p>
+
+  <p class="reveal">Lo que sí es preocupante es la velocidad del calentamiento y la coincidencia con otras crisis globales. El mundo llega a este Super El Niño con inflación estructural, conflictos geopolíticos activos y sistemas de salud todavía recuperándose de la pandemia. La capacidad de absorber shocks climáticos es menor que en momentos de mayor estabilidad.</p>
+
+  <div class="caja-datos reveal">
+    <h3>📅 Calendario del Super El Niño 2026</h3>
+    <div class="dato-item"><strong>Mayo-junio 2026:</strong> Fase de consolidación. La transición de condiciones neutras a El Niño tiene un 82% de probabilidad según la NOAA</div>
+    <div class="dato-item"><strong>Julio-septiembre 2026:</strong> Desarrollo e intensificación. Los vientos del oeste seguirán empujando aguas cálidas hacia el Pacífico ecuatorial</div>
+    <div class="dato-item"><strong>Octubre-noviembre 2026:</strong> Pico máximo proyectado. Anomalía de hasta +3,1°C según el modelo ECMWF</div>
+    <div class="dato-item"><strong>Diciembre 2026 - febrero 2027:</strong> Período de mayor impacto climático global. Sequías, lluvias extremas y temperaturas récord</div>
+    <div class="dato-item"><strong>2027:</strong> Posible año más caluroso jamás registrado si el fenómeno alcanza la intensidad proyectada</div>
+  </div>
+
+  <h2 class="reveal">Cómo afecta a España</h2>
+
+  <p class="reveal">Para España, los efectos de un Super El Niño son una mezcla de buenas y malas noticias. El patrón histórico indica más lluvias en otoño e invierno, lo que puede aliviar la sequía crónica que sufre especialmente el sureste peninsular. Ese es el lado positivo.</p>
+
+  <p class="reveal">El lado negativo es económico. La subida de precios de alimentos a nivel global llega también a los supermercados españoles. Los productos que importamos de regiones afectadas por sequías, como arroz, café, cacao y frutas tropicales, pueden encarecerse significativamente. Y si el verano de 2026 viene marcado por olas de calor extremas antes del pico del fenómeno, el turismo y la agricultura también sufrirán.</p>
+
+  <div class="conclusion reveal">
+    <h2>El planeta nos avisa con tiempo</h2>
+    <p>La diferencia entre 1877 y 2026 no es el fenómeno en sí: la naturaleza hace lo que siempre ha hecho. La diferencia es que esta vez lo sabemos con meses de antelación. Tenemos modelos, datos y capacidad de preparación que nuestros bisabuelos no tenían.</p>
+    <p>Lo que pase dependerá de cómo usen ese tiempo los gobiernos, las organizaciones internacionales y, en última instancia, cada uno de nosotros. La ciencia ha cumplido con su parte: alertar. Ahora le toca a la política.</p>
+    <p><strong>Seguiremos actualizando este artículo con cada nuevo informe de la NOAA y el ECMWF. El próximo modelo completo se espera para junio 2026.</strong></p>
+  </div>
+
+</article>
+
+<section class="mas-articulos">
+  <h2 class="mas-titulo">SEGUIR <span>LEYENDO</span></h2>
+  <div class="articulos-grid">
+    <a href="articulo-hantavirus.html" class="articulo-link"><div class="al-cat">Actualidad</div><div class="al-titulo">Hantavirus en España: el brote del crucero Hondius</div></a>
+    <a href="articulo-asesino-baraja.html" class="articulo-link"><div class="al-cat">True Crime</div><div class="al-titulo">El Asesino de la Baraja: el caso completo</div></a>
+    <a href="articulo-marianas.html" class="articulo-link"><div class="al-cat">Ciencia</div><div class="al-titulo">Qué hay realmente en la Fosa de las Marianas</div></a>
+    <a href="articulo-falsos-recuerdos.html" class="articulo-link"><div class="al-cat">Mente</div><div class="al-titulo">El fenómeno que hace que recuerdes cosas que nunca pasaron</div></a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">VIRA<span>LIX</span></a>
+  <span class="footer-copy">© 2026 VIRALIX — Contenido verificado para mentes curiosas</span>
+</footer>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function animCursor() {
+    rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+    cursor.style.left = mx - 6 + 'px'; cursor.style.top = my - 6 + 'px';
+    ring.style.left = rx - 18 + 'px'; ring.style.top = ry - 18 + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; });
+    a.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; });
+  });
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
