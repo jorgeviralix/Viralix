@@ -46,3 +46,10 @@
     <priority>0.9</priority>
   </url>
 </urlset>
+
+  <url>
+    <loc>https://viralix-theta.vercel.app/articulo-alcasser.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
