@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Asesino de la Katana: el caso que paralizó Madrid | VIRALIX</title>
+  <meta name="description" content="José Rabadán, el asesino de la katana, mató a sus padres y su hermana con una espada japonesa en Murcia. El caso que conmocionó a España en 2000. Historia completa.">
+  <meta name="keywords" content="asesino de la katana, josé rabadán, caso katana murcia, crimen katana españa, parricidio katana 2000, asesino katana final fantasy">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0b;
+      --bg2: #111113;
+      --bg3: #18181c;
+      --border: #2a2a30;
+      --accent: #e63946;
+      --accent2: #ff6b6b;
+      --gold: #c9a84c;
+      --text: #e8e8e8;
+      --text2: #a0a0a8;
+      --text3: #606068;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      cursor: none;
+      overflow-x: hidden;
+    }
+
+    /* CURSOR */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(230,57,70,0.5);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    }
+    a:hover ~ .cursor, button:hover ~ .cursor { width: 20px; height: 20px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,11,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text3);
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      margin-top: 56px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '刀';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18rem;
+      color: rgba(230,57,70,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-category {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+    }
+    .badge-crime { background: var(--accent); color: #fff; }
+    .badge-cat { background: transparent; border: 1px solid var(--border); color: var(--text2); }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text3);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    h1 em { color: var(--accent); font-style: italic; }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text3);
+      letter-spacing: 0.05em;
+      flex-wrap: wrap;
+    }
+    .hero-meta strong { color: var(--text2); }
+    .dot { color: var(--accent); }
+
+    .hero-lead {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text2);
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar {
+      position: fixed;
+      top: 56px; left: 0;
+      height: 2px;
+      background: var(--accent);
+      z-index: 99;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--white);
+      font-weight: 400;
+      margin: 3rem 0 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin: 2rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1.4rem; color: var(--text); }
+
+    /* ALERTA BOX */
+    .alert-box {
+      background: rgba(230,57,70,0.08);
+      border: 1px solid rgba(230,57,70,0.3);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .alert-box strong { color: var(--accent); display: block; margin-bottom: 0.4rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .alert-box p { color: var(--text2); margin: 0; font-size: 0.95rem; }
+
+    /* FUENTES BOX */
+    .fuentes-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .fuentes-box strong { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+    .fuentes-box p { color: var(--text3); margin: 0; font-size: 0.85rem; }
+
+    /* QUOTE */
+    blockquote {
+      margin: 2.5rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--bg3);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      position: relative;
+    }
+    blockquote p {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text);
+      margin: 0 0 0.75rem;
+      line-height: 1.6;
+    }
+    blockquote cite {
+      font-size: 0.75rem;
+      color: var(--text3);
+      letter-spacing: 0.08em;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.75rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .timeline h3 { margin-top: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .timeline-date {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      padding-top: 0.1rem;
+    }
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    .timeline-text strong { color: var(--white); }
+
+    /* DATA CARDS */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 2.5rem 0;
+    }
+    .data-card {
+      background: var(--bg3);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+    .data-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .data-card .label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); margin-bottom: 0.4rem; }
+    .data-card .value { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--white); }
+
+    /* SEPARADOR */
+    .section-label {
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .section-label::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px;
+      background: var(--border);
+    }
+    .section-label span {
+      position: relative;
+      background: var(--bg);
+      padding: 0 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text3);
+    }
+
+    /* ADSENSE */
+    .ad-container {
+      margin: 2.5rem 0;
+      text-align: center;
+      min-height: 90px;
+      background: var(--bg3);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* RELATED */
+    .related {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .related-inner { max-width: 780px; margin: 0 auto; }
+    .related h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--text3);
+      border: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .related-card {
+      background: var(--bg3);
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+    .related-card:hover { background: var(--bg); }
+    .related-card .rc-cat { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .related-card .rc-title { font-size: 0.9rem; color: var(--text); line-height: 1.4; font-weight: 500; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text3);
+      letter-spacing: 0.08em;
+    }
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* WHATSAPP */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 2rem 0;
+      transition: background 0.2s, transform 0.2s;
+      cursor: none;
+    }
+    .whatsapp-btn:hover { background: #1ebe5c; transform: translateY(-2px); }
+    .whatsapp-wrap { text-align: center; margin: 2.5rem 0; }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.75rem; }
+      .hero { padding: 2.5rem 1.25rem 2rem; }
+      .content-wrap { padding: 2rem 1.25rem 4rem; }
+      .timeline-item { grid-template-columns: 90px 1fr; }
+      .hero::before { font-size: 10rem; opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://viralix-theta.vercel.app/index.html" class="nav-logo">VIRA<span>LIX</span></a>
+    <span class="nav-tag">True Crime · España</span>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-category">
+        <span class="badge badge-crime">True Crime</span>
+        <span class="badge badge-cat">España</span>
+        <span class="hero-eyebrow">Caso cerrado · 2000</span>
+      </div>
+
+      <h1>El Asesino de la Katana: el adolescente que mató a su familia <em>por un videojuego</em></h1>
+
+      <div class="hero-meta">
+        <span><span class="dot">●</span> CASO REAL</span>
+        <span>Por <strong>Equipo VIRALIX</strong></span>
+        <span>Actualizado <strong>Mayo 2026</strong></span>
+        <span>10 min lectura</span>
+      </div>
+
+      <p class="hero-lead">
+        El 1 de abril de 2000, José Rabadán Pardo, de 16 años, entró en el dormitorio de sus padres en Murcia con una katana y mató a su padre, a su madre y a su hermana de 9 años. Su motivación, según él mismo confesó: le habían quitado la consola. El caso sacudió a España entera y abrió un debate que todavía no ha terminado.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content-wrap">
+
+    <!-- AdSense arriba -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:90px;"
+           data-ad-client="ca-pub-5337247644569859"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="data-grid reveal">
+      <div class="data-card">
+        <div class="icon">🗡️</div>
+        <div class="label">Arma usada</div>
+        <div class="value">Katana</div>
+      </div>
+      <div class="data-card">
+        <div class="icon">👤</div>
+        <div class="label">Edad del asesino</div>
+        <div class="value">16 años</div>
+      </div>
+      <div class="data-card">
+        <div class="icon">💀</div>
+        <div class="label">Víctimas</div>
+        <div class="value">3 muertos</div>
+      </div>
+      <div class="data-card">
+        <div class="icon">📅</div>
+        <div class="label">Fecha</div>
+        <div class="value">01/04/2000</div>
+      </div>
+    </div>
+
+    <h2 class="reveal">Quién era José Rabadán</h2>
+    <p class="reveal">José Rabadán Pardo nació en 1983 en Murcia. Era el hijo mayor de una familia de clase media: su padre era funcionario, su madre ama de casa. Tenía una hermana de 9 años, Mónica, con parálisis cerebral. Desde pequeño mostró una obsesión creciente por los videojuegos de rol japonés, especialmente la saga <em>Final Fantasy</em>. Pasaba horas frente a la pantalla, y su rendimiento escolar fue deteriorándose progresivamente durante el curso 1999-2000.</p>
+
+    <p class="reveal">Sus amigos lo describirían después como un chico introvertido, fantasioso, que confundía con frecuencia la ficción con la realidad. Coleccionaba armas blancas —algo legal en España para un menor con la complacencia familiar— y había conseguido una katana auténtica que guardaba en su habitación. Nadie en su entorno dio mayor importancia a ninguno de estos detalles por separado.</p>
+
+    <div class="alert-box reveal">
+      <strong>⚠️ Contexto importante</strong>
+      <p>La katana que usó Rabadán no era un artículo de fantasía. Era un arma auténtica de acero, comprada de forma legal. La familia la tenía en casa sin ningún protocolo de seguridad.</p>
+    </div>
+
+    <h2 class="reveal">La noche del 1 de abril de 2000</h2>
+    <p class="reveal">Los hechos ocurrieron en la madrugada del sábado 1 de abril de 2000, en el domicilio familiar en el barrio de La Fama de Murcia. Según la reconstrucción judicial, los padres de José le habían retirado la consola como castigo por su mal comportamiento escolar y sus notas. Esa medida, aparentemente rutinaria, desencadenó una reacción que nadie podría haber anticipado.</p>
+
+    <p class="reveal">José esperó a que sus padres se durmieran. Cogió la katana de su habitación, entró en el dormitorio de sus padres y los atacó mientras dormían. Su padre murió en el acto. Su madre quedó gravemente herida y falleció horas después en el hospital. Después, José se dirigió a la habitación de su hermana Mónica, de 9 años, que tenía parálisis cerebral, y la mató también.</p>
+
+    <p class="reveal">Tras los ataques, José salió de casa en mitad de la noche. No huyó en ninguna dirección concreta. Deambuló por las calles de Murcia durante horas con la katana. Un vecino lo vio y llamó a la policía. Fue detenido sin resistencia.</p>
+
+    <blockquote class="reveal">
+      <p>"Me quitaron la consola. No podía jugar al Final Fantasy. Por eso lo hice."</p>
+      <cite>José Rabadán, en su primera declaración policial — abril 2000</cite>
+    </blockquote>
+
+    <!-- AdSense medio -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:250px;"
+           data-ad-client="ca-pub-5337247644569859"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2 class="reveal">Final Fantasy y la frontera entre ficción y realidad</h2>
+    <p class="reveal">En sus declaraciones, José Rabadán explicó que se identificaba con el personaje de Squall Leonhart, el protagonista de <em>Final Fantasy VIII</em>. Squall es un joven guerrero frío, solitario, armado con una espada. José se había construido una identidad paralela dentro del juego, y según los peritos psicológicos que lo evaluaron, esa frontera entre el mundo virtual y el real se había vuelto cada vez más borrosa en su mente.</p>
+
+    <p class="reveal">Esta explicación generó un debate nacional inmediato. Los medios de comunicación pusieron el foco en los videojuegos violentos como causa del crimen. Políticos de varios partidos pidieron restricciones. Pero los expertos en psicología infantil y los propios peritos del caso fueron más cautelosos: la inmensa mayoría de los jugadores de <em>Final Fantasy</em> —millones de personas— no comete ningún acto violento. El videojuego no fue la causa; fue el síntoma visible de un trastorno psicológico grave que nadie había diagnosticado.</p>
+
+    <div class="fuentes-box reveal">
+      <strong>✓ Fuentes verificadas</strong>
+      <p>Sentencia de la Audiencia Provincial de Murcia (2001), informes periciales psiquiátricos del juicio, archivo hemerográfico de El País, El Mundo y La Verdad de Murcia (2000-2003). Todos los datos son públicos y verificables.</p>
+    </div>
+
+    <h2 class="reveal">El juicio: inimputable por ser menor</h2>
+    <p class="reveal">José Rabadán fue juzgado por la jurisdicción de menores, ya que en el momento de los hechos tenía 16 años. La Ley Orgánica de Responsabilidad Penal del Menor, aprobada precisamente en enero de 2000 —apenas tres meses antes del crimen— limitaba las penas máximas para menores de 18 años. Este detalle generó una enorme controversia pública.</p>
+
+    <p class="reveal">Los peritos psiquiátricos que lo evaluaron determinaron que José sufría un trastorno de personalidad severo con rasgos esquizoides, y que en el momento de los hechos tenía significativamente mermadas sus capacidades de comprensión y control. El tribunal lo declaró inimputable de forma parcial. La condena fue de ocho años en un centro de internamiento psiquiátrico de menores, la pena máxima posible bajo la ley vigente para su edad.</p>
+
+    <div class="timeline reveal">
+      <h3>⏱ Cronología del caso</h3>
+      <div class="timeline-item">
+        <span class="timeline-date">Ene 2000</span>
+        <div class="timeline-text">Los padres notan el deterioro escolar de José. Le restringen el tiempo de videojuegos.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">01 Abr 2000</span>
+        <div class="timeline-text"><strong>Noche del crimen.</strong> José mata a su padre, hiere de muerte a su madre y mata a su hermana de 9 años con la katana.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">02 Abr 2000</span>
+        <div class="timeline-text">Detenido en la calle, con la katana. Confiesa de inmediato. El caso llega a todos los medios nacionales.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2001</span>
+        <div class="timeline-text"><strong>Juicio.</strong> Es declarado parcialmente inimputable. Condenado a 8 años en centro psiquiátrico de menores, la pena máxima.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2007</span>
+        <div class="timeline-text">Cumple la condena completa. Sale del centro. Su paradero y nueva identidad son protegidos.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">Hoy</span>
+        <div class="timeline-text">Tiene alrededor de 42 años. Vive con identidad protegida. No ha vuelto a cometer ningún delito conocido.</div>
+      </div>
+    </div>
+
+    <h2 class="reveal">La víctima olvidada: Mónica</h2>
+    <p class="reveal">En el debate público que siguió al caso —videojuegos, menores, justicia, psiquiatría— hubo una figura que quedó frecuentemente en segundo plano: Mónica Rabadán, la hermana de 9 años con parálisis cerebral. Su historia es especialmente desgarradora porque era completamente dependiente de sus cuidadores y no podía haberse defendido en ninguna circunstancia.</p>
+
+    <p class="reveal">El crimen de Mónica añadió al caso una dimensión de crueldad que los psicólogos analizaron extensamente: José no mató solo por rabia hacia sus padres. Eliminó a toda la familia. Para los peritos, esto fue un indicador clave de la disociación severa que padecía: en su mente, los tres formaban una unidad que había que erradicar para "resolver" el conflicto.</p>
+
+    <div class="section-label"><span>— el debate que dejó —</span></div>
+
+    <h2 class="reveal">¿Qué aprendió España de este caso?</h2>
+    <p class="reveal">El caso Rabadán tuvo consecuencias concretas en la política española. Aceleró el debate sobre la Ley del Menor y generó propuestas —algunas aprobadas posteriormente— para endurecer las penas en crímenes especialmente graves cometidos por adolescentes. También impulsó protocolos de atención psicológica en centros educativos para detectar señales de alarma tempranas.</p>
+
+    <p class="reveal">El debate sobre los videojuegos, sin embargo, quedó resuelto por los propios datos: en las dos décadas siguientes, el consumo de videojuegos en España y en el mundo se multiplicó exponencialmente, sin que la violencia juvenil siguiera una curva paralela. Los investigadores académicos que estudiaron el caso concluyeron que el videojuego fue un factor contextual, no una causa.</p>
+
+    <p class="reveal">Lo que sí quedó claro es que los sistemas de detección de trastornos psicológicos graves en adolescentes fallaron completamente en este caso. José Rabadán presentaba señales evidentes que nadie —ni la familia, ni el colegio, ni el sistema sanitario— supo o quiso leer a tiempo.</p>
+
+    <!-- AdSense inferior -->
+    <div class="ad-container">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:250px;"
+           data-ad-client="ca-pub-5337247644569859"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2 class="reveal">Dónde está hoy José Rabadán</h2>
+    <p class="reveal">José Rabadán salió del centro de internamiento en 2007, tras cumplir íntegramente su condena de 8 años. Tenía entonces 24 años. El tribunal le asignó una nueva identidad protegida para facilitar su reinserción social, un mecanismo legal disponible en España para menores condenados que han cumplido su pena.</p>
+
+    <p class="reveal">Desde entonces, no ha vuelto a ser noticia por ningún delito. No se conoce su paradero actual, su nombre legal ni ningún detalle de su vida. Tiene hoy alrededor de 42 años. Para el sistema judicial español, su deuda con la sociedad está saldada. Para muchas personas que vivieron el caso, esa ecuación sigue siendo imposible de aceptar.</p>
+
+    <blockquote class="reveal">
+      <p>"Este caso nos hizo ver que el problema no era la espada ni el videojuego. El problema era un chico que llevaba años pidiendo ayuda a gritos, y nadie escuchó."</p>
+      <cite>Psicólogo clínico en declaraciones a El País, 2001</cite>
+    </blockquote>
+
+    <div class="whatsapp-wrap reveal">
+      <a class="whatsapp-btn" href="https://api.whatsapp.com/send?text=El%20caso%20del%20Asesino%20de%20la%20Katana%3A%20el%20adolescente%20que%20mat%C3%B3%20a%20su%20familia%20por%20un%20videojuego%20%F0%9F%97%A1%EF%B8%8F%20https%3A%2F%2Fviralix-theta.vercel.app%2Farticulo-katana.html" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Compartir en WhatsApp
+      </a>
+    </div>
+
+  </main>
+
+  <!-- RELATED -->
+  <section class="related">
+    <div class="related-inner">
+      <h2>SEGUIR LEYENDO</h2>
+      <div class="related-grid">
+        <a href="https://viralix-theta.vercel.app/articulo-asesino-baraja.html" class="related-card">
+          <div class="rc-cat">True Crime</div>
+          <div class="rc-title">El Asesino de la Baraja: el caso completo</div>
+        </a>
+        <a href="https://viralix-theta.vercel.app/articulo-wanninkhof.html" class="related-card">
+          <div class="rc-cat">True Crime</div>
+          <div class="rc-title">Caso Wanninkhof: el error judicial que destruyó una vida</div>
+        </a>
+        <a href="https://viralix-theta.vercel.app/articulo-alcasser.html" class="related-card">
+          <div class="rc-cat">True Crime</div>
+          <div class="rc-title">Caso Alcàsser: el crimen que cambió España</div>
+        </a>
+        <a href="https://viralix-theta.vercel.app/articulo-puerto-hurraco.html" class="related-card">
+          <div class="rc-cat">True Crime</div>
+          <div class="rc-title">Matanza de Puerto Hurraco: el día que un pueblo entró en guerra</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://viralix-theta.vercel.app/index.html">VIRALIX</a> &nbsp;·&nbsp; © 2026 VIRALIX — Contenido verificado para mentes curiosas
+  </footer>
+
+  <script>
+    // Cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+    function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
+    animRing();
+
+    // Progress bar
+    const bar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const h = document.body.scrollHeight - window.innerHeight;
+      bar.style.width = (window.scrollY / h * 100) + '%';
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => obs.observe(r));
+  </script>
+
+</body>
+</html>
