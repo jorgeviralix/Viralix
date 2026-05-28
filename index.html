@@ -375,7 +375,7 @@ document.querySelectorAll('.live-counter').forEach(el => {
     <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">11</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">Artículos publicados</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Contenido verificado</div></div>
     <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Casos por descubrir</div></div>
   </div>
@@ -402,7 +402,7 @@ document.querySelectorAll('.live-counter').forEach(el => {
 
 <!-- STATS BAR -->
 <div class="stats-bar reveal">
-  <div class="stat-block"><div class="num">11<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num">13<span>+</span></div><div class="lbl">Artículos publicados</div></div>
   <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Contenido verificado</div></div>
   <div class="stat-block"><div class="num">5<span>★</span></div><div class="lbl">Valoración media</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
@@ -554,23 +554,27 @@ document.querySelectorAll('.live-counter').forEach(el => {
     </div>
 
     <!-- PRÓXIMOS -->
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#120a1a,#1a0a12)"><span class="card-emoji">🟣</span></div>
-      <span class="tag" style="background:rgba(168,85,247,0.15);color:#c084fc;border-color:rgba(168,85,247,0.3)">True Crime</span>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-diana-quer.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Caso Diana Quer" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(0,220,200,0.15);color:#0ff4e0;border-color:rgba(0,220,200,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
-      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>11 min</span></div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Galicia, 2016. 18 años. Prisión permanente revisable para su asesino.</p>
+      <div class="article-meta"><span>29 May</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
-        <span class="proxima-badge" style="background:rgba(168,85,247,0.15);color:#c084fc">🔜 En preparación</span>
+        <a href="articulo-diana-quer.html" class="card-leer" style="color:#0ff4e0" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso%20Diana%20Quer%3A%20500%20d%C3%ADas%20busc%C3%A1ndola%20https://viralix-theta.vercel.app/articulo-diana-quer.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a1a0a,#0a120a)"><span class="card-emoji">🟢</span></div>
-      <span class="tag" style="background:rgba(34,197,94,0.15);color:#4ade80;border-color:rgba(34,197,94,0.3)">True Crime</span>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-asunta.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asunta.png" alt="Caso Asunta" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(52,211,153,0.15);color:#6ee7b7;border-color:rgba(52,211,153,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Asunta: sus propios padres la drogaron y la estrangularon. ¿Por qué?</h3>
-      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>10 min</span></div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Santiago, 2013. 12 años. Adoptada en China. Asesinada por sus padres.</p>
+      <div class="article-meta"><span>29 May</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
-        <span class="proxima-badge" style="background:rgba(34,197,94,0.15);color:#4ade80">🔜 En preparación</span>
+        <a href="articulo-asunta.html" class="card-leer" style="color:#6ee7b7" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso%20Asunta%3A%20sus%20padres%20la%20adoptaron%20y%20la%20mataron%20https://viralix-theta.vercel.app/articulo-asunta.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
@@ -683,7 +687,7 @@ document.querySelectorAll('.live-counter').forEach(el => {
     <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">9 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">11 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
