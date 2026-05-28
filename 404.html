@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso no encontrado | VIRALIX</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#05060a;color:#f4f2ee;font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden}
+body::before{content:'404';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:clamp(200px,40vw,500px);color:rgba(232,50,26,0.04);line-height:1;pointer-events:none}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;color:#f4f2ee;text-decoration:none;position:absolute;top:24px;left:40px}
+.logo span{color:#e8321a}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,96px);letter-spacing:4px;color:#f4f2ee;margin-bottom:16px;position:relative}
+h1 span{color:#e8321a}
+p{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(16px,2.5vw,22px);color:rgba(244,242,238,0.45);max-width:480px;margin-bottom:40px;line-height:1.5}
+.btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;text-decoration:none;border-radius:2px;transition:all .2s}
+.btn-primary{background:#e8321a;color:#fff}
+.btn-primary:hover{background:#ff4d35;transform:translateY(-2px)}
+.btn-ghost{background:none;border:1px solid rgba(255,255,255,0.1);color:rgba(244,242,238,0.5)}
+.btn-ghost:hover{color:#fff;border-color:#e8321a}
+.random{margin-top:60px;font-size:11px;color:rgba(244,242,238,0.3);letter-spacing:2px;text-transform:uppercase}
+.random a{color:#e8321a;text-decoration:none}
+</style>
+</head>
+<body>
+<a href="index.html" class="logo">VIRAL<span>I</span>X</a>
+<h1>CASO <span>NO</span> ENCONTRADO</h1>
+<p>Este expediente no existe... todavía. Quizás estemos investigándolo. Vuelve al archivo principal.</p>
+<div class="btns">
+  <a href="index.html" class="btn btn-primary">Volver al archivo</a>
+  <a href="#" class="btn btn-ghost" id="randomBtn">Caso aleatorio</a>
+</div>
+<div class="random">O descubre un caso al azar: <a href="#" id="randomLink">🎲 Sorpréndeme</a></div>
+<script>
+const arts=['articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html','articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html','articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html','articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html','articulo-falsos-recuerdos.html'];
+function goRandom(){window.location.href=arts[Math.floor(Math.random()*arts.length)];}
+document.getElementById('randomBtn').addEventListener('click',e=>{e.preventDefault();goRandom();});
+document.getElementById('randomLink').addEventListener('click',e=>{e.preventDefault();goRandom();});
+</script>
+</body>
+</html>

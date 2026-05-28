@@ -37,6 +37,206 @@ document.querySelectorAll('.live-counter').forEach(el => {
   setInterval(updateCounter, 60000);
 });
 
+
+// CONTADORES ANIMADOS
+function animateCounters() {
+  document.querySelectorAll('.stat-block .num').forEach(el => {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    let current = 0;
+    const duration = 1500;
+    const step = target / (duration / 16);
+    const counter = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(counter); }
+      el.innerHTML = Math.floor(current) + suffix;
+    }, 16);
+  });
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
+}, { threshold: 0.3 });
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) statsObs.observe(statsBar);
+
+// BUSCADOR
+const articulos = [
+  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
+  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
+  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
+  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
+  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
+  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
+  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
+  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
+  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
+  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
+  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
+  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
+  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+];
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchNoResults = document.getElementById('searchNoResults');
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
+    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
+    if (matches.length > 0) {
+      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
+      searchResults.classList.add('active');
+      searchNoResults.style.display = 'none';
+    } else {
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      searchNoResults.style.display = 'block';
+    }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
+}
+
+// QUIZ
+const quizData = [
+  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
+  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
+  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
+  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
+  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
+];
+let quizCurrent = 0, quizCorrect = 0;
+function loadQuiz() {
+  const data = quizData[quizCurrent];
+  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
+  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
+  document.getElementById('quizPregunta').textContent = data.q;
+  const optsEl = document.getElementById('quizOpciones');
+  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
+  document.getElementById('quizNext').style.display = 'none';
+  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
+      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
+      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
+      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
+      else { setTimeout(showQuizResult, 800); }
+    });
+  });
+}
+function showQuizResult() {
+  document.getElementById('quizScore').style.display = 'none';
+  document.getElementById('quizPregunta').style.display = 'none';
+  document.getElementById('quizOpciones').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  document.querySelector('.quiz-progress').style.display = 'none';
+  const final = document.getElementById('quizFinal');
+  final.style.display = 'block';
+  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
+  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
+  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
+  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
+}
+const quizNext = document.getElementById('quizNext');
+if (quizNext) {
+  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
+  loadQuiz();
+}
+
+// MAP SCROLL ANIMATION
+const mapPoints = document.querySelectorAll('.map-point-link');
+const mapObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      mapPoints.forEach((p, i) => {
+        p.style.opacity = '0';
+        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
+      });
+      mapObs.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const mapContainer = document.querySelector('.mapa-container');
+if (mapContainer) mapObs.observe(mapContainer);
+
+
+// LOADING SCREEN
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
+});
+
+// BACK TO TOP
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+// READER COUNTER (simulated social proof)
+const readerCounter = document.getElementById('readerCounter');
+const readerNum = document.getElementById('readerNum');
+let baseReaders = Math.floor(Math.random() * 80) + 120;
+setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
+function updateReaders() {
+  baseReaders += Math.floor(Math.random() * 5) - 2;
+  if (baseReaders < 80) baseReaders = 80;
+  if (baseReaders > 300) baseReaders = 300;
+  readerNum.textContent = baseReaders;
+}
+updateReaders();
+setInterval(updateReaders, 8000);
+
+// RANDOM ARTICLE
+const allArticles = [
+  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
+  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
+  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
+  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
+  'articulo-falsos-recuerdos.html'
+];
+document.getElementById('randomBtn').addEventListener('click', () => {
+  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
+  window.location.href = random;
+});
+
+// ACCESSIBILITY - Font size
+let fontLevel = 0;
+document.getElementById('a11yBtn').addEventListener('click', () => {
+  fontLevel = (fontLevel + 1) % 3;
+  const sizes = ['1rem', '1.1rem', '1.2rem'];
+  document.body.style.fontSize = sizes[fontLevel];
+});
+
+// EASTER EGG - type VIRALIX
+let easterBuffer = '';
+document.addEventListener('keydown', e => {
+  easterBuffer += e.key.toLowerCase();
+  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
+  if (easterBuffer === 'viralix') {
+    document.body.style.transition = 'filter 0.5s';
+    document.body.style.filter = 'hue-rotate(180deg)';
+    setTimeout(() => {
+      document.body.style.filter = 'hue-rotate(360deg)';
+      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
+    }, 1500);
+    easterBuffer = '';
+  }
+});
+
+// PARALLAX on scroll for card images
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card-img img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = (rect.top / window.innerHeight - 0.5) * 20;
+      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+    }
+  });
+});
+
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -279,6 +479,124 @@ body.light::before { opacity:0.1; }
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+
+/* SCROLLBAR OSCURA */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: rgba(232,50,26,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
+
+/* CONTADOR ANIMADO */
+.stat-block .num { transition: all 0.3s; }
+.stat-block .num.counting { color: var(--accent); }
+
+/* BUSCADOR */
+.search-section { padding: 0 48px; margin-top: -40px; margin-bottom: 40px; position: relative; z-index: 10; }
+.search-box { max-width: 600px; margin: 0 auto; position: relative; }
+.search-input { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 16px 52px 16px 20px; border-radius: 4px; outline: none; transition: border-color 0.2s; }
+.search-input:focus { border-color: rgba(232,50,26,0.4); }
+.search-input::placeholder { color: var(--muted); }
+.search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--muted); pointer-events: none; }
+.search-results { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid var(--border); border-top: none; border-radius: 0 0 4px 4px; display: none; z-index: 100; max-height: 400px; overflow-y: auto; }
+.search-results.active { display: block; }
+.search-result-item { padding: 14px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: var(--white); }
+.search-result-item:hover { background: rgba(232,50,26,0.06); }
+.sr-title { font-size: 14px; font-weight: 500; }
+.sr-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+.search-no-results { padding: 20px; text-align: center; color: var(--muted); font-size: 13px; display: none; }
+
+/* CASO DEL MES */
+.caso-mes { padding: 80px 48px; position: relative; overflow: hidden; }
+.caso-mes-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); overflow: hidden; }
+.caso-mes-img { background-size: cover; background-position: center; min-height: 400px; position: relative; }
+.caso-mes-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 60%, var(--card) 100%); }
+.caso-mes-content { background: var(--card); padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+.caso-mes-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; padding: 6px 14px; border: 1px solid rgba(232,50,26,0.2); border-radius: 2px; width: fit-content; animation: casoMesPulse 2s ease-in-out infinite; }
+@keyframes casoMesPulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+.caso-mes-title { font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); line-height: 1.15; color: var(--white); margin-bottom: 16px; }
+.caso-mes-excerpt { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+.caso-mes-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; text-decoration: none; border-radius: 2px; transition: all 0.2s; width: fit-content; }
+.caso-mes-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+
+/* QUIZ */
+.quiz-section { padding: 80px 48px; background: var(--deep); border-top: 1px solid var(--border); }
+.quiz-inner { max-width: 700px; margin: 0 auto; }
+.quiz-card { background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 48px; text-align: center; }
+.quiz-pregunta { font-family: var(--font-serif); font-size: clamp(20px,3vw,28px); color: var(--white); margin-bottom: 32px; line-height: 1.3; min-height: 80px; }
+.quiz-opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.quiz-opcion { background: var(--deep); border: 1px solid var(--border); color: var(--white); font-size: 14px; padding: 16px; cursor: pointer; transition: all 0.2s; border-radius: 2px; text-align: center; }
+.quiz-opcion:hover { border-color: var(--accent); background: rgba(232,50,26,0.06); }
+.quiz-opcion.correct { border-color: #34d399; background: rgba(52,211,153,0.1); color: #34d399; }
+.quiz-opcion.wrong { border-color: #ef4444; background: rgba(239,68,68,0.1); color: #ef4444; }
+.quiz-opcion.disabled { pointer-events: none; opacity: 0.5; }
+.quiz-score { font-family: var(--font-display); font-size: 20px; letter-spacing: 2px; color: var(--muted); margin-bottom: 16px; }
+.quiz-progress { width: 100%; height: 3px; background: var(--deep); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
+.quiz-progress-bar { height: 100%; background: var(--accent); transition: width 0.3s; border-radius: 2px; }
+.quiz-next { background: var(--accent); border: none; color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; cursor: pointer; border-radius: 2px; display: none; transition: all 0.2s; }
+.quiz-next:hover { background: var(--accent2); }
+.quiz-final { display: none; }
+.quiz-final h3 { font-family: var(--font-display); font-size: 48px; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; }
+.quiz-final p { color: var(--muted); margin-bottom: 24px; }
+.quiz-share { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; font-size: 13px; font-weight: 600; padding: 12px 28px; text-decoration: none; border-radius: 4px; }
+
+@media(max-width:900px) {
+  .caso-mes-inner { grid-template-columns: 1fr; }
+  .caso-mes-img { min-height: 250px; }
+  .caso-mes-img::after { background: linear-gradient(180deg, transparent 60%, var(--card) 100%); }
+  .quiz-opciones { grid-template-columns: 1fr; }
+  .search-section { padding: 0 20px; }
+}
+@media(max-width:600px) {
+  .caso-mes { padding: 60px 20px; }
+  .caso-mes-content { padding: 28px; }
+  .quiz-section { padding: 60px 20px; }
+  .quiz-card { padding: 28px; }
+}
+
+
+/* LOADING SCREEN */
+.loader { position: fixed; inset: 0; background: #05060a; z-index: 99999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity 0.5s, visibility 0.5s; }
+.loader.hidden { opacity: 0; visibility: hidden; }
+.loader-logo { font-family: var(--font-display); font-size: 48px; letter-spacing: 6px; color: var(--white); animation: loaderPulse 1s ease-in-out infinite; }
+.loader-logo span { color: var(--accent); }
+.loader-bar { width: 120px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+.loader-bar-inner { width: 0%; height: 100%; background: var(--accent); animation: loaderFill 1.2s ease-out forwards; }
+@keyframes loaderPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+@keyframes loaderFill { 0%{width:0} 100%{width:100%} }
+
+/* BACK TO TOP */
+.back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--accent); border: none; border-radius: 50%; color: var(--white); font-size: 18px; cursor: pointer; z-index: 400; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(232,50,26,0.3); }
+.back-top.visible { opacity: 1; transform: translateY(0); }
+.back-top:hover { background: var(--accent2); transform: translateY(-3px) !important; }
+
+/* READER COUNTER */
+.reader-counter { position: fixed; bottom: 30px; left: 30px; background: var(--card); border: 1px solid var(--border); padding: 8px 16px; border-radius: 100px; font-size: 11px; color: var(--muted); z-index: 400; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(20px); transition: all 0.3s; }
+.reader-counter.visible { opacity: 1; transform: translateY(0); }
+.reader-dot { width: 6px; height: 6px; background: #34d399; border-radius: 50%; animation: readerPulse 1.5s ease-in-out infinite; }
+@keyframes readerPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ACCESSIBILITY */
+.a11y-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px; font-size: 14px; transition: all 0.2s; margin-left: 4px; }
+.a11y-btn:hover { border-color: var(--accent); color: var(--white); }
+
+/* RANDOM ARTICLE */
+.random-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px; font-size: 16px; transition: all 0.2s; margin-left: 4px; }
+.random-btn:hover { border-color: var(--accent); color: var(--white); transform: rotate(180deg); }
+
+/* SHARE EXPANDED */
+.share-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.share-btn { font-size: 0.6rem; letter-spacing: 1px; text-transform: uppercase; padding: 4px 8px; text-decoration: none; border-radius: 2px; font-weight: 600; transition: all 0.2s; display: inline-flex; align-items: center; gap: 4px; }
+.share-wa { background: #25D366; color: #fff; }
+.share-x { background: #000; color: #fff; border: 1px solid #333; }
+.share-tg { background: #0088cc; color: #fff; }
+.share-copy { background: var(--deep); color: var(--muted); border: 1px solid var(--border); cursor: pointer; }
+.share-copy:hover { color: var(--white); border-color: var(--accent); }
+
+/* PARALLAX CARDS */
+.article-card .card-img img { transition: transform 0.4s ease; }
+.article-card:hover .card-img img { transform: scale(1.08); }
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
@@ -340,9 +658,216 @@ document.querySelectorAll('.live-counter').forEach(el => {
   setInterval(updateCounter, 60000);
 });
 
+
+// CONTADORES ANIMADOS
+function animateCounters() {
+  document.querySelectorAll('.stat-block .num').forEach(el => {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    let current = 0;
+    const duration = 1500;
+    const step = target / (duration / 16);
+    const counter = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(counter); }
+      el.innerHTML = Math.floor(current) + suffix;
+    }, 16);
+  });
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
+}, { threshold: 0.3 });
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) statsObs.observe(statsBar);
+
+// BUSCADOR
+const articulos = [
+  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
+  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
+  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
+  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
+  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
+  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
+  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
+  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
+  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
+  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
+  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
+  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
+  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+];
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchNoResults = document.getElementById('searchNoResults');
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
+    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
+    if (matches.length > 0) {
+      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
+      searchResults.classList.add('active');
+      searchNoResults.style.display = 'none';
+    } else {
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      searchNoResults.style.display = 'block';
+    }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
+}
+
+// QUIZ
+const quizData = [
+  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
+  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
+  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
+  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
+  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
+];
+let quizCurrent = 0, quizCorrect = 0;
+function loadQuiz() {
+  const data = quizData[quizCurrent];
+  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
+  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
+  document.getElementById('quizPregunta').textContent = data.q;
+  const optsEl = document.getElementById('quizOpciones');
+  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
+  document.getElementById('quizNext').style.display = 'none';
+  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
+      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
+      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
+      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
+      else { setTimeout(showQuizResult, 800); }
+    });
+  });
+}
+function showQuizResult() {
+  document.getElementById('quizScore').style.display = 'none';
+  document.getElementById('quizPregunta').style.display = 'none';
+  document.getElementById('quizOpciones').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  document.querySelector('.quiz-progress').style.display = 'none';
+  const final = document.getElementById('quizFinal');
+  final.style.display = 'block';
+  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
+  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
+  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
+  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
+}
+const quizNext = document.getElementById('quizNext');
+if (quizNext) {
+  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
+  loadQuiz();
+}
+
+// MAP SCROLL ANIMATION
+const mapPoints = document.querySelectorAll('.map-point-link');
+const mapObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      mapPoints.forEach((p, i) => {
+        p.style.opacity = '0';
+        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
+      });
+      mapObs.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const mapContainer = document.querySelector('.mapa-container');
+if (mapContainer) mapObs.observe(mapContainer);
+
+
+// LOADING SCREEN
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
+});
+
+// BACK TO TOP
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+// READER COUNTER (simulated social proof)
+const readerCounter = document.getElementById('readerCounter');
+const readerNum = document.getElementById('readerNum');
+let baseReaders = Math.floor(Math.random() * 80) + 120;
+setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
+function updateReaders() {
+  baseReaders += Math.floor(Math.random() * 5) - 2;
+  if (baseReaders < 80) baseReaders = 80;
+  if (baseReaders > 300) baseReaders = 300;
+  readerNum.textContent = baseReaders;
+}
+updateReaders();
+setInterval(updateReaders, 8000);
+
+// RANDOM ARTICLE
+const allArticles = [
+  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
+  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
+  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
+  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
+  'articulo-falsos-recuerdos.html'
+];
+document.getElementById('randomBtn').addEventListener('click', () => {
+  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
+  window.location.href = random;
+});
+
+// ACCESSIBILITY - Font size
+let fontLevel = 0;
+document.getElementById('a11yBtn').addEventListener('click', () => {
+  fontLevel = (fontLevel + 1) % 3;
+  const sizes = ['1rem', '1.1rem', '1.2rem'];
+  document.body.style.fontSize = sizes[fontLevel];
+});
+
+// EASTER EGG - type VIRALIX
+let easterBuffer = '';
+document.addEventListener('keydown', e => {
+  easterBuffer += e.key.toLowerCase();
+  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
+  if (easterBuffer === 'viralix') {
+    document.body.style.transition = 'filter 0.5s';
+    document.body.style.filter = 'hue-rotate(180deg)';
+    setTimeout(() => {
+      document.body.style.filter = 'hue-rotate(360deg)';
+      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
+    }, 1500);
+    easterBuffer = '';
+  }
+});
+
+// PARALLAX on scroll for card images
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card-img img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = (rect.top / window.innerHeight - 0.5) * 20;
+      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+    }
+  });
+});
+
 </script>
 </head>
 <body>
+
+
+<!-- LOADING SCREEN -->
+<div class="loader" id="loader">
+  <div class="loader-logo">VIRAL<span>I</span>X</div>
+  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
+</div>
 
 <div class="progress-bar" id="progressBar"></div>
 <div class="cursor" id="cursor"></div>
@@ -356,8 +881,12 @@ document.querySelectorAll('.live-counter').forEach(el => {
     <a href="#categorias">Categorías</a>
     <a href="#mapa">Mapa</a>
     <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="#quiz">Quiz</a>
     <a href="#contacto">Contacto</a>
     <a href="#newsletter" class="nav-cta">Suscribirse</a>
+    <button class="random-btn" id="randomBtn" title="Artículo aleatorio">🎲</button>
+    <button class="a11y-btn" id="a11yBtn" title="Tamaño de texto">Aa</button>
     <button class="mode-toggle" id="modeToggle" title="Cambiar tema">☀️</button>
   </div>
   <button class="nav-menu-btn" id="menuBtn">☰</button>
@@ -397,6 +926,17 @@ document.querySelectorAll('.live-counter').forEach(el => {
     <span class="ticker-item">HISTORIAS VERIFICADAS</span>
     <span class="ticker-item">MISTERIOS OCULTOS</span>
     <span class="ticker-item">EXPEDIENTES ABIERTOS</span>
+  </div>
+</div>
+
+
+<!-- BUSCADOR -->
+<div class="search-section">
+  <div class="search-box">
+    <input type="text" class="search-input" id="searchInput" placeholder="Buscar caso, ciudad, año...">
+    <span class="search-icon">🔍</span>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-no-results" id="searchNoResults">No se encontraron resultados</div>
   </div>
 </div>
 
@@ -602,6 +1142,23 @@ document.querySelectorAll('.live-counter').forEach(el => {
 </section>
 
 
+
+<!-- CASO DEL MES -->
+<section class="caso-mes reveal">
+  <div class="section-header" style="margin-bottom:40px">
+    <div><div class="section-label">Destacado</div><div class="section-title">CASO DEL MES</div></div>
+  </div>
+  <div class="caso-mes-inner">
+    <div class="caso-mes-img" style="background-image:url('img-diana-quer.png')"></div>
+    <div class="caso-mes-content">
+      <span class="caso-mes-badge">🔴 Caso del mes · Junio 2026</span>
+      <h3 class="caso-mes-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
+      <p class="caso-mes-excerpt">Galicia, 2016. Tenía 18 años. Su asesino intentó matar a otra joven 16 meses después. Fue la valentía de esa segunda víctima la que resolvió el caso.</p>
+      <a href="articulo-diana-quer.html" class="caso-mes-btn">Leer caso completo →</a>
+    </div>
+  </div>
+</section>
+
 <!-- MAPA INTERACTIVO -->
 <section id="mapa" style="padding:80px 48px;background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="section-header reveal">
@@ -696,6 +1253,28 @@ document.querySelectorAll('.live-counter').forEach(el => {
   </div>
 </section>
 
+
+<!-- QUIZ TRUE CRIME -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <div class="section-header reveal" style="margin-bottom:40px;border:none;padding:0">
+      <div><div class="section-label">Pon a prueba tu conocimiento</div><div class="section-title">¿CUÁNTO SABES DE<br>TRUE CRIME?</div></div>
+    </div>
+    <div class="quiz-card reveal" id="quizCard">
+      <div class="quiz-score" id="quizScore">Pregunta 1 de 5</div>
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar" style="width:20%"></div></div>
+      <div class="quiz-pregunta" id="quizPregunta"></div>
+      <div class="quiz-opciones" id="quizOpciones"></div>
+      <button class="quiz-next" id="quizNext">Siguiente pregunta →</button>
+      <div class="quiz-final" id="quizFinal">
+        <h3 id="quizFinalScore"></h3>
+        <p id="quizFinalText"></p>
+        <a class="quiz-share" id="quizShare" href="#" target="_blank">📲 Compartir resultado en WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NEWSLETTER -->
 <section class="newsletter-section" id="newsletter" style="padding-top:80px">
   <div class="newsletter reveal">
@@ -749,6 +1328,16 @@ document.querySelectorAll('.live-counter').forEach(el => {
     </div>
   </div>
 </section>
+
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" title="Volver arriba">↑</button>
+
+<!-- READER COUNTER -->
+<div class="reader-counter" id="readerCounter">
+  <span class="reader-dot"></span>
+  <span id="readerNum">0</span> leyendo ahora
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -916,6 +1505,206 @@ document.querySelectorAll('.live-counter').forEach(el => {
   setInterval(updateCounter, 60000);
 });
 
+
+// CONTADORES ANIMADOS
+function animateCounters() {
+  document.querySelectorAll('.stat-block .num').forEach(el => {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    let current = 0;
+    const duration = 1500;
+    const step = target / (duration / 16);
+    const counter = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(counter); }
+      el.innerHTML = Math.floor(current) + suffix;
+    }, 16);
+  });
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
+}, { threshold: 0.3 });
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) statsObs.observe(statsBar);
+
+// BUSCADOR
+const articulos = [
+  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
+  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
+  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
+  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
+  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
+  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
+  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
+  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
+  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
+  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
+  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
+  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
+  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+];
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchNoResults = document.getElementById('searchNoResults');
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
+    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
+    if (matches.length > 0) {
+      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
+      searchResults.classList.add('active');
+      searchNoResults.style.display = 'none';
+    } else {
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      searchNoResults.style.display = 'block';
+    }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
+}
+
+// QUIZ
+const quizData = [
+  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
+  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
+  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
+  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
+  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
+];
+let quizCurrent = 0, quizCorrect = 0;
+function loadQuiz() {
+  const data = quizData[quizCurrent];
+  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
+  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
+  document.getElementById('quizPregunta').textContent = data.q;
+  const optsEl = document.getElementById('quizOpciones');
+  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
+  document.getElementById('quizNext').style.display = 'none';
+  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
+      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
+      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
+      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
+      else { setTimeout(showQuizResult, 800); }
+    });
+  });
+}
+function showQuizResult() {
+  document.getElementById('quizScore').style.display = 'none';
+  document.getElementById('quizPregunta').style.display = 'none';
+  document.getElementById('quizOpciones').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  document.querySelector('.quiz-progress').style.display = 'none';
+  const final = document.getElementById('quizFinal');
+  final.style.display = 'block';
+  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
+  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
+  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
+  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
+}
+const quizNext = document.getElementById('quizNext');
+if (quizNext) {
+  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
+  loadQuiz();
+}
+
+// MAP SCROLL ANIMATION
+const mapPoints = document.querySelectorAll('.map-point-link');
+const mapObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      mapPoints.forEach((p, i) => {
+        p.style.opacity = '0';
+        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
+      });
+      mapObs.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const mapContainer = document.querySelector('.mapa-container');
+if (mapContainer) mapObs.observe(mapContainer);
+
+
+// LOADING SCREEN
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
+});
+
+// BACK TO TOP
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+// READER COUNTER (simulated social proof)
+const readerCounter = document.getElementById('readerCounter');
+const readerNum = document.getElementById('readerNum');
+let baseReaders = Math.floor(Math.random() * 80) + 120;
+setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
+function updateReaders() {
+  baseReaders += Math.floor(Math.random() * 5) - 2;
+  if (baseReaders < 80) baseReaders = 80;
+  if (baseReaders > 300) baseReaders = 300;
+  readerNum.textContent = baseReaders;
+}
+updateReaders();
+setInterval(updateReaders, 8000);
+
+// RANDOM ARTICLE
+const allArticles = [
+  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
+  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
+  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
+  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
+  'articulo-falsos-recuerdos.html'
+];
+document.getElementById('randomBtn').addEventListener('click', () => {
+  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
+  window.location.href = random;
+});
+
+// ACCESSIBILITY - Font size
+let fontLevel = 0;
+document.getElementById('a11yBtn').addEventListener('click', () => {
+  fontLevel = (fontLevel + 1) % 3;
+  const sizes = ['1rem', '1.1rem', '1.2rem'];
+  document.body.style.fontSize = sizes[fontLevel];
+});
+
+// EASTER EGG - type VIRALIX
+let easterBuffer = '';
+document.addEventListener('keydown', e => {
+  easterBuffer += e.key.toLowerCase();
+  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
+  if (easterBuffer === 'viralix') {
+    document.body.style.transition = 'filter 0.5s';
+    document.body.style.filter = 'hue-rotate(180deg)';
+    setTimeout(() => {
+      document.body.style.filter = 'hue-rotate(360deg)';
+      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
+    }, 1500);
+    easterBuffer = '';
+  }
+});
+
+// PARALLAX on scroll for card images
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card-img img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = (rect.top / window.innerHeight - 0.5) * 20;
+      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+    }
+  });
+});
+
 </script>
 <script src="cookies-banner.js">
 // DARK/LIGHT MODE TOGGLE
@@ -941,6 +1730,206 @@ document.querySelectorAll('.live-counter').forEach(el => {
   }
   updateCounter();
   setInterval(updateCounter, 60000);
+});
+
+
+// CONTADORES ANIMADOS
+function animateCounters() {
+  document.querySelectorAll('.stat-block .num').forEach(el => {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    let current = 0;
+    const duration = 1500;
+    const step = target / (duration / 16);
+    const counter = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(counter); }
+      el.innerHTML = Math.floor(current) + suffix;
+    }, 16);
+  });
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
+}, { threshold: 0.3 });
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) statsObs.observe(statsBar);
+
+// BUSCADOR
+const articulos = [
+  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
+  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
+  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
+  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
+  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
+  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
+  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
+  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
+  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
+  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
+  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
+  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
+  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+];
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchNoResults = document.getElementById('searchNoResults');
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
+    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
+    if (matches.length > 0) {
+      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
+      searchResults.classList.add('active');
+      searchNoResults.style.display = 'none';
+    } else {
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      searchNoResults.style.display = 'block';
+    }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
+}
+
+// QUIZ
+const quizData = [
+  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
+  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
+  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
+  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
+  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
+];
+let quizCurrent = 0, quizCorrect = 0;
+function loadQuiz() {
+  const data = quizData[quizCurrent];
+  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
+  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
+  document.getElementById('quizPregunta').textContent = data.q;
+  const optsEl = document.getElementById('quizOpciones');
+  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
+  document.getElementById('quizNext').style.display = 'none';
+  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
+      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
+      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
+      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
+      else { setTimeout(showQuizResult, 800); }
+    });
+  });
+}
+function showQuizResult() {
+  document.getElementById('quizScore').style.display = 'none';
+  document.getElementById('quizPregunta').style.display = 'none';
+  document.getElementById('quizOpciones').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  document.querySelector('.quiz-progress').style.display = 'none';
+  const final = document.getElementById('quizFinal');
+  final.style.display = 'block';
+  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
+  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
+  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
+  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
+}
+const quizNext = document.getElementById('quizNext');
+if (quizNext) {
+  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
+  loadQuiz();
+}
+
+// MAP SCROLL ANIMATION
+const mapPoints = document.querySelectorAll('.map-point-link');
+const mapObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      mapPoints.forEach((p, i) => {
+        p.style.opacity = '0';
+        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
+      });
+      mapObs.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const mapContainer = document.querySelector('.mapa-container');
+if (mapContainer) mapObs.observe(mapContainer);
+
+
+// LOADING SCREEN
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
+});
+
+// BACK TO TOP
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+// READER COUNTER (simulated social proof)
+const readerCounter = document.getElementById('readerCounter');
+const readerNum = document.getElementById('readerNum');
+let baseReaders = Math.floor(Math.random() * 80) + 120;
+setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
+function updateReaders() {
+  baseReaders += Math.floor(Math.random() * 5) - 2;
+  if (baseReaders < 80) baseReaders = 80;
+  if (baseReaders > 300) baseReaders = 300;
+  readerNum.textContent = baseReaders;
+}
+updateReaders();
+setInterval(updateReaders, 8000);
+
+// RANDOM ARTICLE
+const allArticles = [
+  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
+  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
+  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
+  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
+  'articulo-falsos-recuerdos.html'
+];
+document.getElementById('randomBtn').addEventListener('click', () => {
+  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
+  window.location.href = random;
+});
+
+// ACCESSIBILITY - Font size
+let fontLevel = 0;
+document.getElementById('a11yBtn').addEventListener('click', () => {
+  fontLevel = (fontLevel + 1) % 3;
+  const sizes = ['1rem', '1.1rem', '1.2rem'];
+  document.body.style.fontSize = sizes[fontLevel];
+});
+
+// EASTER EGG - type VIRALIX
+let easterBuffer = '';
+document.addEventListener('keydown', e => {
+  easterBuffer += e.key.toLowerCase();
+  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
+  if (easterBuffer === 'viralix') {
+    document.body.style.transition = 'filter 0.5s';
+    document.body.style.filter = 'hue-rotate(180deg)';
+    setTimeout(() => {
+      document.body.style.filter = 'hue-rotate(360deg)';
+      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
+    }, 1500);
+    easterBuffer = '';
+  }
+});
+
+// PARALLAX on scroll for card images
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card-img img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = (rect.top / window.innerHeight - 0.5) * 20;
+      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+    }
+  });
 });
 
 </script>
