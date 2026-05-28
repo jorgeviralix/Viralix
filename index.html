@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIRALIX — Lo que no sabías que necesitabas saber</title>
+<title>VIRALIX — Crímenes reales, misterios y casos que España no olvidará</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23e61515'/><text x='50' y='78' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='72' font-weight='900' fill='%23f2f2f2'>V</text></svg>">
-<meta name="description" content="Curiosidades, misterios e historias que cambian tu forma de ver el mundo. VIRALIX: lo que nadie te contó.">
+<meta name="description" content="VIRALIX — True crime, misterios y casos reales de España. Artículos verificados sobre los crímenes más impactantes de la historia española.">
+<meta name="keywords" content="true crime españa, casos reales, crímenes españa, misterios, viralix">
+<meta property="og:title" content="VIRALIX — Crímenes reales y misterios de España">
+<meta property="og:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://viralix-theta.vercel.app">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #05060a;
@@ -20,676 +26,322 @@
   --accent2: #ff6b35;
   --gold: #d4a843;
   --teal: #0ff4c6;
+  --blue: #3b82f6;
   --font-display: 'Bebas Neue', sans-serif;
   --font-serif: 'DM Serif Display', serif;
   --font-body: 'DM Sans', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  overflow-x: hidden;
-  cursor: none;
-}
+body { background: var(--black); color: var(--white); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
 
 /* CURSOR */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
-  transition: transform .12s ease;
-  mix-blend-mode: difference;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(232,50,26,0.5);
-  border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9998;
-  transition: transform .25s ease, width .2s, height .2s;
-}
-body:has(a:hover) .cursor-ring,
-body:has(button:hover) .cursor-ring { width: 52px; height: 52px; border-color: var(--accent); }
+.cursor { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform .12s ease; mix-blend-mode: difference; }
+.cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(232,50,26,0.5); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform .25s ease, width .2s, height .2s; }
 
-/* NOISE OVERLAY */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 1000; opacity: 0.6;
-}
+/* NOISE */
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.6; }
+
+/* PROGRESS BAR */
+.progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 9999; width: 0%; transition: width 0.1s; }
 
 /* NAVBAR */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0 40px;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
-  background: rgba(5,6,10,0);
-  backdrop-filter: blur(0px);
-  border-bottom: 1px solid transparent;
-  transition: all .4s ease;
-}
-nav.scrolled {
-  background: rgba(5,6,10,0.92);
-  backdrop-filter: blur(20px);
-  border-bottom-color: var(--border);
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 28px;
-  letter-spacing: 4px;
-  color: var(--white);
-  text-decoration: none;
-  position: relative;
-}
+nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 500; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px; background: rgba(5,6,10,0); backdrop-filter: blur(0px); border-bottom: 1px solid transparent; transition: all .4s ease; }
+nav.scrolled { background: rgba(5,6,10,0.95); backdrop-filter: blur(20px); border-bottom-color: var(--border); }
+.nav-logo { font-family: var(--font-display); font-size: 28px; letter-spacing: 4px; color: var(--white); text-decoration: none; }
 .nav-logo span { color: var(--accent); }
-.nav-logo::after {
-  content: '';
-  position: absolute; bottom: -2px; left: 0; right: 0; height: 1px;
-  background: var(--accent);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .3s ease;
-}
-.nav-logo:hover::after { transform: scaleX(1); }
-
 .nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a {
-  font-size: 12px; font-weight: 500; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--muted);
-  text-decoration: none; transition: color .2s;
-}
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--white); }
-.nav-cta {
-  background: var(--accent) !important;
-  color: var(--white) !important;
-  padding: 8px 20px;
-  border-radius: 2px;
-  letter-spacing: 1.5px !important;
-  transition: background .2s !important;
-}
-.nav-cta:hover { background: var(--accent2) !important; }
+.nav-cta { background: var(--accent) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 2px; letter-spacing: 1.5px !important; }
+.nav-cta:hover { background: var(--accent2) !important; color: var(--white) !important; }
+.nav-menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--white); padding: 8px 12px; cursor: pointer; font-size: 18px; }
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: flex-start;
-  padding: 100px 40px 60px;
-  position: relative; overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,244,198,0.04) 0%, transparent 50%),
-    linear-gradient(180deg, #05060a 0%, #08090f 100%);
-}
-
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-}
-
-.hero-eyebrow {
-  font-size: 11px; font-weight: 500; letter-spacing: 4px;
-  text-transform: uppercase; color: var(--accent);
-  margin-bottom: 24px;
-  display: flex; align-items: center; gap: 12px;
-  opacity: 0; animation: fadeUp .6s .2s forwards;
-}
-.hero-eyebrow::before {
-  content: ''; width: 40px; height: 1px; background: var(--accent);
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 12vw, 160px);
-  line-height: 0.88;
-  letter-spacing: 2px;
-  color: var(--white);
-  max-width: 900px;
-  opacity: 0; animation: fadeUp .8s .35s forwards;
-}
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 100px 48px 60px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.08) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,244,198,0.04) 0%, transparent 50%), linear-gradient(180deg, #05060a 0%, #08090f 100%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; opacity: 0; animation: fadeUp .6s .2s forwards; }
+.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--accent); }
+.hero-title { font-family: var(--font-display); font-size: clamp(72px, 12vw, 160px); line-height: 0.88; letter-spacing: 2px; color: var(--white); max-width: 900px; opacity: 0; animation: fadeUp .8s .35s forwards; }
 .hero-title .accent { color: var(--accent); }
-.hero-title .outline {
-  -webkit-text-stroke: 1px rgba(244,242,238,0.3);
-  color: transparent;
-}
-
-.hero-sub {
-  font-family: var(--font-serif);
-  font-size: clamp(16px, 2.5vw, 22px);
-  font-style: italic;
-  color: var(--muted);
-  max-width: 520px;
-  margin-top: 28px; margin-bottom: 40px;
-  line-height: 1.5;
-  opacity: 0; animation: fadeUp .8s .5s forwards;
-}
-
-.hero-actions {
-  display: flex; gap: 16px; align-items: center;
-  opacity: 0; animation: fadeUp .8s .65s forwards;
-}
-.btn-primary {
-  background: var(--accent);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 12px; font-weight: 500;
-  letter-spacing: 2px; text-transform: uppercase;
-  padding: 14px 32px; border: none;
-  border-radius: 2px; cursor: pointer;
-  text-decoration: none;
-  transition: all .2s;
-  display: inline-block;
-}
+.hero-title .outline { -webkit-text-stroke: 1px rgba(244,242,238,0.3); color: transparent; }
+.hero-sub { font-family: var(--font-serif); font-size: clamp(16px, 2.5vw, 22px); font-style: italic; color: var(--muted); max-width: 520px; margin-top: 28px; margin-bottom: 40px; line-height: 1.5; opacity: 0; animation: fadeUp .8s .5s forwards; }
+.hero-actions { display: flex; gap: 16px; align-items: center; opacity: 0; animation: fadeUp .8s .65s forwards; }
+.btn-primary { background: var(--accent); color: var(--white); font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 32px; border: none; border-radius: 2px; cursor: pointer; text-decoration: none; transition: all .2s; display: inline-block; }
 .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
-.btn-ghost {
-  color: var(--muted);
-  font-size: 12px; font-weight: 500;
-  letter-spacing: 2px; text-transform: uppercase;
-  text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: color .2s;
-}
+.btn-ghost { color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color .2s; }
 .btn-ghost:hover { color: var(--white); }
 .btn-ghost::after { content: '→'; transition: transform .2s; }
 .btn-ghost:hover::after { transform: translateX(4px); }
-
-.hero-stats {
-  position: absolute; right: 40px; bottom: 60px;
-  display: flex; flex-direction: column; gap: 24px;
-  opacity: 0; animation: fadeLeft .8s .8s forwards;
-}
+.hero-stats { position: absolute; right: 48px; bottom: 60px; display: flex; flex-direction: column; gap: 24px; opacity: 0; animation: fadeLeft .8s .8s forwards; }
 .stat { text-align: right; }
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 36px; letter-spacing: 2px; color: var(--white);
-  line-height: 1;
-}
-.stat-label {
-  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); margin-top: 2px;
-}
-
-.hero-scroll {
-  position: absolute; bottom: 30px; left: 50%;
-  transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: 0; animation: fadeUp .6s 1s forwards;
-}
-.scroll-line {
-  width: 1px; height: 50px;
-  background: linear-gradient(to bottom, transparent, var(--accent));
-  animation: scrollPulse 2s ease-in-out infinite;
-}
+.stat-num { font-family: var(--font-display); font-size: 36px; letter-spacing: 2px; color: var(--white); line-height: 1; }
+.stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp .6s 1s forwards; }
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--accent)); animation: scrollPulse 2s ease-in-out infinite; }
 .scroll-text { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
 
 /* TICKER */
-.ticker {
-  background: var(--accent);
-  padding: 12px 0; overflow: hidden;
-  position: relative;
-}
-.ticker-inner {
-  display: flex; gap: 0;
-  animation: ticker 30s linear infinite;
-  white-space: nowrap;
-}
-.ticker-item {
-  font-family: var(--font-display);
-  font-size: 14px; letter-spacing: 3px;
-  padding: 0 40px; color: var(--white);
-  display: flex; align-items: center; gap: 40px;
-}
+.ticker { background: var(--accent); padding: 12px 0; overflow: hidden; }
+.ticker-inner { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+.ticker-item { font-family: var(--font-display); font-size: 14px; letter-spacing: 3px; padding: 0 40px; color: var(--white); display: flex; align-items: center; gap: 40px; }
 .ticker-item::after { content: '✦'; opacity: 0.6; }
 
 /* SECTIONS */
-section { padding: 100px 40px; position: relative; }
-
-.section-header {
-  display: flex; align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 24px;
-}
-.section-label {
-  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 8px;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: 2px; line-height: 0.9;
-  color: var(--white);
-}
-.section-link {
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: color .2s; padding-bottom: 4px;
-}
+section { padding: 100px 48px; position: relative; }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.section-title { font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px); letter-spacing: 2px; line-height: 0.9; color: var(--white); }
+.section-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color .2s; }
 .section-link:hover { color: var(--accent); }
-.section-link::after { content: '→'; transition: transform .2s; }
-.section-link:hover::after { transform: translateX(4px); }
+.section-link::after { content: '→'; }
 
-/* FEATURED ARTICLE */
-.featured {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2px; margin-bottom: 2px;
-}
-.featured-main {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 48px;
-  position: relative; overflow: hidden;
-  cursor: pointer;
-  transition: border-color .3s;
-  group: true;
-}
+/* FEATURED */
+.featured { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+.featured-main { background: var(--card); border: 1px solid var(--border); padding: 48px; position: relative; overflow: hidden; cursor: pointer; transition: border-color .3s; }
 .featured-main:hover { border-color: rgba(232,50,26,0.4); }
-.featured-main::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(232,50,26,0.06), transparent);
-  opacity: 0; transition: opacity .3s;
-}
+.featured-main::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(232,50,26,0.06), transparent); opacity: 0; transition: opacity .3s; }
 .featured-main:hover::before { opacity: 1; }
-
-.article-cat {
-  font-size: 10px; font-weight: 500; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--accent);
-  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
-}
+.article-cat { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
 .article-cat::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
-
-.article-num {
-  font-family: var(--font-display);
-  font-size: 100px; letter-spacing: 0;
-  color: rgba(255,255,255,0.04);
-  line-height: 1; position: absolute;
-  top: 20px; right: 30px;
-}
-.article-title-big {
-  font-family: var(--font-serif);
-  font-size: clamp(24px, 3vw, 40px);
-  line-height: 1.15; color: var(--white);
-  margin-bottom: 16px;
-  transition: color .2s;
-}
-.featured-main:hover .article-title-big { color: rgba(244,242,238,0.9); }
-
-.article-excerpt {
-  font-size: 14px; line-height: 1.7;
-  color: var(--muted); margin-bottom: 24px;
-}
-.article-meta {
-  display: flex; align-items: center; gap: 16px;
-  font-size: 11px; letter-spacing: 1px; color: var(--muted);
-}
+.article-num { font-family: var(--font-display); font-size: 100px; letter-spacing: 0; color: rgba(255,255,255,0.04); line-height: 1; position: absolute; top: 20px; right: 30px; }
+.article-title-big { font-family: var(--font-serif); font-size: clamp(24px, 3vw, 40px); line-height: 1.15; color: var(--white); margin-bottom: 16px; transition: color .2s; }
+.article-excerpt { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-size: 11px; letter-spacing: 1px; color: var(--muted); flex-wrap: wrap; }
 .article-meta .dot { width: 3px; height: 3px; background: var(--muted); border-radius: 50%; }
-.read-more {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 500; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--accent);
-  text-decoration: none; margin-top: 24px;
-  transition: gap .2s;
-}
+.read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); text-decoration: none; margin-top: 24px; transition: gap .2s; }
 .read-more:hover { gap: 14px; }
 
 /* ARTICLE GRID */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2px;
-}
-.article-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 32px;
-  position: relative; overflow: hidden;
-  cursor: pointer;
-  transition: border-color .3s, transform .3s;
-}
-.article-card:hover {
-  border-color: rgba(232,50,26,0.3);
-  transform: translateY(-3px);
-}
-.card-img {
-  width: 100%; height: 180px;
-  background: var(--deep);
-  margin-bottom: 24px;
-  border-radius: 2px;
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
+.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; }
+.article-card { background: var(--card); border: 1px solid var(--border); padding: 32px; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
+.article-card.clickable { cursor: pointer; }
+.article-card.clickable:hover { border-color: rgba(232,50,26,0.3); transform: translateY(-3px); }
+.article-card.proxima { opacity: 0.55; cursor: default; }
+.card-img { width: 100%; height: 180px; background: var(--deep); margin-bottom: 24px; border-radius: 2px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .card-emoji { font-size: 48px; opacity: 0.7; }
-.card-glow {
-  position: absolute; inset: 0;
-  opacity: 0; transition: opacity .3s;
-}
-.article-card:hover .card-glow { opacity: 1; }
+.card-glow { position: absolute; inset: 0; opacity: 0; transition: opacity .3s; }
+.article-card.clickable:hover .card-glow { opacity: 1; }
+.article-title { font-family: var(--font-serif); font-size: 20px; line-height: 1.25; color: var(--white); margin-bottom: 12px; transition: color .2s; }
+.article-card.clickable:hover .article-title { color: rgba(244,242,238,0.85); }
+.tag { display: inline-block; font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); margin-bottom: 14px; }
+.card-footer { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+.card-leer { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+.wa-share { background: #25D366; color: #fff; font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; text-decoration: none; border-radius: 2px; flex-shrink: 0; }
+.proxima-badge { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; }
 
-.article-title {
-  font-family: var(--font-serif);
-  font-size: 20px; line-height: 1.25;
-  color: var(--white); margin-bottom: 12px;
-  transition: color .2s;
-}
-.article-card:hover .article-title { color: rgba(244,242,238,0.85); }
+/* SEPARADOR DE SECCIÓN */
+.section-divider { display: flex; align-items: center; gap: 20px; padding: 0 48px; margin: -20px 0 0; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-divider span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
-.tag {
-  display: inline-block;
-  font-size: 9px; font-weight: 500; letter-spacing: 2px;
-  text-transform: uppercase; padding: 4px 10px;
-  border: 1px solid var(--border);
-  border-radius: 2px; color: var(--muted);
-  margin-bottom: 14px;
-}
+/* STATS BAR */
+.stats-bar { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.stat-block { text-align: center; padding: 24px; position: relative; }
+.stat-block:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: var(--border); }
+.stat-block .num { font-family: var(--font-display); font-size: 3rem; letter-spacing: 2px; color: var(--white); line-height: 1; }
+.stat-block .num span { color: var(--accent); }
+.stat-block .lbl { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 
 /* CATEGORIES */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2px;
-}
-.cat-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 32px 24px;
-  cursor: pointer;
-  transition: all .3s;
-  position: relative; overflow: hidden;
-  text-decoration: none; color: var(--white);
-  display: flex; flex-direction: column; gap: 12px;
-}
-.cat-card:hover { border-color: rgba(255,255,255,0.15); }
-.cat-card::after {
-  content: '→';
-  position: absolute; bottom: 20px; right: 20px;
-  font-size: 16px; color: var(--muted);
-  transition: all .2s;
-}
+.categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
+.cat-card { background: var(--card); border: 1px solid var(--border); padding: 32px 24px; cursor: pointer; transition: all .3s; position: relative; overflow: hidden; text-decoration: none; color: var(--white); display: flex; flex-direction: column; gap: 12px; }
+.cat-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.cat-card::after { content: '→'; position: absolute; bottom: 20px; right: 20px; font-size: 16px; color: var(--muted); transition: all .2s; }
 .cat-card:hover::after { color: var(--accent); transform: translate(3px, -3px); }
 .cat-icon { font-size: 32px; }
-.cat-name {
-  font-family: var(--font-display);
-  font-size: 22px; letter-spacing: 2px;
-}
+.cat-name { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; }
 .cat-count { font-size: 11px; color: var(--muted); }
-.cat-bar {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .3s;
-}
+.cat-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .3s; }
 .cat-card:hover .cat-bar { transform: scaleX(1); }
 
 /* NEWSLETTER */
-.newsletter {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 80px;
-  text-align: center;
-  position: relative; overflow: hidden;
-}
-.newsletter::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(232,50,26,0.06), transparent);
-}
-.newsletter-title {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 96px);
-  letter-spacing: 4px; line-height: 0.9;
-  color: var(--white); margin-bottom: 16px;
-}
+.newsletter-section { padding: 0 48px 100px; }
+.newsletter { background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 80px; text-align: center; position: relative; overflow: hidden; }
+.newsletter::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(232,50,26,0.06), transparent); pointer-events: none; }
+.newsletter-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.newsletter-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); letter-spacing: 4px; line-height: 0.9; color: var(--white); margin-bottom: 16px; }
 .newsletter-title span { color: var(--accent); }
-.newsletter-sub {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 18px; color: var(--muted);
-  margin-bottom: 40px;
-}
-.newsletter-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
-.newsletter-input {
-  flex: 1; background: var(--deep);
-  border: 1px solid var(--border); border-right: none;
-  color: var(--white); font-family: var(--font-body);
-  font-size: 14px; padding: 14px 20px;
-  outline: none; transition: border-color .2s;
-  border-radius: 2px 0 0 2px;
-}
+.newsletter-sub { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--muted); margin-bottom: 12px; }
+.newsletter-sub2 { font-size: 12px; color: var(--muted); margin-bottom: 40px; letter-spacing: 0.05em; }
+.newsletter-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto 16px; }
+.newsletter-input { flex: 1; background: var(--deep); border: 1px solid var(--border); border-right: none; color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 14px 20px; outline: none; transition: border-color .2s; border-radius: 2px 0 0 2px; }
 .newsletter-input:focus { border-color: rgba(232,50,26,0.4); }
 .newsletter-input::placeholder { color: var(--muted); }
-.newsletter-btn {
-  background: var(--accent); border: none;
-  color: var(--white); font-family: var(--font-body);
-  font-size: 12px; font-weight: 500; letter-spacing: 2px;
-  text-transform: uppercase; padding: 14px 24px;
-  cursor: pointer; transition: background .2s;
-  border-radius: 0 2px 2px 0;
-}
+.newsletter-btn { background: var(--accent); border: none; color: var(--white); font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px; cursor: pointer; transition: background .2s; border-radius: 0 2px 2px 0; }
 .newsletter-btn:hover { background: var(--accent2); }
+.newsletter-privacy { font-size: 11px; color: var(--muted); }
+.newsletter-privacy a { color: var(--muted); text-decoration: underline; }
+.newsletter-benefits { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+.benefit { font-size: 11px; letter-spacing: 1px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.benefit::before { content: '✓'; color: var(--teal); font-weight: 700; }
+
+/* CONTACTO */
+.contacto-section { background: var(--deep); border-top: 1px solid var(--border); padding: 80px 48px; }
+.contacto-inner { max-width: 900px; margin: 0 auto; }
+.contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
+.contacto-texto h3 { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px; color: var(--white); margin-bottom: 16px; }
+.contacto-texto p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+.contacto-opciones { display: flex; flex-direction: column; gap: 2px; }
+.contacto-card { background: var(--card); border: 1px solid var(--border); padding: 24px 28px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--white); transition: border-color .2s, transform .2s; }
+.contacto-card:hover { border-color: rgba(232,50,26,0.3); transform: translateX(4px); }
+.contacto-card .cc-icon { font-size: 24px; flex-shrink: 0; }
+.contacto-card .cc-info h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.contacto-card .cc-info p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.4; }
+.contacto-card .cc-arrow { margin-left: auto; color: var(--muted); font-size: 18px; transition: transform .2s; }
+.contacto-card:hover .cc-arrow { transform: translateX(4px); color: var(--accent); }
 
 /* FOOTER */
-footer {
-  background: var(--deep);
-  border-top: 1px solid var(--border);
-  padding: 60px 40px 30px;
-}
-.footer-top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px; margin-bottom: 60px;
-}
-.footer-brand-name {
-  font-family: var(--font-display);
-  font-size: 48px; letter-spacing: 4px;
-  color: var(--white); line-height: 1;
-  margin-bottom: 16px;
-}
+footer { background: var(--deep); border-top: 1px solid var(--border); padding: 60px 48px 30px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+.footer-brand-name { font-family: var(--font-display); font-size: 48px; letter-spacing: 4px; color: var(--white); line-height: 1; margin-bottom: 16px; }
 .footer-brand-name span { color: var(--accent); }
-.footer-brand-desc {
-  font-size: 13px; line-height: 1.7;
-  color: var(--muted); max-width: 280px;
-}
-.footer-col-title {
-  font-size: 10px; font-weight: 500; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--muted);
-  margin-bottom: 20px;
-}
+.footer-brand-desc { font-size: 13px; line-height: 1.7; color: var(--muted); max-width: 280px; margin-bottom: 24px; }
+.footer-social-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.footer-social { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 6px 12px; transition: all .2s; border-radius: 2px; }
+.footer-social:hover { color: var(--white); border-color: var(--accent); }
+.footer-col-title { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
 .footer-links { display: flex; flex-direction: column; gap: 12px; }
-.footer-links a {
-  font-size: 13px; color: var(--muted);
-  text-decoration: none; transition: color .2s;
-  display: flex; align-items: center; gap: 8px;
-}
+.footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 8px; }
 .footer-links a:hover { color: var(--white); }
 .footer-links a::before { content: '–'; color: var(--border); }
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
-  display: flex; justify-content: space-between; align-items: center;
-}
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 .footer-copy { font-size: 12px; color: var(--muted); }
-.footer-socials { display: flex; gap: 16px; }
-.social-link {
-  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); text-decoration: none; transition: color .2s;
-}
-.social-link:hover { color: var(--accent); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 11px; color: var(--muted); text-decoration: none; transition: color .2s; }
+.footer-legal a:hover { color: var(--white); }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeLeft {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.1); }
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeLeft { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-.reveal {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity .7s ease, transform .7s ease;
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
+  .nav-menu-btn { display: block; }
   .hero { padding: 100px 20px 60px; }
   section { padding: 60px 20px; }
+  .section-divider { padding: 0 20px; }
   .featured { grid-template-columns: 1fr; }
   .featured-main { padding: 28px; }
+  .hero-stats { display: none; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 20px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .newsletter-section { padding: 0 20px 60px; }
   .newsletter { padding: 40px 20px; }
   .newsletter-form { flex-direction: column; }
   .newsletter-input, .newsletter-btn { border-radius: 2px; border: 1px solid var(--border); }
-  .hero-stats { display: none; }
-  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .contacto-section { padding: 60px 20px; }
+  .contacto-grid { grid-template-columns: 1fr; gap: 32px; }
+  footer { padding: 40px 20px 20px; }
+}
+@media (max-width: 480px) {
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .newsletter-benefits { flex-direction: column; align-items: center; gap: 12px; }
 }
 </style>
 </head>
 <body>
 
+<div class="progress-bar" id="progressBar"></div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
   <a href="#" class="nav-logo">VIRAL<span>I</span>X</a>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#articulos">Artículos</a>
     <a href="#categorias">Categorías</a>
-    <a href="#cat-misterios">Misterios</a>
-    <a href="#cat-ciencia">Ciencia</a>
+    <a href="#contacto">Contacto</a>
     <a href="#newsletter" class="nav-cta">Suscribirse</a>
   </div>
+  <button class="nav-menu-btn" id="menuBtn">☰</button>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-
-  <div class="hero-eyebrow">Lo que nadie te contó</div>
-
-  <h1 class="hero-title">
-    LO QUE<br>
-    <span class="accent">NO</span><br>
-    <span class="outline">SABÍAS</span>
-  </h1>
-
-  <p class="hero-sub">
-    Curiosidades, misterios e historias que cambian tu forma de ver el mundo. Cada día, una historia que no puedes dejar de leer.
-  </p>
-
+  <div class="hero-eyebrow">True Crime · Misterios · España</div>
+  <h1 class="hero-title">LO QUE<br><span class="accent">NO</span><br><span class="outline">SABÍAS</span></h1>
+  <p class="hero-sub">Crímenes reales, casos sin resolver e historias que España no olvidará. Contenido verificado cada semana.</p>
   <div class="hero-actions">
     <a href="#articulos" class="btn-primary">Explorar ahora</a>
-    <a href="#categorias" class="btn-ghost">Ver categorías</a>
+    <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
-
   <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">2026</div>
-      <div class="stat-label">Fundada este año</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Contenido verificado</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">Misterios por descubrir</div>
-    </div>
+    <div class="stat"><div class="stat-num">11</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Contenido verificado</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Casos por descubrir</div></div>
   </div>
-
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll</span>
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner" id="ticker">
-    <span class="ticker-item">MISTERIOS SIN RESOLVER</span>
-    <span class="ticker-item">CIENCIA QUE ASOMBRA</span>
-    <span class="ticker-item">HISTORIA OCULTA</span>
-    <span class="ticker-item">EXPERIMENTOS SECRETOS</span>
-    <span class="ticker-item">LUGARES PROHIBIDOS</span>
-    <span class="ticker-item">HECHOS QUE CAMBIAN TODO</span>
-    <span class="ticker-item">MISTERIOS SIN RESOLVER</span>
-    <span class="ticker-item">CIENCIA QUE ASOMBRA</span>
-    <span class="ticker-item">HISTORIA OCULTA</span>
-    <span class="ticker-item">EXPERIMENTOS SECRETOS</span>
-    <span class="ticker-item">LUGARES PROHIBIDOS</span>
-    <span class="ticker-item">HECHOS QUE CAMBIAN TODO</span>
+    <span class="ticker-item">TRUE CRIME ESPAÑA</span>
+    <span class="ticker-item">CASOS SIN RESOLVER</span>
+    <span class="ticker-item">CRÍMENES REALES</span>
+    <span class="ticker-item">HISTORIAS VERIFICADAS</span>
+    <span class="ticker-item">MISTERIOS OCULTOS</span>
+    <span class="ticker-item">EXPEDIENTES ABIERTOS</span>
+    <span class="ticker-item">TRUE CRIME ESPAÑA</span>
+    <span class="ticker-item">CASOS SIN RESOLVER</span>
+    <span class="ticker-item">CRÍMENES REALES</span>
+    <span class="ticker-item">HISTORIAS VERIFICADAS</span>
+    <span class="ticker-item">MISTERIOS OCULTOS</span>
+    <span class="ticker-item">EXPEDIENTES ABIERTOS</span>
   </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar reveal">
+  <div class="stat-block"><div class="num">11<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Contenido verificado</div></div>
+  <div class="stat-block"><div class="num">5<span>★</span></div><div class="lbl">Valoración media</div></div>
+  <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
 </div>
 
 <!-- FEATURED -->
 <section id="articulos">
   <div class="section-header reveal">
-    <div>
-      <div class="section-label">Lo más leído</div>
-      <div class="section-title">DESTACADOS</div>
-    </div>
-    <a href="#" class="section-link">Ver todos</a>
+    <div><div class="section-label">Lo más leído</div><div class="section-title">DESTACADOS</div></div>
   </div>
-
   <div class="featured reveal">
-    <div class="featured-main" style="grid-row: span 1;">
+    <div class="featured-main" onclick="location.href='articulo-alcasser.html'" style="cursor:pointer">
       <div class="article-num">01</div>
-      <div class="article-cat">Misterio</div>
-      <h2 class="article-title-big">El experimento que el gobierno español ocultó durante 40 años</h2>
-      <p class="article-excerpt">En 1962, un laboratorio en los Pirineos comenzó un proyecto que oficialmente nunca existió. Los documentos desclasificados en 2019 revelan algo que nadie esperaba encontrar.</p>
+      <div class="article-cat">True Crime</div>
+      <h2 class="article-title-big">El Caso Alcàsser: 30 años de preguntas sin respuesta</h2>
+      <p class="article-excerpt">La noche del 13 de noviembre de 1992. Miriam, Toñi y Desirée desaparecieron de camino a una discoteca. Lo que encontraron 75 días después cambió España para siempre.</p>
       <div class="article-meta">
-        <span>14 May 2026</span>
-        <span class="dot"></span>
-        <span>8 min de lectura</span>
-        <span class="dot"></span>
-        <span>234.500 lecturas</span>
+        <span>21 May 2026</span><span class="dot"></span><span>12 min de lectura</span>
       </div>
-      <a href="articulo-espana.html" class="read-more">Leer historia <span>→</span></a>
+      <a href="articulo-alcasser.html" class="read-more">Leer historia</a>
     </div>
     <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="featured-main">
+      <div class="featured-main" onclick="location.href='articulo-wanninkhof.html'" style="cursor:pointer">
         <div class="article-num">02</div>
-        <div class="article-cat">Historia</div>
-        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">Por qué los mayas desaparecieron de verdad</h2>
-        <p class="article-excerpt" style="font-size:13px">La teoría oficial tiene 3 agujeros enormes que los libros de texto ignoran.</p>
-        <a href="articulo-mayas.html" class="read-more">Leer <span>→</span></a>
+        <div class="article-cat">True Crime</div>
+        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">Caso Wanninkhof: condenaron a una inocente y el asesino siguió matando</h2>
+        <a href="articulo-wanninkhof.html" class="read-more">Leer</a>
       </div>
-      <div class="featured-main">
+      <div class="featured-main" onclick="location.href='articulo-marta-castillo.html'" style="cursor:pointer">
         <div class="article-num">03</div>
-        <div class="article-cat">Ciencia</div>
-        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">El sonido que puede matarte y que el ejército usa en secreto</h2>
-        <p class="article-excerpt" style="font-size:13px">Existe una frecuencia de 18,98 Hz que provoca terror irracional. Y hay pruebas de que se ha usado.</p>
-        <a href="articulo-sonido.html" class="read-more">Leer <span>→</span></a>
+        <div class="article-cat">True Crime</div>
+        <h2 class="article-title-big" style="font-size:clamp(18px,2vw,26px)">Marta del Castillo: 17 años buscando su cuerpo</h2>
+        <a href="articulo-marta-castillo.html" class="read-more">Leer</a>
       </div>
     </div>
   </div>
@@ -698,302 +350,224 @@ footer {
 <!-- ARTICLES GRID -->
 <section style="padding-top:0">
   <div class="articles-grid">
-    <!-- Card 1 -->
-    <div class="article-card reveal" onclick="location.href='articulo-marianas.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#1a0a0a);">
-        <span class="card-emoji">🌊</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(232,50,26,0.1), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#1a0a0a)"><span class="card-emoji">🌊</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(232,50,26,0.1), transparent)"></div></div>
       <span class="tag">Océanos</span>
       <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El 80% del océano sigue sin explorar. Lo que hay en la Fosa de las Marianas no está en ningún documental.</p>
-      <div class="article-meta">
-        <span>12 May</span><span class="dot"></span><span>6 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=Qu%C3%A9%20hay%20realmente%20en%20la%20Fosa%20de%20las%20Marianas%20%F0%9F%8C%8A%20https://viralix-theta.vercel.app/articulo-marianas.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <div class="article-meta"><span>12 May</span><span class="dot"></span><span>6 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-marianas.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Qu%C3%A9%20hay%20realmente%20en%20la%20Fosa%20de%20las%20Marianas%20%F0%9F%8C%8A%20https://viralix-theta.vercel.app/articulo-marianas.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 2 -->
-    <div class="article-card reveal" onclick="location.href='articulo-falsos-recuerdos.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#0a120a);">
-        <span class="card-emoji">🧠</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(15,244,198,0.08), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c12,#0a120a)"><span class="card-emoji">🧠</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(15,244,198,0.08), transparent)"></div></div>
       <span class="tag">Mente</span>
       <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Los falsos recuerdos afectan al 70% de la población. La ciencia acaba de descubrir por qué.</p>
-      <div class="article-meta">
-        <span>10 May</span><span class="dot"></span><span>5 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20fen%C3%B3meno%20que%20hace%20que%20recuerdes%20cosas%20que%20nunca%20pasaron%20%F0%9F%A7%A0%20https://viralix-theta.vercel.app/articulo-falsos-recuerdos.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <div class="article-meta"><span>10 May</span><span class="dot"></span><span>5 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-falsos-recuerdos.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20fen%C3%B3meno%20que%20hace%20que%20recuerdes%20cosas%20que%20nunca%20pasaron%20%F0%9F%A7%A0%20https://viralix-theta.vercel.app/articulo-falsos-recuerdos.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 3 -->
-    <div class="article-card reveal" onclick="location.href='articulo-hantavirus.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0d0500,#1a0800);">
-        <span class="card-emoji">🦠</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(249,115,22,0.1), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0d0500,#1a0800)"><span class="card-emoji">🦠</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(249,115,22,0.1), transparent)"></div></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● EN DIRECTO</span>
       <h3 class="article-title">Hantavirus en España: qué es y todo sobre el brote del crucero Hondius</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Un crucero polar, un virus que se transmite entre personas y una alerta sanitaria en seis países europeos.</p>
-      <div class="article-meta">
-        <span>17 May</span><span class="dot"></span><span>8 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#f97316">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=Hantavirus%20en%20Espa%C3%B1a%3A%20todo%20sobre%20el%20brote%20del%20crucero%20Hondius%20%F0%9F%A6%A0%20https://viralix-theta.vercel.app/articulo-hantavirus.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <div class="article-meta"><span>17 May</span><span class="dot"></span><span>8 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-hantavirus.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Hantavirus%20en%20Espa%C3%B1a%3A%20todo%20sobre%20el%20brote%20del%20crucero%20Hondius%20%F0%9F%A6%A0%20https://viralix-theta.vercel.app/articulo-hantavirus.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 4 -->
-    <div class="article-card reveal" onclick="location.href='articulo-asesino-baraja.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0d0000,#1a0000);">
-        <span class="card-emoji">🃏</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(230,21,21,0.12), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-asesino-baraja.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0d0000,#1a0000)"><span class="card-emoji">🃏</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(230,21,21,0.12), transparent)"></div></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Baraja: 6 muertos, una pistola de Bosnia y una confesión borracho</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El único asesino en serie de la historia reciente de España. En 2028 podría quedar libre. El caso completo.</p>
-      <div class="article-meta">
-        <span>18 May</span><span class="dot"></span><span>10 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Baraja%3A%206%20muertos%20y%20una%20confesi%C3%B3n%20borracho%20%F0%9F%83%8F%20https://viralix-theta.vercel.app/articulo-asesino-baraja.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El único asesino en serie de la historia reciente de España. En 2028 podría quedar libre.</p>
+      <div class="article-meta"><span>18 May</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-asesino-baraja.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Baraja%3A%206%20muertos%20y%20una%20confesi%C3%B3n%20borracho%20%F0%9F%83%8F%20https://viralix-theta.vercel.app/articulo-asesino-baraja.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 5 -->
-    <div class="article-card reveal" onclick="location.href='articulo-super-elnino.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0400,#1a0800);">
-        <span class="card-emoji">🌍</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(249,115,22,0.1), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0400,#1a0800)"><span class="card-emoji">🌍</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(249,115,22,0.1), transparent)"></div></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● ALERTA ROJA</span>
       <h3 class="article-title">Super El Niño 2026: el fenómeno más devastador desde 1877</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">La NOAA confirma un 82% de probabilidad. El último evento así mató al 4% de la población mundial.</p>
-      <div class="article-meta">
-        <span>19 May</span><span class="dot"></span><span>8 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#f97316">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20Super%20El%20Ni%C3%B1o%202026%20podr%C3%ADa%20ser%20el%20m%C3%A1s%20devastador%20desde%201877%20%F0%9F%8C%8D%20https://viralix-theta.vercel.app/articulo-super-elnino.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <div class="article-meta"><span>19 May</span><span class="dot"></span><span>8 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-super-elnino.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20Super%20El%20Ni%C3%B1o%202026%20podr%C3%ADa%20ser%20el%20m%C3%A1s%20devastador%20desde%201877%20%F0%9F%8C%8D%20https://viralix-theta.vercel.app/articulo-super-elnino.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 6 -->
-    <div class="article-card reveal" onclick="location.href='articulo-wanninkhof.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0d0000,#0a0a1a);">
-        <span class="card-emoji">⚖️</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(230,21,21,0.08), transparent)"></div>
-      </div>
-      <span class="tag">True Crime</span>
-      <h3 class="article-title">El Caso Wanninkhof: condenaron a una inocente y el asesino real siguió matando</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Dolores Vázquez en prisión siendo inocente. Tony Alexander King libre y matando. El mayor error judicial de España.</p>
-      <div class="article-meta">
-        <span>20 May</span><span class="dot"></span><span>10 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20Caso%20Wanninkhof%3A%20condenaron%20a%20una%20inocente%20y%20el%20asesino%20sigui%C3%B3%20matando%20%E2%9A%96%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-wanninkhof.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
-      </div>
-    </div>
-    <!-- Card 7 -->
-    <div class="article-card reveal" onclick="location.href='articulo-alcasser.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0a14,#0d0d1a);">
-        <span class="card-emoji">🕯️</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(100,100,200,0.08), transparent)"></div>
-      </div>
-      <span class="tag">True Crime</span>
-      <h3 class="article-title">El Caso Alcàsser: Miriam, Toñi y Desirée — 30 años de preguntas sin respuesta</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">La noche del 13 de noviembre de 1992. Tres chicas. Un coche. 75 días. Y un asesino que sigue libre hoy.</p>
-      <div class="article-meta">
-        <span>21 May</span><span class="dot"></span><span>12 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Leer artículo <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20Caso%20Alc%C3%A0sser%3A%2030%20a%C3%B1os%20de%20preguntas%20sin%20respuesta%20%F0%9F%95%AF%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-alcasser.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
-      </div>
-    </div>
-    <!-- Card 8 -->
-    <div class="article-card reveal" onclick="location.href='articulo-puerto-hurraco.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0800,#1a1000);">
-        <span class="card-emoji">🏚️</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(180,100,0,0.08), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-puerto-hurraco.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0800,#1a1000)"><span class="card-emoji">🏚️</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(180,100,0,0.08), transparent)"></div></div>
       <span class="tag" style="background:rgba(180,100,0,0.15);color:#d97706;border-color:rgba(180,100,0,0.3)">True Crime</span>
       <h3 class="article-title">La Matanza de Puerto Hurraco: 9 muertos en un pueblo de 300 personas</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Dos hermanos. Una venganza de décadas. El crimen más brutal de la España rural del siglo XX.</p>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>10 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#d97706">Próximamente <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=La%20Matanza%20de%20Puerto%20Hurraco%3A%209%20muertos%20en%20un%20pueblo%20%F0%9F%8F%9A%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-puerto-hurraco.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <div class="article-meta"><span>22 May</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-puerto-hurraco.html" class="card-leer" style="color:#d97706" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=La%20Matanza%20de%20Puerto%20Hurraco%3A%209%20muertos%20en%20un%20pueblo%20%F0%9F%8F%9A%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-puerto-hurraco.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 9 -->
-    <div class="article-card reveal" onclick="location.href='articulo-crimen-rol.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#080a14,#0a0a20);">
-        <span class="card-emoji">🎲</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(80,0,200,0.08), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-rol.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#080a14,#0a0a20)"><span class="card-emoji">🎲</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(80,0,200,0.08), transparent)"></div></div>
       <span class="tag" style="background:rgba(80,0,200,0.15);color:#8b5cf6;border-color:rgba(80,0,200,0.3)">True Crime</span>
       <h3 class="article-title">Los Crímenes del Rol: los adolescentes que mataron a sus padres por un juego</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Granada, 1994. Dos chicos de 15 años. Meses jugando a rol. Y una noche que hizo que España prohibiera los juegos de mesa.</p>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>9 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#8b5cf6">Próximamente <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=Los%20Cr%C3%ADmenes%20del%20Rol%3A%20los%20adolescentes%20que%20mataron%20a%20sus%20padres%20%F0%9F%8E%B2%20https://viralix-theta.vercel.app/articulo-crimen-rol.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Granada, 1994. Dos chicos de 15 años. Meses jugando a rol. Y una noche que cambió España.</p>
+      <div class="article-meta"><span>23 May</span><span class="dot"></span><span>9 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-crimen-rol.html" class="card-leer" style="color:#8b5cf6" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Los%20Cr%C3%ADmenes%20del%20Rol%3A%20los%20adolescentes%20que%20mataron%20a%20sus%20padres%20%F0%9F%8E%B2%20https://viralix-theta.vercel.app/articulo-crimen-rol.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-    <!-- Card 10 -->
-    <div class="article-card reveal" onclick="location.href='articulo-katana.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#001a0a,#000d05);">
-        <span class="card-emoji">⚔️</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(0,150,50,0.08), transparent)"></div>
-      </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-katana.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#001a0a,#000d05)"><span class="card-emoji">⚔️</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(0,150,50,0.08), transparent)"></div></div>
       <span class="tag" style="background:rgba(0,150,50,0.15);color:#10b981;border-color:rgba(0,150,50,0.3)">True Crime</span>
-      <h3 class="article-title">El Asesino de la Katana: mató a su familia y lleva 20 años viviendo entre nosotros</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Murcia, 2000. Tres muertos. Salió de prisión, formó una familia nueva y nadie sabía quién era realmente.</p>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>9 min</span>
-      </div>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <span style="display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:#10b981">Próximamente <span>→</span></span>
-        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Katana%3A%20mat%C3%B3%20a%20su%20familia%20y%20lleva%2020%20a%C3%B1os%20libre%20%E2%9A%94%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-katana.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
+      <h3 class="article-title">El Asesino de la Katana: mató a su familia porque le quitaron la consola</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Murcia, 2000. 16 años. Tres muertos. Salió libre y nadie sabe hoy dónde está.</p>
+      <div class="article-meta"><span>24 May</span><span class="dot"></span><span>9 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-katana.html" class="card-leer" style="color:#10b981" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Katana%3A%20mat%C3%B3%20a%20su%20familia%20porque%20le%20quitaron%20la%20consola%20%E2%9A%94%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-katana.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
-  </div>
 
-    <!-- MARTA DEL CASTILLO -->
-    <div class="article-card reveal" onclick="location.href='articulo-marta-castillo.html'" style="cursor:pointer">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0c18,#0a0a1a);">
-        <span class="card-emoji">🔵</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(59,130,246,0.12), transparent)"></div>
-      </div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-marta-castillo.html'">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0c18,#0a0a1a)"><span class="card-emoji">🔵</span><div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(59,130,246,0.12), transparent)"></div></div>
+      <span class="tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;border-color:rgba(59,130,246,0.3)">True Crime</span>
       <h3 class="article-title">Marta del Castillo: llevan 17 años buscando su cuerpo y aún no lo han encontrado</h3>
-      <div class="article-meta">
-        <span>True Crime</span><span class="dot"></span><span>12 min</span>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Sevilla, 2009. Su asesino está en la cárcel. Pero su cuerpo nunca apareció. Y eso lo cambia todo.</p>
+      <div class="article-meta"><span>27 May</span><span class="dot"></span><span>12 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-marta-castillo.html" class="card-leer" style="color:#60a5fa" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Marta%20del%20Castillo%3A%2017%20a%C3%B1os%20buscando%20su%20cuerpo%20%F0%9F%94%B5%20https://viralix-theta.vercel.app/articulo-marta-castillo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
-      <a href="https://api.whatsapp.com/send?text=Marta%20del%20Castillo%3A%2017%20a%C3%B1os%20buscando%20su%20cuerpo%20%F0%9F%94%B5%20https://viralix-theta.vercel.app/articulo-marta-castillo.html" target="_blank" onclick="event.stopPropagation()" style="background:#25D366;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;text-decoration:none;border-radius:2px">📲 Compartir</a>
     </div>
 
-    <!-- PRÓXIMO 1: Diana Quer -->
-    <div class="article-card reveal" style="cursor:default;opacity:0.6;">
-      <div class="card-img" style="background:linear-gradient(135deg,#120a1a,#1a0a12);">
-        <span class="card-emoji">🟣</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(168,85,247,0.1), transparent)"></div>
-      </div>
+    <!-- PRÓXIMOS -->
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#120a1a,#1a0a12)"><span class="card-emoji">🟣</span></div>
+      <span class="tag" style="background:rgba(168,85,247,0.15);color:#c084fc;border-color:rgba(168,85,247,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>11 min</span>
+      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>11 min</span></div>
+      <div class="card-footer">
+        <span class="proxima-badge" style="background:rgba(168,85,247,0.15);color:#c084fc">🔜 En preparación</span>
       </div>
-      <span style="background:#6b21a8;color:#e9d5ff;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:2px">🔜 Próximamente</span>
     </div>
 
-    <!-- PRÓXIMO 2: Caso Asunta -->
-    <div class="article-card reveal" style="cursor:default;opacity:0.6;">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a1a0a,#0a120a);">
-        <span class="card-emoji">🟢</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(34,197,94,0.1), transparent)"></div>
-      </div>
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a1a0a,#0a120a)"><span class="card-emoji">🟢</span></div>
+      <span class="tag" style="background:rgba(34,197,94,0.15);color:#4ade80;border-color:rgba(34,197,94,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Asunta: sus propios padres la drogaron y la estrangularon. ¿Por qué?</h3>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>10 min</span>
+      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <span class="proxima-badge" style="background:rgba(34,197,94,0.15);color:#4ade80">🔜 En preparación</span>
       </div>
-      <span style="background:#14532d;color:#86efac;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:2px">🔜 Próximamente</span>
     </div>
 
-    <!-- PRÓXIMO 3: Crimen Urquijo -->
-    <div class="article-card reveal" style="cursor:default;opacity:0.6;">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a1200,#1a0f00);">
-        <span class="card-emoji">🟡</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(234,179,8,0.1), transparent)"></div>
-      </div>
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#1a1200,#1a0f00)"><span class="card-emoji">🟡</span></div>
+      <span class="tag" style="background:rgba(234,179,8,0.15);color:#facc15;border-color:rgba(234,179,8,0.3)">True Crime</span>
       <h3 class="article-title">El Crimen de los Marqueses de Urquijo: el caso que lleva 45 años sin resolverse</h3>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>9 min</span>
+      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>9 min</span></div>
+      <div class="card-footer">
+        <span class="proxima-badge" style="background:rgba(234,179,8,0.15);color:#facc15">🔜 En preparación</span>
       </div>
-      <span style="background:#713f12;color:#fde68a;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:2px">🔜 Próximamente</span>
     </div>
 
-    <!-- PRÓXIMO 4: El Lute -->
-    <div class="article-card reveal" style="cursor:default;opacity:0.6;">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a0a0a,#1a0505);">
-        <span class="card-emoji">🔴</span>
-        <div class="card-glow" style="background:radial-gradient(ellipse at center, rgba(239,68,68,0.1), transparent)"></div>
-      </div>
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#1a0505,#1a0000)"><span class="card-emoji">🔴</span></div>
+      <span class="tag" style="background:rgba(239,68,68,0.15);color:#f87171;border-color:rgba(239,68,68,0.3)">True Crime</span>
       <h3 class="article-title">El Lute: el hombre más buscado de España que escapó dos veces y se convirtió en leyenda</h3>
-      <div class="article-meta">
-        <span>Próximo</span><span class="dot"></span><span>10 min</span>
+      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <span class="proxima-badge" style="background:rgba(239,68,68,0.15);color:#f87171">🔜 En preparación</span>
       </div>
-      <span style="background:#7f1d1d;color:#fca5a5;font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:2px">🔜 Próximamente</span>
     </div>
+
+  </div>
 </section>
 
 <!-- CATEGORIES -->
 <section id="categorias" style="background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="section-header reveal">
-    <div>
-      <div class="section-label">Explora por tema</div>
-      <div class="section-title">CATEGORÍAS</div>
-    </div>
-    <a href="#" class="section-link">Ver todas</a>
+    <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
-
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#cat-misterios" id="cat-misterios" style="--c:#e8321a">
-      <span class="cat-icon">🔍</span>
-      <span class="cat-name">MISTERIOS</span>
-      <span class="cat-count">47 artículos</span>
-      <div class="cat-bar" style="background:var(--accent)"></div>
-    </a>
-    <a class="cat-card" href="#cat-ciencia" id="cat-ciencia" style="--c:#0ff4c6">
-      <span class="cat-icon">🧬</span>
-      <span class="cat-name">CIENCIA</span>
-      <span class="cat-count">38 artículos</span>
-      <div class="cat-bar" style="background:var(--teal)"></div>
-    </a>
-    <a class="cat-card" href="#" style="--c:#d4a843">
-      <span class="cat-icon">📜</span>
-      <span class="cat-name">HISTORIA</span>
-      <span class="cat-count">62 artículos</span>
-      <div class="cat-bar" style="background:var(--gold)"></div>
-    </a>
-    <a class="cat-card" href="#">
-      <span class="cat-icon">🌌</span>
-      <span class="cat-name">UNIVERSO</span>
-      <span class="cat-count">29 artículos</span>
-      <div class="cat-bar" style="background:#7c3aed"></div>
-    </a>
-    <a class="cat-card" href="#">
-      <span class="cat-icon">🏛️</span>
-      <span class="cat-name">LUGARES</span>
-      <span class="cat-count">41 artículos</span>
-      <div class="cat-bar" style="background:#2563a8"></div>
-    </a>
-    <a class="cat-card" href="#">
-      <span class="cat-icon">🧠</span>
-      <span class="cat-name">MENTE</span>
-      <span class="cat-count">33 artículos</span>
-      <div class="cat-bar" style="background:#0f6e56"></div>
-    </a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">9 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔍</span><span class="cat-name">MISTERIOS</span><span class="cat-count">Próximo</span><div class="cat-bar" style="background:var(--gold)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🌌</span><span class="cat-name">UNIVERSO</span><span class="cat-count">Próximo</span><div class="cat-bar" style="background:#3b82f6"></div></a>
   </div>
 </section>
 
 <!-- NEWSLETTER -->
-<section id="newsletter" style="padding:0 40px 100px;">
+<section class="newsletter-section" id="newsletter" style="padding-top:80px">
   <div class="newsletter reveal">
+    <div class="newsletter-eyebrow">Únete a la comunidad VIRALIX</div>
     <h2 class="newsletter-title">NO TE<br><span>PIERDAS</span><br>NADA</h2>
     <p class="newsletter-sub">Una historia impactante cada semana. Sin spam. Sin ruido.</p>
+    <p class="newsletter-sub2">Más de 500 lectores ya reciben el newsletter de VIRALIX cada semana.</p>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
-      <button class="newsletter-btn">Suscribirse</button>
+      <input type="email" class="newsletter-input" id="emailInput" placeholder="tu@email.com">
+      <button class="newsletter-btn" id="newsletterBtn">Suscribirse</button>
+    </div>
+    <p class="newsletter-privacy">Al suscribirte aceptas nuestra <a href="privacidad.html">política de privacidad</a>. Puedes darte de baja en cualquier momento.</p>
+    <div class="newsletter-benefits">
+      <span class="benefit">Un artículo semanal exclusivo</span>
+      <span class="benefit">Acceso anticipado a nuevos casos</span>
+      <span class="benefit">100% gratuito</span>
+      <span class="benefit">Sin spam</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto-section" id="contacto">
+  <div class="contacto-inner">
+    <div class="section-header reveal" style="margin-bottom:0">
+      <div><div class="section-label">Habla con nosotros</div><div class="section-title">CONTACTO</div></div>
+    </div>
+    <div class="contacto-grid reveal">
+      <div class="contacto-texto">
+        <h3>¿Tienes un caso para VIRALIX?</h3>
+        <p>Si conoces un caso real que debería estar en VIRALIX, quieres colaborar con nosotros o has encontrado algún error en nuestros artículos, escríbenos. Respondemos a todos los mensajes.</p>
+        <p>También puedes contactarnos si eres periodista, investigador o simplemente tienes una historia que contar.</p>
+      </div>
+      <div class="contacto-opciones">
+        <a href="https://wa.me/34600000000" target="_blank" class="contacto-card">
+          <span class="cc-icon">📲</span>
+          <div class="cc-info"><h4>WhatsApp</h4><p>Respuesta rápida. Para sugerencias y colaboraciones.</p></div>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a href="contacto.html" class="contacto-card">
+          <span class="cc-icon">✉️</span>
+          <div class="cc-info"><h4>Formulario de contacto</h4><p>Para consultas detalladas y prensa.</p></div>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a href="privacidad.html" class="contacto-card">
+          <span class="cc-icon">🔒</span>
+          <div class="cc-info"><h4>Política de privacidad</h4><p>Cómo tratamos tus datos.</p></div>
+          <span class="cc-arrow">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1003,25 +577,32 @@ footer {
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">VIRAL<span>I</span>X</div>
-      <p class="footer-brand-desc">Lo que no sabías que necesitabas saber. Curiosidades, misterios e historias extraordinarias cada día.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Categorías</div>
-      <div class="footer-links">
-        <a href="#">Misterios</a>
-        <a href="#">Ciencia</a>
-        <a href="#">Historia</a>
-        <a href="#">Universo</a>
-        <a href="#">Lugares</a>
+      <p class="footer-brand-desc">True crime, misterios e historias reales de España. Contenido verificado para mentes curiosas.</p>
+      <div class="footer-social-links">
+        <a href="#" class="footer-social">TikTok</a>
+        <a href="#" class="footer-social">Instagram</a>
+        <a href="#" class="footer-social">YouTube</a>
+        <a href="#" class="footer-social">X</a>
       </div>
     </div>
     <div>
-      <div class="footer-col-title">Más leído</div>
+      <div class="footer-col-title">Artículos</div>
       <div class="footer-links">
-        <a href="articulo-espana.html">El experimento oculto</a>
-        <a href="articulo-mayas.html">Los mayas</a>
-        <a href="articulo-tesla.html">Tesla tenía razón</a>
-        <a href="articulo-marianas.html">Fosa de Marianas</a>
+        <a href="articulo-alcasser.html">Caso Alcàsser</a>
+        <a href="articulo-wanninkhof.html">Caso Wanninkhof</a>
+        <a href="articulo-marta-castillo.html">Marta del Castillo</a>
+        <a href="articulo-asesino-baraja.html">Asesino de la Baraja</a>
+        <a href="articulo-katana.html">Asesino de la Katana</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Más artículos</div>
+      <div class="footer-links">
+        <a href="articulo-marianas.html">Fosa de las Marianas</a>
+        <a href="articulo-hantavirus.html">Hantavirus Hondius</a>
+        <a href="articulo-super-elnino.html">Super El Niño 2026</a>
+        <a href="articulo-puerto-hurraco.html">Puerto Hurraco</a>
+        <a href="articulo-crimen-rol.html">Crímenes del Rol</a>
       </div>
     </div>
     <div>
@@ -1030,23 +611,33 @@ footer {
         <a href="privacidad.html">Política de Privacidad</a>
         <a href="aviso-legal.html">Aviso Legal</a>
         <a href="contacto.html">Contacto</a>
-        <a href="#">Sobre VIRALIX</a>
-        <a href="#">Privacidad</a>
-        <a href="#">Cookies</a>
-        <a href="#">Contacto</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 VIRALIX — Todos los derechos reservados</span>
-    <div class="footer-socials">
-      <a href="#" class="social-link">TikTok</a>
-      <a href="#" class="social-link">Instagram</a>
-      <a href="#" class="social-link">YouTube</a>
-      <a href="#" class="social-link">X</a>
+    <div class="footer-legal">
+      <a href="privacidad.html">Privacidad</a>
+      <a href="aviso-legal.html">Aviso Legal</a>
+      <a href="contacto.html">Contacto</a>
     </div>
   </div>
 </footer>
+
+<!-- SEO HIDDEN LINKS -->
+<div style="display:none" aria-hidden="true">
+  <a href="/articulo-marianas.html">Fosa de las Marianas</a>
+  <a href="/articulo-hantavirus.html">Hantavirus España crucero Hondius</a>
+  <a href="/articulo-asesino-baraja.html">Asesino de la Baraja caso completo</a>
+  <a href="/articulo-super-elnino.html">Super El Niño 2026</a>
+  <a href="/articulo-falsos-recuerdos.html">Falsos recuerdos fenómeno</a>
+  <a href="/articulo-wanninkhof.html">Caso Wanninkhof inocente</a>
+  <a href="/articulo-alcasser.html">Caso Alcàsser Miriam Toñi Desirée</a>
+  <a href="/articulo-puerto-hurraco.html">Matanza Puerto Hurraco</a>
+  <a href="/articulo-crimen-rol.html">Crímenes del Rol Granada</a>
+  <a href="/articulo-katana.html">Asesino de la Katana Murcia</a>
+  <a href="/articulo-marta-castillo.html">Marta del Castillo Sevilla</a>
+</div>
 
 <script>
 // CURSOR
@@ -1056,43 +647,53 @@ let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 function animCursor() {
   cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
+  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
   ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
   requestAnimationFrame(animCursor);
 }
 animCursor();
 
-// NAVBAR SCROLL
-const navbar = document.getElementById('navbar');
+// PROGRESS BAR
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  const total = document.body.scrollHeight - window.innerHeight;
+  document.getElementById('progressBar').style.width = (window.scrollY / total * 100) + '%';
 });
 
-// REVEAL ON SCROLL
+// NAVBAR
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+
+// MOBILE MENU
+document.getElementById('menuBtn').addEventListener('click', () => {
+  const links = document.getElementById('navLinks');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,6,10,0.98);border-bottom:1px solid rgba(255,255,255,0.07);padding:20px 20px;gap:20px;';
+  }
+});
+
+// REVEAL
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
+  entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); } });
+}, { threshold: 0.08 });
 reveals.forEach(r => observer.observe(r));
 
 // NEWSLETTER
-document.querySelector('.newsletter-btn').addEventListener('click', () => {
-  const inp = document.querySelector('.newsletter-input');
+document.getElementById('newsletterBtn').addEventListener('click', () => {
+  const inp = document.getElementById('emailInput');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (emailRegex.test(inp.value.trim())) {
     inp.value = '✓ ¡Suscrito! Bienvenido a VIRALIX';
     inp.style.color = 'var(--teal)';
     inp.style.borderColor = 'var(--teal)';
     inp.disabled = true;
-    document.querySelector('.newsletter-btn').textContent = '✓ Hecho';
-    document.querySelector('.newsletter-btn').style.background = 'var(--teal)';
-    document.querySelector('.newsletter-btn').style.color = '#000';
-    document.querySelector('.newsletter-btn').disabled = true;
+    const btn = document.getElementById('newsletterBtn');
+    btn.textContent = '✓ Hecho';
+    btn.style.background = 'var(--teal)';
+    btn.style.color = '#000';
+    btn.disabled = true;
   } else {
     inp.style.borderColor = 'var(--accent)';
     inp.placeholder = 'Introduce un email válido';
@@ -1101,7 +702,7 @@ document.querySelector('.newsletter-btn').addEventListener('click', () => {
   }
 });
 
-// PARALLAX HERO GRID
+// PARALLAX GRID
 document.addEventListener('mousemove', e => {
   const grid = document.querySelector('.hero-grid');
   if (!grid) return;
@@ -1110,18 +711,5 @@ document.addEventListener('mousemove', e => {
   grid.style.transform = `translate(${x}px, ${y}px)`;
 });
 </script>
-<!-- enlaces seo -->
-<div style="display:none" aria-hidden="true">
-  <a href="/articulo-marianas.html">Qué hay realmente en la Fosa de las Marianas</a>
-  <a href="/articulo-hantavirus.html">Hantavirus en España brote crucero Hondius</a>
-  <a href="/articulo-asesino-baraja.html">El Asesino de la Baraja caso completo</a>
-  <a href="/articulo-super-elnino.html">Super El Niño 2026 el más devastador desde 1877</a>
-  <a href="/articulo-falsos-recuerdos.html">El fenómeno que hace que recuerdes cosas que nunca pasaron</a>
-  <a href="/articulo-wanninkhof.html">El Caso Wanninkhof condenaron a una inocente</a>
-  <a href="/articulo-alcasser.html">El Caso Alcasser Miriam Toñi Desirée 30 años sin respuesta</a>
-  <a href="/articulo-puerto-hurraco.html">La Matanza de Puerto Hurraco 9 muertos pueblo España</a>
-  <a href="/articulo-crimen-rol.html">Los Crímenes del Rol adolescentes mataron padres juego Granada</a>
-  <a href="/articulo-katana.html">El Asesino de la Katana mató familia Murcia libre 20 años</a>
-</div>
 </body>
 </html>
