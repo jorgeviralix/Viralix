@@ -11,7 +11,33 @@
 <meta property="og:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://viralix-theta.vercel.app">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous">
+// DARK/LIGHT MODE TOGGLE
+const modeBtn = document.getElementById('modeToggle');
+modeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
+});
+if (localStorage.getItem('viralix_mode') === 'light') {
+  document.body.classList.add('light');
+  modeBtn.textContent = '🌙';
+}
+
+// LIVE COUNTERS
+document.querySelectorAll('.live-counter').forEach(el => {
+  const date = new Date(el.dataset.date);
+  const text = el.dataset.text;
+  function updateCounter() {
+    const now = new Date();
+    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
+  }
+  updateCounter();
+  setInterval(updateCounter, 60000);
+});
+
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -213,6 +239,37 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
 .footer-legal a { font-size: 11px; color: var(--muted); text-decoration: none; transition: color .2s; }
 .footer-legal a:hover { color: var(--white); }
 
+
+/* MODE TOGGLE */
+.mode-toggle { background:none; border:1px solid var(--border); color:var(--white); width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:2px; font-size:16px; transition:all .2s; margin-left:8px; }
+.mode-toggle:hover { border-color:var(--accent); }
+
+/* LIGHT MODE */
+body.light { --black:#f5f5f5; --deep:#eee; --card:#fff; --border:rgba(0,0,0,0.08); --white:#111; --muted:rgba(17,17,17,0.55); }
+body.light .hero-bg { background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.04) 0%, transparent 60%), linear-gradient(180deg, #f5f5f5 0%, #eee 100%); }
+body.light nav.scrolled { background:rgba(245,245,245,0.97); }
+body.light .ticker { background:var(--accent); }
+body.light .cursor { mix-blend-mode:normal; }
+body.light::before { opacity:0.1; }
+
+/* MAP */
+.map-pulse { animation: mapPulse 2s ease-in-out infinite; }
+.map-ring { animation: mapRing 2s ease-in-out infinite; }
+@keyframes mapPulse { 0%,100%{opacity:0.9;r:8} 50%{opacity:1;r:10} }
+@keyframes mapRing { 0%,100%{opacity:0.4;r:16} 50%{opacity:0.2;r:22} }
+.map-point-link { cursor:pointer; }
+.map-point-link:hover circle:first-child { fill:#fff !important; }
+.map-point-link:hover text { opacity:1 !important; }
+
+/* LIVE COUNTER */
+.live-counter { font-family:var(--font-display); font-size:18px; letter-spacing:2px; color:var(--accent); display:block; margin-bottom:8px; }
+.live-counter .count-num { font-size:24px; color:#ff6b35; }
+
+/* AUDIO BUTTON (for articles) */
+.audio-btn { display:inline-flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--border); color:var(--white); font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:12px 24px; cursor:pointer; border-radius:2px; transition:all .2s; margin-top:16px; }
+.audio-btn:hover { border-color:var(--accent); color:var(--accent); }
+.audio-btn.playing { border-color:var(--accent); color:var(--accent); }
+
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeLeft { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
@@ -257,6 +314,32 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
 <meta name="twitter:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VIRALIX","url":"https://viralix-theta.vercel.app","description":"True crime, misterios y casos reales de España","potentialAction":{"@type":"SearchAction","target":"https://viralix-theta.vercel.app/?q={search_term_string}","query-input":"required name=search_term_string"}}
+
+// DARK/LIGHT MODE TOGGLE
+const modeBtn = document.getElementById('modeToggle');
+modeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
+});
+if (localStorage.getItem('viralix_mode') === 'light') {
+  document.body.classList.add('light');
+  modeBtn.textContent = '🌙';
+}
+
+// LIVE COUNTERS
+document.querySelectorAll('.live-counter').forEach(el => {
+  const date = new Date(el.dataset.date);
+  const text = el.dataset.text;
+  function updateCounter() {
+    const now = new Date();
+    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
+  }
+  updateCounter();
+  setInterval(updateCounter, 60000);
+});
+
 </script>
 </head>
 <body>
@@ -271,9 +354,11 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
   <div class="nav-links" id="navLinks">
     <a href="#articulos">Artículos</a>
     <a href="#categorias">Categorías</a>
+    <a href="#mapa">Mapa</a>
     <a href="sobre-nosotros.html">Sobre nosotros</a>
     <a href="#contacto">Contacto</a>
     <a href="#newsletter" class="nav-cta">Suscribirse</a>
+    <button class="mode-toggle" id="modeToggle" title="Cambiar tema">☀️</button>
   </div>
   <button class="nav-menu-btn" id="menuBtn">☰</button>
 </nav>
@@ -460,7 +545,7 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
       <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marta-castillo.png" alt="Marta del Castillo" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;border-color:rgba(59,130,246,0.3)">True Crime</span>
       <h3 class="article-title">Marta del Castillo: llevan 17 años buscando su cuerpo y aún no lo han encontrado</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Sevilla, 2009. Su asesino está en la cárcel. Pero su cuerpo nunca apareció. Y eso lo cambia todo.</p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px"><span class="live-counter" data-date="2009-01-24" data-text="días desaparecida"></span><br>Sevilla, 2009. Su asesino está en la cárcel. Pero su cuerpo nunca apareció.</p>
       <div class="article-meta"><span>27 May</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-marta-castillo.html" class="card-leer" style="color:#60a5fa" onclick="event.stopPropagation()">Leer →</a>
@@ -509,6 +594,86 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
       </div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- MAPA INTERACTIVO -->
+<section id="mapa" style="padding:80px 48px;background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-header reveal">
+    <div><div class="section-label">Explora por ubicación</div><div class="section-title">MAPA DEL<br>CRIMEN</div></div>
+    <span style="font-size:11px;color:var(--muted);letter-spacing:1px">Haz clic en un punto para leer el caso</span>
+  </div>
+  <div class="mapa-container reveal" style="max-width:900px;margin:0 auto;position:relative;">
+    <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+      <!-- España silueta simplificada -->
+      <path d="M120,180 L180,120 L280,100 L350,80 L420,60 L500,70 L580,80 L650,100 L720,130 L780,180 L800,250 L790,320 L770,380 L740,420 L700,450 L660,480 L620,500 L580,520 L540,530 L500,540 L460,550 L420,540 L380,520 L340,500 L300,480 L260,450 L220,400 L180,350 L140,300 L120,250 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+      
+      <!-- PUNTOS DE CRIMEN -->
+      <!-- Alcàsser - Valencia -->
+      <a href="articulo-alcasser.html" class="map-point-link">
+        <circle cx="560" cy="340" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
+        <circle cx="560" cy="340" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="575" y="332" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Alcàsser</text>
+        <text x="575" y="348" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">1992</text>
+      </a>
+
+      <!-- Puerto Hurraco - Badajoz -->
+      <a href="articulo-puerto-hurraco.html" class="map-point-link">
+        <circle cx="280" cy="400" r="8" fill="#d97706" opacity="0.9" class="map-pulse"/>
+        <circle cx="280" cy="400" r="16" fill="none" stroke="#d97706" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="295" y="392" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Puerto Hurraco</text>
+        <text x="295" y="408" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">1990</text>
+      </a>
+
+      <!-- Asesino Baraja - Madrid -->
+      <a href="articulo-asesino-baraja.html" class="map-point-link">
+        <circle cx="420" cy="280" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
+        <circle cx="420" cy="280" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="435" y="272" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Madrid</text>
+        <text x="435" y="288" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Baraja · 2003</text>
+      </a>
+
+      <!-- Katana - Murcia -->
+      <a href="articulo-katana.html" class="map-point-link">
+        <circle cx="560" cy="410" r="8" fill="#10b981" opacity="0.9" class="map-pulse"/>
+        <circle cx="560" cy="410" r="16" fill="none" stroke="#10b981" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="575" y="402" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Murcia</text>
+        <text x="575" y="418" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Katana · 2000</text>
+      </a>
+
+      <!-- Marta del Castillo - Sevilla -->
+      <a href="articulo-marta-castillo.html" class="map-point-link">
+        <circle cx="320" cy="460" r="8" fill="#3b82f6" opacity="0.9" class="map-pulse"/>
+        <circle cx="320" cy="460" r="16" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="335" y="452" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Sevilla</text>
+        <text x="335" y="468" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Marta · 2009</text>
+      </a>
+
+      <!-- Wanninkhof - Marbella -->
+      <a href="articulo-wanninkhof.html" class="map-point-link">
+        <circle cx="370" cy="510" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
+        <circle cx="370" cy="510" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="385" y="502" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Marbella</text>
+        <text x="385" y="518" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Wanninkhof · 1999</text>
+      </a>
+
+      <!-- Crimen del Rol - Madrid -->
+      <a href="articulo-crimen-rol.html" class="map-point-link">
+        <circle cx="440" cy="260" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
+        <circle cx="440" cy="260" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="455" y="252" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Madrid</text>
+        <text x="455" y="268" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Rol · 1994</text>
+      </a>
+    </svg>
+
+    <!-- LEYENDA -->
+    <div style="display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap">
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#e8321a;display:inline-block"></span> True Crime</span>
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block"></span> Caso abierto</span>
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#d97706;display:inline-block"></span> Masacre</span>
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;display:inline-block"></span> Caso histórico</span>
+    </div>
   </div>
 </section>
 
@@ -617,7 +782,8 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
     <div>
       <div class="footer-col-title">Legal</div>
       <div class="footer-links">
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="#mapa">Mapa</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
         <a href="privacidad.html">Política de Privacidad</a>
         <a href="aviso-legal.html">Aviso Legal</a>
         <a href="contacto.html">Contacto</a>
@@ -720,7 +886,59 @@ document.addEventListener('mousemove', e => {
   const y = (e.clientY / window.innerHeight - 0.5) * 20;
   grid.style.transform = `translate(${x}px, ${y}px)`;
 });
+
+// DARK/LIGHT MODE TOGGLE
+const modeBtn = document.getElementById('modeToggle');
+modeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
+});
+if (localStorage.getItem('viralix_mode') === 'light') {
+  document.body.classList.add('light');
+  modeBtn.textContent = '🌙';
+}
+
+// LIVE COUNTERS
+document.querySelectorAll('.live-counter').forEach(el => {
+  const date = new Date(el.dataset.date);
+  const text = el.dataset.text;
+  function updateCounter() {
+    const now = new Date();
+    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
+  }
+  updateCounter();
+  setInterval(updateCounter, 60000);
+});
+
 </script>
-<script src="cookies-banner.js"></script>
+<script src="cookies-banner.js">
+// DARK/LIGHT MODE TOGGLE
+const modeBtn = document.getElementById('modeToggle');
+modeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
+});
+if (localStorage.getItem('viralix_mode') === 'light') {
+  document.body.classList.add('light');
+  modeBtn.textContent = '🌙';
+}
+
+// LIVE COUNTERS
+document.querySelectorAll('.live-counter').forEach(el => {
+  const date = new Date(el.dataset.date);
+  const text = el.dataset.text;
+  function updateCounter() {
+    const now = new Date();
+    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
+  }
+  updateCounter();
+  setInterval(updateCounter, 60000);
+});
+
+</script>
 </body>
 </html>

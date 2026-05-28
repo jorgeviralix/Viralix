@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marta del Castillo desapareció el 24 de enero de 2009 en Sevilla. Fue asesinada por su exnovio Miguel Carcaño. Su cuerpo nunca fue encontrado. El caso completo.">
+<meta name="keywords" content="Marta del Castillo, caso Marta del Castillo, Miguel Carcaño, desaparición Marta Castillo Sevilla, crimen Marta del Castillo 2009, dónde está Marta del Castillo">
+<title>Marta del Castillo: llevan 17 años buscando su cuerpo | VIRALIX</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060608;
+    --bg2: #0d0d12;
+    --bg3: #13131a;
+    --azul: #3b82f6;
+    --azul2: #60a5fa;
+    --azul-dark: #1d4ed8;
+    --blanco: #f0f0f5;
+    --gris: #6b7280;
+    --gris2: #9ca3af;
+    --rojo: #ef4444;
+    --borde: #1f2937;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--blanco); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; cursor: none; overflow-x: hidden; }
+
+  /* CURSOR */
+  .cursor { width: 8px; height: 8px; background: var(--azul); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; }
+  .cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(59,130,246,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
+
+  /* PROGRESS */
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--azul), var(--azul2)); z-index: 9999; width: 0%; }
+
+  /* NAV */
+  nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 500; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s ease; }
+  nav.scrolled { background: rgba(6,6,8,0.96); border-bottom: 1px solid var(--borde); backdrop-filter: blur(16px); }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 5px; color: var(--blanco); text-decoration: none; }
+  .logo span { color: var(--azul); }
+  .nav-pill { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul2); border: 1px solid rgba(59,130,246,0.3); padding: 5px 14px; border-radius: 100px; }
+
+  /* HERO — ESTILO DOCUMENTAL */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(8rem, 20vw, 22rem);
+    letter-spacing: -0.02em;
+    color: rgba(59,130,246,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+  }
+
+  .hero-left {}
+  .hero-chapter {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-chapter::before { content: ''; width: 32px; height: 1px; background: var(--azul); }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.08;
+    color: var(--blanco);
+    margin-bottom: 28px;
+  }
+  h1 em { color: var(--azul2); font-style: italic; font-weight: 400; }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--gris2);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .meta-chip {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+  .chip-blue { background: rgba(59,130,246,0.15); color: var(--azul2); border: 1px solid rgba(59,130,246,0.2); }
+  .chip-red { background: rgba(239,68,68,0.1); color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+  .chip-gray { background: var(--bg3); color: var(--gris2); border: 1px solid var(--borde); }
+
+  /* HERO RIGHT — FICHA */
+  .hero-right {
+    background: var(--bg2);
+    border: 1px solid var(--borde);
+    border-top: 3px solid var(--azul);
+    padding: 36px;
+  }
+  .ficha-titulo {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .ficha-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(31,41,55,0.5);
+    gap: 16px;
+  }
+  .ficha-row:last-child { border-bottom: none; }
+  .ficha-key { font-size: 0.72rem; color: var(--gris); text-transform: uppercase; letter-spacing: 0.08em; flex-shrink: 0; }
+  .ficha-val { font-size: 0.88rem; color: var(--blanco); text-align: right; font-weight: 500; }
+  .ficha-val.rojo { color: #fca5a5; }
+  .ficha-val.azul { color: var(--azul2); }
+
+  /* CONTENIDO */
+  .contenido { max-width: 760px; margin: 0 auto; padding: 80px 48px; }
+
+  /* CAPÍTULOS */
+  .capitulo-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 64px 0 28px;
+  }
+  .capitulo-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--azul);
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+    padding: 4px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .capitulo-linea { flex: 1; height: 1px; background: var(--borde); }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  p { margin-bottom: 22px; color: rgba(240,240,245,0.72); font-size: 1.02rem; line-height: 1.85; }
+
+  /* LEAD */
+  .lead {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(240,240,245,0.88);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    padding: 32px;
+    background: var(--bg2);
+    border-left: 3px solid var(--azul);
+  }
+
+  /* CITA */
+  .cita {
+    margin: 40px 0;
+    padding: 32px 36px;
+    background: var(--bg2);
+    border: 1px solid var(--borde);
+    position: relative;
+  }
+  .cita::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 5rem;
+    color: var(--azul);
+    line-height: 1;
+    opacity: 0.4;
+  }
+  .cita p {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--blanco);
+    margin: 0 0 12px;
+    line-height: 1.55;
+  }
+  .cita cite { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gris); font-style: normal; }
+
+  /* TIMELINE VERTICAL */
+  .timeline { margin: 40px 0; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 139px;
+    top: 12px; bottom: -1px;
+    width: 1px;
+    background: var(--borde);
+  }
+  .tl-item:last-child::before { display: none; }
+  .tl-fecha {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--azul2);
+    text-align: right;
+    padding-top: 2px;
+    line-height: 1.3;
+  }
+  .tl-body {
+    padding: 0 0 32px 24px;
+    position: relative;
+  }
+  .tl-body::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--azul);
+    border: 2px solid var(--bg);
+  }
+  .tl-titulo { font-weight: 600; font-size: 0.92rem; color: var(--blanco); margin-bottom: 6px; }
+  .tl-texto { font-size: 0.88rem; color: var(--gris2); line-height: 1.6; margin: 0; }
+
+  /* DATOS */
+  .datos-box {
+    background: var(--bg2);
+    border: 1px solid var(--borde);
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .datos-titulo {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .dato { display: flex; gap: 14px; margin-bottom: 14px; font-size: 0.9rem; color: var(--gris2); align-items: flex-start; line-height: 1.5; }
+  .dato::before { content: '→'; color: var(--azul); flex-shrink: 0; font-weight: 700; }
+
+  /* ALERT */
+  .alert {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-left: 3px solid var(--rojo);
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 0.9rem;
+    color: rgba(252,165,165,0.85);
+    line-height: 1.6;
+  }
+  .alert strong { display: block; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f87171; margin-bottom: 8px; }
+
+  /* VERIFICADO */
+  .verificado {
+    background: rgba(16,185,129,0.05);
+    border-left: 3px solid rgba(16,185,129,0.4);
+    padding: 16px 20px;
+    margin: 28px 0;
+    font-size: 0.85rem;
+    color: rgba(110,231,183,0.75);
+  }
+  .verificado strong { display: block; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(52,211,153,0.6); margin-bottom: 6px; }
+
+  /* SEPARADOR */
+  .sep { display: flex; align-items: center; gap: 16px; margin: 56px 0; }
+  .sep::before, .sep::after { content: ''; flex: 1; height: 1px; background: var(--borde); }
+  .sep span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris); white-space: nowrap; }
+
+  /* WHATSAPP */
+  .wa-wrap { display: flex; justify-content: center; margin: 48px 0; }
+  .wa-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #25D366; color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 16px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .wa-btn:hover { background: #1da851; transform: translateY(-2px); }
+
+  /* CONCLUSIÓN */
+  .conclusion {
+    background: var(--bg2);
+    border: 1px solid var(--borde);
+    border-top: 2px solid var(--azul);
+    padding: 48px;
+    margin: 64px 0 0;
+  }
+  .conclusion h2 { margin-bottom: 20px; }
+
+  /* AD */
+  .ad-slot { margin: 40px 0; min-height: 90px; }
+
+  /* MÁS ARTÍCULOS */
+  .mas { background: var(--bg2); padding: 80px 48px; border-top: 1px solid var(--borde); }
+  .mas-inner { max-width: 900px; margin: 0 auto; }
+  .mas-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gris);
+    margin-bottom: 32px;
+  }
+  .mas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--borde); border: 1px solid var(--borde); }
+  .mas-card { background: var(--bg); padding: 24px; text-decoration: none; color: var(--blanco); transition: background 0.2s; border-left: 2px solid transparent; }
+  .mas-card:hover { background: var(--bg3); border-left-color: var(--azul); }
+  .mas-cat { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--azul2); margin-bottom: 10px; }
+  .mas-ttl { font-size: 0.92rem; font-weight: 500; line-height: 1.4; }
+
+  /* FOOTER */
+  footer { background: #030305; padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--borde); flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+  .footer-logo span { color: var(--azul); }
+  .footer-copy { font-size: 0.72rem; color: var(--gris); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-right { display: none; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .contenido { padding: 60px 20px; }
+    .tl-item { grid-template-columns: 90px 1fr; }
+    .conclusion { padding: 32px 24px; }
+    .mas { padding: 60px 20px; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">VIRA<span>LIX</span></a>
+  <span class="nav-pill">True Crime · Sevilla</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">MARTA</div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-chapter">Caso sin resolver · España</div>
+      <h1>Llevan <em>17 años</em> buscando su cuerpo</h1>
+      <p class="hero-sub">Marta del Castillo tenía 17 años cuando desapareció en Sevilla el 24 de enero de 2009. Su asesino fue condenado. Pero su cuerpo nunca fue encontrado. Y eso lo cambia todo.</p>
+      <div class="hero-meta">
+        <span class="meta-chip chip-blue">True Crime</span>
+        <span class="meta-chip chip-red">Cuerpo no encontrado</span>
+        <span class="meta-chip chip-gray">12 min lectura</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="ficha-titulo">Ficha del caso</div>
+      <div class="ficha-row">
+        <span class="ficha-key">Víctima</span>
+        <span class="ficha-val">Marta del Castillo Carrasco</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Edad</span>
+        <span class="ficha-val">17 años</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Fecha</span>
+        <span class="ficha-val">24 enero 2009</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Lugar</span>
+        <span class="ficha-val">Sevilla, España</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Asesino</span>
+        <span class="ficha-val rojo">Miguel Carcaño — 26 años condena</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Cuerpo</span>
+        <span class="ficha-val azul">Nunca encontrado</span>
+      </div>
+      <div class="ficha-row">
+        <span class="ficha-key">Estado</span>
+        <span class="ficha-val rojo">Abierto en la memoria</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<main class="contenido">
+
+  <p class="lead reveal">
+    Han pasado 17 años. Los padres de Marta del Castillo siguen sin saber dónde está el cuerpo de su hija. El hombre que la mató ha dado cuatro versiones distintas sobre dónde lo tiró. Dos de ellas llevaron a los buzos del Guadalquivir a buscar durante semanas. No encontraron nada. Esta es la historia completa de uno de los crímenes más perturbadores de la España reciente.
+  </p>
+
+  <!-- AdSense 1 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="verificado reveal">
+    <strong>✓ Fuentes verificadas</strong>
+    Sentencia de la Audiencia Provincial de Sevilla, archivo de El País, ABC Sevilla, La Sexta y declaraciones públicas de la familia del Castillo (2009-2026).
+  </div>
+
+  <!-- CAP 1 -->
+  <div class="capitulo-header reveal">
+    <span class="capitulo-num">Capítulo 01</span>
+    <div class="capitulo-linea"></div>
+  </div>
+  <h2 class="reveal">Quién era Marta</h2>
+
+  <p class="reveal">Marta del Castillo Carrasco tenía 17 años y vivía en Sevilla con su familia. Era una chica normal de instituto, con sus amigos, sus redes sociales incipientes — era 2009, el mundo digital empezaba a entrar en las vidas de los adolescentes — y una relación sentimental reciente con Miguel Carcaño, un chico de 19 años con quien había cortado hacía poco.</p>
+
+  <p class="reveal">La noche del 24 de enero de 2009, Marta salió de su casa para quedar con Carcaño. Era sábado. Dijo a su familia que volvería pronto. No volvió. Al día siguiente, sus padres denunciaron la desaparición. Lo que vino después sacudió a España durante meses.</p>
+
+  <!-- CAP 2 -->
+  <div class="capitulo-header reveal">
+    <span class="capitulo-num">Capítulo 02</span>
+    <div class="capitulo-linea"></div>
+  </div>
+  <h2 class="reveal">La noche del crimen</h2>
+
+  <p class="reveal">Según la reconstrucción judicial, Marta fue al piso de Miguel Carcaño en el barrio sevillano de Bellavista. Allí también estaba el hermano de Carcaño, Samuel Benítez. Lo que ocurrió exactamente en ese piso esa noche nunca ha quedado del todo claro, porque las versiones de los implicados cambiaron repetidamente.</p>
+
+  <p class="reveal">Lo que sí quedó probado en juicio fue que Marta fue agredida sexualmente y asesinada esa noche en el piso. Su cuerpo fue sacado del apartamento y deshecho. Miguel Carcaño dio cuatro versiones distintas sobre qué hizo con él.</p>
+
+  <div class="cita reveal">
+    <p>"Tiré el cuerpo al Guadalquivir desde el puente del Alamillo."</p>
+    <cite>Miguel Carcaño — Primera versión sobre el paradero del cuerpo</cite>
+  </div>
+
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-fecha">24 ENE<br>2009</div>
+      <div class="tl-body">
+        <div class="tl-titulo">Marta sale de casa</div>
+        <p class="tl-texto">Va al piso de su exnovio Miguel Carcaño en Bellavista, Sevilla. Es la última vez que la ven con vida.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-fecha">25 ENE<br>2009</div>
+      <div class="tl-body">
+        <div class="tl-titulo">Denuncia de desaparición</div>
+        <p class="tl-texto">Los padres denuncian que Marta no ha vuelto a casa. Comienza la búsqueda.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-fecha">FEB<br>2009</div>
+      <div class="tl-body">
+        <div class="tl-titulo">Detención de Carcaño</div>
+        <p class="tl-texto">Miguel Carcaño y su hermano Samuel Benítez son detenidos. Carcaño confiesa haber matado a Marta pero da versiones contradictorias sobre el cuerpo.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-fecha">2009<br>— 2012</div>
+      <div class="tl-body">
+        <div class="tl-titulo">Búsquedas en el Guadalquivir</div>
+        <p class="tl-texto">Buzos y equipos de rescate rastrean el río durante semanas en varias ocasiones. No encuentran nada.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-fecha">2013</div>
+      <div class="tl-body">
+        <div class="tl-titulo">Condena</div>
+        <p class="tl-texto">Miguel Carcaño es condenado a 26 años de prisión por asesinato con agresión sexual. Samuel Benítez recibe una pena menor.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-fecha">2026</div>
+      <div class="tl-body">
+        <div class="tl-titulo">El cuerpo sigue sin aparecer</div>
+        <p class="tl-texto">17 años después, los padres de Marta siguen sin poder enterrar a su hija. Carcaño cumple condena y no ha dado una versión definitiva creíble.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AdSense 2 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- CAP 3 -->
+  <div class="capitulo-header reveal">
+    <span class="capitulo-num">Capítulo 03</span>
+    <div class="capitulo-linea"></div>
+  </div>
+  <h2 class="reveal">Cuatro versiones. Ninguna verdad.</h2>
+
+  <p class="reveal">Lo que convierte el caso de Marta del Castillo en especialmente perturbador no es solo el crimen en sí, sino la crueldad añadida de las versiones contradictorias de Carcaño sobre el paradero del cuerpo. A lo largo de los años, dio al menos cuatro versiones distintas.</p>
+
+  <div class="datos-box reveal">
+    <div class="datos-titulo">Las cuatro versiones de Carcaño</div>
+    <div class="dato">Lo tiré al Guadalquivir desde el puente del Alamillo — buzos rastrearon el río durante semanas sin resultado.</div>
+    <div class="dato">Lo dejé en un vertedero en la carretera de Málaga — la zona fue excavada. Nada.</div>
+    <div class="dato">Está enterrado en el parque del Guadaíra — nueva búsqueda. Nada.</div>
+    <div class="dato">En 2017, cambió de nuevo su versión señalando otro punto del río. Otra búsqueda. Nada.</div>
+  </div>
+
+  <p class="reveal">Cada nueva versión de Carcaño generó una nueva operación de búsqueda, nuevas esperanzas para la familia, y una nueva decepción. Los investigadores que estudiaron el caso concluyeron que Carcaño sabía perfectamente dónde estaba el cuerpo y estaba usando esa información como forma de poder y de tortura psicológica hacia la familia.</p>
+
+  <div class="alert reveal">
+    <strong>⚠ Lo que dice la familia</strong>
+    Los padres de Marta, Antonio del Castillo y Eva Casanueva, han declarado en múltiples ocasiones que sin el cuerpo de su hija no pueden cerrar el duelo. "Necesitamos enterrarla", han dicho. Llevan 17 años esperando esa posibilidad.
+  </div>
+
+  <!-- CAP 4 -->
+  <div class="capitulo-header reveal">
+    <span class="capitulo-num">Capítulo 04</span>
+    <div class="capitulo-linea"></div>
+  </div>
+  <h2 class="reveal">El juicio y la condena</h2>
+
+  <p class="reveal">Miguel Carcaño fue juzgado y condenado en 2013 a 26 años de prisión por asesinato con agresión sexual. Su hermano Samuel Benítez, que estaba en el piso esa noche y ayudó a ocultar lo ocurrido, recibió una condena menor. Otros dos jóvenes que tuvieron conocimiento de los hechos y no los denunciaron también fueron condenados por encubrimiento.</p>
+
+  <p class="reveal">La condena de 26 años fue considerada insuficiente por gran parte de la opinión pública española. La ausencia del cuerpo complicó la acusación: sin restos, no se pudo determinar con precisión el modo exacto de la muerte, lo que limitó la tipificación del delito.</p>
+
+  <div class="cita reveal">
+    <p>"Mi hija no se merece estar tirada en cualquier sitio. Se merece descansar en paz."</p>
+    <cite>Antonio del Castillo, padre de Marta — 2019</cite>
+  </div>
+
+  <div class="sep reveal"><span>el estado actual</span></div>
+
+  <!-- CAP 5 -->
+  <div class="capitulo-header reveal">
+    <span class="capitulo-num">Capítulo 05</span>
+    <div class="capitulo-linea"></div>
+  </div>
+  <h2 class="reveal">2026: ¿Dónde está Marta?</h2>
+
+  <p class="reveal">Miguel Carcaño lleva más de una década en prisión. Ha cambiado su versión sobre el paradero del cuerpo en múltiples ocasiones. Ninguna ha llevado a encontrar los restos de Marta. Los investigadores creen que podría haber sido incinerado o deshecho de forma que hace prácticamente imposible su localización.</p>
+
+  <p class="reveal">Sus padres, Antonio y Eva, se convirtieron en activistas por los derechos de las víctimas y por reformas en el sistema judicial español. Su lucha pública durante años contribuyó a cambios legislativos en materia de protección de víctimas. Pero lo que más quieren — encontrar a Marta — sigue sin ocurrir.</p>
+
+  <p class="reveal">El caso Marta del Castillo es, en este sentido, uno de los más crueles de la crónica negra española: hay condena, hay culpable, hay juicio. Pero no hay cierre. Y sin cuerpo, el dolor de una familia no puede terminar nunca.</p>
+
+  <!-- AdSense 3 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="wa-wrap reveal">
+    <a href="https://api.whatsapp.com/send?text=Marta%20del%20Castillo%3A%20llevan%2017%20a%C3%B1os%20buscando%20su%20cuerpo%20y%20a%C3%BAn%20no%20lo%20han%20encontrado%20%F0%9F%94%B5%20https%3A%2F%2Fviralix-theta.vercel.app%2Farticulo-marta-castillo.html" target="_blank" class="wa-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Compartir en WhatsApp
+    </a>
+  </div>
+
+  <div class="conclusion reveal">
+    <h2>Un crimen que no termina</h2>
+    <p>España ha tenido muchos crímenes que han marcado generaciones. Pero el de Marta del Castillo tiene algo que lo distingue de todos los demás: la crueldad no terminó con la muerte. Continuó durante 17 años, cada vez que Carcaño daba una nueva versión falsa, cada vez que los buzos bajaban al río y volvían con las manos vacías, cada vez que sus padres salían a pedir justicia sabiendo que la justicia más básica — saber dónde está tu hija — les seguía siendo negada.</p>
+    <p><strong>El asesino está en la cárcel. Pero Marta del Castillo sigue desaparecida. Y eso, en 2026, sigue siendo una herida abierta en la conciencia de España.</strong></p>
+  </div>
+
+</main>
+
+<section class="mas">
+  <div class="mas-inner">
+    <div class="mas-titulo">Seguir leyendo</div>
+    <div class="mas-grid">
+      <a href="articulo-alcasser.html" class="mas-card"><div class="mas-cat">True Crime</div><div class="mas-ttl">Caso Alcàsser: 30 años de preguntas sin respuesta</div></a>
+      <a href="articulo-wanninkhof.html" class="mas-card"><div class="mas-cat">True Crime</div><div class="mas-ttl">Caso Wanninkhof: condenaron a una inocente</div></a>
+      <a href="articulo-katana.html" class="mas-card"><div class="mas-cat">True Crime</div><div class="mas-ttl">El Asesino de la Katana: mató a su familia por la consola</div></a>
+      <a href="articulo-puerto-hurraco.html" class="mas-card"><div class="mas-cat">True Crime</div><div class="mas-ttl">Matanza de Puerto Hurraco: 9 muertos en una noche</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">VIRA<span>LIX</span></a>
+  <span class="footer-copy">© 2026 VIRALIX — Contenido verificado para mentes curiosas</span>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('progressBar').style.width = (window.scrollY / total * 100) + '%';
+  });
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function animCursor() {
+    rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+    cursor.style.left = mx - 4 + 'px'; cursor.style.top = my - 4 + 'px';
+    ring.style.left = rx - 16 + 'px'; ring.style.top = ry - 16 + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(3)'; ring.style.transform = 'scale(1.5)'; });
+    a.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; });
+  });
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => io.observe(r));
+</script>
+<script src="audio-reader.js"></script>
+<script src="cookies-banner.js"></script>
+</body>
+</html>
