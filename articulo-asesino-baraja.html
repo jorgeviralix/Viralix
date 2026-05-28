@@ -136,6 +136,27 @@
     .timeline-item { grid-template-columns: 80px 1fr; gap: 12px; }
     .victima-card { grid-template-columns: 40px 1fr; }
   }
+
+.hero-periodico, .hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  filter: blur(2px);
+  transform: scale(1.05);
+}
+.hero-periodico > *, .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
 </head>

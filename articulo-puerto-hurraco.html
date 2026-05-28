@@ -227,6 +227,27 @@
     footer { padding: 24px 20px; }
     .crono { padding-left: 16px; }
   }
+
+.hero-periodico, .hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  filter: blur(2px);
+  transform: scale(1.05);
+}
+.hero-periodico > *, .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 </style>
 </head>
 <body>
@@ -241,6 +262,7 @@
 </nav>
 
 <section class="hero-periodico">
+  <div class="hero-bg-img" style="background-image:url('img-puerto-hurraco.png')"></div>
   <div class="periodico-header">
     <span class="periodico-fecha">26 de agosto de 1990 — Puerto Hurraco, Badajoz</span>
     <span class="periodico-lugar">España profunda</span>

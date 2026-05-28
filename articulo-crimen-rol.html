@@ -372,7 +372,28 @@
       footer { padding: 30px 20px; }
       .hero-num { display: none; }
     }
-  </style>
+  
+.hero-periodico, .hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  filter: blur(2px);
+  transform: scale(1.05);
+}
+.hero-periodico > *, .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+</style>
 </head>
 <body>
 
