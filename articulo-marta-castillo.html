@@ -388,6 +388,20 @@
     .mas { padding: 60px 20px; }
     footer { padding: 24px 20px; }
   }
+
+  .hero .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('img-marta-castillo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    filter: blur(2px);
+    transform: scale(1.05);
+  }
+  .hero > * { position: relative; z-index: 1; }
+
 </style>
 </head>
 <body>
@@ -403,6 +417,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-img"></div>
   <div class="hero-bg-text">MARTA</div>
   <div class="hero-grid">
     <div class="hero-left">
