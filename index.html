@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -163,10 +163,7 @@ const mapContainer = document.querySelector('.mapa-container');
 if (mapContainer) mapObs.observe(mapContainer);
 
 
-// LOADING SCREEN
-window.addEventListener('load', () => {
-  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
-});
+
 
 // BACK TO TOP
 const backTop = document.getElementById('backTop');
@@ -175,19 +172,7 @@ window.addEventListener('scroll', () => {
 });
 backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-// READER COUNTER (simulated social proof)
-const readerCounter = document.getElementById('readerCounter');
-const readerNum = document.getElementById('readerNum');
-let baseReaders = Math.floor(Math.random() * 80) + 120;
-setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
-function updateReaders() {
-  baseReaders += Math.floor(Math.random() * 5) - 2;
-  if (baseReaders < 80) baseReaders = 80;
-  if (baseReaders > 300) baseReaders = 300;
-  readerNum.textContent = baseReaders;
-}
-updateReaders();
-setInterval(updateReaders, 8000);
+
 
 // RANDOM ARTICLE
 const allArticles = [
@@ -239,6 +224,7 @@ window.addEventListener('scroll', () => {
 
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -260,6 +246,7 @@ window.addEventListener('scroll', () => {
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+@media (hover: none) { .cursor, .cursor-ring { display: none !important; } body { cursor: auto !important; } }
 body { background: var(--black); color: var(--white); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
 
 /* CURSOR */
@@ -556,14 +543,14 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 
 
 /* LOADING SCREEN */
-.loader { position: fixed; inset: 0; background: #05060a; z-index: 99999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity 0.5s, visibility 0.5s; }
-.loader.hidden { opacity: 0; visibility: hidden; }
-.loader-logo { font-family: var(--font-display); font-size: 48px; letter-spacing: 6px; color: var(--white); animation: loaderPulse 1s ease-in-out infinite; }
-.loader-logo span { color: var(--accent); }
-.loader-bar { width: 120px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
-.loader-bar-inner { width: 0%; height: 100%; background: var(--accent); animation: loaderFill 1.2s ease-out forwards; }
-@keyframes loaderPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-@keyframes loaderFill { 0%{width:0} 100%{width:100%} }
+
+
+
+
+
+
+
+
 
 /* BACK TO TOP */
 .back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--accent); border: none; border-radius: 50%; color: var(--white); font-size: 18px; cursor: pointer; z-index: 400; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(232,50,26,0.3); }
@@ -571,10 +558,10 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .back-top:hover { background: var(--accent2); transform: translateY(-3px) !important; }
 
 /* READER COUNTER */
-.reader-counter { position: fixed; bottom: 30px; left: 30px; background: var(--card); border: 1px solid var(--border); padding: 8px 16px; border-radius: 100px; font-size: 11px; color: var(--muted); z-index: 400; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(20px); transition: all 0.3s; }
-.reader-counter.visible { opacity: 1; transform: translateY(0); }
-.reader-dot { width: 6px; height: 6px; background: #34d399; border-radius: 50%; animation: readerPulse 1.5s ease-in-out infinite; }
-@keyframes readerPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+
+
+
 
 /* ACCESSIBILITY */
 .a11y-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px; font-size: 14px; transition: all 0.2s; margin-left: 4px; }
@@ -784,10 +771,7 @@ const mapContainer = document.querySelector('.mapa-container');
 if (mapContainer) mapObs.observe(mapContainer);
 
 
-// LOADING SCREEN
-window.addEventListener('load', () => {
-  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
-});
+
 
 // BACK TO TOP
 const backTop = document.getElementById('backTop');
@@ -859,15 +843,12 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
 </head>
 <body>
 
 
-<!-- LOADING SCREEN -->
-<div class="loader" id="loader">
-  <div class="loader-logo">VIRAL<span>I</span>X</div>
-  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
-</div>
+
 
 <div class="progress-bar" id="progressBar"></div>
 <div class="cursor" id="cursor"></div>
@@ -905,8 +886,8 @@ window.addEventListener('scroll', () => {
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">13</div><div class="stat-label">Artículos publicados</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Contenido verificado</div></div>
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Casos por descubrir</div></div>
+    <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Activo desde</div></div>
+    <div class="stat"><div class="stat-num">ES</div><div class="stat-label">Enfocado en España</div></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
 </section>
@@ -943,8 +924,8 @@ window.addEventListener('scroll', () => {
 <!-- STATS BAR -->
 <div class="stats-bar reveal">
   <div class="stat-block"><div class="num">13<span>+</span></div><div class="lbl">Artículos publicados</div></div>
-  <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Contenido verificado</div></div>
-  <div class="stat-block"><div class="num">5<span>★</span></div><div class="lbl">Valoración media</div></div>
+  <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Fuentes verificadas</div></div>
+  <div class="stat-block"><div class="num">9<span>+</span></div><div class="lbl">Casos de true crime</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
 </div>
 
@@ -986,7 +967,7 @@ window.addEventListener('scroll', () => {
   <div class="articles-grid">
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marianas.png" alt="Fosa de las Marianas" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marianas.png" alt="Fosa de las Marianas" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag">Océanos</span>
       <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El 80% del océano sigue sin explorar. Lo que hay en la Fosa de las Marianas no está en ningún documental.</p>
@@ -998,7 +979,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-falsos-recuerdos.png" alt="Falsos Recuerdos" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-falsos-recuerdos.png" alt="Falsos Recuerdos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag">Mente</span>
       <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Los falsos recuerdos afectan al 70% de la población. La ciencia acaba de descubrir por qué.</p>
@@ -1010,7 +991,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-hantavirus.png" alt="Hantavirus Hondius" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-hantavirus.png" alt="Hantavirus Hondius" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● EN DIRECTO</span>
       <h3 class="article-title">Hantavirus en España: qué es y todo sobre el brote del crucero Hondius</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Un crucero polar, un virus que se transmite entre personas y una alerta sanitaria en seis países europeos.</p>
@@ -1022,7 +1003,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-asesino-baraja.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-asesino-baraja.png" alt="Asesino de la Baraja" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-asesino-baraja.png" alt="Asesino de la Baraja" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Baraja: 6 muertos, una pistola de Bosnia y una confesión borracho</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El único asesino en serie de la historia reciente de España. En 2028 podría quedar libre.</p>
@@ -1034,7 +1015,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-super-elnino.png" alt="Super El Nino 2026" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-super-elnino.png" alt="Super El Nino 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● ALERTA ROJA</span>
       <h3 class="article-title">Super El Niño 2026: el fenómeno más devastador desde 1877</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">La NOAA confirma un 82% de probabilidad. El último evento así mató al 4% de la población mundial.</p>
@@ -1046,7 +1027,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-puerto-hurraco.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-puerto-hurraco.png" alt="Puerto Hurraco" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-puerto-hurraco.png" alt="Puerto Hurraco" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(180,100,0,0.15);color:#d97706;border-color:rgba(180,100,0,0.3)">True Crime</span>
       <h3 class="article-title">La Matanza de Puerto Hurraco: 9 muertos en un pueblo de 300 personas</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Dos hermanos. Una venganza de décadas. El crimen más brutal de la España rural del siglo XX.</p>
@@ -1058,7 +1039,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-rol.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-crimen-rol.png" alt="Crimenes del Rol" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-crimen-rol.png" alt="Crimenes del Rol" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(80,0,200,0.15);color:#8b5cf6;border-color:rgba(80,0,200,0.3)">True Crime</span>
       <h3 class="article-title">Los Crímenes del Rol: los adolescentes que mataron a sus padres por un juego</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Madrid, 1994. Dos chicos de 15 años. Meses jugando a rol. Y una noche que cambió España.</p>
@@ -1070,7 +1051,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-katana.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-katana.png" alt="Asesino de la Katana" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-katana.png" alt="Asesino de la Katana" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(0,150,50,0.15);color:#10b981;border-color:rgba(0,150,50,0.3)">True Crime</span>
       <h3 class="article-title">El Asesino de la Katana: mató a su familia porque le quitaron la consola</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Murcia, 2000. 16 años. Tres muertos. Salió libre y nadie sabe hoy dónde está.</p>
@@ -1082,7 +1063,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-castillo.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marta-castillo.png" alt="Marta del Castillo" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marta-castillo.png" alt="Marta del Castillo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;border-color:rgba(59,130,246,0.3)">True Crime</span>
       <h3 class="article-title">Marta del Castillo: llevan 17 años buscando su cuerpo y aún no lo han encontrado</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px"><span class="live-counter" data-date="2009-01-24" data-text="días desaparecida"></span><br>Sevilla, 2009. Su asesino está en la cárcel. Pero su cuerpo nunca apareció.</p>
@@ -1095,7 +1076,7 @@ window.addEventListener('scroll', () => {
 
     <!-- PRÓXIMOS -->
     <div class="article-card clickable reveal" onclick="location.href='articulo-diana-quer.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Caso Diana Quer" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Caso Diana Quer" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(0,220,200,0.15);color:#0ff4e0;border-color:rgba(0,220,200,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Galicia, 2016. 18 años. Prisión permanente revisable para su asesino.</p>
@@ -1107,7 +1088,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-asunta.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asunta.png" alt="Caso Asunta" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asunta.png" alt="Caso Asunta" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag" style="background:rgba(52,211,153,0.15);color:#6ee7b7;border-color:rgba(52,211,153,0.3)">True Crime</span>
       <h3 class="article-title">El Caso Asunta: sus propios padres la drogaron y la estrangularon. ¿Por qué?</h3>
       <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Santiago, 2013. 12 años. Adoptada en China. Asesinada por sus padres.</p>
@@ -1309,9 +1290,9 @@ window.addEventListener('scroll', () => {
         <p>También puedes contactarnos si eres periodista, investigador o simplemente tienes una historia que contar.</p>
       </div>
       <div class="contacto-opciones">
-        <a href="https://wa.me/34600000000" target="_blank" class="contacto-card">
+        <a href="contacto.html" class="contacto-card">
           <span class="cc-icon">📲</span>
-          <div class="cc-info"><h4>WhatsApp</h4><p>Respuesta rápida. Para sugerencias y colaboraciones.</p></div>
+          <div class="cc-info"><h4>Mensaje directo</h4><p>Respuesta rápida. Para sugerencias y colaboraciones.</p></div>
           <span class="cc-arrow">→</span>
         </a>
         <a href="contacto.html" class="contacto-card">
@@ -1333,11 +1314,7 @@ window.addEventListener('scroll', () => {
 <!-- BACK TO TOP -->
 <button class="back-top" id="backTop" title="Volver arriba">↑</button>
 
-<!-- READER COUNTER -->
-<div class="reader-counter" id="readerCounter">
-  <span class="reader-dot"></span>
-  <span id="readerNum">0</span> leyendo ahora
-</div>
+
 
 <!-- FOOTER -->
 <footer>
@@ -1346,10 +1323,9 @@ window.addEventListener('scroll', () => {
       <div class="footer-brand-name">VIRAL<span>I</span>X</div>
       <p class="footer-brand-desc">True crime, misterios e historias reales de España. Contenido verificado para mentes curiosas.</p>
       <div class="footer-social-links">
-        <a href="#" class="footer-social">TikTok</a>
-        <a href="#" class="footer-social">Instagram</a>
-        <a href="#" class="footer-social">YouTube</a>
-        <a href="#" class="footer-social">X</a>
+        <a href="contacto.html" class="footer-social">Contacto</a>
+        <a href="timeline.html" class="footer-social">Timeline</a>
+        <a href="sobre-nosotros.html" class="footer-social">Sobre nosotros</a>
       </div>
     </div>
     <div>
@@ -1454,7 +1430,7 @@ document.getElementById('newsletterBtn').addEventListener('click', () => {
   const inp = document.getElementById('emailInput');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (emailRegex.test(inp.value.trim())) {
-    inp.value = '✓ ¡Suscrito! Bienvenido a VIRALIX';
+    inp.value = '✓ Registrado. Te avisaremos cuando lancemos el newsletter.';
     inp.style.color = 'var(--teal)';
     inp.style.borderColor = 'var(--teal)';
     inp.disabled = true;
@@ -1631,10 +1607,7 @@ const mapContainer = document.querySelector('.mapa-container');
 if (mapContainer) mapObs.observe(mapContainer);
 
 
-// LOADING SCREEN
-window.addEventListener('load', () => {
-  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
-});
+
 
 // BACK TO TOP
 const backTop = document.getElementById('backTop');
@@ -1858,10 +1831,7 @@ const mapContainer = document.querySelector('.mapa-container');
 if (mapContainer) mapObs.observe(mapContainer);
 
 
-// LOADING SCREEN
-window.addEventListener('load', () => {
-  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1300);
-});
+
 
 // BACK TO TOP
 const backTop = document.getElementById('backTop');
