@@ -479,7 +479,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .stat-block .num.counting { color: var(--accent); }
 
 /* BUSCADOR */
-.search-section { padding: 0 48px; margin-top: -40px; margin-bottom: 40px; position: relative; z-index: 10; }
+.search-section { padding: 0 48px; margin-top: 40px; margin-bottom: 40px; position: relative; z-index: 10; }
 .search-box { max-width: 600px; margin: 0 auto; position: relative; }
 .search-input { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 16px 52px 16px 20px; border-radius: 4px; outline: none; transition: border-color 0.2s; }
 .search-input:focus { border-color: rgba(232,50,26,0.4); }
@@ -781,18 +781,7 @@ window.addEventListener('scroll', () => {
 backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 // READER COUNTER (simulated social proof)
-const readerCounter = document.getElementById('readerCounter');
-const readerNum = document.getElementById('readerNum');
-let baseReaders = Math.floor(Math.random() * 80) + 120;
-setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
-function updateReaders() {
-  baseReaders += Math.floor(Math.random() * 5) - 2;
-  if (baseReaders < 80) baseReaders = 80;
-  if (baseReaders > 300) baseReaders = 300;
-  readerNum.textContent = baseReaders;
-}
-updateReaders();
-setInterval(updateReaders, 8000);
+
 
 // RANDOM ARTICLE
 const allArticles = [
@@ -1617,18 +1606,7 @@ window.addEventListener('scroll', () => {
 backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 // READER COUNTER (simulated social proof)
-const readerCounter = document.getElementById('readerCounter');
-const readerNum = document.getElementById('readerNum');
-let baseReaders = Math.floor(Math.random() * 80) + 120;
-setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
-function updateReaders() {
-  baseReaders += Math.floor(Math.random() * 5) - 2;
-  if (baseReaders < 80) baseReaders = 80;
-  if (baseReaders > 300) baseReaders = 300;
-  readerNum.textContent = baseReaders;
-}
-updateReaders();
-setInterval(updateReaders, 8000);
+
 
 // RANDOM ARTICLE
 const allArticles = [
@@ -1841,18 +1819,7 @@ window.addEventListener('scroll', () => {
 backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 // READER COUNTER (simulated social proof)
-const readerCounter = document.getElementById('readerCounter');
-const readerNum = document.getElementById('readerNum');
-let baseReaders = Math.floor(Math.random() * 80) + 120;
-setTimeout(() => { readerCounter.classList.add('visible'); }, 3000);
-function updateReaders() {
-  baseReaders += Math.floor(Math.random() * 5) - 2;
-  if (baseReaders < 80) baseReaders = 80;
-  if (baseReaders > 300) baseReaders = 300;
-  readerNum.textContent = baseReaders;
-}
-updateReaders();
-setInterval(updateReaders, 8000);
+
 
 // RANDOM ARTICLE
 const allArticles = [
