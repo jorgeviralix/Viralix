@@ -77,6 +77,8 @@ const articulos = [
   { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
   { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
+  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -685,6 +687,8 @@ const articulos = [
   { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
   { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
+  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -874,7 +878,7 @@ window.addEventListener('scroll', () => {
     <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">13</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num">15</div><div class="stat-label">Artículos publicados</div></div>
     <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Activo desde</div></div>
     <div class="stat"><div class="stat-num">ES</div><div class="stat-label">Enfocado en España</div></div>
   </div>
@@ -912,7 +916,7 @@ window.addEventListener('scroll', () => {
 
 <!-- STATS BAR -->
 <div class="stats-bar reveal">
-  <div class="stat-block"><div class="num">13<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num">15<span>+</span></div><div class="lbl">Artículos publicados</div></div>
   <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Fuentes verificadas</div></div>
   <div class="stat-block"><div class="num">9<span>+</span></div><div class="lbl">Casos de true crime</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
@@ -953,165 +957,206 @@ window.addEventListener('scroll', () => {
 
 <!-- ARTICLES GRID -->
 <section style="padding-top:0">
+<div class="section-header reveal" style="margin-top:60px">
+    <div><div class="section-label">True Crime España</div><div class="section-title">CASOS REALES</div></div>
+  </div>
   <div class="articles-grid">
 
-    <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marianas.png" alt="Fosa de las Marianas" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag">Océanos</span>
-      <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El 80% del océano sigue sin explorar. Lo que hay en la Fosa de las Marianas no está en ningún documental.</p>
-      <div class="article-meta"><span>12 May</span><span class="dot"></span><span>6 min</span></div>
-      <div class="card-footer">
-        <a href="articulo-marianas.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Qu%C3%A9%20hay%20realmente%20en%20la%20Fosa%20de%20las%20Marianas%20%F0%9F%8C%8A%20https://viralix-theta.vercel.app/articulo-marianas.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
-      </div>
-    </div>
-
-    <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-falsos-recuerdos.png" alt="Falsos Recuerdos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag">Mente</span>
-      <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Los falsos recuerdos afectan al 70% de la población. La ciencia acaba de descubrir por qué.</p>
-      <div class="article-meta"><span>10 May</span><span class="dot"></span><span>5 min</span></div>
-      <div class="card-footer">
-        <a href="articulo-falsos-recuerdos.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El%20fen%C3%B3meno%20que%20hace%20que%20recuerdes%20cosas%20que%20nunca%20pasaron%20%F0%9F%A7%A0%20https://viralix-theta.vercel.app/articulo-falsos-recuerdos.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
-      </div>
-    </div>
-
-    <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-hantavirus.png" alt="Hantavirus Hondius" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● EN DIRECTO</span>
-      <h3 class="article-title">Hantavirus en España: qué es y todo sobre el brote del crucero Hondius</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Un crucero polar, un virus que se transmite entre personas y una alerta sanitaria en seis países europeos.</p>
-      <div class="article-meta"><span>17 May</span><span class="dot"></span><span>8 min</span></div>
-      <div class="card-footer">
-        <a href="articulo-hantavirus.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Hantavirus%20en%20Espa%C3%B1a%3A%20todo%20sobre%20el%20brote%20del%20crucero%20Hondius%20%F0%9F%A6%A0%20https://viralix-theta.vercel.app/articulo-hantavirus.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
-      </div>
-    </div>
-
     <div class="article-card clickable reveal" onclick="location.href='articulo-asesino-baraja.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-asesino-baraja.png" alt="Asesino de la Baraja" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asesino-baraja.png" alt="Asesino de la Baraja" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Baraja: 6 muertos, una pistola de Bosnia y una confesión borracho</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">El único asesino en serie de la historia reciente de España. En 2028 podría quedar libre.</p>
-      <div class="article-meta"><span>18 May</span><span class="dot"></span><span>10 min</span></div>
+      <div class="article-meta"><span>Madrid · 2003</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-asesino-baraja.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Baraja%3A%206%20muertos%20y%20una%20confesi%C3%B3n%20borracho%20%F0%9F%83%8F%20https://viralix-theta.vercel.app/articulo-asesino-baraja.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
-      </div>
-    </div>
-
-    <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-super-elnino.png" alt="Super El Nino 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">● ALERTA ROJA</span>
-      <h3 class="article-title">Super El Niño 2026: el fenómeno más devastador desde 1877</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">La NOAA confirma un 82% de probabilidad. El último evento así mató al 4% de la población mundial.</p>
-      <div class="article-meta"><span>19 May</span><span class="dot"></span><span>8 min</span></div>
-      <div class="card-footer">
-        <a href="articulo-super-elnino.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El%20Super%20El%20Ni%C3%B1o%202026%20podr%C3%ADa%20ser%20el%20m%C3%A1s%20devastador%20desde%201877%20%F0%9F%8C%8D%20https://viralix-theta.vercel.app/articulo-super-elnino.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Baraja%20https://viralix-theta.vercel.app/articulo-asesino-baraja.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-puerto-hurraco.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-puerto-hurraco.png" alt="Puerto Hurraco" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(180,100,0,0.15);color:#d97706;border-color:rgba(180,100,0,0.3)">True Crime</span>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-puerto-hurraco.png" alt="Puerto Hurraco" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
       <h3 class="article-title">La Matanza de Puerto Hurraco: 9 muertos en un pueblo de 300 personas</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Dos hermanos. Una venganza de décadas. El crimen más brutal de la España rural del siglo XX.</p>
-      <div class="article-meta"><span>22 May</span><span class="dot"></span><span>10 min</span></div>
+      <div class="article-meta"><span>Badajoz · 1990</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
-        <a href="articulo-puerto-hurraco.html" class="card-leer" style="color:#d97706" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=La%20Matanza%20de%20Puerto%20Hurraco%3A%209%20muertos%20en%20un%20pueblo%20%F0%9F%8F%9A%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-puerto-hurraco.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-puerto-hurraco.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Puerto%20Hurraco%20https://viralix-theta.vercel.app/articulo-puerto-hurraco.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-rol.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-crimen-rol.png" alt="Crimenes del Rol" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(80,0,200,0.15);color:#8b5cf6;border-color:rgba(80,0,200,0.3)">True Crime</span>
-      <h3 class="article-title">Los Crímenes del Rol: los adolescentes que mataron a sus padres por un juego</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Madrid, 1994. Dos chicos de 15 años. Meses jugando a rol. Y una noche que cambió España.</p>
-      <div class="article-meta"><span>23 May</span><span class="dot"></span><span>9 min</span></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-crimen-rol.png" alt="Crímenes del Rol" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">Los Crímenes del Rol: los adolescentes que mataron por un juego</h3>
+      <div class="article-meta"><span>Madrid · 1994</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
-        <a href="articulo-crimen-rol.html" class="card-leer" style="color:#8b5cf6" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Los%20Cr%C3%ADmenes%20del%20Rol%3A%20los%20adolescentes%20que%20mataron%20a%20sus%20padres%20%F0%9F%8E%B2%20https://viralix-theta.vercel.app/articulo-crimen-rol.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-crimen-rol.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Cr%C3%ADmenes%20del%20Rol%20https://viralix-theta.vercel.app/articulo-crimen-rol.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-katana.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-katana.png" alt="Asesino de la Katana" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(0,150,50,0.15);color:#10b981;border-color:rgba(0,150,50,0.3)">True Crime</span>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-katana.png" alt="Asesino de la Katana" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Katana: mató a su familia porque le quitaron la consola</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Murcia, 2000. 16 años. Tres muertos. Salió libre y nadie sabe hoy dónde está.</p>
-      <div class="article-meta"><span>24 May</span><span class="dot"></span><span>9 min</span></div>
+      <div class="article-meta"><span>Murcia · 2000</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
-        <a href="articulo-katana.html" class="card-leer" style="color:#10b981" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El%20Asesino%20de%20la%20Katana%3A%20mat%C3%B3%20a%20su%20familia%20porque%20le%20quitaron%20la%20consola%20%E2%9A%94%EF%B8%8F%20https://viralix-theta.vercel.app/articulo-katana.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-katana.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Asesino%20de%20la%20Katana%20https://viralix-theta.vercel.app/articulo-katana.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-castillo.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="https://raw.githubusercontent.com/jorgeviralix/Viralix/main/img-marta-castillo.png" alt="Marta del Castillo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;border-color:rgba(59,130,246,0.3)">True Crime</span>
-      <h3 class="article-title">Marta del Castillo: llevan 17 años buscando su cuerpo y aún no lo han encontrado</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px"><span class="live-counter" data-date="2009-01-24" data-text="días desaparecida"></span><br>Sevilla, 2009. Su asesino está en la cárcel. Pero su cuerpo nunca apareció.</p>
-      <div class="article-meta"><span>27 May</span><span class="dot"></span><span>12 min</span></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-marta-castillo.png" alt="Marta del Castillo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">Marta del Castillo: llevan 17 años buscando su cuerpo</h3>
+      <div class="article-meta"><span>Sevilla · 2009</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
-        <a href="articulo-marta-castillo.html" class="card-leer" style="color:#60a5fa" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Marta%20del%20Castillo%3A%2017%20a%C3%B1os%20buscando%20su%20cuerpo%20%F0%9F%94%B5%20https://viralix-theta.vercel.app/articulo-marta-castillo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-marta-castillo.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Marta%20del%20Castillo%20https://viralix-theta.vercel.app/articulo-marta-castillo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
-    <!-- PRÓXIMOS -->
     <div class="article-card clickable reveal" onclick="location.href='articulo-diana-quer.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Caso Diana Quer" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(0,220,200,0.15);color:#0ff4e0;border-color:rgba(0,220,200,0.3)">True Crime</span>
-      <h3 class="article-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Galicia, 2016. 18 años. Prisión permanente revisable para su asesino.</p>
-      <div class="article-meta"><span>29 May</span><span class="dot"></span><span>11 min</span></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Diana Quer" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
+      <div class="article-meta"><span>Galicia · 2016</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
-        <a href="articulo-diana-quer.html" class="card-leer" style="color:#0ff4e0" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso%20Diana%20Quer%3A%20500%20d%C3%ADas%20busc%C3%A1ndola%20https://viralix-theta.vercel.app/articulo-diana-quer.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-diana-quer.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso%20Diana%20Quer%20https://viralix-theta.vercel.app/articulo-diana-quer.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
     <div class="article-card clickable reveal" onclick="location.href='articulo-asunta.html'">
       <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asunta.png" alt="Caso Asunta" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
-      <span class="tag" style="background:rgba(52,211,153,0.15);color:#6ee7b7;border-color:rgba(52,211,153,0.3)">True Crime</span>
-      <h3 class="article-title">El Caso Asunta: sus propios padres la drogaron y la estrangularon. ¿Por qué?</h3>
-      <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px">Santiago, 2013. 12 años. Adoptada en China. Asesinada por sus padres.</p>
-      <div class="article-meta"><span>29 May</span><span class="dot"></span><span>11 min</span></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">El Caso Asunta: sus propios padres la drogaron y la estrangularon</h3>
+      <div class="article-meta"><span>Santiago · 2013</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
-        <a href="articulo-asunta.html" class="card-leer" style="color:#6ee7b7" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso%20Asunta%3A%20sus%20padres%20la%20adoptaron%20y%20la%20mataron%20https://viralix-theta.vercel.app/articulo-asunta.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+        <a href="articulo-asunta.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso%20Asunta%20https://viralix-theta.vercel.app/articulo-asunta.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a1200,#1a0f00)"><span class="card-emoji">🟡</span></div>
-      <span class="tag" style="background:rgba(234,179,8,0.15);color:#facc15;border-color:rgba(234,179,8,0.3)">True Crime</span>
-      <h3 class="article-title">El Crimen de los Marqueses de Urquijo: el caso que lleva 45 años sin resolverse</h3>
-      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>9 min</span></div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-urquijo.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-urquijo.png" alt="Marqueses de Urquijo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(201,168,76,0.15);color:#e0c872;border-color:rgba(201,168,76,0.3)">True Crime</span>
+      <h3 class="article-title">El Crimen de los Marqueses de Urquijo: 45 años sin resolverse</h3>
+      <div class="article-meta"><span>Madrid · 1980</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
-        <span class="proxima-badge" style="background:rgba(234,179,8,0.15);color:#facc15">🔜 En preparación</span>
+        <a href="articulo-urquijo.html" class="card-leer" style="color:#c9a84c" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Marqueses%20de%20Urquijo%20https://viralix-theta.vercel.app/articulo-urquijo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a0505,#1a0000)"><span class="card-emoji">🔴</span></div>
-      <span class="tag" style="background:rgba(239,68,68,0.15);color:#f87171;border-color:rgba(239,68,68,0.3)">True Crime</span>
-      <h3 class="article-title">El Lute: el hombre más buscado de España que escapó dos veces y se convirtió en leyenda</h3>
-      <div class="article-meta"><span>Próximamente</span><span class="dot"></span><span>10 min</span></div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-el-lute.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-el-lute.png" alt="El Lute" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(217,119,6,0.15);color:#f59e0b;border-color:rgba(217,119,6,0.3)">True Crime</span>
+      <h3 class="article-title">El Lute: escapó dos veces de prisión y se convirtió en leyenda</h3>
+      <div class="article-meta"><span>España · 1965-1981</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
-        <span class="proxima-badge" style="background:rgba(239,68,68,0.15);color:#f87171">🔜 En preparación</span>
+        <a href="articulo-el-lute.html" class="card-leer" style="color:#d97706" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20Lute%20https://viralix-theta.vercel.app/articulo-el-lute.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
       </div>
     </div>
 
   </div>
+
+  <!-- CIENCIA Y MISTERIOS -->
+  <div class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">Ciencia y misterios</div><div class="section-title">MÁS ALLÁ DEL CRIMEN</div></div>
+  </div>
+  <div class="articles-grid">
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-marianas.png" alt="Fosa de las Marianas" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">Océanos</span>
+      <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
+      <div class="article-meta"><span>Océano Pacífico</span><span class="dot"></span><span>6 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-marianas.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Fosa%20de%20las%20Marianas%20https://viralix-theta.vercel.app/articulo-marianas.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
+    </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-falsos-recuerdos.png" alt="Falsos Recuerdos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">Mente</span>
+      <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
+      <div class="article-meta"><span>Psicología</span><span class="dot"></span><span>5 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-falsos-recuerdos.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Falsos%20Recuerdos%20https://viralix-theta.vercel.app/articulo-falsos-recuerdos.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
+    </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-hantavirus.png" alt="Hantavirus" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">Ciencia</span>
+      <h3 class="article-title">Hantavirus en España: todo sobre el brote del crucero Hondius</h3>
+      <div class="article-meta"><span>Antártida</span><span class="dot"></span><span>8 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-hantavirus.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Hantavirus%20Hondius%20https://viralix-theta.vercel.app/articulo-hantavirus.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
+    </div>
+
+    <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-super-elnino.png" alt="Super El Niño" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">Ciencia</span>
+      <h3 class="article-title">Super El Niño 2026: el fenómeno más devastador desde 1877</h3>
+      <div class="article-meta"><span>Global</span><span class="dot"></span><span>8 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-super-elnino.html" class="card-leer" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Super%20El%20Ni%C3%B1o%20https://viralix-theta.vercel.app/articulo-super-elnino.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PRÓXIMAMENTE -->
+  <div class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">En preparación</div><div class="section-title">PRÓXIMAMENTE</div></div>
+  </div>
+  <div class="articles-grid">
+
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#1a0505,#0d0000)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🔥</span></div>
+      <span class="tag" style="background:rgba(239,68,68,0.1);color:#f87171;border-color:rgba(239,68,68,0.2)">True Crime</span>
+      <h3 class="article-title">Caso Bretón: el padre que quemó a sus hijos para vengarse de su mujer</h3>
+      <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>Próximamente</span></div>
+      <div class="card-footer"><span class="proxima-badge" style="background:rgba(239,68,68,0.1);color:#f87171">🔜 En preparación</span></div>
+    </div>
+
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a0a14,#050510)"><span class="card-emoji" style="font-size:48px;opacity:0.5">💀</span></div>
+      <span class="tag" style="background:rgba(139,92,246,0.1);color:#a78bfa;border-color:rgba(139,92,246,0.2)">True Crime</span>
+      <h3 class="article-title">El Arropiero: el mayor asesino en serie de la historia de España</h3>
+      <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>Próximamente</span></div>
+      <div class="card-footer"><span class="proxima-badge" style="background:rgba(139,92,246,0.1);color:#a78bfa">🔜 En preparación</span></div>
+    </div>
+
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#0a1210,#050d0a)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🕳️</span></div>
+      <span class="tag" style="background:rgba(16,185,129,0.1);color:#34d399;border-color:rgba(16,185,129,0.2)">Misterio</span>
+      <h3 class="article-title">El Caso de las Niñas de Aguilar: desaparecieron hace 30 años y nadie las buscó</h3>
+      <div class="article-meta"><span>Aguilar de Campoo · 1992</span><span class="dot"></span><span>Próximamente</span></div>
+      <div class="card-footer"><span class="proxima-badge" style="background:rgba(16,185,129,0.1);color:#34d399">🔜 En preparación</span></div>
+    </div>
+
+    <div class="article-card proxima reveal">
+      <div class="card-img" style="background:linear-gradient(135deg,#14100a,#0d0a05)"><span class="card-emoji" style="font-size:48px;opacity:0.5">⚗️</span></div>
+      <span class="tag" style="background:rgba(251,191,36,0.1);color:#fbbf24;border-color:rgba(251,191,36,0.2)">True Crime</span>
+      <h3 class="article-title">La Envenenadora de Valencia: mató a dos maridos con lejía y nadie sospechó</h3>
+      <div class="article-meta"><span>Valencia · 2004</span><span class="dot"></span><span>Próximamente</span></div>
+      <div class="card-footer"><span class="proxima-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24">🔜 En preparación</span></div>
+    </div>
+
+  </div>
+
+
 </section>
-
-
 
 <!-- CASO DEL MES -->
 <section class="caso-mes reveal">
@@ -1214,7 +1259,7 @@ window.addEventListener('scroll', () => {
     <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">11 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">13 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
@@ -1324,6 +1369,8 @@ window.addEventListener('scroll', () => {
         <a href="articulo-marta-castillo.html">Marta del Castillo</a>
         <a href="articulo-asesino-baraja.html">Asesino de la Baraja</a>
         <a href="articulo-katana.html">Asesino de la Katana</a>
+        <a href="articulo-urquijo.html">Marqueses de Urquijo</a>
+        <a href="articulo-el-lute.html">El Lute</a>
       </div>
     </div>
     <div>
@@ -1509,6 +1556,8 @@ const articulos = [
   { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
   { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
+  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -1722,6 +1771,8 @@ const articulos = [
   { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
   { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
+  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
+  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
