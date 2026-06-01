@@ -11,220 +11,7 @@
 <meta property="og:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://viralix-theta.vercel.app">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous">
-// DARK/LIGHT MODE TOGGLE
-const modeBtn = document.getElementById('modeToggle');
-modeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
-  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
-});
-if (localStorage.getItem('viralix_mode') === 'light') {
-  document.body.classList.add('light');
-  modeBtn.textContent = '🌙';
-}
-
-// LIVE COUNTERS
-document.querySelectorAll('.live-counter').forEach(el => {
-  const date = new Date(el.dataset.date);
-  const text = el.dataset.text;
-  function updateCounter() {
-    const now = new Date();
-    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
-    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
-  }
-  updateCounter();
-  setInterval(updateCounter, 60000);
-});
-
-
-// CONTADORES ANIMADOS
-function animateCounters() {
-  document.querySelectorAll('.stat-block .num').forEach(el => {
-    const text = el.textContent;
-    const match = text.match(/(\d+)/);
-    if (!match) return;
-    const target = parseInt(match[1]);
-    const suffix = text.replace(match[1], '');
-    let current = 0;
-    const duration = 1500;
-    const step = target / (duration / 16);
-    const counter = setInterval(() => {
-      current += step;
-      if (current >= target) { current = target; clearInterval(counter); }
-      el.innerHTML = Math.floor(current) + suffix;
-    }, 16);
-  });
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
-}, { threshold: 0.3 });
-const statsBar = document.querySelector('.stats-bar');
-if (statsBar) statsObs.observe(statsBar);
-
-// BUSCADOR
-const articulos = [
-  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
-  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
-  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
-  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
-  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
-  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
-  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
-  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
-  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
-  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
-  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
-  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
-  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
-  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
-  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
-];
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const searchNoResults = document.getElementById('searchNoResults');
-if (searchInput) {
-  searchInput.addEventListener('input', function() {
-    const q = this.value.toLowerCase().trim();
-    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
-    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
-    if (matches.length > 0) {
-      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
-      searchResults.classList.add('active');
-      searchNoResults.style.display = 'none';
-    } else {
-      searchResults.classList.remove('active');
-      searchResults.innerHTML = '';
-      searchNoResults.style.display = 'block';
-    }
-  });
-  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
-}
-
-// QUIZ
-const quizData = [
-  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
-  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
-  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
-  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
-  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
-];
-let quizCurrent = 0, quizCorrect = 0;
-function loadQuiz() {
-  const data = quizData[quizCurrent];
-  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
-  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
-  document.getElementById('quizPregunta').textContent = data.q;
-  const optsEl = document.getElementById('quizOpciones');
-  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
-  document.getElementById('quizNext').style.display = 'none';
-  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const idx = parseInt(this.dataset.idx);
-      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
-      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
-      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
-      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
-      else { setTimeout(showQuizResult, 800); }
-    });
-  });
-}
-function showQuizResult() {
-  document.getElementById('quizScore').style.display = 'none';
-  document.getElementById('quizPregunta').style.display = 'none';
-  document.getElementById('quizOpciones').style.display = 'none';
-  document.getElementById('quizNext').style.display = 'none';
-  document.querySelector('.quiz-progress').style.display = 'none';
-  const final = document.getElementById('quizFinal');
-  final.style.display = 'block';
-  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
-  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
-  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
-  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
-}
-const quizNext = document.getElementById('quizNext');
-if (quizNext) {
-  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
-  loadQuiz();
-}
-
-// MAP SCROLL ANIMATION
-const mapPoints = document.querySelectorAll('.map-point-link');
-const mapObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      mapPoints.forEach((p, i) => {
-        p.style.opacity = '0';
-        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
-      });
-      mapObs.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
-const mapContainer = document.querySelector('.mapa-container');
-if (mapContainer) mapObs.observe(mapContainer);
-
-
-
-
-// BACK TO TOP
-const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.classList.toggle('visible', window.scrollY > 600);
-});
-backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-
-
-// RANDOM ARTICLE
-const allArticles = [
-  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
-  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
-  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
-  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html'
-];
-document.getElementById('randomBtn').addEventListener('click', () => {
-  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
-  window.location.href = random;
-});
-
-// ACCESSIBILITY - Font size
-let fontLevel = 0;
-document.getElementById('a11yBtn').addEventListener('click', () => {
-  fontLevel = (fontLevel + 1) % 3;
-  const sizes = ['1rem', '1.1rem', '1.2rem'];
-  document.body.style.fontSize = sizes[fontLevel];
-});
-
-// EASTER EGG - type VIRALIX
-let easterBuffer = '';
-document.addEventListener('keydown', e => {
-  easterBuffer += e.key.toLowerCase();
-  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
-  if (easterBuffer === 'viralix') {
-    document.body.style.transition = 'filter 0.5s';
-    document.body.style.filter = 'hue-rotate(180deg)';
-    setTimeout(() => {
-      document.body.style.filter = 'hue-rotate(360deg)';
-      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
-    }, 1500);
-    easterBuffer = '';
-  }
-});
-
-// PARALLAX on scroll for card images
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.card-img img').forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const offset = (rect.top / window.innerHeight - 0.5) * 20;
-      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
-    }
-  });
-});
-
-</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -245,23 +32,14 @@ window.addEventListener('scroll', () => {
   --font-serif: 'DM Serif Display', serif;
   --font-body: 'DM Sans', sans-serif;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 @media (hover: none) { .cursor, .cursor-ring { display: none !important; } body { cursor: auto !important; } }
 body { background: var(--black); color: var(--white); font-family: var(--font-body); overflow-x: hidden; cursor: none; }
-
-/* CURSOR */
 .cursor { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform .12s ease; mix-blend-mode: difference; }
 .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(232,50,26,0.5); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform .25s ease, width .2s, height .2s; }
-
-/* NOISE */
 body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.6; }
-
-/* PROGRESS BAR */
 .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 9999; width: 0%; transition: width 0.1s; }
-
-/* NAVBAR */
 nav { position: fixed; top: 2px; left: 0; right: 0; z-index: 500; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px; background: rgba(5,6,10,0); backdrop-filter: blur(0px); border-bottom: 1px solid transparent; transition: all .4s ease; }
 nav.scrolled { background: rgba(5,6,10,0.95); backdrop-filter: blur(20px); border-bottom-color: var(--border); }
 .nav-logo { font-family: var(--font-display); font-size: 28px; letter-spacing: 4px; color: var(--white); text-decoration: none; }
@@ -272,8 +50,6 @@ nav.scrolled { background: rgba(5,6,10,0.95); backdrop-filter: blur(20px); borde
 .nav-cta { background: var(--accent) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 2px; letter-spacing: 1.5px !important; }
 .nav-cta:hover { background: var(--accent2) !important; color: var(--white) !important; }
 .nav-menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--white); padding: 8px 12px; cursor: pointer; font-size: 18px; }
-
-/* HERO */
 .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 100px 48px 60px; position: relative; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.08) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(15,244,198,0.04) 0%, transparent 50%), linear-gradient(180deg, #05060a 0%, #08090f 100%); }
 .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
@@ -297,14 +73,10 @@ nav.scrolled { background: rgba(5,6,10,0.95); backdrop-filter: blur(20px); borde
 .hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp .6s 1s forwards; }
 .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--accent)); animation: scrollPulse 2s ease-in-out infinite; }
 .scroll-text { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
-
-/* TICKER */
 .ticker { background: var(--accent); padding: 12px 0; overflow: hidden; }
 .ticker-inner { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
 .ticker-item { font-family: var(--font-display); font-size: 14px; letter-spacing: 3px; padding: 0 40px; color: var(--white); display: flex; align-items: center; gap: 40px; }
 .ticker-item::after { content: '✦'; opacity: 0.6; }
-
-/* SECTIONS */
 section { padding: 100px 48px; position: relative; }
 .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
 .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
@@ -312,8 +84,6 @@ section { padding: 100px 48px; position: relative; }
 .section-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color .2s; }
 .section-link:hover { color: var(--accent); }
 .section-link::after { content: '→'; }
-
-/* FEATURED */
 .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
 .featured-main { background: var(--card); border: 1px solid var(--border); padding: 48px; position: relative; overflow: hidden; cursor: pointer; transition: border-color .3s; }
 .featured-main:hover { border-color: rgba(232,50,26,0.4); }
@@ -328,8 +98,6 @@ section { padding: 100px 48px; position: relative; }
 .article-meta .dot { width: 3px; height: 3px; background: var(--muted); border-radius: 50%; }
 .read-more { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); text-decoration: none; margin-top: 24px; transition: gap .2s; }
 .read-more:hover { gap: 14px; }
-
-/* ARTICLE GRID */
 .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; }
 .article-card { background: var(--card); border: 1px solid var(--border); padding: 32px; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
 .article-card.clickable { cursor: pointer; }
@@ -346,21 +114,15 @@ section { padding: 100px 48px; position: relative; }
 .card-leer { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); text-decoration: none; }
 .wa-share { background: #25D366; color: #fff; font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; text-decoration: none; border-radius: 2px; flex-shrink: 0; }
 .proxima-badge { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; }
-
-/* SEPARADOR DE SECCIÓN */
 .section-divider { display: flex; align-items: center; gap: 20px; padding: 0 48px; margin: -20px 0 0; }
 .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 .section-divider span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-
-/* STATS BAR */
 .stats-bar { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
 .stat-block { text-align: center; padding: 24px; position: relative; }
 .stat-block:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: var(--border); }
 .stat-block .num { font-family: var(--font-display); font-size: 3rem; letter-spacing: 2px; color: var(--white); line-height: 1; }
 .stat-block .num span { color: var(--accent); }
 .stat-block .lbl { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
-
-/* CATEGORIES */
 .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
 .cat-card { background: var(--card); border: 1px solid var(--border); padding: 32px 24px; cursor: pointer; transition: all .3s; position: relative; overflow: hidden; text-decoration: none; color: var(--white); display: flex; flex-direction: column; gap: 12px; }
 .cat-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
@@ -371,8 +133,6 @@ section { padding: 100px 48px; position: relative; }
 .cat-count { font-size: 11px; color: var(--muted); }
 .cat-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform .3s; }
 .cat-card:hover .cat-bar { transform: scaleX(1); }
-
-/* NEWSLETTER */
 .newsletter-section { padding: 0 48px 100px; }
 .newsletter { background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 80px; text-align: center; position: relative; overflow: hidden; }
 .newsletter::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(232,50,26,0.06), transparent); pointer-events: none; }
@@ -392,8 +152,6 @@ section { padding: 100px 48px; position: relative; }
 .newsletter-benefits { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
 .benefit { font-size: 11px; letter-spacing: 1px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 .benefit::before { content: '✓'; color: var(--teal); font-weight: 700; }
-
-/* CONTACTO */
 .contacto-section { background: var(--deep); border-top: 1px solid var(--border); padding: 80px 48px; }
 .contacto-inner { max-width: 900px; margin: 0 auto; }
 .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
@@ -407,8 +165,6 @@ section { padding: 100px 48px; position: relative; }
 .contacto-card .cc-info p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.4; }
 .contacto-card .cc-arrow { margin-left: auto; color: var(--muted); font-size: 18px; transition: transform .2s; }
 .contacto-card:hover .cc-arrow { transform: translateX(4px); color: var(--accent); }
-
-/* FOOTER */
 footer { background: var(--deep); border-top: 1px solid var(--border); padding: 60px 48px 30px; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
 .footer-brand-name { font-family: var(--font-display); font-size: 48px; letter-spacing: 4px; color: var(--white); line-height: 1; margin-bottom: 16px; }
@@ -427,21 +183,14 @@ footer { background: var(--deep); border-top: 1px solid var(--border); padding: 
 .footer-legal { display: flex; gap: 20px; }
 .footer-legal a { font-size: 11px; color: var(--muted); text-decoration: none; transition: color .2s; }
 .footer-legal a:hover { color: var(--white); }
-
-
-/* MODE TOGGLE */
 .mode-toggle { background:none; border:1px solid var(--border); color:var(--white); width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:2px; font-size:16px; transition:all .2s; margin-left:8px; }
 .mode-toggle:hover { border-color:var(--accent); }
-
-/* LIGHT MODE */
 body.light { --black:#f5f5f5; --deep:#eee; --card:#fff; --border:rgba(0,0,0,0.08); --white:#111; --muted:rgba(17,17,17,0.55); }
 body.light .hero-bg { background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(232,50,26,0.04) 0%, transparent 60%), linear-gradient(180deg, #f5f5f5 0%, #eee 100%); }
 body.light nav.scrolled { background:rgba(245,245,245,0.97); }
 body.light .ticker { background:var(--accent); }
 body.light .cursor { mix-blend-mode:normal; }
 body.light::before { opacity:0.1; }
-
-/* MAP */
 .map-pulse { animation: mapPulse 2s ease-in-out infinite; }
 .map-ring { animation: mapRing 2s ease-in-out infinite; }
 @keyframes mapPulse { 0%,100%{opacity:0.9;r:8} 50%{opacity:1;r:10} }
@@ -449,38 +198,23 @@ body.light::before { opacity:0.1; }
 .map-point-link { cursor:pointer; }
 .map-point-link:hover circle:first-child { fill:#fff !important; }
 .map-point-link:hover text { opacity:1 !important; }
-
-/* LIVE COUNTER */
 .live-counter { font-family:var(--font-display); font-size:18px; letter-spacing:2px; color:var(--accent); display:block; margin-bottom:8px; }
 .live-counter .count-num { font-size:24px; color:#ff6b35; }
-
-/* AUDIO BUTTON (for articles) */
 .audio-btn { display:inline-flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--border); color:var(--white); font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:12px 24px; cursor:pointer; border-radius:2px; transition:all .2s; margin-top:16px; }
 .audio-btn:hover { border-color:var(--accent); color:var(--accent); }
 .audio-btn.playing { border-color:var(--accent); color:var(--accent); }
-
-/* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeLeft { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
-
-/* SCROLLBAR OSCURA */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: rgba(232,50,26,0.4); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
-
-/* CONTADOR ANIMADO */
 .stat-block .num { transition: all 0.3s; }
-.stat-block .num.counting { color: var(--accent); }
-
-/* BUSCADOR */
 .search-section { padding: 0 48px; margin-top: 40px; margin-bottom: 40px; position: relative; z-index: 10; }
 .search-box { max-width: 600px; margin: 0 auto; position: relative; }
 .search-input { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--white); font-family: var(--font-body); font-size: 14px; padding: 16px 52px 16px 20px; border-radius: 4px; outline: none; transition: border-color 0.2s; }
@@ -494,8 +228,6 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .sr-title { font-size: 14px; font-weight: 500; }
 .sr-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
 .search-no-results { padding: 20px; text-align: center; color: var(--muted); font-size: 13px; display: none; }
-
-/* CASO DEL MES */
 .caso-mes { padding: 80px 48px; position: relative; overflow: hidden; }
 .caso-mes-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); overflow: hidden; }
 .caso-mes-img { background-size: cover; background-position: center; min-height: 400px; position: relative; }
@@ -507,8 +239,6 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .caso-mes-excerpt { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
 .caso-mes-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; text-decoration: none; border-radius: 2px; transition: all 0.2s; width: fit-content; }
 .caso-mes-btn:hover { background: var(--accent2); transform: translateY(-2px); }
-
-/* QUIZ */
 .quiz-section { padding: 80px 48px; background: var(--deep); border-top: 1px solid var(--border); }
 .quiz-inner { max-width: 700px; margin: 0 auto; }
 .quiz-card { background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 48px; text-align: center; }
@@ -528,52 +258,13 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .quiz-final h3 { font-family: var(--font-display); font-size: 48px; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; }
 .quiz-final p { color: var(--muted); margin-bottom: 24px; }
 .quiz-share { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; font-size: 13px; font-weight: 600; padding: 12px 28px; text-decoration: none; border-radius: 4px; }
-
-@media(max-width:900px) {
-  .caso-mes-inner { grid-template-columns: 1fr; }
-  .caso-mes-img { min-height: 250px; }
-  .caso-mes-img::after { background: linear-gradient(180deg, transparent 60%, var(--card) 100%); }
-  .quiz-opciones { grid-template-columns: 1fr; }
-  .search-section { padding: 0 20px; }
-}
-@media(max-width:600px) {
-  .caso-mes { padding: 60px 20px; }
-  .caso-mes-content { padding: 28px; }
-  .quiz-section { padding: 60px 20px; }
-  .quiz-card { padding: 28px; }
-}
-
-
-/* LOADING SCREEN */
-
-
-
-
-
-
-
-
-
-/* BACK TO TOP */
 .back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--accent); border: none; border-radius: 50%; color: var(--white); font-size: 18px; cursor: pointer; z-index: 400; opacity: 0; transform: translateY(20px); transition: all 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(232,50,26,0.3); }
 .back-top.visible { opacity: 1; transform: translateY(0); }
 .back-top:hover { background: var(--accent2); transform: translateY(-3px) !important; }
-
-/* READER COUNTER */
-
-
-
-
-
-/* ACCESSIBILITY */
 .a11y-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px; font-size: 14px; transition: all 0.2s; margin-left: 4px; }
 .a11y-btn:hover { border-color: var(--accent); color: var(--white); }
-
-/* RANDOM ARTICLE */
 .random-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px; font-size: 16px; transition: all 0.2s; margin-left: 4px; }
 .random-btn:hover { border-color: var(--accent); color: var(--white); transform: rotate(180deg); }
-
-/* SHARE EXPANDED */
 .share-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .share-btn { font-size: 0.6rem; letter-spacing: 1px; text-transform: uppercase; padding: 4px 8px; text-decoration: none; border-radius: 2px; font-weight: 600; transition: all 0.2s; display: inline-flex; align-items: center; gap: 4px; }
 .share-wa { background: #25D366; color: #fff; }
@@ -581,12 +272,8 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 .share-tg { background: #0088cc; color: #fff; }
 .share-copy { background: var(--deep); color: var(--muted); border: 1px solid var(--border); cursor: pointer; }
 .share-copy:hover { color: var(--white); border-color: var(--accent); }
-
-/* PARALLAX CARDS */
 .article-card .card-img img { transition: transform 0.4s ease; }
 .article-card:hover .card-img img { transform: scale(1.08); }
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -607,11 +294,22 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   .contacto-section { padding: 60px 20px; }
   .contacto-grid { grid-template-columns: 1fr; gap: 32px; }
   footer { padding: 40px 20px 20px; }
+  .caso-mes-inner { grid-template-columns: 1fr; }
+  .caso-mes-img { min-height: 250px; }
+  .caso-mes-img::after { background: linear-gradient(180deg, transparent 60%, var(--card) 100%); }
+  .quiz-opciones { grid-template-columns: 1fr; }
+  .search-section { padding: 0 20px; }
 }
 @media (max-width: 480px) {
   .stats-bar { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr; }
   .newsletter-benefits { flex-direction: column; align-items: center; gap: 12px; }
+}
+@media(max-width:600px) {
+  .caso-mes { padding: 60px 20px; }
+  .caso-mes-content { padding: 28px; }
+  .quiz-section { padding: 60px 20px; }
+  .quiz-card { padding: 28px; }
 }
 </style>
 <link rel="canonical" href="https://viralix-theta.vercel.app/">
@@ -621,233 +319,15 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 <meta name="twitter:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VIRALIX","url":"https://viralix-theta.vercel.app","description":"True crime, misterios y casos reales de España","potentialAction":{"@type":"SearchAction","target":"https://viralix-theta.vercel.app/?q={search_term_string}","query-input":"required name=search_term_string"}}
-
-// DARK/LIGHT MODE TOGGLE
-const modeBtn = document.getElementById('modeToggle');
-modeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
-  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
-});
-if (localStorage.getItem('viralix_mode') === 'light') {
-  document.body.classList.add('light');
-  modeBtn.textContent = '🌙';
-}
-
-// LIVE COUNTERS
-document.querySelectorAll('.live-counter').forEach(el => {
-  const date = new Date(el.dataset.date);
-  const text = el.dataset.text;
-  function updateCounter() {
-    const now = new Date();
-    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
-    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
-  }
-  updateCounter();
-  setInterval(updateCounter, 60000);
-});
-
-
-// CONTADORES ANIMADOS
-function animateCounters() {
-  document.querySelectorAll('.stat-block .num').forEach(el => {
-    const text = el.textContent;
-    const match = text.match(/(\d+)/);
-    if (!match) return;
-    const target = parseInt(match[1]);
-    const suffix = text.replace(match[1], '');
-    let current = 0;
-    const duration = 1500;
-    const step = target / (duration / 16);
-    const counter = setInterval(() => {
-      current += step;
-      if (current >= target) { current = target; clearInterval(counter); }
-      el.innerHTML = Math.floor(current) + suffix;
-    }, 16);
-  });
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
-}, { threshold: 0.3 });
-const statsBar = document.querySelector('.stats-bar');
-if (statsBar) statsObs.observe(statsBar);
-
-// BUSCADOR
-const articulos = [
-  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
-  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
-  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
-  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
-  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
-  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
-  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
-  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
-  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
-  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
-  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
-  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
-  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
-  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
-  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
-];
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const searchNoResults = document.getElementById('searchNoResults');
-if (searchInput) {
-  searchInput.addEventListener('input', function() {
-    const q = this.value.toLowerCase().trim();
-    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
-    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
-    if (matches.length > 0) {
-      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
-      searchResults.classList.add('active');
-      searchNoResults.style.display = 'none';
-    } else {
-      searchResults.classList.remove('active');
-      searchResults.innerHTML = '';
-      searchNoResults.style.display = 'block';
-    }
-  });
-  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
-}
-
-// QUIZ
-const quizData = [
-  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
-  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
-  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
-  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
-  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
-];
-let quizCurrent = 0, quizCorrect = 0;
-function loadQuiz() {
-  const data = quizData[quizCurrent];
-  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
-  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
-  document.getElementById('quizPregunta').textContent = data.q;
-  const optsEl = document.getElementById('quizOpciones');
-  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
-  document.getElementById('quizNext').style.display = 'none';
-  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const idx = parseInt(this.dataset.idx);
-      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
-      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
-      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
-      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
-      else { setTimeout(showQuizResult, 800); }
-    });
-  });
-}
-function showQuizResult() {
-  document.getElementById('quizScore').style.display = 'none';
-  document.getElementById('quizPregunta').style.display = 'none';
-  document.getElementById('quizOpciones').style.display = 'none';
-  document.getElementById('quizNext').style.display = 'none';
-  document.querySelector('.quiz-progress').style.display = 'none';
-  const final = document.getElementById('quizFinal');
-  final.style.display = 'block';
-  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
-  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
-  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
-  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
-}
-const quizNext = document.getElementById('quizNext');
-if (quizNext) {
-  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
-  loadQuiz();
-}
-
-// MAP SCROLL ANIMATION
-const mapPoints = document.querySelectorAll('.map-point-link');
-const mapObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      mapPoints.forEach((p, i) => {
-        p.style.opacity = '0';
-        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
-      });
-      mapObs.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
-const mapContainer = document.querySelector('.mapa-container');
-if (mapContainer) mapObs.observe(mapContainer);
-
-
-
-
-// BACK TO TOP
-const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.classList.toggle('visible', window.scrollY > 600);
-});
-backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-// READER COUNTER (simulated social proof)
-
-
-// RANDOM ARTICLE
-const allArticles = [
-  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
-  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
-  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
-  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html'
-];
-document.getElementById('randomBtn').addEventListener('click', () => {
-  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
-  window.location.href = random;
-});
-
-// ACCESSIBILITY - Font size
-let fontLevel = 0;
-document.getElementById('a11yBtn').addEventListener('click', () => {
-  fontLevel = (fontLevel + 1) % 3;
-  const sizes = ['1rem', '1.1rem', '1.2rem'];
-  document.body.style.fontSize = sizes[fontLevel];
-});
-
-// EASTER EGG - type VIRALIX
-let easterBuffer = '';
-document.addEventListener('keydown', e => {
-  easterBuffer += e.key.toLowerCase();
-  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
-  if (easterBuffer === 'viralix') {
-    document.body.style.transition = 'filter 0.5s';
-    document.body.style.filter = 'hue-rotate(180deg)';
-    setTimeout(() => {
-      document.body.style.filter = 'hue-rotate(360deg)';
-      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
-    }, 1500);
-    easterBuffer = '';
-  }
-});
-
-// PARALLAX on scroll for card images
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.card-img img').forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const offset = (rect.top / window.innerHeight - 0.5) * 20;
-      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
-    }
-  });
-});
-
 </script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-
-
-
 
 <div class="progress-bar" id="progressBar"></div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAVBAR -->
 <nav id="navbar">
   <a href="#" class="nav-logo">VIRAL<span>I</span>X</a>
   <div class="nav-links" id="navLinks">
@@ -866,7 +346,6 @@ window.addEventListener('scroll', () => {
   <button class="nav-menu-btn" id="menuBtn">☰</button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -878,14 +357,13 @@ window.addEventListener('scroll', () => {
     <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">15</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num">16</div><div class="stat-label">Artículos publicados</div></div>
     <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Activo desde</div></div>
     <div class="stat"><div class="stat-num">ES</div><div class="stat-label">Enfocado en España</div></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner" id="ticker">
     <span class="ticker-item">TRUE CRIME ESPAÑA</span>
@@ -903,8 +381,6 @@ window.addEventListener('scroll', () => {
   </div>
 </div>
 
-
-<!-- BUSCADOR -->
 <div class="search-section">
   <div class="search-box">
     <input type="text" class="search-input" id="searchInput" placeholder="Buscar caso, ciudad, año...">
@@ -914,15 +390,13 @@ window.addEventListener('scroll', () => {
   </div>
 </div>
 
-<!-- STATS BAR -->
 <div class="stats-bar reveal">
-  <div class="stat-block"><div class="num">15<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num">16<span>+</span></div><div class="lbl">Artículos publicados</div></div>
   <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Fuentes verificadas</div></div>
-  <div class="stat-block"><div class="num">9<span>+</span></div><div class="lbl">Casos de true crime</div></div>
+  <div class="stat-block"><div class="num">10<span>+</span></div><div class="lbl">Casos de true crime</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
 </div>
 
-<!-- FEATURED -->
 <section id="articulos">
   <div class="section-header reveal">
     <div><div class="section-label">Lo más leído</div><div class="section-title">DESTACADOS</div></div>
@@ -955,9 +429,8 @@ window.addEventListener('scroll', () => {
   </div>
 </section>
 
-<!-- ARTICLES GRID -->
 <section style="padding-top:0">
-<div class="section-header reveal" style="margin-top:60px">
+  <div class="section-header reveal" style="margin-top:60px">
     <div><div class="section-label">True Crime España</div><div class="section-title">CASOS REALES</div></div>
   </div>
   <div class="articles-grid">
@@ -1061,6 +534,18 @@ window.addEventListener('scroll', () => {
       </div>
     </div>
 
+    <!-- *** ARROPIERO — NUEVO *** -->
+    <div class="article-card clickable reveal" onclick="location.href='articulo-arropiero.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-arropiero.png" alt="El Arropiero" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(34,197,94,0.12);color:#22c55e;border-color:rgba(34,197,94,0.3)">True Crime</span>
+      <h3 class="article-title">El Arropiero: 48 crímenes confesados. Nunca juzgado. El mayor asesino en serie de España</h3>
+      <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>8 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-arropiero.html" class="card-leer" style="color:#22c55e" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El%20mayor%20asesino%20en%20serie%20de%20Espa%C3%B1a%3A%20https://viralix-theta.vercel.app/articulo-arropiero.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
+    </div>
+
   </div>
 
   <!-- CIENCIA Y MISTERIOS -->
@@ -1130,14 +615,6 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0a14,#050510)"><span class="card-emoji" style="font-size:48px;opacity:0.5">💀</span></div>
-      <span class="tag" style="background:rgba(139,92,246,0.1);color:#a78bfa;border-color:rgba(139,92,246,0.2)">True Crime</span>
-      <h3 class="article-title">El Arropiero: el mayor asesino en serie de la historia de España</h3>
-      <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(139,92,246,0.1);color:#a78bfa">🔜 En preparación</span></div>
-    </div>
-
-    <div class="article-card proxima reveal">
       <div class="card-img" style="background:linear-gradient(135deg,#0a1210,#050d0a)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🕳️</span></div>
       <span class="tag" style="background:rgba(16,185,129,0.1);color:#34d399;border-color:rgba(16,185,129,0.2)">Misterio</span>
       <h3 class="article-title">El Caso de las Niñas de Aguilar: desaparecieron hace 30 años y nadie las buscó</h3>
@@ -1154,7 +631,6 @@ window.addEventListener('scroll', () => {
     </div>
 
   </div>
-
 
 </section>
 
@@ -1182,97 +658,80 @@ window.addEventListener('scroll', () => {
   </div>
   <div class="mapa-container reveal" style="max-width:900px;margin:0 auto;position:relative;">
     <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-      <!-- España silueta simplificada -->
       <path d="M120,180 L180,120 L280,100 L350,80 L420,60 L500,70 L580,80 L650,100 L720,130 L780,180 L800,250 L790,320 L770,380 L740,420 L700,450 L660,480 L620,500 L580,520 L540,530 L500,540 L460,550 L420,540 L380,520 L340,500 L300,480 L260,450 L220,400 L180,350 L140,300 L120,250 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-      
-      <!-- PUNTOS DE CRIMEN -->
-      <!-- Alcàsser - Valencia -->
       <a href="articulo-alcasser.html" class="map-point-link">
         <circle cx="560" cy="340" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
         <circle cx="560" cy="340" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="575" y="332" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Alcàsser</text>
         <text x="575" y="348" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">1992</text>
       </a>
-
-      <!-- Puerto Hurraco - Badajoz -->
       <a href="articulo-puerto-hurraco.html" class="map-point-link">
         <circle cx="280" cy="400" r="8" fill="#d97706" opacity="0.9" class="map-pulse"/>
         <circle cx="280" cy="400" r="16" fill="none" stroke="#d97706" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="295" y="392" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Puerto Hurraco</text>
         <text x="295" y="408" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">1990</text>
       </a>
-
-      <!-- Asesino Baraja - Madrid -->
       <a href="articulo-asesino-baraja.html" class="map-point-link">
         <circle cx="420" cy="280" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
         <circle cx="420" cy="280" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="435" y="272" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Madrid</text>
         <text x="435" y="288" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Baraja · 2003</text>
       </a>
-
-      <!-- Katana - Murcia -->
       <a href="articulo-katana.html" class="map-point-link">
         <circle cx="560" cy="410" r="8" fill="#10b981" opacity="0.9" class="map-pulse"/>
         <circle cx="560" cy="410" r="16" fill="none" stroke="#10b981" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="575" y="402" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Murcia</text>
         <text x="575" y="418" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Katana · 2000</text>
       </a>
-
-      <!-- Marta del Castillo - Sevilla -->
       <a href="articulo-marta-castillo.html" class="map-point-link">
         <circle cx="320" cy="460" r="8" fill="#3b82f6" opacity="0.9" class="map-pulse"/>
         <circle cx="320" cy="460" r="16" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="335" y="452" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Sevilla</text>
         <text x="335" y="468" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Marta · 2009</text>
       </a>
-
-      <!-- Wanninkhof - Marbella -->
       <a href="articulo-wanninkhof.html" class="map-point-link">
         <circle cx="370" cy="510" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
         <circle cx="370" cy="510" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="385" y="502" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Marbella</text>
         <text x="385" y="518" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Wanninkhof · 1999</text>
       </a>
-
-      <!-- Crimen del Rol - Madrid -->
       <a href="articulo-crimen-rol.html" class="map-point-link">
         <circle cx="440" cy="260" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
         <circle cx="440" cy="260" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="455" y="252" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Madrid</text>
         <text x="455" y="268" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Rol · 1994</text>
       </a>
-
-      <!-- Urquijo - Madrid/Somosaguas -->
       <a href="articulo-urquijo.html" class="map-point-link">
         <circle cx="400" cy="290" r="8" fill="#c9a84c" opacity="0.9" class="map-pulse"/>
         <circle cx="400" cy="290" r="16" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="415" y="282" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Somosaguas</text>
         <text x="415" y="298" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Urquijo · 1980</text>
       </a>
-
-      <!-- El Lute - Salamanca -->
       <a href="articulo-el-lute.html" class="map-point-link">
         <circle cx="320" cy="230" r="8" fill="#d97706" opacity="0.9" class="map-pulse"/>
         <circle cx="320" cy="230" r="16" fill="none" stroke="#d97706" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="335" y="222" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Salamanca</text>
         <text x="335" y="238" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">El Lute · 1965</text>
       </a>
-
-      <!-- Asunta - Santiago -->
       <a href="articulo-asunta.html" class="map-point-link">
         <circle cx="180" cy="160" r="8" fill="#34d399" opacity="0.9" class="map-pulse"/>
         <circle cx="180" cy="160" r="16" fill="none" stroke="#34d399" stroke-width="1" opacity="0.4" class="map-ring"/>
         <text x="195" y="152" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Santiago</text>
         <text x="195" y="168" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Asunta · 2013</text>
       </a>
+      <!-- ARROPIERO — NUEVO -->
+      <a href="articulo-arropiero.html" class="map-point-link">
+        <circle cx="620" cy="190" r="8" fill="#22c55e" opacity="0.9" class="map-pulse"/>
+        <circle cx="620" cy="190" r="16" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="635" y="182" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Mataró</text>
+        <text x="635" y="198" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Arropiero · 1971</text>
+      </a>
     </svg>
-
-    <!-- LEYENDA -->
     <div style="display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap">
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#e8321a;display:inline-block"></span> True Crime</span>
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block"></span> Caso abierto</span>
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#d97706;display:inline-block"></span> Masacre</span>
-      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;display:inline-block"></span> Caso histórico</span>
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block"></span> Asesino en serie</span>
     </div>
   </div>
 </section>
@@ -1283,7 +742,7 @@ window.addEventListener('scroll', () => {
     <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">13 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">14 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
@@ -1292,8 +751,7 @@ window.addEventListener('scroll', () => {
   </div>
 </section>
 
-
-<!-- QUIZ TRUE CRIME -->
+<!-- QUIZ -->
 <section class="quiz-section" id="quiz">
   <div class="quiz-inner">
     <div class="section-header reveal" style="margin-bottom:40px;border:none;padding:0">
@@ -1367,13 +825,8 @@ window.addEventListener('scroll', () => {
   </div>
 </section>
 
-
-<!-- BACK TO TOP -->
 <button class="back-top" id="backTop" title="Volver arriba">↑</button>
 
-
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
@@ -1395,6 +848,7 @@ window.addEventListener('scroll', () => {
         <a href="articulo-katana.html">Asesino de la Katana</a>
         <a href="articulo-urquijo.html">Marqueses de Urquijo</a>
         <a href="articulo-el-lute.html">El Lute</a>
+        <a href="articulo-arropiero.html">El Arropiero</a>
       </div>
     </div>
     <div>
@@ -1411,7 +865,7 @@ window.addEventListener('scroll', () => {
       <div class="footer-col-title">Legal</div>
       <div class="footer-links">
         <a href="#mapa">Mapa</a>
-    <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
         <a href="privacidad.html">Política de Privacidad</a>
         <a href="aviso-legal.html">Aviso Legal</a>
         <a href="contacto.html">Contacto</a>
@@ -1428,7 +882,6 @@ window.addEventListener('scroll', () => {
   </div>
 </footer>
 
-<!-- SEO HIDDEN LINKS -->
 <div style="display:none" aria-hidden="true">
   <a href="/articulo-marianas.html">Fosa de las Marianas</a>
   <a href="/articulo-hantavirus.html">Hantavirus España crucero Hondius</a>
@@ -1441,6 +894,7 @@ window.addEventListener('scroll', () => {
   <a href="/articulo-crimen-rol.html">Crímenes del Rol Granada</a>
   <a href="/articulo-katana.html">Asesino de la Katana Murcia</a>
   <a href="/articulo-marta-castillo.html">Marta del Castillo Sevilla</a>
+  <a href="/articulo-arropiero.html">El Arropiero mayor asesino serie España</a>
 </div>
 
 <script>
@@ -1515,7 +969,7 @@ document.addEventListener('mousemove', e => {
   grid.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// DARK/LIGHT MODE TOGGLE
+// DARK/LIGHT MODE
 const modeBtn = document.getElementById('modeToggle');
 modeBtn.addEventListener('click', () => {
   document.body.classList.toggle('light');
@@ -1540,7 +994,6 @@ document.querySelectorAll('.live-counter').forEach(el => {
   setInterval(updateCounter, 60000);
 });
 
-
 // CONTADORES ANIMADOS
 function animateCounters() {
   document.querySelectorAll('.stat-block .num').forEach(el => {
@@ -1550,8 +1003,7 @@ function animateCounters() {
     const target = parseInt(match[1]);
     const suffix = text.replace(match[1], '');
     let current = 0;
-    const duration = 1500;
-    const step = target / (duration / 16);
+    const step = target / (1500 / 16);
     const counter = setInterval(() => {
       current += step;
       if (current >= target) { current = target; clearInterval(counter); }
@@ -1582,6 +1034,7 @@ const articulos = [
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
+  { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero asesino serie españa manuel delgado villegas 1964 1971 48 crímenes" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -1651,7 +1104,7 @@ if (quizNext) {
   loadQuiz();
 }
 
-// MAP SCROLL ANIMATION
+// MAP ANIMATION
 const mapPoints = document.querySelectorAll('.map-point-link');
 const mapObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -1667,18 +1120,10 @@ const mapObs = new IntersectionObserver(entries => {
 const mapContainer = document.querySelector('.mapa-container');
 if (mapContainer) mapObs.observe(mapContainer);
 
-
-
-
 // BACK TO TOP
 const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.classList.toggle('visible', window.scrollY > 600);
-});
+window.addEventListener('scroll', () => { backTop.classList.toggle('visible', window.scrollY > 600); });
 backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-// READER COUNTER (simulated social proof)
-
 
 // RANDOM ARTICLE
 const allArticles = [
@@ -1686,22 +1131,21 @@ const allArticles = [
   'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
   'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
   'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html'
+  'articulo-falsos-recuerdos.html','articulo-arropiero.html'
 ];
 document.getElementById('randomBtn').addEventListener('click', () => {
   const random = allArticles[Math.floor(Math.random() * allArticles.length)];
   window.location.href = random;
 });
 
-// ACCESSIBILITY - Font size
+// ACCESSIBILITY
 let fontLevel = 0;
 document.getElementById('a11yBtn').addEventListener('click', () => {
   fontLevel = (fontLevel + 1) % 3;
-  const sizes = ['1rem', '1.1rem', '1.2rem'];
-  document.body.style.fontSize = sizes[fontLevel];
+  document.body.style.fontSize = ['1rem', '1.1rem', '1.2rem'][fontLevel];
 });
 
-// EASTER EGG - type VIRALIX
+// EASTER EGG
 let easterBuffer = '';
 document.addEventListener('keydown', e => {
   easterBuffer += e.key.toLowerCase();
@@ -1717,7 +1161,7 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// PARALLAX on scroll for card images
+// PARALLAX CARDS
 window.addEventListener('scroll', () => {
   document.querySelectorAll('.card-img img').forEach(img => {
     const rect = img.getBoundingClientRect();
@@ -1727,222 +1171,7 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
 </script>
-<script src="cookies-banner.js">
-// DARK/LIGHT MODE TOGGLE
-const modeBtn = document.getElementById('modeToggle');
-modeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  modeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
-  localStorage.setItem('viralix_mode', document.body.classList.contains('light') ? 'light' : 'dark');
-});
-if (localStorage.getItem('viralix_mode') === 'light') {
-  document.body.classList.add('light');
-  modeBtn.textContent = '🌙';
-}
-
-// LIVE COUNTERS
-document.querySelectorAll('.live-counter').forEach(el => {
-  const date = new Date(el.dataset.date);
-  const text = el.dataset.text;
-  function updateCounter() {
-    const now = new Date();
-    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
-    el.innerHTML = '<span class="count-num">' + diff.toLocaleString('es-ES') + '</span> ' + text;
-  }
-  updateCounter();
-  setInterval(updateCounter, 60000);
-});
-
-
-// CONTADORES ANIMADOS
-function animateCounters() {
-  document.querySelectorAll('.stat-block .num').forEach(el => {
-    const text = el.textContent;
-    const match = text.match(/(\d+)/);
-    if (!match) return;
-    const target = parseInt(match[1]);
-    const suffix = text.replace(match[1], '');
-    let current = 0;
-    const duration = 1500;
-    const step = target / (duration / 16);
-    const counter = setInterval(() => {
-      current += step;
-      if (current >= target) { current = target; clearInterval(counter); }
-      el.innerHTML = Math.floor(current) + suffix;
-    }, 16);
-  });
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); } });
-}, { threshold: 0.3 });
-const statsBar = document.querySelector('.stats-bar');
-if (statsBar) statsObs.observe(statsBar);
-
-// BUSCADOR
-const articulos = [
-  { title: "Caso Alcàsser: 30 años de preguntas sin respuesta", url: "articulo-alcasser.html", cat: "True Crime", tags: "alcasser valencia 1992 miriam toñi desirée" },
-  { title: "Caso Wanninkhof: condenaron a una inocente", url: "articulo-wanninkhof.html", cat: "True Crime", tags: "wanninkhof marbella malaga 1999 rocio" },
-  { title: "Marta del Castillo: 17 años buscando su cuerpo", url: "articulo-marta-castillo.html", cat: "True Crime", tags: "marta castillo sevilla 2009 carcaño guadalquivir" },
-  { title: "El Asesino de la Baraja: 6 muertos", url: "articulo-asesino-baraja.html", cat: "True Crime", tags: "baraja madrid 2003 alfredo galán pistola" },
-  { title: "El Asesino de la Katana: mató a su familia", url: "articulo-katana.html", cat: "True Crime", tags: "katana murcia 2000 rabadán final fantasy consola" },
-  { title: "Matanza de Puerto Hurraco: 9 muertos", url: "articulo-puerto-hurraco.html", cat: "True Crime", tags: "puerto hurraco badajoz 1990 extremadura" },
-  { title: "Los Crímenes del Rol", url: "articulo-crimen-rol.html", cat: "True Crime", tags: "rol madrid 1994 juego mesa dados" },
-  { title: "Caso Diana Quer: 500 días buscándola", url: "articulo-diana-quer.html", cat: "True Crime", tags: "diana quer galicia 2016 chicle abuín pobra" },
-  { title: "Caso Asunta: sus padres la drogaron y mataron", url: "articulo-asunta.html", cat: "True Crime", tags: "asunta santiago compostela 2013 rosario porto basterra" },
-  { title: "Fosa de las Marianas: qué hay en el fondo", url: "articulo-marianas.html", cat: "Océanos", tags: "marianas océano profundidad submarino" },
-  { title: "Hantavirus y el crucero Hondius", url: "articulo-hantavirus.html", cat: "Ciencia", tags: "hantavirus crucero hondius virus brote" },
-  { title: "Super El Niño 2026", url: "articulo-super-elnino.html", cat: "Ciencia", tags: "niño clima fenómeno 2026 noaa" },
-  { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
-  { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
-  { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
-];
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const searchNoResults = document.getElementById('searchNoResults');
-if (searchInput) {
-  searchInput.addEventListener('input', function() {
-    const q = this.value.toLowerCase().trim();
-    if (q.length < 2) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; return; }
-    const matches = articulos.filter(a => a.title.toLowerCase().includes(q) || a.tags.includes(q) || a.cat.toLowerCase().includes(q));
-    if (matches.length > 0) {
-      searchResults.innerHTML = matches.map(a => '<a href="' + a.url + '" class="search-result-item"><span class="sr-title">' + a.title + '</span><span class="sr-cat">' + a.cat + '</span></a>').join('');
-      searchResults.classList.add('active');
-      searchNoResults.style.display = 'none';
-    } else {
-      searchResults.classList.remove('active');
-      searchResults.innerHTML = '';
-      searchNoResults.style.display = 'block';
-    }
-  });
-  document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
-}
-
-// QUIZ
-const quizData = [
-  { q: "¿En qué año desapareció Diana Quer?", opts: ["2014", "2016", "2018", "2020"], correct: 1 },
-  { q: "¿Cuántos años tenía el Asesino de la Katana?", opts: ["14 años", "16 años", "18 años", "20 años"], correct: 1 },
-  { q: "¿En qué ciudad ocurrió el Caso Wanninkhof?", opts: ["Málaga", "Marbella", "Sevilla", "Granada"], correct: 1 },
-  { q: "¿Cuántos días estuvo desaparecida Diana Quer?", opts: ["120 días", "300 días", "497 días", "600 días"], correct: 2 },
-  { q: "¿Cómo se llama el asesino del Caso Diana Quer?", opts: ["Miguel Carcaño", "Alfredo Galán", "José Enrique Abuín", "José Rabadán"], correct: 2 }
-];
-let quizCurrent = 0, quizCorrect = 0;
-function loadQuiz() {
-  const data = quizData[quizCurrent];
-  document.getElementById('quizScore').textContent = 'Pregunta ' + (quizCurrent + 1) + ' de ' + quizData.length;
-  document.getElementById('quizProgressBar').style.width = ((quizCurrent + 1) / quizData.length * 100) + '%';
-  document.getElementById('quizPregunta').textContent = data.q;
-  const optsEl = document.getElementById('quizOpciones');
-  optsEl.innerHTML = data.opts.map((o, i) => '<button class="quiz-opcion" data-idx="' + i + '">' + o + '</button>').join('');
-  document.getElementById('quizNext').style.display = 'none';
-  optsEl.querySelectorAll('.quiz-opcion').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const idx = parseInt(this.dataset.idx);
-      optsEl.querySelectorAll('.quiz-opcion').forEach(b => { b.classList.add('disabled'); });
-      if (idx === data.correct) { this.classList.add('correct'); quizCorrect++; }
-      else { this.classList.add('wrong'); optsEl.children[data.correct].classList.add('correct'); }
-      if (quizCurrent < quizData.length - 1) { document.getElementById('quizNext').style.display = 'inline-block'; }
-      else { setTimeout(showQuizResult, 800); }
-    });
-  });
-}
-function showQuizResult() {
-  document.getElementById('quizScore').style.display = 'none';
-  document.getElementById('quizPregunta').style.display = 'none';
-  document.getElementById('quizOpciones').style.display = 'none';
-  document.getElementById('quizNext').style.display = 'none';
-  document.querySelector('.quiz-progress').style.display = 'none';
-  const final = document.getElementById('quizFinal');
-  final.style.display = 'block';
-  document.getElementById('quizFinalScore').textContent = quizCorrect + '/' + quizData.length;
-  const msgs = { 0: 'Necesitas leer más VIRALIX...', 1: 'Algo sabes, pero te falta mucho', 2: 'No está mal, pero puedes mejorar', 3: 'Buen nivel de conocimiento', 4: 'Casi perfecto, eres un experto', 5: '¡PERFECTO! Eres un verdadero experto en true crime' };
-  document.getElementById('quizFinalText').textContent = msgs[quizCorrect] || '';
-  document.getElementById('quizShare').href = 'https://api.whatsapp.com/send?text=He%20sacado%20' + quizCorrect + '%2F' + quizData.length + '%20en%20el%20quiz%20de%20True%20Crime%20de%20VIRALIX%20%F0%9F%94%8D%20https://viralix-theta.vercel.app';
-}
-const quizNext = document.getElementById('quizNext');
-if (quizNext) {
-  quizNext.addEventListener('click', () => { quizCurrent++; loadQuiz(); });
-  loadQuiz();
-}
-
-// MAP SCROLL ANIMATION
-const mapPoints = document.querySelectorAll('.map-point-link');
-const mapObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      mapPoints.forEach((p, i) => {
-        p.style.opacity = '0';
-        setTimeout(() => { p.style.transition = 'opacity 0.5s ease'; p.style.opacity = '1'; }, i * 200);
-      });
-      mapObs.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
-const mapContainer = document.querySelector('.mapa-container');
-if (mapContainer) mapObs.observe(mapContainer);
-
-
-
-
-// BACK TO TOP
-const backTop = document.getElementById('backTop');
-window.addEventListener('scroll', () => {
-  backTop.classList.toggle('visible', window.scrollY > 600);
-});
-backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-// READER COUNTER (simulated social proof)
-
-
-// RANDOM ARTICLE
-const allArticles = [
-  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
-  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
-  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
-  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html'
-];
-document.getElementById('randomBtn').addEventListener('click', () => {
-  const random = allArticles[Math.floor(Math.random() * allArticles.length)];
-  window.location.href = random;
-});
-
-// ACCESSIBILITY - Font size
-let fontLevel = 0;
-document.getElementById('a11yBtn').addEventListener('click', () => {
-  fontLevel = (fontLevel + 1) % 3;
-  const sizes = ['1rem', '1.1rem', '1.2rem'];
-  document.body.style.fontSize = sizes[fontLevel];
-});
-
-// EASTER EGG - type VIRALIX
-let easterBuffer = '';
-document.addEventListener('keydown', e => {
-  easterBuffer += e.key.toLowerCase();
-  if (easterBuffer.length > 7) easterBuffer = easterBuffer.slice(-7);
-  if (easterBuffer === 'viralix') {
-    document.body.style.transition = 'filter 0.5s';
-    document.body.style.filter = 'hue-rotate(180deg)';
-    setTimeout(() => {
-      document.body.style.filter = 'hue-rotate(360deg)';
-      setTimeout(() => { document.body.style.filter = 'none'; }, 500);
-    }, 1500);
-    easterBuffer = '';
-  }
-});
-
-// PARALLAX on scroll for card images
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.card-img img').forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const offset = (rect.top / window.innerHeight - 0.5) * 20;
-      img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
-    }
-  });
-});
-
-</script>
+<script src="cookies-banner.js"></script>
 </body>
 </html>
