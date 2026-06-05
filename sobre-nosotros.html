@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre Nosotros | VIRALIX</title>
-<meta name="description" content="Conoce el equipo detrás de VIRALIX, el medio independiente de true crime y casos reales de España. Nuestra misión, metodología y valores editoriales.">
+<title>Sobre Nosotros | VIRALIX — Medio independiente de true crime España</title>
+<meta name="description" content="Conoce el equipo detrás de VIRALIX, el medio independiente de true crime y casos reales de España. Nuestra misión, metodología editorial y valores.">
 <meta property="og:title" content="Sobre Nosotros | VIRALIX">
 <meta property="og:description" content="Conoce el equipo detrás de VIRALIX, el medio independiente de true crime y casos reales de España.">
 <meta property="og:type" content="website">
@@ -33,6 +33,13 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);letter-spa
 h2::after{content:'';position:absolute;left:0;bottom:0;width:40px;height:2px;background:var(--accent)}
 h3{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);margin:32px 0 12px}
 p{font-size:1.02rem;color:rgba(244,242,238,0.72);margin-bottom:18px;line-height:1.85}
+strong{color:var(--white)}
+.equipo-card{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--accent);padding:36px;margin:32px 0;display:flex;gap:28px;align-items:flex-start}
+.equipo-avatar{width:72px;height:72px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.equipo-info h3{margin:0 0 6px;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px}
+.equipo-info .cargo{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.equipo-info p{margin:0;font-size:0.95rem}
+.equipo-info .ubicacion{font-size:11px;color:var(--muted);margin-top:10px;letter-spacing:1px}
 .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin:32px 0;background:var(--border);border:1px solid var(--border)}
 .value-card{background:var(--bg3);padding:32px 28px}
 .value-icon{font-size:32px;margin-bottom:16px}
@@ -46,6 +53,9 @@ p{font-size:1.02rem;color:rgba(244,242,238,0.72);margin-bottom:18px;line-height:
 .metodologia h3{margin-top:0}
 .metodologia ol{padding-left:20px;color:rgba(244,242,238,0.72);font-size:0.98rem;line-height:1.9}
 .metodologia ol li{margin-bottom:8px}
+.fuentes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin:24px 0}
+.fuente-item{background:var(--bg3);border:1px solid var(--border);padding:16px 20px;font-size:12px;color:var(--muted);letter-spacing:1px}
+.fuente-item strong{display:block;color:var(--white);font-size:13px;margin-bottom:4px}
 .contacto-cta{background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--accent);padding:48px;text-align:center;margin:60px 0 0}
 .contacto-cta h3{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;margin-bottom:12px}
 .contacto-cta p{max-width:480px;margin:0 auto 24px;color:var(--muted)}
@@ -57,8 +67,26 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--white)}
-@media(max-width:600px){nav{padding:0 20px}.hero{padding:60px 20px}.contenido{padding:40px 20px 80px}.stats-row{grid-template-columns:1fr}.contacto-cta{padding:32px 20px}footer{padding:24px 20px}}
+@media(max-width:600px){nav{padding:0 20px}.hero{padding:60px 20px}.contenido{padding:40px 20px 80px}.stats-row{grid-template-columns:1fr}.contacto-cta{padding:32px 20px}.equipo-card{flex-direction:column}footer{padding:24px 20px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "VIRALIX",
+  "url": "https://viralix-theta.vercel.app",
+  "description": "Medio independiente de divulgación sobre true crime, misterios y casos reales de España.",
+  "foundingDate": "2026",
+  "email": "viralixweb@gmail.com",
+  "inLanguage": "es",
+  "publishingPrinciples": "https://viralix-theta.vercel.app/sobre-nosotros.html",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "viralixweb@gmail.com",
+    "contactType": "editorial"
+  }
+}
+</script>
 </head>
 <body>
 <nav>
@@ -68,7 +96,7 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-label">Quiénes somos</div>
+    <div class="hero-label">Quiénes somos · Medio independiente · España</div>
     <h1>SOBRE<br><span>VIRALIX</span></h1>
     <p class="hero-sub">El medio independiente que cuenta los casos reales de España con rigor, profundidad y sin sensacionalismo vacío.</p>
   </div>
@@ -77,13 +105,13 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
 <main class="contenido">
 
   <h2>Nuestra misión</h2>
-  <p>VIRALIX nació con una idea simple: los grandes casos que marcaron la historia de España merecen ser contados bien. No en titulares de tres líneas, no en vídeos de TikTok de 30 segundos, sino con profundidad, con contexto, con rigor y con respeto hacia las víctimas y sus familias.</p>
-  <p>Somos un medio independiente de divulgación sobre true crime, misterios y casos reales. No tenemos accionistas, no dependemos de ningún partido político, no recibimos subvenciones. Nuestra única fuente de ingresos es la publicidad y el apoyo de nuestros lectores.</p>
-  <p>Cada artículo que publicamos en VIRALIX está documentado a partir de fuentes verificadas: sentencias judiciales, hemerotecas de medios de referencia, informes periciales públicos y declaraciones oficiales. Nunca inventamos, nunca especulamos sin avisarlo, nunca sensacionalizamos por el simple hecho de conseguir más clics.</p>
+  <p>VIRALIX nació con una idea simple: los grandes casos que marcaron la historia de España merecen ser contados bien. No en titulares de tres líneas, no en vídeos de 30 segundos, sino con profundidad, con contexto, con rigor y con respeto hacia las víctimas y sus familias.</p>
+  <p>Somos un medio independiente de divulgación sobre true crime, misterios y casos reales. No tenemos accionistas, no dependemos de ningún partido político, no recibimos subvenciones. Nuestra única fuente de ingresos es la publicidad.</p>
+  <p>Cada artículo que publicamos en VIRALIX está documentado a partir de fuentes verificadas: sentencias judiciales, hemerotecas de medios de referencia, informes periciales públicos y declaraciones oficiales. Nunca inventamos, nunca especulamos sin avisarlo, nunca sensacionalizamos por conseguir más clics.</p>
 
   <div class="stats-row">
     <div class="stat-box">
-      <div class="stat-num">11+</div>
+      <div class="stat-num">16+</div>
       <div class="stat-lbl">Artículos publicados</div>
     </div>
     <div class="stat-box">
@@ -93,6 +121,19 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
     <div class="stat-box">
       <div class="stat-num">0€</div>
       <div class="stat-lbl">Coste para el lector</div>
+    </div>
+  </div>
+
+  <h2>El equipo</h2>
+  <p>VIRALIX es un proyecto periodístico independiente fundado y desarrollado en España. El equipo está formado por redactores apasionados por el true crime y la divulgación rigurosa, con sede en Andalucía.</p>
+
+  <div class="equipo-card">
+    <div class="equipo-avatar">✍️</div>
+    <div class="equipo-info">
+      <h3>Equipo Editorial VIRALIX</h3>
+      <div class="cargo">Redacción · Investigación · Publicación</div>
+      <p>Redactores especializados en true crime, criminología y divulgación de casos reales. Cada artículo pasa por un proceso de verificación de fuentes antes de ser publicado. Trabajamos con fuentes primarias: sentencias judiciales, hemerotecas y documentos oficiales.</p>
+      <div class="ubicacion">📍 Andalucía, España · 📧 viralixweb@gmail.com</div>
     </div>
   </div>
 
@@ -111,7 +152,7 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
     <div class="value-card">
       <div class="value-icon">🔓</div>
       <div class="value-title">Independencia</div>
-      <p class="value-text">No tenemos línea editorial impuesta por nadie. Publicamos lo que consideramos relevante e interesante para nuestros lectores, sin presiones externas.</p>
+      <p class="value-text">No tenemos línea editorial impuesta por nadie. Publicamos lo que consideramos relevante para nuestros lectores, sin presiones externas.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">📖</div>
@@ -122,28 +163,39 @@ footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-i
 
   <h2>Cómo trabajamos</h2>
   <div class="metodologia">
-    <h3>Nuestra metodología editorial</h3>
+    <h3>Metodología editorial</h3>
     <ol>
       <li><strong>Selección del caso</strong> — Elegimos casos con documentación pública suficiente y relevancia histórica o social para España.</li>
-      <li><strong>Investigación de fuentes</strong> — Consultamos sentencias judiciales, hemerotecas de medios de referencia (El País, El Mundo, ABC, La Vanguardia), informes periciales y declaraciones oficiales.</li>
+      <li><strong>Investigación de fuentes</strong> — Consultamos sentencias judiciales, hemerotecas de medios de referencia (El País, El Mundo, ABC, La Vanguardia, El Español), informes periciales y declaraciones oficiales.</li>
       <li><strong>Redacción verificada</strong> — Escribimos el artículo separando claramente los hechos probados de las interpretaciones o hipótesis.</li>
       <li><strong>Revisión</strong> — Revisamos fechas, nombres y datos antes de publicar.</li>
-      <li><strong>Actualización</strong> — Si hay novedades en un caso, actualizamos el artículo y lo indicamos con la fecha de actualización.</li>
+      <li><strong>Actualización</strong> — Si hay novedades en un caso, actualizamos el artículo e indicamos la fecha de actualización.</li>
     </ol>
+  </div>
+
+  <h2>Fuentes que consultamos</h2>
+  <p>Para garantizar la veracidad de nuestros artículos, VIRALIX consulta las siguientes fuentes primarias y de referencia:</p>
+  <div class="fuentes-grid">
+    <div class="fuente-item"><strong>Poder Judicial</strong>Sentencias y autos judiciales públicos</div>
+    <div class="fuente-item"><strong>El País / El Mundo</strong>Hemeroteca de referencia nacional</div>
+    <div class="fuente-item"><strong>ABC / La Vanguardia</strong>Archivo histórico de prensa</div>
+    <div class="fuente-item"><strong>El Español / Infobae ES</strong>Medios digitales verificados</div>
+    <div class="fuente-item"><strong>Wikipedia ES</strong>Punto de entrada con referencias</div>
+    <div class="fuente-item"><strong>Documentales TV</strong>TVE, Cuatro, Telecinco, TV3</div>
   </div>
 
   <h2>Qué cubrimos</h2>
   <h3>True Crime España</h3>
-  <p>Nuestra especialidad son los casos de crimen real que marcaron la historia de España. Desde el Caso Alcàsser en 1992 hasta casos recientes como el de Marta del Castillo o Diana Quer. Cubrimos tanto los hechos como el impacto social, judicial y mediático de cada caso.</p>
+  <p>Nuestra especialidad son los casos de crimen real que marcaron la historia de España. Desde el Caso Alcàsser en 1992 hasta casos recientes como el de Diana Quer o el Caso Bretón. Cubrimos tanto los hechos como el impacto social, judicial y mediático de cada caso.</p>
 
-  <h3>Misterios y fenómenos inexplicados</h3>
+  <h3>Misterios y fenómenos</h3>
   <p>También cubrimos fenómenos naturales extraordinarios, misterios científicos y casos sin resolver que generan debate e interés en la comunidad científica y en la opinión pública.</p>
 
   <h3>Ciencia y salud</h3>
-  <p>Cuando un fenómeno científico o sanitario tiene impacto real en la sociedad española — como el brote de hantavirus del crucero Hondius o el fenómeno de El Niño — lo explicamos con rigor divulgativo adaptado a todos los públicos.</p>
+  <p>Cuando un fenómeno científico o sanitario tiene impacto real en la sociedad española, lo explicamos con rigor divulgativo adaptado a todos los públicos.</p>
 
   <h2>Contacto y colaboraciones</h2>
-  <p>Si conoces un caso que merece ser contado en VIRALIX, si has encontrado un error en alguno de nuestros artículos o si quieres colaborar con nosotros, puedes escribirnos a través de nuestra <a href="contacto.html" style="color:var(--accent)">página de contacto</a>.</p>
+  <p>Si conoces un caso que merece ser contado en VIRALIX, si has encontrado un error en alguno de nuestros artículos o si quieres colaborar, puedes escribirnos a <strong>viralixweb@gmail.com</strong> o a través de nuestra <a href="contacto.html" style="color:var(--accent)">página de contacto</a>.</p>
   <p>Respondemos a todos los mensajes en un plazo máximo de 72 horas.</p>
 
   <div class="contacto-cta">
