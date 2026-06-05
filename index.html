@@ -357,7 +357,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">16</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num">17</div><div class="stat-label">Artículos publicados</div></div>
     <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Activo desde</div></div>
     <div class="stat"><div class="stat-num">ES</div><div class="stat-label">Enfocado en España</div></div>
   </div>
@@ -391,9 +391,9 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 </div>
 
 <div class="stats-bar reveal">
-  <div class="stat-block"><div class="num">16<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num">17<span>+</span></div><div class="lbl">Artículos publicados</div></div>
   <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Fuentes verificadas</div></div>
-  <div class="stat-block"><div class="num">10<span>+</span></div><div class="lbl">Casos de true crime</div></div>
+  <div class="stat-block"><div class="num">11<span>+</span></div><div class="lbl">Casos de true crime</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
 </div>
 
@@ -606,12 +606,15 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   </div>
   <div class="articles-grid">
 
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a0505,#0d0000)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🔥</span></div>
-      <span class="tag" style="background:rgba(239,68,68,0.1);color:#f87171;border-color:rgba(239,68,68,0.2)">True Crime</span>
-      <h3 class="article-title">Caso Bretón: el padre que quemó a sus hijos para vengarse de su mujer</h3>
-      <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(239,68,68,0.1);color:#f87171">🔜 En preparación</span></div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-breton.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-breton.png" alt="Caso Bretón" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag" style="background:rgba(232,50,26,0.12);color:#ff6b6b;border-color:rgba(232,50,26,0.3)">True Crime</span>
+      <h3 class="article-title">Caso Bretón: los mató, los quemó y fue a denunciar su desaparición</h3>
+      <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-breton.html" class="card-leer" style="color:#ff6b6b" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso%20Bret%C3%B3n%3A%20https://viralix-theta.vercel.app/articulo-breton.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲 Compartir</a>
+      </div>
     </div>
 
     <div class="article-card proxima reveal">
@@ -742,7 +745,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">14 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">15 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
     <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
@@ -849,6 +852,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
         <a href="articulo-urquijo.html">Marqueses de Urquijo</a>
         <a href="articulo-el-lute.html">El Lute</a>
         <a href="articulo-arropiero.html">El Arropiero</a>
+        <a href="articulo-breton.html">Caso Bretón</a>
       </div>
     </div>
     <div>
@@ -1035,6 +1039,7 @@ const articulos = [
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
   { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero asesino serie españa manuel delgado villegas 1964 1971 48 crímenes" },
+  { title: "Caso Bretón: los mató, los quemó y fue a denunciar su desaparición", url: "articulo-breton.html", cat: "True Crime", tags: "bretón josé bretón ruth ortiz córdoba 2011 violencia vicaria hijos finca quemadillas" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -1131,7 +1136,7 @@ const allArticles = [
   'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
   'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
   'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html','articulo-arropiero.html'
+  'articulo-falsos-recuerdos.html','articulo-arropiero.html','articulo-breton.html'
 ];
 document.getElementById('randomBtn').addEventListener('click', () => {
   const random = allArticles[Math.floor(Math.random() * allArticles.length)];
