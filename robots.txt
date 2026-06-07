@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://viralix-theta.vercel.app/sitemap.xml
-
+Sitemap: https://viralixweb.es/sitemap.xml
 Disallow: /googlebd6bb1a7e4b62950.html
