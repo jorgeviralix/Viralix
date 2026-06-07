@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pilar Prades, la Envenenadora de Valencia, fue la última mujer ejecutada en España por garrote vil en 1959. Mató con arsénico a sus empleadoras para quedarse con sus maridos.">
+<meta name="keywords" content="envenenadora valencia, pilar prades, garrote vil, España 1959, arsénico, última ejecución mujer españa">
+<title>La Envenenadora de Valencia: la última mujer ejecutada en España | VIRALIX</title>
+<meta property="og:title" content="La Envenenadora de Valencia: arsénico, garrote vil y la última ejecución" />
+<meta property="og:description" content="Pilar Prades mató con arsénico a sus jefas para quedarse con sus maridos. Fue la última mujer ejecutada en España." />
+<meta property="og:url" content="https://viralixweb.es/articulo-envenenadora.html" />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --negro: #080503;
+  --sepia-oscuro: #110d08;
+  --sepia-medio: #1a1208;
+  --dorado: #c8952a;
+  --dorado-apagado: #8a6520;
+  --crema: #e8dcc8;
+  --crema-apagado: rgba(232,220,200,0.72);
+  --gris-calido: #6b5a45;
+  --veneno: #4a7a3a;
+  --veneno-claro: #6db85a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--negro);
+  color: var(--crema);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.cursor { width: 10px; height: 10px; background: var(--dorado); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+.cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(200,149,42,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1000; opacity: 0.6;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 18px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s;
+}
+nav.scrolled {
+  background: rgba(8,5,3,0.96);
+  border-bottom: 1px solid rgba(200,149,42,0.15);
+  backdrop-filter: blur(10px);
+}
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--crema); text-decoration: none; }
+.logo span { color: #e8321a; }
+.nav-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--dorado); border: 1px solid var(--dorado); padding: 4px 12px; }
+
+.hero-articulo {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg-img {
+  position: absolute; inset: 0;
+  background-image: url('img-envenenadora.png');
+  background-size: cover;
+  background-position: center;
+  filter: sepia(60%) brightness(0.4);
+  z-index: 0;
+}
+
+.hero-articulo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,5,3,0.2) 0%, rgba(8,5,3,0.6) 60%, var(--negro) 100%);
+  z-index: 1;
+}
+
+.num-bg {
+  position: absolute; right: 2%; top: 50%; transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28rem; color: rgba(200,149,42,0.04);
+  pointer-events: none; line-height: 1; z-index: 1;
+}
+
+.clasificado-top {
+  position: absolute; top: 90px; left: 40px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase;
+  color: rgba(200,149,42,0.4); z-index: 2;
+}
+
+.categoria-tag {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--dorado);
+  border-left: 3px solid var(--dorado); padding-left: 12px;
+  margin-bottom: 24px; position: relative; z-index: 2;
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.92; letter-spacing: 2px;
+  max-width: 850px; position: relative; z-index: 2; margin-bottom: 32px;
+}
+h1 .highlight { color: var(--dorado); }
+h1 .sub { font-size: clamp(1.6rem, 3.5vw, 2.8rem); display: block; color: rgba(232,220,200,0.45); letter-spacing: 4px; margin-top: 8px; }
+
+.meta-bar {
+  display: flex; gap: 32px; align-items: center;
+  position: relative; z-index: 2;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);
+  flex-wrap: wrap;
+}
+.meta-item { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-calido); }
+.meta-item strong { color: var(--crema); font-weight: 600; }
+.lectura-tag {
+  margin-left: auto;
+  background: var(--dorado-apagado); color: var(--crema);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+  padding: 6px 16px; font-weight: 700;
+}
+
+.scroll-indicator {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;
+  animation: floatBob 2s ease-in-out infinite;
+}
+@keyframes floatBob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--dorado), transparent); }
+.scroll-text { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-calido); }
+
+.ficha-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; background: rgba(200,149,42,0.06);
+  border: 1px solid rgba(200,149,42,0.12);
+  margin: 0 0 60px;
+}
+.stat-item { background: var(--sepia-oscuro); padding: 28px 20px; text-align: center; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; line-height: 1; letter-spacing: 2px;
+  color: var(--dorado); display: block; margin-bottom: 6px;
+}
+.stat-num.blanco { color: var(--crema); font-size: 1.8rem; padding-top: 8px; }
+.stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-calido); }
+
+.contenido-wrapper { max-width: 780px; margin: 0 auto; padding: 80px 40px; }
+
+.intro-grande {
+  font-size: 1.3rem; font-weight: 400; line-height: 1.7;
+  color: rgba(232,220,200,0.85);
+  margin-bottom: 60px; padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.intro-grande::first-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; line-height: 0.8;
+  float: left; margin-right: 16px; color: var(--dorado);
+}
+
+h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  margin: 60px 0 24px; color: var(--crema);
+  position: relative; padding-left: 20px;
+}
+h2::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--dorado); }
+
+p { margin-bottom: 24px; color: var(--crema-apagado); font-size: 1.05rem; }
+
+.caja-datos {
+  background: var(--sepia-medio);
+  border-left: 4px solid var(--dorado);
+  padding: 32px 36px; margin: 48px 0; position: relative; overflow: hidden;
+}
+.caja-datos::before { content: '⚗️'; position: absolute; top: 10px; right: 20px; font-size: 5rem; opacity: 0.08; pointer-events: none; }
+.caja-datos h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--dorado); margin-bottom: 20px;
+}
+.dato-item { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; font-size: 0.95rem; color: var(--crema-apagado); }
+.dato-item::before { content: '▸'; color: var(--dorado); flex-shrink: 0; margin-top: 2px; }
+
+.cita-destacada { margin: 56px 0; padding: 0 0 0 32px; border-left: 3px solid rgba(200,149,42,0.4); }
+.cita-texto { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; line-height: 1.3; font-weight: 700; color: var(--crema); margin-bottom: 12px; }
+.cita-fuente { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-calido); }
+
+.timeline-card {
+  border: 1px solid rgba(200,149,42,0.12);
+  background: rgba(17,13,8,0.8);
+  padding: 28px 32px; margin-bottom: 4px;
+  position: relative; transition: border-color 0.3s;
+}
+.timeline-card:hover { border-color: rgba(200,149,42,0.35); }
+.tl-año { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: rgba(200,149,42,0.35); line-height: 1; margin-bottom: 8px; }
+.tl-lugar { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--crema); margin-bottom: 10px; }
+.tl-desc { font-size: 0.9rem; color: rgba(232,220,200,0.6); line-height: 1.6; margin: 0; }
+
+.verificado {
+  background: rgba(200,149,42,0.05); border: 1px solid rgba(200,149,42,0.15);
+  border-left: 4px solid rgba(200,149,42,0.5);
+  padding: 20px 24px; margin: 32px 0; font-size: 0.9rem; color: rgba(232,220,180,0.8);
+}
+.verificado strong {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--dorado); margin-bottom: 8px;
+}
+
+.veneno-box {
+  background: rgba(74,122,58,0.08); border: 1px solid rgba(74,122,58,0.2);
+  border-left: 4px solid var(--veneno);
+  padding: 20px 24px; margin: 32px 0; font-size: 0.9rem; color: rgba(180,230,160,0.85);
+}
+.veneno-box strong {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--veneno-claro); margin-bottom: 8px;
+}
+
+.separador {
+  display: flex; align-items: center; gap: 20px; margin: 56px 0;
+  color: var(--gris-calido); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase;
+}
+.separador::before, .separador::after { content: ''; flex: 1; height: 1px; background: rgba(200,149,42,0.12); }
+
+.conclusion {
+  background: linear-gradient(135deg, var(--sepia-medio) 0%, rgba(17,13,8,0.8) 100%);
+  border-top: 3px solid var(--dorado);
+  padding: 48px; margin: 60px 0 0; position: relative; overflow: hidden;
+}
+.conclusion h2 { margin-top: 0; border: none; padding: 0; }
+.conclusion h2::before { display: none; }
+
+.mas-articulos { background: var(--sepia-oscuro); padding: 80px 40px; margin-top: 80px; }
+.mas-titulo { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 4px; text-align: center; margin-bottom: 48px; }
+.mas-titulo span { color: #e8321a; }
+.articulos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; max-width: 900px; margin: 0 auto; }
+.articulo-link { background: rgba(8,5,3,0.8); padding: 28px; text-decoration: none; color: var(--crema); transition: background 0.3s; border-left: 3px solid transparent; }
+.articulo-link:hover { background: rgba(26,18,8,0.9); border-left-color: var(--dorado); }
+.al-cat { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--dorado); margin-bottom: 12px; }
+.al-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+
+footer { background: #050302; padding: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(200,149,42,0.06); flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; color: var(--crema); text-decoration: none; }
+.footer-logo span { color: #e8321a; }
+.footer-copy { font-size: 0.75rem; color: var(--gris-calido); }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .hero-articulo { padding: 100px 20px 60px; }
+  h1 { font-size: 3rem; }
+  .contenido-wrapper { padding: 60px 20px; }
+  .conclusion { padding: 32px 24px; }
+  .mas-articulos { padding: 60px 20px; }
+  .num-bg { display: none; }
+  footer { padding: 24px 20px; }
+  .ficha-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">VIRA<span>LIX</span></a>
+  <span class="nav-tag">TRUE CRIME · ESPAÑA</span>
+</nav>
+
+<section class="hero-articulo">
+  <div class="hero-bg-img"></div>
+  <div class="num-bg">1959</div>
+  <div class="clasificado-top">SENTENCIA FIRME — AUDIENCIA PROVINCIAL DE VALENCIA — 19 MAYO 1959</div>
+
+  <span class="categoria-tag">True Crime · Historia Criminal · Valencia 1954-1959</span>
+
+  <h1>
+    La <span class="highlight">Envenenadora</span> de Valencia
+    <span class="sub">La última mujer ejecutada en España</span>
+  </h1>
+
+  <div class="meta-bar">
+    <span class="meta-item">Por <strong>Equipo VIRALIX</strong></span>
+    <span class="meta-item">Valencia · <strong>1954–1959</strong></span>
+    <span class="meta-item">Categoría <strong>True Crime</strong></span>
+    <span class="lectura-tag">9 min lectura</span>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-text">Descender</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="ficha-stats">
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Víctimas (1 muerta, 2 intentos)</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num blanco">ARSÉNICO</span>
+    <span class="stat-label">Veneno utilizado</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num blanco">19 MAY</span>
+    <span class="stat-label">Fecha ejecución — 1959</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num blanco">ÚLTIMA</span>
+    <span class="stat-label">Mujer ejecutada en España</span>
+  </div>
+</div>
+
+<article class="contenido-wrapper">
+
+  <p class="intro-grande reveal">
+    Pilar Prades Expósito tenía 26 años cuando entró a trabajar como sirvienta en casa de la familia Vilanova, en la calle Sagunto de Valencia. En los años siguientes, envenenó con arsénico a sus jefas para quedarse con sus maridos. Fue la última mujer ejecutada en España.
+  </p>
+
+  <div class="verificado reveal">
+    <strong>✓ Contenido verificado</strong>
+    Este artículo está basado en Valencia Secreta, Khronos Historia, Cuadernos Manchegos, Wikipedia ES y el documental de TVE La Huella del Crimen (1985).
+  </div>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <h2 class="reveal">Una Sirvienta con Ambiciones</h2>
+
+  <p class="reveal">Pilar Prades Expósito nació en 1928 en Bejís, un pequeño pueblo de Castellón. Como miles de mujeres de la España de posguerra con escasa formación, se trasladó a Valencia con 12 años para trabajar como sirvienta. Era analfabeta, tenía un carácter seco y una necesidad enfermiza de control y reconocimiento que los expertos que estudiaron su caso describirían después como paciente, fría y calculadora.</p>
+
+  <p class="reveal">En 1954, con 26 años, entró a trabajar en casa del matrimonio Vilanova, dueños de una charcutería en la calle Sagunto de Valencia. Allí encontró lo que llevaba toda la vida buscando: una familia con negocios, con estabilidad, con una posición social que ella nunca había tenido. Y tomó una decisión: quería ser parte de esa familia. El problema era la señora de la casa.</p>
+
+  <div class="caja-datos reveal">
+    <h3>📋 Ficha — Pilar Prades Expósito</h3>
+    <div class="dato-item">Nacida en Bejís, Castellón, en 1928. Analfabeta. Se traslada a Valencia con 12 años.</div>
+    <div class="dato-item">1954: entra a trabajar en casa del matrimonio Vilanova, calle Sagunto 64, Valencia.</div>
+    <div class="dato-item">Víctima 1: Adela Pascual (señora Vilanova) — muerta por arsénico en el caldo.</div>
+    <div class="dato-item">Víctima 2: María del Carmen Cid — intento de envenenamiento. Sobrevivió.</div>
+    <div class="dato-item">Víctima 3: Aurelia Sanz — intento de envenenamiento. Sobrevivió.</div>
+    <div class="dato-item">Detenida al encontrar en su cama un frasco de matahormigas con arsénico.</div>
+    <div class="dato-item">Ejecutada el 19 de mayo de 1959 en la prisión de mujeres de Valencia. Tenía 31 años.</div>
+  </div>
+
+  <h2 class="reveal">El Arsénico en el Caldo</h2>
+
+  <p class="reveal">El método era simple y difícil de detectar en la España de los años 50. Pilar añadía pequeñas cantidades de arsénico extraído de un frasco de matahormigas a los caldos e infusiones que preparaba para sus señoras. Al principio, los síntomas parecían una gripe o un malestar estomacal. Los médicos de la época no sospechaban nada.</p>
+
+  <p class="reveal">Adela Pascual, la señora Vilanova, fue la primera víctima. Empezó con dolores de estómago. Días después murió en cama sin que los médicos pudieran hacer nada. Pilar esperaba entonces convertirse en algo más dentro de la familia. Pero el viudo la despidió poco después, dejándola sin nada.</p>
+
+  <div class="veneno-box reveal">
+    <strong>⚗️ El arsénico como veneno</strong>
+    El arsénico era un componente habitual en los venenos para insectos de la época. En pequeñas dosis provoca síntomas similares a una gastroenteritis severa. En los años 50, sin análisis toxicológicos rutinarios, era muy difícil de detectar tras una muerte.
+  </div>
+
+  <h2 class="reveal">El Mismo Patrón, Dos Veces Más</h2>
+
+  <p class="reveal">Lejos de detenerse, Pilar encontró nuevo empleo en otra casa y repitió el mismo método. Su amiga Aurelia enfermó repentinamente. Después la señora de la casa, María del Carmen Cid, presentó los mismos síntomas. Esta vez, el médico de la familia — el doctor Berenguer — sospechó. Consultó al viudo Vilanova sobre la muerte de su esposa. Las piezas empezaron a encajar.</p>
+
+  <div class="cita-destacada reveal">
+    <p class="cita-texto">"Quienes han investigado su caso la definen como paciente, fría, metódica y calculadora. Esta no es una historia de asesinos al uso. Esta es la vida de una asesina que no dejó dormir a nadie en Valencia aquella noche."</p>
+    <span class="cita-fuente">Khronos Historia — Historia de Pilar Prades</span>
+  </div>
+
+  <p class="reveal">El doctor Berenguer presentó una denuncia. La justicia ordenó la exhumación del cadáver de Adela Pascual. El análisis encontró restos evidentes de arsénico. En la cama de Pilar, los investigadores encontraron el frasco de matahormigas. Ante las pruebas, Pilar siguió negando los hechos durante el juicio, a pesar de los consejos de su abogado.</p>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <h2 class="reveal">Cronología del Crimen</h2>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">1954</div>
+    <div class="tl-lugar">Valencia — Entra en casa Vilanova</div>
+    <p class="tl-desc">Pilar Prades empieza a trabajar como sirvienta en casa del matrimonio Vilanova en la calle Sagunto. Se integra en la vida familiar y empieza a atender el mostrador de la charcutería.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">19 MAR 1954</div>
+    <div class="tl-lugar">Primer envenenamiento — Adela Pascual muere</div>
+    <p class="tl-desc">La señora Vilanova cae enferma con síntomas de gripe. Muere días después. Los médicos no sospechan nada. El viudo la despide poco después, lo que frustra los planes de Pilar.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">1955–1958</div>
+    <div class="tl-lugar">Segunda y tercera casa — Nuevos intentos</div>
+    <p class="tl-desc">Pilar trabaja en nuevas casas y repite el método. Envenena a su amiga Aurelia Sanz y después a la señora de la casa, María del Carmen Cid. Las dos sobreviven. El doctor Berenguer sospecha y denuncia.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">1958</div>
+    <div class="tl-lugar">Detención — El frasco de matahormigas</div>
+    <p class="tl-desc">La exhumación de Adela Pascual confirma la presencia de arsénico. En la cama de Pilar encuentran el frasco. Es detenida. Durante 36 horas sin comer ni dormir, confiesa los envenenamientos.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">19 MAY 1959</div>
+    <div class="tl-lugar">Valencia — Ejecución por garrote vil</div>
+    <p class="tl-desc">Pilar Prades es ejecutada en la prisión de mujeres de Valencia. Tenía 31 años. Fue la última mujer ejecutada en España. El fiscal del caso dedicó el resto de su vida a luchar contra la pena de muerte.</p>
+  </div>
+
+  <h2 class="reveal">El Garrote Vil y el Final de una Era</h2>
+
+  <p class="reveal">El garrote vil era el método de ejecución oficial en la España franquista. Consistía en un collar de hierro sujeto a un poste, atravesado por un tornillo que, al girarse, comprimía el cuello del condenado hasta causar la muerte por asfixia o rotura de vértebras. Era una muerte pública, lenta y diseñada para ser vista.</p>
+
+  <p class="reveal">La ejecución de Pilar Prades dejó una huella profunda en todos los presentes. El fiscal que había llevado el juicio — arrastrado casi a la fuerza hasta el tablado para cumplir con su obligación — dedicó desde ese momento su vida a luchar contra la pena de muerte en España. La pena capital quedó abolida definitivamente en 1995, con una Constitución que tardó décadas en terminar con ella por completo.</p>
+
+  <p class="reveal">Su historia fue llevada a TVE en 1985, en el episodio de La Huella del Crimen titulado "El caso de las envenenadas de Valencia", dirigido por Pedro Olea e interpretado por Terele Pávez.</p>
+
+  <div class="separador reveal">— Arsénico en el caldo. La última ejecución. —</div>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <div class="conclusion reveal">
+    <h2>Lo que dejó Pilar Prades</h2>
+    <p>Pilar Prades no era un monstruo sin motivación. Era una mujer atrapada en la España de los años 50, analfabeta, sin opciones, que encontró en el veneno la única forma que concebía de ascender socialmente. Eso no justifica nada. Pero explica algo.</p>
+    <p>Su caso sacudió Valencia y España entera. La impresión que causó su ejecución sobre quienes la presenciaron fue tan intensa que provocó en el fiscal del caso una conversión moral absoluta.</p>
+    <p><strong>Pilar Prades murió a los 31 años. Fue la última mujer ejecutada en España. Y el arsénico que usó para matar a sus jefas acabó siendo el veneno que la mató a ella.</strong></p>
+  </div>
+
+  <h2 class="reveal">Fuentes</h2>
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--gris-calido);line-height:2" class="reveal">
+    · Wikipedia ES — Pilar Prades Expósito<br>
+    · Valencia Secreta — La Envenenadora de Valencia<br>
+    · Khronos Historia — Dame veneno quiero morir (2021)<br>
+    · Cuadernos Manchegos — Crónicas criminales: La envenenadora de Valencia<br>
+    · TVE — La Huella del Crimen: El caso de las envenenadas de Valencia (1985)<br>
+    · Cuarto Milenio — El caso de Pilar Prades (2010)
+  </p>
+
+</article>
+
+<section class="mas-articulos">
+  <h2 class="mas-titulo">SEGUIR <span>LEYENDO</span></h2>
+  <div class="articulos-grid">
+    <a href="articulo-arropiero.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">El Arropiero — El mayor asesino en serie de España</div>
+    </a>
+    <a href="articulo-urquijo.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Marqueses de Urquijo — 45 años sin resolverse</div>
+    </a>
+    <a href="articulo-el-lute.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">El Lute — Escapó dos veces y se convirtió en leyenda</div>
+    </a>
+    <a href="articulo-breton.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Caso Bretón — Los mató y fue a denunciar su desaparición</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">VIRA<span>LIX</span></a>
+  <span class="footer-copy">© 2026 VIRALIX — True crime y casos reales de España</span>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
+  rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+  cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px';
+  ring.style.left = rx - 18 + 'px'; ring.style.top = ry - 18 + 'px';
+  requestAnimationFrame(animCursor);
+})();
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script src="audio-reader.js"></script>
+<script src="cookies-banner.js"></script>
+<script src="article-features.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"La Envenenadora de Valencia: la última mujer ejecutada en España","description":"Pilar Prades mató con arsénico a sus empleadoras para quedarse con sus maridos. Fue ejecutada por garrote vil en 1959.","author":{"@type":"Organization","name":"Equipo VIRALIX"},"publisher":{"@type":"Organization","name":"VIRALIX"},"url":"https://viralixweb.es/articulo-envenenadora.html","inLanguage":"es"}
+</script>
+</body>
+</html>

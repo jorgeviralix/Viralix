@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Virginia y Manuela desaparecieron el 23 de abril de 1992 en Aguilar de Campoo haciendo autostop. 34 años después, nadie sabe qué pasó con ellas.">
+<meta name="keywords" content="niñas aguilar de campoo, virginia guerrero, manuela torres, desaparición 1992, caso sin resolver españa">
+<title>Las Niñas de Aguilar: desaparecieron haciendo autostop y nadie las encontró | VIRALIX</title>
+<meta property="og:title" content="Las Niñas de Aguilar: 34 años sin respuesta" />
+<meta property="og:description" content="Virginia tenía 14 años. Manuela, 13. Salieron a celebrar un cumpleaños y nunca volvieron. El caso sin resolver más doloroso de España." />
+<meta property="og:url" content="https://viralixweb.es/articulo-aguilar.html" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --negro: #05080a;
+  --gris-plomo: #0d1117;
+  --gris-medio: #161b22;
+  --niebla: #8b9dc3;
+  --niebla-oscura: #4a5568;
+  --blanco: #e8edf2;
+  --blanco-apagado: rgba(232,237,242,0.75);
+  --acento: #7eb8d4;
+  --acento-oscuro: #2d6a8a;
+  --amarillo-frio: #c4a84f;
+  --gris-texto: #6b7a8d;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.cursor { width: 10px; height: 10px; background: var(--acento); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+.cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(126,184,212,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1000; opacity: 0.4;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 18px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s;
+}
+nav.scrolled {
+  background: rgba(5,8,10,0.96);
+  border-bottom: 1px solid rgba(126,184,212,0.1);
+  backdrop-filter: blur(10px);
+}
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+.logo span { color: #e8321a; }
+.nav-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--acento); border: 1px solid var(--acento); padding: 4px 12px; }
+
+/* HERO */
+.hero-articulo {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+
+.hero-articulo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5,8,10,0.3) 0%, rgba(5,8,10,0.7) 60%, var(--negro) 100%);
+  z-index: 1;
+}
+
+.hero-bg-img {
+  position: absolute; inset: 0;
+  background-image: url('img-aguilar.png');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(40%) brightness(0.5);
+  z-index: 0;
+}
+
+/* NIEBLA ANIMADA */
+.niebla-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(126,184,212,0.05) 0%, transparent 50%);
+  animation: nieblaMove 8s ease-in-out infinite;
+}
+@keyframes nieblaMove {
+  0%,100%{opacity:0.3} 50%{opacity:0.7}
+}
+
+.num-bg {
+  position: absolute; right: 2%; top: 50%; transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28rem; color: rgba(126,184,212,0.04);
+  pointer-events: none; line-height: 1; z-index: 1;
+}
+
+.clasificado-top {
+  position: absolute; top: 90px; left: 40px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase;
+  color: rgba(126,184,212,0.4); z-index: 2;
+}
+
+.categoria-tag {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--acento);
+  border-left: 3px solid var(--acento); padding-left: 12px;
+  margin-bottom: 24px; position: relative; z-index: 2;
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.92; letter-spacing: 2px;
+  max-width: 850px; position: relative; z-index: 2; margin-bottom: 32px;
+}
+h1 .highlight { color: var(--acento); }
+h1 .sub { font-size: clamp(1.6rem, 3.5vw, 2.8rem); display: block; color: rgba(232,237,242,0.45); letter-spacing: 4px; margin-top: 8px; }
+
+.meta-bar {
+  display: flex; gap: 32px; align-items: center;
+  position: relative; z-index: 2;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);
+  flex-wrap: wrap;
+}
+.meta-item { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-texto); }
+.meta-item strong { color: var(--blanco); font-weight: 600; }
+.lectura-tag {
+  margin-left: auto;
+  background: var(--acento-oscuro); color: var(--blanco);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+  padding: 6px 16px; font-weight: 700;
+}
+
+.scroll-indicator {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;
+  animation: floatBob 2s ease-in-out infinite;
+}
+@keyframes floatBob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--acento), transparent); }
+.scroll-text { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-texto); }
+
+/* STATS */
+.ficha-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; background: rgba(126,184,212,0.06);
+  border: 1px solid rgba(126,184,212,0.12);
+  margin: 0 0 60px;
+}
+.stat-item { background: var(--gris-plomo); padding: 28px 20px; text-align: center; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; line-height: 1; letter-spacing: 2px;
+  color: var(--acento); display: block; margin-bottom: 6px;
+}
+.stat-num.blanco { color: var(--blanco); font-size: 1.8rem; padding-top: 8px; }
+.stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-texto); }
+
+/* CONTENIDO */
+.contenido-wrapper { max-width: 780px; margin: 0 auto; padding: 80px 40px; }
+
+.intro-grande {
+  font-size: 1.3rem; font-weight: 400; line-height: 1.7;
+  color: rgba(232,237,242,0.85);
+  margin-bottom: 60px; padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.intro-grande::first-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; line-height: 0.8;
+  float: left; margin-right: 16px; color: var(--acento);
+}
+
+h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  margin: 60px 0 24px; color: var(--blanco);
+  position: relative; padding-left: 20px;
+}
+h2::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--acento); }
+
+p { margin-bottom: 24px; color: var(--blanco-apagado); font-size: 1.05rem; }
+
+.caja-datos {
+  background: var(--gris-medio);
+  border-left: 4px solid var(--acento);
+  padding: 32px 36px; margin: 48px 0; position: relative; overflow: hidden;
+}
+.caja-datos::before {
+  content: '📁';
+  position: absolute; top: 10px; right: 20px;
+  font-size: 5rem; opacity: 0.06; pointer-events: none;
+}
+.caja-datos h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--acento); margin-bottom: 20px;
+}
+.dato-item {
+  display: flex; gap: 16px; margin-bottom: 14px;
+  align-items: flex-start; font-size: 0.95rem; color: var(--blanco-apagado);
+}
+.dato-item::before { content: '▸'; color: var(--acento); flex-shrink: 0; margin-top: 2px; }
+
+.cita-destacada { margin: 56px 0; padding: 0 0 0 32px; border-left: 3px solid rgba(126,184,212,0.4); }
+.cita-texto { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; line-height: 1.3; font-weight: 700; color: var(--blanco); margin-bottom: 12px; }
+.cita-fuente { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-texto); }
+
+.timeline-card {
+  border: 1px solid rgba(126,184,212,0.1);
+  background: rgba(13,17,23,0.8);
+  padding: 28px 32px; margin-bottom: 4px;
+  position: relative; transition: border-color 0.3s;
+}
+.timeline-card:hover { border-color: rgba(126,184,212,0.3); }
+.tl-año { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: rgba(126,184,212,0.35); line-height: 1; margin-bottom: 8px; }
+.tl-lugar { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blanco); margin-bottom: 10px; }
+.tl-desc { font-size: 0.9rem; color: rgba(232,237,242,0.6); line-height: 1.6; margin: 0; }
+
+.verificado {
+  background: rgba(126,184,212,0.05); border: 1px solid rgba(126,184,212,0.15);
+  border-left: 4px solid rgba(126,184,212,0.5);
+  padding: 20px 24px; margin: 32px 0; font-size: 0.9rem; color: rgba(180,210,230,0.8);
+}
+.verificado strong {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--acento); margin-bottom: 8px;
+}
+
+.separador {
+  display: flex; align-items: center; gap: 20px; margin: 56px 0;
+  color: var(--gris-texto); font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase;
+}
+.separador::before, .separador::after { content: ''; flex: 1; height: 1px; background: rgba(126,184,212,0.1); }
+
+.conclusion {
+  background: linear-gradient(135deg, var(--gris-medio) 0%, rgba(13,17,23,0.8) 100%);
+  border-top: 3px solid var(--acento);
+  padding: 48px; margin: 60px 0 0; position: relative; overflow: hidden;
+}
+.conclusion h2 { margin-top: 0; border: none; padding: 0; }
+.conclusion h2::before { display: none; }
+
+.mas-articulos { background: var(--gris-plomo); padding: 80px 40px; margin-top: 80px; }
+.mas-titulo { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 4px; text-align: center; margin-bottom: 48px; }
+.mas-titulo span { color: #e8321a; }
+.articulos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; max-width: 900px; margin: 0 auto; }
+.articulo-link { background: rgba(5,8,10,0.8); padding: 28px; text-decoration: none; color: var(--blanco); transition: background 0.3s; border-left: 3px solid transparent; }
+.articulo-link:hover { background: rgba(20,30,40,0.9); border-left-color: var(--acento); }
+.al-cat { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--acento); margin-bottom: 12px; }
+.al-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+
+footer { background: #020305; padding: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(126,184,212,0.06); flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; color: var(--blanco); text-decoration: none; }
+.footer-logo span { color: #e8321a; }
+.footer-copy { font-size: 0.75rem; color: var(--gris-texto); }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .hero-articulo { padding: 100px 20px 60px; }
+  h1 { font-size: 3rem; }
+  .contenido-wrapper { padding: 60px 20px; }
+  .conclusion { padding: 32px 24px; }
+  .mas-articulos { padding: 60px 20px; }
+  .num-bg { display: none; }
+  footer { padding: 24px 20px; }
+  .ficha-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">VIRA<span>LIX</span></a>
+  <span class="nav-tag">TRUE CRIME · ESPAÑA</span>
+</nav>
+
+<section class="hero-articulo">
+  <div class="hero-bg-img"></div>
+  <div class="niebla-overlay"></div>
+  <div class="num-bg">34</div>
+  <div class="clasificado-top">CASO ABIERTO — PALENCIA · REINOSA, 1992 — SIN RESOLVER</div>
+
+  <span class="categoria-tag">Desaparición · Caso sin resolver · Palencia 1992</span>
+
+  <h1>
+    Las Niñas de <span class="highlight">Aguilar</span>
+    <span class="sub">Salieron a un cumpleaños. Nunca volvieron.</span>
+  </h1>
+
+  <div class="meta-bar">
+    <span class="meta-item">Por <strong>Equipo VIRALIX</strong></span>
+    <span class="meta-item">Palencia · <strong>1992</strong></span>
+    <span class="meta-item">Categoría <strong>Caso sin resolver</strong></span>
+    <span class="lectura-tag">9 min lectura</span>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-text">Descender</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="ficha-stats">
+  <div class="stat-item">
+    <span class="stat-num">2</span>
+    <span class="stat-label">Niñas desaparecidas</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">34</span>
+    <span class="stat-label">Años sin resolver</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num blanco">14 y 13</span>
+    <span class="stat-label">Años de edad — Virginia y Manuela</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num blanco">ARCHIVADO</span>
+    <span class="stat-label">Estado judicial actual</span>
+  </div>
+</div>
+
+<article class="contenido-wrapper">
+
+  <p class="intro-grande reveal">
+    El 23 de abril de 1992, Virginia Guerrero y Manuela Torres salieron de Aguilar de Campoo para celebrar un cumpleaños. Dijeron a sus padres que volvían pronto. Tenían 14 y 13 años. Nadie volvió a verlas.
+  </p>
+
+  <div class="verificado reveal">
+    <strong>✓ Contenido verificado</strong>
+    Este artículo está basado en Wikipedia ES, Vozpópuli, Moncloa.com, El Español y la cobertura del programa Crimen en Primera Persona (2024).
+  </div>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <h2 class="reveal">Dos Niñas, Una Fiesta y Un Autostop</h2>
+
+  <p class="reveal">Virginia Guerrero Espejo tenía 14 años y había nacido en Aguilar de Campoo, un pequeño municipio de Palencia en la España vaciada. Manuela Torres Bougeffa tenía 13 y había llegado hacía poco desde Francia con su madre. A pesar de sus orígenes distintos, las dos eran inseparables.</p>
+
+  <p class="reveal">La tarde del 23 de abril de 1992, Virginia le pidió dinero a su madre para comprar una tarta. Le dijo que iban a celebrar el cumpleaños de una amiga en el pueblo. Pero en algún momento del camino, las dos chicas acabaron en Reinosa, Cantabria, a 30 kilómetros de Aguilar de Campoo.</p>
+
+  <p class="reveal">En 1992, hacer autostop entre pueblos era algo habitual para los jóvenes de la España rural. No había móviles, no había cámaras, no había forma de saber dónde estabas si no te veía alguien. Varios testigos afirman haberlas visto subir a un coche frente a la fábrica de Cuétara en Reinosa. <strong>Fue la última vez que alguien las vio con vida.</strong></p>
+
+  <div class="caja-datos reveal">
+    <h3>📋 Datos del caso</h3>
+    <div class="dato-item">Virginia Guerrero Espejo — nacida el 17 de noviembre de 1977 en Aguilar de Campoo, Palencia.</div>
+    <div class="dato-item">Manuela Torres Bougeffa — nacida el 9 de marzo de 1979 en Aix-en-Provence, Francia.</div>
+    <div class="dato-item">Desaparecidas el 23 de abril de 1992 en Reinosa, Cantabria.</div>
+    <div class="dato-item">Último avistamiento: subiendo a un coche frente a la fábrica Cuétara de Reinosa.</div>
+    <div class="dato-item">Matrícula del vehículo: testigos señalan matrícula de Valladolid.</div>
+    <div class="dato-item">Estado: desaparecidas. Caso archivado por la justicia española.</div>
+  </div>
+
+  <h2 class="reveal">El Caso que Nadie Buscó</h2>
+
+  <p class="reveal">Siete meses después de la desaparición de Virginia y Manuela, otro caso sacudió a España: el Caso Alcàsser. Tres chicas desaparecidas en Valencia, encontradas muertas 75 días después. Los medios de todo el país se volcaron en Alcàsser y las niñas de Aguilar quedaron en el olvido.</p>
+
+  <div class="cita-destacada reveal">
+    <p class="cita-texto">"La investigación de Alcàsser dejó en un segundo plano el paradero de las niñas de Aguilar de Campoo. Los cuerpos de las tres chicas valencianas fueron localizados, mientras que el destino de las palentinas sigue siendo un misterio."</p>
+    <span class="cita-fuente">Vozpópuli — Octubre 2022</span>
+  </div>
+
+  <p class="reveal">En 1992, la investigación se realizó con los medios de la época. No había teléfonos móviles para geolocalizar, ni cámaras de tráfico que revisar. Y existía un protocolo absurdo que ya ha cambiado: esperar 24 o 48 horas antes de buscar a alguien. Un tiempo precioso perdido.</p>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <h2 class="reveal">Cronología de Una Investigación Fallida</h2>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">23 ABR 1992</div>
+    <div class="tl-lugar">Reinosa, Cantabria — Última vez vistas</div>
+    <p class="tl-desc">Testigos las ven haciendo autostop frente a la fábrica Cuétara. Suben a un coche con matrícula de Valladolid. Desaparecen.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">NOV 1992</div>
+    <div class="tl-lugar">Valencia — Caso Alcàsser</div>
+    <p class="tl-desc">El asesinato de Miriam, Toñi y Desirée copa todos los medios de España. Las niñas de Aguilar desaparecen de la agenda mediática y policial.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">2018</div>
+    <div class="tl-lugar">Reapertura — Nueva testigo</div>
+    <p class="tl-desc">Una mujer denuncia en televisión haber sufrido un intento de secuestro similar en la misma zona. El juzgado reabre la investigación. Se investiga una mina llamada Fontoria donde llamadas anónimas señalan que están los cuerpos.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">2022</div>
+    <div class="tl-lugar">Tribunal Constitucional — Recurso de las familias</div>
+    <p class="tl-desc">Las familias llevan el caso al Tribunal Constitucional reclamando que no se archive ninguna desaparición sin resolver. El TC rechaza reabrir la causa.</p>
+  </div>
+
+  <div class="timeline-card reveal">
+    <div class="tl-año">2024</div>
+    <div class="tl-lugar">Tribunal Europeo de Derechos Humanos — Carpetazo final</div>
+    <p class="tl-desc">El TEDH de Estrasburgo da carpetazo definitivo al caso. La justicia española mantiene el archivo. Sin nuevos indicios fiables, el caso no se reabrirá.</p>
+  </div>
+
+  <h2 class="reveal">El Principal Sospechoso que Nunca Fue Juzgado</h2>
+
+  <p class="reveal">A lo largo de los años, la investigación apuntó a un hombre como principal sospechoso de la Guardia Civil. Era el conductor del vehículo con matrícula de Valladolid que los testigos vieron recoger a las niñas. Cuando fue interrogado, afirmó que en abril de 1992 estaba en Estados Unidos. Pero la investigación posterior demostró que en esa época no tenía pasaporte.</p>
+
+  <p class="reveal">En 2024, el programa Crimen en Primera Persona organizó una llamada telefónica entre la mujer que afirma haber sufrido un intento de secuestro similar y el principal sospechoso. El resultado fue descrito como sorprendente por el equipo del programa. Sin embargo, sin pruebas físicas, nada puede hacerse judicialmente.</p>
+
+  <div class="separador reveal">— 34 años. Dos familias. Ninguna respuesta. —</div>
+
+  <h2 class="reveal">El Legado de Virginia y Manuela</h2>
+
+  <p class="reveal">El caso de las niñas de Aguilar de Campoo es uno de los más dolorosos de la historia criminal española precisamente porque no tiene resolución. No hay condena, no hay cuerpos, no hay certeza. Solo hay dos familias que llevan más de treinta años esperando saber qué le pasó a sus hijas.</p>
+
+  <p class="reveal">Su caso impulsó cambios en los protocolos de búsqueda de desaparecidos en España. Hoy, cuando alguien desaparece, la búsqueda comienza de inmediato. Las primeras horas son consideradas fundamentales. Esa lección llegó demasiado tarde para Virginia y Manuela.</p>
+
+  <ins class="adsbygoogle" style="display:block;margin:40px 0" data-ad-client="ca-pub-5337247644569859" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+  <div class="conclusion reveal">
+    <h2>Sin respuesta</h2>
+    <p>Virginia Guerrero tendría hoy 48 años. Manuela Torres, 47. Ninguna de las dos llegó a cumplir los 15.</p>
+    <p>El Tribunal Europeo de Derechos Humanos ha cerrado definitivamente la vía judicial. Las familias han agotado todos los recursos legales disponibles. A menos que aparezca algún indicio nuevo y fiable, el caso permanecerá archivado para siempre.</p>
+    <p><strong>Las niñas de Aguilar de Campoo son el caso sin resolver más antiguo y más ignorado de la España reciente. Y sus familias siguen esperando.</strong></p>
+  </div>
+
+  <h2 class="reveal">Fuentes</h2>
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--gris-texto);line-height:2" class="reveal">
+    · Wikipedia ES — Caso de las niñas desaparecidas de Aguilar de Campoo<br>
+    · Vozpópuli — Última esperanza para las niñas desaparecidas (octubre 2022)<br>
+    · Moncloa.com — Carpetazo al caso (septiembre 2024)<br>
+    · Crimen en Primera Persona — Episodio 10 (diciembre 2024)<br>
+    · Cuarto Milenio — Temporada 17, Episodio 4<br>
+    · ABC Hemeroteca — Desaparecen dos muchachas en Reinosa (29 abril 1992)
+  </p>
+
+</article>
+
+<section class="mas-articulos">
+  <h2 class="mas-titulo">SEGUIR <span>LEYENDO</span></h2>
+  <div class="articulos-grid">
+    <a href="articulo-alcasser.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Caso Alcàsser — 30 años de preguntas sin respuesta</div>
+    </a>
+    <a href="articulo-diana-quer.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Diana Quer — 500 días buscándola</div>
+    </a>
+    <a href="articulo-breton.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Caso Bretón — Los mató y fue a denunciar su desaparición</div>
+    </a>
+    <a href="articulo-asunta.html" class="articulo-link">
+      <div class="al-cat">True Crime</div>
+      <div class="al-titulo">Caso Asunta — Sus padres la drogaron y estrangularon</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">VIRA<span>LIX</span></a>
+  <span class="footer-copy">© 2026 VIRALIX — True crime y casos reales de España</span>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
+  rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+  cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px';
+  ring.style.left = rx - 18 + 'px'; ring.style.top = ry - 18 + 'px';
+  requestAnimationFrame(animCursor);
+})();
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script src="audio-reader.js"></script>
+<script src="cookies-banner.js"></script>
+<script src="article-features.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Las Niñas de Aguilar: desaparecieron haciendo autostop y nadie las encontró","description":"Virginia y Manuela desaparecieron el 23 de abril de 1992 en Aguilar de Campoo. 34 años después, nadie sabe qué pasó.","author":{"@type":"Organization","name":"Equipo VIRALIX"},"publisher":{"@type":"Organization","name":"VIRALIX"},"url":"https://viralixweb.es/articulo-aguilar.html","inLanguage":"es"}
+</script>
+</body>
+</html>
