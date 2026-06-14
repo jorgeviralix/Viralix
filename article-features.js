@@ -160,7 +160,7 @@
     "@type": "Article",
     "headline": title,
     "author": { "@type": "Organization", "name": "VIRALIX" },
-    "publisher": { "@type": "Organization", "name": "VIRALIX", "url": "https://www.viralixweb.es" },
+    "publisher": { "@type": "Organization", "name": "VIRALIX", "url": "https://viralixweb.es" },
     "datePublished": "2026-05-01",
     "dateModified": today.toISOString().split('T')[0],
     "mainEntityOfPage": window.location.href,
