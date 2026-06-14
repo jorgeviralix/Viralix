@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://viralixweb.es/sitemap.xml
+
+Sitemap: https://www.viralixweb.es/sitemap.xml
+
 Disallow: /googlebd6bb1a7e4b62950.html
