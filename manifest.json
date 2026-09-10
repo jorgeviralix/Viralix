@@ -1,0 +1,14 @@
+{
+  "name": "VIRALIX — True Crime España",
+  "short_name": "VIRALIX",
+  "description": "El medio independiente de true crime y casos reales de España",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060a",
+  "theme_color": "#e8321a",
+  "lang": "es",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

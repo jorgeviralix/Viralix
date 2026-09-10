@@ -103,10 +103,21 @@
     { url: 'articulo-asunta.html', title: 'Caso Asunta' },
     { url: 'articulo-urquijo.html', title: 'Marqueses de Urquijo' },
     { url: 'articulo-el-lute.html', title: 'El Lute' },
+    { url: 'articulo-arropiero.html', title: 'El Arropiero' },
+    { url: 'articulo-breton.html', title: 'Caso Bretón' },
+    { url: 'articulo-crimen-cuenca.html', title: 'Crimen de Cuenca' },
+    { url: 'articulo-envenenadora.html', title: 'La Envenenadora de Valencia' },
+    { url: 'articulo-aguilar.html', title: 'Caso Aguilar' },
+    { url: 'articulo-marta-calvo.html', title: 'Caso Marta Calvo' },
+    { url: 'articulo-wanninkhof-bis.html', title: 'Caso Tony King' },
     { url: 'articulo-marianas.html', title: 'Fosa de las Marianas' },
     { url: 'articulo-hantavirus.html', title: 'Hantavirus' },
     { url: 'articulo-super-elnino.html', title: 'Super El Niño' },
     { url: 'articulo-falsos-recuerdos.html', title: 'Falsos Recuerdos' },
+    { url: 'articulo-eclipse-2026.html', title: 'Eclipse Solar 2026' },
+    { url: 'articulo-galindos.html', title: 'Los Galindos' },
+    { url: 'articulo-jarabo.html', title: 'Caso Jarabo' },
+    { url: 'articulo-somosierra.html', title: 'Niño de Somosierra' },
   ];
   const currentFile = window.location.pathname.split('/').pop();
   const currentIdx = allArticles.findIndex(a => a.url === currentFile);

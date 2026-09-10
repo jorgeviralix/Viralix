@@ -23,6 +23,8 @@ p{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(16px,2.
 .random{margin-top:60px;font-size:11px;color:rgba(244,242,238,0.3);letter-spacing:2px;text-transform:uppercase}
 .random a{color:#e8321a;text-decoration:none}
 </style>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
 <a href="index.html" class="logo">VIRAL<span>I</span>X</a>
@@ -34,7 +36,7 @@ p{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(16px,2.
 </div>
 <div class="random">O descubre un caso al azar: <a href="#" id="randomLink">🎲 Sorpréndeme</a></div>
 <script>
-const arts=['articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html','articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html','articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html','articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html','articulo-falsos-recuerdos.html'];
+const arts=['articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html','articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html','articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html','articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html','articulo-falsos-recuerdos.html','articulo-arropiero.html','articulo-breton.html','articulo-crimen-cuenca.html','articulo-envenenadora.html','articulo-aguilar.html','articulo-marta-calvo.html','articulo-urquijo.html','articulo-el-lute.html','articulo-eclipse-2026.html','articulo-wanninkhof-bis.html','articulo-galindos.html','articulo-jarabo.html','articulo-somosierra.html'];
 function goRandom(){window.location.href=arts[Math.floor(Math.random()*arts.length)];}
 document.getElementById('randomBtn').addEventListener('click',e=>{e.preventDefault();goRandom();});
 document.getElementById('randomLink').addEventListener('click',e=>{e.preventDefault();goRandom();});
