@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#060609">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>VIRALIX — Caso Abierto</title>
+<meta name="description" content="Juego de detective true crime. Investiga escenas del crimen, interroga sospechosos, encuentra contradicciones y resuelve el caso. 100% ficción.">
+<meta property="og:title" content="VIRALIX: Caso Abierto">
+<meta property="og:description" content="¿Puedes resolver el caso? Investiga, interroga y acusa al culpable.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://viralixweb.es/juego">
+<meta property="og:image" content="https://viralixweb.es/og-caso-abierto.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VIRALIX: Caso Abierto">
+<meta name="twitter:description" content="Juego de detective true crime. ¿Puedes resolver el caso?">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<script>
+// PixiJS only — works on PC and mobile
+const IS_MOBILE=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+const ENGINE='pixi';
+window._engineReady=false;
+const s=document.createElement('script');
+s.src='https://unpkg.com/pixi.js@7.3.2/dist/pixi.min.js';
+s.onload=()=>{window._engineReady=true};
+s.onerror=()=>{window._engineReady=true;window._pixiFailed=true};
+document.head.appendChild(s);
+try{const t=document.createElement('script');t.src='https://telegram.org/js/telegram-web-app.js';t.async=true;t.onerror=()=>{};document.head.appendChild(t)}catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+:root{
+  --bg:#060609;--s1:#0c0c12;--s2:#111119;--s3:#181822;--s4:#222230;--s5:#2e2e3e;
+  --red:#e8364b;--red2:#c72d40;--redA:rgba(232,54,75,.12);--redB:rgba(232,54,75,.35);
+  --amber:#d4952a;--amberA:rgba(212,149,42,.1);
+  --teal:#1ac8b0;--tealA:rgba(26,200,176,.08);--tealB:rgba(26,200,176,.3);
+  --blue:#5b8af5;--blueA:rgba(91,138,245,.1);
+  --green:#2cb67d;--greenA:rgba(44,182,125,.1);
+  --t1:#e6e2dc;--t2:#9e9a94;--t3:#5e5a54;--t4:#3a3832;
+  --sans:'DM Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;
+  --r:8px;--r2:12px;--r3:16px;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:14px;line-height:1.5}
+#game{width:100%;height:100%;position:relative;overflow:hidden}
+
+/* --- Screens --- */
+.scr{display:none;flex-direction:column;position:absolute;inset:0;overflow:hidden}
+.scr.on{display:flex;animation:scrIn .3s ease}
+@keyframes scrIn{from{opacity:0}to{opacity:1}}
+.scroll-y{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+
+/* --- Buttons --- */
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;padding:12px 24px;border-radius:var(--r);font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;transition:transform .12s,opacity .12s;touch-action:manipulation;letter-spacing:.2px;line-height:1.3}
+.bt:active{transform:scale(.97);opacity:.85}
+.bt-red{background:var(--red);color:#fff}.bt-s2{background:var(--s3);color:var(--t2)}.bt-ghost{background:0;color:var(--t3);padding:8px 16px}
+.bt-amber{background:var(--amber);color:#000}.bt-block{width:100%}.bt-sm{padding:9px 18px;font-size:12.5px}
+.pill{display:inline-flex;padding:3px 9px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.8px}
+.pill-f{background:var(--amberA);color:var(--amber);border:1px solid rgba(212,149,42,.18)}
+.pill-d{background:var(--redA);color:var(--red)}.pill-g{background:var(--greenA);color:var(--green)}
+.pill-t{background:var(--tealA);color:var(--teal)}
+
+/* --- Content Warning --- */
+#cw{position:fixed;inset:0;z-index:999;background:linear-gradient(180deg,#060609 0%,#0e0810 30%,#140a0c 60%,#0a0608 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;text-align:center;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#cw::before{content:'';position:absolute;width:100%;height:100%;background:radial-gradient(ellipse at 50% 20%,rgba(232,54,75,.06),transparent 60%),radial-gradient(ellipse at 30% 80%,rgba(212,149,42,.04),transparent 50%);pointer-events:none}
+#cw .cw-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:28px 28px max(28px,env(safe-area-inset-bottom));position:relative;z-index:1}
+#cw .cw-ring{width:48px;height:48px;border-radius:50%;background:var(--amberA);border:1px solid rgba(212,149,42,.2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;flex-shrink:0}
+#cw h3{color:var(--amber);font-size:15px;margin-bottom:8px}
+#cw p{color:var(--t3);font-size:12px;line-height:1.7;max-width:300px;margin-bottom:16px}
+
+/* --- Title --- */
+#title{align-items:center;justify-content:center;text-align:center}
+.t-glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,54,75,.06),transparent 70%);top:15%;left:50%;transform:translateX(-50%);pointer-events:none}
+.t-logo{font-family:var(--mono);font-size:clamp(30px,8vw,48px);font-weight:700;letter-spacing:10px;color:var(--red);position:relative;z-index:1}
+.t-sub{font-family:var(--mono);font-size:clamp(9px,2.2vw,12px);letter-spacing:clamp(8px,2.5vw,14px);color:var(--amber);margin-top:4px;opacity:.8}
+.t-sep{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--s5),transparent);margin:28px auto}
+.t-desc{font-size:12.5px;color:var(--t3);max-width:260px;margin:0 auto 28px;line-height:1.7}
+.t-btns{display:flex;flex-direction:column;gap:8px;width:220px;position:relative;z-index:1}
+.t-foot{position:absolute;bottom:max(14px,env(safe-area-inset-bottom));font-family:var(--mono);font-size:8px;letter-spacing:4px;color:var(--t4)}
+
+/* --- Select --- */
+#sel .sel-top{padding:max(10px,env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:10px}
+#sel .sel-top h2{flex:1;font-size:17px;font-weight:600}
+.c-card{background:var(--s1);border:1px solid var(--s3);border-radius:var(--r3);padding:16px;margin:0 16px 10px;position:relative;overflow:hidden;cursor:pointer;transition:border-color .2s}
+.c-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.c-card.medio::before{background:linear-gradient(90deg,var(--amber),transparent 80%)}
+.c-card.dificil::before{background:linear-gradient(90deg,var(--red),transparent 80%)}
+.c-card:active{border-color:var(--red);transform:scale(.995)}
+.c-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.c-icon{width:38px;height:38px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.c-title{font-size:14.5px;font-weight:600}
+.c-loc{font-size:11px;color:var(--t3);margin-top:1px}
+.c-stats{display:flex;gap:14px;font-size:10.5px;color:var(--t3)}
+.c-card.lock{opacity:.3;pointer-events:none}
+
+/* --- Intro --- */
+#intro .i-scroll{flex:1;overflow-y:auto}
+.i-hero{padding:max(10px,env(safe-area-inset-top)) 20px 0;text-align:center}
+.i-exp{font-family:var(--mono);font-size:9.5px;letter-spacing:3px;color:var(--red);margin-bottom:6px}
+.i-title{font-size:clamp(22px,6vw,30px);font-weight:700;line-height:1.2;margin-bottom:8px}
+.i-meta{font-size:11.5px;color:var(--t3);line-height:1.7}
+.i-brief{margin:14px 16px;padding:16px;background:var(--s1);border-radius:var(--r2);border-left:2px solid var(--red)}
+.i-brief p{font-size:13px;line-height:1.75;color:var(--t2);margin-bottom:10px}
+.i-brief p:last-child{margin-bottom:0}
+.v-card{margin:12px 0 0;padding:12px;background:var(--s2);border-radius:var(--r);border:1px solid var(--s3)}
+.v-card h4{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--red);margin-bottom:6px}
+.v-card p{font-size:11.5px;color:var(--t3);margin-bottom:2px;line-height:1.5}
+.v-card strong{color:var(--t1)}
+.i-foot{padding:14px 16px max(14px,env(safe-area-inset-bottom));display:flex;gap:8px;background:linear-gradient(transparent,var(--bg) 35%);position:sticky;bottom:0}
+
+/* --- HUD --- */
+.hud{display:flex;align-items:center;padding:6px 12px;background:var(--s1);border-bottom:1px solid var(--s3);min-height:46px;gap:8px;z-index:10;flex-shrink:0}
+.hud-l{flex:1;min-width:0}
+.hud-phase{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--teal);font-weight:600}
+.hud-case{font-size:10px;color:var(--t4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hud-c{position:relative;width:44px;height:44px;flex-shrink:0}
+.hud-c svg{width:100%;height:100%;transform:rotate(-90deg)}
+.hud-c .bg{fill:none;stroke:var(--s3);stroke-width:3}
+.hud-c .fg{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .9s linear,stroke .3s}
+.hud-c .fg.w{stroke:var(--amber)}.hud-c .fg.d{stroke:var(--red)}
+.hud-t{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700}
+.hud-r{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0}
+.hud-pts{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--amber)}
+.hud-sub{font-size:9.5px;color:var(--t4)}
+
+/* --- Scene --- */
+#scene .s-area{flex:1;position:relative;overflow:hidden;background:var(--bg)}
+#phaser-container{width:100%;height:100%}
+#phaser-container canvas{width:100%!important;height:100%!important;display:block!important}
+.s-tip{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);padding:7px 14px;border-radius:20px;font-size:11px;color:var(--t2);background:rgba(6,6,9,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--s3);transition:opacity .4s;pointer-events:none;white-space:nowrap}
+.s-tip.hide{opacity:0}
+
+/* Evidence Found Toast */
+.toast{position:fixed;top:52px;left:10px;right:10px;z-index:90;pointer-events:none}
+.toast-in{padding:11px 14px;background:rgba(6,6,9,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--tealB);border-radius:var(--r2);display:flex;align-items:center;gap:10px;animation:tIn .3s cubic-bezier(.3,1.5,.6,1),tOut .25s ease 2s forwards;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+.toast-ic{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;background:var(--tealA);border:1px solid rgba(26,200,176,.15)}
+.toast-tx{flex:1;min-width:0}
+.toast-nm{font-size:12.5px;font-weight:600;color:var(--teal)}
+.toast-tp{font-size:10px;color:var(--t3);margin-top:1px}
+@keyframes tIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tOut{to{opacity:0;transform:translateY(-10px)}}
+
+/* Evidence Detail Modal */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-end;justify-content:center}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);animation:mBg .25s}
+.modal-body{position:relative;z-index:1;width:100%;max-width:400px;max-height:72vh;background:var(--s1);border-radius:var(--r3) var(--r3) 0 0;border:1px solid var(--s3);border-bottom:none;padding:18px 18px max(18px,env(safe-area-inset-bottom));overflow-y:auto;animation:mUp .3s cubic-bezier(.2,1,.4,1)}
+.modal-handle{width:32px;height:3px;background:var(--s4);border-radius:2px;margin:0 auto 14px}
+.modal-hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.modal-ic{width:40px;height:40px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.modal-ti{font-size:14.5px;font-weight:600}
+.modal-id{font-family:var(--mono);font-size:9.5px;color:var(--t3);margin-top:1px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.modal-tag{font-size:9.5px;padding:3px 8px;border-radius:3px;background:var(--s2);color:var(--t3);border:1px solid var(--s3)}
+.modal-desc{font-size:12.5px;line-height:1.7;color:var(--t2);margin-bottom:10px}
+.modal-info{padding:10px 12px;background:var(--s2);border-radius:var(--r);border-left:2px solid var(--teal);font-size:11.5px;color:var(--teal);line-height:1.5}
+@keyframes mBg{from{opacity:0}to{opacity:1}}
+@keyframes mUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+
+/* --- Evidence Inventory (bottom sheet) --- */
+.inv-toggle{position:absolute;bottom:52px;right:10px;z-index:8;width:40px;height:40px;border-radius:50%;background:var(--s2);border:1px solid var(--s3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.inv-toggle:active{transform:scale(.93)}
+.inv-badge{position:absolute;top:-2px;right:-2px;min-width:16px;height:16px;border-radius:8px;background:var(--red);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.inv-sheet{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--s1);border-top:1px solid var(--s3);border-radius:var(--r3) var(--r3) 0 0;max-height:55vh;overflow-y:auto;padding:14px 14px max(14px,env(safe-area-inset-bottom));transform:translateY(100%);transition:transform .3s cubic-bezier(.2,1,.4,1)}
+.inv-sheet.open{transform:translateY(0)}
+.inv-sheet-handle{width:32px;height:3px;background:var(--s4);border-radius:2px;margin:0 auto 10px}
+.inv-list{display:flex;flex-direction:column;gap:6px}
+.inv-item{display:flex;align-items:center;gap:10px;padding:10px;background:var(--s2);border-radius:var(--r);border:1px solid var(--s3);cursor:pointer}
+.inv-item:active{background:var(--s3)}
+.inv-item-ic{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.inv-item-nm{font-size:12px;font-weight:500}
+.inv-item-tp{font-size:10px;color:var(--t3);margin-top:1px}
+
+/* --- Testimony --- */
+#testi .t-scroll{flex:1;overflow-y:auto;padding:10px 12px 80px}
+.sus-card{background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);overflow:hidden;margin-bottom:10px;transition:border-color .3s}
+.sus-card.contr{border-color:rgba(232,54,75,.35)}
+.sus-hd{display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer}
+.sus-hd:active{background:var(--s2)}
+.sus-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;border:2px solid var(--s3)}
+.sus-nm{font-size:14px;font-weight:600}
+.sus-rl{font-size:10.5px;color:var(--t3);margin-top:1px}
+.sus-arr{width:24px;height:24px;border-radius:50%;background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--t3);transition:transform .3s;flex-shrink:0}
+.sus-arr.open{transform:rotate(180deg)}
+.sus-bd{display:none;padding:0 14px 14px}
+.sus-bd.open{display:block;animation:susIn .25s ease}
+@keyframes susIn{from{opacity:0;max-height:0}to{opacity:1;max-height:2000px}}
+.sus-quote{padding:12px;background:var(--s2);border-radius:var(--r);margin-bottom:10px;border-left:2px solid var(--s4);position:relative}
+.sus-quote::before{content:'\201C';font-size:28px;color:var(--t4);position:absolute;top:2px;left:6px;font-family:Georgia,serif}
+.sus-quote-text{padding-left:16px;font-size:12.5px;line-height:1.7;color:var(--t2);font-style:italic}
+.sus-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.sus-detail{padding:8px;background:var(--s2);border-radius:var(--r);font-size:10.5px}
+.sus-detail-l{color:var(--t3);font-weight:600;font-size:9px;letter-spacing:.4px;margin-bottom:2px}
+.sus-detail-v{color:var(--t2);line-height:1.4}
+.sus-ev-label{font-size:10.5px;color:var(--t3);margin-bottom:6px;font-weight:600}
+.sus-chips{display:flex;flex-wrap:wrap;gap:5px}
+.ev-chip{padding:6px 10px;border-radius:var(--r);border:1px solid var(--s3);background:var(--s2);color:var(--t2);font-size:11px;cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:4px;transition:all .15s}
+.ev-chip:active{transform:scale(.95)}
+.ev-chip.hit{border-color:var(--redB);color:var(--red);background:var(--redA);animation:chipHit .35s}
+.ev-chip.miss{border-color:var(--s4);color:var(--t4);opacity:.45}
+.ev-chip.used{pointer-events:none;opacity:.25}
+@keyframes chipHit{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.contr-box{margin-top:10px;padding:12px;background:rgba(232,54,75,.05);border:1px solid rgba(232,54,75,.18);border-radius:var(--r);animation:susIn .35s ease}
+.contr-hd{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:6px}
+.contr-tx{font-size:12px;color:var(--t2);line-height:1.6}
+.t-bottom{position:fixed;bottom:0;left:0;right:0;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 40%);z-index:5}
+
+/* --- Deduction --- */
+#deduct .d-scroll{flex:1;overflow-y:auto;padding:12px;padding-bottom:80px}
+.d-header{margin-bottom:12px}
+.d-title{font-size:15px;font-weight:600;margin-bottom:3px}
+.d-sub{font-size:11.5px;color:var(--t3);line-height:1.5}
+.d-ev-bar{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;padding:10px;background:var(--s1);border-radius:var(--r);border:1px solid var(--s3)}
+.d-ev-pip{font-size:9.5px;padding:3px 7px;border-radius:3px;background:var(--s2);color:var(--t4);border:1px solid var(--s3)}
+.d-ev-pip.on{color:var(--teal);border-color:rgba(26,200,176,.15);background:var(--tealA)}
+.hyp{background:var(--s1);border-radius:var(--r2);padding:14px;margin-bottom:8px;border:2px solid transparent;cursor:pointer;transition:all .15s;position:relative;overflow:hidden}
+.hyp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.hyp.str-s::before{background:var(--green)}.hyp.str-m::before{background:var(--amber)}.hyp.str-w::before{background:var(--red)}
+.hyp.sel{border-color:var(--teal);background:rgba(26,200,176,.03)}
+.hyp:active{transform:scale(.995)}
+.hyp-top{display:flex;align-items:flex-start;gap:8px}
+.hyp-dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--s4);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.hyp.sel .hyp-dot{border-color:var(--teal);background:var(--teal)}
+.hyp.sel .hyp-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:#fff}
+.hyp-lb{font-size:13px;font-weight:600;line-height:1.3;flex:1}
+.hyp-str{flex-shrink:0}
+.hyp-tx{font-size:11.5px;color:var(--t2);line-height:1.55;margin:6px 0 8px;padding-left:26px}
+.hyp-conns{display:flex;flex-wrap:wrap;gap:3px;padding-left:26px}
+.hyp-cn{font-size:9.5px;padding:3px 7px;border-radius:3px;background:var(--s2);color:var(--t3);border:1px solid var(--s3)}
+.hyp-match{font-size:10px;color:var(--t3);padding-left:26px;margin-top:5px}
+.d-bottom{position:fixed;bottom:0;left:0;right:0;padding:8px 12px max(8px,env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 40%);z-index:5}
+
+/* --- Accusation --- */
+#accuse .a-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.a-q{font-size:clamp(20px,5.5vw,26px);font-weight:700;text-align:center;margin-bottom:4px}
+.a-sub{font-size:12px;color:var(--t3);text-align:center;margin-bottom:20px;max-width:300px;line-height:1.5}
+.a-list{width:100%;max-width:360px}
+.a-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--s1);border:2px solid transparent;border-radius:var(--r2);margin-bottom:6px;cursor:pointer;transition:all .15s}
+.a-opt:active{transform:scale(.98)}
+.a-opt.pick{border-color:var(--red);background:var(--redA)}
+.a-opt .a-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:2px solid var(--s3)}
+.a-opt.pick .a-av{border-color:var(--red)}
+.a-opt-nm{font-size:13.5px;font-weight:600}
+.a-opt-rl{font-size:10.5px;color:var(--t3);margin-top:1px}
+.a-btns{margin-top:16px;width:100%;max-width:360px;display:flex;flex-direction:column;gap:6px}
+
+/* --- Verdict --- */
+#verdict .vd-scroll{flex:1;overflow-y:auto;padding:max(18px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom))}
+.vd-center{display:flex;flex-direction:column;align-items:center;text-align:center;min-height:100%}
+.vd-ic{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:14px}
+.vd-ic.ok{background:var(--greenA);border:2px solid rgba(44,182,125,.25)}
+.vd-ic.no{background:var(--redA);border:2px solid rgba(232,54,75,.25)}
+.vd-ic.un{background:var(--amberA);border:2px solid rgba(212,149,42,.25)}
+.vd-title{font-size:clamp(22px,5.5vw,28px);font-weight:700;margin-bottom:4px}
+.vd-sub{font-size:12.5px;color:var(--t2);line-height:1.6;max-width:300px;margin-bottom:18px}
+.rk{margin-bottom:20px}.rk-letter{font-family:var(--mono);font-size:72px;font-weight:700;line-height:1}
+.rk-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--t3);margin-top:2px}
+.rk-S .rk-letter{color:var(--amber);text-shadow:0 0 30px rgba(212,149,42,.25)}
+.rk-A .rk-letter{color:var(--teal);text-shadow:0 0 30px rgba(26,200,176,.25)}
+.rk-B .rk-letter{color:var(--green)}.rk-C .rk-letter{color:var(--t3)}.rk-D .rk-letter{color:var(--red)}
+.st-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;max-width:320px;margin-bottom:16px}
+.st-card{padding:12px;background:var(--s1);border-radius:var(--r);border:1px solid var(--s3);text-align:center}
+.st-v{font-family:var(--mono);font-size:20px;font-weight:700}
+.st-l{font-size:9px;color:var(--t3);letter-spacing:.6px;margin-top:3px}
+.vd-exp{text-align:left;width:100%;max-width:340px;padding:14px;background:var(--s1);border-radius:var(--r2);margin-bottom:14px;border:1px solid var(--s3)}
+.vd-exp h4{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--red);margin-bottom:8px}
+.vd-exp p{font-size:12.5px;color:var(--t2);line-height:1.7}
+.vd-acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.vd-brand{font-family:var(--mono);font-size:8px;letter-spacing:4px;color:var(--t4);margin-top:6px}
+
+/* --- Phase Transition --- */
+.phase{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:scrIn .35s ease}
+.phase-n{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--red);margin-bottom:8px;opacity:.7}
+.phase-t{font-size:clamp(22px,6vw,28px);font-weight:700;margin-bottom:6px}
+.phase-d{font-size:12px;color:var(--t3);max-width:260px;line-height:1.5}
+.phase-bar{width:100px;height:2px;background:var(--s3);border-radius:1px;margin-top:20px;overflow:hidden}
+.phase-fill{height:100%;background:var(--red);border-radius:1px;animation:pFill 1.4s ease forwards}
+@keyframes pFill{from{width:0}to{width:100%}}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--s4);border-radius:2px}
+
+/* --- Ad Slot placeholder --- */
+.ad{display:none;width:100%;max-width:380px;margin:10px auto;padding:14px;background:var(--s1);border:1px dashed var(--s3);border-radius:var(--r);text-align:center}
+.ad-text{font-size:9px;color:var(--t4);letter-spacing:1px}
+
+
+/* --- Settings --- */
+#settings .set-scroll{flex:1;overflow-y:auto;padding:16px;padding-bottom:80px}
+.set-group{margin-bottom:16px}
+.set-group-title{font-size:11px;font-weight:600;color:var(--t3);letter-spacing:.5px;margin-bottom:8px;padding-left:4px}
+.set-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--s1);border:1px solid var(--s3);border-radius:var(--r);margin-bottom:4px}
+.set-label{font-size:13px}
+.set-desc{font-size:10.5px;color:var(--t3);margin-top:2px}
+.toggle{width:44px;height:24px;border-radius:12px;background:var(--s4);position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
+.toggle.on{background:var(--teal)}
+.toggle::after{content:'';width:20px;height:20px;border-radius:50%;background:#fff;position:absolute;top:2px;left:2px;transition:transform .2s}
+.toggle.on::after{transform:translateX(20px)}
+
+/* --- Stats --- */
+#stats .stats-scroll{flex:1;overflow-y:auto;padding:16px}
+.stats-card{background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:14px;margin-bottom:8px}
+.stats-case-nm{font-size:13px;font-weight:600;margin-bottom:4px}
+.stats-case-info{font-size:11px;color:var(--t3);display:flex;gap:12px}
+.stats-total{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:16px}
+.stats-total-card{padding:12px;background:var(--s1);border:1px solid var(--s3);border-radius:var(--r);text-align:center}
+.stats-total-v{font-family:var(--mono);font-size:18px;font-weight:700}
+.stats-total-l{font-size:9px;color:var(--t3);margin-top:2px;letter-spacing:.4px}
+.stats-empty{text-align:center;padding:40px 20px;color:var(--t3);font-size:13px}
+
+/* --- Tutorial --- */
+.tut-overlay{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;animation:scrIn .3s}
+.tut-card{background:var(--s1);border:1px solid var(--s3);border-radius:var(--r3);padding:24px;max-width:320px;width:100%}
+.tut-step{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--teal);margin-bottom:8px}
+.tut-title{font-size:16px;font-weight:600;margin-bottom:8px}
+.tut-text{font-size:12.5px;color:var(--t2);line-height:1.6;margin-bottom:16px}
+.tut-dots{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.tut-dot{width:6px;height:6px;border-radius:50%;background:var(--s4)}
+.tut-dot.on{background:var(--teal)}
+
+/* --- Extra difficulty --- */
+.c-card.facil::before{background:linear-gradient(90deg,var(--green),transparent 80%)}
+.pill-facil{background:var(--greenA);color:var(--green)}
+
+/* Canvas for share image */
+#shareCanvas{position:fixed;top:-9999px;display:none}
+</style>
+</head>
+<body>
+<div id="game">
+
+<div id="cw">
+<div class="cw-inner">
+<div style="font-family:var(--mono);font-size:clamp(24px,6vw,36px);font-weight:700;letter-spacing:8px;color:var(--red);margin-bottom:4px">VIRALIX</div>
+<div style="font-family:var(--mono);font-size:clamp(8px,2vw,11px);letter-spacing:clamp(6px,2vw,10px);color:var(--amber);margin-bottom:24px;opacity:.7">CASO ABIERTO</div>
+<div class="cw-ring">⚠️</div>
+<h3>Advertencia de contenido</h3>
+<p>Este juego contiene temática criminal ficticia: asesinatos, investigación forense y situaciones de tensión.<br><br>Todos los personajes y eventos son ficticios.</p>
+<span class="pill pill-f" style="margin-bottom:16px">FICCIÓN INTERACTIVA</span>
+<button class="bt bt-red" onclick="G.acceptCW()">Entendido, continuar</button>
+</div>
+</div>
+
+<div class="scr on" id="title">
+<div class="t-glow"></div>
+<div class="t-logo">VIRALIX</div>
+<div class="t-sub">CASO ABIERTO</div>
+<div class="t-sep"></div>
+<div class="t-desc">Investiga la escena. Interroga sospechosos. Encuentra contradicciones. Resuelve el caso.</div>
+<div class="t-btns">
+<button class="bt bt-red bt-block" onclick="G.goSelect()">INVESTIGAR</button>
+<button class="bt bt-s2 bt-block" onclick="G.goStats()">Historial</button>
+<button class="bt bt-ghost bt-block" onclick="G.go('settings')">Ajustes</button>
+</div>
+<div class="t-foot">VIRALIXWEB.ES</div>
+</div>
+
+<div class="scr" id="sel">
+<div class="sel-top"><button class="bt bt-s2 bt-sm" onclick="G.go('title')">←</button><h2>Expedientes</h2></div>
+<div class="scroll-y" id="sel-list"></div>
+</div>
+
+<div class="scr" id="intro"></div>
+<div class="scr" id="scene"><div class="hud" id="h-scene"></div><div class="s-area" id="phaser-wrap"><div id="phaser-container"></div><div class="s-tip" id="s-tip">🔍 Arrastra el dedo para buscar con la lupa · Suelta sobre las pistas</div>
+<div class="inv-toggle" onclick="G.togInv()" id="inv-btn">🔎<div class="inv-badge" id="inv-badge">0</div></div></div></div>
+<div class="scr" id="testi"><div class="hud" id="h-testi"></div><div class="t-scroll" id="t-list"></div><div class="t-bottom"><div style="display:flex;gap:8px"><div class="inv-toggle" onclick="G.togInv()" style="position:static;flex-shrink:0">🔎</div><button class="bt bt-red bt-block bt-sm" onclick="G.endTesti()">Finalizar interrogatorio →</button></div></div></div>
+<div class="scr" id="deduct"><div class="hud" id="h-ded"></div><div class="d-scroll" id="d-list"></div><div class="d-bottom"><div style="display:flex;gap:8px"><div class="inv-toggle" onclick="G.togInv()" style="position:static;flex-shrink:0">🔎</div><button class="bt bt-red bt-block bt-sm" onclick="G.goAccuse()">Pasar a acusación →</button></div></div></div>
+<div class="scr" id="accuse"><div class="hud" id="h-acc"></div><div class="a-center" id="a-body"></div><div style="position:absolute;bottom:max(60px,env(safe-area-inset-bottom));right:12px"><div class="inv-toggle" onclick="G.togInv()" style="position:static">🔎</div></div></div>
+<div class="scr" id="verdict"><div class="vd-scroll" id="vd-body"></div></div>
+
+
+<!-- Settings -->
+<div class="scr" id="settings">
+<div class="sel-top"><button class="bt bt-s2 bt-sm" onclick="G.go('title')">←</button><h2>Ajustes</h2></div>
+<div class="set-scroll scroll-y">
+<div class="set-group">
+<div class="set-group-title">Audio</div>
+<div class="set-row"><div><div class="set-label">Sonido</div><div class="set-desc">Música ambiental y efectos</div></div><div class="toggle on" id="tog-sound" onclick="G.togSet('sound')"></div></div>
+<div class="set-row"><div><div class="set-label">Vibración</div><div class="set-desc">Feedback háptico al encontrar pistas</div></div><div class="toggle on" id="tog-vibration" onclick="G.togSet('vibration')"></div></div>
+</div>
+<div class="set-group">
+<div class="set-group-title">Juego</div>
+<div class="set-row"><div><div class="set-label">Borrar progreso</div><div class="set-desc">Reiniciar todos los datos guardados</div></div><button class="bt bt-s2 bt-sm" onclick="G.resetProgress()">Borrar</button></div>
+</div>
+<div class="set-group">
+<div class="set-group-title">Ayuda</div>
+<div class="set-row" onclick="G.go('howto')" style="cursor:pointer"><div><div class="set-label">Cómo jugar</div><div class="set-desc">Guía de las 4 fases del juego</div></div><div style="color:var(--t3);font-size:14px">→</div></div>
+</div>
+<div class="set-group">
+<div class="set-group-title">Información</div>
+<div class="set-row"><div><div class="set-label">Versión</div></div><div style="font-family:var(--mono);font-size:12px;color:var(--t3)">4.0</div></div>
+<div class="set-row"><div><div class="set-label">Todos los casos son ficticios</div><div class="set-desc">Ningún personaje representa a una persona real</div></div><span class="pill pill-f">FICCIÓN</span></div>
+<div class="set-row"><div><div class="set-label">Desarrollado por VIRALIX</div><div class="set-desc">viralixweb.es</div></div></div>
+</div>
+</div>
+</div>
+
+<!-- Stats -->
+<div class="scr" id="stats">
+<div class="sel-top"><button class="bt bt-s2 bt-sm" onclick="G.go('title')">←</button><h2>Historial</h2></div>
+<div class="stats-scroll scroll-y" id="stats-body"></div>
+</div>
+
+<!-- How to Play -->
+<div class="scr" id="howto">
+<div class="sel-top"><button class="bt bt-s2 bt-sm" onclick="G.go('settings')">←</button><h2>Cómo jugar</h2></div>
+<div class="scroll-y" style="padding:16px">
+<div style="background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:16px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="width:32px;height:32px;border-radius:50%;background:var(--redA);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">1</div><div style="font-size:14px;font-weight:600">Escena del crimen</div></div>
+<div style="font-size:12.5px;color:var(--t2);line-height:1.6">Examina la habitación tocando las zonas sospechosas. Cada prueba que encuentres suma 15 puntos y te ayudará en las siguientes fases. Tienes 80 segundos.</div>
+</div>
+<div style="background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:16px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="width:32px;height:32px;border-radius:50%;background:var(--tealA);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">2</div><div style="font-size:14px;font-weight:600">Interrogatorio</div></div>
+<div style="font-size:12.5px;color:var(--t2);line-height:1.6">Lee los testimonios de cada sospechoso y muéstrales las pruebas que encontraste. Si una prueba contradice su versión, descubrirás una contradicción (+30 pts). No todas las pruebas funcionan contra todos los sospechosos.</div>
+</div>
+<div style="background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:16px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="width:32px;height:32px;border-radius:50%;background:var(--amberA);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">3</div><div style="font-size:14px;font-weight:600">Deducción</div></div>
+<div style="font-size:12.5px;color:var(--t2);line-height:1.6">Analiza todas las pruebas y selecciona la hipótesis que mejor explique los hechos. Las hipótesis SÓLIDAS tienen más pruebas a favor. Elegir la correcta da 25 puntos extra.</div>
+</div>
+<div style="background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:16px;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="width:32px;height:32px;border-radius:50%;background:var(--greenA);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">4</div><div style="font-size:14px;font-weight:600">Acusación</div></div>
+<div style="font-size:12.5px;color:var(--t2);line-height:1.6">Elige a quién acusar. Acertar da +50 puntos. Fallar resta -10. Si no estás seguro, puedes dejar el caso sin resolver (+5 pts). Tu rango final depende de la puntuación total.</div>
+</div>
+<div style="background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);padding:16px;margin-bottom:10px">
+<div style="font-size:12px;font-weight:600;margin-bottom:6px;color:var(--amber)">Rangos</div>
+<div style="font-size:12px;color:var(--t2);line-height:1.8">
+<span style="font-family:var(--mono);font-weight:700;color:var(--amber)">S</span> — 110+ pts · Detective legendario<br>
+<span style="font-family:var(--mono);font-weight:700;color:var(--teal)">A</span> — 80-109 pts · Inspector experto<br>
+<span style="font-family:var(--mono);font-weight:700;color:var(--green)">B</span> — 55-79 pts · Investigador competente<br>
+<span style="font-family:var(--mono);font-weight:700;color:var(--t3)">C</span> — 30-54 pts · Agente novato<br>
+<span style="font-family:var(--mono);font-weight:700;color:var(--red)">D</span> — 0-29 pts · Caso comprometido
+</div>
+</div>
+<div style="text-align:center;padding:8px"><span class="pill pill-f">Todos los casos son 100% ficticios</span></div>
+</div>
+</div>
+
+<!-- Evidence Inventory Sheet -->
+<div class="inv-sheet" id="inv-sheet"><div class="inv-sheet-handle"></div><div style="font-size:12px;font-weight:600;margin-bottom:8px">Pruebas encontradas</div><div class="inv-list" id="inv-list"></div></div>
+
+<canvas id="shareCanvas"></canvas>
+</div>
+
+<script>
+// ===================================================================
+//  VIRALIX: CASO ABIERTO v3.0 — Professional True Crime Detective
+// ===================================================================
+const IS_TG=!!(window.Telegram?.WebApp);
+if(IS_TG){const t=Telegram.WebApp;t.ready();t.expand();try{t.setHeaderColor('#060609');t.setBackgroundColor('#060609')}catch(e){}}
+
+// ==== AUDIO ====
+const SFX=(()=>{
+  let c,m,on=false,ns=[];
+  const mk=()=>{if(c)return;c=new(window.AudioContext||window.webkitAudioContext)();m=c.createGain();m.gain.value=.22;m.connect(c.destination)};
+  const t=(f,tp,d,v=.12,dl=0)=>{if(!c)return;const o=c.createOscillator();o.type=tp;o.frequency.value=f;const g=c.createGain();g.gain.setValueAtTime(0,c.currentTime+dl);g.gain.linearRampToValueAtTime(v,c.currentTime+dl+.015);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+dl+d);o.connect(g);g.connect(m);o.start(c.currentTime+dl);o.stop(c.currentTime+dl+d)};
+  return{
+    init:mk,
+    amb(){if(on)return;mk();on=true;const o1=c.createOscillator();o1.type='sine';o1.frequency.value=44;const g1=c.createGain();g1.gain.value=.1;o1.connect(g1);g1.connect(m);o1.start();const o2=c.createOscillator();o2.type='sine';o2.frequency.value=66;const g2=c.createGain();g2.gain.value=.05;o2.connect(g2);g2.connect(m);o2.start();const l=c.createOscillator();l.frequency.value=.1;const lg=c.createGain();lg.gain.value=.03;l.connect(lg);lg.connect(g1.gain);l.start();const b=c.createBuffer(1,c.sampleRate*2,c.sampleRate);const d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;const n=c.createBufferSource();n.buffer=b;n.loop=true;const nf=c.createBiquadFilter();nf.type='lowpass';nf.frequency.value=500;const ng=c.createGain();ng.gain.value=.025;n.connect(nf);nf.connect(ng);ng.connect(m);n.start();ns=[o1,o2,l,n]},
+    click(){mk();t(880,'sine',.07,.08)},
+    ev(){mk();t(587,'triangle',.22,.1);t(784,'triangle',.22,.08,.1)},
+    contr(){mk();t(260,'sawtooth',.3,.09);t(175,'sawtooth',.28,.07,.12)},
+    ok(){mk();t(523,'triangle',.28,.1);t(659,'triangle',.28,.08,.13);t(784,'triangle',.35,.1,.26)},
+    no(){mk();t(233,'sawtooth',.35,.09);t(196,'sawtooth',.35,.07,.18);t(165,'sawtooth',.4,.05,.36)},
+    tens(v){if(!c||!ns.length)return;try{ns[0].frequency.value=44+v*10}catch(e){}},
+  }
+})();
+
+// ==== DATA ====
+const CASES=[
+{
+  id:'caso-001',title:'La Última Cena',diff:'MEDIO',cls:'medio',
+  date:'14 de marzo, 2024',loc:'Restaurante "El Olivo" · Jaén',dur:'4-5 min',
+  icon:'🍷',iconBg:'var(--redA)',
+  brief:'<p>A las 22:47 del 14 de marzo, el empresario <strong>Daniel Herrero</strong> (52) se desplomó durante una cena privada en el reservado del restaurante "El Olivo".</p><p>Los médicos confirmaron envenenamiento. En la cena estaban presentes tres personas además de la víctima. El restaurante tiene cámaras en el pasillo pero no dentro del reservado.</p>',
+  victim:{name:'Daniel Herrero García',age:52,desc:'Empresario inmobiliario. Divorciado. Herencia millonaria en disputa.'},
+  room:{name:'Reservado — El Olivo',bg:'#0c0a06',wall:'#16120c',floor:'#100e08'},
+  furniture:[
+    {x:.5,y:.50,w:.50,h:.20,c:'#241a0a',s:'#342a1a',t:'rect',sh:1,lbl:'Mesa del reservado'},
+    {x:.5,y:.30,w:.10,h:.08,c:'#1e180c',s:'#2e2818',t:'rect',lbl:'Candelabro'},
+    {x:.22,y:.42,w:.06,h:.06,c:'#2a1e0e',s:'#3a2e1e',t:'circ',lbl:'Daniel'},
+    {x:.78,y:.42,w:.06,h:.06,c:'#2a1e0e',s:'#3a2e1e',t:'circ',lbl:'Marco'},
+    {x:.22,y:.60,w:.06,h:.06,c:'#2a1e0e',s:'#3a2e1e',t:'circ',lbl:'Isabel'},
+    {x:.78,y:.60,w:.06,h:.06,c:'#2a1e0e',s:'#3a2e1e',t:'circ',lbl:'Lucía'},
+    {x:.94,y:.50,w:.04,h:.18,c:'#342818',s:'#443828',t:'rect',lbl:'Puerta'},
+    {x:.04,y:.36,w:.04,h:.20,c:'#081420',s:'#182430',t:'rect',lbl:'Ventana'},
+    {x:.50,y:.86,w:.60,h:.03,c:'#1a160e',s:'#2a261e',t:'rect',lbl:'Aparador'},
+  ],
+  ev:[
+    {id:'E01',nm:'Copa con residuo',x:.36,y:.44,r:.020,em:'🍷',tp:'Objeto',rel:'Alta',
+     ds:'Copa de Daniel con un residuo blanquecino en el fondo. Las demás copas están limpias.',
+     nf:'El veneno fue administrado específicamente en esta copa, no en la botella.'},
+    {id:'E02',nm:'Bolso de Lucía',x:.75,y:.58,r:.020,em:'👜',tp:'Personal',rel:'Alta',
+     ds:'Bolso abierto bajo la mesa. Dentro: teléfono, cartera, y un frasco vacío sin etiqueta.',
+     nf:'El frasco podría haber contenido la sustancia tóxica.'},
+    {id:'E03',nm:'Servilleta con nota',x:.54,y:.48,r:.017,em:'📝',tp:'Documento',rel:'Media',
+     ds:'Texto manuscrito: "No puedo seguir así. Esto tiene que acabar esta noche." Sin firma.',
+     nf:'Posible premeditación, pero no identifica al autor.'},
+    {id:'E04',nm:'Móvil de Daniel',x:.30,y:.46,r:.017,em:'📱',tp:'Digital',rel:'Alta',
+     ds:'Último mensaje a "M.Ruiz" a las 21:30: "Mañana firmo. Se acabó el teatro." Respuesta: "No te atrevas."',
+     nf:'Amenaza directa de Marco Ruiz pocas horas antes de la muerte.'},
+    {id:'E05',nm:'Cámara del pasillo',x:.92,y:.34,r:.017,em:'📹',tp:'Grabación',rel:'Alta',
+     ds:'Lucía salió del reservado a las 22:10 y volvió a las 22:18. Llevaba algo al salir, nada al volver.',
+     nf:'8 minutos fuera — tiempo para deshacerse de un frasco.'},
+    {id:'E06',nm:'Manchas en el mantel',x:.44,y:.54,r:.016,em:'🔬',tp:'Forense',rel:'Media',
+     ds:'Gotas de líquido cerca de Daniel, no consistentes con vino. El camarero confirma que no hubo derrame.',
+     nf:'Alguien pudo verter algo en la copa mientras hablaban.'},
+  ],
+  sus:[
+    {id:'S1',nm:'Lucía Navarro',age:34,rl:'Socia de negocios',av:'👩‍💼',bg:'#28182e',
+     rel:'Socia al 40% de la inmobiliaria',mot:'Daniel iba a vender sin su consentimiento. Perdería millones.',
+     ali:'Fue al baño 8 minutos porque se encontraba mal.',
+     qt:'Yo estaba destrozada. Daniel era mi mentor. Sí, salí al baño porque me encontraba mal. El frasco de mi bolso es un perfume de muestra que se rompió la semana pasada.',
+     cEv:'E02',cTx:'El frasco de tu bolso no contiene perfume. El análisis toxicológico detectó trazas de una sustancia compatible con el compuesto que mató a Daniel.',guilty:0,
+     preguntas:[
+       {q:'¿Por qué saliste del reservado durante la cena?',r:'Me encontraba mal del estómago. Fui al baño y volví en unos minutos.',mentira:false,pista:'Salió 8 minutos — verificable con la cámara'},
+       {q:'¿Qué relación tenías con Daniel fuera del negocio?',r:'Puramente profesional. Era mi mentor, me enseñó todo. No había nada personal entre nosotros.',mentira:false,pista:'No hay evidencia de relación personal'},
+       {q:'¿Qué hay en el frasco de tu bolso?',r:'Un perfume de muestra que se rompió la semana pasada. Lo iba a tirar, se me olvidó.',mentira:true,pista:'⚠️ El frasco tiene residuo tóxico, NO perfume'},
+       {q:'¿Sabías que Daniel iba a vender la empresa?',r:'Sí, me lo dijo esa misma noche. Fue un golpe, pero no lo suficiente para hacer algo así.',mentira:false,pista:'Confirma que tenía motivo, pero lo admite abiertamente'}
+     ]},
+    {id:'S2',nm:'Marco Ruiz',age:48,rl:'Abogado familiar',av:'👨‍⚖️',bg:'#182018',
+     rel:'Abogado de Daniel 15 años. Gestiona herencia familiar.',mot:'Daniel descubrió un desvío de 2.3M€. Iba a denunciarlo.',
+     ali:'No se movió de su silla en toda la noche.',
+     qt:'Daniel y yo éramos como hermanos. "No te atrevas" era sobre un contrato malo, intentaba protegerle. No me moví de mi silla, pueden preguntarle a cualquiera.',
+     cEv:'E05',cTx:'Dices que no te moviste, pero la grabación de las 22:35 muestra claramente que estabas de pie junto al asiento de Daniel cuando el camarero entró por segunda vez.',guilty:1,
+     preguntas:[
+       {q:'¿Qué significa tu mensaje "No te atrevas"?',r:'Le decía que no firmara un contrato malo. Yo intentaba protegerle, como siempre.',mentira:true,pista:'⚠️ El tono es amenazante, no protector'},
+       {q:'¿Te levantaste de tu silla en algún momento?',r:'No. Estuve sentado toda la noche. No me moví ni una vez.',mentira:true,pista:'⚠️ La cámara muestra lo contrario'},
+       {q:'¿Gestionas tú la herencia de la familia Herrero?',r:'Sí, desde hace 15 años. Todo está en orden, pueden revisarlo.',mentira:true,pista:'⚠️ Falta verificar si los fondos cuadran'},
+       {q:'¿Cuánto dinero gestionas de la herencia?',r:'Es información confidencial entre abogado y cliente. No puedo revelar cifras.',mentira:false,pista:'Se escuda en la confidencialidad — podría ocultar algo'}
+     ]},
+    {id:'S3',nm:'Isabel Herrero',age:28,rl:'Hija de la víctima',av:'👩',bg:'#281828',
+     rel:'Hija única. Relación tensa desde el divorcio.',mot:'Con Daniel muerto, hereda todo. Si vendía la empresa, nada.',
+     ali:'Sentada enfrente toda la noche. No se acercó a la copa.',
+     qt:'Teníamos nuestras diferencias, pero era mi padre. Esa noche quería hablar del cumpleaños de mamá. No me moví de mi silla. No tengo idea de venenos.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Cómo era tu relación con tu padre?',r:'Complicada desde el divorcio. Pero esa noche quería hablar de mamá, nada más.',mentira:false,pista:'Coherente con lo que sabemos'},
+       {q:'¿Sabías lo de la venta de la empresa?',r:'Me enteré esa noche. No me afectaba directamente, la empresa era de mi padre.',mentira:false,pista:'Si Daniel vendía, Isabel no heredaría la empresa'},
+       {q:'¿Viste algo raro durante la cena?',r:'Marco parecía nervioso. Lucía salió un rato. Mi padre bebió más de lo normal.',mentira:false,pista:'Observación útil — confirma los movimientos de otros'}
+     ]}
+  ],
+  hyp:[
+    {id:'H1',lb:'Lucía envenenó a Daniel para evitar la venta',str:'m',ev:['E01','E02','E05'],
+     cn:['Lucía → Frasco tóxico','Lucía → 8 min fuera','Copa → Residuo'],
+     tx:'Tenía un frasco con trazas tóxicas, salió 8 minutos, y perdería millones.'},
+    {id:'H2',lb:'Marco envenenó a Daniel para ocultar el fraude',str:'s',ev:['E01','E04','E05','E06'],
+     cn:['Marco → "No te atrevas"','Marco → Mintió sobre moverse','Manchas → Vertido'],
+     tx:'Amenazó a Daniel por mensaje. Mintió sobre no moverse — la cámara lo sitúa de pie junto a Daniel. Motivo urgente: denuncia al día siguiente.'},
+    {id:'H3',lb:'Isabel actuó por la herencia',str:'w',ev:['E01','E03'],
+     cn:['Isabel → Hereda todo','Servilleta → Premeditación'],
+     tx:'Hereda todo, pero no hay evidencias directas. No salió del reservado.'},
+    {id:'H4',lb:'Pruebas insuficientes',str:'m',ev:[],cn:['Circunstancial','Múltiples motivos'],
+     tx:'Indicios contra varios sospechosos pero las pruebas son circunstanciales.'}
+  ],
+  sol:{who:'S2',why:'Marco Ruiz envenenó a Daniel para evitar que denunciara el desvío de 2.3 millones de euros. Aprovechó un momento de distracción para verter veneno en la copa — las manchas lo confirman. Mintió sobre no levantarse: la cámara demuestra que estaba de pie junto a Daniel a las 22:35. Su mensaje ("No te atrevas") revela que sabía que Daniel actuaría al día siguiente.',key:['E04','E05','E06']}
+},
+{
+  id:'caso-002',title:'El Fotógrafo Ciego',diff:'DIFÍCIL',cls:'dificil',
+  date:'2 de noviembre, 2024',loc:'Estudio "Luz Negra" · Madrid',dur:'5-6 min',
+  icon:'📸',iconBg:'var(--redA)',
+  brief:'<p>El fotógrafo de moda <strong>Adrián Vega</strong> (38) fue encontrado muerto en su estudio a las 08:15. Causa: sobredosis de digoxina, un medicamento cardíaco que Adrián no tomaba.</p><p>La noche anterior hubo una sesión fotográfica privada con tres personas. Sin cámaras interiores por política de privacidad.</p>',
+  victim:{name:'Adrián Vega López',age:38,desc:'Fotógrafo de moda reconocido. Guardaba secretos comprometedores de la industria.'},
+  room:{name:'Estudio Fotográfico — Luz Negra',bg:'#080610',wall:'#100c16',floor:'#0c0812'},
+  furniture:[
+    {x:.30,y:.36,w:.26,h:.12,c:'#1c1826',s:'#2c2836',t:'rect',sh:1,lbl:'Escritorio'},
+    {x:.72,y:.56,w:.20,h:.10,c:'#1e1628',s:'#2e2638',t:'rect',sh:1,lbl:'Sofá'},
+    {x:.50,y:.16,w:.36,h:.03,c:'#14101e',s:'#24202e',t:'rect',lbl:'Fondo foto'},
+    {x:.10,y:.50,w:.03,h:.16,c:'#262230',s:'#363240',t:'rect',lbl:'Trípode'},
+    {x:.90,y:.34,w:.07,h:.26,c:'#181422',s:'#282432',t:'rect',lbl:'Estantería'},
+    {x:.50,y:.84,w:.45,h:.02,c:'#14101e',s:'#24202e',t:'rect',lbl:'Focos'},
+  ],
+  ev:[
+    {id:'E11',nm:'Taza con digoxina',x:.28,y:.34,r:.020,em:'☕',tp:'Tóxico',rel:'Alta',
+     ds:'Taza de café junto al escritorio. Contiene digoxina en concentración letal — medicamento cardíaco que Adrián no tomaba.',
+     nf:'El veneno fue administrado a través del café.'},
+    {id:'E12',nm:'USB oculto en sofá',x:.74,y:.54,r:.018,em:'💾',tp:'Digital',rel:'Alta',
+     ds:'Pendrive entre los cojines. Fotos comprometedoras de Eva del Río en fiesta con sustancias ilegales.',
+     nf:'Adrián chantajeaba a Eva con estas fotos.'},
+    {id:'E13',nm:'Contrato roto',x:.34,y:.44,r:.016,em:'📄',tp:'Documento',rel:'Alta',
+     ds:'Contrato Adrián-Morrison Models roto por la mitad. Cláusula: "exclusividad 5 años — 500.000€ penalización". Hace 2 días.',
+     nf:'Conflicto reciente con la agencia por las condiciones.'},
+    {id:'E14',nm:'Email de Eva',x:.24,y:.32,r:.016,em:'✉️',tp:'Comunicación',rel:'Alta',
+     ds:'Email de Eva, ayer 19:00: "Si publicas esas fotos, te destruyo. No sabes de lo que soy capaz. Nos vemos esta noche."',
+     nf:'Amenaza directa horas antes de la muerte.'},
+    {id:'E15',nm:'Receta de Roberto',x:.88,y:.30,r:.016,em:'💊',tp:'Médico',rel:'Alta',
+     ds:'Receta de digoxina a nombre de "Roberto Sanz Morrison". Fecha: hace un mes. En la estantería de Adrián.',
+     nf:'Roberto tiene prescripción del medicamento que mató a Adrián.'},
+    {id:'E16',nm:'Última foto (02:14)',x:.12,y:.48,r:.020,em:'📷',tp:'Fotográfica',rel:'Alta',
+     ds:'Foto automática a las 02:14: mano sirviendo café. En la muñeca, un reloj Cartier Tank dorado inconfundible.',
+     nf:'Quien sirvió el café llevaba un Cartier Tank dorado.'},
+  ],
+  sus:[
+    {id:'S11',nm:'Eva del Río',age:26,rl:'Modelo',av:'💃',bg:'#2e1828',
+     rel:'Modelo habitual. Víctima de chantaje.',mot:'Adrián la chantajeaba con fotos que destruirían su carrera.',
+     ali:'Se fue a la 01:30 porque estaba cansada.',
+     qt:'Sí, mandé ese email. Estaba furiosa. Pero hablamos y lo arreglamos. Me fui a la una y media, pedí un taxi. Adrián estaba vivo. Yo no sé nada de medicamentos.',
+     cEv:'E16',cTx:'Dices que te fuiste a la 01:30, pero la foto de las 02:14 muestra a alguien sirviendo café. Además, tu taxi fue pedido a las 03:05. Estuviste hora y media más de lo que dices.',guilty:0,
+     preguntas:[
+       {q:'¿Llegaste a un acuerdo con Adrián sobre las fotos?',r:'Sí. Él las borraría y yo haría una sesión exclusiva gratis. Fue un trato justo.',mentira:false,pista:'Posible pero no verificable'},
+       {q:'¿A qué hora pediste el taxi exactamente?',r:'Sobre la una y media. Quizá un poco antes.',mentira:true,pista:'⚠️ El registro del taxi dice 03:05'},
+       {q:'¿Sabes qué es la digoxina?',r:'Ni idea. Yo no tomo medicamentos, estoy sana.',mentira:false,pista:'No hay evidencia de que tenga acceso a digoxina'}
+     ]},
+    {id:'S12',nm:'Roberto Sanz',age:55,rl:'Director Morrison Models',av:'🕴️',bg:'#161828',
+     rel:'Director de la agencia. Conflicto por contrato.',mot:'Adrián iba a romper el contrato. Pérdida millonaria.',
+     ali:'Se fue a medianoche, directo al hotel.',
+     qt:'Discutimos por el contrato, negocios. Me fui antes de medianoche. Llevo Cartier, como medio sector. La receta de digoxina es mía — tengo fibrilación auricular — pero no sé cómo acabó ahí.',
+     cEv:'E15',cTx:'Tu receta de digoxina estaba en el estudio, y el café contenía exactamente esa sustancia. La foto de las 02:14 muestra un Cartier Tank dorado sirviendo el café. Tú llevas un Cartier Tank dorado y dices que te fuiste a medianoche.',guilty:1,
+     preguntas:[
+       {q:'¿Por qué tu receta médica estaba en el estudio?',r:'No tengo ni idea. Quizá se me cayó del bolsillo en alguna visita anterior.',mentira:true,pista:'⚠️ Conveniente que no sepa cómo llegó ahí'},
+       {q:'¿Llevas un Cartier Tank dorado?',r:'Sí, como medio sector de la moda. No prueba absolutamente nada.',mentira:false,pista:'Admite el reloj — la foto de las 02:14 muestra ese modelo'},
+       {q:'¿Cuánto perdería tu agencia si Adrián rompe el contrato?',r:'Es una negociación normal. Las cifras son confidenciales.',mentira:false,pista:'Evita la cifra pero la cláusula dice 500.000€'}
+     ]},
+    {id:'S13',nm:'Nadia Kowalski',age:31,rl:'Asistente de Adrián',av:'👩‍🔧',bg:'#162228',
+     rel:'Asistente 3 años. Encontró el cuerpo.',mot:'Le debía 6 meses de sueldo. La humillaba.',
+     ali:'En casa viendo Netflix hasta las 02:00.',
+     qt:'Llegué a las ocho. La puerta estaba abierta. Lo encontré en el sofá. Sí, me debía dinero. Pero yo estuve en casa, tengo el historial de Netflix.',
+     cEv:null,cTx:null,guilty:0}
+  ],
+  hyp:[
+    {id:'H11',lb:'Eva mató a Adrián por el chantaje',str:'m',ev:['E11','E12','E14'],
+     cn:['Eva → Amenaza','Eva → Chantaje','Café → Envenenado'],
+     tx:'Motivo claro y amenaza directa. Pero no hay evidencia de acceso a digoxina ni de que sirviera el café.'},
+    {id:'H12',lb:'Roberto envenenó con su propia medicación',str:'s',ev:['E11','E13','E15','E16'],
+     cn:['Roberto → Receta digoxina','Foto → Cartier = Roberto','Contrato → Millones','Café → Digoxina'],
+     tx:'Tiene la receta del medicamento exacto. La foto muestra su Cartier sirviendo el café. Conflicto millonario por contrato.'},
+    {id:'H13',lb:'Nadia volvió de noche con sus llaves',str:'w',ev:['E11'],
+     cn:['Nadia → Llaves','Nadia → Deuda'],
+     tx:'Tiene llaves y motivo, pero su coartada de Netflix es verificable y no hay pruebas.'},
+    {id:'H14',lb:'Caso sin resolver',str:'m',ev:[],cn:['Sin cámaras','Circunstancial'],
+     tx:'Sin cámaras interiores, difícil determinar quién sirvió el café.'}
+  ],
+  sol:{who:'S12',why:'Roberto Sanz volvió al estudio tras la marcha de Eva. Usó su propia digoxina para envenenar el café. La foto de las 02:14 muestra su Cartier Tank dorado sirviendo el café letal. Su motivo: evitar que Adrián rompiera el contrato de exclusividad y hundiera Morrison Models.',key:['E15','E16','E11']}
+},
+// CASE 3
+{
+  id:'caso-003',title:'Silencio en la Sala',diff:'FÁCIL',cls:'facil',
+  date:'8 de enero, 2024',loc:'Auditorio Nacional · Sevilla',dur:'3-4 min',
+  icon:'🎻',iconBg:'var(--greenA)',
+  brief:'<p>El director de orquesta <strong>Gonzalo Ferrer</strong> (61) se desplomó durante el intermedio de un concierto benéfico en el Auditorio Nacional de Sevilla. Causa: paro cardíaco inducido por una sustancia en su botella de agua.</p><p>Solo tres personas tuvieron acceso al camerino durante el descanso. El auditorio tiene cámaras en los pasillos pero no dentro de los camerinos.</p>',
+  victim:{name:'Gonzalo Ferrer Medina',age:61,desc:'Director de orquesta premiado. Llevaba 30 años al frente de la Orquesta Filarmónica. A punto de retirarse.'},
+  room:{name:'Camerino del Director — Auditorio',bg:'#080808',wall:'#141210',floor:'#0e0c0a'},
+  furniture:[
+    {x:.35,y:.40,w:.30,h:.14,c:'#1e1a14',s:'#2e2a24',t:'rect',sh:1,lbl:'Tocador'},
+    {x:.70,y:.55,w:.14,h:.12,c:'#201816',s:'#302826',t:'rect',sh:1,lbl:'Sillón'},
+    {x:.20,y:.65,w:.16,h:.08,c:'#1a1612',s:'#2a2622',t:'rect',lbl:'Perchero'},
+    {x:.50,y:.80,w:.30,h:.06,c:'#181410',s:'#282420',t:'rect',lbl:'Estante de partituras'},
+    {x:.90,y:.40,w:.06,h:.22,c:'#2a2418',s:'#3a3428',t:'rect',lbl:'Puerta'},
+    {x:.08,y:.35,w:.08,h:.20,c:'#161410',s:'#262420',t:'rect',lbl:'Espejo'},
+  ],
+  ev:[
+    {id:'E21',nm:'Botella de agua manipulada',x:.38,y:.38,r:.020,em:'🧴',tp:'Objeto',rel:'Alta',
+     ds:'La botella de agua del director tiene un residuo incoloro. El tapón muestra marcas de haber sido abierto y cerrado con una herramienta.',
+     nf:'Alguien inyectó una sustancia a través del tapón.'},
+    {id:'E22',nm:'Partitura con anotaciones',x:.48,y:.78,r:.018,em:'🎵',tp:'Documento',rel:'Media',
+     ds:'En el margen de la partitura del segundo acto: "Será tu última función, viejo." Letra diferente a la del director.',
+     nf:'Alguien escribió una amenaza directa en la partitura.'},
+    {id:'E23',nm:'Jeringuilla en la papelera',x:.25,y:.60,r:.017,em:'💉',tp:'Forense',rel:'Alta',
+     ds:'Jeringuilla pequeña encontrada entre los residuos del camerino. Sin huellas visibles — fue limpiada.',
+     nf:'Se usó para inyectar la sustancia a través del tapón.'},
+    {id:'E24',nm:'Registro de accesos',x:.88,y:.38,r:.017,em:'📋',tp:'Grabación',rel:'Alta',
+     ds:'La cámara del pasillo muestra: Paula Vidal entró al camerino a las 20:15 (5 min). Tomás Soler a las 20:22 (3 min). Carmen Ferrer a las 20:30 (7 min).',
+     nf:'Los tres entraron al camerino durante el intermedio.'},
+    {id:'E25',nm:'Guantes de látex',x:.18,y:.68,r:.016,em:'🧤',tp:'Forense',rel:'Alta',
+     ds:'Par de guantes de látex debajo del perchero. Tamaño S. Tienen un residuo químico compatible con la sustancia encontrada en la botella.',
+     nf:'Quien usó la jeringuilla llevaba guantes — tamaño S descarta a Tomás (XL).'},
+  ],
+  sus:[
+    {id:'S21',nm:'Paula Vidal',age:35,rl:'Primera violinista',av:'🎻',bg:'#201828',
+     rel:'Primera violinista 8 años. Gonzalo la rechazó como directora adjunta.',
+     mot:'Gonzalo eligió a otro candidato como su sucesor. Paula llevaba años preparándose.',
+     ali:'Entró al camerino a felicitarle por la primera parte. 5 minutos.',
+     qt:'Entré a felicitar al maestro por la primera parte, como hago siempre. Hablamos de la cadencia del tercer movimiento. Salí y volví al escenario. Sí, estaba dolida por lo de la sucesión, pero jamás haría algo así. Es mi mentor.',
+     cEv:'E25',cTx:'Los guantes encontrados son tamaño S — tu talla. Tienen residuo del mismo compuesto que estaba en la botella de Gonzalo. Si solo entraste a felicitarle, ¿por qué hay guantes con veneno de tu talla en el camerino?',guilty:1,
+     preguntas:[
+       {q:'¿Estás resentida por no ser nombrada directora adjunta?',r:'Dolida, sí. Resentida no. Gonzalo tenía sus razones y yo las respeto.',mentira:true,pista:'⚠️ Llevaba años preparándose — el rechazo fue un golpe fuerte'},
+       {q:'¿Qué talla de guantes usas?',r:'Pues... la S, como mucha gente. ¿Por qué lo pregunta?',mentira:false,pista:'Coincide con los guantes encontrados — talla S'},
+       {q:'¿Tocaste algo en el camerino aparte de la puerta?',r:'Solo le di un abrazo al maestro. Nada más.',mentira:true,pista:'⚠️ Estuvo 5 minutos — un abrazo no dura tanto'},
+       {q:'¿Conoces algún compuesto que pueda provocar un paro cardíaco?',r:'Soy violinista, no farmacéutica. No tengo ni idea de esas cosas.',mentira:true,pista:'⚠️ Demasiado tajante — evita el tema'},
+       {q:'¿Quién crees que pudo hacerlo?',r:'No sé... Tomás tenía problemas con Gonzalo por el dinero. Quizá fue él.',mentira:false,pista:'Intenta desviar la atención hacia Tomás'}
+     ]},
+    {id:'S22',nm:'Tomás Soler',age:58,rl:'Presidente de la Fundación',av:'🤵',bg:'#182018',
+     rel:'Mecenas principal de la orquesta. Conflicto económico con Gonzalo.',
+     mot:'Gonzalo iba a hacer público un desvío de fondos de la Fundación.',
+     ali:'Entró a hablar sobre la gala benéfica. 3 minutos.',
+     qt:'Entré a comentar los detalles de la recaudación de la gala. Tres minutos, ni más ni menos. Lo de los fondos es una auditoría rutinaria, Gonzalo estaba exagerando. Yo llevo guantes XL, por cierto, no S.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Hay irregularidades en los fondos de la Fundación?',r:'Es una auditoría rutinaria. Todo está en orden.',mentira:false,pista:'Posible, pero Gonzalo pensaba lo contrario'},
+       {q:'¿Cuánto tiempo estuviste en el camerino?',r:'Tres minutos exactos. Entré, hablamos de la gala, salí.',mentira:false,pista:'Coherente con el registro de accesos'},
+       {q:'¿Qué talla de guantes usas?',r:'XL. Tengo las manos grandes, todos lo saben.',mentira:false,pista:'Los guantes encontrados son S — Tomás queda descartado por tamaño'},
+       {q:'¿Gonzalo te amenazó con algo?',r:'Gonzalo exageraba. Habló de revisar las cuentas, pero no era una amenaza.',mentira:false,pista:'Reconoce tensión pero sin contradicciones claras'}
+     ]},
+    {id:'S23',nm:'Carmen Ferrer',age:56,rl:'Esposa de Gonzalo',av:'👩‍🦰',bg:'#281820',
+     rel:'Esposa del director. Matrimonio de 30 años.',
+     mot:'Descubrió que Gonzalo tenía una relación con una alumna.',
+     ali:'Entró a traerle una toalla y agua. Estuvo 7 minutos.',
+     qt:'Llevo 30 años trayéndole una toalla limpia y agua fresca en cada intermedio. Esa noche no fue diferente. Sí, sé lo de esa alumna. Pero después de 30 años, una no mata por algo así. Se sufre en silencio.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Cuánto tiempo estuviste en el camerino?',r:'Siete minutos. Le traje la toalla, hablamos un poco, le di un beso en la frente como siempre.',mentira:false,pista:'7 minutos — la que más tiempo estuvo'},
+       {q:'¿Tocaste la botella de agua?',r:'Puede ser, no lo recuerdo. Le traje la toalla y agua fresca, como siempre.',mentira:false,pista:'Admite que pudo tocar la botella — pero no hay prueba directa'},
+       {q:'¿Cómo llevas lo de la alumna?',r:'Con dolor. Pero una no destruye 30 años de vida por una aventura. Yo le conocía mejor que nadie.',mentira:false,pista:'Reacción emocional auténtica — no parece fingida'},
+       {q:'¿Qué talla de guantes usas?',r:'La M, creo. No uso guantes normalmente.',mentira:false,pista:'Talla M — no coincide con los guantes S encontrados'}
+     ]}
+  ],
+  hyp:[
+    {id:'H21',lb:'Paula envenenó al director por la sucesión rechazada',str:'s',ev:['E21','E23','E24','E25'],
+     cn:['Paula → Guantes talla S','Jeringuilla → Limpiada','Paula → Motivo claro','Acceso → 5 minutos'],
+     tx:'Los guantes talla S con residuo tóxico coinciden con Paula. Tuvo acceso, motivo y la jeringuilla fue limpiada para eliminar huellas.'},
+    {id:'H22',lb:'Tomás actuó para ocultar el fraude de la Fundación',str:'m',ev:['E21','E23','E24'],
+     cn:['Tomás → Desvío fondos','Tomás → Acceso','Jeringuilla → Sin huellas'],
+     tx:'Tomás tenía motivo financiero, pero los guantes talla S lo descartan parcialmente y solo estuvo 3 minutos.'},
+    {id:'H23',lb:'Carmen Ferrer actuó por despecho',str:'w',ev:['E21','E24'],
+     cn:['Carmen → Infidelidad','Carmen → 7 minutos'],
+     tx:'Carmen tuvo más tiempo en el camerino (7 min) y motivo emocional, pero no hay evidencia directa.'},
+    {id:'H24',lb:'Caso sin resolver',str:'m',ev:[],cn:['Acceso múltiple','Sin testigos'],
+     tx:'Los tres tuvieron acceso al camerino durante el intermedio.'}
+  ],
+  sol:{who:'S21',why:'Paula Vidal envenenó la botella de agua de Gonzalo usando una jeringuilla para inyectar la sustancia a través del tapón. Usó guantes de látex talla S — su talla — que fueron encontrados con residuo del mismo compuesto. La jeringuilla fue limpiada para eliminar huellas. Su motivo: Gonzalo la rechazó como sucesora tras 8 años de preparación, eligiendo a otro candidato.',key:['E23','E25','E24']}
+},
+// CASE 4
+{
+  id:'caso-004',title:'El Legado Digital',diff:'MEDIO',cls:'medio',
+  date:'19 de junio, 2024',loc:'Oficinas Nexora Tech · Barcelona',dur:'5-6 min',
+  icon:'💻',iconBg:'var(--blueA)',
+  brief:'<p>El CEO y fundador de Nexora Tech, <strong>Pablo Mendoza</strong> (42), fue encontrado muerto en su despacho a las 07:30 del lunes. La puerta estaba cerrada con llave desde dentro. Causa: inyección letal de insulina — Pablo no era diabético.</p><p>Pablo trabajó solo el domingo por la noche. Tres personas tenían llave del despacho. El sistema de control de accesos registra todas las entradas al edificio.</p>',
+  victim:{name:'Pablo Mendoza Torres',age:42,desc:'CEO y fundador de Nexora Tech. Startup valorada en 40M€. A punto de cerrar una ronda de financiación que diluiría a los socios originales.'},
+  room:{name:'Despacho CEO — Nexora Tech',bg:'#06080c',wall:'#0c1018',floor:'#08080e'},
+  furniture:[
+    {x:.40,y:.42,w:.32,h:.16,c:'#141820',s:'#242830',t:'rect',sh:1,lbl:'Escritorio'},
+    {x:.40,y:.34,w:.12,h:.06,c:'#1a2028',s:'#2a3038',t:'rect',lbl:'Monitor'},
+    {x:.78,y:.58,w:.16,h:.10,c:'#161a22',s:'#262a32',t:'rect',sh:1,lbl:'Sofá'},
+    {x:.15,y:.55,w:.10,h:.25,c:'#121620',s:'#222630',t:'rect',lbl:'Estantería'},
+    {x:.92,y:.42,w:.05,h:.20,c:'#1e2230',s:'#2e3240',t:'rect',lbl:'Puerta'},
+    {x:.60,y:.75,w:.20,h:.08,c:'#141820',s:'#242830',t:'rect',lbl:'Mesa café'},
+  ],
+  ev:[
+    {id:'E31',nm:'Jeringuilla de insulina',x:.44,y:.44,r:.020,em:'💉',tp:'Forense',rel:'Alta',
+     ds:'Jeringuilla de insulina vacía junto al cuerpo. Pablo no era diabético. Sin huellas — limpiada.',
+     nf:'La insulina fue inyectada deliberadamente.'},
+    {id:'E32',nm:'Portátil abierto',x:.38,y:.36,r:.018,em:'💻',tp:'Digital',rel:'Alta',
+     ds:'El portátil de Pablo muestra un email borrado pero recuperable: "Sé lo que hiciste con Meridian. O me das el 30% o se lo cuento a los inversores." Enviado por D.Salas.',
+     nf:'Diana Salas chantajeaba a Pablo.'},
+    {id:'E33',nm:'Log de accesos',x:.90,y:.40,r:.017,em:'🔐',tp:'Digital',rel:'Alta',
+     ds:'El sistema registra: Diana Salas entró a las 22:15, salió a las 23:40. Marcos Gil entró a las 23:50, salió a las 00:20. Laura Mendoza entró a las 01:10, salió a las 01:25.',
+     nf:'Tres personas entraron al edificio esa noche.'},
+    {id:'E34',nm:'Llave duplicada',x:.14,y:.52,r:.016,em:'🔑',tp:'Objeto',rel:'Alta',
+     ds:'Una copia de la llave del despacho encontrada en la estantería detrás de unos libros. No es la llave oficial — es una copia reciente.',
+     nf:'Alguien hizo una copia de la llave.'},
+    {id:'E35',nm:'Contrato Meridian',x:.62,y:.73,r:.016,em:'📑',tp:'Documento',rel:'Alta',
+     ds:'Contrato entre Nexora y Meridian Partners. Cláusula oculta: Pablo recibió una comisión personal de 2M€ a cambio de condiciones favorables para Meridian.',
+     nf:'Pablo cometió fraude en la negociación con Meridian.'},
+    {id:'E36',nm:'Vídeo del pasillo',x:.88,y:.50,r:.018,em:'📹',tp:'Grabación',rel:'Alta',
+     ds:'El vídeo de las 23:55 muestra a Marcos Gil caminando hacia el despacho de Pablo con una bolsa de farmacia. Al salir a las 00:20, la bolsa está vacía.',
+     nf:'Marcos llevó algo al despacho y salió sin ello.'},
+  ],
+  sus:[
+    {id:'S31',nm:'Diana Salas',age:38,rl:'Cofundadora / CTO',av:'👩‍💻',bg:'#1e1828',
+     rel:'Cofundadora con el 25% de Nexora. La ronda la diluiría al 8%.',
+     mot:'La ronda de financiación la dejaba casi fuera. Descubrió el fraude de Meridian.',
+     ali:'Fue a discutir la ronda con Pablo. Se fue a las 23:40.',
+     qt:'Sí, fui a hablar con Pablo sobre la ronda. Discutimos fuerte. Le dije que sabía lo de Meridian y que o me compensaba o lo haría público. Pero me fui a las once y media. Pablo estaba vivo, furioso, pero vivo. Yo no tengo insulina ni sé inyectar.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Qué es exactamente lo de Meridian?',r:'Pablo recibió una comisión ilegal. Yo lo descubrí revisando los contratos.',mentira:false,pista:'Coherente con el contrato encontrado'},
+       {q:'¿Le amenazaste con hacerlo público?',r:'Le dije que o me compensaba con equity o iría a los inversores. No es una amenaza, es negocio.',mentira:false,pista:'Admite la presión — pero ¿es motivo suficiente para matar?'},
+       {q:'¿A qué hora te fuiste exactamente?',r:'A las once y media. Quizá un poco antes.',mentira:false,pista:'El log confirma salida a las 23:40'},
+       {q:'¿Viste a alguien más en el edificio?',r:'No. El edificio estaba vacío cuando salí.',mentira:false,pista:'Marcos entró a las 23:50 — 10 min después de que Diana saliera'},
+       {q:'¿Sabes inyectar insulina?',r:'No. Nunca he tocado una jeringuilla en mi vida.',mentira:false,pista:'Sin evidencia que la contradiga'}
+     ]},
+    {id:'S32',nm:'Marcos Gil',age:45,rl:'Director financiero',av:'👨‍💼',bg:'#18201e',
+     rel:'CFO de Nexora. Gestionó la operación Meridian con Pablo.',
+     mot:'Si el fraude de Meridian salía a la luz, Marcos iría a la cárcel con Pablo.',
+     ali:'Fue a recoger unos documentos que se dejó el viernes.',
+     qt:'Fui a por unos informes que me dejé el viernes. Entré, cogí mis papeles y me fui. La bolsa de farmacia era ibuprofeno para mi espalda, la tiré a la papelera del baño. No vi a Pablo esa noche, su despacho estaba cerrado.',
+     cEv:'E36',cTx:'Dices que no viste a Pablo, pero el vídeo te muestra caminando directamente hacia su despacho a las 23:55, no hacia tu oficina. Entraste con una bolsa de farmacia llena y saliste con ella vacía. Si era ibuprofeno, ¿por qué fuiste al despacho del CEO?',guilty:1,
+     preguntas:[
+       {q:'¿Qué llevabas en la bolsa de farmacia?',r:'Ibuprofeno para la espalda. Lo tiré en la papelera del baño.',mentira:true,pista:'⚠️ El vídeo muestra que fue al despacho de Pablo, no al baño'},
+       {q:'¿Fuiste al despacho de Pablo esa noche?',r:'No. Fui a mi oficina a por unos informes. Su despacho estaba cerrado.',mentira:true,pista:'⚠️ El vídeo muestra claramente que fue al despacho del CEO'},
+       {q:'¿Sabías lo del fraude de Meridian?',r:'¿Qué fraude? No sé de qué me habla.',mentira:true,pista:'⚠️ Marcos gestionó la operación con Pablo — tuvo que saber'},
+       {q:'¿Tienes acceso a insulina?',r:'No soy diabético. No tengo razón para tener insulina.',mentira:true,pista:'⚠️ La bolsa de farmacia podría haber contenido insulina'},
+       {q:'¿Qué pasaría si el fraude de Meridian sale a la luz?',r:'No hay ningún fraude. Es un contrato normal.',mentira:true,pista:'⚠️ Cinco mentiras seguidas — muy sospechoso'}
+     ]},
+    {id:'S33',nm:'Laura Mendoza',age:40,rl:'Hermana de Pablo',av:'👩',bg:'#281e20',
+     rel:'Hermana del CEO. Tienen un seguro de vida cruzado.',
+     mot:'Seguro de vida de 3M€. Problemas financieros personales.',
+     ali:'Fue a llevarle cena porque sabía que trabajaba hasta tarde.',
+     qt:'Le llevé cena como hago muchas noches cuando se queda trabajando. Un tupper con tortilla. Estuve quince minutos, hablamos de las vacaciones de verano. Se le veía cansado pero bien. Me fui a casa a dormir.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Sabías del seguro de vida cruzado?',r:'Claro. Lo hicimos hace años, por si pasaba algo. Es normal entre hermanos.',mentira:false,pista:'El seguro existe pero lo admite sin problema'},
+       {q:'¿Tienes problemas económicos?',r:'Como todo el mundo. Pero no mataría a mi hermano por dinero, por Dios.',mentira:false,pista:'Emocional pero coherente'},
+       {q:'¿Qué hiciste después de irte?',r:'Me fui a casa directo. Me acosté sobre las dos.',mentira:false,pista:'El log confirma salida a la 01:25'},
+       {q:'¿Viste a alguien en el edificio?',r:'No. Todo estaba oscuro y vacío. Solo Pablo en su despacho.',mentira:false,pista:'Coherente — ella entró la última'}
+     ]}
+  ],
+  hyp:[
+    {id:'H31',lb:'Diana mató a Pablo para impedir la ronda y ocultar el chantaje',str:'m',ev:['E31','E32','E33'],
+     cn:['Diana → Chantaje','Diana → Dilución','Insulina → Sin huellas'],
+     tx:'Diana tenía motivo doble (dilución y silenciar el chantaje), pero se fue a las 23:40 y Pablo murió después.'},
+    {id:'H32',lb:'Marcos mató a Pablo para que el fraude Meridian no saliera',str:'s',ev:['E31','E33','E35','E36'],
+     cn:['Marcos → Fraude Meridian','Vídeo → Bolsa farmacia vacía','Marcos → Fue al despacho','Log → 23:55-00:20'],
+     tx:'Marcos participó en el fraude Meridian y se enfrentaba a cárcel si Diana lo hacía público. El vídeo lo muestra yendo al despacho con una bolsa de farmacia (insulina) y saliendo sin ella.'},
+    {id:'H33',lb:'Laura actuó por el seguro de vida de 3M€',str:'w',ev:['E31','E33'],
+     cn:['Laura → Seguro 3M€','Laura → Deudas'],
+     tx:'Laura tiene un seguro de vida por 3M€ y deudas, pero entró la última y solo 15 minutos.'},
+    {id:'H34',lb:'Caso sin resolver',str:'m',ev:[],cn:['Puerta cerrada por dentro','Múltiples accesos'],
+     tx:'La puerta cerrada desde dentro complica la reconstrucción.'}
+  ],
+  sol:{who:'S32',why:'Marcos Gil inyectó insulina a Pablo para silenciar el fraude de Meridian que los implicaba a ambos. El vídeo del pasillo lo muestra llevando una bolsa de farmacia al despacho de Pablo a las 23:55 — la misma bolsa sale vacía cuando se va a las 00:20. Mintió sobre ir a por documentos a su oficina. Con Diana chantajeando a Pablo con hacer público el fraude, Marcos se enfrentaba a la cárcel si Pablo cedía al chantaje o si Diana lo denunciaba.',key:['E36','E35','E33']}
+},
+// CASE 5
+{
+  id:'caso-005',title:'Mareas Rojas',diff:'DIFÍCIL',cls:'dificil',
+  date:'23 de septiembre, 2024',loc:'Puerto de Cambados · Pontevedra',dur:'5-6 min',
+  icon:'⚓',iconBg:'var(--tealA)',
+  brief:'<p>El pescador <strong>Ramón Outes</strong> (67) fue encontrado muerto en su barco "A Nosa Terra" a las 06:00 de la mañana por otro marinero. Causa: traumatismo craneal. Inicialmente se pensó en un accidente — resbalón en cubierta mojada — pero la autopsia revela que el golpe no es compatible con una caída.</p><p>La noche anterior, Ramón salió solo a faenar a las 22:00. Su barco fue visto por última vez en la zona de bateas a la 01:00. El puerto no tiene cámaras nocturnas.</p>',
+  victim:{name:'Ramón Outes Vilar',age:67,desc:'Pescador veterano de Cambados. Propietario de la mejor zona de bateas de mejillón de la ría. Viudo.'},
+  room:{name:'Cubierta — Barco "A Nosa Terra"',bg:'#060a0e',wall:'#0c1418',floor:'#08100e'},
+  furniture:[
+    {x:.50,y:.45,w:.40,h:.30,c:'#14201a',s:'#24302a',t:'rect',sh:1,lbl:'Cubierta principal'},
+    {x:.50,y:.22,w:.20,h:.10,c:'#182418',s:'#283428',t:'rect',lbl:'Caseta de timón'},
+    {x:.20,y:.60,w:.12,h:.08,c:'#1a2620',s:'#2a3630',t:'rect',lbl:'Redes'},
+    {x:.80,y:.60,w:.10,h:.06,c:'#162018',s:'#263028',t:'rect',lbl:'Cajas'},
+    {x:.15,y:.35,w:.06,h:.20,c:'#1e2a22',s:'#2e3a32',t:'rect',lbl:'Mástil'},
+    {x:.50,y:.82,w:.50,h:.04,c:'#0a1610',s:'#1a2620',t:'rect',lbl:'Borda'},
+  ],
+  ev:[
+    {id:'E41',nm:'Bichero con sangre',x:.22,y:.56,r:.020,em:'🪝',tp:'Forense',rel:'Alta',
+     ds:'Un bichero (palo con gancho) junto a las redes tiene sangre en el extremo metálico. La sangre es de Ramón.',
+     nf:'El bichero fue el arma usada para golpear a Ramón.'},
+    {id:'E42',nm:'GPS del barco',x:.48,y:.20,r:.018,em:'📡',tp:'Digital',rel:'Alta',
+     ds:'El GPS muestra que "A Nosa Terra" estuvo en la zona de bateas hasta las 00:30, luego se movió a una cala sin bateas y volvió al puerto a las 02:15.',
+     nf:'El barco se desvió a una cala a la 01:00 — el asesino pudo subir o bajar allí.'},
+    {id:'E43',nm:'Concesión de bateas',x:.52,y:.44,r:.016,em:'📄',tp:'Documento',rel:'Alta',
+     ds:'Documento oficial: la concesión de bateas de Ramón expira en 6 meses. Hay tres solicitudes para quedarse con la zona — una es de Brais Doval.',
+     nf:'Brais competía directamente por la zona de bateas.'},
+    {id:'E44',nm:'Teléfono de Ramón',x:.46,y:.48,r:.017,em:'📱',tp:'Digital',rel:'Alta',
+     ds:'Última llamada recibida a las 23:45 de "Brais". Duración: 4 minutos. SMS posterior de Brais: "Nos vemos en la cala de siempre. Tenemos que hablar de las bateas."',
+     nf:'Brais citó a Ramón en una cala esa misma noche.'},
+    {id:'E45',nm:'Fibras en la borda',x:.48,y:.80,r:.016,em:'🔬',tp:'Forense',rel:'Alta',
+     ds:'Fibras de un jersey de lana azul marino enganchadas en la borda de estribor. No coinciden con la ropa de Ramón.',
+     nf:'Alguien más subió al barco por la borda.'},
+    {id:'E46',nm:'Billete de lotería',x:.78,y:.58,r:.015,em:'🎫',tp:'Objeto',rel:'Media',
+     ds:'Un billete de lotería premiado (12.000€) dentro de una caja. A nombre de Ramón pero cobrado por "Manuel Outes" — su hijo.',
+     nf:'El hijo de Ramón cobró un premio de lotería a nombre de su padre.'},
+  ],
+  sus:[
+    {id:'S41',nm:'Brais Doval',age:52,rl:'Pescador rival',av:'🧔',bg:'#162020',
+     rel:'Pescador de Cambados. Compite por la concesión de bateas.',
+     mot:'Si Ramón renovaba la concesión, Brais perdía su única oportunidad de expandir negocio.',
+     ali:'Dice que llamó a Ramón para hablar de un acuerdo, pero que al final no fue a la cala.',
+     qt:'Sí, le llamé. Quería proponerle compartir la zona de bateas, un acuerdo entre vecinos. Le dije que nos viéramos en la cala, pero al final cambié de opinión y me quedé en casa. Pregunten a mi mujer, estuve en casa desde las once.',
+     cEv:'E44',cTx:'Dices que no fuiste a la cala, pero el GPS del barco de Ramón muestra que se desvió exactamente a esa cala a la 01:00, justo después de tu llamada y tu SMS citándole allí. Si no fuiste, ¿por qué Ramón fue a esperarte?',guilty:1,
+     preguntas:[
+       {q:'¿Por qué llamaste a Ramón a las 23:45?',r:'Para proponerle compartir la zona de bateas. Un acuerdo entre vecinos.',mentira:true,pista:'⚠️ Si era un acuerdo amistoso, ¿por qué a medianoche?'},
+       {q:'¿Fuiste a la cala que mencionas en el SMS?',r:'No. Cambié de opinión y me quedé en casa.',mentira:true,pista:'⚠️ El GPS del barco confirma que Ramón fue a esa cala'},
+       {q:'¿Tienes un jersey azul marino?',r:'Tengo varios jerseys. ¿Por qué lo pregunta?',mentira:false,pista:'No niega tener jersey azul — las fibras encontradas son azul marino'},
+       {q:'¿Puedes demostrar que estabas en casa?',r:'Mi mujer me vio en casa. Pregúntenle a ella.',mentira:true,pista:'⚠️ Solo su mujer como testigo — no es verificable independientemente'},
+       {q:'¿Cómo era tu relación real con Ramón?',r:'Normal. Vecinos, pescadores. A veces discutíamos por las bateas, como todos.',mentira:false,pista:'Minimiza el conflicto — la concesión vale mucho dinero'}
+     ]},
+    {id:'S42',nm:'Manuel Outes',age:38,rl:'Hijo de Ramón',av:'👨',bg:'#1e1820',
+     rel:'Hijo único. Relación distante. Problemas económicos.',
+     mot:'Herencia: el barco, la casa y la concesión de bateas.',
+     ali:'En Vigo toda la noche. Tiene testigos de un bar.',
+     qt:'Yo estaba en Vigo, en el bar O Berbés con tres amigos. Pueden confirmarlo. Sí, cobré la lotería — mi padre me dio el billete, era un regalo. No tengo nada que ver con esto. Mi padre y yo teníamos nuestras cosas, pero era mi padre.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Puedes demostrar que estabas en Vigo?',r:'Tres amigos me vieron en el bar. Pueden confirmarlo todos.',mentira:false,pista:'Coartada verificable con múltiples testigos'},
+       {q:'¿Por qué cobraste la lotería a nombre de tu padre?',r:'Porque el billete era suyo. Me lo regaló. Yo solo fui a cobrarlo.',mentira:false,pista:'Posible, pero sospechoso — ¿por qué no lo cobró Ramón?'},
+       {q:'¿Heredas tú todo?',r:'Supongo que sí, soy el único hijo. Pero no sabía que mi padre fuera a morir.',mentira:false,pista:'Tiene motivo de herencia pero coartada sólida'},
+       {q:'¿Cuándo fue la última vez que viste a tu padre?',r:'Hace dos semanas. Vine a comer un domingo.',mentira:false,pista:'No estuvo cerca de su padre la noche del crimen'}
+     ]},
+    {id:'S43',nm:'Alicia Pereira',age:44,rl:'Alcaldesa de Cambados',av:'👩‍⚖️',bg:'#201828',
+     rel:'Alcaldesa del municipio. Gestiona las concesiones de bateas.',
+     mot:'Ramón amenazó con denunciar irregularidades en las concesiones.',
+     ali:'En una cena oficial en Santiago. Hay fotos.',
+     qt:'Estuve en una cena del partido en Santiago hasta las dos de la mañana. Hay fotos, vídeos, cincuenta testigos. Lo de las irregularidades es una fantasía de Ramón porque no le gustaba el proceso de renovación. Yo no tengo nada contra él.',
+     cEv:null,cTx:null,guilty:0,
+     preguntas:[
+       {q:'¿Hay irregularidades en las concesiones de bateas?',r:'Ninguna. El proceso es transparente y está auditado.',mentira:false,pista:'Ramón pensaba lo contrario, pero no hay prueba'},
+       {q:'¿Puedes demostrar que estabas en Santiago?',r:'Fotos, vídeos, cincuenta testigos. Tengo coartada de sobra.',mentira:false,pista:'Coartada sólida — imposible que estuviera en Cambados'},
+       {q:'¿Conoces a Brais Doval?',r:'De vista. Es un pescador del pueblo. No tengo trato con él.',mentira:false,pista:'No hay conexión evidente entre Alicia y Brais'},
+       {q:'¿Ramón te amenazó alguna vez?',r:'Ramón era un hombre mayor que se quejaba de todo. No era una amenaza.',mentira:false,pista:'Minimiza a Ramón pero sin contradicciones'}
+     ]}
+  ],
+  hyp:[
+    {id:'H41',lb:'Brais mató a Ramón por la concesión de bateas',str:'s',ev:['E41','E42','E43','E44','E45'],
+     cn:['Brais → Citó a Ramón en la cala','GPS → Barco fue a la cala','Bichero → Arma','Fibras → Alguien subió','Concesión → Competencia directa'],
+     tx:'Brais citó a Ramón en la cala por SMS, el GPS confirma que el barco fue allí, las fibras indican que alguien subió, y el bichero tiene sangre de Ramón. Brais era el competidor directo por las bateas.'},
+    {id:'H42',lb:'Manuel actuó por la herencia y la lotería',str:'w',ev:['E41','E46'],
+     cn:['Manuel → Herencia','Manuel → Cobró lotería','Bichero → Arma'],
+     tx:'Manuel hereda todo y ya cobró un premio a nombre de su padre, pero tiene coartada verificable en Vigo.'},
+    {id:'H43',lb:'Alicia encargó el asesinato para ocultar las irregularidades',str:'w',ev:['E41','E43'],
+     cn:['Alicia → Irregularidades','Alicia → Concesiones'],
+     tx:'Alicia tenía motivo político, pero tiene coartada con decenas de testigos en Santiago.'},
+    {id:'H44',lb:'Caso sin resolver',str:'m',ev:[],cn:['Sin cámaras nocturnas','Mar abierto'],
+     tx:'Sin cámaras en el puerto de noche, difícil confirmar quién subió al barco.'}
+  ],
+  sol:{who:'S41',why:'Brais Doval citó a Ramón en una cala aislada con el pretexto de negociar las bateas. El GPS del barco confirma que Ramón se desvió exactamente a esa cala tras la llamada y el SMS de Brais. Brais subió al barco por la borda (las fibras de jersey lo confirman) y golpeó a Ramón con el bichero. Su motivo: la concesión de bateas, su única posibilidad de expandir el negocio, que Ramón iba a renovar.',key:['E44','E42','E45']}
+}
+
+];
+
+// ==== GAME ENGINE ====
+const G=(()=>{
+  let st={sc:0,ev:[],con:[],hyp:null,acc:null,t0:0,tt:0,cs:null};
+  let tmr={},tmrMax={};
+  let cvs,cx,cW,cH,found=new Set(),af;
+  let invOpen=false;
+
+  // -- Nav --
+  function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');SFX.click()}
+  function phase(n,t,d,cb){const e=document.createElement('div');e.className='phase';e.innerHTML=`<div class="phase-n">FASE ${n}</div><div class="phase-t">${t}</div><div class="phase-d">${d}</div><div class="phase-bar"><div class="phase-fill"></div></div>`;document.getElementById('game').appendChild(e);setTimeout(()=>{e.remove();cb()},1600)}
+
+  // -- HUD --
+  function hud(id,ph,cs){document.getElementById(id).innerHTML=`<div class="hud-l"><div class="hud-phase">${ph}</div><div class="hud-case">${cs}</div></div><div class="hud-c"><svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="0"/></svg><div class="hud-t" id="${id}-t">0</div></div><div class="hud-r"><div class="hud-pts" id="${id}-p">0</div><div class="hud-sub" id="${id}-s"></div></div>`}
+  function hudPts(id){const e=document.getElementById(id+'-p');if(e)e.textContent=st.sc+' pts'}
+  function hudSub(id,v){const e=document.getElementById(id+'-s');if(e)e.textContent=v}
+
+  // -- Timer --
+  function startT(hid,sec,cb){
+    clearInterval(tmr[hid]);let r=sec;tmrMax[hid]=sec;
+    const numEl=document.getElementById(hid+'-t'),ring=document.querySelector('#'+hid+' .fg');
+    if(!numEl||!ring)return;
+    numEl.textContent=r;ring.style.strokeDashoffset='0';ring.className='fg';
+    tmr[hid]=setInterval(()=>{
+      r--;if(r<0){r=0;clearInterval(tmr[hid]);cb();return}
+      numEl.textContent=r;ring.style.strokeDashoffset=(1-r/sec)*113.1;
+      if(r<=15)ring.className='fg w';
+      if(r<=7){ring.className='fg d';SFX.tens(1)}
+      if(r>15)SFX.tens(0);
+    },1000);
+  }
+  function stopT(hid){clearInterval(tmr[hid]);SFX.tens(0)}
+
+  // -- Inventory --
+  function updInv(){
+    const list=document.getElementById('inv-list');if(!list)return;
+    list.innerHTML=st.ev.map(e=>`<div class="inv-item" onclick="G.evModal('${e.id}')"><div class="inv-item-ic" style="background:var(--s3)">${e.em}</div><div><div class="inv-item-nm">${e.nm}</div><div class="inv-item-tp">${e.tp} · ${e.rel}</div></div></div>`).join('');
+    // Update toggle badge
+    const badge=document.getElementById('inv-badge');if(badge)badge.textContent=st.ev.length;
+  }
+  function togInv(){
+    invOpen=!invOpen;
+    document.getElementById('inv-sheet').classList.toggle('open',invOpen);
+  }
+
+  // -- Evidence Modal --
+  function evModal(eid){
+    const e=st.ev.find(x=>x.id===eid)||st.cs?.ev.find(x=>x.id===eid);if(!e)return;
+    document.querySelectorAll('.modal').forEach(m=>m.remove());
+    const m=document.createElement('div');m.className='modal';
+    const tc={'Objeto':'var(--amber)','Personal':'var(--amber)','Tóxico':'var(--red)','Documento':'var(--teal)','Médico':'var(--teal)','Comunicación':'var(--teal)','Digital':'var(--blue)','Grabación':'var(--blue)','Fotográfica':'var(--blue)','Forense':'var(--green)'}[e.tp]||'var(--teal)';
+    m.innerHTML=`<div class="modal-bg" onclick="this.parentElement.remove()"></div><div class="modal-body"><div class="modal-handle"></div><div class="modal-hd"><div class="modal-ic" style="background:${tc}12;border:1px solid ${tc}25;font-size:20px">${e.em}</div><div><div class="modal-ti">${e.nm}</div><div class="modal-id">${e.id}</div></div></div><div class="modal-tags"><span class="modal-tag">${e.tp}</span><span class="modal-tag">Fiabilidad: ${e.rel}</span><span class="pill pill-f">FICCIÓN</span></div><div class="modal-desc">${e.ds}</div><div class="modal-info">💡 ${e.nf}</div><button class="bt bt-s2 bt-block bt-sm" style="margin-top:12px" onclick="this.closest('.modal').remove()">Cerrar</button></div>`;
+    document.getElementById('game').appendChild(m);
+  }
+
+  // ==== SCREENS ====
+  function acceptCW(){document.getElementById('cw').style.display='none';SFX.init();SFX.amb()}
+  function credits(){alert('VIRALIX: CASO ABIERTO\nv4.0 — Ficción interactiva\n\nTodos los casos son 100% ficticios.\nviralixweb.es')}
+
+  function goSelect(){
+    const list=document.getElementById('sel-list');list.innerHTML='';
+    CASES.forEach(c=>{
+      const d=document.createElement('div');const done=getSave(c.id);d.className=`c-card ${c.cls}`;
+      d.innerHTML=`<div class="c-top"><div class="c-icon" style="background:${c.iconBg}">${c.icon}</div><div style="flex:1;min-width:0"><div class="c-title">${c.title}</div><div class="c-loc">${c.loc}</div></div><span class="pill ${c.diff==='FÁCIL'?'pill-facil':c.diff==='MEDIO'?'pill-f':'pill-d'}">${c.diff}</span></div><div class="c-stats"><span>⏱ ${c.dur}</span><span>🔍 ${c.ev.length} pruebas</span><span>👤 ${c.sus.length} sosp.</span>${done?'<span style="color:var(--amber)">★ '+done.rank+'</span>':''}</div>`;
+      d.onclick=()=>loadCase(c);list.appendChild(d);
+    });
+    const lk=document.createElement('div');lk.className='c-card lock';lk.innerHTML='<div class="c-top"><div class="c-icon" style="background:var(--s2)">🔒</div><div><div class="c-title">Nuevo caso</div><div class="c-loc">Próximamente</div></div></div>';
+    list.appendChild(lk);
+    go('sel');
+  }
+
+  function loadCase(c){
+    st={sc:0,ev:[],con:[],hyp:null,acc:null,t0:Date.now(),tt:0,cs:JSON.parse(JSON.stringify(c))};found=new Set();
+    // Randomize evidence positions slightly each playthrough
+    st.cs.ev.forEach(e=>{e.x=Math.max(.08,Math.min(.92,e.x+(Math.random()-.5)*.08));e.y=Math.max(.2,Math.min(.75,e.y+(Math.random()-.5)*.06))});
+    document.getElementById('intro').innerHTML=`<div class="i-scroll"><div class="i-hero"><span class="pill pill-f" style="margin-bottom:8px">FICCIÓN</span><div class="i-exp">EXPEDIENTE ${c.id.toUpperCase().replace('CASO-','Nº ')}</div><div class="i-title">${c.title}</div><div class="i-meta">${c.date}<br>${c.loc}</div></div><div class="i-brief">${c.brief}<div class="v-card"><h4>VÍCTIMA</h4><p><strong>${c.victim.name}</strong>, ${c.victim.age} años</p><p>${c.victim.desc}</p></div></div></div><div class="i-foot"><button class="bt bt-s2" onclick="G.goSelect()">←</button><button class="bt bt-red" style="flex:1" onclick="G.startScene()">Investigar escena →</button></div>`;
+    go('intro');
+  }
+
+  // ==== PHASE 1: CRIME SCENE ====
+  function startScene(){
+    phase(1,'Escena del crimen','Examina cada rincón para encontrar pruebas.',()=>{
+      hud('h-scene','FASE 1 · ESCENA',st.cs.title);go('scene');initCv();
+      startT('h-scene',80,endScene);hudPts('h-scene');
+      hudSub('h-scene',`0/${st.cs.ev.length}`);
+      const tip=document.getElementById('s-tip');tip.classList.remove('hide');setTimeout(()=>tip.classList.add('hide'),3500);
+    });
+  }
+
+
+  // ===== DUAL ENGINE: Three.js (PC) + PixiJS (Mobile) =====
+  let _sceneEngine=null;
+
+  function waitForEngine(cb){
+    if(window._engineReady)cb();
+    else setTimeout(()=>waitForEngine(cb),100);
+  }
+
+
+  // ===== SCENE ENGINE: PixiJS Noir =====
+  let _app=null;
+
+  function waitForEngine(cb){if(window._engineReady)cb();else setTimeout(()=>waitForEngine(cb),100)}
+
+  function initCv(){
+    const container=document.getElementById('phaser-container');
+    container.innerHTML='';
+    waitForEngine(()=>{
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        if(typeof PIXI!=='undefined')initPixiNoir(container);
+        else container.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#888;font-size:13px;padding:20px;text-align:center">Cargando escena... Si tarda, recarga la página.</div>';
+      }));
+    });
+  }
+
+  function discoverEvidence(ev){
+    if(ev._found)return;
+    ev._found=true;found.add(ev.id);st.ev.push(ev);st.sc+=15;
+    SFX.ev();
+    if(navigator.vibrate&&settings.vibration)navigator.vibrate([50,30,50]);
+    showToast(ev);setTimeout(()=>evModal(ev.id),500);
+    updInv();hudPts('h-scene');
+    hudSub('h-scene',`${found.size}/${st.cs.ev.length}`);
+    if(found.size>=st.cs.ev.length)setTimeout(endScene,2000);
+  }
+
+  function initPixiNoir(container){
+    const rect=container.getBoundingClientRect();
+    const W=Math.round(rect.width||window.innerWidth);
+    const H=Math.round(rect.height||(window.innerHeight-50));
+    if(W<10||H<10){setTimeout(()=>initPixiNoir(container),200);return}
+    const c=st.cs;
+
+    const app=new PIXI.Application({width:W,height:H,backgroundColor:0x080a0e,antialias:true,resolution:Math.min(devicePixelRatio,2),autoDensity:true});
+    container.appendChild(app.view);
+    app.view.style.width='100%';app.view.style.height='100%';
+    app.view.style.touchAction='none';
+    _app=app;
+
+    // === NOIR ROOM ===
+    const room=new PIXI.Graphics();
+    // Floor - dark wood with warm tone
+    room.beginFill(0x1a1410);room.drawRect(0,H*.75,W,H*.25);room.endFill();
+    // Floor planks
+    for(let i=0;i<10;i++){room.lineStyle(.5,0xffffff,.025);room.moveTo(0,H*.75+H*.025*i);room.lineTo(W,H*.75+H*.025*i)}
+    for(let i=0;i<8;i++){room.moveTo(W/8*i,H*.75);room.lineTo(W/8*i,H)}
+    // Walls
+    room.beginFill(0x12100e);room.drawRect(0,0,W,H*.75);room.endFill();
+    // Baseboard
+    room.beginFill(0x201a14);room.drawRect(0,H*.74,W,H*.012);room.endFill();
+    app.stage.addChild(room);
+
+    // Warm light pool (center ceiling lamp)
+    const lightPool=new PIXI.Graphics();
+    lightPool.beginFill(0xffa040,.06);lightPool.drawEllipse(W*.5,H*.45,W*.3,H*.25);lightPool.endFill();
+    lightPool.beginFill(0xffc060,.03);lightPool.drawEllipse(W*.5,H*.45,W*.15,H*.12);lightPool.endFill();
+    app.stage.addChild(lightPool);
+
+    // Corner darkness (vignette)
+    const vig=new PIXI.Graphics();
+    vig.beginFill(0x000000,.18);vig.drawRect(0,0,W*.07,H);vig.endFill();
+    vig.beginFill(0x000000,.18);vig.drawRect(W*.93,0,W*.07,H);vig.endFill();
+    vig.beginFill(0x000000,.1);vig.drawRect(0,0,W,H*.05);vig.endFill();
+    app.stage.addChild(vig);
+
+    // Room label
+    const label=new PIXI.Text(c.room.name.toUpperCase(),{fontFamily:'IBM Plex Mono',fontSize:Math.max(9,W*.013),fill:0xffffff,letterSpacing:2});
+    label.anchor.set(.5);label.position.set(W/2,H*.03);label.alpha=.08;app.stage.addChild(label);
+
+    // === FURNITURE ===
+    c.furniture.forEach(f=>{
+      const fg=new PIXI.Graphics();
+      const fx=(f.x-f.w/2)*W,fy=(f.y-f.h/2)*H,fw=f.w*W,fh=f.h*H;
+      // Shadow
+      if(f.sh){fg.beginFill(0x000000,.25);fg.drawRoundedRect(fx+3,fy+3,fw,fh,4);fg.endFill()}
+      if(f.t==='circ'){
+        fg.beginFill(0x2a2218);fg.drawCircle(f.x*W,f.y*H,f.w*W/2);fg.endFill();
+        fg.lineStyle(1,0x3a3228,.5);fg.drawCircle(f.x*W,f.y*H,f.w*W/2);
+        // Seat cushion
+        fg.beginFill(0x342a1e);fg.drawCircle(f.x*W,f.y*H,f.w*W*.35);fg.endFill();
+      }else{
+        fg.beginFill(0x1e1a12);fg.drawRoundedRect(fx,fy,fw,fh,3);fg.endFill();
+        fg.lineStyle(.5,0xffffff,.04);fg.drawRoundedRect(fx,fy,fw,fh,3);
+        // Top highlight
+        fg.beginFill(0xffffff,.03);fg.drawRect(fx+1,fy,fw-2,2);fg.endFill();
+      }
+      app.stage.addChild(fg);
+      if(f.lbl){const t=new PIXI.Text(f.lbl,{fontFamily:'DM Sans',fontSize:Math.max(8,W*.01),fill:0xffffff});t.anchor.set(.5);t.position.set(f.x*W,(f.y+f.h/2)*H+H*.02);t.alpha=.07;app.stage.addChild(t)}
+    });
+
+    // === NOIR CHARACTERS (silhouettes with edge lighting) ===
+    function drawNoirChar(px,py,sz,config){
+      const con=new PIXI.Container();con.position.set(px*W,py*H);
+      const s=sz*W;const g=new PIXI.Graphics();
+
+      // Shadow on floor
+      g.beginFill(0x000000,.2);g.drawEllipse(0,s*.4,s*.2,s*.06);g.endFill();
+
+      // Body silhouette (dark)
+      g.beginFill(config.dark);
+      g.moveTo(-s*.18,s*.05);g.lineTo(-s*.22,s*.38);g.lineTo(s*.22,s*.38);g.lineTo(s*.18,s*.05);g.closePath();g.endFill();
+
+      // Edge light on body (warm rim)
+      g.lineStyle(1.5,config.rim,.35);
+      g.moveTo(-s*.18,s*.05);g.lineTo(-s*.22,s*.38);
+      g.moveTo(s*.18,s*.05);g.lineTo(s*.22,s*.38);
+
+      // Neck
+      g.lineStyle(0);g.beginFill(config.skin);g.drawRect(-s*.04,-.01*s,s*.08,s*.07);g.endFill();
+
+      // Head
+      g.beginFill(config.skin);g.drawEllipse(0,-s*.1,s*.1,s*.12);g.endFill();
+
+      // Eyes (small bright dots)
+      g.beginFill(0xffffff,.7);g.drawCircle(-s*.035,-s*.1,s*.012);g.drawCircle(s*.035,-s*.1,s*.012);g.endFill();
+      g.beginFill(0x111111);g.drawCircle(-s*.035,-s*.1,s*.008);g.drawCircle(s*.035,-s*.1,s*.008);g.endFill();
+
+      // Mouth line
+      g.lineStyle(.8,0x000000,.3);g.moveTo(-s*.03,-s*.04);g.lineTo(s*.03,-s*.04);
+
+      // Hair
+      g.lineStyle(0);g.beginFill(config.hair);
+      if(config.ht==='short'){g.drawEllipse(0,-s*.17,s*.11,s*.08)}
+      else if(config.ht==='long'){
+        g.drawEllipse(0,-s*.15,s*.12,s*.11);
+        g.drawRect(-s*.12,-s*.12,s*.04,s*.2);g.drawRect(s*.08,-s*.12,s*.04,s*.2);
+      }else if(config.ht==='bald'){g.drawEllipse(0,-s*.18,s*.08,s*.05)}
+      g.endFill();
+
+      // Arms with hands
+      g.beginFill(config.dark);
+      g.drawRoundedRect(-s*.25,s*.06,s*.08,s*.22,3);
+      g.drawRoundedRect(s*.17,s*.06,s*.08,s*.22,3);g.endFill();
+      // Edge light on arms
+      g.lineStyle(1,config.rim,.25);
+      g.moveTo(-s*.25,s*.06);g.lineTo(-s*.25,s*.28);
+      g.moveTo(s*.25,s*.06);g.lineTo(s*.25,s*.28);
+
+      // Hands
+      g.lineStyle(0);g.beginFill(config.skin);
+      g.drawCircle(-s*.21,s*.28,s*.03);g.drawCircle(s*.21,s*.28,s*.03);g.endFill();
+
+      con.addChild(g);
+
+      // Name
+      if(config.name){const t=new PIXI.Text(config.name,{fontFamily:'IBM Plex Mono',fontSize:Math.max(8,s*.22),fill:config.rim,fontWeight:'600',letterSpacing:1});t.anchor.set(.5);t.position.set(0,s*.48);t.alpha=.5;con.addChild(t)}
+
+      app.stage.addChild(con);
+
+      // Breathing + sway
+      con._t=Math.random()*Math.PI*2;
+      app.ticker.add(()=>{
+        con._t+=.02;
+        con.scale.y=1+Math.sin(con._t)*.008;
+        con.x=px*W+Math.sin(con._t*.4)*.6;
+      });
+      return con;
+    }
+
+    // Case-specific characters + details
+    if(c.id==='caso-001'){
+      drawNoirChar(.78,.37,.07,{dark:0x0a1a12,skin:0x8a7060,hair:0x1a1008,ht:'short',rim:0xc89050,name:'MARCO'});
+      drawNoirChar(.22,.58,.065,{dark:0x1a0a14,skin:0x9a8070,hair:0x0a0808,ht:'long',rim:0xc07080,name:'ISABEL'});
+      drawNoirChar(.78,.58,.065,{dark:0x10082a,skin:0x8a7060,hair:0x201008,ht:'long',rim:0x8080c0,name:'LUCÍA'});
+      // Wine glasses
+      const wg=new PIXI.Graphics();
+      [[.38,.44,true],[.60,.44,false],[.38,.56,false],[.60,.56,false]].forEach(([gx,gy,res])=>{
+        wg.lineStyle(1,0xaaaacc,.3);wg.drawEllipse(gx*W,gy*H,W*.008,H*.006);
+        wg.moveTo(gx*W,gy*H+H*.008);wg.lineTo(gx*W,gy*H+H*.02);
+        wg.drawEllipse(gx*W,gy*H+H*.02,W*.006,H*.003);
+        if(res){wg.lineStyle(0);wg.beginFill(0x801020,.35);wg.drawEllipse(gx*W,gy*H,W*.006,H*.004);wg.endFill();wg.lineStyle(1,0xaaaacc,.3)}
+      });
+      app.stage.addChild(wg);
+      // Candles
+      [.48,.52].forEach(cx=>{
+        const cg=new PIXI.Graphics();cg.beginFill(0xc8a050);cg.drawRect(cx*W-W*.003,H*.44,W*.006,H*.02);cg.endFill();
+        const flame=new PIXI.Graphics();flame.beginFill(0xffaa30,.8);flame.drawEllipse(cx*W,H*.435,W*.004,H*.008);flame.endFill();
+        app.stage.addChild(cg);app.stage.addChild(flame);
+        app.ticker.add(()=>{flame.alpha=.5+Math.sin(performance.now()*.01+cx*50)*.3;flame.scale.y=.8+Math.sin(performance.now()*.012)*.25});
+      });
+    }else if(c.id==='caso-002'){
+      drawNoirChar(.14,.46,.06,{dark:0x1a1a1e,skin:0x8a7060,hair:0x0a0808,ht:'long',rim:0x8090a0,name:''});
+      // Monitor glow
+      const mg=new PIXI.Graphics();mg.beginFill(0x4060a0,.04);mg.drawCircle(W*.39,H*.33,W*.08);mg.endFill();
+      app.stage.addChild(mg);app.ticker.add(()=>{mg.alpha=.3+Math.sin(performance.now()*.002)*.15});
+    }else if(c.id==='caso-003'){
+      drawNoirChar(.68,.50,.06,{dark:0x0a0a1a,skin:0x8a7060,hair:0x3a2a18,ht:'short',rim:0x9090b0,name:''});
+    }else if(c.id==='caso-004'){
+      drawNoirChar(.38,.44,.06,{dark:0x12122a,skin:0x8a7060,hair:0x0a0a0a,ht:'short',rim:0x7080c0,name:''});
+    }else if(c.id==='caso-005'){
+      // Waves
+      for(let i=0;i<5;i++){
+        const wave=new PIXI.Graphics();wave.lineStyle(1.5,0x203040,.08);
+        const wx=W*.1+i*W*.18,wy=H*.88;
+        wave.moveTo(wx,wy);wave.quadraticCurveTo(wx+W*.05,wy-H*.01,wx+W*.1,wy);
+        app.stage.addChild(wave);
+        app.ticker.add(()=>{wave.y=Math.sin(performance.now()*.001+i)*.3*3});
+      }
+    }
+
+    // === BODY OUTLINE ===
+    const bp=c.id==='caso-001'?{x:.22,y:.46}:c.id==='caso-002'?{x:.72,y:.56}:c.id==='caso-003'?{x:.65,y:.57}:c.id==='caso-004'?{x:.38,y:.47}:{x:.45,y:.52};
+    const bo=new PIXI.Graphics();bo.lineStyle(1.5,0xffffff,.1);
+    const bx=bp.x*W,by=bp.y*H,bs=W*.045;
+    bo.drawCircle(bx,by-bs*1.4,bs*.5);
+    bo.moveTo(bx,by-bs*.9);bo.lineTo(bx,by+bs*.6);
+    bo.moveTo(bx,by-bs*.4);bo.lineTo(bx-bs*.8,by);
+    bo.moveTo(bx,by-bs*.4);bo.lineTo(bx+bs*.7,by+bs*.1);
+    bo.moveTo(bx,by+bs*.6);bo.lineTo(bx-bs*.5,by+bs*1.4);
+    bo.moveTo(bx,by+bs*.6);bo.lineTo(bx+bs*.4,by+bs*1.5);
+    app.stage.addChild(bo);
+
+    // Crime scene tape
+    const tape=new PIXI.Graphics();tape.lineStyle(W*.008,0xe8c820,.35);
+    tape.moveTo(W*.88,H*.3);tape.lineTo(W*.88,H*.7);
+    app.stage.addChild(tape);
+
+    // === EVIDENCE (INVISIBLE until magnifying glass) ===
+    const evMarkers=[];
+    c.ev.forEach(e=>{
+      // Reveal marker
+      const con=new PIXI.Container();con.position.set(e.x*W,e.y*H);con.alpha=0;
+      const bg=new PIXI.Graphics();bg.lineStyle(2,0xe8a832,.5);bg.drawCircle(0,0,W*.02);
+      bg.beginFill(0xe8a832,.1);bg.drawCircle(0,0,W*.02);bg.endFill();con.addChild(bg);
+      const q=new PIXI.Text('❓',{fontSize:Math.max(14,W*.018)});q.anchor.set(.5);con.addChild(q);
+      app.ticker.add(()=>{q.scale.set(.85+Math.sin(performance.now()*.005)*.12)});
+      app.stage.addChild(con);
+
+      // Found marker
+      const fCon=new PIXI.Container();fCon.position.set(e.x*W,e.y*H);fCon.alpha=0;
+      const fBg=new PIXI.Graphics();fBg.lineStyle(1.5,0x2cb67d,.5);fBg.drawCircle(0,0,W*.02);
+      fBg.beginFill(0x2cb67d,.08);fBg.drawCircle(0,0,W*.02);fBg.endFill();fCon.addChild(fBg);
+      const fE=new PIXI.Text(e.em,{fontSize:Math.max(14,W*.018)});fE.anchor.set(.5);fCon.addChild(fE);
+      // Triangle marker
+      const tri=new PIXI.Graphics();tri.beginFill(0xe8c820);
+      const ts=W*.01;tri.moveTo(0,-W*.03-ts);tri.lineTo(-ts*.7,-W*.03+ts*.5);tri.lineTo(ts*.7,-W*.03+ts*.5);tri.closePath();tri.endFill();
+      fCon.addChild(tri);
+      app.stage.addChild(fCon);
+
+      evMarkers.push({con,fCon,ev:e,revealed:false});
+    });
+
+    // === MAGNIFYING GLASS ===
+    const magCon=new PIXI.Container();magCon.visible=false;magCon.zIndex=999;
+    const mr=W*.065;
+    const magGfx=new PIXI.Graphics();
+    // Lens fill
+    magGfx.beginFill(0xfff8e0,.05);magGfx.drawCircle(0,0,mr);magGfx.endFill();
+    // Grid
+    magGfx.lineStyle(.5,0xffffff,.03);
+    for(let i=-3;i<=3;i++){magGfx.moveTo(i*mr/3,-mr);magGfx.lineTo(i*mr/3,mr);magGfx.moveTo(-mr,i*mr/3);magGfx.lineTo(mr,i*mr/3)}
+    // Rim
+    magGfx.lineStyle(3,0xa89060,.5);magGfx.drawCircle(0,0,mr);
+    magGfx.lineStyle(1,0xc8b080,.3);magGfx.drawCircle(0,0,mr+2);
+    // Handle
+    magGfx.lineStyle(5,0x907848,.45);magGfx.moveTo(mr*.65,mr*.65);magGfx.lineTo(mr*1.1,mr*1.1);
+    magGfx.lineStyle(7,0x706030,.25);magGfx.moveTo(mr*.85,mr*.85);magGfx.lineTo(mr*1.1,mr*1.1);
+    // Reflection
+    magGfx.lineStyle(1.5,0xffffff,.07);magGfx.arc(-mr*.2,-mr*.25,mr*.3,-0.6,0.8);
+    magCon.addChild(magGfx);
+    app.stage.addChild(magCon);
+    app.stage.sortableChildren=true;
+
+    // === DUST ===
+    const dustArr=[];
+    for(let i=0;i<20;i++){
+      const p=new PIXI.Graphics();p.beginFill(0xffd4a0,.12+Math.random()*.08);p.drawCircle(0,0,.8+Math.random()*1.5);p.endFill();
+      p.position.set(Math.random()*W,Math.random()*H);p._sp=.08+Math.random()*.15;p._dr=Math.random()*Math.PI*2;
+      app.stage.addChild(p);dustArr.push(p);
+    }
+    app.ticker.add(()=>{dustArr.forEach(p=>{p.y-=p._sp;p.x+=Math.sin(performance.now()*.0008+p._dr)*.12;if(p.y<0){p.y=H;p.x=Math.random()*W}})});
+
+    // Finger hint when not touching
+    const hint=new PIXI.Text('👆',{fontSize:Math.max(20,W*.03)});
+    hint.anchor.set(.5);hint.position.set(W*.5,H*.9);
+    app.stage.addChild(hint);
+    app.ticker.add(()=>{hint.alpha=magCon.visible?0:(.15+Math.sin(performance.now()*.003)*.1)});
+
+    // === INPUT ===
+    function reveal(mx,my){
+      const rd=W*.1;
+      evMarkers.forEach(m=>{
+        if(m.ev._found)return;
+        const d=Math.hypot(mx-m.con.x,my-m.con.y);
+        if(d<rd){m.con.alpha=Math.min(1,(1-d/rd)*2);m.revealed=true}
+        else{m.con.alpha=Math.max(0,m.con.alpha-.04);if(m.con.alpha<.05)m.revealed=false}
+      });
+    }
+
+    app.view.addEventListener('pointerdown',e=>{
+      const r=app.view.getBoundingClientRect();
+      const mx=(e.clientX-r.left)*W/r.width,my=(e.clientY-r.top)*H/r.height;
+      magCon.visible=true;magCon.position.set(mx,my);reveal(mx,my);
+    });
+    app.view.addEventListener('pointermove',e=>{
+      if(!magCon.visible)return;
+      const r=app.view.getBoundingClientRect();
+      const mx=(e.clientX-r.left)*W/r.width,my=(e.clientY-r.top)*H/r.height;
+      magCon.position.set(mx,my);reveal(mx,my);
+    });
+    app.view.addEventListener('pointerup',e=>{
+      evMarkers.forEach(m=>{
+        if(m.ev._found||!m.revealed)return;
+        const d=Math.hypot(magCon.x-m.con.x,magCon.y-m.con.y);
+        if(d<W*.04){
+          discoverEvidence(m.ev);
+          m.con.alpha=0;m.fCon.alpha=1;
+        }
+      });
+      magCon.visible=false;
+      evMarkers.forEach(m=>{if(!m.ev._found){m.con.alpha=0;m.revealed=false}});
+    });
+  }
+
+  function showToast(ev){
+    document.querySelectorAll('.toast').forEach(t=>t.remove());
+    const t=document.createElement('div');t.className='toast';
+    t.innerHTML='<div class="toast-in"><div class="toast-ic">'+ev.em+'</div><div class="toast-tx"><div class="toast-nm">'+ev.nm+'</div><div class="toast-tp">'+ev.tp+' · '+ev.rel+'</div></div></div>';
+    t.onclick=()=>evModal(ev.id);
+    document.getElementById('game').appendChild(t);
+    setTimeout(()=>{if(t.parentNode)t.remove()},3000);
+  }
+
+  function endScene(){
+    stopT('h-scene');
+    if(_app){_app.destroy(true,{children:true});_app=null}
+    if(!st.ev.length)st.ev=st.cs.ev.slice(0,3);
+    updInv();
+    phase(2,'Interrogatorio','Enfrenta a los sospechosos con tus pruebas.',startTesti);
+  }
+
+  // ==== PHASE 2: TESTIMONY ====
+  function startTesti(){
+    hud('h-testi','FASE 2 · INTERROGATORIO',st.cs.title);go('testi');
+    const list=document.getElementById('t-list');list.innerHTML='';
+    // Show suspect cards to select who to interrogate
+    let html='<div style="font-size:13px;font-weight:600;margin-bottom:4px">Elige a quién interrogar</div><div style="font-size:11px;color:var(--t3);margin-bottom:12px">Pulsa en un sospechoso para iniciar el interrogatorio</div>';
+    st.cs.sus.forEach(s=>{
+      html+=`<div class="sus-card" id="sc-${s.id}" style="cursor:pointer" onclick="G.openInterrogation('${s.id}')">
+        <div class="sus-hd"><div class="sus-av" style="background:${s.bg}">${s.av}</div><div style="flex:1"><div class="sus-nm">${s.nm}</div><div class="sus-rl">${s.rl} · ${s.age} años</div></div><div id="status-${s.id}" style="font-size:10px;color:var(--t3)">Sin interrogar</div></div>
+      </div>`;
+    });
+    list.innerHTML=html;
+    startT('h-testi',150,endTesti);hudPts('h-testi');hudSub('h-testi',`${st.con.length} contradicciones`);
+  }
+
+  // Dedicated interrogation session per suspect
+  let _interrogating=null;
+  function openInterrogation(sid){
+    const s=st.cs.sus.find(x=>x.id===sid);if(!s)return;
+    _interrogating=sid;SFX.click();
+    const list=document.getElementById('t-list');
+    const pregs=s.preguntas||[];
+    const chips=st.ev.map(e=>`<button class="ev-chip" data-e="${e.id}" data-s="${s.id}" onclick="G.showEv('${e.id}','${s.id}')">${e.em} ${e.nm}</button>`).join('');
+
+    list.innerHTML=`
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <button class="bt bt-s2 bt-sm" onclick="G.backToSuspects()">← Volver</button>
+        <div style="flex:1"><div style="font-size:14px;font-weight:600">${s.av} ${s.nm}</div><div style="font-size:11px;color:var(--t3)">${s.rl} · ${s.age} años</div></div>
+      </div>
+      <div class="sus-quote" style="margin-bottom:12px"><div class="sus-quote-text">${s.qt}</div></div>
+      <div class="sus-grid" style="margin-bottom:12px">
+        <div class="sus-detail"><div class="sus-detail-l">Relación</div><div class="sus-detail-v">${s.rel}</div></div>
+        <div class="sus-detail"><div class="sus-detail-l">Coartada</div><div class="sus-detail-v">${s.ali}</div></div>
+        <div class="sus-detail"><div class="sus-detail-l">Posible motivo</div><div class="sus-detail-v">${s.mot}</div></div>
+        <div class="sus-detail"><div class="sus-detail-l">Sospecha</div><div class="sus-detail-v">${s.guilty?'Evidencia en su contra':'Sin evidencia directa'}</div></div>
+      </div>
+      ${pregs.length?`<div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:8px">💬 PREGUNTAS (${pregs.length} disponibles)</div>
+      <div id="question-area-${s.id}"></div>`:''}
+      <div id="answers-${s.id}" style="margin-bottom:12px"></div>
+      <div style="font-size:12px;font-weight:600;color:var(--teal);margin:12px 0 8px">🔍 MOSTRAR EVIDENCIA</div>
+      <div class="sus-chips">${chips}</div>
+      <div id="ct-${s.id}"></div>
+    `;
+
+    // Show questions one at a time
+    if(pregs.length){
+      showNextQuestion(s.id,0);
+    }
+  }
+
+  function showNextQuestion(sid,qi){
+    const s=st.cs.sus.find(x=>x.id===sid);if(!s||!s.preguntas||qi>=s.preguntas.length)return;
+    const area=document.getElementById('question-area-'+sid);if(!area)return;
+    const p=s.preguntas[qi];
+    area.innerHTML=`
+      <div style="padding:12px;background:var(--s2);border-radius:var(--r);border:1px solid var(--s3);margin-bottom:8px">
+        <div style="font-size:10px;color:var(--t3);margin-bottom:6px">PREGUNTA ${qi+1} DE ${s.preguntas.length}</div>
+        <div style="font-size:13px;color:var(--t1);margin-bottom:10px;line-height:1.5">${p.q}</div>
+        <button class="bt bt-red bt-sm bt-block" onclick="G.askQ('${sid}',${qi})">Preguntar →</button>
+      </div>`;
+  }
+
+  function askQ(sid,qi){
+    const s=st.cs.sus.find(x=>x.id===sid);
+    if(!s||!s.preguntas||!s.preguntas[qi])return;
+    const p=s.preguntas[qi];
+    const isLie=p.mentira;
+
+    // Add answer to answers area
+    const answers=document.getElementById('answers-'+sid);
+    const div=document.createElement('div');
+    div.style.cssText='padding:10px 12px;background:var(--s2);border-radius:var(--r);margin-bottom:6px;border-left:3px solid '+(isLie?'var(--red)':'var(--teal)')+';animation:susIn .3s ease';
+    div.innerHTML=`
+      <div style="font-size:10.5px;color:var(--t3);margin-bottom:3px;font-weight:600">TÚ: ${p.q}</div>
+      <div style="font-size:13px;color:var(--t1);line-height:1.6;font-style:italic;margin-bottom:6px">"${p.r}"</div>
+      <div style="font-size:11px;color:${isLie?'var(--red)':'var(--teal)'};line-height:1.4;font-weight:600">${isLie?'🔴 RESPUESTA SOSPECHOSA':'🟢 RESPUESTA COHERENTE'}</div>
+      <div style="font-size:10.5px;color:var(--t2);margin-top:3px;line-height:1.4">${p.pista}</div>`;
+    answers.appendChild(div);
+    answers.scrollIntoView({behavior:'smooth',block:'end'});
+
+    if(isLie){st.sc+=5}else{st.sc+=2}
+    hudPts('h-testi');
+    SFX.click();
+
+    // Show next question or finish
+    if(qi+1<s.preguntas.length){
+      showNextQuestion(sid,qi+1);
+    }else{
+      const area=document.getElementById('question-area-'+sid);
+      if(area)area.innerHTML='<div style="padding:8px 12px;background:var(--s2);border-radius:var(--r);font-size:11px;color:var(--teal);text-align:center">✅ Interrogatorio completado — revisa las respuestas y muestra evidencias</div>';
+    }
+  }
+
+  function backToSuspects(){
+    _interrogating=null;
+    // Update statuses
+    startTesti_list();
+  }
+
+  function startTesti_list(){
+    const list=document.getElementById('t-list');list.innerHTML='';
+    let html='<div style="font-size:13px;font-weight:600;margin-bottom:4px">Elige a quién interrogar</div><div style="font-size:11px;color:var(--t3);margin-bottom:12px">Pulsa en un sospechoso para iniciar el interrogatorio</div>';
+    st.cs.sus.forEach(s=>{
+      const hasContr=st.con.includes(s.id);
+      const statusText=hasContr?'⚠️ Contradicción':(_interrogating===s.id||document.getElementById('answers-'+s.id))?'✅ Interrogado':'Sin interrogar';
+      const statusColor=hasContr?'var(--red)':'var(--t3)';
+      html+=`<div class="sus-card ${hasContr?'contr':''}" style="cursor:pointer" onclick="G.openInterrogation('${s.id}')">
+        <div class="sus-hd"><div class="sus-av" style="background:${s.bg}">${s.av}</div><div style="flex:1"><div class="sus-nm">${s.nm}</div><div class="sus-rl">${s.rl} · ${s.age} años</div></div><div style="font-size:10px;color:${statusColor}">${statusText}</div></div>
+      </div>`;
+    });
+    list.innerHTML=html;
+  }
+
+  function togSus(sid){}
+
+  function askQuestion(sid,qi){askQ(sid,qi)}
+
+  function showEv(eid,sid){
+    const sus=st.cs.sus.find(s=>s.id===sid);
+    const btn=document.querySelector(`.ev-chip[data-e="${eid}"][data-s="${sid}"]`);
+    if(!btn||btn.classList.contains('used')||btn.classList.contains('hit')||btn.classList.contains('miss'))return;
+    if(sus.cEv===eid){
+      btn.classList.add('hit');
+      const ct=document.getElementById('ct-'+sid);
+      if(ct)ct.innerHTML=`<div class="contr-box"><div class="contr-hd"><span>⚠️</span><span>CONTRADICCIÓN ENCONTRADA</span></div><div class="contr-tx">${sus.cTx}</div></div>`;
+      st.con.push(sid);st.sc+=30;SFX.contr();
+      if(navigator.vibrate)navigator.vibrate([80,40,80]);
+    }else{btn.classList.add('miss');st.sc+=2;SFX.click()}
+    hudPts('h-testi');hudSub('h-testi',`${st.con.length} contradicciones`);
+  }
+
+  function endTesti(){stopT('h-testi');phase(3,'Deducción','Analiza las pruebas y construye tu teoría.',startDed)}
+
+  // ==== PHASE 3: DEDUCTION (visual board) ====
+  function startDed(){
+    hud('h-ded','FASE 3 · DEDUCCIÓN',st.cs.title);go('deduct');
+    const scroll=document.getElementById('d-list');
+    const strL={s:'SÓLIDA',m:'POSIBLE',w:'DÉBIL'};const strP={s:'pill-g',m:'pill-f',w:'pill-d'};const strC={s:'str-s',m:'str-m',w:'str-w'};
+
+    // === EVIDENCE BOARD ===
+    let html=`<div class="d-header"><div class="d-title">📋 Tablero de investigación</div><div class="d-sub">Revisa las pruebas, evalúa a los sospechosos y elige tu hipótesis.</div></div>`;
+
+    // Evidence found summary
+    html+='<div style="font-size:11px;font-weight:600;color:var(--amber);margin-bottom:6px">PRUEBAS ENCONTRADAS ('+st.ev.length+'/'+st.cs.ev.length+')</div>';
+    html+='<div class="d-ev-bar" style="margin-bottom:14px">';
+    st.ev.forEach(e=>{html+=`<span class="d-ev-pip on" onclick="G.evModal('${e.id}')" style="cursor:pointer">${e.em} ${e.nm}</span>`});
+    const notFound=st.cs.ev.filter(e=>!st.ev.some(f=>f.id===e.id));
+    notFound.forEach(()=>{html+='<span class="d-ev-pip">❓ ???</span>'});
+    html+='</div>';
+
+    // Contradictions found
+    if(st.con.length>0){
+      html+='<div style="font-size:11px;font-weight:600;color:var(--red);margin-bottom:6px">CONTRADICCIONES DETECTADAS ('+st.con.length+')</div>';
+      html+='<div style="margin-bottom:14px">';
+      st.con.forEach(sid=>{
+        const s=st.cs.sus.find(x=>x.id===sid);
+        if(s)html+=`<div style="padding:8px 10px;background:var(--redA);border:1px solid rgba(232,54,75,.15);border-radius:var(--r);margin-bottom:4px;font-size:11.5px;color:var(--t1)">⚠️ <strong>${s.nm}</strong> — mintió en su declaración</div>`;
+      });
+      html+='</div>';
+    }
+
+    // Suspect strength meters
+    html+='<div style="font-size:11px;font-weight:600;color:var(--teal);margin-bottom:8px">NIVEL DE SOSPECHA</div>';
+    html+='<div style="padding:12px;background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2);margin-bottom:14px">';
+    st.cs.sus.forEach(s=>{
+      const hasContr=st.con.includes(s.id);
+      const liesCount=s.preguntas?s.preguntas.filter(p=>p.mentira).length:0;
+      const totalQ=s.preguntas?s.preguntas.length:1;
+      let suspLevel=20;
+      if(hasContr)suspLevel+=40;
+      if(s.guilty)suspLevel+=20;
+      suspLevel+=Math.round(liesCount/totalQ*20);
+      suspLevel=Math.min(95,suspLevel);
+      const barColor=suspLevel>65?'var(--red)':suspLevel>40?'var(--amber)':'var(--teal)';
+      const label=suspLevel>65?'ALTA':suspLevel>40?'MEDIA':'BAJA';
+      html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <div style="font-size:16px;width:24px;text-align:center">${s.av}</div>
+        <div style="font-size:12px;width:80px;flex-shrink:0;font-weight:500">${s.nm}</div>
+        <div style="flex:1;height:8px;background:var(--s3);border-radius:4px;overflow:hidden"><div style="width:${suspLevel}%;height:100%;background:${barColor};border-radius:4px;transition:width .8s ease"></div></div>
+        <div style="font-size:9px;font-weight:700;color:${barColor};width:36px;text-align:right">${label}</div>
+      </div>`;
+    });
+    html+='</div>';
+
+    // Hypotheses
+    html+='<div style="font-size:11px;font-weight:600;color:var(--t2);margin-bottom:8px">ELIGE TU HIPÓTESIS</div>';
+    st.cs.hyp.forEach(h=>{
+      const matched=h.ev.filter(id=>st.ev.some(e=>e.id===id));const pct=h.ev.length?Math.round(matched.length/h.ev.length*100):0;
+      html+=`<div class="hyp ${strC[h.str]}" id="hy-${h.id}" onclick="G.pickHyp('${h.id}')">
+        <div class="hyp-top"><div class="hyp-dot"></div><div class="hyp-lb">${h.lb}</div><span class="pill ${strP[h.str]} hyp-str">${strL[h.str]}</span></div>
+        <div class="hyp-tx">${h.tx}</div>
+        <div class="hyp-conns">${h.cn.map(c=>`<span class="hyp-cn">${c}</span>`).join('')}</div>
+        <div style="margin-top:6px;padding-left:26px">
+          <div style="display:flex;align-items:center;gap:6px">
+            <div style="flex:1;height:4px;background:var(--s3);border-radius:2px;overflow:hidden"><div style="width:${pct}%;height:100%;background:${pct>70?'var(--green)':pct>40?'var(--amber)':'var(--red)'};border-radius:2px"></div></div>
+            <div style="font-size:10px;color:var(--t3)">${matched.length}/${h.ev.length} pruebas (${pct}%)</div>
+          </div>
+        </div>
+      </div>`;
+    });
+    scroll.innerHTML=html;
+    startT('h-ded',90,goAccuse);hudPts('h-ded');
+  }
+
+  function pickHyp(hid){document.querySelectorAll('.hyp').forEach(h=>h.classList.remove('sel'));document.getElementById('hy-'+hid).classList.add('sel');st.hyp=hid;SFX.click()}
+
+  function goAccuse(){
+    stopT('h-ded');
+    if(st.hyp){const strong=st.cs.hyp.find(h=>h.str==='s');st.sc+=st.hyp===strong?.id?25:5}
+    phase(4,'Acusación','¿Quién es el culpable?',startAcc);
+  }
+
+  // ==== PHASE 4: ACCUSATION ====
+  function startAcc(){
+    hud('h-acc','FASE 4 · ACUSACIÓN',st.cs.title);go('accuse');
+    const body=document.getElementById('a-body');
+    let opts='';st.cs.sus.forEach(s=>{opts+=`<div class="a-opt" id="ao-${s.id}" onclick="G.pickAcc('${s.id}')"><div class="a-av" style="background:${s.bg}">${s.av}</div><div><div class="a-opt-nm">${s.nm}</div><div class="a-opt-rl">${s.rl}</div></div></div>`});
+    body.innerHTML=`<div class="a-q">¿Quién es el culpable?</div><div class="a-sub">Una acusación errónea tiene consecuencias. Si no estás seguro, puedes dejar el caso sin resolver.</div><div class="a-list">${opts}</div><div class="a-btns"><button class="bt bt-red bt-block" id="btn-acc" onclick="G.doAccuse()" disabled>ACUSAR</button><button class="bt bt-ghost bt-block" onclick="G.unsolved()">Dejar caso sin resolver</button></div>`;
+    startT('h-acc',50,()=>{st.acc?doAccuse():unsolved()});hudPts('h-acc');
+  }
+
+  function pickAcc(sid){document.querySelectorAll('.a-opt').forEach(o=>o.classList.remove('pick'));document.getElementById('ao-'+sid).classList.add('pick');st.acc=sid;document.getElementById('btn-acc').disabled=false;SFX.click()}
+
+  function doAccuse(){
+    if(!st.acc)return;stopT('h-acc');
+    st.tt=Math.round((Date.now()-st.t0)/1000);
+    const ok=st.acc===st.cs.sol.who;
+    if(ok)st.sc+=50;else st.sc=Math.max(0,st.sc-10);
+    verdict(ok?'ok':'no');
+  }
+
+  function unsolved(){stopT('h-acc');st.tt=Math.round((Date.now()-st.t0)/1000);st.sc+=5;verdict('un')}
+
+  // ==== VERDICT ====
+  function verdict(res){
+    const c=st.cs,sol=c.sol,guilty=c.sus.find(s=>s.id===sol.who);
+    let rk;if(st.sc>=110)rk='S';else if(st.sc>=80)rk='A';else if(st.sc>=55)rk='B';else if(st.sc>=30)rk='C';else rk='D';
+    if(res==='ok')SFX.ok();else SFX.no();
+    if(res==='ok'&&navigator.vibrate)navigator.vibrate([40,20,40,20,80]);
+    const fmt=s=>{const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')};
+    const ti={ok:'Caso resuelto',no:'Acusación errónea',un:'Caso archivado'};
+    const su={ok:`Has identificado correctamente a <strong>${guilty.nm}</strong>.`,no:`Persona equivocada. El culpable era <strong>${guilty.nm}</strong>.`,un:`Caso sin resolver. El culpable era <strong>${guilty.nm}</strong>.`};
+    document.getElementById('vd-body').innerHTML=`
+      <div class="vd-center">
+        <div class="vd-ic ${res}">${res==='ok'?'✅':res==='no'?'❌':'📁'}</div>
+        <div class="vd-title">${ti[res]}</div>
+        <div class="vd-sub">${su[res]}</div>
+        <div class="rk rk-${rk}"><div class="rk-letter">${rk}</div><div class="rk-label">RANGO DE DETECTIVE</div></div>
+        <div class="st-grid">
+          <div class="st-card"><div class="st-v" style="color:var(--amber)">${st.sc}</div><div class="st-l">Puntos</div></div>
+          <div class="st-card"><div class="st-v">${st.ev.length}/${c.ev.length}</div><div class="st-l">Pruebas</div></div>
+          <div class="st-card"><div class="st-v" style="color:${st.con.length?'var(--red)':'var(--t3)'}">${st.con.length}</div><div class="st-l">Contradicciones</div></div>
+          <div class="st-card"><div class="st-v">${fmt(st.tt)}</div><div class="st-l">Tiempo</div></div>
+        </div>
+        <div class="vd-exp"><h4>RESOLUCIÓN</h4><p>${sol.why}</p><span class="pill pill-f" style="margin-top:10px">CASO 100% FICTICIO</span></div>
+        <div style="width:100%;max-width:340px;margin-bottom:14px;padding:12px;background:var(--s1);border:1px solid var(--s3);border-radius:var(--r2)">
+          <div style="font-size:10px;font-weight:600;color:var(--t3);margin-bottom:6px;letter-spacing:.4px">DESGLOSE</div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t2);padding:3px 0"><span>Pruebas encontradas (${st.ev.length}×15)</span><span style="color:var(--amber)">+${st.ev.length*15}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t2);padding:3px 0"><span>Contradicciones (${st.con.length}×30)</span><span style="color:var(--red)">+${st.con.length*30}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t2);padding:3px 0"><span>Acusación</span><span style="color:${res==='ok'?'var(--green)':'var(--red)'}">${res==='ok'?'+50':res==='no'?'-10':'+5'}</span></div>
+        </div>
+        <div class="vd-acts">
+          <button class="bt bt-amber bt-sm" onclick="G.share('${rk}',${res==='ok'})">📱 Compartir</button>
+          <button class="bt bt-s2 bt-sm" onclick="G.loadCase(G.getCase())">↻ Rejugar</button>
+          <button class="bt bt-s2 bt-sm" onclick="G.goSelect()">Más casos</button>
+        </div>
+        <button class="bt bt-ghost" onclick="G.go('title')">Menú</button>
+        <div class="vd-brand">VIRALIXWEB.ES</div>
+      </div>`;
+    go('verdict');
+  }
+
+  // ==== SHARE ====
+  function share(rk,ok){
+    const c=st.cs,fmt=s=>{const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')};
+    const text=`${ok?'✅':'❌'} VIRALIX: CASO ABIERTO\n\n🔍 "${c.title}"\n🏆 Rango: ${rk} · ${st.sc} pts\n🔎 Pruebas: ${st.ev.length}/${c.ev.length}\n⚡ Contradicciones: ${st.con.length}\n⏱ ${fmt(st.tt)}\n\n¿Puedes superarme?\n👉 viralixweb.es/juego`;
+    if(IS_TG){try{Telegram.WebApp.openTelegramLink('https://t.me/share/url?text='+encodeURIComponent(text))}catch(e){}}
+    else if(navigator.share)navigator.share({title:'VIRALIX: CASO ABIERTO',text}).catch(()=>{});
+    else{navigator.clipboard?.writeText(text).then(()=>alert('Copiado')).catch(()=>prompt('Copia:',text))}
+    genShareImg(rk,ok);
+  }
+
+  function genShareImg(rk,ok){
+    const cv=document.getElementById('shareCanvas');cv.width=1080;cv.height=1920;const x=cv.getContext('2d');const c=st.cs;
+    const fmt=s=>{const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')};
+    x.fillStyle='#060609';x.fillRect(0,0,1080,1920);
+    const tg=x.createLinearGradient(0,0,1080,0);tg.addColorStop(0,'#e8364b');tg.addColorStop(1,'transparent');x.fillStyle=tg;x.fillRect(0,0,1080,4);
+    x.textAlign='center';x.font='bold 38px IBM Plex Mono,monospace';x.fillStyle='#e8364b';x.fillText('VIRALIX',540,105);
+    x.font='500 14px IBM Plex Mono,monospace';x.fillStyle='#d4952a';x.fillText('CASO ABIERTO',540,132);
+    x.font='700 44px DM Sans,sans-serif';x.fillStyle='#e6e2dc';x.fillText(`"${c.title}"`,540,260);
+    x.font='400 16px DM Sans,sans-serif';x.fillStyle='#5e5a54';x.fillText(c.loc,540,295);
+    const rc={S:'#d4952a',A:'#1ac8b0',B:'#2cb67d',C:'#5e5a54',D:'#e8364b'};
+    x.font='bold 160px IBM Plex Mono,monospace';x.fillStyle=rc[rk];x.shadowColor=rc[rk];x.shadowBlur=35;x.fillText(rk,540,520);x.shadowBlur=0;
+    x.font='500 14px DM Sans,sans-serif';x.fillStyle='#5e5a54';x.fillText('RANGO DE DETECTIVE',540,560);
+    const stats=[{v:st.sc+'',l:'PUNTOS'},{v:`${st.ev.length}/${c.ev.length}`,l:'PRUEBAS'},{v:st.con.length+'',l:'CONTRADICCIONES'},{v:fmt(st.tt),l:'TIEMPO'}];
+    stats.forEach((s,i)=>{const sx=i%2===0?310:770,sy=i<2?700:830;x.fillStyle='#0c0c12';rr(x,sx-130,sy-40,260,80,10);x.fill();x.strokeStyle='#18182220';x.lineWidth=1;rr(x,sx-130,sy-40,260,80,10);x.stroke();x.font='bold 32px IBM Plex Mono,monospace';x.fillStyle='#e6e2dc';x.textAlign='center';x.fillText(s.v,sx,sy+4);x.font='600 10px DM Sans,sans-serif';x.fillStyle='#5e5a54';x.fillText(s.l,sx,sy+28)});
+    x.font='bold 28px DM Sans,sans-serif';x.fillStyle=ok?'#2cb67d':'#e8364b';x.fillText(ok?'✅ CASO RESUELTO':'❌ NO RESUELTO',540,1020);
+    x.fillStyle='#0c0c12';rr(x,160,1140,760,90,10);x.fill();x.font='600 22px DM Sans,sans-serif';x.fillStyle='#e6e2dc';x.fillText('¿Puedes superarme?',540,1182);x.font='500 16px IBM Plex Mono,monospace';x.fillStyle='#d4952a';x.fillText('viralixweb.es/juego',540,1212);
+    x.font='bold 11px DM Sans,sans-serif';x.fillStyle='rgba(212,149,42,.4)';x.fillText('FICCIÓN INTERACTIVA',540,1360);
+    x.font='500 12px IBM Plex Mono,monospace';x.fillStyle='#3a3832';x.fillText('VIRALIXWEB.ES',540,1860);
+    try{cv.toBlob(b=>{if(!b)return;const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=`viralix-${c.id}.png`;a.click();URL.revokeObjectURL(u)},'image/png')}catch(e){}
+  }
+  function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);c.closePath()}
+
+  // -- Viewport --
+  const fixVP=()=>document.getElementById('game').style.height=window.innerHeight+'px';
+  window.addEventListener('resize',fixVP);fixVP();
+
+  // -- Pause timers when app goes to background --
+  let pausedTimers={};
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){
+      // Pause all active timers
+      Object.keys(tmr).forEach(k=>{
+        if(tmr[k]){
+          clearInterval(tmr[k]);
+          const el=document.getElementById(k+'-t');
+          if(el)pausedTimers[k]=parseInt(el.textContent)||0;
+        }
+      });
+    }else{
+      // Resume paused timers
+      Object.keys(pausedTimers).forEach(k=>{
+        if(pausedTimers[k]>0){
+          const remaining=pausedTimers[k];
+          const cb=k==='h-scene'?endScene:k==='h-testi'?endTesti:k==='h-ded'?goAccuse:k==='h-acc'?()=>{st.acc?doAccuse():unsolved()}:()=>{};
+          startT(k,remaining,cb);
+        }
+      });
+      pausedTimers={};
+    }
+  });
+
+  // -- Close inventory when changing screens --
+  const _origGo=go;
+  go=function(id){
+    invOpen=false;
+    document.getElementById('inv-sheet').classList.remove('open');
+    _origGo(id);
+  };
+
+  // -- Ad interstitial between cases --
+  function showAdSlot(cb){
+    // This is where you integrate your ad network (Monetag/RichAds)
+    // For now, show a brief branded interstitial
+    const ad=document.createElement('div');
+    ad.style.cssText='position:fixed;inset:0;z-index:500;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:scrIn .3s';
+    ad.innerHTML='<div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--t4);margin-bottom:12px">PUBLICIDAD</div><div style="width:300px;height:250px;background:var(--s1);border:1px dashed var(--s3);border-radius:var(--r2);display:flex;align-items:center;justify-content:center"><div style="text-align:center"><div style="font-size:24px;margin-bottom:8px">🔍</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">Espacio publicitario<br>300×250</div></div></div><button class="bt bt-s2 bt-sm" style="margin-top:20px" onclick="this.parentElement.remove()">Continuar →</button>';
+    // TODO: Replace above with actual ad code:
+    // window.yaContextCb?.push(()=>{Ya.Context.AdvManager.render({...})})
+    // or Monetag interstitial
+    document.getElementById('game').appendChild(ad);
+  }
+
+
+  // ==== SAVE/LOAD ====
+  function getSave(caseId){try{const d=localStorage.getItem('vx-'+caseId);return d?JSON.parse(d):null}catch(e){return null}}
+  function setSave(caseId,data){try{localStorage.setItem('vx-'+caseId,JSON.stringify(data))}catch(e){}}
+  function getAllSaves(){const r=[];CASES.forEach(c=>{const s=getSave(c.id);if(s)r.push({...s,caseId:c.id,title:c.title})});return r}
+
+  // ==== SETTINGS ====
+  let settings={sound:true,vibration:true};
+  function loadSettings(){try{const s=localStorage.getItem('vx-settings');if(s)settings=JSON.parse(s)}catch(e){}}
+  function saveSettings(){try{localStorage.setItem('vx-settings',JSON.stringify(settings))}catch(e){}}
+  loadSettings();
+
+  function togSet(key){
+    settings[key]=!settings[key];saveSettings();
+    const el=document.getElementById('tog-'+key);
+    el.classList.toggle('on',settings[key]);
+    if(key==='sound'){if(settings.sound){SFX.amb()}else{/* mute handled in SFX calls */}}
+    SFX.click();
+  }
+
+  function applySettings(){
+    document.getElementById('tog-sound').classList.toggle('on',settings.sound);
+    document.getElementById('tog-vibration').classList.toggle('on',settings.vibration);
+  }
+
+  function resetProgress(){
+    if(!confirm('¿Borrar todo el progreso? Esta acción no se puede deshacer.'))return;
+    CASES.forEach(c=>{try{localStorage.removeItem('vx-'+c.id)}catch(e){}});
+    SFX.click();alert('Progreso borrado');
+  }
+
+  // ==== STATS ====
+  function goStats(){
+    applySettings();
+    const saves=getAllSaves();
+    const body=document.getElementById('stats-body');
+    if(!saves.length){
+      body.innerHTML='<div class="stats-empty">Aún no has completado ningún caso.</div>';
+      go('stats');return;
+    }
+    const totalPts=saves.reduce((a,s)=>a+s.score,0);
+    const solved=saves.filter(s=>s.result==='ok').length;
+    let html=`<div class="stats-total">
+      <div class="stats-total-card"><div class="stats-total-v" style="color:var(--amber)">${saves.length}</div><div class="stats-total-l">Casos jugados</div></div>
+      <div class="stats-total-card"><div class="stats-total-v" style="color:var(--green)">${solved}</div><div class="stats-total-l">Resueltos</div></div>
+      <div class="stats-total-card"><div class="stats-total-v">${totalPts}</div><div class="stats-total-l">Pts total</div></div>
+    </div>`;
+    saves.forEach(s=>{
+      html+=`<div class="stats-card"><div class="stats-case-nm">${s.result==='ok'?'✅':'❌'} ${s.title}</div><div class="stats-case-info"><span>Rango: ${s.rank}</span><span>${s.score} pts</span><span>${s.evidence}/${s.totalEv} pruebas</span><span>${s.time}</span></div></div>`;
+    });
+    body.innerHTML=html;
+    go('stats');
+  }
+
+  // ==== TUTORIAL ====
+  let tutStep=0;
+  const tutData=[
+    {step:'1 de 4',title:'Examina la escena',text:'Toca las zonas sospechosas de la habitación para descubrir pruebas. Cada prueba suma puntos y te ayuda a resolver el caso.'},
+    {step:'2 de 4',title:'Interroga sospechosos',text:'Lee los testimonios y muestra tus pruebas a los sospechosos. Si una prueba contradice su versión, descubrirás una contradicción.'},
+    {step:'3 de 4',title:'Construye tu hipótesis',text:'Analiza todas las pruebas y selecciona la teoría que mejor explique los hechos. Las hipótesis más sólidas tienen más evidencia.'},
+    {step:'4 de 4',title:'Acusa al culpable',text:'Elige a quién acusar. Una acusación correcta da 50 puntos extra. Si no estás seguro, puedes dejar el caso sin resolver.'},
+  ];
+
+  function showTutorial(cb){
+    const first=!localStorage.getItem('vx-tut-done');
+    if(!first){cb();return}
+    tutStep=0;renderTut(cb);
+  }
+
+  function renderTut(cb){
+    document.querySelectorAll('.tut-overlay').forEach(e=>e.remove());
+    if(tutStep>=tutData.length){
+      try{localStorage.setItem('vx-tut-done','1')}catch(e){}
+      cb();return;
+    }
+    const t=tutData[tutStep];
+    const dots=tutData.map((_,i)=>`<div class="tut-dot${i===tutStep?' on':''}"></div>`).join('');
+    const el=document.createElement('div');el.className='tut-overlay';
+    el.innerHTML=`<div class="tut-card"><div class="tut-step">${t.step}</div><div class="tut-title">${t.title}</div><div class="tut-text">${t.text}</div><div class="tut-dots">${dots}</div><button class="bt bt-red bt-block" onclick="G.nextTut()">${tutStep<tutData.length-1?'Siguiente':'Empezar'}</button>${tutStep>0?'<button class="bt bt-ghost bt-block" onclick="G.skipTut()">Saltar tutorial</button>':''}</div>`;
+    document.getElementById('game').appendChild(el);
+    el._cb=cb;
+  }
+
+  function nextTut(){tutStep++;const cb=document.querySelector('.tut-overlay')?._cb||(()=>{});renderTut(cb)}
+  function skipTut(){document.querySelectorAll('.tut-overlay').forEach(e=>e.remove());try{localStorage.setItem('vx-tut-done','1')}catch(e){}}
+
+  // Override startScene to include tutorial
+  const _origStartScene=startScene;
+  startScene=function(){
+    showTutorial(()=>_origStartScene());
+  }
+
+  // Save result on verdict
+  const _origVerdict=verdict;
+  verdict=function(res){
+    _origVerdict(res);
+    const c=st.cs;
+    const rk=st.sc>=110?'S':st.sc>=80?'A':st.sc>=55?'B':st.sc>=30?'C':'D';
+    const fmt=s=>{const m=Math.floor(s/60);return m+':'+String(s%60).padStart(2,'0')};
+    const existing=getSave(c.id);
+    if(!existing||st.sc>existing.score){
+      setSave(c.id,{rank:rk,score:st.sc,result:res,evidence:st.ev.length,totalEv:c.ev.length,contradictions:st.con.length,time:fmt(st.tt)});
+    }
+  }
+
+  // Override SFX to respect settings
+  const _origClick=SFX.click,_origEv=SFX.ev,_origContr=SFX.contr,_origOk=SFX.ok,_origNo=SFX.no,_origAmb=SFX.amb;
+  SFX.click=()=>{if(settings.sound)_origClick()};
+  SFX.ev=()=>{if(settings.sound)_origEv()};
+  SFX.contr=()=>{if(settings.sound)_origContr()};
+  SFX.ok=()=>{if(settings.sound)_origOk()};
+  SFX.no=()=>{if(settings.sound)_origNo()};
+  SFX.amb=()=>{if(settings.sound)_origAmb()};
+
+  // Override vibrate to respect settings
+  const _origVibrate=navigator.vibrate?.bind(navigator);
+  if(_origVibrate)navigator.vibrate=(...args)=>{if(settings.vibration)_origVibrate(...args)};
+
+  return{go,acceptCW,askQuestion,askQ,openInterrogation,backToSuspects,credits:()=>go('settings'),goSelect,goStats,getCase:()=>st.cs,loadCase,startScene,endTesti,togSus,showEv,pickHyp,goAccuse,pickAcc,doAccuse,unsolved,share,evModal,togInv,togSet,resetProgress,nextTut,skipTut,applySettings,showAdSlot};
+})();
+</script>
+</body>
+</html>
