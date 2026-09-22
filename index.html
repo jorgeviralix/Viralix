@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VIRALIX — Crímenes reales, misterios y casos que España no olvidará</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23e61515'/><text x='50' y='78' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='72' font-weight='900' fill='%23f2f2f2'>V</text></svg>">
-<meta name="keywords" content="true crime españa, casos reales españa, crímenes reales, alcasser, marta del castillo, diana quer, caso asunta, asesino baraja, crimen cuenca">
+<link rel="manifest" href="manifest.json">
+<link rel="alternate" type="application/rss+xml" title="VIRALIX RSS" href="https://www.viralixweb.es/feed.xml">
+<meta name="keywords" content="true crime españa, casos reales españa, crímenes reales, alcasser, marta del castillo, diana quer, caso asunta, asesino baraja, crimen cuenca, misterios, viralix">
 <meta name="description" content="VIRALIX — True crime, misterios y casos reales de España. Artículos verificados sobre los crímenes más impactantes de la historia española.">
-<meta name="keywords" content="true crime españa, casos reales, crímenes españa, misterios, viralix">
 <meta property="og:title" content="VIRALIX — Crímenes reales y misterios de España">
 <meta property="og:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.viralixweb.es">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
+<script>
 // DARK/LIGHT MODE TOGGLE
 const modeBtn = document.getElementById('modeToggle');
 modeBtn.addEventListener('click', () => {
@@ -80,6 +82,14 @@ const articulos = [
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
+  { title: "Las Niñas de Aguilar: desaparecieron haciendo autostop", url: "articulo-aguilar.html", cat: "True Crime", tags: "aguilar campoo virginia manuela 1992 autostop palencia" },
+  { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero manuel delgado villegas asesino serie 1971" },
+  { title: "Caso Bretón: el padre que quemó a sus hijos", url: "articulo-breton.html", cat: "True Crime", tags: "bretón ruth josé córdoba 2011 hoguera violencia vicaria" },
+  { title: "La Envenenadora de Valencia: última mujer ejecutada", url: "articulo-envenenadora.html", cat: "True Crime", tags: "envenenadora valencia pilar prades arsénico garrote 1959" },
+  { title: "El Crimen de Cuenca: torturaron a dos inocentes", url: "articulo-crimen-cuenca.html", cat: "True Crime", tags: "crimen cuenca 1910 tortura inocentes grimaldos osa" },
+  { title: "Eclipse Solar 2026: España en el centro del fenómeno", url: "articulo-eclipse-2026.html", cat: "Ciencia", tags: "eclipse solar 2026 agosto españa totalidad" },
+  { title: "Caso Marta Calvo: el asesino que disolvía cuerpos", url: "articulo-marta-calvo.html", cat: "True Crime", tags: "marta calvo valencia 2019 jorge ignacio palma ácido" },
+  { title: "Wanninkhof: el asesino mató de nuevo", url: "articulo-wanninkhof-bis.html", cat: "True Crime", tags: "wanninkhof dolores vázquez tony king sonia carabantes" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -690,6 +700,14 @@ const articulos = [
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
+  { title: "Las Niñas de Aguilar: desaparecieron haciendo autostop", url: "articulo-aguilar.html", cat: "True Crime", tags: "aguilar campoo virginia manuela 1992 autostop palencia" },
+  { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero manuel delgado villegas asesino serie 1971" },
+  { title: "Caso Bretón: el padre que quemó a sus hijos", url: "articulo-breton.html", cat: "True Crime", tags: "bretón ruth josé córdoba 2011 hoguera violencia vicaria" },
+  { title: "La Envenenadora de Valencia: última mujer ejecutada", url: "articulo-envenenadora.html", cat: "True Crime", tags: "envenenadora valencia pilar prades arsénico garrote 1959" },
+  { title: "El Crimen de Cuenca: torturaron a dos inocentes", url: "articulo-crimen-cuenca.html", cat: "True Crime", tags: "crimen cuenca 1910 tortura inocentes grimaldos osa" },
+  { title: "Eclipse Solar 2026: España en el centro del fenómeno", url: "articulo-eclipse-2026.html", cat: "Ciencia", tags: "eclipse solar 2026 agosto españa totalidad" },
+  { title: "Caso Marta Calvo: el asesino que disolvía cuerpos", url: "articulo-marta-calvo.html", cat: "True Crime", tags: "marta calvo valencia 2019 jorge ignacio palma ácido" },
+  { title: "Wanninkhof: el asesino mató de nuevo", url: "articulo-wanninkhof-bis.html", cat: "True Crime", tags: "wanninkhof dolores vázquez tony king sonia carabantes" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -850,7 +868,6 @@ window.addEventListener('scroll', () => {
 {"@type":"ListItem","position":5,"url":"https://www.viralixweb.es/articulo-asunta.html","name":"Caso Asunta"}
 ]}
 </script>
-<link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
@@ -985,7 +1002,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Valencia · 1992</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-alcasser.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Alcàsser: 30 años de preguntas sin respuesta%20https://www.viralixweb.es/articulo-alcasser.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Alcàsser: 30 años de preguntas sin respuesta%20https://www.viralixweb.es/articulo-alcasser.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-wanninkhof.html'">
@@ -995,7 +1012,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Marbella · 1999</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-wanninkhof.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Wanninkhof: condenaron a una inocente%20https://www.viralixweb.es/articulo-wanninkhof.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Wanninkhof: condenaron a una inocente%20https://www.viralixweb.es/articulo-wanninkhof.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-castillo.html'">
@@ -1005,7 +1022,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Sevilla · 2009</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-marta-castillo.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Marta del Castillo: 17 años buscando su cuerpo%20https://www.viralixweb.es/articulo-marta-castillo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Marta del Castillo: 17 años buscando su cuerpo%20https://www.viralixweb.es/articulo-marta-castillo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-diana-quer.html'">
@@ -1015,7 +1032,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Galicia · 2016</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-diana-quer.html" class="card-leer" style="color:#0ff4e0" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Diana Quer: 500 días buscándola%20https://www.viralixweb.es/articulo-diana-quer.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Diana Quer: 500 días buscándola%20https://www.viralixweb.es/articulo-diana-quer.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-asunta.html'">
@@ -1025,7 +1042,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Santiago · 2013</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-asunta.html" class="card-leer" style="color:#6ee7b7" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Caso Asunta: sus padres la drogaron y la mataron%20https://www.viralixweb.es/articulo-asunta.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Caso Asunta: sus padres la drogaron y la mataron%20https://www.viralixweb.es/articulo-asunta.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-asesino-baraja.html'">
@@ -1035,7 +1052,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Madrid · 2003</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-asesino-baraja.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Asesino de la Baraja: 6 muertos en Madrid%20https://www.viralixweb.es/articulo-asesino-baraja.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Asesino de la Baraja: 6 muertos en Madrid%20https://www.viralixweb.es/articulo-asesino-baraja.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-katana.html'">
@@ -1045,7 +1062,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Murcia · 2000</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
         <a href="articulo-katana.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Asesino de la Katana: mató a su familia%20https://www.viralixweb.es/articulo-katana.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Asesino de la Katana: mató a su familia%20https://www.viralixweb.es/articulo-katana.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-puerto-hurraco.html'">
@@ -1055,7 +1072,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Badajoz · 1990</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-puerto-hurraco.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=La Matanza de Puerto Hurraco: 9 muertos%20https://www.viralixweb.es/articulo-puerto-hurraco.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=La Matanza de Puerto Hurraco: 9 muertos%20https://www.viralixweb.es/articulo-puerto-hurraco.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-rol.html'">
@@ -1065,7 +1082,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Madrid · 1994</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
         <a href="articulo-crimen-rol.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Los Crímenes del Rol: adolescentes que mataron por un juego%20https://www.viralixweb.es/articulo-crimen-rol.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Los Crímenes del Rol: adolescentes que mataron por un juego%20https://www.viralixweb.es/articulo-crimen-rol.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-urquijo.html'">
@@ -1075,7 +1092,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Madrid · 1980</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-urquijo.html" class="card-leer" style="color:#c9a84c" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Crimen de los Marqueses de Urquijo%20https://www.viralixweb.es/articulo-urquijo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Crimen de los Marqueses de Urquijo%20https://www.viralixweb.es/articulo-urquijo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-el-lute.html'">
@@ -1085,7 +1102,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>España · 1965</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-el-lute.html" class="card-leer" style="color:#d97706" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Lute: escapó dos veces y se convirtió en leyenda%20https://www.viralixweb.es/articulo-el-lute.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Lute: escapó dos veces y se convirtió en leyenda%20https://www.viralixweb.es/articulo-el-lute.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-cuenca.html'">
@@ -1095,7 +1112,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Cuenca · 1910</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-crimen-cuenca.html" class="card-leer" style="color:#c9a96e" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Crimen de Cuenca: torturaron a dos inocentes%20https://www.viralixweb.es/articulo-crimen-cuenca.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Crimen de Cuenca: torturaron a dos inocentes%20https://www.viralixweb.es/articulo-crimen-cuenca.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-calvo.html'">
@@ -1105,7 +1122,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Valencia · 2019</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-marta-calvo.html" class="card-leer" style="color:#b07cc6" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Marta Calvo: su asesino disolvía los cuerpos en ácido%20https://www.viralixweb.es/articulo-marta-calvo.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Marta Calvo: su asesino disolvía los cuerpos en ácido%20https://www.viralixweb.es/articulo-marta-calvo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-wanninkhof-bis.html'">
@@ -1115,7 +1132,47 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Marbella · 1999-2003</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-wanninkhof-bis.html" class="card-leer" style="color:#a569bd" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El asesino que mató de nuevo mientras una inocente cumplía condena%20https://www.viralixweb.es/articulo-wanninkhof-bis.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El asesino que mató de nuevo mientras una inocente cumplía condena%20https://www.viralixweb.es/articulo-wanninkhof-bis.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+      </div>
+    </div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-aguilar.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-aguilar.png" alt="Las Niñas de Aguilar: desaparecieron haciendo autostop" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">Las Niñas de Aguilar: desaparecieron haciendo autostop</h3>
+      <div class="article-meta"><span>Palencia · 1992</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-aguilar.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Las Niñas de Aguilar: desaparecieron haciendo autostop%20https://www.viralixweb.es/articulo-aguilar.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+      </div>
+    </div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-arropiero.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-arropiero.png" alt="El Arropiero: el mayor asesino en serie de España" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">El Arropiero: el mayor asesino en serie de España</h3>
+      <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>12 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-arropiero.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=El Arropiero: el mayor asesino en serie de España%20https://www.viralixweb.es/articulo-arropiero.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+      </div>
+    </div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-breton.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-breton.png" alt="Caso Bretón: el padre que quemó a sus hijos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">Caso Bretón: el padre que quemó a sus hijos</h3>
+      <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>11 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-breton.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Bretón: el padre que quemó a sus hijos%20https://www.viralixweb.es/articulo-breton.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+      </div>
+    </div>
+    <div class="article-card clickable reveal" onclick="location.href='articulo-envenenadora.html'">
+      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-envenenadora.png" alt="La Envenenadora de Valencia: la última mujer ejecutada en España" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <span class="tag">True Crime</span>
+      <h3 class="article-title">La Envenenadora de Valencia: última mujer ejecutada en España</h3>
+      <div class="article-meta"><span>Valencia · 1959</span><span class="dot"></span><span>10 min</span></div>
+      <div class="card-footer">
+        <a href="articulo-envenenadora.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
+        <a href="https://api.whatsapp.com/send?text=La Envenenadora de Valencia: última mujer ejecutada en España%20https://www.viralixweb.es/articulo-envenenadora.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
   </div>
@@ -1132,7 +1189,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>España · 12 Ago 2026</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-eclipse-2026.html" class="card-leer" style="color:#f39c12" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo%20https://www.viralixweb.es/articulo-eclipse-2026.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo%20https://www.viralixweb.es/articulo-eclipse-2026.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
@@ -1142,7 +1199,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Global · 2026</span><span class="dot"></span><span>8 min</span></div>
       <div class="card-footer">
         <a href="articulo-super-elnino.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Super El Niño 2026: el fenómeno más devastador desde 1877%20https://www.viralixweb.es/articulo-super-elnino.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Super El Niño 2026: el fenómeno más devastador desde 1877%20https://www.viralixweb.es/articulo-super-elnino.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
@@ -1152,7 +1209,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Océano Pacífico</span><span class="dot"></span><span>6 min</span></div>
       <div class="card-footer">
         <a href="articulo-marianas.html" class="card-leer" style="color:#38bdf8" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Qué encontraron realmente en el fondo del Pacífico%20https://www.viralixweb.es/articulo-marianas.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Qué encontraron realmente en el fondo del Pacífico%20https://www.viralixweb.es/articulo-marianas.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
@@ -1162,7 +1219,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Antártida</span><span class="dot"></span><span>8 min</span></div>
       <div class="card-footer">
         <a href="articulo-hantavirus.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Hantavirus: el brote del crucero Hondius%20https://www.viralixweb.es/articulo-hantavirus.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Hantavirus: el brote del crucero Hondius%20https://www.viralixweb.es/articulo-hantavirus.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
@@ -1172,7 +1229,7 @@ window.addEventListener('scroll', () => {
       <div class="article-meta"><span>Psicología</span><span class="dot"></span><span>5 min</span></div>
       <div class="card-footer">
         <a href="articulo-falsos-recuerdos.html" class="card-leer" style="color:#a78bfa" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El fenómeno que hace que recuerdes cosas que nunca pasaron%20https://www.viralixweb.es/articulo-falsos-recuerdos.html" target="_blank" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El fenómeno que hace que recuerdes cosas que nunca pasaron%20https://www.viralixweb.es/articulo-falsos-recuerdos.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
       </div>
     </div>
   </div>
@@ -1362,7 +1419,7 @@ window.addEventListener('scroll', () => {
       <div class="quiz-final" id="quizFinal">
         <h3 id="quizFinalScore"></h3>
         <p id="quizFinalText"></p>
-        <a class="quiz-share" id="quizShare" href="#" target="_blank">📲 Compartir resultado en WhatsApp</a>
+        <a class="quiz-share" id="quizShare" href="#" target="_blank" rel="noopener noreferrer">📲 Compartir resultado en WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1409,7 +1466,7 @@ window.addEventListener('scroll', () => {
             <span style="font-size:14px;color:var(--white);font-weight:500;flex:1">viralixweb@gmail.com</span>
             <button onclick="navigator.clipboard.writeText('viralixweb@gmail.com');this.textContent='✓';setTimeout(()=>this.textContent='Copiar',2000)" style="background:var(--accent);color:#fff;border:none;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;border-radius:2px">Copiar</button>
           </div>
-          <a href="https://mail.google.com/mail/?view=cm&to=viralixweb@gmail.com&su=Contacto%20VIRALIX" target="_blank" style="display:inline-block;background:var(--accent);color:#fff;padding:10px 24px;text-decoration:none;font-size:11px;font-weight:600;border-radius:2px;letter-spacing:1px">Abrir Gmail</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=viralixweb@gmail.com&su=Contacto%20VIRALIX" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--accent);color:#fff;padding:10px 24px;text-decoration:none;font-size:11px;font-weight:600;border-radius:2px;letter-spacing:1px">Abrir Gmail</a>
         </div>
         <a href="privacidad.html" class="contacto-card">
           <span class="cc-icon">🔒</span>
@@ -1447,6 +1504,12 @@ window.addEventListener('scroll', () => {
 </div>
 
 <!-- FOOTER -->
+<!-- Buy Me a Coffee -->
+<div style="margin: 40px auto; max-width: 600px; padding: 25px; text-align: center;">
+  <p style="color: #888; font-size: 14px; margin-bottom: 12px;">¿Te gusta VIRALIX? Ayúdame a seguir investigando</p>
+  <a href="https://buymeacoffee.com/viralixwebn" target="_blank" rel="noopener noreferrer" rel="nofollow" style="display: inline-block; background: #ffdd00; color: #000; padding: 14px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">☕ Invítame a un café</a>
+</div>
+
 <footer>
   <div class="footer-top">
     <div>
@@ -1659,6 +1722,14 @@ const articulos = [
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
+  { title: "Las Niñas de Aguilar: desaparecieron haciendo autostop", url: "articulo-aguilar.html", cat: "True Crime", tags: "aguilar campoo virginia manuela 1992 autostop palencia" },
+  { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero manuel delgado villegas asesino serie 1971" },
+  { title: "Caso Bretón: el padre que quemó a sus hijos", url: "articulo-breton.html", cat: "True Crime", tags: "bretón ruth josé córdoba 2011 hoguera violencia vicaria" },
+  { title: "La Envenenadora de Valencia: última mujer ejecutada", url: "articulo-envenenadora.html", cat: "True Crime", tags: "envenenadora valencia pilar prades arsénico garrote 1959" },
+  { title: "El Crimen de Cuenca: torturaron a dos inocentes", url: "articulo-crimen-cuenca.html", cat: "True Crime", tags: "crimen cuenca 1910 tortura inocentes grimaldos osa" },
+  { title: "Eclipse Solar 2026: España en el centro del fenómeno", url: "articulo-eclipse-2026.html", cat: "Ciencia", tags: "eclipse solar 2026 agosto españa totalidad" },
+  { title: "Caso Marta Calvo: el asesino que disolvía cuerpos", url: "articulo-marta-calvo.html", cat: "True Crime", tags: "marta calvo valencia 2019 jorge ignacio palma ácido" },
+  { title: "Wanninkhof: el asesino mató de nuevo", url: "articulo-wanninkhof-bis.html", cat: "True Crime", tags: "wanninkhof dolores vázquez tony king sonia carabantes" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -1806,7 +1877,8 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
-<script src="cookies-banner.js">
+<script src="cookies-banner.js"></script>
+<script>
 // DARK/LIGHT MODE TOGGLE
 const modeBtn = document.getElementById('modeToggle');
 modeBtn.addEventListener('click', () => {
@@ -1874,6 +1946,14 @@ const articulos = [
   { title: "Falsos recuerdos: cosas que nunca pasaron", url: "articulo-falsos-recuerdos.html", cat: "Mente", tags: "falsos recuerdos memoria cerebro psicología" },
   { title: "Marqueses de Urquijo: 45 años sin resolverse", url: "articulo-urquijo.html", cat: "True Crime", tags: "urquijo marqueses madrid 1980 escobedo mansión" },
   { title: "El Lute: escapó dos veces y se convirtió en leyenda", url: "articulo-el-lute.html", cat: "True Crime", tags: "lute eleuterio sánchez salamanca fuga prisión franquismo" },
+  { title: "Las Niñas de Aguilar: desaparecieron haciendo autostop", url: "articulo-aguilar.html", cat: "True Crime", tags: "aguilar campoo virginia manuela 1992 autostop palencia" },
+  { title: "El Arropiero: el mayor asesino en serie de España", url: "articulo-arropiero.html", cat: "True Crime", tags: "arropiero manuel delgado villegas asesino serie 1971" },
+  { title: "Caso Bretón: el padre que quemó a sus hijos", url: "articulo-breton.html", cat: "True Crime", tags: "bretón ruth josé córdoba 2011 hoguera violencia vicaria" },
+  { title: "La Envenenadora de Valencia: última mujer ejecutada", url: "articulo-envenenadora.html", cat: "True Crime", tags: "envenenadora valencia pilar prades arsénico garrote 1959" },
+  { title: "El Crimen de Cuenca: torturaron a dos inocentes", url: "articulo-crimen-cuenca.html", cat: "True Crime", tags: "crimen cuenca 1910 tortura inocentes grimaldos osa" },
+  { title: "Eclipse Solar 2026: España en el centro del fenómeno", url: "articulo-eclipse-2026.html", cat: "Ciencia", tags: "eclipse solar 2026 agosto españa totalidad" },
+  { title: "Caso Marta Calvo: el asesino que disolvía cuerpos", url: "articulo-marta-calvo.html", cat: "True Crime", tags: "marta calvo valencia 2019 jorge ignacio palma ácido" },
+  { title: "Wanninkhof: el asesino mató de nuevo", url: "articulo-wanninkhof-bis.html", cat: "True Crime", tags: "wanninkhof dolores vázquez tony king sonia carabantes" },
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
