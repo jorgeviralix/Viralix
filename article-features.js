@@ -10,7 +10,7 @@
   if (nav) {
     const bc = document.createElement('div');
     bc.style.cssText = 'max-width:760px;margin:0 auto;padding:12px 48px;font-size:12px;color:rgba(244,242,238,0.3);letter-spacing:0.5px;';
-    const cat = document.title.includes('Marianas') || document.title.includes('Niño') || document.title.includes('Hantavirus') || document.title.includes('recuerdos') ? 'Ciencia' : 'True Crime';
+    const cat = document.title.includes('Marianas') || document.title.includes('Niño') || document.title.includes('Hantavirus') || document.title.includes('recuerdos') || document.title.includes('Eclipse') ? 'Ciencia' : 'True Crime';
     bc.innerHTML = '<a href="index.html" style="color:rgba(244,242,238,0.4);text-decoration:none">Inicio</a> <span style="margin:0 8px;opacity:0.4">→</span> <a href="index.html#articulos" style="color:rgba(244,242,238,0.4);text-decoration:none">' + cat + '</a> <span style="margin:0 8px;opacity:0.4">→</span> <span style="color:rgba(244,242,238,0.6)">' + title + '</span>';
     const hero = document.querySelector('.hero-periodico, .hero, .hero-articulo, header');
     if (hero) hero.parentNode.insertBefore(bc, hero.nextSibling);
@@ -103,21 +103,18 @@
     { url: 'articulo-asunta.html', title: 'Caso Asunta' },
     { url: 'articulo-urquijo.html', title: 'Marqueses de Urquijo' },
     { url: 'articulo-el-lute.html', title: 'El Lute' },
-    { url: 'articulo-arropiero.html', title: 'El Arropiero' },
-    { url: 'articulo-breton.html', title: 'Caso Bretón' },
-    { url: 'articulo-crimen-cuenca.html', title: 'Crimen de Cuenca' },
-    { url: 'articulo-envenenadora.html', title: 'La Envenenadora de Valencia' },
-    { url: 'articulo-aguilar.html', title: 'Caso Aguilar' },
-    { url: 'articulo-marta-calvo.html', title: 'Caso Marta Calvo' },
-    { url: 'articulo-wanninkhof-bis.html', title: 'Caso Tony King' },
     { url: 'articulo-marianas.html', title: 'Fosa de las Marianas' },
     { url: 'articulo-hantavirus.html', title: 'Hantavirus' },
     { url: 'articulo-super-elnino.html', title: 'Super El Niño' },
     { url: 'articulo-falsos-recuerdos.html', title: 'Falsos Recuerdos' },
+    { url: 'articulo-aguilar.html', title: 'Niñas de Aguilar' },
+    { url: 'articulo-arropiero.html', title: 'El Arropiero' },
+    { url: 'articulo-breton.html', title: 'Caso Bretón' },
+    { url: 'articulo-envenenadora.html', title: 'La Envenenadora' },
+    { url: 'articulo-crimen-cuenca.html', title: 'Crimen de Cuenca' },
     { url: 'articulo-eclipse-2026.html', title: 'Eclipse Solar 2026' },
-    { url: 'articulo-galindos.html', title: 'Los Galindos' },
-    { url: 'articulo-jarabo.html', title: 'Caso Jarabo' },
-    { url: 'articulo-somosierra.html', title: 'Niño de Somosierra' },
+    { url: 'articulo-marta-calvo.html', title: 'Marta Calvo' },
+    { url: 'articulo-wanninkhof-bis.html', title: 'Wanninkhof: el verdadero asesino' },
   ];
   const currentFile = window.location.pathname.split('/').pop();
   const currentIdx = allArticles.findIndex(a => a.url === currentFile);
