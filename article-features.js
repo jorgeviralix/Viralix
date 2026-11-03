@@ -50,6 +50,7 @@
   // 4. BACK TO TOP
   const btt = document.createElement('button');
   btt.innerHTML = '↑';
+  btt.setAttribute('aria-label', 'Volver arriba');
   btt.style.cssText = 'position:fixed;bottom:30px;right:30px;width:44px;height:44px;background:#e8321a;border:none;border-radius:50%;color:#fff;font-size:18px;cursor:pointer;z-index:400;opacity:0;transform:translateY(20px);transition:all 0.3s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(232,50,26,0.3);';
   document.body.appendChild(btt);
   window.addEventListener('scroll', () => {
@@ -64,10 +65,10 @@
   const t = encodeURIComponent(document.title);
   shareBar.style.cssText = 'position:fixed;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:400;opacity:0;transition:opacity 0.3s;';
   shareBar.innerHTML = `
-    <a href="https://api.whatsapp.com/send?text=${t}%20${url}" target="_blank" style="width:40px;height:40px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">📲</a>
-    <a href="https://twitter.com/intent/tweet?url=${url}&text=${t}" target="_blank" style="width:40px;height:40px;background:#000;border:1px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">𝕏</a>
-    <a href="https://t.me/share/url?url=${url}&text=${t}" target="_blank" style="width:40px;height:40px;background:#0088cc;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">✈</a>
-    <button onclick="navigator.clipboard.writeText(window.location.href);this.innerHTML='✓';setTimeout(()=>this.innerHTML='🔗',2000)" style="width:40px;height:40px;background:rgba(15,17,24,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">🔗</button>
+    <a href="https://api.whatsapp.com/send?text=${t}%20${url}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp" style="width:40px;height:40px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">📲</a>
+    <a href="https://twitter.com/intent/tweet?url=${url}&text=${t}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en X" style="width:40px;height:40px;background:#000;border:1px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">𝕏</a>
+    <a href="https://t.me/share/url?url=${url}&text=${t}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Telegram" style="width:40px;height:40px;background:#0088cc;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">✈</a>
+    <button aria-label="Copiar enlace" onclick="navigator.clipboard.writeText(window.location.href);this.innerHTML='✓';setTimeout(()=>this.innerHTML='🔗',2000)" style="width:40px;height:40px;background:rgba(15,17,24,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)">🔗</button>
   `;
   document.body.appendChild(shareBar);
   window.addEventListener('scroll', () => {
@@ -152,28 +153,41 @@
   // 9. REPORT ERROR + DATE
   const reportDiv = document.createElement('div');
   reportDiv.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:16px 0;margin:24px 0;border-top:1px solid rgba(255,255,255,0.05);flex-wrap:wrap;gap:12px;';
-  const today = new Date();
+  // Antes se mostraba la fecha del día de la visita como "última actualización" (dato falso).
+  // Ahora solo se muestra si la página declara <meta property="article:modified_time">.
+  const metaContent = (sel) => { const m = document.querySelector(sel); return m ? m.getAttribute('content') : ''; };
+  const modifiedISO = metaContent('meta[property="article:modified_time"]');
+  const publishedISO = metaContent('meta[property="article:published_time"]');
   const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const fmt = (iso) => { const d = new Date(iso); return isNaN(d) ? '' : d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear(); };
+  const modifiedText = modifiedISO ? fmt(modifiedISO) : '';
   reportDiv.innerHTML = `
-    <span style="font-size:11px;color:rgba(244,242,238,0.25)">Última actualización: ${today.getDate()} de ${months[today.getMonth()]} de ${today.getFullYear()}</span>
+    <span style="font-size:11px;color:rgba(244,242,238,0.45)">${modifiedText ? 'Última actualización: ' + modifiedText : ''}</span>
     <a href="mailto:viralixweb@gmail.com?subject=Error%20en%20artículo:%20${encodeURIComponent(title)}" style="font-size:11px;color:rgba(244,242,238,0.25);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s" onmouseenter="this.style.color='#e8321a'" onmouseleave="this.style.color='rgba(244,242,238,0.25)'">⚠ ¿Has encontrado un error? Avísanos</a>
   `;
   if (nextBtn.parentNode) nextBtn.parentNode.insertBefore(reportDiv, nextBtn);
 
-  // 10. SCHEMA MARKUP
-  const schema = document.createElement('script');
-  schema.type = 'application/ld+json';
-  schema.textContent = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "author": { "@type": "Organization", "name": "VIRALIX" },
-    "publisher": { "@type": "Organization", "name": "VIRALIX", "url": "https://www.viralixweb.es" },
-    "datePublished": "2026-05-01",
-    "dateModified": today.toISOString().split('T')[0],
-    "mainEntityOfPage": window.location.href,
-    "description": document.querySelector('meta[name="description"]')?.content || ''
-  });
-  document.head.appendChild(schema);
+  // 10. SCHEMA MARKUP (solo si la página no trae ya su propio JSON-LD de artículo)
+  const hasArticleSchema = Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+    .some(sc => /"@type"\s*:\s*"(News)?Article"/.test(sc.textContent));
+  if (!hasArticleSchema) {
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "author": { "@type": "Organization", "name": "Equipo VIRALIX", "url": "https://www.viralixweb.es/sobre-nosotros.html" },
+      "publisher": { "@type": "Organization", "name": "VIRALIX", "url": "https://www.viralixweb.es" },
+      "mainEntityOfPage": window.location.href,
+      "description": metaContent('meta[name="description"]')
+    };
+    const img = metaContent('meta[property="og:image"]');
+    if (img) data.image = [img];
+    if (publishedISO) data.datePublished = publishedISO;
+    if (modifiedISO) data.dateModified = modifiedISO;
+    schema.textContent = JSON.stringify(data);
+    document.head.appendChild(schema);
+  }
 
 })();
