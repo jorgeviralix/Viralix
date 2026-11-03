@@ -47,3 +47,29 @@
 - **Datos del titular**: no se han inventado. Privacidad y Aviso legal llevan marcadores `[Nombre y apellidos…]`, `[NIF…]` y `[Dirección…]` que el propietario debe rellenar antes de pasar a producción.
 - **`ads.txt` no se ha tocado**: ya contenía el ID real de editor (`pub-5337247644569859`), que coincide con el script de AdSense. Sustituirlo por el *placeholder* pedido habría roto la verificación.
 - `images/og-viralix.jpg` (1200×630) y `images/logo-viralix.png` (512×512): imagen Open Graph por defecto de las páginas institucionales y logotipo para JSON-LD y RSS (antes el RSS apuntaba a una imagen inexistente).
+
+## Fase 5 — SEO y Open Graph
+- **Artículos antiguos (23)**: cabecera SEO unificada y sin duplicados (6 artículos tenían `og:title`, `og:description`, `og:url` u `og:type` repetidos): canonical, `robots` con `max-image-preview:large`, Open Graph completo (`og:site_name`, `og:locale`, `og:image` con tamaño y `alt`), Twitter Cards con imagen, `article:published_time`/`modified_time` y JSON-LD `Article` estático **con imagen** + `BreadcrumbList`. Se eliminaron los JSON-LD antiguos sin imagen para no duplicar.
+- **Descripciones**: corregidas a 150-160 caracteres las que estaban fuera de rango (`crimen-rol`, `diana-quer`, `aguilar`, `envenenadora` —que además estaba cortada a mitad de frase— y `urquijo`), y todas las nuevas.
+- **Artículos nuevos y páginas**: title único, description de 150-160 caracteres, canonical, OG/Twitter con la portada 1200×630 en JPG, JSON-LD `Article` (con imagen, fechas, autor y editor con logo) y `BreadcrumbList`; páginas legales con `WebPage`/`AboutPage`/`ContactPage`.
+- **Home**: description ampliada, `og:image` propia de 1200×630, `twitter:image`, el `BreadcrumbList` incorrecto de la portada sustituido por `Organization`, `ItemList` real con los 40 artículos (antes decía 14 y listaba 5) y el `SearchAction` ahora funciona (el buscador lee `?q=`).
+- **Timeline**: canonical, OG, Twitter, description y JSON-LD `CollectionPage`; añadidos los 7 casos españoles nuevos en orden cronológico.
+- **`sitemap.xml`** regenerado: 49 URL (sin el duplicado de `sobre-nosotros.html`), con `<image:image>` por artículo, fechas `lastmod` reales y sin la página `noindex` de Somosierra ni la 404.
+- **`feed.xml`**: 17 entradas nuevas con imagen y logo del canal corregido.
+- `articulo-somosierra.html` (sigue siendo «Próximamente»): `noindex, follow` para que Google no la considere contenido escaso.
+- `robots.txt` no necesitaba cambios (permite todo y declara el sitemap).
+
+## Fase 6 — Diseño, experiencia y RGPD
+- **Banner de cookies conforme** en todas las páginas (ver Infraestructura) y **consentimiento por defecto antes de AdSense** insertado en el `<head>` de las 30+ páginas antiguas: hasta que el lector elige no se solicitan anuncios; si rechaza, se piden anuncios no personalizados.
+- **Pie con enlaces legales** (Sobre, Metodología, Contacto, Aviso legal, Privacidad, Cookies, Términos y «Configurar cookies») en todos los artículos antiguos y el timeline, que antes solo tenían el logo.
+- **Tipografías autoalojadas** (`assets/fonts/`, licencia OFL) en la home, el timeline y todas las páginas nuevas: sin peticiones a Google Fonts, más rápido y sin ceder la IP del lector. Los artículos antiguos mantienen Google Fonts porque usan 15 familias distintas (ver «Qué no se ha hecho»).
+- **Home**:
+  - Menú reorganizado (True Crime, Internacional, Misterios, Criminología, Mapa, Timeline, Sobre nosotros, Contacto) y adaptado a anchos de 900-1440 px, donde antes se partía en dos líneas.
+  - Nuevas secciones generadas automáticamente: «Más casos de España», «Casos internacionales», «Misterios» y «Criminología», con tarjetas con imagen, extracto y tiempo de lectura.
+  - Cerrada la `<section>` de artículos, que nunca se cerraba y dejaba «Caso del mes» anidada (bug de marcado).
+  - Eliminada la sección «Próximamente», que anunciaba como futuros cuatro artículos ya publicados.
+  - Contadores reales (40 artículos, 30 casos de true crime), categorías con recuentos correctos y enlaces a sus secciones, «Caso del mes» actualizado (noviembre de 2026), 6 puntos nuevos en el mapa y leyenda «Misterio».
+  - Boletín honesto: ya no simula un registro que no existe ni afirma «Más de 500 lectores»; prepara un correo de alta y ofrece RSS.
+  - Imágenes de las tarjetas servidas en **WebP de 800 px** con `width`/`height`, `loading="lazy"` y `decoding="async"` (de ~2 MB a ~30-70 KB por tarjeta) manteniendo el PNG como alternativa.
+  - Accesibilidad: enlace «Saltar al contenido», `aria-label` en los botones de icono, `aria-expanded` en el menú móvil, etiquetas en los campos de búsqueda y email, foco visible, mapa con `role="img"` y soporte de `prefers-reduced-motion` (desactiva cursor personalizado, ticker y animaciones).
+- **Páginas nuevas**: modo oscuro por defecto con modo claro persistente, índice lateral con sección activa, barra de progreso, botones de compartir (WhatsApp, X, Facebook, Telegram, copiar, compartir nativo), caja de autor, «Sigue leyendo» y botón de volver arriba.

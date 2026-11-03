@@ -410,9 +410,9 @@ def head(title: str, desc: str, canonical: str, og_type: str, image: str, image_
 {extra_meta}{THEME_INIT}
 {CONSENT}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE}" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{FONTS}">
+<link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fuentes.css">
 <link rel="stylesheet" href="/assets/css/viralix.css">
 {ld}</head>"""
 
@@ -681,7 +681,8 @@ def sitemap(arts, paginas):
         urls.append((f"{SITE}/articulo-{a['slug']}.html", a["actualizado"], "monthly", "0.9",
                      (f"{SITE}/images/articulos/{a['slug']}-portada.jpg", a["titulo_corto"])))
     for s, t, c, _ in ANTIGUOS:
-        urls.append((f"{SITE}/articulo-{s}.html", HOY, "monthly", "0.8", (f"{SITE}/img-{s}.png", t)))
+        lm = "2026-09-22" if s in ("aguilar", "arropiero", "breton", "envenenadora") else "2026-06-14"
+        urls.append((f"{SITE}/articulo-{s}.html", lm, "monthly", "0.8", (f"{SITE}/img-{s}.png", t)))
     x = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
     for loc, lm, cf, pr, img in urls:
@@ -758,6 +759,14 @@ def portada(arts):
     s = re.sub(r"/\* VX:ALEATORIO:INICIO \*/.*?/\* VX:ALEATORIO:FIN \*/", lambda m: "/* VX:ALEATORIO:INICIO */" + json.dumps(todos) + "/* VX:ALEATORIO:FIN */", s, flags=re.S)
     n_total = len(ANTIGUOS) + len(arts)
     s = re.sub(r"<!-- VX:TOTAL -->\d+<!-- /VX:TOTAL -->", f"<!-- VX:TOTAL -->{n_total}<!-- /VX:TOTAL -->", s)
+    n_tc = sum(1 for x in ANTIGUOS if x[2] == "es") + sum(1 for a in arts if a["categoria"] in ("es", "intl"))
+    s = re.sub(r"<!-- VX:TC -->\d+<!-- /VX:TC -->", f"<!-- VX:TC -->{n_tc}<!-- /VX:TC -->", s)
+    items = [(f"{SITE}/articulo-{a['slug']}.html", a["titulo_corto"]) for a in arts] + [(f"{SITE}/articulo-{x[0]}.html", x[1]) for x in ANTIGUOS]
+    itemlist = {"@context": "https://schema.org", "@type": "ItemList", "name": "Artículos de VIRALIX",
+                "numberOfItems": len(items),
+                "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": u, "name": t} for i, (u, t) in enumerate(items)]}
+    s = re.sub(r"<!-- VX:ITEMLIST:INICIO -->.*?<!-- VX:ITEMLIST:FIN -->",
+               lambda m: '<!-- VX:ITEMLIST:INICIO --><script type="application/ld+json">' + json.dumps(itemlist, ensure_ascii=False) + "</script><!-- VX:ITEMLIST:FIN -->", s, flags=re.S)
     idx.write_text(s, encoding="utf-8")
     return n_total
 

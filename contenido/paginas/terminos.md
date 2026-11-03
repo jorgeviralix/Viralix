@@ -1,7 +1,7 @@
 ---
 archivo: terminos.html
 titulo_seo: Términos de uso | VIRALIX
-descripcion: Términos y condiciones de uso de VIRALIX: acceso al sitio, uso permitido del contenido, citas, enlaces, responsabilidad, rectificaciones y legislación aplicable en España.
+descripcion: Términos de uso de VIRALIX: acceso gratuito, uso permitido del contenido, citas, contenidos sobre personas reales, correcciones, enlaces y ley aplicable.
 miga: Términos de uso
 kicker: Legal
 h1: TÉRMINOS DE <span>USO</span>

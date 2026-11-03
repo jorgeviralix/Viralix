@@ -1,7 +1,7 @@
 ---
 archivo: contacto.html
 titulo_seo: Contacto | VIRALIX
-descripcion: Escribe a VIRALIX para proponer un caso, comunicar un error, solicitar una rectificación o colaborar. Correo directo y formulario sencillo. Respondemos en 48-72 horas.
+descripcion: Escribe a VIRALIX para proponer un caso, comunicar un error, pedir una rectificación o colaborar. Correo directo y formulario. Respondemos en 48-72 horas.
 miga: Contacto
 kicker: Habla con nosotros
 h1: CONTAC<span>TO</span>

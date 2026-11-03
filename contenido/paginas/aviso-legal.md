@@ -1,7 +1,7 @@
 ---
 archivo: aviso-legal.html
 titulo_seo: Aviso legal | VIRALIX
-descripcion: Aviso legal de VIRALIX: datos del titular conforme a la LSSI, condiciones de uso, propiedad intelectual, publicidad, enlaces de afiliados, responsabilidad y legislación aplicable.
+descripcion: Aviso legal de VIRALIX: datos del titular según la LSSI, condiciones de uso, propiedad intelectual, publicidad, afiliados, responsabilidad y ley aplicable.
 miga: Aviso legal
 kicker: Legal
 h1: AVISO <span>LEGAL</span>

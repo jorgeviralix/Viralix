@@ -1,7 +1,7 @@
 ---
 archivo: privacidad.html
 titulo_seo: Política de privacidad | VIRALIX
-descripcion: Política de privacidad de VIRALIX conforme al RGPD y la LOPDGDD: qué datos tratamos, con qué finalidad, publicidad de Google AdSense, plazos y cómo ejercer tus derechos.
+descripcion: Política de privacidad de VIRALIX según el RGPD y la LOPDGDD: qué datos tratamos y para qué, publicidad de Google AdSense, plazos y cómo ejercer tus derechos.
 miga: Política de privacidad
 kicker: Legal
 h1: POLÍTICA DE <span>PRIVACIDAD</span>

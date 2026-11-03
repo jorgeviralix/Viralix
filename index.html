@@ -8,15 +8,21 @@
 <link rel="manifest" href="manifest.json">
 <link rel="alternate" type="application/rss+xml" title="VIRALIX RSS" href="https://www.viralixweb.es/feed.xml">
 <meta name="keywords" content="true crime españa, casos reales españa, crímenes reales, alcasser, marta del castillo, diana quer, caso asunta, asesino baraja, crimen cuenca, misterios, viralix">
-<meta name="description" content="VIRALIX — True crime, misterios y casos reales de España. Artículos verificados sobre los crímenes más impactantes de la historia española.">
+<meta name="description" content="VIRALIX: crímenes reales, misterios y criminología contados con rigor. Casos de España y del mundo con fuentes, contexto y respeto a las víctimas.">
 <meta property="og:title" content="VIRALIX — Crímenes reales y misterios de España">
-<meta property="og:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
+<meta property="og:description" content="Crímenes reales, misterios y criminología contados con fuentes, contexto y sin sensacionalismo.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.viralixweb.es">
+<meta property="og:url" content="https://www.viralixweb.es/">
+<meta property="og:site_name" content="VIRALIX">
+<meta property="og:locale" content="es_ES">
+<script>/* VIRALIX: consentimiento por defecto antes de AdSense (ver cookies-banner.js) */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('viralix_cookies_accepted');}catch(e){}var ok=c==='all';
+gtag('consent','default',{ad_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied',analytics_storage:'denied'});
+window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=ok?0:1;window.adsbygoogle.pauseAdRequests=c?0:1;})();
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5337247644569859" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/fuentes.css">
 <style>
 :root {
   --black: #05060a;
@@ -386,28 +392,59 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   .footer-top { grid-template-columns: 1fr; }
   .newsletter-benefits { flex-direction: column; align-items: center; gap: 12px; }
 }
+
+/* ===== VIRALIX 2026-11: secciones nuevas, accesibilidad y ajustes ===== */
+.skip-link { position:absolute; left:12px; top:-60px; z-index:10000; background:var(--accent); color:#fff; padding:10px 16px; text-decoration:none; font-weight:600; border-radius:2px; transition:top .2s; }
+.skip-link:focus { top:12px; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+input, textarea, select { cursor:text; }
+.nav-links { gap:22px; }
+.nav-links a { white-space:nowrap; }
+@media (min-width: 901px) and (max-width: 1440px) { nav { padding:0 28px; } .nav-links { gap:14px; } .nav-links a { letter-spacing:1.2px; font-size:10.5px; } .nav-cta { padding:8px 14px; } }
+@media (min-width: 901px) and (max-width: 1240px) { .nav-links a[href="#articulos"], .nav-links a[href="#mapa"], .nav-links a[href="contacto.html"] { display:none; } }
+.vx-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:2px; }
+.vx-card { background:var(--card); border:1px solid var(--border); position:relative; overflow:hidden; display:flex; flex-direction:column; transition:border-color .3s, transform .3s; }
+.vx-card:hover { border-color:rgba(232,50,26,0.35); transform:translateY(-3px); }
+.vx-card__img { display:block; aspect-ratio:1200/630; overflow:hidden; background:var(--deep); }
+.vx-card__img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; display:block; }
+.vx-card:hover .vx-card__img img { transform:scale(1.04); }
+.vx-card__body { padding:24px 28px 28px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.vx-chip { font-size:9px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--vx-cat,var(--accent)); display:inline-flex; align-items:center; gap:8px; }
+.vx-chip::before { content:''; width:18px; height:1px; background:currentColor; }
+.vx-card.cat-es { --vx-cat:#e8321a; } .vx-card.cat-intl { --vx-cat:#5b93f7; } .vx-card.cat-mist { --vx-cat:#d9b04c; } .vx-card.cat-crim { --vx-cat:#a587f3; }
+.vx-card__title { font-family:var(--font-serif); font-weight:400; font-size:21px; line-height:1.25; }
+.vx-card__title a { color:var(--white); text-decoration:none; }
+.vx-card__title a::after { content:''; position:absolute; inset:0; }
+.vx-card__desc { font-size:13.5px; line-height:1.65; color:var(--muted); }
+.vx-card__meta { font-size:11px; letter-spacing:1px; color:var(--muted); margin-top:auto; padding-top:12px; border-top:1px solid var(--border); }
+.newsletter-rss { display:inline-block; margin-top:12px; font-size:12px; color:var(--muted); }
+.newsletter-rss a { color:var(--white); }
+.footer-legal button { background:none; border:0; padding:0; font:inherit; font-size:11px; color:var(--muted); cursor:pointer; }
+.footer-legal button:hover { color:var(--white); }
+@media (prefers-reduced-motion: reduce) {
+  .cursor, .cursor-ring { display:none !important; }
+  body { cursor:auto !important; }
+  .ticker-inner { animation:none; }
+  *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
 </style>
 <link rel="canonical" href="https://www.viralixweb.es/">
-<meta property="og:image" content="https://www.viralixweb.es/img-marianas.png">
+<meta property="og:image" content="https://www.viralixweb.es/images/og-viralix.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VIRALIX: true crime, misterios y criminología">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#05060a">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VIRALIX — Crímenes reales y misterios de España">
-<meta name="twitter:description" content="True crime, misterios y casos reales verificados. Lo que nadie te contó.">
+<meta name="twitter:image" content="https://www.viralixweb.es/images/og-viralix.jpg">
+<meta name="twitter:description" content="Crímenes reales, misterios y criminología contados con fuentes, contexto y sin sensacionalismo.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VIRALIX","url":"https://www.viralixweb.es","description":"True crime, misterios y casos reales de España","potentialAction":{"@type":"SearchAction","target":"https://www.viralixweb.es/?q={search_term_string}","query-input":"required name=search_term_string"}}
 </script>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}.loader{display:none!important}</style></noscript>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.viralixweb.es/"},{"@type":"ListItem","position":2,"name":"True Crime","item":"https://www.viralixweb.es/#true-crime"},{"@type":"ListItem","position":3,"name":"Ciencia","item":"https://www.viralixweb.es/#ciencia"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"Casos de True Crime en España","description":"Los crímenes reales más impactantes de la historia de España","numberOfItems":14,"itemListElement":[
-{"@type":"ListItem","position":1,"url":"https://www.viralixweb.es/articulo-alcasser.html","name":"Caso Alcàsser"},
-{"@type":"ListItem","position":2,"url":"https://www.viralixweb.es/articulo-wanninkhof.html","name":"Caso Wanninkhof"},
-{"@type":"ListItem","position":3,"url":"https://www.viralixweb.es/articulo-marta-castillo.html","name":"Marta del Castillo"},
-{"@type":"ListItem","position":4,"url":"https://www.viralixweb.es/articulo-diana-quer.html","name":"Caso Diana Quer"},
-{"@type":"ListItem","position":5,"url":"https://www.viralixweb.es/articulo-asunta.html","name":"Caso Asunta"}
-]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"VIRALIX","url":"https://www.viralixweb.es/","logo":"https://www.viralixweb.es/images/logo-viralix.png","email":"viralixweb@gmail.com","sameAs":[]}</script>
+<!-- VX:ITEMLIST:INICIO --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Artículos de VIRALIX", "numberOfItems": 40, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.viralixweb.es/articulo-calle-fuencarral.html", "name": "El crimen de la calle Fuencarral"}, {"@type": "ListItem", "position": 2, "url": "https://www.viralixweb.es/articulo-sacamantecas.html", "name": "El Sacamantecas de Vitoria"}, {"@type": "ListItem", "position": 3, "url": "https://www.viralixweb.es/articulo-enriqueta-marti.html", "name": "Enriqueta Martí, la «vampira del Raval»"}, {"@type": "ListItem", "position": 4, "url": "https://www.viralixweb.es/articulo-crimen-fago.html", "name": "El crimen de Fago"}, {"@type": "ListItem", "position": 5, "url": "https://www.viralixweb.es/articulo-guardia-urbana.html", "name": "El crimen de la Guardia Urbana"}, {"@type": "ListItem", "position": 6, "url": "https://www.viralixweb.es/articulo-galindos.html", "name": "El crimen de Los Galindos"}, {"@type": "ListItem", "position": 7, "url": "https://www.viralixweb.es/articulo-jarabo.html", "name": "El caso Jarabo"}, {"@type": "ListItem", "position": 8, "url": "https://www.viralixweb.es/articulo-jack-el-destripador.html", "name": "Jack el Destripador"}, {"@type": "ListItem", "position": 9, "url": "https://www.viralixweb.es/articulo-zodiaco.html", "name": "El asesino del Zodiaco"}, {"@type": "ListItem", "position": 10, "url": "https://www.viralixweb.es/articulo-lindbergh.html", "name": "El secuestro Lindbergh"}, {"@type": "ListItem", "position": 11, "url": "https://www.viralixweb.es/articulo-db-cooper.html", "name": "El misterio de D. B. Cooper"}, {"@type": "ListItem", "position": 12, "url": "https://www.viralixweb.es/articulo-lizzie-borden.html", "name": "El caso Lizzie Borden"}, {"@type": "ListItem", "position": 13, "url": "https://www.viralixweb.es/articulo-paso-dyatlov.html", "name": "El incidente del paso Diátlov"}, {"@type": "ListItem", "position": 14, "url": "https://www.viralixweb.es/articulo-mary-celeste.html", "name": "El misterio del Mary Celeste"}, {"@type": "ListItem", "position": 15, "url": "https://www.viralixweb.es/articulo-caras-belmez.html", "name": "Las caras de Bélmez"}, {"@type": "ListItem", "position": 16, "url": "https://www.viralixweb.es/articulo-perfil-criminal.html", "name": "La perfilación criminal"}, {"@type": "ListItem", "position": 17, "url": "https://www.viralixweb.es/articulo-psicopatia.html", "name": "Psicopatía: radiografía de un concepto"}, {"@type": "ListItem", "position": 18, "url": "https://www.viralixweb.es/articulo-alcasser.html", "name": "Caso Alcàsser: 30 años de preguntas sin respuesta"}, {"@type": "ListItem", "position": 19, "url": "https://www.viralixweb.es/articulo-wanninkhof.html", "name": "Caso Wanninkhof: condenaron a una inocente"}, {"@type": "ListItem", "position": 20, "url": "https://www.viralixweb.es/articulo-marta-castillo.html", "name": "Marta del Castillo: 17 años buscando su cuerpo"}, {"@type": "ListItem", "position": 21, "url": "https://www.viralixweb.es/articulo-diana-quer.html", "name": "Caso Diana Quer: 500 días buscándola"}, {"@type": "ListItem", "position": 22, "url": "https://www.viralixweb.es/articulo-asunta.html", "name": "El caso Asunta"}, {"@type": "ListItem", "position": 23, "url": "https://www.viralixweb.es/articulo-asesino-baraja.html", "name": "El asesino de la baraja"}, {"@type": "ListItem", "position": 24, "url": "https://www.viralixweb.es/articulo-katana.html", "name": "El asesino de la katana"}, {"@type": "ListItem", "position": 25, "url": "https://www.viralixweb.es/articulo-puerto-hurraco.html", "name": "La matanza de Puerto Hurraco"}, {"@type": "ListItem", "position": 26, "url": "https://www.viralixweb.es/articulo-crimen-rol.html", "name": "El crimen del rol"}, {"@type": "ListItem", "position": 27, "url": "https://www.viralixweb.es/articulo-urquijo.html", "name": "El crimen de los marqueses de Urquijo"}, {"@type": "ListItem", "position": 28, "url": "https://www.viralixweb.es/articulo-el-lute.html", "name": "El Lute: escapó dos veces y se convirtió en leyenda"}, {"@type": "ListItem", "position": 29, "url": "https://www.viralixweb.es/articulo-crimen-cuenca.html", "name": "El crimen de Cuenca: el error judicial"}, {"@type": "ListItem", "position": 30, "url": "https://www.viralixweb.es/articulo-marta-calvo.html", "name": "Caso Marta Calvo"}, {"@type": "ListItem", "position": 31, "url": "https://www.viralixweb.es/articulo-wanninkhof-bis.html", "name": "Wanninkhof: el asesino que mató de nuevo"}, {"@type": "ListItem", "position": 32, "url": "https://www.viralixweb.es/articulo-aguilar.html", "name": "Las niñas de Aguilar"}, {"@type": "ListItem", "position": 33, "url": "https://www.viralixweb.es/articulo-arropiero.html", "name": "El Arropiero"}, {"@type": "ListItem", "position": 34, "url": "https://www.viralixweb.es/articulo-breton.html", "name": "Caso Bretón"}, {"@type": "ListItem", "position": 35, "url": "https://www.viralixweb.es/articulo-envenenadora.html", "name": "La envenenadora de Valencia"}, {"@type": "ListItem", "position": 36, "url": "https://www.viralixweb.es/articulo-eclipse-2026.html", "name": "Eclipse solar del 12 de agosto de 2026"}, {"@type": "ListItem", "position": 37, "url": "https://www.viralixweb.es/articulo-super-elnino.html", "name": "Super El Niño 2026"}, {"@type": "ListItem", "position": 38, "url": "https://www.viralixweb.es/articulo-marianas.html", "name": "Qué hay realmente en la fosa de las Marianas"}, {"@type": "ListItem", "position": 39, "url": "https://www.viralixweb.es/articulo-hantavirus.html", "name": "Hantavirus: el brote del crucero Hondius"}, {"@type": "ListItem", "position": 40, "url": "https://www.viralixweb.es/articulo-falsos-recuerdos.html", "name": "Falsos recuerdos: cuando recuerdas lo que nunca pasó"}]}</script><!-- VX:ITEMLIST:FIN -->
 </head>
 <body>
 
@@ -419,24 +456,25 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAVBAR -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">VIRAL<span>I</span>X</a>
+<a class="skip-link" href="#articulos">Saltar al contenido</a>
+<nav id="navbar" aria-label="Principal">
+  <a href="/" class="nav-logo" aria-label="VIRALIX, portada">VIRAL<span>I</span>X</a>
   <div class="nav-links" id="navLinks">
     <a href="#articulos">Artículos</a>
-    <a href="#categorias">Categorías</a>
     <a href="#true-crime">True Crime</a>
-    <a href="#ciencia">Ciencia</a>
+    <a href="#internacional">Internacional</a>
+    <a href="#misterios">Misterios</a>
+    <a href="#criminologia">Criminología</a>
     <a href="#mapa">Mapa</a>
     <a href="timeline.html">Timeline</a>
     <a href="sobre-nosotros.html">Sobre nosotros</a>
-    <a href="#quiz">Quiz</a>
-    <a href="#contacto">Contacto</a>
+    <a href="contacto.html">Contacto</a>
     <a href="#newsletter" class="nav-cta">Suscribirse</a>
-    <button class="random-btn" id="randomBtn" title="Artículo aleatorio">🎲</button>
-    <button class="a11y-btn" id="a11yBtn" title="Tamaño de texto">Aa</button>
-    <button class="mode-toggle" id="modeToggle" title="Cambiar tema">☀️</button>
+    <button class="random-btn" id="randomBtn" title="Artículo aleatorio" aria-label="Leer un artículo al azar">🎲</button>
+    <button class="a11y-btn" id="a11yBtn" title="Tamaño de texto" aria-label="Cambiar el tamaño del texto">Aa</button>
+    <button class="mode-toggle" id="modeToggle" title="Cambiar tema" aria-label="Cambiar entre modo claro y oscuro">☀️</button>
   </div>
-  <button class="nav-menu-btn" id="menuBtn">☰</button>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
 </nav>
 
 <!-- HERO -->
@@ -445,15 +483,15 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   <div class="hero-grid"></div>
   <div class="hero-eyebrow">True Crime · Misterios · España</div>
   <h1 class="hero-title">LO QUE<br><span class="accent">NO</span><br><span class="outline">SABÍAS</span></h1>
-  <p class="hero-sub">Crímenes reales, casos sin resolver e historias que España no olvidará. Contenido verificado cada semana.</p>
+  <p class="hero-sub">Crímenes reales, casos sin resolver, misterios y criminología. Historias de España y del mundo contadas con fuentes y sin sensacionalismo.</p>
   <div class="hero-actions">
     <a href="#articulos" class="btn-primary">Explorar ahora</a>
     <a href="#newsletter" class="btn-ghost">Suscribirse gratis</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">19</div><div class="stat-label">Artículos publicados</div></div>
+    <div class="stat"><div class="stat-num"><!-- VX:TOTAL -->40<!-- /VX:TOTAL --></div><div class="stat-label">Artículos publicados</div></div>
     <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Activo desde</div></div>
-    <div class="stat"><div class="stat-num">ES</div><div class="stat-label">Enfocado en España</div></div>
+    <div class="stat"><div class="stat-num">ES</div><div class="stat-label">España y el mundo</div></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
 </section>
@@ -478,10 +516,11 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 
 
 <!-- BUSCADOR -->
-<div class="search-section">
+<div class="search-section" id="buscar" role="search">
   <div class="search-box">
-    <input type="text" class="search-input" id="searchInput" placeholder="Buscar caso, ciudad, año...">
-    <span class="search-icon">🔍</span>
+    <label for="searchInput" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar en VIRALIX</label>
+    <input type="search" class="search-input" id="searchInput" placeholder="Buscar caso, ciudad, año..." autocomplete="off">
+    <span class="search-icon" aria-hidden="true">🔍</span>
     <div class="search-results" id="searchResults"></div>
     <div class="search-no-results" id="searchNoResults">No se encontraron resultados</div>
   </div>
@@ -489,9 +528,9 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 
 <!-- STATS BAR -->
 <div class="stats-bar reveal">
-  <div class="stat-block"><div class="num">19<span>+</span></div><div class="lbl">Artículos publicados</div></div>
+  <div class="stat-block"><div class="num"><!-- VX:TOTAL -->40<!-- /VX:TOTAL --><span>+</span></div><div class="lbl">Artículos publicados</div></div>
   <div class="stat-block"><div class="num">100<span>%</span></div><div class="lbl">Fuentes verificadas</div></div>
-  <div class="stat-block"><div class="num">9<span>+</span></div><div class="lbl">Casos de true crime</div></div>
+  <div class="stat-block"><div class="num"><!-- VX:TC -->30<!-- /VX:TC --><span>+</span></div><div class="lbl">Casos de true crime</div></div>
   <div class="stat-block"><div class="num">0<span>€</span></div><div class="lbl">Coste para el lector</div></div>
 </div>
 
@@ -531,190 +570,366 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 <!-- ARTICLES GRID -->
 <section style="padding-top:0">
 <div id="true-crime" class="section-header reveal" style="margin-top:60px">
-    <div><div class="section-label">14 casos documentados</div><div class="section-title">TRUE CRIME</div></div>
+    <div><div class="section-label">Casos documentados en España</div><div class="section-title">TRUE CRIME</div></div>
   </div>
   <div class="articles-grid">
     <div class="article-card clickable reveal" onclick="location.href='articulo-alcasser.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-alcasser.png" alt="Caso Alcàsser: 30 años de preguntas sin respuesta" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-alcasser-800.webp" type="image/webp"><img src="img-alcasser.png" alt="Caso Alcàsser: 30 años de preguntas sin respuesta" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Caso Alcàsser: 30 años de preguntas sin respuesta</h3>
       <div class="article-meta"><span>Valencia · 1992</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-alcasser.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Alcàsser: 30 años de preguntas sin respuesta%20https://www.viralixweb.es/articulo-alcasser.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Alcàsser: 30 años de preguntas sin respuesta%20https://www.viralixweb.es/articulo-alcasser.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-wanninkhof.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-wanninkhof.png" alt="Caso Wanninkhof: condenaron a una inocente" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-wanninkhof-800.webp" type="image/webp"><img src="img-wanninkhof.png" alt="Caso Wanninkhof: condenaron a una inocente" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Caso Wanninkhof: condenaron a una inocente</h3>
       <div class="article-meta"><span>Marbella · 1999</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-wanninkhof.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Wanninkhof: condenaron a una inocente%20https://www.viralixweb.es/articulo-wanninkhof.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Wanninkhof: condenaron a una inocente%20https://www.viralixweb.es/articulo-wanninkhof.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-castillo.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-marta-castillo.png" alt="Marta del Castillo: 17 años buscando su cuerpo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-marta-castillo-800.webp" type="image/webp"><img src="img-marta-castillo.png" alt="Marta del Castillo: 17 años buscando su cuerpo" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Marta del Castillo: 17 años buscando su cuerpo</h3>
       <div class="article-meta"><span>Sevilla · 2009</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-marta-castillo.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Marta del Castillo: 17 años buscando su cuerpo%20https://www.viralixweb.es/articulo-marta-castillo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Marta del Castillo: 17 años buscando su cuerpo%20https://www.viralixweb.es/articulo-marta-castillo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-diana-quer.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-diana-quer.png" alt="Caso Diana Quer: 500 días buscándola" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-diana-quer-800.webp" type="image/webp"><img src="img-diana-quer.png" alt="Caso Diana Quer: 500 días buscándola" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Caso Diana Quer: 500 días buscándola</h3>
       <div class="article-meta"><span>Galicia · 2016</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-diana-quer.html" class="card-leer" style="color:#0ff4e0" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Diana Quer: 500 días buscándola%20https://www.viralixweb.es/articulo-diana-quer.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Diana Quer: 500 días buscándola%20https://www.viralixweb.es/articulo-diana-quer.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-asunta.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asunta.png" alt="El Caso Asunta: sus padres la drogaron y la mataron" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-asunta-800.webp" type="image/webp"><img src="img-asunta.png" alt="El Caso Asunta: sus padres la drogaron y la mataron" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Caso Asunta: sus padres la drogaron y la mataron</h3>
       <div class="article-meta"><span>Santiago · 2013</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-asunta.html" class="card-leer" style="color:#6ee7b7" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Caso Asunta: sus padres la drogaron y la mataron%20https://www.viralixweb.es/articulo-asunta.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Caso Asunta: sus padres la drogaron y la mataron%20https://www.viralixweb.es/articulo-asunta.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-asesino-baraja.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-asesino-baraja.png" alt="El Asesino de la Baraja: 6 muertos en Madrid" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-asesino-baraja-800.webp" type="image/webp"><img src="img-asesino-baraja.png" alt="El Asesino de la Baraja: 6 muertos en Madrid" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Baraja: 6 muertos en Madrid</h3>
       <div class="article-meta"><span>Madrid · 2003</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-asesino-baraja.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Asesino de la Baraja: 6 muertos en Madrid%20https://www.viralixweb.es/articulo-asesino-baraja.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Asesino de la Baraja: 6 muertos en Madrid%20https://www.viralixweb.es/articulo-asesino-baraja.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-katana.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-katana.png" alt="El Asesino de la Katana: mató a su familia" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-katana-800.webp" type="image/webp"><img src="img-katana.png" alt="El Asesino de la Katana: mató a su familia" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Asesino de la Katana: mató a su familia</h3>
       <div class="article-meta"><span>Murcia · 2000</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
         <a href="articulo-katana.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Asesino de la Katana: mató a su familia%20https://www.viralixweb.es/articulo-katana.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Asesino de la Katana: mató a su familia%20https://www.viralixweb.es/articulo-katana.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-puerto-hurraco.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-puerto-hurraco.png" alt="La Matanza de Puerto Hurraco: 9 muertos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-puerto-hurraco-800.webp" type="image/webp"><img src="img-puerto-hurraco.png" alt="La Matanza de Puerto Hurraco: 9 muertos" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">La Matanza de Puerto Hurraco: 9 muertos</h3>
       <div class="article-meta"><span>Badajoz · 1990</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-puerto-hurraco.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=La Matanza de Puerto Hurraco: 9 muertos%20https://www.viralixweb.es/articulo-puerto-hurraco.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=La Matanza de Puerto Hurraco: 9 muertos%20https://www.viralixweb.es/articulo-puerto-hurraco.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-rol.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-crimen-rol.png" alt="Los Crímenes del Rol: adolescentes que mataron por un juego" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-crimen-rol-800.webp" type="image/webp"><img src="img-crimen-rol.png" alt="Los Crímenes del Rol: adolescentes que mataron por un juego" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Los Crímenes del Rol: adolescentes que mataron por un juego</h3>
       <div class="article-meta"><span>Madrid · 1994</span><span class="dot"></span><span>9 min</span></div>
       <div class="card-footer">
         <a href="articulo-crimen-rol.html" class="card-leer" style="color:var(--accent)" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Los Crímenes del Rol: adolescentes que mataron por un juego%20https://www.viralixweb.es/articulo-crimen-rol.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Los Crímenes del Rol: adolescentes que mataron por un juego%20https://www.viralixweb.es/articulo-crimen-rol.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-urquijo.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-urquijo.png" alt="El Crimen de los Marqueses de Urquijo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-urquijo-800.webp" type="image/webp"><img src="img-urquijo.png" alt="El Crimen de los Marqueses de Urquijo" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Crimen de los Marqueses de Urquijo</h3>
       <div class="article-meta"><span>Madrid · 1980</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-urquijo.html" class="card-leer" style="color:#c9a84c" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Crimen de los Marqueses de Urquijo%20https://www.viralixweb.es/articulo-urquijo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Crimen de los Marqueses de Urquijo%20https://www.viralixweb.es/articulo-urquijo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-el-lute.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-el-lute.png" alt="El Lute: escapó dos veces y se convirtió en leyenda" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-el-lute-800.webp" type="image/webp"><img src="img-el-lute.png" alt="El Lute: escapó dos veces y se convirtió en leyenda" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Lute: escapó dos veces y se convirtió en leyenda</h3>
       <div class="article-meta"><span>España · 1965</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-el-lute.html" class="card-leer" style="color:#d97706" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Lute: escapó dos veces y se convirtió en leyenda%20https://www.viralixweb.es/articulo-el-lute.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Lute: escapó dos veces y se convirtió en leyenda%20https://www.viralixweb.es/articulo-el-lute.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-crimen-cuenca.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-crimen-cuenca.png" alt="El Crimen de Cuenca: torturaron a dos inocentes" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-crimen-cuenca-800.webp" type="image/webp"><img src="img-crimen-cuenca.png" alt="El Crimen de Cuenca: torturaron a dos inocentes" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Crimen de Cuenca: torturaron a dos inocentes</h3>
       <div class="article-meta"><span>Cuenca · 1910</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-crimen-cuenca.html" class="card-leer" style="color:#c9a96e" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Crimen de Cuenca: torturaron a dos inocentes%20https://www.viralixweb.es/articulo-crimen-cuenca.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Crimen de Cuenca: torturaron a dos inocentes%20https://www.viralixweb.es/articulo-crimen-cuenca.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marta-calvo.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-marta-calvo.png" alt="Caso Marta Calvo: su asesino disolvía los cuerpos en ácido" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-marta-calvo-800.webp" type="image/webp"><img src="img-marta-calvo.png" alt="Caso Marta Calvo: su asesino disolvía los cuerpos en ácido" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Caso Marta Calvo: su asesino disolvía los cuerpos en ácido</h3>
       <div class="article-meta"><span>Valencia · 2019</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-marta-calvo.html" class="card-leer" style="color:#b07cc6" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Marta Calvo: su asesino disolvía los cuerpos en ácido%20https://www.viralixweb.es/articulo-marta-calvo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Marta Calvo: su asesino disolvía los cuerpos en ácido%20https://www.viralixweb.es/articulo-marta-calvo.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-wanninkhof-bis.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-wanninkhof-bis.png" alt="El asesino que mató de nuevo mientras una inocente cumplía condena" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-wanninkhof-bis-800.webp" type="image/webp"><img src="img-wanninkhof-bis.png" alt="El asesino que mató de nuevo mientras una inocente cumplía condena" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El asesino que mató de nuevo mientras una inocente cumplía condena</h3>
       <div class="article-meta"><span>Marbella · 1999-2003</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-wanninkhof-bis.html" class="card-leer" style="color:#a569bd" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El asesino que mató de nuevo mientras una inocente cumplía condena%20https://www.viralixweb.es/articulo-wanninkhof-bis.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El asesino que mató de nuevo mientras una inocente cumplía condena%20https://www.viralixweb.es/articulo-wanninkhof-bis.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-aguilar.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-aguilar.png" alt="Las Niñas de Aguilar: desaparecieron haciendo autostop" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-aguilar-800.webp" type="image/webp"><img src="img-aguilar.png" alt="Las Niñas de Aguilar: desaparecieron haciendo autostop" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Las Niñas de Aguilar: desaparecieron haciendo autostop</h3>
       <div class="article-meta"><span>Palencia · 1992</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-aguilar.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Las Niñas de Aguilar: desaparecieron haciendo autostop%20https://www.viralixweb.es/articulo-aguilar.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Las Niñas de Aguilar: desaparecieron haciendo autostop%20https://www.viralixweb.es/articulo-aguilar.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-arropiero.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-arropiero.png" alt="El Arropiero: el mayor asesino en serie de España" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-arropiero-800.webp" type="image/webp"><img src="img-arropiero.png" alt="El Arropiero: el mayor asesino en serie de España" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">El Arropiero: el mayor asesino en serie de España</h3>
       <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>12 min</span></div>
       <div class="card-footer">
         <a href="articulo-arropiero.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El Arropiero: el mayor asesino en serie de España%20https://www.viralixweb.es/articulo-arropiero.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El Arropiero: el mayor asesino en serie de España%20https://www.viralixweb.es/articulo-arropiero.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-breton.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-breton.png" alt="Caso Bretón: el padre que quemó a sus hijos" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-breton-800.webp" type="image/webp"><img src="img-breton.png" alt="Caso Bretón: el padre que quemó a sus hijos" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">Caso Bretón: el padre que quemó a sus hijos</h3>
       <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>11 min</span></div>
       <div class="card-footer">
         <a href="articulo-breton.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Caso Bretón: el padre que quemó a sus hijos%20https://www.viralixweb.es/articulo-breton.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Caso Bretón: el padre que quemó a sus hijos%20https://www.viralixweb.es/articulo-breton.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-envenenadora.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-envenenadora.png" alt="La Envenenadora de Valencia: la última mujer ejecutada en España" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-envenenadora-800.webp" type="image/webp"><img src="img-envenenadora.png" alt="La Envenenadora de Valencia: la última mujer ejecutada en España" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag">True Crime</span>
       <h3 class="article-title">La Envenenadora de Valencia: última mujer ejecutada en España</h3>
       <div class="article-meta"><span>Valencia · 1959</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-envenenadora.html" class="card-leer" style="color:#e8321a" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=La Envenenadora de Valencia: última mujer ejecutada en España%20https://www.viralixweb.es/articulo-envenenadora.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=La Envenenadora de Valencia: última mujer ejecutada en España%20https://www.viralixweb.es/articulo-envenenadora.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
   </div>
+
+  <!-- VX:NUEVOS:INICIO (generado por scripts/construir.py) -->
+  <div id="true-crime-nuevos" class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">Nuevos expedientes</div><div class="section-title">MÁS CASOS DE <span>ESPAÑA</span></div></div>
+  </div>
+  <div class="vx-grid">
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-calle-fuencarral.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/calle-fuencarral-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-calle-fuencarral.html">El crimen de la calle Fuencarral</a></h3>
+        <p class="vx-card__desc">Madrid, 1888: una viuda asesinada, una criada acusada y un hijo preso que quizá salía de la cárcel. El caso que convirtió a la prensa española en tribunal.</p>
+        <span class="vx-card__meta">Madrid, España · 1888 · 10 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-sacamantecas.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/sacamantecas-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-sacamantecas.html">El Sacamantecas de Vitoria</a></h3>
+        <p class="vx-card__desc">Juan Díaz de Garayo aterrorizó Álava entre 1870 y 1879. La historia real del hombre que dio rostro a una leyenda popular y del debate sobre locura y crimen.</p>
+        <span class="vx-card__meta">Vitoria, Álava · 1870-1879 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-enriqueta-marti.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/enriqueta-marti-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-enriqueta-marti.html">Enriqueta Martí, la «vampira del Raval»</a></h3>
+        <p class="vx-card__desc">Barcelona, 1912: una niña desaparecida, una mujer detenida y una leyenda de pociones y crímenes. Qué se sabe de Enriqueta Martí, que nunca fue juzgada.</p>
+        <span class="vx-card__meta">Barcelona, España · 1912 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-crimen-fago.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/crimen-fago-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-crimen-fago.html">El crimen de Fago</a></h3>
+        <p class="vx-card__desc">En 2007 el alcalde de Fago, un pueblo de 30 vecinos del Pirineo oscense, fue asesinado. La investigación, la confesión retractada y la condena de Mainar.</p>
+        <span class="vx-card__meta">Fago, Huesca · 2007 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-guardia-urbana.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/guardia-urbana-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-guardia-urbana.html">El crimen de la Guardia Urbana</a></h3>
+        <p class="vx-card__desc">El agente Pedro Rodríguez apareció en 2017 en un coche calcinado junto al pantano de Foix. Cómo se investigó el crimen y se juzgó a Rosa Peral y Albert López.</p>
+        <span class="vx-card__meta">Cubelles y Foix, Barcelona · 2017 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-galindos.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/galindos-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-galindos.html">El crimen de Los Galindos</a></h3>
+        <p class="vx-card__desc">Julio de 1975: cinco personas mueren de forma violenta en el cortijo de Los Galindos, en Paradas (Sevilla). Medio siglo después, el caso sigue sin culpables.</p>
+        <span class="vx-card__meta">Paradas, Sevilla · 1975 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-es reveal">
+      <a class="vx-card__img" href="articulo-jarabo.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/jarabo-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">True Crime</span>
+        <h3 class="vx-card__title"><a href="articulo-jarabo.html">El caso Jarabo</a></h3>
+        <p class="vx-card__desc">José María Jarabo, hijo de una familia acomodada, asesinó a cuatro personas en Madrid en julio de 1958. Su caso fue uno de los más mediáticos del franquismo.</p>
+        <span class="vx-card__meta">Madrid, España · 1958 · 8 min</span>
+      </div>
+    </article>
+  </div>
+  <div id="internacional" class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">Grandes casos del mundo</div><div class="section-title">CASOS <span>INTERNACIONALES</span></div></div>
+  </div>
+  <div class="vx-grid">
+    <article class="vx-card cat-intl reveal">
+      <a class="vx-card__img" href="articulo-jack-el-destripador.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/jack-el-destripador-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Internacional</span>
+        <h3 class="vx-card__title"><a href="articulo-jack-el-destripador.html">Jack el Destripador</a></h3>
+        <p class="vx-card__desc">Londres, 1888: cinco mujeres asesinadas en Whitechapel y un apodo convertido en leyenda. La historia real del caso, de sus víctimas y de la investigación.</p>
+        <span class="vx-card__meta">Whitechapel, Londres · 1888 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-intl reveal">
+      <a class="vx-card__img" href="articulo-zodiaco.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/zodiaco-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Internacional</span>
+        <h3 class="vx-card__title"><a href="articulo-zodiaco.html">El asesino del Zodiaco</a></h3>
+        <p class="vx-card__desc">Entre 1968 y 1969 un asesino atacó a siete personas en San Francisco y retó a la policía con cartas cifradas. Qué se sabe del Zodiaco y por qué sigue abierto.</p>
+        <span class="vx-card__meta">Bahía de San Francisco, EE. UU. · 1968-1969 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-intl reveal">
+      <a class="vx-card__img" href="articulo-lindbergh.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/lindbergh-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Internacional</span>
+        <h3 class="vx-card__title"><a href="articulo-lindbergh.html">El secuestro Lindbergh</a></h3>
+        <p class="vx-card__desc">En 1932 secuestraron al hijo del aviador más famoso del mundo. La investigación, el rescate, la pista del oro y el juicio a Bruno Hauptmann, todavía discutido.</p>
+        <span class="vx-card__meta">Hopewell, Nueva Jersey (EE. UU.) · 1932 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-intl reveal">
+      <a class="vx-card__img" href="articulo-db-cooper.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/db-cooper-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Internacional</span>
+        <h3 class="vx-card__title"><a href="articulo-db-cooper.html">El misterio de D. B. Cooper</a></h3>
+        <p class="vx-card__desc">En 1971 un hombre secuestró un Boeing 727, cobró 200.000 dólares y saltó en paracaídas sobre Washington. El FBI nunca supo quién era ni qué fue de él.</p>
+        <span class="vx-card__meta">Portland–Seattle, EE. UU. · 1971 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-intl reveal">
+      <a class="vx-card__img" href="articulo-lizzie-borden.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/lizzie-borden-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Internacional</span>
+        <h3 class="vx-card__title"><a href="articulo-lizzie-borden.html">El caso Lizzie Borden</a></h3>
+        <p class="vx-card__desc">En 1892, Andrew y Abby Borden fueron asesinados en su casa de Fall River. Su hija Lizzie fue juzgada y absuelta. Por qué el caso aún divide a los historiadores.</p>
+        <span class="vx-card__meta">Fall River, Massachusetts (EE. UU.) · 1892 · 8 min</span>
+      </div>
+    </article>
+  </div>
+  <div id="misterios" class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">Enigmas con base histórica</div><div class="section-title"><span>MISTERIOS</span></div></div>
+  </div>
+  <div class="vx-grid">
+    <article class="vx-card cat-mist reveal">
+      <a class="vx-card__img" href="articulo-paso-dyatlov.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/paso-dyatlov-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Misterios</span>
+        <h3 class="vx-card__title"><a href="articulo-paso-dyatlov.html">El incidente del paso Diátlov</a></h3>
+        <p class="vx-card__desc">En 1959 nueve montañeros soviéticos murieron en los Urales tras huir de su tienda en plena noche. Las teorías, la investigación oficial y qué dice la ciencia.</p>
+        <span class="vx-card__meta">Montes Urales, Rusia · 1959 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-mist reveal">
+      <a class="vx-card__img" href="articulo-mary-celeste.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/mary-celeste-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Misterios</span>
+        <h3 class="vx-card__title"><a href="articulo-mary-celeste.html">El misterio del Mary Celeste</a></h3>
+        <p class="vx-card__desc">En 1872 el bergantín Mary Celeste apareció a la deriva en el Atlántico, intacto y sin tripulación. Qué se sabe, qué inventó la ficción y qué teorías hay.</p>
+        <span class="vx-card__meta">Océano Atlántico · 1872 · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-mist reveal">
+      <a class="vx-card__img" href="articulo-caras-belmez.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/caras-belmez-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Misterios</span>
+        <h3 class="vx-card__title"><a href="articulo-caras-belmez.html">Las caras de Bélmez</a></h3>
+        <p class="vx-card__desc">En 1971 aparecieron rostros en el suelo de una casa de Bélmez de la Moraleda (Jaén). Medio siglo de polémica entre defensores de lo paranormal y la ciencia.</p>
+        <span class="vx-card__meta">Bélmez de la Moraleda, Jaén · 1971 · 8 min</span>
+      </div>
+    </article>
+  </div>
+  <div id="criminologia" class="section-header reveal" style="margin-top:80px">
+    <div><div class="section-label">La mente criminal</div><div class="section-title"><span>CRIMINOLOGÍA</span></div></div>
+  </div>
+  <div class="vx-grid">
+    <article class="vx-card cat-crim reveal">
+      <a class="vx-card__img" href="articulo-perfil-criminal.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/perfil-criminal-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Criminología</span>
+        <h3 class="vx-card__title"><a href="articulo-perfil-criminal.html">La perfilación criminal</a></h3>
+        <p class="vx-card__desc">Las series han convertido al «profiler» en un adivino que lee la mente del asesino. Cómo nació la perfilación criminal, cómo funciona y qué dicen los estudios.</p>
+        <span class="vx-card__meta">Criminología · Análisis · 8 min</span>
+      </div>
+    </article>
+    <article class="vx-card cat-crim reveal">
+      <a class="vx-card__img" href="articulo-psicopatia.html" tabindex="-1" aria-hidden="true"><img src="images/articulos/psicopatia-portada.webp" alt="" width="1200" height="630" loading="lazy" decoding="async"></a>
+      <div class="vx-card__body">
+        <span class="vx-chip">Criminología</span>
+        <h3 class="vx-card__title"><a href="articulo-psicopatia.html">Psicopatía: radiografía de un concepto</a></h3>
+        <p class="vx-card__desc">La psicopatía es uno de los conceptos más usados y peor entendidos del true crime. Qué es según la ciencia, cómo se evalúa y qué mitos conviene desterrar.</p>
+        <span class="vx-card__meta">Criminología · Análisis · 8 min</span>
+      </div>
+    </article>
+  </div>
+  <!-- VX:NUEVOS:FIN -->
 
   <!-- CIENCIA Y MISTERIOS -->
   <div id="ciencia" class="section-header reveal" style="margin-top:80px">
@@ -722,91 +937,58 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   </div>
   <div class="articles-grid">
     <div class="article-card clickable reveal" onclick="location.href='articulo-eclipse-2026.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-eclipse-2026.png" alt="Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-eclipse-2026-800.webp" type="image/webp"><img src="img-eclipse-2026.png" alt="Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f39c12;border-color:rgba(249,115,22,0.3)">☀️ Ciencia</span>
       <h3 class="article-title">Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo</h3>
       <div class="article-meta"><span>España · 12 Ago 2026</span><span class="dot"></span><span>10 min</span></div>
       <div class="card-footer">
         <a href="articulo-eclipse-2026.html" class="card-leer" style="color:#f39c12" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo%20https://www.viralixweb.es/articulo-eclipse-2026.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Eclipse Solar 12 agosto 2026: España en el centro del fenómeno del siglo%20https://www.viralixweb.es/articulo-eclipse-2026.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-super-elnino.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-super-elnino.png" alt="Super El Niño 2026: el fenómeno más devastador desde 1877" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-super-elnino-800.webp" type="image/webp"><img src="img-super-elnino.png" alt="Super El Niño 2026: el fenómeno más devastador desde 1877" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">Ciencia</span>
       <h3 class="article-title">Super El Niño 2026: el fenómeno más devastador desde 1877</h3>
       <div class="article-meta"><span>Global · 2026</span><span class="dot"></span><span>8 min</span></div>
       <div class="card-footer">
         <a href="articulo-super-elnino.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Super El Niño 2026: el fenómeno más devastador desde 1877%20https://www.viralixweb.es/articulo-super-elnino.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Super El Niño 2026: el fenómeno más devastador desde 1877%20https://www.viralixweb.es/articulo-super-elnino.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-marianas.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-marianas.png" alt="Qué encontraron realmente en el fondo del Pacífico" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-marianas-800.webp" type="image/webp"><img src="img-marianas.png" alt="Qué encontraron realmente en el fondo del Pacífico" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#38bdf8;border-color:rgba(249,115,22,0.3)">Océanos</span>
       <h3 class="article-title">Qué encontraron realmente en el fondo del Pacífico</h3>
       <div class="article-meta"><span>Océano Pacífico</span><span class="dot"></span><span>6 min</span></div>
       <div class="card-footer">
         <a href="articulo-marianas.html" class="card-leer" style="color:#38bdf8" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Qué encontraron realmente en el fondo del Pacífico%20https://www.viralixweb.es/articulo-marianas.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Qué encontraron realmente en el fondo del Pacífico%20https://www.viralixweb.es/articulo-marianas.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-hantavirus.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-hantavirus.png" alt="Hantavirus: el brote del crucero Hondius" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-hantavirus-800.webp" type="image/webp"><img src="img-hantavirus.png" alt="Hantavirus: el brote del crucero Hondius" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3)">Salud</span>
       <h3 class="article-title">Hantavirus: el brote del crucero Hondius</h3>
       <div class="article-meta"><span>Antártida</span><span class="dot"></span><span>8 min</span></div>
       <div class="card-footer">
         <a href="articulo-hantavirus.html" class="card-leer" style="color:#f97316" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=Hantavirus: el brote del crucero Hondius%20https://www.viralixweb.es/articulo-hantavirus.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=Hantavirus: el brote del crucero Hondius%20https://www.viralixweb.es/articulo-hantavirus.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
     <div class="article-card clickable reveal" onclick="location.href='articulo-falsos-recuerdos.html'">
-      <div class="card-img" style="background:#000;overflow:hidden"><img src="img-falsos-recuerdos.png" alt="El fenómeno que hace que recuerdes cosas que nunca pasaron" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></div>
+      <div class="card-img" style="background:#000;overflow:hidden"><picture><source srcset="images/optimizadas/img-falsos-recuerdos-800.webp" type="image/webp"><img src="img-falsos-recuerdos.png" alt="El fenómeno que hace que recuerdes cosas que nunca pasaron" width="800" height="533" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.85"></picture></div>
       <span class="tag" style="background:rgba(249,115,22,0.15);color:#a78bfa;border-color:rgba(249,115,22,0.3)">Mente</span>
       <h3 class="article-title">El fenómeno que hace que recuerdes cosas que nunca pasaron</h3>
       <div class="article-meta"><span>Psicología</span><span class="dot"></span><span>5 min</span></div>
       <div class="card-footer">
         <a href="articulo-falsos-recuerdos.html" class="card-leer" style="color:#a78bfa" onclick="event.stopPropagation()">Leer →</a>
-        <a href="https://api.whatsapp.com/send?text=El fenómeno que hace que recuerdes cosas que nunca pasaron%20https://www.viralixweb.es/articulo-falsos-recuerdos.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share">📲</a>
+        <a href="https://api.whatsapp.com/send?text=El fenómeno que hace que recuerdes cosas que nunca pasaron%20https://www.viralixweb.es/articulo-falsos-recuerdos.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="wa-share" aria-label="Compartir en WhatsApp">📲</a>
       </div>
     </div>
   </div>
 
-  <!-- PRÓXIMAMENTE -->
-  <div id="proximamente" class="section-header reveal" style="margin-top:80px">
-    <div><div class="section-label">En preparación</div><div class="section-title">PRÓXIMAMENTE</div></div>
-  </div>
-  <div class="articles-grid">
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#1a0505,#0d0000)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🔥</span></div>
-      <span class="tag" style="background:rgba(239,68,68,0.1);color:#f87171;border-color:#f8717133">True Crime</span>
-      <h3 class="article-title">Caso Bretón: el padre que quemó a sus hijos para vengarse</h3>
-      <div class="article-meta"><span>Córdoba · 2011</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(239,68,68,0.1);color:#f87171">🔜 En preparación</span></div>
-    </div>
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a0a14,#050510)"><span class="card-emoji" style="font-size:48px;opacity:0.5">💀</span></div>
-      <span class="tag" style="background:rgba(139,92,246,0.1);color:#a78bfa;border-color:#a78bfa33">True Crime</span>
-      <h3 class="article-title">El Arropiero: el mayor asesino en serie de la historia de España</h3>
-      <div class="article-meta"><span>España · 1964-1971</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(139,92,246,0.1);color:#a78bfa">🔜 En preparación</span></div>
-    </div>
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#0a1210,#050d0a)"><span class="card-emoji" style="font-size:48px;opacity:0.5">🕳️</span></div>
-      <span class="tag" style="background:rgba(16,185,129,0.1);color:#34d399;border-color:#34d39933">True Crime</span>
-      <h3 class="article-title">Las Niñas de Aguilar: desaparecieron hace 30 años y nadie las buscó</h3>
-      <div class="article-meta"><span>Aguilar de Campoo · 1992</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(16,185,129,0.1);color:#34d399">🔜 En preparación</span></div>
-    </div>
-    <div class="article-card proxima reveal">
-      <div class="card-img" style="background:linear-gradient(135deg,#14100a,#0d0a05)"><span class="card-emoji" style="font-size:48px;opacity:0.5">⚗️</span></div>
-      <span class="tag" style="background:rgba(251,191,36,0.1);color:#fbbf24;border-color:#fbbf2433">True Crime</span>
-      <h3 class="article-title">La Envenenadora de Valencia: mató a dos maridos con lejía</h3>
-      <div class="article-meta"><span>Valencia · 2004</span><span class="dot"></span><span>Próximamente</span></div>
-      <div class="card-footer"><span class="proxima-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24">🔜 En preparación</span></div>
-    </div>
-  </div>
+</section>
 
 <!-- CASO DEL MES -->
 <section class="caso-mes reveal">
@@ -814,12 +996,12 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <div><div class="section-label">Destacado</div><div class="section-title">CASO DEL MES</div></div>
   </div>
   <div class="caso-mes-inner">
-    <div class="caso-mes-img" style="background-image:url('img-diana-quer.png')"></div>
+    <div class="caso-mes-img" style="background-image:url('images/articulos/galindos-portada.webp')" role="img" aria-label="Ilustración con el mapa de la provincia de Sevilla y la localidad de Paradas"></div>
     <div class="caso-mes-content">
-      <span class="caso-mes-badge">🔴 Caso del mes · Junio 2026</span>
-      <h3 class="caso-mes-title">El Caso Diana Quer: desapareció una noche de agosto y tardaron 500 días en encontrarla</h3>
-      <p class="caso-mes-excerpt">Galicia, 2016. Tenía 18 años. Su asesino intentó matar a otra joven 16 meses después. Fue la valentía de esa segunda víctima la que resolvió el caso.</p>
-      <a href="articulo-diana-quer.html" class="caso-mes-btn">Leer caso completo →</a>
+      <span class="caso-mes-badge">🔴 Caso del mes · Noviembre 2026</span>
+      <h3 class="caso-mes-title">El crimen de Los Galindos: cinco muertos en un cortijo de Sevilla y medio siglo sin culpables</h3>
+      <p class="caso-mes-excerpt">Paradas, julio de 1975. Una columna de humo destapó el crimen múltiple más enigmático de la España contemporánea. La investigación se torció desde el primer día y el delito prescribió en 1995.</p>
+      <a href="articulo-galindos.html" class="caso-mes-btn">Leer caso completo →</a>
     </div>
   </div>
 </section>
@@ -831,7 +1013,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <span style="font-size:11px;color:var(--muted);letter-spacing:1px">Haz clic en un punto para leer el caso</span>
   </div>
   <div class="mapa-container reveal" style="max-width:900px;margin:0 auto;position:relative;">
-    <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+    <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" aria-label="Mapa esquemático de España con los casos de VIRALIX">
       <!-- España silueta simplificada -->
       <path d="M120,180 L180,120 L280,100 L350,80 L420,60 L500,70 L580,80 L650,100 L720,130 L780,180 L800,250 L790,320 L770,380 L740,420 L700,450 L660,480 L620,500 L580,520 L540,530 L500,540 L460,550 L420,540 L380,520 L340,500 L300,480 L260,450 L220,400 L180,350 L140,300 L120,250 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
       
@@ -915,6 +1097,48 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
         <text x="195" y="152" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Santiago</text>
         <text x="195" y="168" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Asunta · 2013</text>
       </a>
+      <!-- Nuevos casos (noviembre de 2026) -->
+      <a href="articulo-sacamantecas.html" class="map-point-link">
+        <circle cx="470" cy="150" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
+        <circle cx="470" cy="150" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="485" y="142" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Vitoria</text>
+        <text x="485" y="158" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Sacamantecas · 1870s</text>
+      </a>
+
+      <a href="articulo-crimen-fago.html" class="map-point-link">
+        <circle cx="590" cy="150" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
+        <circle cx="590" cy="150" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="605" y="142" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Fago</text>
+        <text x="605" y="158" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Huesca · 2007</text>
+      </a>
+
+      <a href="articulo-enriqueta-marti.html" class="map-point-link">
+        <circle cx="715" cy="215" r="8" fill="#8b5cf6" opacity="0.9" class="map-pulse"/>
+        <circle cx="715" cy="215" r="16" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="730" y="207" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Barcelona</text>
+        <text x="730" y="223" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Raval · 1912</text>
+      </a>
+
+      <a href="articulo-guardia-urbana.html" class="map-point-link">
+        <circle cx="690" cy="250" r="8" fill="#e8321a" opacity="0.9" class="map-pulse"/>
+        <circle cx="690" cy="250" r="16" fill="none" stroke="#e8321a" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="705" y="242" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Foix</text>
+        <text x="705" y="258" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Guardia Urbana · 2017</text>
+      </a>
+
+      <a href="articulo-caras-belmez.html" class="map-point-link">
+        <circle cx="450" cy="440" r="8" fill="#d4a843" opacity="0.9" class="map-pulse"/>
+        <circle cx="450" cy="440" r="16" fill="none" stroke="#d4a843" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="465" y="432" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Bélmez</text>
+        <text x="465" y="448" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Caras · 1971</text>
+      </a>
+
+      <a href="articulo-galindos.html" class="map-point-link">
+        <circle cx="345" cy="445" r="8" fill="#3b82f6" opacity="0.9" class="map-pulse"/>
+        <circle cx="345" cy="445" r="16" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4" class="map-ring"/>
+        <text x="360" y="437" fill="#f4f2ee" font-size="11" font-family="DM Sans,sans-serif" font-weight="500" opacity="0.8">Paradas</text>
+        <text x="360" y="453" fill="rgba(244,242,238,0.4)" font-size="9" font-family="DM Sans,sans-serif">Los Galindos · 1975</text>
+      </a>
     </svg>
 
     <!-- LEYENDA -->
@@ -923,6 +1147,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;display:inline-block"></span> Caso abierto</span>
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#d97706;display:inline-block"></span> Masacre</span>
       <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;display:inline-block"></span> Caso histórico</span>
+      <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#d4a843;display:inline-block"></span> Misterio</span>
     </div>
   </div>
 </section>
@@ -933,12 +1158,12 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <div><div class="section-label">Explora por tema</div><div class="section-title">CATEGORÍAS</div></div>
   </div>
   <div class="categories-grid reveal">
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔪</span><span class="cat-name">TRUE CRIME</span><span class="cat-count">13 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🌊</span><span class="cat-name">NATURALEZA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🧠</span><span class="cat-name">MENTE</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#8b5cf6"></div></a>
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🦠</span><span class="cat-name">CIENCIA</span><span class="cat-count">1 artículo</span><div class="cat-bar" style="background:#f97316"></div></a>
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🔍</span><span class="cat-name">MISTERIOS</span><span class="cat-count">Próximo</span><div class="cat-bar" style="background:var(--gold)"></div></a>
-    <a class="cat-card" href="#articulos"><span class="cat-icon">🌌</span><span class="cat-name">UNIVERSO</span><span class="cat-count">Próximo</span><div class="cat-bar" style="background:#3b82f6"></div></a>
+    <a class="cat-card" href="#true-crime"><span class="cat-icon" aria-hidden="true">🔪</span><span class="cat-name">TRUE CRIME ESPAÑA</span><span class="cat-count">25 artículos</span><div class="cat-bar" style="background:var(--accent)"></div></a>
+    <a class="cat-card" href="#internacional"><span class="cat-icon" aria-hidden="true">🌍</span><span class="cat-name">INTERNACIONAL</span><span class="cat-count">5 artículos</span><div class="cat-bar" style="background:#5b93f7"></div></a>
+    <a class="cat-card" href="#misterios"><span class="cat-icon" aria-hidden="true">🔍</span><span class="cat-name">MISTERIOS</span><span class="cat-count">3 artículos</span><div class="cat-bar" style="background:var(--gold)"></div></a>
+    <a class="cat-card" href="#criminologia"><span class="cat-icon" aria-hidden="true">🧠</span><span class="cat-name">CRIMINOLOGÍA</span><span class="cat-count">2 artículos</span><div class="cat-bar" style="background:#a587f3"></div></a>
+    <a class="cat-card" href="#ciencia"><span class="cat-icon" aria-hidden="true">🌊</span><span class="cat-name">CIENCIA Y MENTE</span><span class="cat-count">5 artículos</span><div class="cat-bar" style="background:var(--teal)"></div></a>
+    <a class="cat-card" href="timeline.html"><span class="cat-icon" aria-hidden="true">🕰️</span><span class="cat-name">TIMELINE</span><span class="cat-count">De 1870 a 2019</span><div class="cat-bar" style="background:#3b82f6"></div></a>
   </div>
 </section>
 
@@ -969,16 +1194,18 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
   <div class="newsletter reveal">
     <div class="newsletter-eyebrow">Únete a la comunidad VIRALIX</div>
     <h2 class="newsletter-title">NO TE<br><span>PIERDAS</span><br>NADA</h2>
-    <p class="newsletter-sub">Una historia impactante cada semana. Sin spam. Sin ruido.</p>
-    <p class="newsletter-sub2">Más de 500 lectores ya reciben el newsletter de VIRALIX cada semana.</p>
+    <p class="newsletter-sub">Nuevos casos documentados, sin spam y sin ruido.</p>
+    <p class="newsletter-sub2">El boletín está en preparación. Déjanos tu correo y te avisaremos por email cuando publiquemos nuevos casos.</p>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" id="emailInput" placeholder="tu@email.com">
-      <button class="newsletter-btn" id="newsletterBtn">Suscribirse</button>
+      <label for="emailInput" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Tu correo electrónico</label>
+      <input type="email" class="newsletter-input" id="emailInput" placeholder="tu@email.com" autocomplete="email">
+      <button class="newsletter-btn" id="newsletterBtn" type="button">Avisadme</button>
     </div>
-    <p class="newsletter-privacy">Al suscribirte aceptas nuestra <a href="privacidad.html">política de privacidad</a>. Puedes darte de baja en cualquier momento.</p>
+    <p class="newsletter-privacy">Se abrirá tu correo con la solicitud preparada; solo usaremos tu email para avisarte. Consulta la <a href="privacidad.html">política de privacidad</a>. Puedes darte de baja cuando quieras.</p>
+    <p class="newsletter-rss">¿Prefieres no dar tu correo? Sigue VIRALIX por <a href="feed.xml">RSS</a>.</p>
     <div class="newsletter-benefits">
-      <span class="benefit">Un artículo semanal exclusivo</span>
-      <span class="benefit">Acceso anticipado a nuevos casos</span>
+      <span class="benefit">Avisos de nuevos casos</span>
+      <span class="benefit">Fuentes verificadas</span>
       <span class="benefit">100% gratuito</span>
       <span class="benefit">Sin spam</span>
     </div>
@@ -1019,7 +1246,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 
 
 <!-- BACK TO TOP -->
-<button class="back-top" id="backTop" title="Volver arriba">↑</button>
+<button class="back-top" id="backTop" title="Volver arriba" aria-label="Volver arriba">↑</button>
 
 
 
@@ -1046,7 +1273,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
 <!-- Buy Me a Coffee -->
 <div style="margin: 40px auto; max-width: 600px; padding: 25px; text-align: center;">
   <p style="color: #888; font-size: 14px; margin-bottom: 12px;">¿Te gusta VIRALIX? Ayúdame a seguir investigando</p>
-  <a href="https://buymeacoffee.com/viralixwebn" target="_blank" rel="noopener noreferrer nofollow sponsored" style="display: inline-block; background: #ffdd00; color: #000; padding: 14px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">☕ Invítame a un café</a>
+  <a href="https://buymeacoffee.com/viralixwebn" target="_blank" rel="noopener noreferrer nofollow" style="display: inline-block; background: #ffdd00; color: #000; padding: 14px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">☕ Invítame a un café</a>
 </div>
 
 <footer>
@@ -1080,14 +1307,20 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
         <a href="articulo-super-elnino.html">Super El Niño 2026</a>
         <a href="articulo-puerto-hurraco.html">Puerto Hurraco</a>
         <a href="articulo-crimen-rol.html">Crímenes del Rol</a>
+        <a href="articulo-galindos.html">Crimen de Los Galindos</a>
+        <a href="articulo-jack-el-destripador.html">Jack el Destripador</a>
+        <a href="articulo-paso-dyatlov.html">Paso Diátlov</a>
       </div>
     </div>
     <div>
       <div class="footer-col-title">Legal</div>
       <div class="footer-links">
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="privacidad.html">Política de Privacidad</a>
-        <a href="aviso-legal.html">Aviso Legal</a>
+        <a href="metodologia.html">Metodología editorial</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Política de cookies</a>
+        <a href="terminos.html">Términos de uso</a>
+        <a href="aviso-legal.html">Aviso legal</a>
         <a href="contacto.html">Contacto</a>
       </div>
     </div>
@@ -1096,8 +1329,10 @@ html { scrollbar-width: thin; scrollbar-color: rgba(232,50,26,0.4) #05060a; }
     <span class="footer-copy">© 2026 VIRALIX — Todos los derechos reservados</span>
     <div class="footer-legal">
       <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
       <a href="aviso-legal.html">Aviso Legal</a>
       <a href="contacto.html">Contacto</a>
+      <button type="button" data-cookie-settings>Configurar cookies</button>
     </div>
   </div>
 </footer>
@@ -1131,7 +1366,10 @@ window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', wi
 // MOBILE MENU
 document.getElementById('menuBtn').addEventListener('click', () => {
   const links = document.getElementById('navLinks');
-  if (links.style.display === 'flex') {
+  const btn = document.getElementById('menuBtn');
+  const abierto = links.style.display === 'flex';
+  btn.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+  if (abierto) {
     links.style.display = 'none';
   } else {
     links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,6,10,0.98);border-bottom:1px solid rgba(255,255,255,0.07);padding:20px 20px;gap:20px;';
@@ -1145,20 +1383,16 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 reveals.forEach(r => observer.observe(r));
 
-// NEWSLETTER
+// NEWSLETTER (sin servidor: prepara un correo de alta; no se simula un registro que no existe)
 document.getElementById('newsletterBtn').addEventListener('click', () => {
   const inp = document.getElementById('emailInput');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (emailRegex.test(inp.value.trim())) {
-    inp.value = '✓ Registrado. Te avisaremos cuando lancemos el newsletter.';
-    inp.style.color = 'var(--teal)';
-    inp.style.borderColor = 'var(--teal)';
-    inp.disabled = true;
+  const email = inp.value.trim();
+  if (emailRegex.test(email)) {
+    window.location.href = 'mailto:viralixweb@gmail.com?subject=' + encodeURIComponent('Avisos de nuevos casos VIRALIX') +
+      '&body=' + encodeURIComponent('Hola, quiero recibir avisos de nuevos casos de VIRALIX en este correo: ' + email + '\n\nHe leído la política de privacidad.');
     const btn = document.getElementById('newsletterBtn');
-    btn.textContent = '✓ Hecho';
-    btn.style.background = 'var(--teal)';
-    btn.style.color = '#000';
-    btn.disabled = true;
+    btn.textContent = '✓ Correo preparado';
   } else {
     inp.style.borderColor = 'var(--accent)';
     inp.placeholder = 'Introduce un email válido';
@@ -1251,6 +1485,25 @@ const articulos = [
   { title: "Eclipse Solar 2026: España en el centro del fenómeno", url: "articulo-eclipse-2026.html", cat: "Ciencia", tags: "eclipse solar 2026 agosto españa totalidad" },
   { title: "Caso Marta Calvo: el asesino que disolvía cuerpos", url: "articulo-marta-calvo.html", cat: "True Crime", tags: "marta calvo valencia 2019 jorge ignacio palma ácido" },
   { title: "Wanninkhof: el asesino mató de nuevo", url: "articulo-wanninkhof-bis.html", cat: "True Crime", tags: "wanninkhof dolores vázquez tony king sonia carabantes" },
+  /* VX:BUSCADOR:INICIO */
+  { title: "El crimen de la calle Fuencarral", url: "articulo-calle-fuencarral.html", cat: "True Crime", tags: "crimen calle fuencarral, higinia balaguer, luciana borcino, josé vázquez varela, millán astray, galdós, juicio por jurado 1888, madrid siglo xix madrid, españa 1888" },
+  { title: "El Sacamantecas de Vitoria", url: "articulo-sacamantecas.html", cat: "True Crime", tags: "sacamantecas, juan díaz de garayo, vitoria, álava, asesino en serie siglo xix, garrote vil 1881, antropología criminal, lombroso vitoria, álava 1870-1879" },
+  { title: "Enriqueta Martí, la «vampira del Raval»", url: "articulo-enriqueta-marti.html", cat: "True Crime", tags: "enriqueta martí, vampira del raval, vampira de barcelona, teresita guitart, calle ponent, barcelona 1912, leyenda urbana, sensacionalismo barcelona, españa 1912" },
+  { title: "El crimen de Fago", url: "articulo-crimen-fago.html", cat: "True Crime", tags: "crimen de fago, miguel grima, santiago mainar, alcalde de fago, huesca, pirineo, guarda forestal, jurado popular, confesión retractada fago, huesca 2007" },
+  { title: "El crimen de la Guardia Urbana", url: "articulo-guardia-urbana.html", cat: "True Crime", tags: "crimen de la guardia urbana, rosa peral, albert lópez, pedro rodríguez, pantano de foix, cubelles, el cuerpo en llamas, jurado popular barcelona cubelles y foix, barcelona 2017" },
+  { title: "El crimen de Los Galindos", url: "articulo-galindos.html", cat: "True Crime", tags: "crimen de los galindos, cortijo los galindos, paradas, sevilla, 1975, crimen sin resolver, prescripción, guardia civil, transición paradas, sevilla 1975" },
+  { title: "El caso Jarabo", url: "articulo-jarabo.html", cat: "True Crime", tags: "caso jarabo, josé maría jarabo, crimen lope de rueda, madrid 1958, el caso, franquismo, garrote vil, carabanchel madrid, españa 1958" },
+  { title: "Jack el Destripador", url: "articulo-jack-el-destripador.html", cat: "Internacional", tags: "jack el destripador, jack the ripper, whitechapel, londres 1888, mary ann nichols, annie chapman, elizabeth stride, catherine eddowes, mary jane kelly, abberline, from hell whitechapel, londres 1888" },
+  { title: "El asesino del Zodiaco", url: "articulo-zodiaco.html", cat: "Internacional", tags: "asesino del zodiaco, zodiac killer, san francisco, vallejo, lake berryessa, cifrado z340, cifrado 408, arthur leigh allen, paul stine, criptografía bahía de san francisco, ee. uu. 1968-1969" },
+  { title: "El secuestro Lindbergh", url: "articulo-lindbergh.html", cat: "Internacional", tags: "secuestro lindbergh, charles lindbergh, bruno richard hauptmann, hopewell, flemington, juicio del siglo, ley lindbergh, certificados de oro, john condon hopewell, nueva jersey (ee. uu.) 1932" },
+  { title: "El misterio de D. B. Cooper", url: "articulo-db-cooper.html", cat: "Internacional", tags: "d. b. cooper, dan cooper, secuestro aéreo 1971, vuelo 305 northwest orient, boeing 727, norjak, fbi, tena bar, paracaídas, columbia portland–seattle, ee. uu. 1971" },
+  { title: "El caso Lizzie Borden", url: "articulo-lizzie-borden.html", cat: "Internacional", tags: "lizzie borden, fall river, massachusetts, 1892, andrew borden, abby borden, bridget sullivan, juicio new bedford, absolución, misterio sin resolver fall river, massachusetts (ee. uu.) 1892" },
+  { title: "El incidente del paso Diátlov", url: "articulo-paso-dyatlov.html", cat: "Misterios", tags: "paso diátlov, dyatlov pass, kholat syakhl, urales 1959, ígor diátlov, avalancha, infrasonido, misterio soviético, yuri yudin montes urales, rusia 1959" },
+  { title: "El misterio del Mary Celeste", url: "articulo-mary-celeste.html", cat: "Misterios", tags: "mary celeste, barco fantasma, dei gratia, benjamin briggs, azores, gibraltar 1872, conan doyle, misterio del mar, alcohol desnaturalizado océano atlántico 1872" },
+  { title: "Las caras de Bélmez", url: "articulo-caras-belmez.html", cat: "Misterios", tags: "caras de bélmez, bélmez de la moraleda, maría gómez cámara, fenómeno paranormal, pareidolia, parapsicología, jaén, escepticismo, pensamiento crítico bélmez de la moraleda, jaén 1971" },
+  { title: "La perfilación criminal", url: "articulo-perfil-criminal.html", cat: "Criminología", tags: "perfil criminal, perfilación criminal, profiler, fbi, unidad de ciencias del comportamiento, mindhunter, organizado desorganizado, perfil geográfico, psicología investigativa, criminología criminología análisis" },
+  { title: "Psicopatía: radiografía de un concepto", url: "articulo-psicopatia.html", cat: "Criminología", tags: "psicopatía, psicópata, escala de hare, pcl-r, cleckley, trastorno antisocial de la personalidad, empatía, criminología, vicente garrido, mitos psicopatía criminología análisis" },
+  /* VX:BUSCADOR:FIN */
 ];
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
@@ -1271,6 +1524,9 @@ if (searchInput) {
     }
   });
   document.addEventListener('click', e => { if (!e.target.closest('.search-box')) { searchResults.classList.remove('active'); searchNoResults.style.display = 'none'; } });
+  // Búsqueda desde la URL (?q=...), usada por el buscador de Google (SearchAction)
+  const qParam = new URLSearchParams(window.location.search).get('q');
+  if (qParam) { searchInput.value = qParam; searchInput.dispatchEvent(new Event('input')); document.getElementById('buscar').scrollIntoView(); }
 }
 
 // QUIZ
@@ -1348,13 +1604,7 @@ backTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 's
 
 
 // RANDOM ARTICLE
-const allArticles = [
-  'articulo-alcasser.html','articulo-wanninkhof.html','articulo-marta-castillo.html',
-  'articulo-asesino-baraja.html','articulo-katana.html','articulo-puerto-hurraco.html',
-  'articulo-crimen-rol.html','articulo-diana-quer.html','articulo-asunta.html',
-  'articulo-marianas.html','articulo-hantavirus.html','articulo-super-elnino.html',
-  'articulo-falsos-recuerdos.html'
-];
+const allArticles = /* VX:ALEATORIO:INICIO */["articulo-alcasser.html", "articulo-wanninkhof.html", "articulo-marta-castillo.html", "articulo-diana-quer.html", "articulo-asunta.html", "articulo-asesino-baraja.html", "articulo-katana.html", "articulo-puerto-hurraco.html", "articulo-crimen-rol.html", "articulo-urquijo.html", "articulo-el-lute.html", "articulo-crimen-cuenca.html", "articulo-marta-calvo.html", "articulo-wanninkhof-bis.html", "articulo-aguilar.html", "articulo-arropiero.html", "articulo-breton.html", "articulo-envenenadora.html", "articulo-eclipse-2026.html", "articulo-super-elnino.html", "articulo-marianas.html", "articulo-hantavirus.html", "articulo-falsos-recuerdos.html", "articulo-calle-fuencarral.html", "articulo-sacamantecas.html", "articulo-enriqueta-marti.html", "articulo-crimen-fago.html", "articulo-guardia-urbana.html", "articulo-galindos.html", "articulo-jarabo.html", "articulo-jack-el-destripador.html", "articulo-zodiaco.html", "articulo-lindbergh.html", "articulo-db-cooper.html", "articulo-lizzie-borden.html", "articulo-paso-dyatlov.html", "articulo-mary-celeste.html", "articulo-caras-belmez.html", "articulo-perfil-criminal.html", "articulo-psicopatia.html"]/* VX:ALEATORIO:FIN */;
 document.getElementById('randomBtn').addEventListener('click', () => {
   const random = allArticles[Math.floor(Math.random() * allArticles.length)];
   window.location.href = random;

@@ -1,7 +1,7 @@
 ---
 archivo: sobre-nosotros.html
 titulo_seo: Sobre VIRALIX | Medio independiente de true crime y misterios
-descripcion: Conoce VIRALIX, el medio independiente que cuenta crímenes reales, misterios y criminología con rigor, fuentes verificables y respeto a las víctimas. Misión, equipo y valores.
+descripcion: Conoce VIRALIX, el medio independiente que cuenta crímenes reales, misterios y criminología con rigor, con fuentes verificables y respeto a las víctimas.
 miga: Sobre VIRALIX
 kicker: Quiénes somos · Medio independiente · España
 h1: SOBRE <span>VIRALIX</span>

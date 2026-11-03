@@ -1,7 +1,7 @@
 ---
 archivo: cookies.html
 titulo_seo: Política de cookies | VIRALIX
-descripcion: Qué cookies y tecnologías similares usa VIRALIX, para qué sirven, quién las instala y cuánto duran, y cómo aceptarlas, rechazarlas o cambiar tu elección cuando quieras.
+descripcion: Qué cookies y tecnologías similares usa VIRALIX, para qué sirven, quién las instala y cuánto duran, y cómo aceptarlas, rechazarlas o cambiar tu elección.
 miga: Política de cookies
 kicker: Legal
 h1: POLÍTICA DE <span>COOKIES</span>

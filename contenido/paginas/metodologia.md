@@ -1,7 +1,7 @@
 ---
 archivo: metodologia.html
 titulo_seo: Metodología editorial | VIRALIX
-descripcion: Cómo trabaja VIRALIX: selección de casos, jerarquía de fuentes, verificación, trato a las víctimas, presunción de inocencia, imágenes, correcciones e independencia editorial.
+descripcion: Cómo trabaja VIRALIX: selección de casos, jerarquía de fuentes, verificación, trato a las víctimas, presunción de inocencia, correcciones e independencia.
 miga: Metodología editorial
 kicker: Cómo trabajamos
 h1: METODOLOGÍA <span>EDITORIAL</span>
