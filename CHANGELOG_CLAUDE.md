@@ -73,3 +73,20 @@
   - Imágenes de las tarjetas servidas en **WebP de 800 px** con `width`/`height`, `loading="lazy"` y `decoding="async"` (de ~2 MB a ~30-70 KB por tarjeta) manteniendo el PNG como alternativa.
   - Accesibilidad: enlace «Saltar al contenido», `aria-label` en los botones de icono, `aria-expanded` en el menú móvil, etiquetas en los campos de búsqueda y email, foco visible, mapa con `role="img"` y soporte de `prefers-reduced-motion` (desactiva cursor personalizado, ticker y animaciones).
 - **Páginas nuevas**: modo oscuro por defecto con modo claro persistente, índice lateral con sección activa, barra de progreso, botones de compartir (WhatsApp, X, Facebook, Telegram, copiar, compartir nativo), caja de autor, «Sigue leyendo» y botón de volver arriba.
+
+## Fase 7 — Organización
+- Nuevas carpetas ordenadas: `assets/` (CSS, JS y fuentes compartidas), `images/articulos/` (imágenes nuevas), `images/optimizadas/` (WebP de las portadas antiguas), `contenido/` (fuentes Markdown y guía `LEEME.md`) y `scripts/` (herramientas). Nada de lo existente se ha movido para no romper URLs indexadas.
+- Código muerto eliminado (solo el que no tenía referencias): bloques CSS vacíos y comentario de un contador simulado en la home; enlaces ocultos «SEO».
+- `article-features.js`: el botón «Siguiente caso» de los artículos antiguos ya recorre también los 17 nuevos (mejor enlazado interno).
+- Duplicados y desorden pendientes de decisión del propietario, documentados en `DIAGNOSTICO.md` (sección 10): `juego/index.html` huérfano y estilos/scripts repetidos en cada artículo antiguo.
+- Documentación: `DIAGNOSTICO.md`, este `CHANGELOG_CLAUDE.md`, `CREDITOS_IMAGENES.md` y `contenido/LEEME.md`.
+
+## Qué NO se ha hecho (a propósito) y por qué
+- **Datos del titular** en Aviso legal y Privacidad: no se han inventado; quedan marcadores para rellenar.
+- **`ads.txt`**: se mantiene el ID real en lugar del *placeholder* pedido, para no romper la verificación de AdSense.
+- **Fotografías reales**: el entorno no tenía acceso a los bancos de imágenes; se usaron imágenes propias con datos abiertos (ver `CREDITOS_IMAGENES.md`).
+- **CMP certificada por Google**: el banner propio es conforme a la AEPD, pero AdSense exige para el tráfico del EEE una CMP certificada (la gratuita de Google se activa en el panel de AdSense, «Privacidad y mensajes»). No se puede activar desde el código.
+- **Rediseño de los 23 artículos antiguos**: solo se tocaron cabecera, pie, anuncios y enlaces rotos; su diseño individual se mantiene para no romper nada. Tampoco se autoalojaron sus 15 familias tipográficas.
+- **Titulares sensacionalistas antiguos** («disolvía los cuerpos en ácido», «quemó a sus hijos»…): no se cambiaron porque afectan a URL y SEO consolidados; se recomienda revisarlos.
+- **`articulo-somosierra.html`**: sigue como «Próximamente» con `noindex`; no había documentación verificable suficiente para escribirlo con rigor.
+- **Unidades de anuncio manuales**: se comentaron las 44 inválidas; no se crearon unidades nuevas porque requieren IDs de slot del panel de AdSense.

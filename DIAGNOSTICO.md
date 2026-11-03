@@ -134,6 +134,8 @@ No hay un sistema de componentes: cada página repite su HTML/CSS. Patrones recu
 | 12 | Botones de icono sin `aria-label` (🎲, Aa, ☀️, ☰) y cursor nativo oculto (`cursor:none`) en escritorio. | home y artículos | Media (accesibilidad) |
 | 13 | `og:description` cortadas a mitad de palabra («...y las pregunta»). | varios artículos | Baja |
 | 14 | Las tarjetas de la home cargan 23 PNG de ~2 MB (≈ 50 MB si se recorre la página). | `index.html` | Alta (rendimiento / Core Web Vitals) |
+| 15 | La `<section>` que contiene las rejillas de artículos nunca se cierra, de modo que «Caso del mes» y las secciones siguientes quedan anidadas (detectado durante la Fase 6). | `index.html` | Baja (marcado) |
+| 16 | `article-features.js` solo enlaza en «Siguiente caso» a los 23 artículos originales. | todos los artículos antiguos | Baja |
 
 No se detectaron errores JavaScript (`pageerror`) en ninguna página al cargarlas con Chromium; los únicos fallos de red son los recursos externos bloqueados en el entorno de análisis.
 

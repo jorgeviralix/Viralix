@@ -116,6 +116,23 @@
     { url: 'articulo-eclipse-2026.html', title: 'Eclipse Solar 2026' },
     { url: 'articulo-marta-calvo.html', title: 'Marta Calvo' },
     { url: 'articulo-wanninkhof-bis.html', title: 'Wanninkhof: el verdadero asesino' },
+    { url: 'articulo-calle-fuencarral.html', title: 'El crimen de la calle Fuencarral' },
+    { url: 'articulo-sacamantecas.html', title: 'El Sacamantecas de Vitoria' },
+    { url: 'articulo-enriqueta-marti.html', title: 'Enriqueta Martí, la «vampira del Raval»' },
+    { url: 'articulo-crimen-fago.html', title: 'El crimen de Fago' },
+    { url: 'articulo-guardia-urbana.html', title: 'El crimen de la Guardia Urbana' },
+    { url: 'articulo-galindos.html', title: 'El crimen de Los Galindos' },
+    { url: 'articulo-jarabo.html', title: 'El caso Jarabo' },
+    { url: 'articulo-jack-el-destripador.html', title: 'Jack el Destripador' },
+    { url: 'articulo-zodiaco.html', title: 'El asesino del Zodiaco' },
+    { url: 'articulo-lindbergh.html', title: 'El secuestro Lindbergh' },
+    { url: 'articulo-db-cooper.html', title: 'El misterio de D. B. Cooper' },
+    { url: 'articulo-lizzie-borden.html', title: 'El caso Lizzie Borden' },
+    { url: 'articulo-paso-dyatlov.html', title: 'El incidente del paso Diátlov' },
+    { url: 'articulo-mary-celeste.html', title: 'El misterio del Mary Celeste' },
+    { url: 'articulo-caras-belmez.html', title: 'Las caras de Bélmez' },
+    { url: 'articulo-perfil-criminal.html', title: 'La perfilación criminal' },
+    { url: 'articulo-psicopatia.html', title: 'Psicopatía: radiografía de un concepto' },
   ];
   const currentFile = window.location.pathname.split('/').pop();
   const currentIdx = allArticles.findIndex(a => a.url === currentFile);
