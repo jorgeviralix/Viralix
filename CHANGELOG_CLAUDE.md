@@ -28,3 +28,14 @@
 - `scripts/generar_imagenes.cjs`: crea portadas 1200×630, mapas, cronologías y fichas con datos cartográficos libres (Natural Earth, IGN, U.S. Census). Motivo: el entorno de trabajo no tenía acceso a Wikimedia Commons, Unsplash, Pexels ni Pixabay (ver `CREDITOS_IMAGENES.md`).
 - `images/optimizadas/`: versiones WebP de 800 y 1200 px de las 23 portadas PNG (≈ 30-70 KB frente a ~2 MB). Los PNG originales no se han tocado.
 - `.vercelignore`: evita publicar en la web las fuentes Markdown, los scripts y los documentos internos (`DIAGNOSTICO.md`, `CHANGELOG_CLAUDE.md`, `CREDITOS_IMAGENES.md`).
+
+## Fase 3 — Contenido nuevo (17 artículos con imágenes)
+- 15 artículos nuevos (`articulo-<slug>.html`, misma nomenclatura que los existentes) y 2 páginas «Próximamente» convertidas en artículos completos (`articulo-galindos.html`, `articulo-jarabo.html`), porque las páginas en construcción son contenido escaso que penaliza en AdSense.
+  - True crime España: calle Fuencarral (1888), el Sacamantecas (1870-1879), Enriqueta Martí (1912), crimen de Fago (2007), crimen de la Guardia Urbana (2017), Los Galindos (1975) y caso Jarabo (1958).
+  - Internacionales: Jack el Destripador, el Zodiaco, el secuestro Lindbergh, D. B. Cooper y Lizzie Borden.
+  - Misterios con base histórica: paso Diátlov, Mary Celeste y caras de Bélmez.
+  - Criminología: perfilación criminal y psicopatía.
+- Cada artículo: 1.480-2.000 palabras en el cuerpo (más entradilla y fuentes), H1/H2/H3, listas, citas, ficha del caso, cronología, nota de «hechos probados frente a especulación», preguntas frecuentes y fuentes al final. Tono periodístico, sin detalles gráficos de violencia y sin señalar como culpables a personas no condenadas.
+- Cada artículo tiene portada 1200×630 (JPG para Open Graph + WebP para la web) y 3 imágenes en el cuerpo (mapa con datos cartográficos reales, cronología visual y ficha/diagrama), todas con `alt` descriptivo en español, pie de foto y línea de crédito. Procedencia y licencias en `CREDITOS_IMAGENES.md`.
+- Las fuentes Markdown viven en `contenido/articulos/*.md`; las páginas HTML se regeneran con `python3 scripts/construir.py` (y `--imagenes` para regenerar imágenes).
+- `articulo-somosierra.html` se mantiene como «Próximamente» (no había documentación suficiente para escribirlo con rigor); se marca `noindex` en la fase SEO.

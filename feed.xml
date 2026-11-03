@@ -5,13 +5,166 @@
   <link>https://www.viralixweb.es</link>
   <description>Artículos verificados sobre los crímenes más impactantes de la historia de España. True crime, misterios y casos reales.</description>
   <language>es</language>
-  <lastBuildDate>Mon, 22 Sep 2026 00:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 09:00:00 +0100</lastBuildDate>
   <atom:link href="https://www.viralixweb.es/feed.xml" rel="self" type="application/rss+xml"/>
   <image>
-    <url>https://www.viralixweb.es/img-og-viralix.png</url>
+    <url>https://www.viralixweb.es/images/logo-viralix.png</url>
     <title>VIRALIX</title>
     <link>https://www.viralixweb.es</link>
   </image>
+  <item>
+    <title>El crimen de la calle Fuencarral: el asesinato que inventó el juicio mediático en España</title>
+    <link>https://www.viralixweb.es/articulo-calle-fuencarral.html</link>
+    <description>Madrid, 1888: una viuda asesinada, una criada acusada y un hijo preso que quizá salía de la cárcel. El caso que convirtió a la prensa española en tribunal.</description>
+    <guid>https://www.viralixweb.es/articulo-calle-fuencarral.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/calle-fuencarral-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El Sacamantecas de Vitoria: cuando la leyenda del hombre del saco tuvo nombre y apellidos</title>
+    <link>https://www.viralixweb.es/articulo-sacamantecas.html</link>
+    <description>Juan Díaz de Garayo aterrorizó Álava entre 1870 y 1879. La historia real del hombre que dio rostro a una leyenda popular y del debate sobre locura y crimen.</description>
+    <guid>https://www.viralixweb.es/articulo-sacamantecas.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/sacamantecas-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Enriqueta Martí, la «vampira del Raval»: cómo la prensa de 1912 fabricó un monstruo</title>
+    <link>https://www.viralixweb.es/articulo-enriqueta-marti.html</link>
+    <description>Barcelona, 1912: una niña desaparecida, una mujer detenida y una leyenda de pociones y crímenes. Qué se sabe de Enriqueta Martí, que nunca fue juzgada.</description>
+    <guid>https://www.viralixweb.es/articulo-enriqueta-marti.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/enriqueta-marti-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El crimen de Fago: el asesinato del alcalde que destapó la guerra de un pueblo de 30 vecinos</title>
+    <link>https://www.viralixweb.es/articulo-crimen-fago.html</link>
+    <description>En 2007 el alcalde de Fago, un pueblo de 30 vecinos del Pirineo oscense, fue asesinado. La investigación, la confesión retractada y la condena de Mainar.</description>
+    <guid>https://www.viralixweb.es/articulo-crimen-fago.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/crimen-fago-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El crimen de la Guardia Urbana: dos agentes, un coche calcinado y un juicio de acusaciones cruzadas</title>
+    <link>https://www.viralixweb.es/articulo-guardia-urbana.html</link>
+    <description>El agente Pedro Rodríguez apareció en 2017 en un coche calcinado junto al pantano de Foix. Cómo se investigó el crimen y se juzgó a Rosa Peral y Albert López.</description>
+    <guid>https://www.viralixweb.es/articulo-guardia-urbana.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/guardia-urbana-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El crimen de Los Galindos: cinco muertos en un cortijo de Sevilla y medio siglo sin culpables</title>
+    <link>https://www.viralixweb.es/articulo-galindos.html</link>
+    <description>Julio de 1975: cinco personas mueren de forma violenta en el cortijo de Los Galindos, en Paradas (Sevilla). Medio siglo después, el caso sigue sin culpables.</description>
+    <guid>https://www.viralixweb.es/articulo-galindos.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/galindos-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El caso Jarabo: el señorito de buena familia que conmocionó el Madrid de 1958</title>
+    <link>https://www.viralixweb.es/articulo-jarabo.html</link>
+    <description>José María Jarabo, hijo de una familia acomodada, asesinó a cuatro personas en Madrid en julio de 1958. Su caso fue uno de los más mediáticos del franquismo.</description>
+    <guid>https://www.viralixweb.es/articulo-jarabo.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/jarabo-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Jack el Destripador: las cinco mujeres detrás del mito y el asesino que nunca tuvo nombre</title>
+    <link>https://www.viralixweb.es/articulo-jack-el-destripador.html</link>
+    <description>Londres, 1888: cinco mujeres asesinadas en Whitechapel y un apodo convertido en leyenda. La historia real del caso, de sus víctimas y de la investigación.</description>
+    <guid>https://www.viralixweb.es/articulo-jack-el-destripador.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/jack-el-destripador-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El asesino del Zodiaco: cartas cifradas, una bahía aterrorizada y un nombre que nunca llegó</title>
+    <link>https://www.viralixweb.es/articulo-zodiaco.html</link>
+    <description>Entre 1968 y 1969 un asesino atacó a siete personas en San Francisco y retó a la policía con cartas cifradas. Qué se sabe del Zodiaco y por qué sigue abierto.</description>
+    <guid>https://www.viralixweb.es/articulo-zodiaco.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/zodiaco-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El secuestro del hijo de Lindbergh: el «crimen del siglo» que cambió las leyes de Estados Unidos</title>
+    <link>https://www.viralixweb.es/articulo-lindbergh.html</link>
+    <description>En 1932 secuestraron al hijo del aviador más famoso del mundo. La investigación, el rescate, la pista del oro y el juicio a Bruno Hauptmann, todavía discutido.</description>
+    <guid>https://www.viralixweb.es/articulo-lindbergh.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/lindbergh-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>D. B. Cooper: el hombre que secuestró un avión, saltó en paracaídas con el rescate y desapareció</title>
+    <link>https://www.viralixweb.es/articulo-db-cooper.html</link>
+    <description>En 1971 un hombre secuestró un Boeing 727, cobró 200.000 dólares y saltó en paracaídas sobre Washington. El FBI nunca supo quién era ni qué fue de él.</description>
+    <guid>https://www.viralixweb.es/articulo-db-cooper.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/db-cooper-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Lizzie Borden: absuelta por un jurado, condenada por la memoria popular</title>
+    <link>https://www.viralixweb.es/articulo-lizzie-borden.html</link>
+    <description>En 1892, Andrew y Abby Borden fueron asesinados en su casa de Fall River. Su hija Lizzie fue juzgada y absuelta. Por qué el caso aún divide a los historiadores.</description>
+    <guid>https://www.viralixweb.es/articulo-lizzie-borden.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/lizzie-borden-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El incidente del paso Diátlov: nueve montañeros, una tienda rasgada desde dentro y sesenta años de teorías</title>
+    <link>https://www.viralixweb.es/articulo-paso-dyatlov.html</link>
+    <description>En 1959 nueve montañeros soviéticos murieron en los Urales tras huir de su tienda en plena noche. Las teorías, la investigación oficial y qué dice la ciencia.</description>
+    <guid>https://www.viralixweb.es/articulo-paso-dyatlov.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/paso-dyatlov-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El Mary Celeste: el barco que apareció navegando sin nadie a bordo</title>
+    <link>https://www.viralixweb.es/articulo-mary-celeste.html</link>
+    <description>En 1872 el bergantín Mary Celeste apareció a la deriva en el Atlántico, intacto y sin tripulación. Qué se sabe, qué inventó la ficción y qué teorías hay.</description>
+    <guid>https://www.viralixweb.es/articulo-mary-celeste.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/mary-celeste-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Las caras de Bélmez: el suelo de cocina que se convirtió en el gran misterio paranormal de España</title>
+    <link>https://www.viralixweb.es/articulo-caras-belmez.html</link>
+    <description>En 1971 aparecieron rostros en el suelo de una casa de Bélmez de la Moraleda (Jaén). Medio siglo de polémica entre defensores de lo paranormal y la ciencia.</description>
+    <guid>https://www.viralixweb.es/articulo-caras-belmez.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/caras-belmez-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>La perfilación criminal: qué hay de ciencia y qué de mito en los «cazadores de mentes»</title>
+    <link>https://www.viralixweb.es/articulo-perfil-criminal.html</link>
+    <description>Las series han convertido al «profiler» en un adivino que lee la mente del asesino. Cómo nació la perfilación criminal, cómo funciona y qué dicen los estudios.</description>
+    <guid>https://www.viralixweb.es/articulo-perfil-criminal.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Criminología</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/perfil-criminal-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Psicopatía: qué es de verdad, cómo se mide y por qué no todos los psicópatas son asesinos</title>
+    <link>https://www.viralixweb.es/articulo-psicopatia.html</link>
+    <description>La psicopatía es uno de los conceptos más usados y peor entendidos del true crime. Qué es según la ciencia, cómo se evalúa y qué mitos conviene desterrar.</description>
+    <guid>https://www.viralixweb.es/articulo-psicopatia.html</guid>
+    <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Criminología</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/psicopatia-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>Caso Alcàsser: 30 años de preguntas sin respuesta</title>

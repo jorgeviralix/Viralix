@@ -40,12 +40,15 @@ const worldHi = require('world-atlas/countries-10m.json');
 const usStates = require('us-atlas/states-10m.json');
 const usCounties = require('us-atlas/counties-10m.json');
 const esProv = require('es-atlas/es/provinces.json');
+// Se descartan los polígonos con el sentido de giro invertido (p. ej., Maldivas en Natural Earth 10m),
+// que d3-geo interpreta como «todo el planeta menos el país» y taparían el océano.
+const sano = (fs) => fs.filter((f) => d3.geoArea(f) < 2 * Math.PI);
 const GEO = {
-  world: topojson.feature(world, world.objects.countries).features,
-  worldHi: topojson.feature(worldHi, worldHi.objects.countries).features,
-  usStates: topojson.feature(usStates, usStates.objects.states).features,
-  usCounties: topojson.feature(usCounties, usCounties.objects.counties).features,
-  esProv: topojson.feature(esProv, esProv.objects.provinces).features,
+  world: sano(topojson.feature(world, world.objects.countries).features),
+  worldHi: sano(topojson.feature(worldHi, worldHi.objects.countries).features),
+  usStates: sano(topojson.feature(usStates, usStates.objects.states).features),
+  usCounties: sano(topojson.feature(usCounties, usCounties.objects.counties).features),
+  esProv: sano(topojson.feature(esProv, esProv.objects.provinces).features),
 };
 const CREDITOS = {
   es: 'Datos cartográficos: © Instituto Geográfico Nacional (CC BY 4.0) y Natural Earth',
@@ -86,7 +89,6 @@ function mapSVG(opts) {
   for (const f of countries) {
     const isHl = (hl.paises || []).includes(f.properties.name);
     if (base === 'es' && f.properties.name === 'Spain') continue;
-    if (base === 'us' && f.properties.name === 'United States of America') continue;
     const d = gp(f); if (!d) continue;
     paths += `<path d="${d}" fill="${isHl ? accent : land}" fill-opacity="${isHl ? 0.22 : 1}" stroke="${isHl ? accent : stroke}" stroke-width="${isHl ? 1.4 : 0.8}"/>`;
   }
@@ -110,9 +112,7 @@ function mapSVG(opts) {
       const d = gp(f); if (!d) continue;
       paths += `<path d="${d}" fill="${isHl && !(hl.condados || []).length ? accent : 'none'}" fill-opacity="${isHl ? 0.18 : 0}" stroke="${isHl ? accent : stroke}" stroke-width="${isHl ? 1.6 : 0.9}"/>`;
     }
-    // relleno de tierra de EE. UU. debajo
-    const nation = GEO.usStates.map((f) => gp(f)).filter(Boolean).join('');
-    paths = `<path d="${nation}" fill="${land}" stroke="none"/>` + paths;
+    // La tierra de EE. UU. se rellena con Natural Earth (bucle de países); aquí solo se trazan límites.
   }
   // Ruta
   let route = '';
@@ -138,8 +138,11 @@ function mapSVG(opts) {
         <circle cx="${x}" cy="${y}" r="42" fill="none" stroke="${accent}" stroke-opacity=".35" stroke-width="1.5"/>
         <circle cx="${x}" cy="${y}" r="20" fill="${accent}" fill-opacity=".22"/>
         <circle cx="${x}" cy="${y}" r="8" fill="${accent}" stroke="#fff" stroke-width="2.5"/>
-        <line x1="${x + 10}" y1="${y - 10}" x2="${x + 52}" y2="${y - 52}" stroke="${accent}" stroke-width="1.5"/>
-        <text x="${x + 58}" y="${y - 56}" style="font-family:'Plex Mono';font-size:15px;fill:rgba(241,239,233,.85);letter-spacing:1px">${esc(fmtCoord(m.lon, m.lat))}</text>`;
+        ${x > w - 330
+          ? `<line x1="${x - 10}" y1="${y - 10}" x2="${x - 52}" y2="${y - 52}" stroke="${accent}" stroke-width="1.5"/>
+        <text x="${x - 58}" y="${y - 56}" text-anchor="end" style="font-family:'Plex Mono';font-size:15px;fill:rgba(241,239,233,.85);letter-spacing:1px">${esc(fmtCoord(m.lon, m.lat))}</text>`
+          : `<line x1="${x + 10}" y1="${y - 10}" x2="${x + 52}" y2="${y - 52}" stroke="${accent}" stroke-width="1.5"/>
+        <text x="${x + 58}" y="${y - 56}" style="font-family:'Plex Mono';font-size:15px;fill:rgba(241,239,233,.85);letter-spacing:1px">${esc(fmtCoord(m.lon, m.lat))}</text>`}`;
       return;
     }
     const n = i + 1;
