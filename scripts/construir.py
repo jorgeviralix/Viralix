@@ -47,6 +47,8 @@ CREDITO_MAPA = {
 }
 
 # Artículos publicados antes de esta ampliación (para relacionados, sitemap, RSS y aleatorio).
+ARTS: list = []
+
 ANTIGUOS = [
     ("alcasser", "Caso Alcàsser: 30 años de preguntas sin respuesta", "es", "Valencia · 1992"),
     ("wanninkhof", "Caso Wanninkhof: condenaron a una inocente", "es", "Marbella · 1999"),
@@ -151,6 +153,7 @@ class Render:
     def figura(self, tipo: str, alt: str, pie: str) -> str:
         src = f"images/articulos/{self.slug}-{tipo}.webp"
         w, h = img_size(ROOT / src)
+        src = "/" + src
         if tipo == "mapa":
             base = (self.meta.get("mapa") or {}).get("base", "world")
             cred = f"Mapa: elaboración propia de VIRALIX. {CREDITO_MAPA[base]}."
@@ -308,28 +311,28 @@ ICON = {
 }
 
 NAV = [
-    ("index.html", "Inicio"),
-    ("index.html#true-crime", "True Crime"),
-    ("index.html#internacional", "Internacional"),
-    ("index.html#misterios", "Misterios"),
-    ("index.html#criminologia", "Criminología"),
-    ("timeline.html", "Timeline"),
-    ("sobre-nosotros.html", "Sobre VIRALIX"),
-    ("contacto.html", "Contacto"),
+    ("/", "Inicio"),
+    ("/#true-crime", "True Crime"),
+    ("/#internacional", "Internacional"),
+    ("/#misterios", "Misterios"),
+    ("/#criminologia", "Criminología"),
+    ("/timeline.html", "Timeline"),
+    ("/sobre-nosotros.html", "Sobre VIRALIX"),
+    ("/contacto.html", "Contacto"),
 ]
 
 
 def header(actual: str = "") -> str:
     items = "".join(
-        f'<li><a href="{h}"{" aria-current=\"page\"" if h == actual else ""}>{t}</a></li>' for h, t in NAV)
+        f'<li><a href="{h}"{" aria-current=\"page\"" if h.lstrip("/") == actual else ""}>{t}</a></li>' for h, t in NAV)
     return f"""<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="read-progress" aria-hidden="true"><span></span></div>
 <header class="site-header">
   <div class="site-header__inner">
-    <a href="index.html" class="brand" aria-label="VIRALIX, ir a la portada">VIRAL<span>I</span>X</a>
+    <a href="/" class="brand" aria-label="VIRALIX, ir a la portada">VIRAL<span>I</span>X</a>
     <nav class="main-nav" id="main-nav" aria-label="Principal"><ul>{items}</ul></nav>
     <div class="header-actions">
-      <a class="icon-btn" href="index.html#buscar" aria-label="Buscar en VIRALIX">{ICON['search']}</a>
+      <a class="icon-btn" href="/#buscar" aria-label="Buscar en VIRALIX">{ICON['search']}</a>
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Activar modo claro">{ICON['moon']}{ICON['sun']}</button>
       <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">{ICON['menu']}</button>
     </div>
@@ -341,32 +344,32 @@ FOOTER = f"""<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="brand">VIRAL<span>I</span>X</a>
+        <a href="/" class="brand">VIRAL<span>I</span>X</a>
         <p>Divulgación rigurosa sobre crímenes reales, misterios y criminología. Contada con fuentes, contexto y respeto por las víctimas.</p>
       </div>
       <div class="footer-col"><h2>Secciones</h2><ul>
-        <li><a href="index.html#true-crime">True crime España</a></li>
-        <li><a href="index.html#internacional">Casos internacionales</a></li>
-        <li><a href="index.html#misterios">Misterios</a></li>
-        <li><a href="index.html#criminologia">Criminología</a></li>
-        <li><a href="timeline.html">Timeline del crimen</a></li>
+        <li><a href="/#true-crime">True crime España</a></li>
+        <li><a href="/#internacional">Casos internacionales</a></li>
+        <li><a href="/#misterios">Misterios</a></li>
+        <li><a href="/#criminologia">Criminología</a></li>
+        <li><a href="/timeline.html">Timeline del crimen</a></li>
       </ul></div>
       <div class="footer-col"><h2>VIRALIX</h2><ul>
-        <li><a href="sobre-nosotros.html">Sobre VIRALIX</a></li>
-        <li><a href="metodologia.html">Metodología editorial</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="feed.xml">RSS</a></li>
+        <li><a href="/sobre-nosotros.html">Sobre VIRALIX</a></li>
+        <li><a href="/metodologia.html">Metodología editorial</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
       </ul></div>
       <div class="footer-col"><h2>Legal</h2><ul>
-        <li><a href="aviso-legal.html">Aviso legal</a></li>
-        <li><a href="privacidad.html">Política de privacidad</a></li>
-        <li><a href="cookies.html">Política de cookies</a></li>
-        <li><a href="terminos.html">Términos de uso</a></li>
+        <li><a href="/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="/privacidad.html">Política de privacidad</a></li>
+        <li><a href="/cookies.html">Política de cookies</a></li>
+        <li><a href="/terminos.html">Términos de uso</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 VIRALIX · Contenido divulgativo e informativo</span>
-      <nav aria-label="Legal"><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><button type="button" data-cookie-settings>Configurar cookies</button></nav>
+      <nav aria-label="Legal"><a href="/privacidad.html">Privacidad</a><a href="/cookies.html">Cookies</a><button type="button" data-cookie-settings>Configurar cookies</button></nav>
     </div>
   </div>
 </footer>
@@ -386,8 +389,8 @@ def head(title: str, desc: str, canonical: str, og_type: str, image: str, image_
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{canonical}">
 <meta name="theme-color" content="#07080c">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
 <link rel="alternate" type="application/rss+xml" title="VIRALIX RSS" href="{SITE}/feed.xml">
 <meta property="og:site_name" content="VIRALIX">
 <meta property="og:locale" content="es_ES">
@@ -410,11 +413,11 @@ def head(title: str, desc: str, canonical: str, og_type: str, image: str, image_
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
-<link rel="stylesheet" href="assets/css/viralix.css">
+<link rel="stylesheet" href="/assets/css/viralix.css">
 {ld}</head>"""
 
 
-SCRIPTS = '<script src="assets/js/viralix.js" defer></script>\n<script src="cookies-banner.js" defer></script>'
+SCRIPTS = '<script src="/assets/js/viralix.js" defer></script>\n<script src="/cookies-banner.js" defer></script>'
 
 ORG = {"@type": "Organization", "name": "VIRALIX", "url": SITE + "/",
        "logo": {"@type": "ImageObject", "url": SITE + "/images/logo-viralix.png", "width": 512, "height": 512}}
@@ -462,9 +465,9 @@ def cargar_articulos():
 def card_html(slug, titulo, cat, meta_txt, img, img_w=1200, img_h=630, extra_class="") -> str:
     c = CATS[cat]
     return (f'<article class="card {c["clase"]}{extra_class}">'
-            f'<div class="card__img"><img src="{img}" alt="" width="{img_w}" height="{img_h}" loading="lazy" decoding="async"></div>'
+            f'<div class="card__img"><img src="/{img}" alt="" width="{img_w}" height="{img_h}" loading="lazy" decoding="async"></div>'
             f'<div class="card__body"><span class="chip">{e(c["corto"])}</span>'
-            f'<h3 class="card__title"><a href="articulo-{slug}.html">{e(titulo)}</a></h3>'
+            f'<h3 class="card__title"><a href="/articulo-{slug}.html">{e(titulo)}</a></h3>'
             f'<span class="card__meta">{e(meta_txt)}</span></div></article>')
 
 
@@ -525,10 +528,10 @@ def render_articulo(a, arts):
 {header()}
 <main id="contenido">
   <article class="container" itemscope itemtype="https://schema.org/Article">
-    <nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li><a href="index.html#{cat['ancla']}">{e(cat['nombre'])}</a></li><li aria-current="page">{e(a['titulo_corto'])}</li></ol></nav>
+    <nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/#{cat['ancla']}">{e(cat['nombre'])}</a></li><li aria-current="page">{e(a['titulo_corto'])}</li></ol></nav>
     <header class="article-hero">
       <div class="article-hero__head">
-        <a class="chip" href="index.html#{cat['ancla']}">{e(cat['nombre'])}</a>
+        <a class="chip" href="/#{cat['ancla']}">{e(cat['nombre'])}</a>
         <h1 itemprop="headline">{e(a['titulo'])}</h1>
         <p class="article-dek">{inline(a['entradilla'])}</p>
       </div>
@@ -540,7 +543,7 @@ def render_articulo(a, arts):
         {estado}
       </div>
       <figure class="cover">
-        <picture><source srcset="images/articulos/{slug}-portada.webp" type="image/webp"><img src="images/articulos/{slug}-portada.jpg" alt="{e(cover_alt)}" width="{w}" height="{h}" fetchpriority="high" decoding="async"></picture>
+        <picture><source srcset="/images/articulos/{slug}-portada.webp" type="image/webp"><img src="/images/articulos/{slug}-portada.jpg" alt="{e(cover_alt)}" width="{w}" height="{h}" fetchpriority="high" decoding="async"></picture>
         <figcaption>{inline(a.get('pie_portada', 'Ilustración de portada.'))}<span class="credit">Ilustración: elaboración propia de VIRALIX{('. ' + CREDITO_MAPA[a['mapa']['base']]) if a.get('mapa') else ''}.</span></figcaption>
       </figure>
     </header>
@@ -550,7 +553,7 @@ def render_articulo(a, arts):
 {a['_html']}
 {r.fuentes_html}
 {share_block(url, a['titulo_seo'])}
-        <aside class="author-box" aria-label="Sobre la autoría"><div class="author-box__avatar" aria-hidden="true">V</div><div><h2>Equipo editorial VIRALIX</h2><p>Redacción y verificación según nuestra <a href="metodologia.html">metodología editorial</a>. ¿Has visto un error? <a href="contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
+        <aside class="author-box" aria-label="Sobre la autoría"><div class="author-box__avatar" aria-hidden="true">V</div><div><h2>Equipo editorial VIRALIX</h2><p>Redacción y verificación según nuestra <a href="/metodologia.html">metodología editorial</a>. ¿Has visto un error? <a href="/contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
         <p class="updated">Última revisión: <time datetime="{a['actualizado']}">{fecha_larga(a['actualizado'])}</time>.</p>
       </div>
     </div>
@@ -579,6 +582,12 @@ def render_paginas():
         archivo = meta["archivo"]
         r = Render(p.stem, meta)
         cuerpo = r.bloques(body)
+        if "{{ALEATORIO}}" in cuerpo or "{{TARJETAS}}" in cuerpo:
+            todos = ",".join([f"/articulo-{x[0]}.html" for x in ANTIGUOS] + [f"/articulo-{a['slug']}.html" for a in ARTS])
+            tarjetas = '<div class="cards">' + "".join(
+                card_html(a["slug"], a["titulo_corto"], a["categoria"], f'{a["lugar"]} · {a["anio"]}', f'images/articulos/{a["slug"]}-portada.webp')
+                for a in ARTS[:6:2] + [x for x in ARTS if x["categoria"] in ("mist", "intl")][:3]) + "</div>"
+            cuerpo = cuerpo.replace("{{ALEATORIO}}", todos).replace("<p>{{TARJETAS}}</p>", tarjetas)
         url = f"{SITE}/{archivo}" if archivo != "index.html" else SITE + "/"
         title = meta["titulo_seo"]
         robots = meta.get("robots", "index, follow, max-image-preview:large")
@@ -592,7 +601,7 @@ def render_paginas():
 {header(archivo)}
 <main id="contenido">
   <div class="container">
-    <nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">{e(meta['miga'])}</li></ol></nav>
+    <nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li aria-current="page">{e(meta['miga'])}</li></ol></nav>
     <header class="page-hero">
       <span class="chip">{e(meta['kicker'])}</span>
       <h1>{meta['h1']}</h1>
@@ -762,6 +771,8 @@ def main():
         convertir_imagenes()
     optimizar_antiguas()
     arts = cargar_articulos()  # re-render con tamaños reales de imagen
+    global ARTS
+    ARTS = arts
     for a in arts:
         render_articulo(a, arts)
     paginas = render_paginas() if (CONT / "paginas").exists() else []
