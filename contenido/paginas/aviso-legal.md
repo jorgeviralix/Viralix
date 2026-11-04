@@ -10,7 +10,6 @@ actualizado: 2026-11-03
 ---
 ## 1. Datos identificativos del titular
 
-<!-- [VIRALIX] PENDIENTE: el titular debe completar sus datos (art. 10 LSSI) antes de publicar en producción. -->
 
 | Dato | Información |
 |---|---|

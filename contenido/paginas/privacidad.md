@@ -11,7 +11,6 @@ schema: WebPage
 ---
 ## 1. Responsable del tratamiento
 
-<!-- [VIRALIX] PENDIENTE: el titular debe completar sus datos identificativos antes de publicar (art. 13 RGPD). -->
 
 | Dato | Información |
 |---|---|

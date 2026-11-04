@@ -82,7 +82,7 @@
 - Documentación: `DIAGNOSTICO.md`, este `CHANGELOG_CLAUDE.md`, `CREDITOS_IMAGENES.md` y `contenido/LEEME.md`.
 
 ## Qué NO se ha hecho (a propósito) y por qué
-- **Datos del titular** en Aviso legal y Privacidad: no se han inventado; quedan marcadores para rellenar.
+- **Datos del titular** en Aviso legal y Privacidad: no se inventaron; el propietario los completó el 4-nov-2026 y las páginas se regeneraron.
 - **`ads.txt`**: se mantiene el ID real en lugar del *placeholder* pedido, para no romper la verificación de AdSense.
 - **Fotografías reales**: el entorno no tenía acceso a los bancos de imágenes; se usaron imágenes propias con datos abiertos (ver `CREDITOS_IMAGENES.md`).
 - **CMP certificada por Google**: el banner propio es conforme a la AEPD, pero AdSense exige para el tráfico del EEE una CMP certificada (la gratuita de Google se activa en el panel de AdSense, «Privacidad y mensajes»). No se puede activar desde el código.
@@ -90,3 +90,6 @@
 - **Titulares sensacionalistas antiguos** («disolvía los cuerpos en ácido», «quemó a sus hijos»…): no se cambiaron porque afectan a URL y SEO consolidados; se recomienda revisarlos.
 - **`articulo-somosierra.html`**: sigue como «Próximamente» con `noindex`; no había documentación verificable suficiente para escribirlo con rigor.
 - **Unidades de anuncio manuales**: se comentaron las 44 inválidas; no se crearon unidades nuevas porque requieren IDs de slot del panel de AdSense.
+
+## Actualización 4-nov-2026
+- Regeneradas `aviso-legal.html` y `privacidad.html` con los datos del titular aportados por el propietario (nombre, NIF y domicilio), exigidos por el art. 10 de la LSSI y el art. 13 del RGPD. Eliminados los comentarios «PENDIENTE» de las fuentes Markdown.
