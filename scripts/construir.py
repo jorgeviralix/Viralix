@@ -671,7 +671,7 @@ def render_autor(arts):
     url = SITE + AUTOR["url"]
     title = "Jorge de la Fuente Gutiérrez, autor y editor de VIRALIX"
     desc = ("Perfil de Jorge de la Fuente Gutiérrez, fundador y editor de VIRALIX: quién es, cómo trabaja, "
-            "qué casos ha escrito y cómo contactar con él para proponer un caso.")
+            "qué casos ha escrito y cómo contactar con él para proponer uno.")
     persona = {"@type": "Person", "@id": url + "#persona", "name": AUTOR["nombre"], "alternateName": AUTOR["corto"],
                "url": url, "email": "mailto:viralixweb@gmail.com", "jobTitle": "Fundador y editor",
                "worksFor": {"@type": "Organization", "name": "VIRALIX", "url": SITE + "/"},
