@@ -5,13 +5,19 @@
   if (!article) return;
   const title = document.title.split('|')[0].trim();
 
-  // 1. BREADCRUMBS
+  // 1. BREADCRUMBS (migas visibles; el JSON-LD BreadcrumbList va en el <head> de cada artículo)
   const nav = document.querySelector('nav');
-  if (nav) {
-    const bc = document.createElement('div');
-    bc.style.cssText = 'max-width:760px;margin:0 auto;padding:12px 48px;font-size:12px;color:rgba(244,242,238,0.3);letter-spacing:0.5px;';
-    const cat = document.title.includes('Marianas') || document.title.includes('Niño') || document.title.includes('Hantavirus') || document.title.includes('recuerdos') || document.title.includes('Eclipse') ? 'Ciencia' : 'True Crime';
-    bc.innerHTML = '<a href="index.html" style="color:rgba(244,242,238,0.4);text-decoration:none">Inicio</a> <span style="margin:0 8px;opacity:0.4">→</span> <a href="index.html#articulos" style="color:rgba(244,242,238,0.4);text-decoration:none">' + cat + '</a> <span style="margin:0 8px;opacity:0.4">→</span> <span style="color:rgba(244,242,238,0.6)">' + title + '</span>';
+  if (nav && !document.querySelector('.vx-breadcrumbs')) {
+    const bc = document.createElement('nav');
+    bc.className = 'vx-breadcrumbs';
+    bc.setAttribute('aria-label', 'Migas de pan');
+    bc.style.cssText = 'max-width:760px;margin:0 auto;padding:12px 48px;font-size:12px;color:rgba(244,242,238,0.75);letter-spacing:0.5px;';
+    const esCiencia = ['Marianas', 'Niño', 'Hantavirus', 'recuerdos', 'Eclipse'].some(k => document.title.includes(k));
+    const cat = esCiencia ? 'Ciencia' : 'True Crime España';
+    const ancla = esCiencia ? 'ciencia' : 'true-crime';
+    const enlace = 'color:rgba(244,242,238,0.75);text-decoration:underline;text-underline-offset:3px';
+    const sep = '<span aria-hidden="true" style="margin:0 8px;opacity:0.6">›</span>';
+    bc.innerHTML = '<a href="/" style="' + enlace + '">Inicio</a>' + sep + '<a href="/#' + ancla + '" style="' + enlace + '">' + cat + '</a>' + sep + '<span aria-current="page" style="color:rgba(244,242,238,0.9)">' + title + '</span>';
     const hero = document.querySelector('.hero-periodico, .hero, .hero-articulo, header');
     if (hero) hero.parentNode.insertBefore(bc, hero.nextSibling);
   }
