@@ -194,7 +194,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": title,
-      "author": { "@type": "Organization", "name": "Equipo VIRALIX", "url": "https://www.viralixweb.es/sobre-nosotros.html" },
+      "author": { "@type": "Organization", "name": "Equipo VIRALIX", "url": "https://www.viralixweb.es/sobre.html" },
       "publisher": { "@type": "Organization", "name": "VIRALIX", "url": "https://www.viralixweb.es" },
       "mainEntityOfPage": window.location.href,
       "description": metaContent('meta[name="description"]')

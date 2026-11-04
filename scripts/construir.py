@@ -317,7 +317,7 @@ NAV = [
     ("/#misterios", "Misterios"),
     ("/#criminologia", "Criminología"),
     ("/timeline.html", "Timeline"),
-    ("/sobre-nosotros.html", "Sobre VIRALIX"),
+    ("/sobre.html", "Sobre VIRALIX"),
     ("/contacto.html", "Contacto"),
 ]
 
@@ -355,7 +355,8 @@ FOOTER = f"""<footer class="site-footer">
         <li><a href="/timeline.html">Timeline del crimen</a></li>
       </ul></div>
       <div class="footer-col"><h2>VIRALIX</h2><ul>
-        <li><a href="/sobre-nosotros.html">Sobre VIRALIX</a></li>
+        <li><a href="/sobre.html">Sobre VIRALIX</a></li>
+        <li><a href="/autor/jorge-de-la-fuente.html">El autor</a></li>
         <li><a href="/metodologia.html">Metodología editorial</a></li>
         <li><a href="/contacto.html">Contacto</a></li>
         <li><a href="/feed.xml">RSS</a></li>
@@ -521,7 +522,7 @@ def render_articulo(a, arts):
          "description": a["descripcion"], "image": [cover_jpg], "datePublished": a["publicado"] + "T09:00:00+01:00",
          "dateModified": a["actualizado"] + "T09:00:00+01:00", "inLanguage": "es-ES", "articleSection": cat["nombre"],
          "keywords": a.get("palabras_clave", ""), "wordCount": a["_palabras"], "isAccessibleForFree": True,
-         "author": {"@type": "Organization", "name": "Equipo editorial VIRALIX", "url": SITE + "/sobre-nosotros.html"},
+         "author": {"@type": "Organization", "name": "Equipo editorial VIRALIX", "url": SITE + "/sobre.html"},
          "publisher": ORG, "mainEntityOfPage": {"@type": "WebPage", "@id": url}},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE + "/"},
