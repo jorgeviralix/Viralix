@@ -11,7 +11,7 @@
     const bc = document.createElement('nav');
     bc.className = 'vx-breadcrumbs';
     bc.setAttribute('aria-label', 'Migas de pan');
-    bc.style.cssText = 'max-width:760px;margin:0 auto;padding:12px 48px;font-size:12px;color:rgba(244,242,238,0.75);letter-spacing:0.5px;';
+    bc.style.cssText = 'position:static;top:auto;z-index:auto;display:block;background:none;transition:none;max-width:760px;margin:0 auto;padding:12px 48px;font-size:12px;color:rgba(244,242,238,0.75);letter-spacing:0.5px;';
     const esCiencia = ['Marianas', 'Niño', 'Hantavirus', 'recuerdos', 'Eclipse'].some(k => document.title.includes(k));
     const cat = esCiencia ? 'Ciencia' : 'True Crime España';
     const ancla = esCiencia ? 'ciencia' : 'true-crime';
