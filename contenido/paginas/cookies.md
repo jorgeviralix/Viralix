@@ -6,8 +6,12 @@ miga: Política de cookies
 kicker: Legal
 h1: POLÍTICA DE <span>COOKIES</span>
 intro: Te explicamos qué cookies y tecnologías de almacenamiento se utilizan en VIRALIX, para qué sirven y cómo puedes decidir sobre ellas, conforme al artículo 22.2 de la LSSI y la guía sobre cookies de la AEPD.
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 ---
+## Responsable
+
+El responsable de este sitio web y de esta política es **Jorge de la Fuente Gutiérrez**, titular de VIRALIX, con domicilio en Calle Reyes Católicos, 7, 23730 Villanueva de la Reina (Jaén). El resto de sus datos identificativos figuran en el [Aviso legal](/aviso-legal.html). Para cualquier consulta sobre cookies puedes escribir a **viralixweb@gmail.com**.
+
 ## 1. Qué son las cookies
 
 Las cookies son pequeños archivos que un sitio web guarda en tu navegador para recordar información sobre tu visita. Tecnologías parecidas, como el **almacenamiento local** (*localStorage*), cumplen funciones similares. En esta política nos referimos a todas ellas como «cookies».

@@ -6,7 +6,7 @@ miga: Aviso legal
 kicker: Legal
 h1: AVISO <span>LEGAL</span>
 intro: Información general sobre el titular de este sitio web y las condiciones que regulan su uso, en cumplimiento de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE).
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 ---
 ## 1. Datos identificativos del titular
 

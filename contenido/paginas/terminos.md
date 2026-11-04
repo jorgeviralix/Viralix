@@ -6,7 +6,7 @@ miga: Términos de uso
 kicker: Legal
 h1: TÉRMINOS DE <span>USO</span>
 intro: Estas condiciones regulan el acceso y el uso de www.viralixweb.es. Al navegar por el sitio aceptas estos términos, junto con el Aviso legal y las políticas de privacidad y cookies.
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 ---
 ## 1. Acceso gratuito
 

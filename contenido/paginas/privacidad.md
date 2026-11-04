@@ -6,7 +6,7 @@ miga: Política de privacidad
 kicker: Legal
 h1: POLÍTICA DE <span>PRIVACIDAD</span>
 intro: En VIRALIX tratamos los mínimos datos personales posibles y te explicamos con claridad qué hacemos con ellos, conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 schema: WebPage
 ---
 ## 1. Responsable del tratamiento

@@ -6,6 +6,7 @@ miga: Contacto
 kicker: Habla con nosotros
 h1: CONTAC<span>TO</span>
 intro: ¿Tienes un caso que debería estar en VIRALIX, has encontrado un error o quieres colaborar? Escríbenos. Leemos todos los mensajes.
+actualizado: 2026-11-04
 schema: ContactPage
 ---
 ## Correo electrónico
@@ -48,5 +49,9 @@ Rellena el formulario y se abrirá tu programa de correo con el mensaje preparad
 - **Solicitar una rectificación**: si un contenido te afecta personalmente o eres familiar de una víctima, atenderemos tu petición con prioridad.
 - **Colaborar o contactar como prensa**: periodistas, investigadores, historiadores y criminólogos son bienvenidos.
 - **Ejercer tus derechos de protección de datos**: acceso, rectificación, supresión y demás derechos descritos en la [política de privacidad](/privacidad.html).
+
+## Titular del sitio
+
+VIRALIX es un proyecto editorial independiente de **Jorge de la Fuente Gutiérrez**, con domicilio a efectos de notificaciones en Calle Reyes Católicos, 7, 23730 Villanueva de la Reina (Jaén). Sus datos completos figuran en el [Aviso legal](/aviso-legal.html), y el tratamiento de los datos que nos envíes se explica en la [política de privacidad](/privacidad.html).
 
 VIRALIX es un proyecto editorial independiente dedicado a la divulgación de casos reales verificados. Puedes conocer cómo trabajamos en nuestra [metodología editorial](/metodologia.html).
