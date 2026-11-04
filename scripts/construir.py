@@ -500,6 +500,17 @@ def relacionados(a, arts):
 AUTOR = {"nombre": "Jorge de la Fuente Gutiérrez", "corto": "Jorge de la Fuente", "url": "/autor/jorge-de-la-fuente.html"}
 
 
+def extracto(html_txt: str, limite: int = 600) -> str:
+    """Texto plano de las primeras frases del artículo para articleBody (vista previa)."""
+    t = html.unescape(re.sub(r"<(figure|aside|ol|table)[^>]*>.*?</\1>", " ", html_txt, flags=re.S))
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    if len(t) <= limite:
+        return t
+    corte = t[:limite].rsplit(" ", 1)[0]
+    return corte.rstrip(",;:") + "…"
+
+
 def nota_autor_html(a) -> str:
     """Bloque «Nota del autor» al final del artículo (campo nota_autor del Markdown)."""
     if not a.get("nota_autor"):
@@ -518,12 +529,18 @@ def render_articulo(a, arts):
     minutos = max(4, math.ceil(a["_palabras"] / 220))
     title = f'{a["titulo_seo"]} | VIRALIX'
     jsonld = [
-        {"@context": "https://schema.org", "@type": "Article", "headline": a["titulo"][:110], "alternativeHeadline": a["titulo_seo"],
-         "description": a["descripcion"], "image": [cover_jpg], "datePublished": a["publicado"] + "T09:00:00+01:00",
-         "dateModified": a["actualizado"] + "T09:00:00+01:00", "inLanguage": "es-ES", "articleSection": cat["nombre"],
-         "keywords": a.get("palabras_clave", ""), "wordCount": a["_palabras"], "isAccessibleForFree": True,
-         "author": {"@type": "Organization", "name": "Equipo editorial VIRALIX", "url": SITE + "/sobre.html"},
-         "publisher": ORG, "mainEntityOfPage": {"@type": "WebPage", "@id": url}},
+        {"@context": "https://schema.org", "@type": "Article", "@id": url + "#articulo",
+         "headline": a["titulo"][:110], "alternativeHeadline": a["titulo_seo"], "description": a["descripcion"],
+         "image": [{"@type": "ImageObject", "url": cover_jpg, "width": 1200, "height": 630, "caption": cover_alt}],
+         "thumbnailUrl": f"{SITE}/images/articulos/{slug}-portada.webp",
+         "datePublished": a["publicado"] + "T09:00:00+01:00", "dateModified": a["actualizado"] + "T09:00:00+01:00",
+         "inLanguage": "es-ES", "articleSection": cat["nombre"], "keywords": a.get("palabras_clave", ""),
+         "wordCount": a["_palabras"], "isAccessibleForFree": True,
+         "articleBody": extracto(a["entradilla"] + " " + a["_html"], 600),
+         "author": {"@type": "Person", "@id": SITE + AUTOR["url"] + "#persona", "name": AUTOR["nombre"],
+                    "url": SITE + AUTOR["url"], "jobTitle": "Fundador y editor de VIRALIX"},
+         "publisher": ORG,
+         "mainEntityOfPage": {"@type": "WebPage", "@id": url}},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": cat["nombre"], "item": f"{SITE}/#{cat['ancla']}"},
