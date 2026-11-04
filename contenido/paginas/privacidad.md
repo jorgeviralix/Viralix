@@ -15,9 +15,9 @@ schema: WebPage
 
 | Dato | Información |
 |---|---|
-| Responsable | [Nombre y apellidos o razón social del titular] |
-| NIF/NIE | [NIF del titular] |
-| Domicilio | [Dirección a efectos de notificaciones], Andalucía (España) |
+| Responsable | Jorge de la Fuente Gutiérrez |
+| NIF/NIE | 53919350J |
+| Domicilio | Calle Reyes Católicos, 7, 23730 Villanueva de la Reina, Jaén, Andalucía (España) |
 | Correo electrónico | viralixweb@gmail.com |
 | Sitio web | www.viralixweb.es |
 
