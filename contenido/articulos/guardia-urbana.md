@@ -17,6 +17,7 @@ alt_portada: Ilustración editorial con el mapa de la provincia de Barcelona y u
 pie_portada: Los hechos se produjeron entre Cubelles, en la costa del Garraf, y el pantano de Foix, a pocos kilómetros tierra adentro.
 relacionados: crimen-fago, marta-calvo, psicopatia
 mapa: {"base":"es","extent":[[1.2,41.05],[2.45,41.65]],"resaltar":{"provincias":["Barcelona"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Garraf y Penedès, mayo de 2017","marcadores":[{"lon":1.6738,"lat":41.2077,"texto":"Cubelles","sub":"Vivienda de Rosa Peral","lado":"izq","dy":14},{"lon":1.6452,"lat":41.2575,"texto":"Pantano de Foix","sub":"Hallazgo del coche calcinado","dy":-16},{"lon":2.1734,"lat":41.3851,"texto":"Barcelona","sub":"Juicio en la Audiencia (2020)"}],"etiquetas":[{"lon":1.95,"lat":41.12,"texto":"Mar Mediterráneo","tipo":"mar"}]}
+nota_autor: Revisando la cobertura de este caso me llamó la atención lo poco que se habló de Pedro Rodríguez en comparación con los condenados. Las series han reavivado el interés, y eso no es malo si sirve para entender cómo se investigó. Lo que me deja pensando es la otra víctima de esta historia: un exmarido señalado sin motivo en los primeros días, y lo fácil que habría sido que esa sospecha calara.
 ---
 El **4 de mayo de 2017** apareció un coche calcinado en una pista forestal junto al **pantano de Foix**, en Castellet i la Gornal (Barcelona). Dentro había un cuerpo tan dañado por el fuego que identificarlo no fue inmediato. Era **Pedro Rodríguez**, agente de la Guardia Urbana de Barcelona.
 

@@ -496,6 +496,18 @@ def relacionados(a, arts):
     return "\n".join(cards)
 
 
+AUTOR = {"nombre": "Jorge de la Fuente Gutiérrez", "corto": "Jorge de la Fuente", "url": "/autor/jorge-de-la-fuente.html"}
+
+
+def nota_autor_html(a) -> str:
+    """Bloque «Nota del autor» al final del artículo (campo nota_autor del Markdown)."""
+    if not a.get("nota_autor"):
+        return ""
+    return (f'<aside class="nota nota-autor" aria-label="Nota del autor"><span class="nota__title">Nota del autor</span>'
+            f'<p>{inline(a["nota_autor"])}</p>'
+            f'<p><em>— <a href="{AUTOR["url"]}">{AUTOR["corto"]}</a>, fundador y editor de VIRALIX</em></p></aside>')
+
+
 def render_articulo(a, arts):
     slug, r = a["slug"], a["_r"]
     cat = CATS[a["categoria"]]
@@ -552,6 +564,7 @@ def render_articulo(a, arts):
       <div class="prose" itemprop="articleBody">
 {a['_html']}
 {r.fuentes_html}
+{nota_autor_html(a)}
 {share_block(url, a['titulo_seo'])}
         <aside class="author-box" aria-label="Sobre la autoría"><div class="author-box__avatar" aria-hidden="true">V</div><div><h2>Equipo editorial VIRALIX</h2><p>Redacción y verificación según nuestra <a href="/metodologia.html">metodología editorial</a>. ¿Has visto un error? <a href="/contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
         <p class="updated">Última revisión: <time datetime="{a['actualizado']}">{fecha_larga(a['actualizado'])}</time>.</p>

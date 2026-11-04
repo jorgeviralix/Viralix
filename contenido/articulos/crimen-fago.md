@@ -17,6 +17,7 @@ alt_portada: Ilustración editorial con el mapa de la provincia de Huesca y un m
 pie_portada: Fago está en el valle de Ansó, en la comarca de la Jacetania, a pocos kilómetros de la frontera francesa.
 relacionados: puerto-hurraco, galindos, perfil-criminal
 mapa: {"base":"es","extent":[[-1.35,41.95],[0.25,42.95]],"resaltar":{"provincias":["Huesca"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"El Pirineo oscense, enero de 2007","marcadores":[{"lon":-0.8806,"lat":42.7342,"texto":"Fago","sub":"Valle de Ansó · unos 30 habitantes","lado":"izq"},{"lon":-0.5498,"lat":42.5705,"texto":"Jaca","sub":"Capital de la Jacetania"},{"lon":-0.4087,"lat":42.1401,"texto":"Huesca","sub":"Sede del juicio con jurado (2009)"}],"etiquetas":[{"lon":-0.65,"lat":42.88,"texto":"Francia","tipo":"pais"},{"lon":-1.15,"lat":42.25,"texto":"Zaragoza","tipo":"pais"}]}
+nota_autor: Fago me recuerda que no hace falta una gran ciudad para que un conflicto se pudra: basta con que nadie medie a tiempo. La condena de Santiago Mainar fue confirmada por los tribunales superiores y la respeto, pero la confesión retirada me sigue pareciendo el punto débil del caso. Si algún día apareciera una prueba material concluyente, en un sentido o en otro, será lo primero que añada a este artículo.
 ---
 **Fago** cabe en una mirada: unas pocas casas de piedra, una iglesia y carreteras de montaña en el valle de Ansó, en el Pirineo occidental de Huesca. A comienzos de este siglo tenía censados unos treinta vecinos. En sitios así todo el mundo se conoce desde siempre, para bien y para mal.
 

@@ -17,6 +17,7 @@ alt_portada: Ilustración editorial con el mapa de Álava resaltado y un marcado
 pie_portada: Los crímenes se produjeron en caminos y campos de los alrededores de Vitoria.
 relacionados: arropiero, calle-fuencarral, perfil-criminal
 mapa: {"base":"es","extent":[[-3.35,42.45],[-2.1,43.15]],"resaltar":{"provincias":["Araba/Álava"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Álava, 1870-1879","marcadores":[{"lon":-2.6727,"lat":42.8467,"texto":"Vitoria","sub":"Escenario de la mayoría de los crímenes","lado":"izq"},{"lon":-2.385,"lat":42.86,"texto":"Eguílaz","sub":"Pueblo natal de Garayo"}],"etiquetas":[{"lon":-2.75,"lat":43.08,"texto":"Bizkaia","tipo":"pais"},{"lon":-2.45,"lat":42.55,"texto":"La Rioja","tipo":"pais"}]}
+nota_autor: Muchos hemos oído la palabra «sacamantecas» desde pequeños sin saber que detrás había un caso real y seis mujeres asesinadas. Esa es la parte que me incomoda: el apodo sobrevivió en el habla popular y las víctimas se borraron. Me queda una duda que la documentación disponible no resuelve: cuántos crímenes se le atribuyeron por inercia, solo porque encajaban con el monstruo que la prensa ya había fabricado.
 ---
 En el folclore de buena parte de la península, el **sacamantecas** era un hombre que recorría los caminos con un saco y que, según contaban las abuelas, sacaba la grasa —las «mantecas»— de sus víctimas para venderla como remedio milagroso. Era un miedo antiguo, emparentado con el hombre del saco, con el que se advertía a los niños de que no se alejaran de casa al anochecer.
 

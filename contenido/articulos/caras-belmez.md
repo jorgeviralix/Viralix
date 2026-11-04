@@ -17,6 +17,7 @@ alt_portada: Ilustración editorial con el mapa de la provincia de Jaén y un ma
 pie_portada: Bélmez de la Moraleda es un pequeño municipio de la sierra Mágina, en la provincia de Jaén.
 relacionados: paso-dyatlov, falsos-recuerdos, enriqueta-marti
 mapa: {"base":"es","extent":[[-4.4,37.3],[-2.45,38.35]],"resaltar":{"provincias":["Jaén"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Provincia de Jaén, agosto de 1971","marcadores":[{"lon":-3.3792,"lat":37.7231,"texto":"Bélmez de la Moraleda","sub":"La «Casa de las Caras»"},{"lon":-3.7849,"lat":37.7796,"texto":"Jaén","sub":"Capital de la provincia","lado":"izq"}],"etiquetas":[{"lon":-3.05,"lat":37.45,"texto":"Granada","tipo":"pais"},{"lon":-3.6,"lat":38.2,"texto":"Sierra Morena","tipo":"pais"}]}
+nota_autor: Bélmez de la Moraleda está en la provincia de Jaén, la misma desde la que escribo, y eso me obliga a tratar el caso con cuidado: forma parte de la identidad de mucha gente de la zona. Mi opinión es que no hay nada paranormal en esas manchas, pero no creo que eso le quite interés al fenómeno. Lo que me sigue intrigando es cómo una historia así resiste cincuenta años de análisis sin perder a sus creyentes.
 ---
 El **23 de agosto de 1971**, en una casa de la calle Real de **Bélmez de la Moraleda**, un pueblo de la sierra Mágina (Jaén), **María Gómez Cámara** vio en el suelo de su cocina, junto al hogar, una mancha oscura que parecía un rostro humano. Según el relato familiar, uno de sus hijos picó el suelo y lo cubrió con cemento nuevo. Días después, la cara volvió a aparecer.
 

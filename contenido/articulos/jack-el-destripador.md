@@ -17,6 +17,7 @@ alt_portada: Ilustración editorial con el mapa del sureste de Inglaterra y un m
 pie_portada: Whitechapel, en el East End, era uno de los barrios más pobres del Londres victoriano.
 relacionados: calle-fuencarral, perfil-criminal, zodiaco
 mapa: {"base":"world","extent":[[-2.6,50.55],[1.9,52.35]],"resaltar":{"paises":["United Kingdom"]},"localizador":[[-11,36],[19,60]],"titulo":"Londres, otoño de 1888","marcadores":[{"lon":-0.0598,"lat":51.5165,"texto":"Whitechapel","sub":"East End de Londres"}],"etiquetas":[{"lon":-1.3,"lat":50.4,"texto":"Canal de la Mancha","tipo":"mar"},{"lon":1.55,"lat":50.75,"texto":"Francia","tipo":"pais"},{"lon":-1.6,"lat":52.1,"texto":"Inglaterra","tipo":"pais"}]}
+nota_autor: Llegué a este caso, como casi todo el mundo, por el mito: la niebla, el sombrero de copa, el enigma del nombre. Terminé de escribirlo pensando en Mary Ann, Annie, Elizabeth, Catherine y Mary Jane. Si hay algo que me gustaría que el lector se llevara de este artículo es eso: la pregunta interesante no es quién era él, sino por qué durante tanto tiempo importó tan poco quiénes eran ellas.
 ---
 **Jack el Destripador** es probablemente el asesino más famoso de la historia, y también el más inventado. Nadie sabe quién fue. El apodo salió de una carta que, con toda probabilidad, escribió un periodista. Y la imagen popular del caso, con su niebla, su sombrero de copa y su bisturí, ha tapado durante más de un siglo a las cinco mujeres que murieron en **Whitechapel** en el otoño de 1888.
 
