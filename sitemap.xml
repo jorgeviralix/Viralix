@@ -1,183 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.viralixweb.es/</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.viralixweb.es/sobre-nosotros.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <loc>https://www.viralixweb.es/timeline.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/contacto.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/privacidad.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.viralixweb.es/aviso-legal.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.viralixweb.es/timeline.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <loc>https://www.viralixweb.es/contacto.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/cookies.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/metodologia.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/privacidad.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/sobre-nosotros.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/terminos.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-calle-fuencarral.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/calle-fuencarral-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-sacamantecas.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/sacamantecas-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-enriqueta-marti.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/enriqueta-marti-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-crimen-fago.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/crimen-fago-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-guardia-urbana.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/guardia-urbana-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-galindos.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/galindos-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-jarabo.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/jarabo-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-jack-el-destripador.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/jack-el-destripador-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-zodiaco.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/zodiaco-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-lindbergh.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/lindbergh-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-db-cooper.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/db-cooper-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-lizzie-borden.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/lizzie-borden-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-paso-dyatlov.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/paso-dyatlov-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-mary-celeste.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/mary-celeste-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-caras-belmez.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/caras-belmez-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-perfil-criminal.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/perfil-criminal-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-psicopatia.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/psicopatia-portada.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-alcasser.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-asesino-baraja.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-asunta.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-crimen-cuenca.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-crimen-rol.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-diana-quer.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-eclipse-2026.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-el-lute.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-falsos-recuerdos.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-hantavirus.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-katana.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-marianas.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-marta-calvo.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-marta-castillo.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-puerto-hurraco.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-super-elnino.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-urquijo.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.viralixweb.es/articulo-wanninkhof-bis.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-alcasser.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-wanninkhof.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-wanninkhof.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-marta-castillo.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-marta-castillo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-diana-quer.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-diana-quer.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-asunta.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-asunta.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-asesino-baraja.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-asesino-baraja.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-katana.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-katana.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-puerto-hurraco.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-puerto-hurraco.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-crimen-rol.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-crimen-rol.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-urquijo.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-urquijo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-el-lute.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-el-lute.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-crimen-cuenca.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-crimen-cuenca.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-marta-calvo.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-marta-calvo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-wanninkhof-bis.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-wanninkhof-bis.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-aguilar.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-aguilar.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-arropiero.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-arropiero.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-breton.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-breton.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.viralixweb.es/articulo-envenenadora.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-envenenadora.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.viralixweb.es/sobre-nosotros.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.viralixweb.es/articulo-eclipse-2026.html</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-eclipse-2026.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-super-elnino.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-super-elnino.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-marianas.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-marianas.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-hantavirus.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-hantavirus.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.viralixweb.es/articulo-falsos-recuerdos.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.viralixweb.es/img-falsos-recuerdos.png</image:loc></image:image>
   </url>
 </urlset>

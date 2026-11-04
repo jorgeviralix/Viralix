@@ -1,0 +1,2390 @@
+[
+ {
+  "slug": "calle-fuencarral",
+  "titulo": "El crimen de la calle Fuencarral",
+  "titulo_corto": "El crimen de la calle Fuencarral",
+  "titulo_portada": "El crimen de la calle Fuencarral",
+  "categoria": "es",
+  "anio": "1888",
+  "lugar": "Madrid, España",
+  "estado": "Resuelto con dudas",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -4.6,
+     39.85
+    ],
+    [
+     -2.9,
+     41.05
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Madrid, julio de 1888",
+   "marcadores": [
+    {
+     "lon": -3.7038,
+     "lat": 40.4268,
+     "texto": "Madrid: calle Fuencarral y Cárcel Modelo",
+     "sub": "Vivienda de la víctima y prisión del hijo, a poca distancia"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -4.02,
+     "lat": 40.86,
+     "texto": "Sierra de Guadarrama",
+     "tipo": "pais"
+    },
+    {
+     "lon": -3.4,
+     "lat": 40.1,
+     "texto": "Comunidad de Madrid",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1-2 jul 1888",
+    "Asesinato de Luciana Borcino en su piso de la calle Fuencarral; el fuego intenta borrar las huellas."
+   ],
+   [
+    "Jul 1888",
+    "Detención de la criada, Higinia Balaguer, que da su primera versión de los hechos."
+   ],
+   [
+    "1888",
+    "Las declaraciones de Higinia implican al hijo de la víctima, preso en la Cárcel Modelo, y a su amiga Dolores Ávila."
+   ],
+   [
+    "1888-1889",
+    "La prensa madrileña convierte el sumario en un folletín diario y toma partido."
+   ],
+   [
+    "1889",
+    "Juicio ante jurado: Higinia Balaguer, condenada a muerte; José Vázquez Varela, absuelto."
+   ],
+   [
+    "19 jul 1890",
+    "Higinia Balaguer es ejecutada en Madrid ante una gran multitud."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Luciana Borcino, viuda de Vázquez"
+    ],
+    [
+     "Lugar",
+     "Calle Fuencarral, 109 (Madrid)"
+    ],
+    [
+     "Fecha",
+     "Noche del 1 al 2 de julio de 1888"
+    ],
+    [
+     "Acusados",
+     "Higinia Balaguer, Dolores Ávila y José Vázquez Varela"
+    ],
+    [
+     "Juicio",
+     "Ante jurado, en 1889"
+    ],
+    [
+     "Sentencia",
+     "Pena de muerte para Higinia Balaguer"
+    ],
+    [
+     "Ejecución",
+     "19 de julio de 1890"
+    ],
+    [
+     "Estado",
+     "Cerrado, con dudas históricas sobre la autoría"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "sacamantecas",
+  "titulo": "El Sacamantecas de Vitoria",
+  "titulo_corto": "El Sacamantecas de Vitoria",
+  "titulo_portada": "El Sacamantecas de Vitoria",
+  "categoria": "es",
+  "anio": "1870-1879",
+  "lugar": "Vitoria, Álava",
+  "estado": "Resuelto",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -3.35,
+     42.45
+    ],
+    [
+     -2.1,
+     43.15
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Araba/Álava"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Álava, 1870-1879",
+   "marcadores": [
+    {
+     "lon": -2.6727,
+     "lat": 42.8467,
+     "texto": "Vitoria",
+     "sub": "Escenario de la mayoría de los crímenes",
+     "lado": "izq"
+    },
+    {
+     "lon": -2.385,
+     "lat": 42.86,
+     "texto": "Eguílaz",
+     "sub": "Pueblo natal de Garayo"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -2.75,
+     "lat": 43.08,
+     "texto": "Bizkaia",
+     "tipo": "pais"
+    },
+    {
+     "lon": -2.45,
+     "lat": 42.55,
+     "texto": "La Rioja",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1821",
+    "Nace Juan Díaz de Garayo en Eguílaz, en la Llanada alavesa."
+   ],
+   [
+    "1870",
+    "Primer asesinato que se le atribuye, en las afueras de Vitoria."
+   ],
+   [
+    "1872-1876",
+    "Tercera Guerra Carlista: el territorio vive años de inestabilidad."
+   ],
+   [
+    "1878-1879",
+    "Se concentra la mayoría de los crímenes y se extiende el pánico en Vitoria."
+   ],
+   [
+    "1879",
+    "Detención tras ser identificado por testigos; confiesa los asesinatos."
+   ],
+   [
+    "1880-1881",
+    "Proceso judicial y debate sobre su estado mental; condena a muerte."
+   ],
+   [
+    "11 may 1881",
+    "Ejecución en Vitoria."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Juan Díaz de Garayo"
+    ],
+    [
+     "Apodo",
+     "«el Sacamantecas»"
+    ],
+    [
+     "Nacimiento",
+     "1821, Eguílaz (Álava)"
+    ],
+    [
+     "Periodo de los crímenes",
+     "1870-1879"
+    ],
+    [
+     "Víctimas",
+     "Seis mujeres asesinadas, según la reconstrucción judicial, y varios intentos"
+    ],
+    [
+     "Zona",
+     "Vitoria y su entorno rural"
+    ],
+    [
+     "Condena",
+     "Pena de muerte"
+    ],
+    [
+     "Ejecución",
+     "11 de mayo de 1881, en Vitoria"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "enriqueta-marti",
+  "titulo": "Enriqueta Martí, la «vampira del Raval»",
+  "titulo_corto": "Enriqueta Martí, la «vampira del Raval»",
+  "titulo_portada": "La «vampira del Raval»",
+  "categoria": "es",
+  "anio": "1912",
+  "lugar": "Barcelona, España",
+  "estado": "Nunca juzgada",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.35,
+     41.15
+    ],
+    [
+     2.85,
+     42.0
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Barcelona, febrero de 1912",
+   "marcadores": [
+    {
+     "lon": 2.1676,
+     "lat": 41.3806,
+     "texto": "El Raval",
+     "sub": "Calle Ponent (hoy Joaquim Costa)"
+    },
+    {
+     "lon": 2.045,
+     "lat": 41.3815,
+     "texto": "Sant Feliu de Llobregat",
+     "sub": "Localidad natal, según la mayoría de fuentes",
+     "lado": "izq",
+     "dy": -28
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.55,
+     "lat": 41.25,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1868",
+    "Nace Enriqueta Martí, en Sant Feliu de Llobregat según la mayoría de las fuentes."
+   ],
+   [
+    "Jul 1909",
+    "Semana Trágica en Barcelona: revuelta y dura represión en los barrios obreros."
+   ],
+   [
+    "10 feb 1912",
+    "Desaparece Teresita Guitart, de cinco años."
+   ],
+   [
+    "27 feb 1912",
+    "Aviso de una vecina; la policía rescata a dos niñas en la calle Ponent y detiene a Enriqueta Martí."
+   ],
+   [
+    "Mar 1912",
+    "La prensa difunde la imagen de la «vampira»; registros y análisis de restos."
+   ],
+   [
+    "12 may 1913",
+    "Enriqueta Martí muere en la prisión de Reina Amàlia sin haber sido juzgada."
+   ],
+   [
+    "Siglo XXI",
+    "Investigaciones históricas revisan las fuentes y cuestionan la leyenda."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Enriqueta Martí Ripollés"
+    ],
+    [
+     "Apodo periodístico",
+     "«La vampira de la calle Ponent» o «del Raval»"
+    ],
+    [
+     "Detención",
+     "27 de febrero de 1912"
+    ],
+    [
+     "Lugar",
+     "Calle Ponent (actual Joaquim Costa), Raval, Barcelona"
+    ],
+    [
+     "Hecho probado",
+     "Retención de la niña Teresita Guitart, rescatada con vida"
+    ],
+    [
+     "Acusaciones",
+     "Secuestro y, según la prensa, otros crímenes nunca probados"
+    ],
+    [
+     "Juicio",
+     "No llegó a celebrarse"
+    ],
+    [
+     "Muerte",
+     "12 de mayo de 1913, en la prisión de Reina Amàlia"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "crimen-fago",
+  "titulo": "El crimen de Fago",
+  "titulo_corto": "El crimen de Fago",
+  "titulo_portada": "El crimen de Fago",
+  "categoria": "es",
+  "anio": "2007",
+  "lugar": "Fago, Huesca",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -1.35,
+     41.95
+    ],
+    [
+     0.25,
+     42.95
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Huesca"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El Pirineo oscense, enero de 2007",
+   "marcadores": [
+    {
+     "lon": -0.8806,
+     "lat": 42.7342,
+     "texto": "Fago",
+     "sub": "Valle de Ansó · unos 30 habitantes",
+     "lado": "izq"
+    },
+    {
+     "lon": -0.5498,
+     "lat": 42.5705,
+     "texto": "Jaca",
+     "sub": "Capital de la Jacetania"
+    },
+    {
+     "lon": -0.4087,
+     "lat": 42.1401,
+     "texto": "Huesca",
+     "sub": "Sede del juicio con jurado (2009)"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -0.65,
+     "lat": 42.88,
+     "texto": "Francia",
+     "tipo": "pais"
+    },
+    {
+     "lon": -1.15,
+     "lat": 42.25,
+     "texto": "Zaragoza",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "12 ene 2007",
+    "El alcalde de Fago, Miguel Grima, desaparece cuando regresaba al pueblo por la noche."
+   ],
+   [
+    "Ene 2007",
+    "Su cuerpo aparece en un barranco junto a una carretera de la zona; había sido asesinado."
+   ],
+   [
+    "Ene 2007",
+    "La Guardia Civil investiga los conflictos del alcalde con varios vecinos."
+   ],
+   [
+    "Feb 2007",
+    "Detención de Santiago Mainar, guarda forestal y vecino, que confiesa el crimen."
+   ],
+   [
+    "2007",
+    "Mainar se retracta y sostiene que confesó bajo presión."
+   ],
+   [
+    "2009",
+    "Juicio con jurado en Huesca: culpable de asesinato y condenado a 20 años."
+   ],
+   [
+    "Después",
+    "La condena es confirmada en instancias superiores."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Miguel Grima, alcalde de Fago"
+    ],
+    [
+     "Lugar",
+     "Carretera de montaña cercana a Fago (Huesca)"
+    ],
+    [
+     "Fecha",
+     "Noche del 12 de enero de 2007"
+    ],
+    [
+     "Arma",
+     "Arma de fuego"
+    ],
+    [
+     "Detenido",
+     "Santiago Mainar, guarda forestal y vecino del pueblo"
+    ],
+    [
+     "Clave",
+     "Confesión inicial, retractada después"
+    ],
+    [
+     "Juicio",
+     "Jurado popular en la Audiencia Provincial de Huesca (2009)"
+    ],
+    [
+     "Condena",
+     "20 años de prisión por asesinato"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "guardia-urbana",
+  "titulo": "El crimen de la Guardia Urbana",
+  "titulo_corto": "El crimen de la Guardia Urbana",
+  "titulo_portada": "El crimen de la Guardia Urbana",
+  "categoria": "es",
+  "anio": "2017",
+  "lugar": "Cubelles y Foix, Barcelona",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.2,
+     41.05
+    ],
+    [
+     2.45,
+     41.65
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Garraf y Penedès, mayo de 2017",
+   "marcadores": [
+    {
+     "lon": 1.6738,
+     "lat": 41.2077,
+     "texto": "Cubelles",
+     "sub": "Vivienda de Rosa Peral",
+     "lado": "izq",
+     "dy": 14
+    },
+    {
+     "lon": 1.6452,
+     "lat": 41.2575,
+     "texto": "Pantano de Foix",
+     "sub": "Hallazgo del coche calcinado",
+     "dy": -16
+    },
+    {
+     "lon": 2.1734,
+     "lat": 41.3851,
+     "texto": "Barcelona",
+     "sub": "Juicio en la Audiencia (2020)"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 1.95,
+     "lat": 41.12,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1-2 may 2017",
+    "Pedro Rodríguez muere en la vivienda de Cubelles, según la sentencia."
+   ],
+   [
+    "4 may 2017",
+    "Aparece un coche calcinado junto al pantano de Foix con un cuerpo en su interior."
+   ],
+   [
+    "May 2017",
+    "Una pieza quirúrgica permite identificar a la víctima; se descarta la implicación del exmarido de Rosa Peral."
+   ],
+   [
+    "17 may 2017",
+    "Los Mossos d'Esquadra detienen a Rosa Peral y a Albert López."
+   ],
+   [
+    "2020",
+    "Juicio con jurado en la Audiencia de Barcelona: ambos culpables; 25 y 20 años de prisión."
+   ],
+   [
+    "2023",
+    "Netflix estrena «El cuerpo en llamas» y «Las cintas de Rosa Peral»."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Pedro Rodríguez, agente de la Guardia Urbana de Barcelona"
+    ],
+    [
+     "Lugar del crimen",
+     "Vivienda de Cubelles (Barcelona)"
+    ],
+    [
+     "Hallazgo",
+     "4 de mayo de 2017, coche calcinado junto al pantano de Foix"
+    ],
+    [
+     "Detenidos",
+     "Rosa Peral y Albert López, agentes de la Guardia Urbana"
+    ],
+    [
+     "Detención",
+     "17 de mayo de 2017"
+    ],
+    [
+     "Juicio",
+     "Jurado popular, Audiencia de Barcelona (2020)"
+    ],
+    [
+     "Condenas",
+     "25 años (Rosa Peral) y 20 años (Albert López)"
+    ],
+    [
+     "Adaptaciones",
+     "Serie «El cuerpo en llamas» y documental «Las cintas de Rosa Peral» (Netflix, 2023)"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "galindos",
+  "titulo": "El crimen de Los Galindos",
+  "titulo_corto": "El crimen de Los Galindos",
+  "titulo_portada": "El crimen de Los Galindos",
+  "categoria": "es",
+  "anio": "1975",
+  "lugar": "Paradas, Sevilla",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -6.55,
+     36.85
+    ],
+    [
+     -4.55,
+     37.9
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Sevilla"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "La campiña sevillana, julio de 1975",
+   "marcadores": [
+    {
+     "lon": -5.4964,
+     "lat": 37.2944,
+     "texto": "Paradas",
+     "sub": "Cortijo de Los Galindos, en su término municipal"
+    },
+    {
+     "lon": -5.9845,
+     "lat": 37.3891,
+     "texto": "Sevilla",
+     "sub": "Capital de la provincia",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -5.0,
+     "lat": 37.75,
+     "texto": "Córdoba",
+     "tipo": "pais"
+    },
+    {
+     "lon": -5.75,
+     "lat": 36.95,
+     "texto": "Cádiz",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "22 jul 1975",
+    "Una columna de humo alerta del incendio en un pajar del cortijo de Los Galindos."
+   ],
+   [
+    "22 jul 1975",
+    "La Guardia Civil encuentra a varias de las víctimas; el capataz no aparece."
+   ],
+   [
+    "Jul 1975",
+    "El cuerpo del capataz aparece en la finca: también era una víctima."
+   ],
+   [
+    "20 nov 1975",
+    "Muere Franco; comienza la Transición y el caso pierde atención pública."
+   ],
+   [
+    "Años 70",
+    "La instrucción judicial se cierra sin identificar a ningún culpable."
+   ],
+   [
+    "Décadas siguientes",
+    "Periodistas e investigadores vuelven sobre el caso sin resultados judiciales."
+   ],
+   [
+    "1995",
+    "El delito prescribe: ya nadie podrá ser juzgado por estas muertes."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Cortijo de Los Galindos, Paradas (Sevilla)"
+    ],
+    [
+     "Fecha",
+     "22 de julio de 1975"
+    ],
+    [
+     "Víctimas",
+     "Cinco personas: el capataz y su esposa, dos tractoristas y la esposa de uno de ellos"
+    ],
+    [
+     "Investigación",
+     "Guardia Civil y juzgado de instrucción"
+    ],
+    [
+     "Detenidos",
+     "Ninguno condenado"
+    ],
+    [
+     "Situación judicial",
+     "Delito prescrito"
+    ],
+    [
+     "Estado",
+     "Sin resolver"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "jarabo",
+  "titulo": "El caso Jarabo",
+  "titulo_corto": "El caso Jarabo",
+  "titulo_portada": "El caso Jarabo",
+  "categoria": "es",
+  "anio": "1958",
+  "lugar": "Madrid, España",
+  "estado": "Resuelto",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -4.6,
+     39.85
+    ],
+    [
+     -2.9,
+     41.05
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Madrid, julio de 1958",
+   "marcadores": [
+    {
+     "lon": -3.6745,
+     "lat": 40.4225,
+     "texto": "Madrid",
+     "sub": "Escenarios de los crímenes (calle Lope de Rueda)"
+    },
+    {
+     "lon": -3.731,
+     "lat": 40.375,
+     "texto": "Prisión de Carabanchel",
+     "sub": "Lugar de la ejecución (1959)",
+     "lado": "izq",
+     "dy": 26
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -4.02,
+     "lat": 40.86,
+     "texto": "Sierra de Guadarrama",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1923",
+    "Nace José María Jarabo en Madrid, en una familia acomodada."
+   ],
+   [
+    "Años 50",
+    "Vida de lujo, juego y deudas; empeña objetos de valor para conseguir dinero."
+   ],
+   [
+    "19 jul 1958",
+    "Asesinatos en la vivienda de la calle Lope de Rueda."
+   ],
+   [
+    "20 jul 1958",
+    "Asesinato del socio del negocio de compraventa."
+   ],
+   [
+    "Jul 1958",
+    "Detención de Jarabo, al que delata, entre otras pistas, la ropa dejada en una tintorería."
+   ],
+   [
+    "Finales de 1958",
+    "Juicio y condena a muerte; se rechaza la eximente de trastorno mental."
+   ],
+   [
+    "4 jul 1959",
+    "Ejecución en la prisión de Carabanchel."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Autor",
+     "José María Jarabo Pérez-Morris"
+    ],
+    [
+     "Nacimiento",
+     "1923, Madrid"
+    ],
+    [
+     "Fecha de los crímenes",
+     "19 y 20 de julio de 1958"
+    ],
+    [
+     "Víctimas",
+     "Cuatro personas"
+    ],
+    [
+     "Lugar",
+     "Madrid (vivienda de la calle Lope de Rueda y negocio de compraventa)"
+    ],
+    [
+     "Móvil",
+     "Recuperar una joya empeñada y obtener dinero, según la sentencia"
+    ],
+    [
+     "Condena",
+     "Pena de muerte"
+    ],
+    [
+     "Ejecución",
+     "4 de julio de 1959, prisión de Carabanchel"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "jack-el-destripador",
+  "titulo": "Jack el Destripador",
+  "titulo_corto": "Jack el Destripador",
+  "titulo_portada": "Jack el Destripador",
+  "categoria": "intl",
+  "anio": "1888",
+  "lugar": "Whitechapel, Londres",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -2.6,
+     50.55
+    ],
+    [
+     1.9,
+     52.35
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "United Kingdom"
+    ]
+   },
+   "localizador": [
+    [
+     -11,
+     36
+    ],
+    [
+     19,
+     60
+    ]
+   ],
+   "titulo": "Londres, otoño de 1888",
+   "marcadores": [
+    {
+     "lon": -0.0598,
+     "lat": 51.5165,
+     "texto": "Whitechapel",
+     "sub": "East End de Londres"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -1.3,
+     "lat": 50.4,
+     "texto": "Canal de la Mancha",
+     "tipo": "mar"
+    },
+    {
+     "lon": 1.55,
+     "lat": 50.75,
+     "texto": "Francia",
+     "tipo": "pais"
+    },
+    {
+     "lon": -1.6,
+     "lat": 52.1,
+     "texto": "Inglaterra",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "31 ago 1888",
+    "Mary Ann Nichols, primera de las cinco víctimas «canónicas»."
+   ],
+   [
+    "8 sep 1888",
+    "Annie Chapman, en Spitalfields."
+   ],
+   [
+    "27 sep 1888",
+    "La agencia Central News recibe la carta «Dear Boss», firmada «Jack the Ripper»."
+   ],
+   [
+    "30 sep 1888",
+    "«Doble suceso»: Elizabeth Stride y Catherine Eddowes."
+   ],
+   [
+    "16 oct 1888",
+    "George Lusk recibe la carta «From Hell» («Desde el infierno»)."
+   ],
+   [
+    "9 nov 1888",
+    "Mary Jane Kelly, última víctima canónica."
+   ],
+   [
+    "1894",
+    "Memorando Macnaghten: tres sospechosos, ninguno juzgado."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Whitechapel y Spitalfields, East End de Londres"
+    ],
+    [
+     "Fechas",
+     "Agosto a noviembre de 1888"
+    ],
+    [
+     "Víctimas «canónicas»",
+     "Cinco mujeres"
+    ],
+    [
+     "Apodo",
+     "«Jack the Ripper», tomado de una carta enviada a la prensa"
+    ],
+    [
+     "Investigación",
+     "Policía Metropolitana y Policía de la City de Londres"
+    ],
+    [
+     "Sospechosos",
+     "Más de cien propuestos a lo largo de los años"
+    ],
+    [
+     "Estado",
+     "Sin resolver"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "zodiaco",
+  "titulo": "El asesino del Zodiaco",
+  "titulo_corto": "El asesino del Zodiaco",
+  "titulo_portada": "El asesino del Zodiaco",
+  "categoria": "intl",
+  "anio": "1968-1969",
+  "lugar": "Bahía de San Francisco, EE. UU.",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -123.15,
+     37.55
+    ],
+    [
+     -121.75,
+     38.75
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "California"
+    ],
+    "condados": [
+     "06095",
+     "06055",
+     "06075"
+    ]
+   },
+   "localizador": [
+    [
+     -125,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "Bahía de San Francisco, 1968-1969",
+   "marcadores": [
+    {
+     "lon": -122.1467,
+     "lat": 38.0889,
+     "texto": "Lake Herman Road",
+     "sub": "Benicia · 20 dic 1968",
+     "lado": "izq",
+     "dy": 26
+    },
+    {
+     "lon": -122.2008,
+     "lat": 38.1328,
+     "texto": "Blue Rock Springs",
+     "sub": "Vallejo · 4 jul 1969",
+     "dy": -10
+    },
+    {
+     "lon": -122.17,
+     "lat": 38.56,
+     "texto": "Lake Berryessa",
+     "sub": "Condado de Napa · 27 sep 1969"
+    },
+    {
+     "lon": -122.4531,
+     "lat": 37.7893,
+     "texto": "Presidio Heights",
+     "sub": "San Francisco · 11 oct 1969",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -122.98,
+     "lat": 38.05,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -122.28,
+     "lat": 38.32,
+     "texto": "Napa",
+     "tipo": "pais"
+    },
+    {
+     "lon": -121.95,
+     "lat": 38.27,
+     "texto": "Solano",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "20 dic 1968",
+    "Lake Herman Road: Betty Lou Jensen y David Faraday son asesinados."
+   ],
+   [
+    "4 jul 1969",
+    "Blue Rock Springs: muere Darlene Ferrin; Michael Mageau sobrevive."
+   ],
+   [
+    "31 jul 1969",
+    "Tres periódicos reciben las cartas con el cifrado de 408 símbolos."
+   ],
+   [
+    "8 ago 1969",
+    "Donald y Bettye Harden descifran el «408»."
+   ],
+   [
+    "27 sep 1969",
+    "Lake Berryessa: muere Cecelia Shepard; Bryan Hartnell sobrevive."
+   ],
+   [
+    "11 oct 1969",
+    "San Francisco: asesinato del taxista Paul Stine."
+   ],
+   [
+    "Dic 2020",
+    "Oranchak, Blake y Van Eycke descifran el «340»; el FBI lo confirma."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Zona",
+     "Bahía de San Francisco (California, EE. UU.)"
+    ],
+    [
+     "Ataques confirmados",
+     "Diciembre de 1968 a octubre de 1969"
+    ],
+    [
+     "Víctimas confirmadas",
+     "Cinco asesinadas y dos supervivientes"
+    ],
+    [
+     "Víctimas reivindicadas",
+     "Hasta 37, nunca confirmadas"
+    ],
+    [
+     "Cartas",
+     "Más de una veintena atribuidas, entre 1969 y 1974"
+    ],
+    [
+     "Cifrados",
+     "Cuatro; el «408» resuelto en 1969 y el «340» en 2020"
+    ],
+    [
+     "Sospechoso principal histórico",
+     "Arthur Leigh Allen, nunca acusado (murió en 1992)"
+    ],
+    [
+     "Estado",
+     "Sin resolver"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "lindbergh",
+  "titulo": "El secuestro Lindbergh",
+  "titulo_corto": "El secuestro Lindbergh",
+  "titulo_portada": "El secuestro del hijo de Lindbergh",
+  "categoria": "intl",
+  "anio": "1932",
+  "lugar": "Hopewell, Nueva Jersey (EE. UU.)",
+  "estado": "Resuelto con dudas",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -75.55,
+     39.95
+    ],
+    [
+     -73.45,
+     41.15
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "New Jersey"
+    ],
+    "condados": [
+     "34019"
+    ]
+   },
+   "localizador": [
+    [
+     -125,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "Nueva Jersey y Nueva York, 1932-1936",
+   "marcadores": [
+    {
+     "lon": -74.79,
+     "lat": 40.42,
+     "texto": "Highfields (Hopewell)",
+     "sub": "Casa de los Lindbergh · 1 mar 1932",
+     "lado": "izq"
+    },
+    {
+     "lon": -74.859,
+     "lat": 40.512,
+     "texto": "Flemington",
+     "sub": "Juicio a Hauptmann · 1935",
+     "lado": "izq",
+     "dy": -22
+    },
+    {
+     "lon": -73.835,
+     "lat": 40.826,
+     "texto": "Cementerio de St. Raymond",
+     "sub": "Bronx · pago del rescate"
+    },
+    {
+     "lon": -74.76,
+     "lat": 40.215,
+     "texto": "Trenton",
+     "sub": "Prisión estatal · 1936"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -73.75,
+     "lat": 40.25,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -74.25,
+     "lat": 41.05,
+     "texto": "Nueva York",
+     "tipo": "pais"
+    },
+    {
+     "lon": -75.3,
+     "lat": 40.75,
+     "texto": "Pensilvania",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1 mar 1932",
+    "Secuestro de Charles Lindbergh Jr. en Highfields, cerca de Hopewell."
+   ],
+   [
+    "2 abr 1932",
+    "John F. Condon paga el rescate en el cementerio de St. Raymond (Bronx)."
+   ],
+   [
+    "12 may 1932",
+    "Hallazgo de los restos del niño cerca de la casa familiar."
+   ],
+   [
+    "Jun 1932",
+    "El Congreso aprueba la Ley Federal de Secuestros («Ley Lindbergh»)."
+   ],
+   [
+    "Sep 1934",
+    "Un certificado de oro lleva a la detención de Bruno Richard Hauptmann."
+   ],
+   [
+    "Ene-feb 1935",
+    "Juicio en Flemington: culpable y condenado a muerte."
+   ],
+   [
+    "3 abr 1936",
+    "Hauptmann es ejecutado en la prisión estatal de Trenton."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Charles Augustus Lindbergh Jr., de 20 meses"
+    ],
+    [
+     "Lugar",
+     "Highfields, cerca de Hopewell (Nueva Jersey, EE. UU.)"
+    ],
+    [
+     "Fecha",
+     "Noche del 1 de marzo de 1932"
+    ],
+    [
+     "Rescate",
+     "50.000 dólares, pagado el 2 de abril de 1932"
+    ],
+    [
+     "Detenido",
+     "Bruno Richard Hauptmann, carpintero, en septiembre de 1934"
+    ],
+    [
+     "Juicio",
+     "Flemington (Nueva Jersey), enero-febrero de 1935"
+    ],
+    [
+     "Condena",
+     "Pena de muerte; ejecutado el 3 de abril de 1936"
+    ],
+    [
+     "Consecuencia legal",
+     "Ley Federal de Secuestros de 1932 («Ley Lindbergh»)"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "db-cooper",
+  "titulo": "El misterio de D. B. Cooper",
+  "titulo_corto": "El misterio de D. B. Cooper",
+  "titulo_portada": "El misterio de D. B. Cooper",
+  "categoria": "intl",
+  "anio": "1971",
+  "lugar": "Portland–Seattle, EE. UU.",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -124.4,
+     44.75
+    ],
+    [
+     -120.6,
+     47.95
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "Washington"
+    ],
+    "condados": [
+     "53011",
+     "53015"
+    ]
+   },
+   "localizador": [
+    [
+     -125,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "El vuelo 305, 24 de noviembre de 1971",
+   "ruta": [
+    [
+     -122.3088,
+     47.4502
+    ],
+    [
+     -122.42,
+     46.9
+    ],
+    [
+     -122.55,
+     46.3
+    ],
+    [
+     -122.6,
+     45.85
+    ],
+    [
+     -122.7,
+     45.3
+    ],
+    [
+     -122.85,
+     44.8
+    ]
+   ],
+   "marcadores": [
+    {
+     "lon": -122.5975,
+     "lat": 45.5887,
+     "texto": "Aeropuerto de Portland",
+     "sub": "Embarque del secuestrador",
+     "lado": "izq",
+     "dy": 24
+    },
+    {
+     "lon": -122.3088,
+     "lat": 47.4502,
+     "texto": "Aeropuerto de Seattle-Tacoma",
+     "sub": "Entrega del rescate y paracaídas"
+    },
+    {
+     "lon": -122.56,
+     "lat": 45.95,
+     "texto": "Zona probable del salto",
+     "sub": "Suroeste de Washington, hacia las 20:13"
+    },
+    {
+     "lon": -122.765,
+     "lat": 45.716,
+     "texto": "Tena Bar",
+     "sub": "Billetes hallados en 1980",
+     "lado": "izq",
+     "dy": -8
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -124.1,
+     "lat": 46.2,
+     "texto": "Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -121.3,
+     "lat": 45.2,
+     "texto": "Oregón",
+     "tipo": "pais"
+    },
+    {
+     "lon": -121.3,
+     "lat": 47.6,
+     "texto": "Washington",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "24 nov 1971 (tarde)",
+    "«Dan Cooper» entrega la nota a la azafata poco después de despegar de Portland."
+   ],
+   [
+    "24 nov 1971 (tarde)",
+    "En Seattle recibe 200.000 dólares y cuatro paracaídas; libera a los pasajeros."
+   ],
+   [
+    "24 nov 1971 (20:13)",
+    "La tripulación detecta la apertura de la escalera trasera: Cooper ha saltado."
+   ],
+   [
+    "1972",
+    "Varios secuestros imitadores; la industria introduce la «Cooper vane» en los Boeing 727."
+   ],
+   [
+    "Feb 1980",
+    "Brian Ingram encuentra 5.800 dólares del rescate en Tena Bar."
+   ],
+   [
+    "Jul 2016",
+    "El FBI suspende la investigación activa del caso NORJAK."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Fecha",
+     "24 de noviembre de 1971"
+    ],
+    [
+     "Vuelo",
+     "Northwest Orient 305 (Portland–Seattle), Boeing 727"
+    ],
+    [
+     "Secuestrador",
+     "Hombre identificado como «Dan Cooper»; la prensa difundió por error «D. B. Cooper»"
+    ],
+    [
+     "Rescate",
+     "200.000 dólares en billetes de 20 y cuatro paracaídas"
+    ],
+    [
+     "Salto",
+     "Hacia las 20:13, sobre el suroeste de Washington"
+    ],
+    [
+     "Hallazgo",
+     "5.800 dólares en Tena Bar, río Columbia (1980)"
+    ],
+    [
+     "Investigación del FBI",
+     "Expediente NORJAK, activa hasta 2016"
+    ],
+    [
+     "Estado",
+     "Sin resolver"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "lizzie-borden",
+  "titulo": "El caso Lizzie Borden",
+  "titulo_corto": "El caso Lizzie Borden",
+  "titulo_portada": "El caso Lizzie Borden",
+  "categoria": "intl",
+  "anio": "1892",
+  "lugar": "Fall River, Massachusetts (EE. UU.)",
+  "estado": "Sin culpable",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -71.75,
+     41.35
+    ],
+    [
+     -70.55,
+     42.15
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "Massachusetts"
+    ],
+    "condados": [
+     "25005"
+    ]
+   },
+   "localizador": [
+    [
+     -125,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "Sureste de Massachusetts, 1892-1893",
+   "marcadores": [
+    {
+     "lon": -71.155,
+     "lat": 41.7015,
+     "texto": "Fall River",
+     "sub": "Casa de los Borden · 4 ago 1892",
+     "lado": "izq"
+    },
+    {
+     "lon": -70.9342,
+     "lat": 41.6362,
+     "texto": "New Bedford",
+     "sub": "Juicio · junio de 1893"
+    },
+    {
+     "lon": -71.0898,
+     "lat": 41.9001,
+     "texto": "Taunton",
+     "sub": "Prisión del condado durante el proceso"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -71.55,
+     "lat": 41.6,
+     "texto": "Rhode Island",
+     "tipo": "pais"
+    },
+    {
+     "lon": -70.85,
+     "lat": 41.47,
+     "texto": "Bahía de Buzzards",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "3 ago 1892",
+    "Un farmacéutico asegura que una mujer intentó comprarle ácido prúsico; la identifica como Lizzie."
+   ],
+   [
+    "4 ago 1892 (9:30)",
+    "Muerte de Abby Borden en la habitación de invitados."
+   ],
+   [
+    "4 ago 1892 (11:00)",
+    "Muerte de Andrew Borden en el salón; Lizzie da la alarma."
+   ],
+   [
+    "11 ago 1892",
+    "Lizzie Borden es detenida tras la investigación preliminar."
+   ],
+   [
+    "Dic 1892",
+    "Un gran jurado la acusa formalmente de los dos asesinatos."
+   ],
+   [
+    "20 jun 1893",
+    "El jurado de New Bedford la declara no culpable."
+   ],
+   [
+    "1 jun 1927",
+    "Lizzie muere en Fall River; Emma fallece nueve días después."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "92 Second Street, Fall River (Massachusetts, EE. UU.)"
+    ],
+    [
+     "Fecha",
+     "4 de agosto de 1892"
+    ],
+    [
+     "Víctimas",
+     "Andrew Jackson Borden (69 años) y Abby Durfee Gray Borden (64 años)"
+    ],
+    [
+     "Acusada",
+     "Lizzie Andrew Borden, hija de Andrew"
+    ],
+    [
+     "Juicio",
+     "New Bedford, del 5 al 20 de junio de 1893"
+    ],
+    [
+     "Veredicto",
+     "Absuelta tras unos noventa minutos de deliberación"
+    ],
+    [
+     "Estado",
+     "Sin culpable; ninguna otra persona fue acusada"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "paso-dyatlov",
+  "titulo": "El incidente del paso Diátlov",
+  "titulo_corto": "El incidente del paso Diátlov",
+  "titulo_portada": "El incidente del paso Diátlov",
+  "categoria": "mist",
+  "anio": "1959",
+  "lugar": "Montes Urales, Rusia",
+  "estado": "Explicación probable",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     50.5,
+     56.2
+    ],
+    [
+     69.5,
+     64.8
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Russia"
+    ]
+   },
+   "localizador": [
+    [
+     18,
+     38
+    ],
+    [
+     115,
+     73
+    ]
+   ],
+   "titulo": "Norte de los Urales, febrero de 1959",
+   "marcadores": [
+    {
+     "lon": 59.4628,
+     "lat": 61.7547,
+     "texto": "Paso Diátlov",
+     "sub": "Ladera del Jolat Siajl · 1-2 feb 1959"
+    },
+    {
+     "lon": 60.4245,
+     "lat": 60.6944,
+     "texto": "Ivdel",
+     "sub": "Última ciudad antes de la ruta"
+    },
+    {
+     "lon": 60.6057,
+     "lat": 56.8389,
+     "texto": "Ekaterimburgo (Sverdlovsk)",
+     "sub": "Instituto Politécnico de los Urales",
+     "dy": -6
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 58.2,
+     "lat": 63.6,
+     "texto": "Montes Urales",
+     "tipo": "pais"
+    },
+    {
+     "lon": 54.0,
+     "lat": 59.0,
+     "texto": "Rusia europea",
+     "tipo": "pais"
+    },
+    {
+     "lon": 66.0,
+     "lat": 60.0,
+     "texto": "Siberia occidental",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "23 ene 1959",
+    "El grupo de Ígor Diátlov sale de Sverdlovsk en tren hacia el norte."
+   ],
+   [
+    "28 ene 1959",
+    "Yuri Yudin abandona la expedición por enfermedad: será el único superviviente."
+   ],
+   [
+    "1 feb 1959",
+    "El grupo acampa en la ladera del Jolat Siajl."
+   ],
+   [
+    "1-2 feb 1959",
+    "Los montañeros abandonan la tienda en plena noche."
+   ],
+   [
+    "26 feb 1959",
+    "Los rescatadores encuentran la tienda rasgada y los primeros cuerpos."
+   ],
+   [
+    "May 1959",
+    "Hallazgo de los cuatro últimos cuerpos; cierre de la investigación."
+   ],
+   [
+    "2019-2020",
+    "La Fiscalía rusa reabre el caso y concluye que hubo una avalancha."
+   ],
+   [
+    "2021",
+    "Un estudio científico modela una avalancha de placa compatible con las lesiones."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Ladera oriental del Jolat Siajl, norte de los Urales (Rusia)"
+    ],
+    [
+     "Fecha",
+     "Noche del 1 al 2 de febrero de 1959"
+    ],
+    [
+     "Víctimas",
+     "Nueve montañeros de entre 20 y 38 años"
+    ],
+    [
+     "Superviviente",
+     "Yuri Yudin, que abandonó la expedición el 28 de enero"
+    ],
+    [
+     "Hallazgo",
+     "Tienda localizada el 26 de febrero; últimos cuerpos, en mayo"
+    ],
+    [
+     "Conclusión de 1959",
+     "«Fuerza natural irresistible»"
+    ],
+    [
+     "Revisión de 2019-2020",
+     "Avalancha de placa y mala visibilidad, según la Fiscalía rusa"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "mary-celeste",
+  "titulo": "El misterio del Mary Celeste",
+  "titulo_corto": "El misterio del Mary Celeste",
+  "titulo_portada": "El misterio del Mary Celeste",
+  "categoria": "mist",
+  "anio": "1872",
+  "lugar": "Océano Atlántico",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -76,
+     29.5
+    ],
+    [
+     2,
+     47
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Portugal"
+    ]
+   },
+   "titulo": "La ruta del Mary Celeste, noviembre-diciembre de 1872",
+   "principal": 2,
+   "ruta": [
+    [
+     -74.05,
+     40.6
+    ],
+    [
+     -60,
+     40.4
+    ],
+    [
+     -45,
+     39.2
+    ],
+    [
+     -33,
+     37.9
+    ],
+    [
+     -25.4,
+     37.0
+    ]
+   ],
+   "marcadores": [
+    {
+     "lon": -74.0,
+     "lat": 40.7,
+     "texto": "Nueva York",
+     "sub": "Salida · 7 nov 1872",
+     "dy": 34
+    },
+    {
+     "lon": -25.1,
+     "lat": 36.95,
+     "texto": "Isla de Santa María (Azores)",
+     "sub": "Última anotación · 25 nov",
+     "lado": "izq",
+     "dy": 38
+    },
+    {
+     "lon": -17.25,
+     "lat": 38.33,
+     "texto": "Punto del hallazgo",
+     "sub": "Dei Gratia · 4-5 dic 1872",
+     "lado": "izq",
+     "dy": -30
+    },
+    {
+     "lon": -5.35,
+     "lat": 36.14,
+     "texto": "Gibraltar",
+     "sub": "Audiencia del salvamento",
+     "lado": "izq",
+     "dy": 44
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -45,
+     "lat": 33.5,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -4,
+     "lat": 40.3,
+     "texto": "España",
+     "tipo": "pais"
+    },
+    {
+     "lon": -6,
+     "lat": 31.6,
+     "texto": "Marruecos",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "7 nov 1872",
+    "El Mary Celeste zarpa de Nueva York rumbo a Génova."
+   ],
+   [
+    "15 nov 1872",
+    "El Dei Gratia zarpa de Nueva York hacia Gibraltar por una ruta similar."
+   ],
+   [
+    "25 nov 1872",
+    "Última anotación de la bitácora, cerca de la isla de Santa María (Azores)."
+   ],
+   [
+    "4-5 dic 1872",
+    "El Dei Gratia encuentra el Mary Celeste navegando sin tripulación."
+   ],
+   [
+    "Dic 1872",
+    "Ambos barcos llegan a Gibraltar; comienza la audiencia de salvamento."
+   ],
+   [
+    "1884",
+    "Arthur Conan Doyle publica un relato que populariza una versión inventada."
+   ],
+   [
+    "1885",
+    "El Mary Celeste encalla deliberadamente frente a Haití en un fraude al seguro."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Barco",
+     "Bergantín Mary Celeste (antes Amazon), construido en 1861"
+    ],
+    [
+     "Salida",
+     "Nueva York, 7 de noviembre de 1872, con destino a Génova"
+    ],
+    [
+     "Carga",
+     "1.701 barriles de alcohol desnaturalizado"
+    ],
+    [
+     "A bordo",
+     "10 personas: el capitán, su esposa, su hija y siete tripulantes"
+    ],
+    [
+     "Hallazgo",
+     "4-5 de diciembre de 1872, por el bergantín Dei Gratia"
+    ],
+    [
+     "Posición",
+     "Hacia 38° 20′ N, 17° 15′ O, entre las Azores y Portugal"
+    ],
+    [
+     "Último registro",
+     "25 de noviembre de 1872, cerca de la isla de Santa María (Azores)"
+    ],
+    [
+     "Estado",
+     "Tripulación nunca encontrada"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "caras-belmez",
+  "titulo": "Las caras de Bélmez",
+  "titulo_corto": "Las caras de Bélmez",
+  "titulo_portada": "Las caras de Bélmez",
+  "categoria": "mist",
+  "anio": "1971",
+  "lugar": "Bélmez de la Moraleda, Jaén",
+  "estado": "Polémica abierta",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -4.4,
+     37.3
+    ],
+    [
+     -2.45,
+     38.35
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Jaén"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Provincia de Jaén, agosto de 1971",
+   "marcadores": [
+    {
+     "lon": -3.3792,
+     "lat": 37.7231,
+     "texto": "Bélmez de la Moraleda",
+     "sub": "La «Casa de las Caras»"
+    },
+    {
+     "lon": -3.7849,
+     "lat": 37.7796,
+     "texto": "Jaén",
+     "sub": "Capital de la provincia",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -3.05,
+     "lat": 37.45,
+     "texto": "Granada",
+     "tipo": "pais"
+    },
+    {
+     "lon": -3.6,
+     "lat": 38.2,
+     "texto": "Sierra Morena",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "23 ago 1971",
+    "Aparece la primera «cara» en el suelo de la cocina de María Gómez Cámara."
+   ],
+   [
+    "1971",
+    "Se extrae el fragmento de suelo y se excava bajo la cocina; aparecen restos óseos."
+   ],
+   [
+    "1972",
+    "Los reportajes del diario Pueblo convierten las caras en un fenómeno nacional."
+   ],
+   [
+    "Años 70",
+    "Visitas de parapsicólogos como Germán de Argumosa y Hans Bender."
+   ],
+   [
+    "Feb 2004",
+    "Muere María Gómez Cámara."
+   ],
+   [
+    "2004",
+    "Nuevas caras en otra vivienda e investigación periodística que apunta a un montaje."
+   ],
+   [
+    "Hoy",
+    "La Casa de las Caras se puede visitar y el fenómeno sigue dividiendo opiniones."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Calle Real, Bélmez de la Moraleda (Jaén)"
+    ],
+    [
+     "Inicio",
+     "23 de agosto de 1971"
+    ],
+    [
+     "Protagonista",
+     "María Gómez Cámara (fallecida en 2004)"
+    ],
+    [
+     "Fenómeno",
+     "Manchas con apariencia de rostros en el suelo y paredes de la vivienda"
+    ],
+    [
+     "Investigadores",
+     "Parapsicólogos, periodistas, químicos y escépticos"
+    ],
+    [
+     "Explicaciones propuestas",
+     "Fenómeno paranormal, fraude con pigmentos u oxidantes, pareidolia"
+    ],
+    [
+     "Estado",
+     "Polémica abierta; sin pruebas científicas de un origen paranormal"
+    ]
+   ]
+  },
+  "diagrama": null
+ },
+ {
+  "slug": "perfil-criminal",
+  "titulo": "La perfilación criminal",
+  "titulo_corto": "La perfilación criminal",
+  "titulo_portada": "Perfilación criminal: ciencia y mito",
+  "categoria": "crim",
+  "anio": "Análisis",
+  "lugar": "Criminología",
+  "estado": "Análisis",
+  "mapa": null,
+  "cronologia": [
+   [
+    "1888",
+    "El doctor Thomas Bond describe al probable autor de los crímenes de Whitechapel."
+   ],
+   [
+    "1956-1957",
+    "James Brussel perfila al «Mad Bomber» de Nueva York; George Metesky es detenido."
+   ],
+   [
+    "1972",
+    "El FBI crea la Unidad de Ciencias del Comportamiento en Quantico."
+   ],
+   [
+    "1979-1983",
+    "Entrevistas sistemáticas a asesinos condenados en Estados Unidos."
+   ],
+   [
+    "1986",
+    "Douglas, Ressler, Burgess y Hartman publican el modelo de seis etapas."
+   ],
+   [
+    "Años 90",
+    "David Canter impulsa la psicología investigativa y Kim Rossmo, el perfil geográfico."
+   ],
+   [
+    "2007",
+    "Una revisión científica concluye que la evidencia sobre la eficacia del perfil es limitada."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Qué es",
+     "Inferencia de las características probables del autor a partir del crimen"
+    ],
+    [
+     "Origen moderno",
+     "Unidad de Ciencias del Comportamiento del FBI (años setenta)"
+    ],
+    [
+     "Para qué sirve",
+     "Priorizar sospechosos y orientar líneas de investigación"
+    ],
+    [
+     "Para qué no sirve",
+     "No identifica a una persona ni es prueba de culpabilidad"
+    ],
+    [
+     "Tipología clásica",
+     "Autor «organizado» frente a «desorganizado», hoy muy discutida"
+    ],
+    [
+     "Enfoques actuales",
+     "Psicología investigativa, perfil geográfico y análisis de vinculación"
+    ],
+    [
+     "Evidencia",
+     "Útil como herramienta auxiliar; precisión limitada en los estudios"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Diagrama",
+   "titulo": "El modelo de seis etapas del FBI (1986)",
+   "nota": "Fuente: Douglas, Ressler, Burgess y Hartman (1986). Diagrama: elaboración propia de VIRALIX",
+   "pasos": [
+    [
+     "Recogida de datos",
+     "Escena, víctima, informes forenses y policiales, fotografías."
+    ],
+    [
+     "Modelos de decisión",
+     "Tipo de crimen, riesgo de la víctima y del autor, tiempo y lugar."
+    ],
+    [
+     "Evaluación del crimen",
+     "Reconstrucción de los hechos, motivación y dinámica."
+    ],
+    [
+     "Perfil criminal",
+     "Características probables del autor y recomendaciones."
+    ],
+    [
+     "Investigación",
+     "El perfil orienta las pesquisas y se revisa con nuevos datos."
+    ],
+    [
+     "Detención",
+     "Se contrasta el perfil con el autor identificado."
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "psicopatia",
+  "titulo": "Psicopatía: radiografía de un concepto",
+  "titulo_corto": "Psicopatía: radiografía de un concepto",
+  "titulo_portada": "Psicopatía: más allá del mito",
+  "categoria": "crim",
+  "anio": "Análisis",
+  "lugar": "Criminología",
+  "estado": "Análisis",
+  "mapa": null,
+  "cronologia": [
+   [
+    "1801",
+    "Philippe Pinel describe la «manía sin delirio»."
+   ],
+   [
+    "1835",
+    "James Prichard propone el concepto de «locura moral»."
+   ],
+   [
+    "1941",
+    "Hervey Cleckley publica «The Mask of Sanity»."
+   ],
+   [
+    "1980",
+    "El DSM-III introduce el trastorno antisocial de la personalidad basado en conductas."
+   ],
+   [
+    "1991",
+    "Robert Hare publica la escala PCL-R."
+   ],
+   [
+    "2003",
+    "Segunda edición de la PCL-R."
+   ],
+   [
+    "2013",
+    "El DSM-5 incluye en su modelo alternativo un especificador de rasgos psicopáticos."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Qué es",
+     "Constelación estable de rasgos interpersonales, afectivos y conductuales"
+    ],
+    [
+     "Instrumento de referencia",
+     "Escala PCL-R de Robert Hare (20 ítems, uso profesional)"
+    ],
+    [
+     "Población general",
+     "En torno al 1 % o menos, según los estudios"
+    ],
+    [
+     "Población penitenciaria",
+     "Notablemente más alta: entre el 15 % y el 25 % en estudios clásicos"
+    ],
+    [
+     "Diagnóstico oficial",
+     "No figura como tal en el DSM-5; se relaciona con el trastorno antisocial de la personalidad"
+    ],
+    [
+     "Mito frecuente",
+     "«Todos los psicópatas son asesinos», falso"
+    ],
+    [
+     "Diferencia clave",
+     "No es una psicosis: no implica pérdida de contacto con la realidad"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Diagrama",
+   "titulo": "El modelo de dos factores y cuatro facetas",
+   "nota": "Basado en la descripción publicada de la escala PCL-R de R. D. Hare. Diagrama: elaboración propia de VIRALIX. No es una herramienta diagnóstica.",
+   "grupos": [
+    {
+     "factor": "Factor 1 · Faceta 1",
+     "nombre": "Interpersonal",
+     "rasgos": [
+      "Locuacidad y encanto superficial",
+      "Sentido grandioso de la propia valía",
+      "Mentira patológica",
+      "Manipulación"
+     ]
+    },
+    {
+     "factor": "Factor 1 · Faceta 2",
+     "nombre": "Afectiva",
+     "rasgos": [
+      "Ausencia de remordimiento o culpa",
+      "Afecto superficial",
+      "Insensibilidad y falta de empatía",
+      "No aceptar la responsabilidad de los propios actos"
+     ]
+    },
+    {
+     "factor": "Factor 2 · Faceta 3",
+     "nombre": "Estilo de vida",
+     "rasgos": [
+      "Necesidad de estimulación",
+      "Estilo de vida parasitario",
+      "Falta de metas realistas a largo plazo",
+      "Impulsividad e irresponsabilidad"
+     ]
+    },
+    {
+     "factor": "Factor 2 · Faceta 4",
+     "nombre": "Antisocial",
+     "rasgos": [
+      "Escaso autocontrol conductual",
+      "Problemas de conducta tempranos",
+      "Delincuencia juvenil",
+      "Versatilidad delictiva"
+     ]
+    }
+   ]
+  }
+ }
+]
