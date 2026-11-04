@@ -87,9 +87,34 @@
 - **Fotografías reales**: el entorno no tenía acceso a los bancos de imágenes; se usaron imágenes propias con datos abiertos (ver `CREDITOS_IMAGENES.md`).
 - **CMP certificada por Google**: el banner propio es conforme a la AEPD, pero AdSense exige para el tráfico del EEE una CMP certificada (la gratuita de Google se activa en el panel de AdSense, «Privacidad y mensajes»). No se puede activar desde el código.
 - **Rediseño de los 23 artículos antiguos**: solo se tocaron cabecera, pie, anuncios y enlaces rotos; su diseño individual se mantiene para no romper nada. Tampoco se autoalojaron sus 15 familias tipográficas.
-- **Titulares sensacionalistas antiguos** («disolvía los cuerpos en ácido», «quemó a sus hijos»…): no se cambiaron porque afectan a URL y SEO consolidados; se recomienda revisarlos.
+- **Titulares sensacionalistas antiguos** («disolvía los cuerpos en ácido», «quemó a sus hijos»…): en la ampliación no se cambiaron; se suavizaron en la auditoría del 4-nov-2026 (ver abajo) sin cambiar las URL.
 - **`articulo-somosierra.html`**: sigue como «Próximamente» con `noindex`; no había documentación verificable suficiente para escribirlo con rigor.
 - **Unidades de anuncio manuales**: se comentaron las 44 inválidas; no se crearon unidades nuevas porque requieren IDs de slot del panel de AdSense.
 
 ## Actualización 4-nov-2026
 - Regeneradas `aviso-legal.html` y `privacidad.html` con los datos del titular aportados por el propietario (nombre, NIF y domicilio), exigidos por el art. 10 de la LSSI y el art. 13 del RGPD. Eliminados los comentarios «PENDIENTE» de las fuentes Markdown.
+
+## Auditoría AdSense y SEO (4-nov-2026, rama `main`)
+Objetivo: quitar lo que puede frenar la aprobación de AdSense («contenido de poco valor», «contenido impactante», falta de transparencia sobre el autor) y mejorar el posicionamiento. Un commit por tarea.
+
+- **Reescritura de los 17 artículos nuevos** (`contenido/articulos/*.md`). Se eliminaron los patrones de texto genérico: citas plantilla «— VIRALIX», fórmulas repetidas («En VIRALIX no reproducimos…»), cierres moralizantes calcados, encabezados intercambiables («Por qué sigue fascinando», «Conclusión»), párrafos de longitud uniforme y listas de relleno. Se añadieron valoraciones y matices de autor. Los hechos no cambian; se retiraron las afirmaciones que no se podían respaldar con las fuentes citadas.
+- **Nota del autor** al final de cada uno de los 17 (campo `nota_autor`): reflexión, duda abierta o conexión con la actualidad propia de cada caso, firmada y enlazada a la página del autor.
+- **`/sobre.html`** (sustituye a `sobre-nosotros.html`, que queda como redirección `noindex`): origen del proyecto, cómo ha crecido, quién escribe, método en 7 pasos, compromiso editorial, financiación y cobertura. Enlazada en el menú principal y en el pie.
+- **`/autor/jorge-de-la-fuente.html`**: biografía, cómo trabaja, correo y listado de sus 17 artículos, con `ProfilePage` + `Person`. Cada artículo nuevo muestra «Escrito por Jorge de la Fuente» enlazado y una caja de autor; el pie de todas las páginas generadas enlaza a «El autor».
+- **Schema.org `Article` completo** en los 17: `headline`, `author` (`Person` con `url` del perfil), `datePublished`, `dateModified`, `image` (`ImageObject` 1200×630), `publisher` (`Organization` con logo), `articleBody` (extracto), `mainEntityOfPage`.
+- **Migas de pan visibles** «Inicio › Categoría › Título» con `BreadcrumbList` en los 17 y mejoradas en los 23 antiguos (`article-features.js`, con `?v=20261104` para saltar la caché de un año de `vercel.json`).
+- **«Artículos relacionados»**: 4 enlaces elegidos a mano por tema, época o categoría, antes de la nota del autor. El bloque inferior «Más casos» ya no repite esos cuatro.
+- **Meta descriptions**: 13 artículos antiguos con descripciones cortas, cortadas o gráficas pasan a 140-160 caracteres con palabra clave y gancho (también en `og:`, `twitter:` y JSON-LD). Todas las páginas indexables quedan en ese rango.
+- **Titulares**: seis artículos antiguos (Asunta, Bretón, crimen de Cuenca, katana, Marta Calvo, Puerto Hurraco) pasan de titulares gráficos a titulares informativos en `title`, H1, OG, JSON-LD, portada, buscador, feed y timeline. URL sin cambios.
+- **Restos de esos titulares**: corregidos también en los `alt` de la imagen social, el texto para compartir por WhatsApp, las tarjetas «Seguir leyendo» de otros artículos y los resúmenes del feed y del timeline.
+- **Fallo visual en los 23 artículos antiguos y el timeline**: los enlaces legales del pie y las migas de pan son elementos `<nav>` que heredaban la regla `nav{position:fixed}` de cada artículo y se superponían al logo y al menú. Se fija `position:static` solo en esos dos elementos, sin tocar las hojas de estilo del diseño.
+- **Páginas legales**: aviso legal, privacidad, cookies, términos y contacto fechadas el 4-nov-2026; cookies y contacto incluyen ya los datos del titular. Las 51 páginas, incluida `juego/`, enlazan a las legales en el pie.
+- **Eclipse 2026**: corregidos tres errores factuales (franja de totalidad, eclipse anterior de 1905, siguiente el 2-ago-2027), con nota de corrección fechada.
+- **`sitemap.xml`**: añade `/sobre.html` y `/autor/jorge-de-la-fuente.html`; `lastmod` 2026-11-04 en lo modificado de verdad (los artículos antiguos con solo cambios de metadatos conservan su fecha).
+
+### Pendiente (manual)
+- Activar en AdSense la CMP certificada de Google («Privacidad y mensajes») y, si se desea, los anuncios automáticos; después pedir la revisión.
+- Volver a enviar `sitemap.xml` en Search Console e inspeccionar `/sobre.html` y la página de autor.
+- Completar la biografía del autor con datos reales verificables (formación, foto, redes) y revisar las notas del autor, que están escritas en su voz.
+- Los 23 artículos antiguos siguen firmados como «Equipo VIRALIX» y conservan pasajes gráficos en el cuerpo (p. ej., Alcàsser) que conviene revisar.
+- Opcional: redirección 301 de `/sobre-nosotros.html` a `/sobre.html` en `vercel.json`.
