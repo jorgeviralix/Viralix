@@ -786,7 +786,7 @@ def sitemap(arts, paginas):
         urls.append((f"{SITE}/articulo-{a['slug']}.html", a["actualizado"], "monthly", "0.9",
                      (f"{SITE}/images/articulos/{a['slug']}-portada.jpg", a["titulo_corto"])))
     for s, t, c, _ in ANTIGUOS:
-        lm = "2026-09-22" if s in ("aguilar", "arropiero", "breton", "envenenadora") else "2026-06-14"
+        lm = "2026-11-04" if s == "eclipse-2026" else "2026-09-22" if s in ("aguilar", "arropiero", "breton", "envenenadora") else "2026-06-14"
         urls.append((f"{SITE}/articulo-{s}.html", lm, "monthly", "0.8", (f"{SITE}/img-{s}.png", t)))
     x = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
