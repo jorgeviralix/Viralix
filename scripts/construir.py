@@ -324,7 +324,7 @@ NAV = [
 
 def header(actual: str = "") -> str:
     items = "".join(
-        f'<li><a href="{h}"{" aria-current=\"page\"" if h.lstrip("/") == actual else ""}>{t}</a></li>' for h, t in NAV)
+        f'<li><a href="{h}"{" aria-current=\"page\"" if actual and h.lstrip("/") == actual else ""}>{t}</a></li>' for h, t in NAV)
     return f"""<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="read-progress" aria-hidden="true"><span></span></div>
 <header class="site-header">
@@ -532,7 +532,7 @@ def render_articulo(a, arts):
     extra = (f'<meta property="article:published_time" content="{a["publicado"]}T09:00:00+01:00">\n'
              f'<meta property="article:modified_time" content="{a["actualizado"]}T09:00:00+01:00">\n'
              f'<meta property="article:section" content="{e(cat["nombre"])}">\n'
-             f'<meta name="author" content="Equipo editorial VIRALIX">\n')
+             f'<meta name="author" content="{AUTOR["nombre"]}">\n')
     toc = "".join(f'<li><a href="#{i}">{inline(t)}</a></li>' for i, t in r.toc)
     estado = f'<span class="status-pill">{e(a["estado"])}</span>' if a.get("estado") else ""
     w, h = img_size(IMG_DIR / f"{slug}-portada.webp")
@@ -549,7 +549,7 @@ def render_articulo(a, arts):
         <p class="article-dek">{inline(a['entradilla'])}</p>
       </div>
       <div class="article-meta">
-        <span>Por <strong>Equipo editorial VIRALIX</strong></span>
+        <span>Escrito por <a href="{AUTOR['url']}" rel="author"><strong>{AUTOR['corto']}</strong></a></span>
         <span>Publicado el <time datetime="{a['publicado']}">{fecha_larga(a['publicado'])}</time></span>
         <span>{minutos} min de lectura</span>
         <span>{e(a['lugar'])} · {e(a['anio'])}</span>
@@ -567,7 +567,7 @@ def render_articulo(a, arts):
 {r.fuentes_html}
 {nota_autor_html(a)}
 {share_block(url, a['titulo_seo'])}
-        <aside class="author-box" aria-label="Sobre la autoría"><div class="author-box__avatar" aria-hidden="true">V</div><div><h2>Equipo editorial VIRALIX</h2><p>Redacción y verificación según nuestra <a href="/metodologia.html">metodología editorial</a>. ¿Has visto un error? <a href="/contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
+        <aside class="author-box" aria-label="Sobre el autor"><div class="author-box__avatar" aria-hidden="true">JF</div><div><h2><a href="{AUTOR['url']}" rel="author">{AUTOR['nombre']}</a></h2><p>Fundador y editor de VIRALIX. Escribe sobre crímenes reales, misterios y criminología desde la provincia de Jaén siguiendo nuestra <a href="/metodologia.html">metodología editorial</a>. <a href="{AUTOR['url']}">Ver perfil y artículos</a>. ¿Has visto un error? <a href="/contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
         <p class="updated">Última revisión: <time datetime="{a['actualizado']}">{fecha_larga(a['actualizado'])}</time>.</p>
       </div>
     </div>
@@ -637,6 +637,67 @@ def render_paginas():
     return hechas
 
 
+def render_autor(arts):
+    """Página de perfil del autor: /autor/jorge-de-la-fuente.html"""
+    url = SITE + AUTOR["url"]
+    title = "Jorge de la Fuente Gutiérrez, autor y editor de VIRALIX"
+    desc = ("Perfil de Jorge de la Fuente Gutiérrez, fundador y editor de VIRALIX: quién es, cómo trabaja, "
+            "qué casos ha escrito y cómo contactar con él para proponer un caso.")
+    persona = {"@type": "Person", "@id": url + "#persona", "name": AUTOR["nombre"], "alternateName": AUTOR["corto"],
+               "url": url, "email": "mailto:viralixweb@gmail.com", "jobTitle": "Fundador y editor",
+               "worksFor": {"@type": "Organization", "name": "VIRALIX", "url": SITE + "/"},
+               "knowsAbout": ["True crime", "Historia criminal de España", "Criminología", "Misterios históricos"]}
+    jsonld = [{"@context": "https://schema.org", "@type": "ProfilePage", "name": title, "url": url, "inLanguage": "es-ES",
+               "dateModified": "2026-11-04", "mainEntity": persona},
+              {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+                  {"@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE + "/"},
+                  {"@type": "ListItem", "position": 2, "name": "Sobre VIRALIX", "item": SITE + "/sobre.html"},
+                  {"@type": "ListItem", "position": 3, "name": AUTOR["corto"], "item": url}]}]
+    orden = {"es": 0, "intl": 1, "mist": 2, "crim": 3}
+    grupos = ""
+    for cat in ("es", "intl", "mist", "crim"):
+        g = [a for a in arts if a["categoria"] == cat]
+        if not g:
+            continue
+        grupos += f'<h2 id="{CATS[cat]["ancla"]}">{e(CATS[cat]["nombre"])}</h2><div class="cards">' + "".join(
+            card_html(a["slug"], a["titulo_corto"], cat, f'{a["lugar"]} · {a["anio"]}', f'images/articulos/{a["slug"]}-portada.webp') for a in g) + "</div>"
+    page = f"""{head(title + ' | VIRALIX', desc, url, 'profile', SITE + '/images/og-viralix.jpg', 'VIRALIX — true crime y misterios', '', jsonld)}
+<body class="page-institucional page-autor">
+{header()}
+<main id="contenido">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/sobre.html">Sobre VIRALIX</a></li><li aria-current="page">{AUTOR['corto']}</li></ol></nav>
+    <header class="page-hero">
+      <span class="chip">Autor · Fundador y editor</span>
+      <h1>JORGE DE LA <span>FUENTE</span></h1>
+      <p>Fundador y editor de VIRALIX. Escribe sobre crímenes reales, misterios y criminología desde la provincia de Jaén.</p>
+      <p class="updated">Perfil actualizado el <time datetime="2026-11-04">4 de noviembre de 2026</time></p>
+    </header>
+    <div class="page-body"><div class="prose">
+      <aside class="author-box" aria-label="Ficha del autor"><div class="author-box__avatar" aria-hidden="true">JF</div><div><h2>{AUTOR['nombre']}</h2><p>Fundador y editor de VIRALIX · Provincia de Jaén (Andalucía) · <a href="mailto:viralixweb@gmail.com">viralixweb@gmail.com</a></p></div></aside>
+      <h2 id="quien-es">Quién es</h2>
+      <p><strong>Jorge de la Fuente Gutiérrez</strong> es el fundador y editor de VIRALIX. Dirige el proyecto desde su lanzamiento en 2026: elige los casos, los documenta en sentencias, archivos y hemerotecas, escribe los artículos y los revisa antes de publicarlos. También es quien lee y contesta los mensajes que llegan al correo de contacto.</p>
+      <p>Sus artículos se centran en tres terrenos: los casos en los que el relato mediático se alejó de los hechos, como el <a href="/articulo-calle-fuencarral.html">crimen de la calle Fuencarral</a> o el de <a href="/articulo-enriqueta-marti.html">Enriqueta Martí</a>; los casos sin resolver, como <a href="/articulo-galindos.html">Los Galindos</a>; y la criminología que desmonta tópicos del <em>true crime</em>, como la <a href="/articulo-psicopatia.html">psicopatía</a> o la <a href="/articulo-perfil-criminal.html">perfilación criminal</a>.</p>
+      <h2 id="como-trabaja">Cómo trabaja</h2>
+      <p>Su forma de trabajar se resume en tres reglas: ir a las fuentes primarias siempre que existen, separar con claridad los hechos probados de las hipótesis y no contar ningún caso desde el morbo. Al final de cada artículo añade una <strong>nota del autor</strong>, separada del relato, donde da su opinión o deja abierta una duda. El proceso completo está en la <a href="/metodologia.html">metodología editorial</a> y en la página <a href="/sobre.html">Sobre VIRALIX</a>.</p>
+      <h2 id="contacto">Contacto</h2>
+      <p>Para proponer un caso, señalar un error o pedir una rectificación, escribe a <a href="mailto:viralixweb@gmail.com">viralixweb@gmail.com</a> o usa el formulario de la <a href="/contacto.html">página de contacto</a>.</p>
+      <h2 id="articulos">Artículos de Jorge de la Fuente</h2>
+      <p>{len(arts)} artículos firmados. Los textos de la primera etapa del proyecto aparecen como «Equipo VIRALIX» y pueden consultarse en la <a href="/">portada</a>.</p>
+      {grupos}
+    </div></div>
+  </div>
+</main>
+{FOOTER}
+{SCRIPTS}
+</body>
+</html>
+"""
+    out = ROOT / "autor" / "jorge-de-la-fuente.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(page, encoding="utf-8")
+
+
 # ---------------------------------------------------------------------------
 # Imágenes
 # ---------------------------------------------------------------------------
@@ -691,6 +752,7 @@ def sitemap(arts, paginas):
         if "noindex" in m.get("robots", ""):
             continue
         urls.append((f"{SITE}/{archivo}", m.get("actualizado", HOY), "yearly", "0.4", None))
+    urls.append((SITE + AUTOR["url"], "2026-11-04", "monthly", "0.5", None))
     for a in arts:
         urls.append((f"{SITE}/articulo-{a['slug']}.html", a["actualizado"], "monthly", "0.9",
                      (f"{SITE}/images/articulos/{a['slug']}-portada.jpg", a["titulo_corto"])))
@@ -799,6 +861,7 @@ def main():
     for a in arts:
         render_articulo(a, arts)
     paginas = render_paginas() if (CONT / "paginas").exists() else []
+    render_autor(arts)
     sitemap(arts, paginas)
     feed(arts)
     total = portada(arts)
