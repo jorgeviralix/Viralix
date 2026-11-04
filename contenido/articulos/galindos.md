@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: crimen de Los Galindos, cortijo Los Galindos, Paradas, Sevilla, 1975, crimen sin resolver, prescripción, Guardia Civil, Transición
 alt_portada: Ilustración editorial con el mapa de la provincia de Sevilla y un marcador sobre Paradas, junto al año 1975 y el sello «sin resolver»
 pie_portada: El cortijo de Los Galindos se encuentra en la campiña sevillana, en el término municipal de Paradas.
-relacionados: urquijo, puerto-hurraco, aguilar
+relacionados: urquijo, puerto-hurraco, aguilar, crimen-fago
 mapa: {"base":"es","extent":[[-6.55,36.85],[-4.55,37.9]],"resaltar":{"provincias":["Sevilla"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"La campiña sevillana, julio de 1975","marcadores":[{"lon":-5.4964,"lat":37.2944,"texto":"Paradas","sub":"Cortijo de Los Galindos, en su término municipal"},{"lon":-5.9845,"lat":37.3891,"texto":"Sevilla","sub":"Capital de la provincia","lado":"izq"}],"etiquetas":[{"lon":-5.0,"lat":37.75,"texto":"Córdoba","tipo":"pais"},{"lon":-5.75,"lat":36.95,"texto":"Cádiz","tipo":"pais"}]}
 nota_autor: De todos los casos de este archivo, Los Galindos es el que más me pesa, porque no tiene final: ni culpable, ni juicio, ni posibilidad ya de tenerlo. Me pregunto qué habría cambiado con una escena del crimen bien protegida aquella tarde de julio de 1975. Y no puedo evitar preguntarme si alguien que sabe lo que pasó sigue vivo y callado.
 ---

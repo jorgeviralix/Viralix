@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: paso Diátlov, Dyatlov Pass, Kholat Syakhl, Urales 1959, Ígor Diátlov, avalancha, infrasonido, misterio soviético, Yuri Yudin
 alt_portada: Ilustración editorial con el mapa de los montes Urales y un marcador en el paso Diátlov, junto al año 1959
 pie_portada: El paso se encuentra en el norte de los Urales, en la frontera natural entre Europa y Asia.
-relacionados: mary-celeste, caras-belmez, falsos-recuerdos
+relacionados: mary-celeste, caras-belmez, db-cooper, marianas
 mapa: {"base":"world","extent":[[50.5,56.2],[69.5,64.8]],"resaltar":{"paises":["Russia"]},"localizador":[[18,38],[115,73]],"titulo":"Norte de los Urales, febrero de 1959","marcadores":[{"lon":59.4628,"lat":61.7547,"texto":"Paso Diátlov","sub":"Ladera del Jolat Siajl · 1-2 feb 1959"},{"lon":60.4245,"lat":60.6944,"texto":"Ivdel","sub":"Última ciudad antes de la ruta"},{"lon":60.6057,"lat":56.8389,"texto":"Ekaterimburgo (Sverdlovsk)","sub":"Instituto Politécnico de los Urales","dy":-6}],"etiquetas":[{"lon":58.2,"lat":63.6,"texto":"Montes Urales","tipo":"pais"},{"lon":54.0,"lat":59.0,"texto":"Rusia europea","tipo":"pais"},{"lon":66.0,"lat":60.0,"texto":"Siberia occidental","tipo":"pais"}]}
 nota_autor: Me gusta este caso porque enseña lo que la ciencia puede hacer con un misterio que parecía imposible, y también sus límites cuando hay décadas de desconfianza acumulada. Creo que la explicación de la avalancha es la buena. Lo que no me atrevo a juzgar es a las familias que siguen pidiendo más: después de tanto secretismo oficial, su escepticismo me parece comprensible.
 ---

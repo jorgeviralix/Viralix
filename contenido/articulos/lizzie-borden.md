@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: Lizzie Borden, Fall River, Massachusetts, 1892, Andrew Borden, Abby Borden, Bridget Sullivan, juicio New Bedford, absolución, misterio sin resolver
 alt_portada: Ilustración editorial con el mapa del sureste de Massachusetts y un marcador sobre Fall River, junto al año 1892
 pie_portada: Fall River era en 1892 una próspera ciudad textil del sureste de Massachusetts.
-relacionados: lindbergh, jack-el-destripador, urquijo
+relacionados: lindbergh, urquijo, wanninkhof, calle-fuencarral
 mapa: {"base":"us","extent":[[-71.75,41.35],[-70.55,42.15]],"resaltar":{"estados":["Massachusetts"],"condados":["25005"]},"localizador":[[-125,24],[-66,50]],"titulo":"Sureste de Massachusetts, 1892-1893","marcadores":[{"lon":-71.155,"lat":41.7015,"texto":"Fall River","sub":"Casa de los Borden · 4 ago 1892","lado":"izq"},{"lon":-70.9342,"lat":41.6362,"texto":"New Bedford","sub":"Juicio · junio de 1893"},{"lon":-71.0898,"lat":41.9001,"texto":"Taunton","sub":"Prisión del condado durante el proceso"}],"etiquetas":[{"lon":-71.55,"lat":41.6,"texto":"Rhode Island","tipo":"pais"},{"lon":-70.85,"lat":41.47,"texto":"Bahía de Buzzards","tipo":"mar"}]}
 nota_autor: Lizzie Borden me parece el ejemplo perfecto de por qué la presunción de inocencia cuesta tanto de defender: casi todo el mundo cree que lo hizo y, aun así, el jurado tenía buenas razones para absolverla. Me pregunto qué habría pasado con este caso en la época de las redes sociales. Sospecho que la rima habría sido un hilo viral, y que la sentencia habría importado todavía menos.
 ---

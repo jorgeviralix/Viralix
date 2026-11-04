@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: perfil criminal, perfilación criminal, profiler, FBI, Unidad de Ciencias del Comportamiento, Mindhunter, organizado desorganizado, perfil geográfico, psicología investigativa, criminología
 alt_portada: Ilustración editorial abstracta con líneas concéntricas que evocan una huella dactilar sobre fondo oscuro, junto al título del artículo
 pie_portada: La perfilación busca inferir características del autor a partir de su conducta en el crimen.
-relacionados: psicopatia, jack-el-destripador, zodiaco
+relacionados: psicopatia, jack-el-destripador, asesino-baraja, arropiero
 diagrama: {"tipo":"flujo","kicker":"Diagrama","titulo":"El modelo de seis etapas del FBI (1986)","nota":"Fuente: Douglas, Ressler, Burgess y Hartman (1986). Diagrama: elaboración propia de VIRALIX","pasos":[["Recogida de datos","Escena, víctima, informes forenses y policiales, fotografías."],["Modelos de decisión","Tipo de crimen, riesgo de la víctima y del autor, tiempo y lugar."],["Evaluación del crimen","Reconstrucción de los hechos, motivación y dinámica."],["Perfil criminal","Características probables del autor y recomendaciones."],["Investigación","El perfil orienta las pesquisas y se revisa con nuevos datos."],["Detención","Se contrasta el perfil con el autor identificado."]]}
 nota_autor: Este artículo nace de una incomodidad con la imagen que dan las series, en las que el perfilador lo adivina todo en diez segundos. Me pareció justo contar la versión menos espectacular, que además es la más interesante. La pregunta que me hago es si esa popularidad ha perjudicado a investigaciones reales, creando expectativas imposibles en jurados y en la opinión pública.
 ---

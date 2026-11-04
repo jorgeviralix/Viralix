@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: Enriqueta Martí, vampira del Raval, vampira de Barcelona, Teresita Guitart, calle Ponent, Barcelona 1912, leyenda urbana, sensacionalismo
 alt_portada: Ilustración editorial con el mapa de la provincia de Barcelona y un marcador sobre el barrio del Raval, junto al año 1912
 pie_portada: El caso se desarrolló en el Raval, uno de los barrios más pobres de la Barcelona de principios del siglo XX.
-relacionados: calle-fuencarral, sacamantecas, falsos-recuerdos
+relacionados: sacamantecas, calle-fuencarral, lindbergh, crimen-cuenca
 mapa: {"base":"es","extent":[[1.35,41.15],[2.85,42.0]],"resaltar":{"provincias":["Barcelona"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Barcelona, febrero de 1912","marcadores":[{"lon":2.1676,"lat":41.3806,"texto":"El Raval","sub":"Calle Ponent (hoy Joaquim Costa)"},{"lon":2.045,"lat":41.3815,"texto":"Sant Feliu de Llobregat","sub":"Localidad natal, según la mayoría de fuentes","lado":"izq","dy":-28}],"etiquetas":[{"lon":2.55,"lat":41.25,"texto":"Mar Mediterráneo","tipo":"mar"}]}
 nota_autor: Este es el caso que más me ha hecho desconfiar de las fuentes. Casi todo lo que se repite hoy sobre Enriqueta Martí sale de periódicos que competían por vender el detalle más espantoso. No pretendo rehabilitarla, porque secuestró a una niña, pero sí me pregunto cuántas «verdades» de la crónica negra actual aguantarían una revisión como la que han hecho Elsa Plaza y Jordi Corominas.
 ---

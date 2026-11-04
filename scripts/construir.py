@@ -472,32 +472,43 @@ def card_html(slug, titulo, cat, meta_txt, img, img_w=1200, img_h=630, extra_cla
             f'<span class="card__meta">{e(meta_txt)}</span></div></article>')
 
 
+AUTOR = {"nombre": "Jorge de la Fuente Gutiérrez", "corto": "Jorge de la Fuente", "url": "/autor/jorge-de-la-fuente.html"}
+
+
+def _ficha_rel(slug, arts):
+    """(slug, título, categoría, meta, imagen, ancho, alto) de cualquier artículo, nuevo o antiguo."""
+    n = next((x for x in arts if x["slug"] == slug), None)
+    if n:
+        return (n["slug"], n["titulo_corto"], n["categoria"], f'{n["lugar"]} · {n["anio"]}', f'images/articulos/{n["slug"]}-portada.webp', 1200, 630)
+    o = next((x for x in ANTIGUOS if x[0] == slug), None)
+    if o:
+        return (o[0], o[1], o[2], o[3], f"images/optimizadas/img-{o[0]}-800.webp", 800, 533)
+    return None
+
+
+def relacionados_bloque(a, arts) -> str:
+    """Bloque «Artículos relacionados» (4 enlaces elegidos a mano por tema, época o categoría)."""
+    fichas = [f for f in (_ficha_rel(x.strip(), arts) for x in a.get("relacionados", "").split(",") if x.strip()) if f][:4]
+    if not fichas:
+        return ""
+    cards = "".join(
+        f'<article class="card {CATS[c]["clase"]}"><div class="card__img"><img src="/{img}" alt="" width="{w}" height="{h}" loading="lazy" decoding="async"></div>'
+        f'<div class="card__body"><span class="chip">{e(CATS[c]["corto"])}</span><p class="card__title"><a href="/articulo-{s_}.html">{e(t)}</a></p>'
+        f'<span class="card__meta">{e(m)}</span></div></article>'
+        for s_, t, c, m, img, w, h in fichas)
+    return f'<section class="relacionados" aria-labelledby="relacionados"><h2 id="relacionados">Artículos relacionados</h2><div class="cards">{cards}</div></section>'
+
+
 def relacionados(a, arts):
-    pool = []
-    if a.get("relacionados"):
-        for s in [x.strip() for x in a["relacionados"].split(",") if x.strip()]:
-            n = next((x for x in arts if x["slug"] == s), None)
-            if n:
-                pool.append(("new", n))
-            else:
-                o = next((x for x in ANTIGUOS if x[0] == s), None)
-                if o:
-                    pool.append(("old", o))
-    for x in arts:
-        if len(pool) >= 3:
-            break
-        if x["slug"] != a["slug"] and x["categoria"] == a["categoria"] and not any(p[1] is x for p in pool):
-            pool.append(("new", x))
+    """Sección inferior «Más casos en VIRALIX»: otras categorías, sin repetir los relacionados."""
+    usados = {x.strip() for x in a.get("relacionados", "").split(",")} | {a["slug"]}
+    otros = [x for x in arts if x["slug"] not in usados and x["categoria"] != a["categoria"]]
+    otros += [x for x in arts if x["slug"] not in usados and x["categoria"] == a["categoria"] and x not in otros]
     cards = []
-    for kind, x in pool[:3]:
-        if kind == "new":
-            cards.append(card_html(x["slug"], x["titulo_corto"], x["categoria"], f'{x["lugar"]} · {x["anio"]}', f'images/articulos/{x["slug"]}-portada.webp'))
-        else:
-            cards.append(card_html(x[0], x[1], x[2], x[3], f"images/optimizadas/img-{x[0]}-800.webp", 800, 533))
+    for x in otros[:3]:
+        cards.append(card_html(x["slug"], x["titulo_corto"], x["categoria"], f'{x["lugar"]} · {x["anio"]}', f'images/articulos/{x["slug"]}-portada.webp'))
     return "\n".join(cards)
 
-
-AUTOR = {"nombre": "Jorge de la Fuente Gutiérrez", "corto": "Jorge de la Fuente", "url": "/autor/jorge-de-la-fuente.html"}
 
 
 def extracto(html_txt: str, limite: int = 600) -> str:
@@ -582,6 +593,7 @@ def render_articulo(a, arts):
       <div class="prose" itemprop="articleBody">
 {a['_html']}
 {r.fuentes_html}
+{relacionados_bloque(a, arts)}
 {nota_autor_html(a)}
 {share_block(url, a['titulo_seo'])}
         <aside class="author-box" aria-label="Sobre el autor"><div class="author-box__avatar" aria-hidden="true">JF</div><div><h2><a href="{AUTOR['url']}" rel="author">{AUTOR['nombre']}</a></h2><p>Fundador y editor de VIRALIX. Escribe sobre crímenes reales, misterios y criminología desde la provincia de Jaén siguiendo nuestra <a href="/metodologia.html">metodología editorial</a>. <a href="{AUTOR['url']}">Ver perfil y artículos</a>. ¿Has visto un error? <a href="/contacto.html">Escríbenos</a> y lo revisamos.</p></div></aside>
@@ -590,7 +602,7 @@ def render_articulo(a, arts):
     </div>
   </article>
   <section class="related" aria-labelledby="rel-title"><div class="container">
-    <h2 class="section-title" id="rel-title">Sigue <span>leyendo</span></h2>
+    <h2 class="section-title" id="rel-title">Más casos en <span>VIRALIX</span></h2>
     <div class="cards">{relacionados(a, arts)}</div>
   </div></section>
 </main>

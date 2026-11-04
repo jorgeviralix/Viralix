@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: crimen calle Fuencarral, Higinia Balaguer, Luciana Borcino, José Vázquez Varela, Millán Astray, Galdós, juicio por jurado 1888, Madrid siglo XIX
 alt_portada: Ilustración editorial con un mapa de la Comunidad de Madrid y un marcador sobre la capital, junto al año 1888 y el título del caso
 pie_portada: El caso se desarrolló en el centro de Madrid, a pocos minutos de la Puerta del Sol.
-relacionados: jarabo, sacamantecas, envenenadora
+relacionados: jack-el-destripador, enriqueta-marti, jarabo, envenenadora
 mapa: {"base":"es","extent":[[-4.6,39.85],[-2.9,41.05]],"resaltar":{"provincias":["Madrid"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Madrid, julio de 1888","marcadores":[{"lon":-3.7038,"lat":40.4268,"texto":"Madrid: calle Fuencarral y Cárcel Modelo","sub":"Vivienda de la víctima y prisión del hijo, a poca distancia"}],"etiquetas":[{"lon":-4.02,"lat":40.86,"texto":"Sierra de Guadarrama","tipo":"pais"},{"lon":-3.4,"lat":40.1,"texto":"Comunidad de Madrid","tipo":"pais"}]}
 nota_autor: Lo que más me inquieta de este caso es lo poco que ha cambiado el mecanismo: filtraciones, culpables decididos en la prensa antes del juicio, una acusada convertida en personaje de folletín. Cada vez que un caso actual se juzga antes en los platós que en la sala, me acuerdo de Higinia Balaguer. Y me sigo preguntando si alguna de sus versiones era la verdadera, y si alguien en 1889 tuvo de verdad interés en averiguarlo.
 ---

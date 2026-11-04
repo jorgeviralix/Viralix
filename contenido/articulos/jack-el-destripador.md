@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: Jack el Destripador, Jack the Ripper, Whitechapel, Londres 1888, Mary Ann Nichols, Annie Chapman, Elizabeth Stride, Catherine Eddowes, Mary Jane Kelly, Abberline, From Hell
 alt_portada: Ilustración editorial con el mapa del sureste de Inglaterra y un marcador sobre el este de Londres, junto al año 1888
 pie_portada: Whitechapel, en el East End, era uno de los barrios más pobres del Londres victoriano.
-relacionados: calle-fuencarral, perfil-criminal, zodiaco
+relacionados: calle-fuencarral, zodiaco, perfil-criminal, sacamantecas
 mapa: {"base":"world","extent":[[-2.6,50.55],[1.9,52.35]],"resaltar":{"paises":["United Kingdom"]},"localizador":[[-11,36],[19,60]],"titulo":"Londres, otoño de 1888","marcadores":[{"lon":-0.0598,"lat":51.5165,"texto":"Whitechapel","sub":"East End de Londres"}],"etiquetas":[{"lon":-1.3,"lat":50.4,"texto":"Canal de la Mancha","tipo":"mar"},{"lon":1.55,"lat":50.75,"texto":"Francia","tipo":"pais"},{"lon":-1.6,"lat":52.1,"texto":"Inglaterra","tipo":"pais"}]}
 nota_autor: Llegué a este caso, como casi todo el mundo, por el mito: la niebla, el sombrero de copa, el enigma del nombre. Terminé de escribirlo pensando en Mary Ann, Annie, Elizabeth, Catherine y Mary Jane. Si hay algo que me gustaría que el lector se llevara de este artículo es eso: la pregunta interesante no es quién era él, sino por qué durante tanto tiempo importó tan poco quiénes eran ellas.
 ---

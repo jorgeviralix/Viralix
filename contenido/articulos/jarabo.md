@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: caso Jarabo, José María Jarabo, crimen Lope de Rueda, Madrid 1958, El Caso, franquismo, garrote vil, Carabanchel
 alt_portada: Ilustración editorial con el mapa de la Comunidad de Madrid y un marcador sobre la capital, junto al año 1958
 pie_portada: Los crímenes se cometieron en el Madrid de finales de los años cincuenta.
-relacionados: calle-fuencarral, urquijo, psicopatia
+relacionados: calle-fuencarral, envenenadora, urquijo, el-lute
 mapa: {"base":"es","extent":[[-4.6,39.85],[-2.9,41.05]],"resaltar":{"provincias":["Madrid"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Madrid, julio de 1958","marcadores":[{"lon":-3.6745,"lat":40.4225,"texto":"Madrid","sub":"Escenarios de los crímenes (calle Lope de Rueda)"},{"lon":-3.731,"lat":40.375,"texto":"Prisión de Carabanchel","sub":"Lugar de la ejecución (1959)","lado":"izq","dy":26}],"etiquetas":[{"lon":-4.02,"lat":40.86,"texto":"Sierra de Guadarrama","tipo":"pais"}]}
 nota_autor: Lo que más me llama la atención de las crónicas de 1958 es la fascinación, casi admirativa, con la que se describía a Jarabo: su ropa, sus modales, su vida nocturna. Las víctimas apenas tienen nombre en muchos de esos textos. Me pregunto si hoy, con otro envoltorio, no seguimos haciendo lo mismo con algunos acusados que dan bien en televisión.
 ---
