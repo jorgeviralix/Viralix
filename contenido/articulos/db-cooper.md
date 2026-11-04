@@ -11,7 +11,7 @@ anio: 1971
 lugar: Portland–Seattle, EE. UU.
 estado: Sin resolver
 publicado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 palabras_clave: D. B. Cooper, Dan Cooper, secuestro aéreo 1971, vuelo 305 Northwest Orient, Boeing 727, NORJAK, FBI, Tena Bar, paracaídas, Columbia
 alt_portada: Ilustración editorial con el mapa de los estados de Washington y Oregón, la ruta del vuelo 305 y un marcador en el suroeste de Washington, junto al año 1971
 pie_portada: El salto se produjo, según el FBI, sobre los bosques del suroeste del estado de Washington.
@@ -20,17 +20,19 @@ mapa: {"base":"us","extent":[[-124.4,44.75],[-120.6,47.95]],"resaltar":{"estados
 ---
 El **24 de noviembre de 1971**, víspera del día de Acción de Gracias, un hombre de mediana edad, con traje oscuro, corbata estrecha y gafas de sol, compró en el aeropuerto de **Portland** (Oregón) un billete de ida a Seattle a nombre de **Dan Cooper**. Subió al vuelo **305 de Northwest Orient**, un Boeing 727, se sentó al fondo del avión, pidió un bourbon con soda y, poco después del despegue, entregó una nota a una azafata.
 
-Ese gesto dio inicio a uno de los grandes misterios del siglo XX. Horas más tarde, Cooper se lanzó en paracaídas desde el avión en plena noche, con 200.000 dólares atados al cuerpo, sobre los bosques del estado de Washington. **Nunca se encontró ni a él ni a la mayor parte del dinero**.
+Unas horas después saltaba en paracaídas en plena noche, con 200.000 dólares atados al cuerpo, sobre los bosques del estado de Washington.
+
+**Nunca se le volvió a ver.** Tampoco a la mayor parte del dinero.
 
 ## Una nota inesperada
 
-La azafata **Florence Schaffner** pensó al principio que la nota era una proposición de un pasajero. Cooper le pidió que la leyera: decía que llevaba una bomba en el maletín. Para demostrarlo, abrió la maleta y le mostró unos cilindros rojos, cables y una batería. Sus exigencias eran precisas:
+La azafata **Florence Schaffner** pensó que era otro pasajero intentando ligar y se guardó la nota sin abrirla. Cooper insistió en que la leyera. Decía que llevaba una bomba en el maletín, y para que no hubiera dudas abrió la maleta: cilindros rojos, cables, una batería. Sabía exactamente lo que quería:
 
 - **200.000 dólares** en billetes de 20.
 - **Cuatro paracaídas**: dos principales y dos de reserva.
 - Un **camión cisterna** preparado en Seattle para repostar.
 
-El comandante informó a tierra y la compañía decidió cumplir las exigencias para no poner en riesgo a nadie. A los pasajeros se les dijo que el avión sobrevolaba Seattle por un problema técnico menor. La mayoría no supo hasta después que viajaban en un avión secuestrado.
+El comandante avisó a tierra y la compañía decidió darle todo. Mientras tanto, a los pasajeros se les contó que el avión daba vueltas sobre Seattle por un problema técnico menor. La mayoría no supo hasta después que habían viajado en un avión secuestrado.
 
 :::ficha Ficha del caso
 Fecha: 24 de noviembre de 1971
@@ -45,7 +47,7 @@ Estado: Sin resolver
 
 ## Seattle: dinero a cambio de pasajeros
 
-El avión aterrizó en el aeropuerto de **Seattle-Tacoma** a primera hora de la tarde. El FBI había reunido el dinero —10.000 billetes de 20 dólares cuyos números de serie se fotografiaron— y los paracaídas. Cooper liberó a los **36 pasajeros** y a parte de la tripulación a cambio del rescate. Durante toda la operación se mostró sereno, educado e incluso amable con la tripulación.
+El avión aterrizó en el aeropuerto de **Seattle-Tacoma** a primera hora de la tarde. El FBI había reunido el dinero —10.000 billetes de 20 dólares cuyos números de serie se fotografiaron— y los paracaídas. Cooper liberó a los **36 pasajeros** y a parte de la tripulación a cambio del rescate. Según los testimonios de la tripulación, en ningún momento perdió la calma; fue educado, casi amable.
 
 Después dio nuevas instrucciones: el avión debía despegar rumbo a **Ciudad de México**, con escala para repostar, volar a baja altitud y velocidad reducida, con los flaps parcialmente desplegados y **la escalera trasera bajada**. Los pilotos negociaron que repostaría en **Reno** (Nevada).
 
@@ -55,14 +57,13 @@ Después dio nuevas instrucciones: el avión debía despegar rumbo a **Ciudad de
 
 El avión despegó de Seattle hacia las 19:40 con Cooper y cuatro tripulantes, que permanecieron en la cabina por orden suya. Fuera llovía y hacía mucho frío. Hacia las **20:13**, la tripulación notó un movimiento brusco en la cola: la escalera trasera se había abierto del todo. Cooper había saltado.
 
-Cuando el avión aterrizó en Reno, la cabina estaba vacía. Solo quedaban en el asiento una corbata negra con un pasador, algunas colillas y dos de los paracaídas.
-
-> Cooper no hizo daño a nadie, no pidió nada para él más allá del dinero y se esfumó. Esa mezcla de audacia y misterio es la que ha convertido un delito grave en leyenda.
-— VIRALIX
+En Reno, la cabina estaba vacía. Quedaban una corbata negra con su pasador, algunas colillas y dos de los paracaídas.
 
 ## La mayor búsqueda de la historia del FBI
 
-El FBI bautizó el caso como **NORJAK** (*Northwest Hijacking*) y desplegó una de las búsquedas más extensas de su historia: rastreos aéreos y terrestres, cientos de agentes y soldados peinando bosques, análisis de las condiciones de vuelo para estimar la zona de caída. No se encontró nada: ni el paracaídas, ni el cuerpo, ni el maletín.
+El FBI bautizó el caso como **NORJAK** (*Northwest Hijacking*) y montó una de las búsquedas más extensas de su historia: rastreos aéreos y terrestres, cientos de agentes y soldados peinando bosques, cálculos sobre las condiciones de vuelo para estimar dónde pudo caer.
+
+Nada. Ni paracaídas, ni cuerpo, ni maletín.
 
 ### Un error de la prensa
 
@@ -95,21 +96,19 @@ Ninguno ha podido vincularse de manera concluyente. El análisis de **partícula
 
 ### ¿Sobrevivió?
 
-El propio FBI ha manifestado su escepticismo. Los agentes señalan que Cooper saltó de noche, bajo la lluvia, sobre un terreno boscoso y abrupto, con ropa de calle, mocasines y un paracaídas que no eligió él. Para ellos, lo más probable es que **no sobreviviera al salto**. Sus partidarios replican que, si murió, alguien debería haber encontrado sus restos o el paracaídas en más de cincuenta años.
+El FBI cree que no. Cooper saltó de noche, bajo la lluvia, sobre un terreno boscoso y abrupto, con ropa de calle, mocasines y un equipo que no había preparado él. Para los investigadores, lo más probable es que **no sobreviviera**. La réplica de quienes piensan lo contrario también tiene su lógica: si murió, ¿cómo es que en más de cincuenta años nadie ha encontrado ni sus restos ni el paracaídas?
+
+Yo me inclino por la versión del FBI, aunque reconozco que la pregunta de los escépticos es buena.
 
 :::nota El legado en la seguridad aérea
 El caso y sus imitadores llevaron a cambios duraderos: un dispositivo en la cola de los Boeing 727 que impedía bajar la escalera trasera en vuelo (la «Cooper vane») y, poco después, el control sistemático de pasajeros y equipajes en los aeropuertos de Estados Unidos.
 :::
 
-## Por qué es único
+## El bandido que no merece tanta simpatía
 
-D. B. Cooper ocupa un lugar especial en la historia del crimen por varias razones:
+Es el **único secuestro aéreo sin resolver** de la aviación comercial estadounidense, y probablemente el único delito grave que ha generado encuentros anuales de aficionados, canciones y series. El hombre tranquilo que pide un bourbon, trata con cortesía a la tripulación y desaparece en la noche con el dinero encaja demasiado bien con el mito del bandido romántico.
 
-- Es el **único secuestro aéreo sin resolver** en la historia de la aviación comercial estadounidense.
-- **No causó víctimas**, algo que explica en parte la simpatía popular que ha despertado.
-- Su desaparición convirtió una figura anónima en un **mito del folclore americano**, con festivales anuales, canciones y series.
-
-Pero conviene no idealizarlo: Cooper puso en riesgo la vida de decenas de personas con la amenaza de una bomba. La tripulación del vuelo 305, que mantuvo la calma durante horas, es la verdadera protagonista de esta historia.
+Pero hay que decirlo claro: Cooper amenazó con una bomba a decenas de personas. Que no hubiera heridos no lo convierte en un héroe. Si alguien merece protagonismo en esta historia es la tripulación del vuelo 305, que mantuvo la calma durante horas sin saber si el maletín era real.
 
 ![Ficha del caso D. B. Cooper con fecha, vuelo, secuestrador, rescate, salto, hallazgo del dinero, investigación y estado](ficha "La ficha del caso en formato tarjeta, pensada para guardar o compartir.")
 
@@ -127,8 +126,8 @@ En 2016 el FBI anunció que dejaba de dedicar recursos activos a la investigaci�
 ### ¿Hubo heridos?
 No. Ningún pasajero ni tripulante resultó herido, aunque la amenaza de bomba puso en riesgo a decenas de personas. Ese es uno de los motivos por los que el caso ha generado una extraña simpatía popular.
 
-### ¿Por qué se ha convertido en un mito popular?
-Porque combina audacia, misterio y ausencia de víctimas. El hombre tranquilo que pide un bourbon, trata con cortesía a la tripulación y desaparece en la noche con el dinero encaja con la figura del «bandido romántico» del folclore estadounidense. Cada año se celebran encuentros dedicados al caso en el estado de Washington, y su historia ha inspirado canciones, novelas y series. Esa fascinación convive con el recuerdo de que su delito puso en peligro a decenas de personas.
+### ¿Qué es la «Cooper vane»?
+Un pequeño dispositivo aerodinámico instalado en la cola de los Boeing 727 tras el secuestro y sus imitaciones. Impide que la escalera trasera pueda bajarse mientras el avión está en vuelo, precisamente para que nadie pudiera repetir el salto de Cooper.
 
 :::fuentes
 - FBI. «D. B. Cooper Hijacking», serie *Famous Cases & Criminals*. [fbi.gov/history/famous-cases](https://www.fbi.gov/history/famous-cases/db-cooper-hijacking)

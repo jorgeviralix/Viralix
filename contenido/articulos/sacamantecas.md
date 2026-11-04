@@ -11,7 +11,7 @@ anio: 1870-1879
 lugar: Vitoria, Álava
 estado: Resuelto
 publicado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 palabras_clave: Sacamantecas, Juan Díaz de Garayo, Vitoria, Álava, asesino en serie siglo XIX, garrote vil 1881, antropología criminal, Lombroso
 alt_portada: Ilustración editorial con el mapa de Álava resaltado y un marcador sobre Vitoria, junto a las fechas 1870-1879
 pie_portada: Los crímenes se produjeron en caminos y campos de los alrededores de Vitoria.
@@ -20,13 +20,15 @@ mapa: {"base":"es","extent":[[-3.35,42.45],[-2.1,43.15]],"resaltar":{"provincias
 ---
 En el folclore de buena parte de la península, el **sacamantecas** era un hombre que recorría los caminos con un saco y que, según contaban las abuelas, sacaba la grasa —las «mantecas»— de sus víctimas para venderla como remedio milagroso. Era un miedo antiguo, emparentado con el hombre del saco, con el que se advertía a los niños de que no se alejaran de casa al anochecer.
 
-En la Vitoria de finales del siglo XIX ese personaje de cuento adquirió, de pronto, un rostro real. Entre 1870 y 1879, varias mujeres fueron asesinadas en los caminos y descampados de los alrededores de la ciudad. Cuando en 1879 se detuvo al responsable, un jornalero de mediana edad llamado **Juan Díaz de Garayo**, la prensa y la calle no dudaron en bautizarlo con el nombre del monstruo de las historias de miedo: **el Sacamantecas**.
+En la Vitoria de la década de 1870, ese personaje de cuento tuvo de repente cara y nombre. Varias mujeres fueron asesinadas en los caminos y descampados de los alrededores de la ciudad, y cuando en 1879 se detuvo al responsable —un jornalero llamado **Juan Díaz de Garayo**— nadie tuvo que pensar mucho el apodo.
+
+Lo llamaron **el Sacamantecas**.
 
 ## Un jornalero sin historia
 
-Juan Díaz de Garayo nació en 1821 en **Eguílaz**, un pequeño pueblo de la Llanada alavesa. Su vida fue la de tantos campesinos pobres de su tiempo: trabajo como criado y jornalero en distintas casas de labranza, escasa instrucción, cambios frecuentes de patrón y una existencia sin grandes sobresaltos a ojos de sus vecinos.
+Juan Díaz de Garayo nació en 1821 en **Eguílaz**, un pequeño pueblo de la Llanada alavesa. Trabajó como criado y jornalero en distintas casas de labranza, como tantos campesinos pobres de su tiempo, cambiando de patrón cada cierto tiempo y sin apenas instrucción.
 
-Las crónicas posteriores lo describen como un hombre reservado, de trato áspero, que no llamaba especialmente la atención. Ese es precisamente uno de los rasgos que más inquietó a la sociedad de la época: **nada en su apariencia permitía sospechar de él**. No era un forastero ni un vagabundo, las figuras sobre las que solían recaer las sospechas, sino un trabajador conocido en la comarca.
+Eso es casi todo lo que se sabe con seguridad de su vida anterior. Y precisamente ahí estaba lo inquietante: **nada en él hacía sospechar**. No era el forastero ni el vagabundo sobre el que solían recaer las miradas, sino un trabajador conocido en la comarca.
 
 :::ficha Ficha del caso
 Nombre: Juan Díaz de Garayo
@@ -43,11 +45,13 @@ Ejecución: 11 de mayo de 1881, en Vitoria
 
 Según la reconstrucción que se hizo en el proceso judicial, Garayo atacaba a **mujeres que caminaban solas** por las afueras de Vitoria: trabajadoras que iban o volvían de las labores del campo, mujeres que se desplazaban entre pueblos o que vivían en situación de pobreza. Las abordaba en lugares apartados, a menudo al caer la tarde, y las asesinaba allí mismo.
 
-El primer crimen que se le atribuyó data de **1870**. La mayor parte de los demás se concentró en los años **1878 y 1879**, cuando la sucesión de muertes extendió el pánico por la ciudad. Por respeto a las víctimas y a sus descendientes, en VIRALIX no reproducimos los detalles de las agresiones, que la prensa de la época describió con un sensacionalismo que hoy resulta difícil de leer.
+El primer crimen que se le atribuyó data de **1870**. La mayoría de los demás llegaron en **1878 y 1879**, y fue entonces cuando el miedo se apoderó de la ciudad.
+
+No vamos a reproducir los detalles de las agresiones. La prensa de la época lo hizo con una crudeza que hoy cuesta leer, y no aporta nada a la comprensión del caso.
 
 ### Por qué tardaron tanto en atraparlo
 
-Visto desde hoy, puede sorprender que una serie de crímenes tan parecidos tardara casi una década en resolverse. Pero conviene recordar las limitaciones de la investigación criminal en la España de la década de 1870:
+¿Nueve años para detener a un hombre que actuaba siempre en la misma zona? Hoy parece increíble. En la España de 1870 no lo era tanto:
 
 - **No existía la identificación por huellas dactilares**, que no empezaría a utilizarse de forma sistemática en Europa hasta finales de siglo.
 - No había policía científica ni laboratorios forenses tal como los entendemos hoy.
@@ -55,18 +59,15 @@ Visto desde hoy, puede sorprender que una serie de crímenes tan parecidos tarda
 - Las víctimas eran mujeres pobres, cuya desaparición no siempre recibía la misma atención que la de personas de posición acomodada.
 - Además, entre 1872 y 1876 la región vivió la **Tercera Guerra Carlista**, que alteró la vida y la administración de todo el territorio.
 
-En ese contexto, conectar crímenes separados por meses o años, cometidos en lugares distintos y sin testigos, era extraordinariamente difícil.
+Con esas herramientas, unir crímenes separados por meses o años, sin testigos y en lugares distintos, era casi imposible. Cuesta no pensar, de todos modos, que si las víctimas hubieran sido otras la presión para encontrar al culpable habría sido mucho mayor.
 
 ![Mapa de la provincia de Álava con Vitoria y el pueblo de Eguílaz señalados](mapa "Garayo nació en Eguílaz, en la Llanada alavesa, y cometió sus crímenes en los alrededores de Vitoria, a una veintena de kilómetros.")
 
 ## La detención y la confesión
 
-La captura llegó en **1879**, cuando algunas mujeres que habían sobrevivido a sus ataques o que lo habían visto merodear pudieron describirlo e identificarlo. Detenido por las autoridades, Garayo terminó por **confesar los crímenes**, y su declaración permitió atribuirle asesinatos que hasta entonces se habían investigado por separado.
+La captura llegó en **1879**. Según las crónicas, fueron mujeres que habían sobrevivido a sus ataques, o que lo habían visto merodear, quienes pudieron describirlo e identificarlo. Ya detenido, Garayo **confesó**, y su declaración permitió atribuirle asesinatos que hasta entonces se investigaban por separado.
 
-La noticia corrió por Vitoria a toda velocidad. Por fin había un culpable, y la ciudad descubrió que el monstruo de las historias infantiles era un vecino más. La prensa, local y nacional, recurrió de inmediato al viejo nombre del folclore. A partir de entonces, para varias generaciones de españoles, «el Sacamantecas» ya no fue solo un personaje de cuento, sino **Juan Díaz de Garayo**.
-
-> El caso del Sacamantecas demuestra que los monstruos de los cuentos se parecen menos a un ogro que a un vecino del que nadie sospechaba.
-— VIRALIX
+Vitoria descubrió así que el monstruo de los cuentos era un vecino más. La prensa recurrió enseguida al viejo nombre del folclore y, desde entonces, para varias generaciones de españoles «el Sacamantecas» dejó de ser un personaje inventado para tener nombre y apellidos.
 
 :::cronologia
 - 1821 | Nace Juan Díaz de Garayo en Eguílaz, en la Llanada alavesa.
@@ -82,27 +83,27 @@ La noticia corrió por Vitoria a toda velocidad. Por fin había un culpable, y l
 
 ## ¿Loco o criminal? El debate que llegó de Italia
 
-El juicio contra Garayo coincidió con un momento clave en la historia de la criminología. En 1876, el médico italiano **Cesare Lombroso** había publicado *L'uomo delinquente* («El hombre delincuente»), una obra que sostenía que algunos criminales eran «delincuentes natos», reconocibles por rasgos físicos y mentales heredados. Sus ideas, hoy completamente desacreditadas, se extendieron con rapidez por Europa y llegaron también a los médicos y juristas españoles.
+El juicio llegó en mal momento para la ciencia, o en uno muy interesante, según se mire. En 1876, el médico italiano **Cesare Lombroso** había publicado *L'uomo delinquente* («El hombre delincuente»), una obra que sostenía que algunos criminales eran «delincuentes natos», reconocibles por rasgos físicos y mentales heredados. Sus ideas, hoy completamente desacreditadas, se extendieron con rapidez por Europa y llegaron también a los médicos y juristas españoles.
 
-En ese clima intelectual, el caso Garayo se convirtió en materia de discusión:
+Con esas ideas en el aire, Garayo se convirtió en materia de discusión:
 
 1. **La tesis de la locura**: algunos sostenían que un hombre capaz de actos así tenía que padecer una enfermedad mental y, por tanto, no podía ser plenamente responsable.
 2. **La tesis de la responsabilidad**: otros defendían que Garayo había actuado con plena conciencia, eligiendo a sus víctimas y ocultando sus actos durante años.
 3. **La tesis «lombrosiana»**: hubo quien buscó en su físico y en su biografía los supuestos «estigmas» del criminal nato, un enfoque que la ciencia actual rechaza.
 
-El tribunal consideró que Garayo era **responsable de sus actos** y lo condenó a muerte. Pero el debate sobre si se había juzgado a un enfermo o a un criminal siguió vivo en los ambientes médicos durante años, y el caso aparece citado en textos de psiquiatría y medicina legal de finales del siglo XIX.
+El tribunal consideró que Garayo era **responsable de sus actos** y lo condenó a muerte. El debate sobre si se había juzgado a un enfermo o a un criminal, sin embargo, no se cerró con la sentencia.
 
 ### Lo que hoy sabemos
 
-La criminología moderna ha abandonado la idea del «criminal nato». Hoy se entiende que la conducta violenta grave resulta de una combinación de factores —biográficos, psicológicos, sociales y situacionales— y que la responsabilidad penal depende de la capacidad del acusado para comprender y controlar sus actos en el momento de los hechos. Casos como el de Garayo forman parte de la prehistoria de esa reflexión.
+La idea del «criminal nato» está muerta y enterrada. Hoy se entiende que la violencia grave nace de una mezcla de factores —biográficos, psicológicos, sociales y situacionales— y que la responsabilidad penal depende de si el acusado podía comprender y controlar lo que hacía. Garayo pertenece a la prehistoria de esa discusión.
 
 ## La ejecución
 
-Juan Díaz de Garayo fue ejecutado mediante garrote vil en **Vitoria el 11 de mayo de 1881**. Como era habitual en la época, la ejecución fue pública y atrajo a una gran cantidad de personas. Con ella se cerró el capítulo judicial, pero no el mito.
+Juan Díaz de Garayo fue ejecutado mediante garrote vil en **Vitoria el 11 de mayo de 1881**, en público, como todas las ejecuciones de la época. Ahí terminó el proceso. El mito no había hecho más que empezar.
 
 ## El legado de un apodo
 
-El caso dejó una huella duradera en el imaginario popular:
+El apodo sobrevivió al hombre:
 
 - **El término «sacamantecas»** quedó asociado durante décadas a su figura y siguió utilizándose para asustar a los niños en buena parte de España.
 - El caso alimentó una **literatura de cordel** y unas crónicas sensacionalistas que mezclaban hechos y fantasía, y que con frecuencia atribuían a Garayo prácticas —como la extracción de grasa— que no se corresponden con lo establecido en el proceso.
@@ -112,11 +113,11 @@ El caso dejó una huella duradera en el imaginario popular:
 La leyenda popular del sacamantecas —un hombre que extrae la grasa humana para venderla— es muy anterior a Garayo y aparece en tradiciones de distintos países europeos. Que se le aplicara el apodo no significa que su conducta se correspondiera con la leyenda: fue la prensa la que fundió ambas historias.
 :::
 
-## Un caso para pensar en las víctimas
+## Las que no aparecen en la leyenda
 
-Casi siglo y medio después, lo que más llama la atención del caso del Sacamantecas no es la figura del asesino, sino **la vulnerabilidad de sus víctimas**: mujeres pobres que caminaban solas porque su trabajo lo exigía, en una sociedad que no les ofrecía ninguna protección y cuyas muertes tardaron años en recibir la atención que merecían.
+En todas las versiones del mito hay un monstruo. Casi nunca hay víctimas. Eran mujeres pobres que caminaban solas porque su trabajo lo exigía, en una sociedad que no las protegía y que tardó años en tomarse en serio sus muertes.
 
-Recordar el caso con rigor —sin el morbo de los pliegos de cordel— es también una forma de devolverles el lugar que la leyenda les quitó.
+Sus nombres figuran en la documentación judicial; en la leyenda, en cambio, apenas se recuerdan. Esa diferencia dice mucho de cómo se ha contado este caso durante siglo y medio.
 
 ![Ficha del caso del Sacamantecas con nombre, apodo, nacimiento, periodo de los crímenes, víctimas, zona, condena y ejecución](ficha "La ficha del caso en formato tarjeta, pensada para guardar o compartir.")
 

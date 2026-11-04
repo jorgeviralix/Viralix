@@ -11,7 +11,7 @@ anio: Análisis
 lugar: Criminología
 estado: Análisis
 publicado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 palabras_clave: perfil criminal, perfilación criminal, profiler, FBI, Unidad de Ciencias del Comportamiento, Mindhunter, organizado desorganizado, perfil geográfico, psicología investigativa, criminología
 alt_portada: Ilustración editorial abstracta con líneas concéntricas que evocan una huella dactilar sobre fondo oscuro, junto al título del artículo
 pie_portada: La perfilación busca inferir características del autor a partir de su conducta en el crimen.
@@ -20,11 +20,13 @@ diagrama: {"tipo":"flujo","kicker":"Diagrama","titulo":"El modelo de seis etapas
 ---
 En la ficción, el perfilador entra en la escena del crimen, observa en silencio durante unos segundos y anuncia: «Buscamos a un varón blanco, de entre 25 y 35 años, que vive solo, conduce una furgoneta y tuvo una infancia difícil». Al final del episodio, el retrato encaja a la perfección con el culpable.
 
-La **perfilación criminal** existe y la utilizan policías de todo el mundo, también en España. Pero se parece poco a esa imagen. No es adivinación ni intuición genial: es un método para **formular hipótesis sobre el autor** a partir de su conducta, que funciona mejor como complemento de la investigación que como sustituto. Este artículo repasa su historia, su funcionamiento real y lo que dicen los estudios sobre su eficacia.
+La **perfilación criminal** existe, y la usan policías de todo el mundo, también en España. Se parece poco a eso.
+
+No es adivinación ni intuición genial. Es un método para **formular hipótesis sobre el autor** a partir de cómo actuó, y funciona bastante mejor como complemento de una investigación que como atajo. Su historia, además, es mucho más interesante que la versión de las series, porque incluye aciertos célebres, errores graves y una pregunta que los estudios todavía no han cerrado del todo: ¿hasta qué punto funciona?
 
 ## Qué es (y qué no es) un perfil criminal
 
-Un perfil criminal es un **informe que describe las características probables de la persona que cometió un delito**, deducidas de la forma en que lo cometió: cómo eligió a la víctima, qué hizo en la escena, qué riesgos asumió, qué dejó y qué se llevó. Puede incluir rasgos como el rango de edad, el nivel de organización, la relación probable con la víctima, la zona de residencia o los comportamientos posteriores al crimen.
+Un perfil criminal es un **informe sobre las características probables de quien cometió un delito**, deducidas de cómo lo cometió: a quién eligió, qué hizo en la escena, qué riesgos asumió, qué dejó y qué se llevó. Puede hablar de edad aproximada, de grado de organización, de la relación probable con la víctima, de la zona donde vive o de cómo se comportará después.
 
 Lo que un perfil **no es**:
 
@@ -46,11 +48,11 @@ Evidencia: Útil como herramienta auxiliar; precisión limitada en los estudios
 
 ### 1888: el informe del doctor Bond
 
-Uno de los primeros antecedentes documentados se remonta a los crímenes de [Jack el Destripador](articulo-jack-el-destripador.html). En noviembre de 1888, el cirujano de la policía **Thomas Bond** envió a Scotland Yard un informe en el que describía al probable autor: un hombre solitario, de aspecto inofensivo y respetable, con hábitos regulares. El caso nunca se resolvió, así que no sabemos si acertó, pero el razonamiento —deducir rasgos del autor a partir de su conducta— es el núcleo de la técnica.
+Uno de los primeros antecedentes documentados está en los crímenes de [Jack el Destripador](articulo-jack-el-destripador.html). En noviembre de 1888, el cirujano de la policía **Thomas Bond** envió a Scotland Yard un informe con un retrato del probable autor: un hombre solitario, de aspecto inofensivo y respetable, de costumbres regulares. Nunca sabremos si acertó. Pero el razonamiento, deducir cómo es alguien a partir de lo que hizo, ya era exactamente el de la técnica moderna.
 
 ### 1956: el «Mad Bomber» de Nueva York
 
-El caso que suele citarse como el primer gran éxito es el del **«Mad Bomber»**, que colocó decenas de artefactos explosivos en Nueva York entre los años cuarenta y cincuenta. En 1956, el psiquiatra **James Brussel** elaboró una descripción del autor basada en sus cartas y en su forma de actuar. Cuando en 1957 se detuvo a **George Metesky**, varios de los rasgos coincidían. Los estudios posteriores han matizado ese acierto —algunas predicciones eran genéricas y otras fallaron—, pero el caso dio enorme prestigio a la idea.
+El caso que se cita siempre como primer gran éxito es el del **«Mad Bomber»**, que colocó decenas de artefactos explosivos en Nueva York entre los años cuarenta y cincuenta. En 1956, el psiquiatra **James Brussel** elaboró una descripción del autor basada en sus cartas y en su forma de actuar. Cuando en 1957 se detuvo a **George Metesky**, varios rasgos coincidían, y la historia corrió como la pólvora. Revisada con calma, el acierto fue menor de lo que se contó: algunas predicciones eran tan genéricas que habrían valido para medio Nueva York, y otras fallaron. Da igual. El prestigio ya estaba ganado.
 
 ### Los años setenta: Quantico
 
@@ -60,7 +62,7 @@ En **1972** el FBI creó en su academia de Quantico (Virginia) la **Unidad de Ci
 
 ## Cómo se elabora un perfil
 
-Aunque los métodos varían, un perfil riguroso suele basarse en cuatro fuentes:
+Cada escuela tiene su método, pero un perfil serio suele apoyarse en cuatro fuentes:
 
 1. **La escena del crimen**: cómo se accedió, qué se hizo, en qué orden, qué indicios de planificación o improvisación hay.
 2. **La victimología**: quién era la víctima, qué riesgo tenía de sufrir un delito por su estilo de vida, dónde y cuándo fue abordada.
@@ -73,10 +75,7 @@ El modelo clásico del FBI distinguía entre autores **organizados** —que plan
 
 ### El perfil geográfico
 
-Una de las aportaciones más sólidas de las últimas décadas es el **perfil geográfico**, desarrollado por el criminólogo canadiense **Kim Rossmo** en los años noventa. Parte de una observación muy contrastada: la mayoría de los delincuentes actúan **cerca de las zonas que conocen**, pero no justo al lado de su casa. A partir de la ubicación de varios delitos conectados, un algoritmo estima la zona más probable de residencia del autor. Lo utilizan cuerpos policiales de numerosos países.
-
-> El mejor perfil no es el que impresiona en una serie, sino el que ayuda a ordenar una lista de mil sospechosos y a decidir por dónde empezar.
-— VIRALIX
+Si tuviera que quedarme con una sola aportación de las últimas décadas, sería el **perfil geográfico**, que desarrolló el criminólogo canadiense **Kim Rossmo** en los años noventa. Parte de una observación muy contrastada: casi todos los delincuentes actúan **cerca de zonas que conocen**, pero no justo al lado de su casa. Con la ubicación de varios delitos conectados, un algoritmo estima dónde es más probable que viva el autor. No tiene nada de glamuroso, y precisamente por eso es útil: ayuda a ordenar una lista de mil sospechosos y a decidir por dónde empezar.
 
 :::cronologia
 - 1888 | El doctor Thomas Bond describe al probable autor de los crímenes de Whitechapel.
@@ -98,7 +97,7 @@ Su trabajo, más discreto que el de los personajes de ficción, incluye tareas c
 
 ## Lo que dicen los estudios
 
-La gran pregunta es si los perfiles funcionan. Las investigaciones realizadas desde los años noventa ofrecen un panorama **matizado**:
+¿Funcionan? La respuesta honesta es: a veces, y menos de lo que se cree.
 
 - Una revisión publicada en 2007 por **Brent Snook** y sus colaboradores concluyó que la base empírica de la perfilación tradicional era **escasa** y que muchos de sus defensores se apoyaban en anécdotas más que en datos.
 - Los estudios que comparan perfiladores con otros grupos muestran ventajas **modestas** en algunas tareas y ninguna en otras.
@@ -106,7 +105,7 @@ La gran pregunta es si los perfiles funcionan. Las investigaciones realizadas de
 
 ### Cuando el perfil se equivoca
 
-Los propios especialistas recuerdan casos en los que un perfil erróneo perjudicó la investigación. En 2002, durante los ataques de los **francotiradores de Washington**, muchas hipótesis difundidas en los medios apuntaban a un hombre blanco solitario; los autores resultaron ser dos hombres que actuaban juntos y que no encajaban en ese retrato. En el Reino Unido, la investigación del asesinato de **Rachel Nickell** (1992) se centró durante meses en un sospechoso que encajaba con el perfil elaborado por un psicólogo y que fue absuelto; el verdadero autor fue identificado años después gracias al ADN.
+Hay casos en los que un perfil equivocado hizo daño. En 2002, durante los ataques de los **francotiradores de Washington**, muchas de las hipótesis que circulaban en los medios hablaban de un hombre blanco solitario; los autores resultaron ser dos hombres que actuaban juntos y que no encajaban en ese retrato. En el Reino Unido, la investigación del asesinato de **Rachel Nickell** (1992) se centró durante meses en un sospechoso que encajaba con el perfil elaborado por un psicólogo; el caso contra él se vino abajo en el juicio, y el verdadero autor fue identificado años después gracias al ADN.
 
 :::nota El riesgo de la visión de túnel
 El mayor peligro de un perfil no es que falle, sino que la investigación **se enamore de él** y descarte pistas que no encajan. Por eso los especialistas insisten en que debe tratarse como una hipótesis revisable, nunca como una conclusión.
@@ -122,9 +121,11 @@ El mayor peligro de un perfil no es que falle, sino que la investigación **se e
 | Señala a un culpable | Describe un tipo de autor, no a una persona |
 | Es ciencia exacta | Combina conocimiento empírico con un margen de error considerable |
 
-## Conclusión
+## Una herramienta, no un oráculo
 
-La perfilación criminal nació de una intuición —que la conducta en el crimen refleja algo de quien lo comete— y ha evolucionado hacia métodos más rigurosos y basados en datos. Bien utilizada, ayuda a **ordenar investigaciones complejas**. Mal utilizada, puede **desviar** a los investigadores y perjudicar a inocentes. Entender esa diferencia es la mejor vacuna contra el mito del perfilador infalible.
+La perfilación nació de una intuición razonable: la forma de cometer un crimen dice algo de quien lo comete. Con los años ha ido dejando atrás la intuición clínica y acercándose a los datos, y ha salido ganando. Bien usada, ayuda a **ordenar investigaciones complejas**. Mal usada, **desvía** a los investigadores y puede arruinar la vida de un inocente.
+
+Así que la próxima vez que un personaje de serie mire una escena del crimen durante diez segundos y adivine la infancia del asesino, conviene recordar que en la realidad eso no pasa. Y que es mejor así.
 
 ![Ficha de claves del perfil criminal con definición, origen, utilidad, límites, tipología, enfoques actuales y evidencia](ficha "La ficha del caso en formato tarjeta, pensada para guardar o compartir.")
 

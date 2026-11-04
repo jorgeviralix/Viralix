@@ -11,7 +11,7 @@ anio: 1872
 lugar: Océano Atlántico
 estado: Sin resolver
 publicado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 palabras_clave: Mary Celeste, barco fantasma, Dei Gratia, Benjamin Briggs, Azores, Gibraltar 1872, Conan Doyle, misterio del mar, alcohol desnaturalizado
 alt_portada: Ilustración editorial con el mapa del Atlántico Norte, la ruta desde Nueva York hacia las Azores y un marcador en el punto del hallazgo, junto al año 1872
 pie_portada: El Mary Celeste fue hallado entre las Azores y la costa de Portugal, a cientos de millas de cualquier puerto.
@@ -20,11 +20,13 @@ mapa: {"base":"world","extent":[[-76,29.5],[2,47]],"resaltar":{"paises":["Portug
 ---
 El **4 de diciembre de 1872**, el vigía del bergantín británico ***Dei Gratia*** divisó un velero en pleno Atlántico, entre las islas Azores y la costa de Portugal. Algo no encajaba: el barco avanzaba con un rumbo errático, con algunas velas desplegadas y otras recogidas o rotas, y nadie respondía a las señales. El capitán del *Dei Gratia*, **David Morehouse**, reconoció el barco: era el ***Mary Celeste***, que había zarpado de Nueva York un mes antes.
 
-Una partida de marineros se acercó en un bote y subió a bordo. Lo que encontraron convirtió al *Mary Celeste* en el **barco fantasma** más famoso de la historia: el buque estaba en condiciones de navegar, con la carga intacta y provisiones para meses. Pero **no había nadie**.
+Varios marineros se acercaron en un bote y subieron a bordo. El barco podía navegar. La carga estaba intacta. Había provisiones para meses.
+
+**No había nadie.**
 
 ## El barco y su gente
 
-El *Mary Celeste* era un bergantín construido en 1861 en Nueva Escocia (Canadá) con el nombre de *Amazon*. Tras varios cambios de propietario y un naufragio del que fue rescatado, recibió su nuevo nombre a finales de la década de 1860.
+Nació en 1861 en Nueva Escocia (Canadá) como *Amazon*, un bergantín de carga sin nada especial. Tras varios cambios de dueño y un naufragio del que lo rescataron, a finales de la década de 1860 pasó a llamarse *Mary Celeste*.
 
 El **7 de noviembre de 1872** zarpó de Nueva York rumbo a **Génova** con un cargamento de **1.701 barriles de alcohol desnaturalizado**. Iban a bordo diez personas:
 
@@ -48,7 +50,7 @@ Estado: Tripulación nunca encontrada
 
 ## Lo que encontraron a bordo
 
-El primer oficial del *Dei Gratia*, **Oliver Deveau**, encabezó la inspección. Sus declaraciones posteriores son la fuente principal de lo que había en el barco:
+Casi todo lo que sabemos de aquel barco vacío viene de **Oliver Deveau**, el primer oficial del *Dei Gratia*, que encabezó la inspección y lo contó después ante el tribunal:
 
 - El casco estaba en **buen estado**, aunque había agua acumulada en la bodega —alrededor de un metro—, algo no excepcional en un velero de madera.
 - La **carga de alcohol** estaba prácticamente intacta.
@@ -58,18 +60,15 @@ El primer oficial del *Dei Gratia*, **Oliver Deveau**, encabezó la inspección.
 - Faltaban también el **sextante**, el **cronómetro** y la mayoría de los documentos del barco, salvo el cuaderno de bitácora.
 - Una de las bombas de achique estaba desmontada y había una **sonda** —la vara para medir el agua en la bodega— sobre la cubierta.
 
-La última anotación de la pizarra de bitácora era del **25 de noviembre de 1872**, a las ocho de la mañana, y situaba el barco cerca de la **isla de Santa María**, en las Azores. Durante los nueve días siguientes, el *Mary Celeste* había seguido navegando solo varios cientos de millas.
+La última anotación en la pizarra de bitácora era del **25 de noviembre de 1872**, a las ocho de la mañana, cerca de la **isla de Santa María**, en las Azores. Durante los nueve días siguientes, el *Mary Celeste* siguió navegando solo, varios cientos de millas, sin nadie al timón.
 
 ![Mapa del Atlántico Norte con la ruta del Mary Celeste desde Nueva York, la isla de Santa María, el punto del hallazgo y Gibraltar](mapa "El barco recorrió solo varios cientos de millas desde la última anotación, cerca de Santa María, hasta el punto donde lo encontró el Dei Gratia.")
-
-> Todo indica que la tripulación abandonó el barco con prisa, en el bote, llevándose los instrumentos de navegación. Lo que no sabemos es por qué.
-— VIRALIX
 
 ## La audiencia de Gibraltar
 
 La tripulación del *Dei Gratia* llevó el *Mary Celeste* hasta **Gibraltar**, donde reclamó el derecho de salvamento ante el **Tribunal del Vicealmirantazgo**. El fiscal general de Gibraltar, **Frederick Solly-Flood**, sospechó un crimen: un motín, un asesinato o incluso una conspiración entre ambas tripulaciones para cobrar el salvamento. Ordenó examinar unas manchas que resultaron no ser de sangre y unas marcas en la proa que se atribuyeron al desgaste natural.
 
-No se encontraron pruebas de violencia. El tribunal concedió a la tripulación del *Dei Gratia* una recompensa de unas **1.700 libras**, aproximadamente una quinta parte del valor del barco y su carga, una cifra modesta que algunos interpretaron como una señal de que las sospechas no se habían disipado del todo.
+No apareció ninguna prueba de violencia. El tribunal concedió a la tripulación del *Dei Gratia* unas **1.700 libras**, aproximadamente una quinta parte del valor del barco y su carga. Era poco, y hay quien lo leyó como una forma discreta de decir que las sospechas no se habían disipado del todo.
 
 :::cronologia
 - 7 nov 1872 | El Mary Celeste zarpa de Nueva York rumbo a Génova.
@@ -87,7 +86,7 @@ No se encontraron pruebas de violencia. El tribunal concedió a la tripulación 
 
 Buena parte de lo que mucha gente «sabe» del *Mary Celeste* es falso. En 1884, un joven médico llamado **Arthur Conan Doyle**, que aún no había creado a Sherlock Holmes, publicó un relato anónimo, *J. Habakuk Jephson's Statement*, inspirado en el caso. En él añadía detalles inventados: tazas de té todavía calientes, comida servida en la mesa, un barco en perfecto orden. Incluso cambiaba el nombre a «*Marie Celeste*».
 
-El relato tuvo tanto éxito que muchos lo tomaron por un documento real, y esos detalles ficticios se han repetido desde entonces en libros, películas y documentales. Es un caso de manual de cómo la ficción puede **contaminar la memoria de un hecho histórico**.
+Muchos lectores lo tomaron por un documento real, y aquellos detalles inventados se han repetido desde entonces en libros, películas y documentales. Si alguna vez ha oído lo del té todavía caliente, ya sabe de dónde viene.
 
 ## Las teorías
 
@@ -109,13 +108,15 @@ La mayoría de los historiadores coincide en un punto: la tripulación abandonó
 
 ## El final del barco
 
-El *Mary Celeste* siguió navegando durante más de una década, con fama de barco gafado. En **1885**, su último capitán lo hizo encallar deliberadamente en un arrecife frente a **Haití** para cobrar un seguro sobre una carga sin valor. El fraude se descubrió y fue juzgado en Estados Unidos.
+El *Mary Celeste* siguió navegando más de una década, con fama de gafado, que en el mar no es poca cosa. En **1885**, su último capitán lo hizo encallar deliberadamente en un arrecife frente a **Haití** para cobrar un seguro sobre una carga sin valor. El fraude se descubrió y fue juzgado en Estados Unidos.
 
 En 2001, una expedición asociada al novelista **Clive Cussler** anunció haber localizado los restos del barco en Haití, aunque un análisis posterior de la madera puso en duda esa identificación.
 
-## Diez personas que no volvieron
+## Diez personas en un bote
 
-Más allá del enigma, el *Mary Celeste* es la historia de diez personas que se adentraron en el océano en un bote pequeño, lejos de tierra, y nunca fueron encontradas. Entre ellas, una niña de dos años y su madre. Su destino es el verdadero misterio del barco fantasma, y probablemente nunca se resolverá.
+Lo que a mí me sigue impresionando de esta historia no es el barco vacío, sino la imagen contraria: diez personas en un bote pequeño, lejos de tierra, convencidas de que se estaban salvando. Entre ellas, una niña de dos años y su madre. El *Mary Celeste* aguantó a flote; ellos no aparecieron nunca.
+
+Ese es el verdadero misterio, y probablemente no se resolverá.
 
 ![Ficha del caso del Mary Celeste con barco, salida, carga, personas a bordo, hallazgo, posición, último registro y estado](ficha "La ficha del caso en formato tarjeta, pensada para guardar o compartir.")
 

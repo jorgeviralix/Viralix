@@ -11,16 +11,18 @@ anio: 2017
 lugar: Cubelles y Foix, Barcelona
 estado: Resuelto con condena
 publicado: 2026-11-03
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 palabras_clave: crimen de la Guardia Urbana, Rosa Peral, Albert López, Pedro Rodríguez, pantano de Foix, Cubelles, El cuerpo en llamas, jurado popular Barcelona
 alt_portada: Ilustración editorial con el mapa de la provincia de Barcelona y un marcador en la comarca del Garraf, junto al año 2017
 pie_portada: Los hechos se produjeron entre Cubelles, en la costa del Garraf, y el pantano de Foix, a pocos kilómetros tierra adentro.
 relacionados: crimen-fago, marta-calvo, psicopatia
 mapa: {"base":"es","extent":[[1.2,41.05],[2.45,41.65]],"resaltar":{"provincias":["Barcelona"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Garraf y Penedès, mayo de 2017","marcadores":[{"lon":1.6738,"lat":41.2077,"texto":"Cubelles","sub":"Vivienda de Rosa Peral","lado":"izq","dy":14},{"lon":1.6452,"lat":41.2575,"texto":"Pantano de Foix","sub":"Hallazgo del coche calcinado","dy":-16},{"lon":2.1734,"lat":41.3851,"texto":"Barcelona","sub":"Juicio en la Audiencia (2020)"}],"etiquetas":[{"lon":1.95,"lat":41.12,"texto":"Mar Mediterráneo","tipo":"mar"}]}
 ---
-El **4 de mayo de 2017**, un coche apareció completamente calcinado en una pista forestal junto al **pantano de Foix**, en el término de Castellet i la Gornal (Barcelona). En su interior había un cuerpo tan dañado por el fuego que la identificación no fue inmediata. Cuando se confirmó, la noticia sacudió a toda Cataluña: era **Pedro Rodríguez**, agente de la Guardia Urbana de Barcelona.
+El **4 de mayo de 2017** apareció un coche calcinado en una pista forestal junto al **pantano de Foix**, en Castellet i la Gornal (Barcelona). Dentro había un cuerpo tan dañado por el fuego que identificarlo no fue inmediato. Era **Pedro Rodríguez**, agente de la Guardia Urbana de Barcelona.
 
-Trece días después, los Mossos d'Esquadra detuvieron a dos compañeros de cuerpo de la víctima: **Rosa Peral**, su pareja, y **Albert López**, con quien ella había mantenido una relación anterior. El caso, que años después inspiraría una serie de Netflix, se convirtió en uno de los juicios más mediáticos de la última década en España.
+Trece días después, los Mossos d'Esquadra detuvieron a dos compañeros suyos: **Rosa Peral**, su pareja, y **Albert López**, con quien ella había tenido una relación anterior.
+
+Tres policías. Un triángulo sentimental. Y un juicio en el que cada acusado señaló al otro.
 
 ## Los protagonistas
 
@@ -30,7 +32,7 @@ Los tres implicados pertenecían a la **Guardia Urbana de Barcelona**, la polic�
 - **Rosa Peral**, agente de la Guardia Urbana, había estado casada con otro agente del cuerpo, del que se había separado.
 - **Albert López**, también agente, había mantenido una relación con Rosa Peral antes de que esta empezara con Pedro.
 
-Ese entramado de relaciones personales entre compañeros de trabajo fue uno de los elementos que más atención mediática concentró, aunque para el tribunal lo relevante fueron las pruebas sobre lo ocurrido la noche del crimen.
+Ese entramado sentimental entre compañeros de trabajo acaparó buena parte de la cobertura. Al tribunal, en cambio, le interesaban otras cosas: dónde estaba cada uno aquella noche y qué decían las pruebas.
 
 :::ficha Ficha del caso
 Víctima: Pedro Rodríguez, agente de la Guardia Urbana de Barcelona
@@ -45,29 +47,21 @@ Adaptaciones: Serie «El cuerpo en llamas» y documental «Las cintas de Rosa Pe
 
 ## Del hallazgo a la detención
 
-La identificación del cuerpo fue el primer reto de la investigación. El fuego había destruido casi todos los elementos que habitualmente permiten reconocer a una víctima. La clave estuvo en un detalle médico: **una pieza metálica de una antigua intervención quirúrgica**, con un número de serie que permitió confirmar que se trataba de Pedro Rodríguez.
+Primero había que saber quién era. El fuego había borrado casi todo lo que permite reconocer a una persona, y la clave acabó siendo un detalle médico: **una pieza metálica de una antigua operación**, con un número de serie que confirmó la identidad de Pedro Rodríguez.
 
-A partir de ahí, los **Mossos d'Esquadra** reconstruyeron los últimos días de la víctima. Las primeras declaraciones de Rosa Peral orientaron las sospechas hacia su exmarido, con quien mantenía un conflicto por la custodia de sus hijas. Esa línea, sin embargo, se descartó: los investigadores comprobaron que el exmarido no estaba implicado.
+Después, los **Mossos d'Esquadra** reconstruyeron sus últimos días. Las primeras declaraciones de Rosa Peral apuntaron a su exmarido, también agente, con quien estaba enfrentada. Los investigadores comprobaron que él no tenía nada que ver.
 
 ![Mapa de la zona del Garraf y el Penedès con Cubelles, el pantano de Foix y Barcelona señalados](mapa "Entre la vivienda de Cubelles y el lugar donde apareció el coche hay apenas unos kilómetros de carreteras secundarias.")
 
 ### El papel de la tecnología
 
-Como en muchos casos recientes, la investigación se apoyó en gran medida en el **rastro digital** de los implicados:
+Lo que de verdad resolvió el caso fue el **rastro digital**. Los datos de posicionamiento de los teléfonos situaban a los sospechosos en lugares y horas concretos, y los mensajes entre ellos en los días anteriores y posteriores al crimen dibujaban una historia muy distinta de la que contaban. A eso se sumó el examen de la vivienda de Cubelles.
 
-- **Datos de posicionamiento de los teléfonos móviles**, que situaban a los sospechosos en lugares y horas concretos.
-- **Mensajes y comunicaciones** entre ellos en los días anteriores y posteriores al crimen.
-- **Cámaras y registros** de los desplazamientos por la zona.
-- **Análisis de la vivienda** de Cubelles, donde se buscaron indicios de lo ocurrido.
-
-Con todo ello, el **17 de mayo de 2017** fueron detenidos Rosa Peral y Albert López.
-
-> Fue un caso resuelto, sobre todo, por los datos: posiciones de móviles, mensajes y horarios que contradecían las versiones de los acusados.
-— VIRALIX
+El **17 de mayo de 2017**, Rosa Peral y Albert López fueron detenidos.
 
 ## Un juicio de acusaciones cruzadas
 
-El juicio se celebró a comienzos de **2020** en la **Audiencia de Barcelona**, ante un jurado popular. Fue un proceso singular por la estrategia de los acusados: **cada uno culpó al otro**.
+El juicio se celebró a comienzos de **2020** en la **Audiencia de Barcelona**, ante un jurado popular, y tuvo algo de duelo: **cada acusado culpó al otro**.
 
 - Rosa Peral sostuvo que Albert López había matado a Pedro Rodríguez.
 - Albert López sostuvo que fue Rosa Peral quien cometió el crimen y que él solo la ayudó después.
@@ -87,31 +81,23 @@ La acusación sostuvo que ambos habían actuado de común acuerdo. El jurado con
 
 ## El juicio paralelo
 
-El caso tuvo una cobertura mediática extraordinaria. Durante el proceso se publicaron detalles de la vida privada de los acusados que no siempre guardaban relación con los hechos juzgados. Varios juristas y periodistas señalaron entonces el riesgo de que el **juicio paralelo** —especialmente en torno a la figura de Rosa Peral— condicionara la percepción pública.
+Durante el proceso se publicaron detalles de la vida privada de los acusados que poco tenían que ver con lo que se juzgaba. Hubo juristas y periodistas que advirtieron entonces del riesgo de un **juicio paralelo**, sobre todo en torno a Rosa Peral.
 
-Ese debate se reavivó en **2023** con el estreno en Netflix de la serie de ficción ***El cuerpo en llamas*** y del documental ***Las cintas de Rosa Peral***, en el que la condenada ofrecía su versión desde prisión. Ambas producciones tuvieron una gran audiencia y devolvieron el caso a la actualidad.
+En **2023**, Netflix estrenó la serie de ficción ***El cuerpo en llamas*** y el documental ***Las cintas de Rosa Peral***, en el que la condenada daba su versión desde prisión. El caso volvió a estar en boca de todos, seis años después.
 
 :::nota Ficción y realidad
 Las series basadas en hechos reales dramatizan, condensan y a veces inventan escenas y diálogos. Para conocer lo que realmente quedó probado conviene acudir a la sentencia y a la información judicial, no a la ficción. En este artículo nos ceñimos a lo establecido por los tribunales y publicado por medios de referencia.
 :::
 
-## Por qué el caso es relevante
+## Policías ante el banquillo
 
-### Agentes de la ley ante la justicia
+Lo más inquietante del caso, a mi juicio, no es el triángulo sentimental que tanto vendió. Es que los acusados eran **policías**: personas formadas para investigar delitos que, según la sentencia, usaron lo que sabían para intentar que este no se pudiera investigar. Quemar un coche con un cuerpo dentro en una pista forestal es, precisamente, el tipo de cosa que se hace para borrar pruebas.
 
-Que los acusados fueran **policías** añadió una dimensión inquietante al caso: personas formadas en técnicas de investigación que, según la sentencia, utilizaron ese conocimiento para intentar ocultar un crimen. La investigación demostró, al mismo tiempo, que los mecanismos de control funcionaron y que los compañeros de cuerpo de la víctima colaboraron en el esclarecimiento.
+No funcionó. Y la razón dice mucho de cómo ha cambiado la investigación criminal: en un caso del siglo XIX, como el [crimen de la calle Fuencarral](articulo-calle-fuencarral.html), todo dependía de testigos y confesiones. Aquí fueron los teléfonos los que contaron lo que los acusados callaban.
 
-### La huella digital como prueba
+## La víctima, en segundo plano
 
-El caso es un ejemplo claro de cómo ha cambiado la investigación criminal en el siglo XXI. Frente a los casos históricos que se resolvían con testigos y confesiones —como el [crimen de la calle Fuencarral](articulo-calle-fuencarral.html)—, hoy los **datos de los teléfonos** y las comunicaciones electrónicas pueden reconstruir con precisión los movimientos de las personas.
-
-### La ficción y las víctimas
-
-El éxito de las adaptaciones audiovisuales también abrió un debate ético: la familia de la víctima expresó su malestar por el protagonismo que se daba a los condenados. Es una tensión presente en todo el género *true crime*, y que en VIRALIX intentamos resolver poniendo siempre el foco en los hechos y en el respeto a las víctimas.
-
-## Lo que queda
-
-Pedro Rodríguez era, antes que un caso, un agente de la Guardia Urbana de Barcelona con una familia y unos compañeros que lo recuerdan. Su muerte demostró que la violencia puede surgir en los entornos más inesperados y que, incluso cuando se intenta borrar todo rastro, la investigación rigurosa puede reconstruir la verdad.
+Con las series y los documentales pasó lo de siempre en el *true crime*: los focos se fueron hacia los condenados y Pedro Rodríguez quedó en segundo plano, como si fuera un personaje secundario de su propia historia. Era un agente de la Guardia Urbana con familia y compañeros, y creo que contar el caso empezando por él, y no por el triángulo, es lo mínimo.
 
 ![Ficha del caso del crimen de la Guardia Urbana con víctima, lugar, hallazgo, detenidos, juicio, condenas y adaptaciones](ficha "La ficha del caso en formato tarjeta, pensada para guardar o compartir.")
 
@@ -124,7 +110,7 @@ La Audiencia de Barcelona, tras el veredicto del jurado, condenó a **Rosa Peral
 El fuego había dañado gravemente el cuerpo. La identificación fue posible gracias a una **pieza metálica de una intervención quirúrgica** anterior, que llevaba un número de serie registrado.
 
 ### ¿Qué papel tuvo el exmarido de Rosa Peral?
-Fue señalado al principio por las declaraciones de Rosa Peral, pero los investigadores comprobaron que no tenía ninguna relación con el crimen. Su caso se cita a menudo como ejemplo del daño que pueden causar las acusaciones infundadas.
+Ninguno en el crimen. Fue señalado al principio por las declaraciones de Rosa Peral, pero los investigadores comprobaron que no tenía relación con los hechos.
 
 ### ¿Es fiel a los hechos la serie de Netflix?
 *El cuerpo en llamas* es una ficción basada en hechos reales: dramatiza y recrea escenas, diálogos y personajes. Para conocer lo probado hay que acudir a la sentencia y a la información judicial publicada por medios de referencia.
