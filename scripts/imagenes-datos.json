@@ -800,6 +800,200 @@
   "diagrama": null
  },
  {
+  "slug": "helena-jubany",
+  "titulo": "El crimen de Helena Jubany",
+  "titulo_corto": "El crimen de Helena Jubany",
+  "titulo_portada": "El crimen de Helena Jubany",
+  "categoria": "es",
+  "anio": "2001",
+  "lugar": "Sabadell, Barcelona",
+  "estado": "Pendiente de juicio",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.55,
+     41.2
+    ],
+    [
+     2.85,
+     41.85
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El Vallès Occidental, otoño de 2001",
+   "marcadores": [
+    {
+     "lon": 2.1089,
+     "lat": 41.5463,
+     "texto": "Sabadell",
+     "sub": "Domicilio de Helena y lugar del hallazgo",
+     "lado": "izq"
+    },
+    {
+     "lon": 2.1356,
+     "lat": 41.6103,
+     "texto": "Sentmenat",
+     "sub": "Biblioteca donde trabajaba",
+     "dy": -8
+    },
+    {
+     "lon": 2.4445,
+     "lat": 41.5381,
+     "texto": "Mataró",
+     "sub": "Ciudad natal"
+    },
+    {
+     "lon": 2.1734,
+     "lat": 41.3851,
+     "texto": "Barcelona",
+     "sub": "Audiencia Provincial"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.55,
+     "lat": 41.3,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "17 sep 2001",
+    "Primer anónimo en la puerta de Helena: una horchata, pastas y una nota."
+   ],
+   [
+    "9 oct 2001",
+    "Segundo anónimo. El zumo contiene benzodiacepinas."
+   ],
+   [
+    "30 nov 2001",
+    "Último día en que se tiene noticia de Helena."
+   ],
+   [
+    "2 dic 2001",
+    "Su cuerpo aparece en el patio de un edificio de Sabadell."
+   ],
+   [
+    "Feb 2002",
+    "Detención de Montse Careta y, después, de Ana Echaguibel."
+   ],
+   [
+    "7 may 2002",
+    "Careta muere en la prisión de Wad-Ras. Deja escrito que es inocente."
+   ],
+   [
+    "2005",
+    "Sobreseimiento provisional de la causa."
+   ],
+   [
+    "2021",
+    "El juzgado reabre el caso semanas antes de la prescripción."
+   ],
+   [
+    "Nov 2024",
+    "Informe de ADN sobre el jersey de la víctima."
+   ],
+   [
+    "Nov 2025",
+    "Prisión provisional para el único investigado."
+   ],
+   [
+    "Ene 2026",
+    "La Audiencia de Barcelona lo deja en libertad provisional."
+   ],
+   [
+    "Oct 2026",
+    "La Fiscalía pide juicio con jurado; la defensa, el archivo."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Helena Jubany i Lorente, 27 años, bibliotecaria"
+    ],
+    [
+     "Lugar",
+     "Sabadell (Barcelona)"
+    ],
+    [
+     "Fecha",
+     "2 de diciembre de 2001"
+    ],
+    [
+     "Hechos previos",
+     "Dos anónimos con comida y bebida en septiembre y octubre de 2001"
+    ],
+    [
+     "Instrucción",
+     "Juzgado de Sabadell; archivo provisional en 2005 y reapertura en 2021"
+    ],
+    [
+     "Investigados",
+     "Varias personas del entorno excursionista; hoy, un único investigado"
+    ],
+    [
+     "Condenas",
+     "Ninguna"
+    ],
+    [
+     "Estado",
+     "Pendiente de decidir la apertura de juicio con jurado"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Recorrido judicial",
+   "titulo": "De la azotea al jurado: 25 años de procedimiento",
+   "nota": "Elaboración propia de VIRALIX a partir de la información judicial publicada. Ninguna persona ha sido condenada.",
+   "pasos": [
+    [
+     "2001 · El crimen",
+     "Dos anónimos en otoño y el hallazgo del cuerpo el 2 de diciembre."
+    ],
+    [
+     "2002 · Detenciones",
+     "Dos mujeres del entorno excursionista son detenidas; una muere en prisión preventiva."
+    ],
+    [
+     "2005 · Archivo",
+     "La causa se sobresee de forma provisional sin acusados."
+    ],
+    [
+     "2021 · Reapertura",
+     "La familia logra reabrirla semanas antes de la prescripción."
+    ],
+    [
+     "2024 · ADN",
+     "Un informe policial halla coincidencias genéticas en el jersey de la víctima."
+    ],
+    [
+     "2026 · Ante el juicio",
+     "La Fiscalía pide jurado popular; la defensa, el archivo."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
