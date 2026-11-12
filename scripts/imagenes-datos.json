@@ -2130,6 +2130,187 @@
   "diagrama": null
  },
  {
+  "slug": "maria-soledad-morales",
+  "titulo": "El caso María Soledad Morales",
+  "titulo_corto": "El caso María Soledad Morales",
+  "titulo_portada": "El caso María Soledad Morales",
+  "categoria": "latam",
+  "anio": "1990",
+  "lugar": "Catamarca, Argentina",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -74,
+     -40
+    ],
+    [
+     -52,
+     -21
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Argentina"
+    ]
+   },
+   "localizador": [
+    [
+     -85,
+     -56
+    ],
+    [
+     -33,
+     13
+    ]
+   ],
+   "titulo": "Noroeste argentino, septiembre de 1990",
+   "marcadores": [
+    {
+     "lon": -65.7795,
+     "lat": -28.4696,
+     "texto": "San Fernando del Valle de Catamarca",
+     "sub": "Crimen · 8 sep 1990",
+     "lado": "izq"
+    },
+    {
+     "lon": -58.3816,
+     "lat": -34.6037,
+     "texto": "Buenos Aires",
+     "sub": "Gobierno nacional y Congreso"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -71.2,
+     "lat": -33.5,
+     "texto": "Chile",
+     "tipo": "pais"
+    },
+    {
+     "lon": -56,
+     "lat": -37.5,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -57.5,
+     "lat": -23.5,
+     "texto": "Paraguay",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "7 sep 1990",
+    "María Soledad asiste a una fiesta de su curso en la discoteca Le Feu Rouge."
+   ],
+   [
+    "8 sep 1990",
+    "De madrugada se encuentra con Luis Tula. Muere horas después."
+   ],
+   [
+    "10 sep 1990",
+    "Hallan su cuerpo junto a la ruta 38, a las afueras de la capital."
+   ],
+   [
+    "14 sep 1990",
+    "Primera Marcha del Silencio, encabezada por sus compañeras y la hermana Martha Pelloni."
+   ],
+   [
+    "1991",
+    "La Cámara de Diputados expulsa a Ángel Luque por sus declaraciones."
+   ],
+   [
+    "Abr 1991",
+    "El Gobierno nacional interviene la provincia y aparta al gobernador Ramón Saadi."
+   ],
+   [
+    "Feb 1996",
+    "Empieza el primer juicio, televisado. Se anula semanas después."
+   ],
+   [
+    "Ago 1997",
+    "Comienza el segundo juicio."
+   ],
+   [
+    "27 feb 1998",
+    "Condenas: 21 años para Guillermo Luque y 9 para Luis Tula."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "María Soledad Morales, 17 años, estudiante"
+    ],
+    [
+     "Lugar",
+     "San Fernando del Valle de Catamarca (Argentina)"
+    ],
+    [
+     "Fecha",
+     "8 de septiembre de 1990"
+    ],
+    [
+     "Hallazgo",
+     "10 de septiembre, junto a la ruta 38"
+    ],
+    [
+     "Condenados",
+     "Guillermo Luque (21 años) y Luis Tula (9 años)"
+    ],
+    [
+     "Delito",
+     "Violación seguida de muerte agravada por el uso de estupefacientes"
+    ],
+    [
+     "Sentencia",
+     "27 de febrero de 1998, tras un primer juicio anulado"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena; el encubrimiento quedó impune"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Las consecuencias",
+   "titulo": "De un crimen a la caída de una dinastía",
+   "nota": "Elaboración propia de VIRALIX a partir de la cobertura de la prensa argentina y de la sentencia de 1998.",
+   "pasos": [
+    [
+     "Sep 1990 · El crimen",
+     "Aparece el cuerpo de María Soledad. La policía provincial altera pruebas."
+    ],
+    [
+     "Sep 1990 · La calle",
+     "Primera Marcha del Silencio, convocada por sus compañeras y la rectora del colegio."
+    ],
+    [
+     "1990-1991 · La presión",
+     "Decenas de marchas y cobertura nacional. Los sospechosos tienen apellidos de poder."
+    ],
+    [
+     "Abr 1991 · La intervención",
+     "El Gobierno nacional interviene la provincia y aparta al gobernador."
+    ],
+    [
+     "1996 · Juicio nulo",
+     "El primer proceso, televisado, se anula por sospechas de parcialidad."
+    ],
+    [
+     "Feb 1998 · Condenas",
+     "21 años para Guillermo Luque y 9 para Luis Tula."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "jack-el-destripador",
   "titulo": "Jack el Destripador",
   "titulo_corto": "Jack el Destripador",
