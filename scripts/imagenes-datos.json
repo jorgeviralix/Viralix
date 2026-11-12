@@ -2523,6 +2523,202 @@
   }
  },
  {
+  "slug": "nino-del-terror",
+  "titulo": "El Niño del Terror",
+  "titulo_corto": "El Niño del Terror",
+  "titulo_portada": "Juan Fernando Hermosa, el Niño del Terror",
+  "categoria": "latam",
+  "anio": "1991-1992",
+  "lugar": "Quito, Ecuador",
+  "estado": "Medida cumplida; fallecido en 1996",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -82.5,
+     -5.6
+    ],
+    [
+     -74.2,
+     2.6
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Ecuador"
+    ]
+   },
+   "localizador": [
+    [
+     -95,
+     -56
+    ],
+    [
+     -33,
+     20
+    ]
+   ],
+   "titulo": "Ecuador, 1991-1996",
+   "marcadores": [
+    {
+     "lon": -78.4678,
+     "lat": -0.1807,
+     "texto": "Quito",
+     "sub": "Crímenes y detención · 1991-1992",
+     "lado": "izq"
+    },
+    {
+     "lon": -76.887,
+     "lat": 0.085,
+     "texto": "Nueva Loja (Sucumbíos)",
+     "sub": "Hallado muerto · 28 feb 1996"
+    },
+    {
+     "lon": -79.53,
+     "lat": -1.8,
+     "texto": "Los Ríos",
+     "sub": "Provincia natal",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -81.6,
+     "lat": -2.6,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -76.2,
+     "lat": 1.9,
+     "texto": "Colombia",
+     "tipo": "pais"
+    },
+    {
+     "lon": -76.3,
+     "lat": -4.6,
+     "texto": "Perú",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "28 feb 1976",
+    "Nace en la provincia de Los Ríos. Es adoptado y crece en Quito."
+   ],
+   [
+    "22 nov 1991",
+    "Primer crimen atribuido a la banda: un taxista, a la salida de una discoteca."
+   ],
+   [
+    "Nov 1991 – ene 1992",
+    "Una veintena de asesinatos de taxistas y hombres homosexuales en Quito."
+   ],
+   [
+    "Ene 1992",
+    "La policía asalta la casa familiar. Muere su madre adoptiva. Hermosa es detenido con 15 años."
+   ],
+   [
+    "1992",
+    "Se le impone la medida máxima para un menor: cuatro años de internamiento."
+   ],
+   [
+    "1993",
+    "Se fuga del centro; en la evasión muere un policía. Es capturado en Colombia."
+   ],
+   [
+    "Inicios de 1996",
+    "Queda en libertad tras cumplir la medida."
+   ],
+   [
+    "28 feb 1996",
+    "Aparece muerto junto al río Aguarico, en Sucumbíos."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Juan Fernando Hermosa Suárez (1976-1996)"
+    ],
+    [
+     "Lugar",
+     "Quito (Ecuador)"
+    ],
+    [
+     "Periodo",
+     "Noviembre de 1991 – enero de 1992"
+    ],
+    [
+     "Víctimas atribuidas",
+     "Una veintena; 22 según el recuento más citado"
+    ],
+    [
+     "Perfil de las víctimas",
+     "Taxistas y hombres homosexuales, sobre todo"
+    ],
+    [
+     "Detención",
+     "Enero de 1992, con 15 años"
+    ],
+    [
+     "Medida",
+     "4 años de internamiento, el máximo para un menor"
+    ],
+    [
+     "Muerte",
+     "28 de febrero de 1996, en Sucumbíos; sin esclarecer"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Derecho comparado",
+   "titulo": "Qué prevé la ley para un homicida de 15 años",
+   "nota": "Elaboración propia de VIRALIX a partir de la legislación citada en las fuentes. Resumen divulgativo: los plazos dependen de cada caso.",
+   "grupos": [
+    {
+     "factor": "Ecuador, 1992",
+     "nombre": "Código de Menores",
+     "rasgos": [
+      "Internamiento máximo de 4 años",
+      "Centro de menores, no prisión",
+      "Libertad al terminar la medida"
+     ]
+    },
+    {
+     "factor": "Ecuador, hoy",
+     "nombre": "Código de la Niñez",
+     "rasgos": [
+      "Internamiento de hasta 8 años",
+      "Jueces especializados",
+      "Medidas socioeducativas"
+     ]
+    },
+    {
+     "factor": "España, hoy",
+     "nombre": "Ley Orgánica 5/2000",
+     "rasgos": [
+      "Hasta 5 años de internamiento a los 14-15",
+      "Hasta 6 si hay varios delitos graves",
+      "Seguidos de libertad vigilada"
+     ]
+    },
+    {
+     "factor": "Marco internacional",
+     "nombre": "Convención de 1989",
+     "rasgos": [
+      "Ni pena capital ni perpetua irrevisable",
+      "La privación de libertad, último recurso",
+      "La reinserción como fin"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jack-el-destripador",
   "titulo": "Jack el Destripador",
   "titulo_corto": "Jack el Destripador",
