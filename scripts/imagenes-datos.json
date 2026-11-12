@@ -1364,6 +1364,208 @@
   }
  },
  {
+  "slug": "anabel-segura",
+  "titulo": "El secuestro de Anabel Segura",
+  "titulo_corto": "El secuestro de Anabel Segura",
+  "titulo_portada": "El secuestro de Anabel Segura",
+  "categoria": "es",
+  "anio": "1993",
+  "lugar": "Alcobendas, Madrid",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -4.7,
+     39.65
+    ],
+    [
+     -2.95,
+     40.8
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid",
+     "Toledo"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "De La Moraleja a La Sagra, 1993-1995",
+   "marcadores": [
+    {
+     "lon": -3.635,
+     "lat": 40.515,
+     "texto": "La Moraleja (Alcobendas)",
+     "sub": "Secuestro · 12 abr 1993"
+    },
+    {
+     "lon": -3.848,
+     "lat": 40.075,
+     "texto": "Numancia de la Sagra",
+     "sub": "Fábrica abandonada donde fue hallada",
+     "lado": "izq"
+    },
+    {
+     "lon": -4.024,
+     "lat": 39.857,
+     "texto": "Toledo",
+     "sub": "Audiencia Provincial",
+     "lado": "izq"
+    },
+    {
+     "lon": -3.7038,
+     "lat": 40.4168,
+     "texto": "Madrid",
+     "sub": "",
+     "lado": "izq"
+    }
+   ],
+   "ruta": [
+    [
+     -3.635,
+     40.515
+    ],
+    [
+     -3.62,
+     40.3
+    ],
+    [
+     -3.848,
+     40.075
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -3.3,
+     "lat": 39.8,
+     "texto": "Castilla-La Mancha",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "12 abr 1993",
+    "Anabel Segura es secuestrada mientras corre por La Moraleja. Muere esa misma noche en Toledo."
+   ],
+   [
+    "14 abr 1993",
+    "Primera llamada: los captores piden 150 millones de pesetas."
+   ],
+   [
+    "Abr-may 1993",
+    "Fracasan dos intentos de entrega del rescate."
+   ],
+   [
+    "Jun 1993",
+    "La familia recibe una cinta con una voz que finge ser la de Anabel."
+   ],
+   [
+    "1993-1995",
+    "La policía analiza las grabaciones. Las comunicaciones cesan."
+   ],
+   [
+    "1995",
+    "Se difunde públicamente la voz del secuestrador. Llegan miles de llamadas."
+   ],
+   [
+    "28 sep 1995",
+    "Detención de los tres implicados y hallazgo del cuerpo en Numancia de la Sagra."
+   ],
+   [
+    "Finales de los 90",
+    "Condena de 39 años en Toledo; el Supremo la eleva a 43 años y 10 meses."
+   ],
+   [
+    "2009",
+    "Cándido Ortiz muere en prisión."
+   ],
+   [
+    "2013",
+    "Emilio Muñoz sale en libertad."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Anabel Segura Foles, 22 años, estudiante"
+    ],
+    [
+     "Lugar del secuestro",
+     "La Moraleja, Alcobendas (Madrid)"
+    ],
+    [
+     "Fecha",
+     "12 de abril de 1993"
+    ],
+    [
+     "Rescate exigido",
+     "150 millones de pesetas"
+    ],
+    [
+     "Hallazgo",
+     "28 de septiembre de 1995, Numancia de la Sagra (Toledo)"
+    ],
+    [
+     "Autores",
+     "Emilio Muñoz Guadix y Cándido Ortiz Añón"
+    ],
+    [
+     "Condena",
+     "39 años, elevada a 43 años y 10 meses por el Tribunal Supremo"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La investigación",
+   "titulo": "De una cinta de casete a dos detenidos",
+   "nota": "Elaboración propia de VIRALIX a partir de las informaciones publicadas sobre la investigación policial.",
+   "pasos": [
+    [
+     "Las llamadas",
+     "Los secuestradores telefonean desde cabinas para exigir el rescate."
+    ],
+    [
+     "La cinta",
+     "Envían una grabación con la voz de una mujer que finge ser Anabel."
+    ],
+    [
+     "El laboratorio",
+     "La policía analiza voces, acentos y ruidos de fondo de las grabaciones."
+    ],
+    [
+     "La difusión",
+     "En 1995 se emite la voz del secuestrador en radio y televisión."
+    ],
+    [
+     "La colaboración",
+     "Miles de ciudadanos llaman. Varias pistas señalan a la misma zona de Toledo."
+    ],
+    [
+     "Las detenciones",
+     "El 28 de septiembre de 1995 caen los autores y se localiza el cuerpo."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
