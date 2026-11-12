@@ -4350,6 +4350,222 @@
   }
  },
  {
+  "slug": "mujer-de-isdal",
+  "titulo": "La mujer de Isdal",
+  "titulo_corto": "La mujer de Isdal",
+  "titulo_portada": "La mujer de Isdal",
+  "categoria": "mist",
+  "anio": "1970",
+  "lugar": "Bergen, Noruega",
+  "estado": "Sin identificar",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -2,
+     48.2
+    ],
+    [
+     20,
+     65.2
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Norway"
+    ]
+   },
+   "localizador": [
+    [
+     -25,
+     34
+    ],
+    [
+     45,
+     72
+    ]
+   ],
+   "titulo": "Noruega y el norte de Europa, 1970",
+   "marcadores": [
+    {
+     "lon": 5.3221,
+     "lat": 60.3913,
+     "texto": "Bergen",
+     "sub": "Isdalen · hallazgo el 29 nov 1970",
+     "lado": "izq"
+    },
+    {
+     "lon": 5.7331,
+     "lat": 58.97,
+     "texto": "Stavanger",
+     "sub": "Hoteles y compra de las botas",
+     "lado": "izq"
+    },
+    {
+     "lon": 10.3951,
+     "lat": 63.4305,
+     "texto": "Trondheim",
+     "sub": "Otra de sus estancias"
+    },
+    {
+     "lon": 10.7522,
+     "lat": 59.9139,
+     "texto": "Oslo",
+     "sub": "Entrada al país"
+    },
+    {
+     "lon": 11.0767,
+     "lat": 49.4521,
+     "texto": "Núremberg",
+     "sub": "Región de su infancia, según los isótopos"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.5,
+     "lat": 56.5,
+     "texto": "Mar del Norte",
+     "tipo": "mar"
+    },
+    {
+     "lon": 15.5,
+     "lat": 61.5,
+     "texto": "Suecia",
+     "tipo": "pais"
+    },
+    {
+     "lon": 10,
+     "lat": 51.5,
+     "texto": "Alemania",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "Mar-nov 1970",
+    "Una mujer que usa distintos nombres se aloja en hoteles de Oslo, Stavanger, Trondheim y Bergen."
+   ],
+   [
+    "23 nov 1970",
+    "Deja su hotel de Bergen y deposita dos maletas en la consigna de la estación."
+   ],
+   [
+    "29 nov 1970",
+    "Su cuerpo aparece en el valle de Isdalen."
+   ],
+   [
+    "2 dic 1970",
+    "La policía localiza las maletas."
+   ],
+   [
+    "Dic 1970",
+    "Los investigadores reconstruyen sus estancias y descifran el cuaderno."
+   ],
+   [
+    "Dic 1970",
+    "La policía concluye que fue un probable suicidio."
+   ],
+   [
+    "5 feb 1971",
+    "Es enterrada en Bergen en un ataúd de zinc."
+   ],
+   [
+    "2016",
+    "La televisión pública noruega NRK reabre la investigación periodística."
+   ],
+   [
+    "2017",
+    "Los análisis de isótopos sitúan su infancia en la zona de Núremberg."
+   ],
+   [
+    "2018",
+    "NRK y la BBC publican el pódcast *Death in Ice Valley*."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Identidad",
+     "Desconocida"
+    ],
+    [
+     "Lugar",
+     "Isdalen, Bergen (Noruega)"
+    ],
+    [
+     "Hallazgo",
+     "29 de noviembre de 1970"
+    ],
+    [
+     "Causa de la muerte",
+     "Intoxicación por monóxido de carbono y barbitúricos"
+    ],
+    [
+     "Edad estimada",
+     "Entre 30 y 45 años en 1970; nacida hacia 1930"
+    ],
+    [
+     "Identidades usadas",
+     "Al menos ocho nombres falsos"
+    ],
+    [
+     "Conclusión policial",
+     "Probable suicidio (1970)"
+    ],
+    [
+     "Estado",
+     "Sin identificar; caso revisado desde 2016"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "El expediente",
+   "titulo": "Lo que se sabe de una mujer sin nombre",
+   "nota": "Elaboración propia de VIRALIX a partir de la investigación de la policía de Bergen (1970-1971) y de los trabajos de NRK y la BBC (2016-2019).",
+   "grupos": [
+    {
+     "factor": "1970",
+     "nombre": "El cuerpo",
+     "rasgos": [
+      "Hallada en Isdalen el 29 de noviembre",
+      "Monóxido de carbono y barbitúricos",
+      "Etiquetas de la ropa cortadas"
+     ]
+    },
+    {
+     "factor": "1970",
+     "nombre": "Las maletas",
+     "rasgos": [
+      "Consigna de la estación de Bergen",
+      "Pelucas y gafas sin graduar",
+      "Un cuaderno con anotaciones en clave"
+     ]
+    },
+    {
+     "factor": "1970",
+     "nombre": "Las identidades",
+     "rasgos": [
+      "Al menos ocho nombres falsos",
+      "Hoteles de cuatro ciudades",
+      "Decía ser belga"
+     ]
+    },
+    {
+     "factor": "Desde 2017",
+     "nombre": "La ciencia",
+     "rasgos": [
+      "Nacida hacia 1930",
+      "Infancia en la zona de Núremberg",
+      "Traslado posterior hacia Francia"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "perfil-criminal",
   "titulo": "La perfilación criminal",
   "titulo_corto": "La perfilación criminal",
