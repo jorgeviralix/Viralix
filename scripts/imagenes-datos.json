@@ -2719,6 +2719,195 @@
   }
  },
  {
+  "slug": "jose-luis-cabezas",
+  "titulo": "El crimen de José Luis Cabezas",
+  "titulo_corto": "El crimen de José Luis Cabezas",
+  "titulo_portada": "El crimen de José Luis Cabezas",
+  "categoria": "latam",
+  "anio": "1997",
+  "lugar": "Pinamar, Argentina",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -60.8,
+     -38.7
+    ],
+    [
+     -55.2,
+     -33.9
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Argentina"
+    ]
+   },
+   "localizador": [
+    [
+     -85,
+     -56
+    ],
+    [
+     -33,
+     13
+    ]
+   ],
+   "titulo": "Costa atlántica bonaerense, enero de 1997",
+   "marcadores": [
+    {
+     "lon": -56.8612,
+     "lat": -37.1099,
+     "texto": "Pinamar",
+     "sub": "Secuestro · 25 ene 1997"
+    },
+    {
+     "lon": -57.1386,
+     "lat": -37.0019,
+     "texto": "General Madariaga",
+     "sub": "Lugar del hallazgo",
+     "lado": "izq"
+    },
+    {
+     "lon": -57.6792,
+     "lat": -36.3132,
+     "texto": "Dolores",
+     "sub": "Sede del juicio",
+     "lado": "izq"
+    },
+    {
+     "lon": -58.3816,
+     "lat": -34.6037,
+     "texto": "Buenos Aires",
+     "sub": "Redacción de Noticias",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -56.2,
+     "lat": -36.0,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -56.6,
+     "lat": -34.3,
+     "texto": "Uruguay",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1995",
+    "El ministro Domingo Cavallo acusa a Alfredo Yabrán de dirigir una mafia."
+   ],
+   [
+    "3 mar 1996",
+    "*Noticias* publica en portada la primera fotografía de Yabrán, tomada por Cabezas en Pinamar."
+   ],
+   [
+    "25 ene 1997",
+    "Cabezas es secuestrado y asesinado. Su cuerpo aparece en un coche incendiado."
+   ],
+   [
+    "Feb 1997",
+    "Detención de *Los Pepitos*; la pista resulta ser falsa."
+   ],
+   [
+    "1997",
+    "Caen *Los Horneros* y los policías implicados."
+   ],
+   [
+    "20 may 1998",
+    "Yabrán se suicida cuando iba a ser detenido."
+   ],
+   [
+    "2 feb 2000",
+    "Sentencia de Dolores: ocho condenas a prisión perpetua."
+   ],
+   [
+    "2002",
+    "Condena al comisario de Pinamar por liberar la zona."
+   ],
+   [
+    "Años siguientes",
+    "Las instancias superiores reducen penas; los condenados van quedando en libertad."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "José Luis Cabezas, 35 años, reportero gráfico de *Noticias*"
+    ],
+    [
+     "Lugar",
+     "Pinamar y General Madariaga (provincia de Buenos Aires)"
+    ],
+    [
+     "Fecha",
+     "25 de enero de 1997"
+    ],
+    [
+     "Señalado como instigador",
+     "Alfredo Yabrán, que se suicidó en 1998 antes de ser detenido"
+    ],
+    [
+     "Juicio",
+     "Dolores; sentencia del 2 de febrero de 2000"
+    ],
+    [
+     "Condenados",
+     "Ocho personas, entre policías, sicarios y un jefe de seguridad"
+    ],
+    [
+     "Penas",
+     "Prisión perpetua, reducidas después en instancias superiores"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena; ningún condenado sigue en prisión"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La trama",
+   "titulo": "Quién hizo qué, según la justicia",
+   "nota": "Elaboración propia de VIRALIX a partir de la sentencia del juicio de Dolores (2000) y de la cobertura de la prensa argentina.",
+   "pasos": [
+    [
+     "El origen",
+     "Una fotografía de 1996 muestra por primera vez a un empresario que rehuía toda exposición."
+    ],
+    [
+     "El instigador",
+     "El jefe de seguridad del empresario encarga «un trabajo» contra el fotógrafo."
+    ],
+    [
+     "El organizador",
+     "Un oficial de la policía bonaerense planifica el secuestro y recluta a los ejecutores."
+    ],
+    [
+     "La vigilancia",
+     "Otros dos policías siguen los movimientos de la víctima en Pinamar."
+    ],
+    [
+     "Los ejecutores",
+     "Cuatro hombres de un barrio de La Plata participan en el secuestro y el crimen."
+    ],
+    [
+     "El amparo",
+     "La zona queda sin vigilancia policial; un comisario será condenado por ello en 2002."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "jack-el-destripador",
   "titulo": "Jack el Destripador",
   "titulo_corto": "Jack el Destripador",
