@@ -994,6 +994,190 @@
   }
  },
  {
+  "slug": "sheila-barrero",
+  "titulo": "El caso Sheila Barrero",
+  "titulo_corto": "El caso Sheila Barrero",
+  "titulo_portada": "El caso Sheila Barrero",
+  "categoria": "es",
+  "anio": "2004",
+  "lugar": "Degaña, Asturias",
+  "estado": "Archivado sin juicio",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -7.25,
+     42.55
+    ],
+    [
+     -5.2,
+     43.75
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Asturias"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Entre Laciana y Degaña, enero de 2004",
+   "marcadores": [
+    {
+     "lon": -6.52,
+     "lat": 42.945,
+     "texto": "Alto de La Collada",
+     "sub": "Lugar del hallazgo · 25 ene 2004",
+     "dy": -10
+    },
+    {
+     "lon": -6.319,
+     "lat": 42.939,
+     "texto": "Villablino (León)",
+     "sub": "Donde trabajaba los fines de semana"
+    },
+    {
+     "lon": -6.549,
+     "lat": 43.177,
+     "texto": "Cangas del Narcea",
+     "sub": "Juzgado de instrucción",
+     "lado": "izq"
+    },
+    {
+     "lon": -5.661,
+     "lat": 43.545,
+     "texto": "Gijón",
+     "sub": "Donde vivía entre semana"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -6.0,
+     "lat": 42.7,
+     "texto": "León",
+     "tipo": "pais"
+    },
+    {
+     "lon": -6.3,
+     "lat": 43.66,
+     "texto": "Mar Cantábrico",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "24 ene 2004",
+    "Sheila trabaja su turno de fin de semana en un pub de Villablino (León)."
+   ],
+   [
+    "25 ene 2004",
+    "De madrugada emprende el regreso a Degaña. A mediodía su hermano encuentra el coche en el alto de La Collada."
+   ],
+   [
+    "2004",
+    "La Guardia Civil investiga a un joven de su entorno. Se le detectan residuos de disparo."
+   ],
+   [
+    "2007",
+    "Primer sobreseimiento provisional por falta de pruebas."
+   ],
+   [
+    "2015",
+    "El juzgado reabre la causa para practicar nuevos análisis."
+   ],
+   [
+    "Dic 2019",
+    "La Fiscalía solicita otra vez el archivo."
+   ],
+   [
+    "2020",
+    "El juzgado de Cangas del Narcea archiva; la Audiencia Provincial lo confirma en septiembre."
+   ],
+   [
+    "Ene 2024",
+    "Se cumplen veinte años del crimen sin que nadie haya sido juzgado."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Sheila Barrero Fernández, 22 años"
+    ],
+    [
+     "Lugar",
+     "Alto de La Collada, concejo de Degaña (Asturias)"
+    ],
+    [
+     "Fecha",
+     "25 de enero de 2004"
+    ],
+    [
+     "Causa de la muerte",
+     "Disparo en la cabeza con un arma corta de pequeño calibre"
+    ],
+    [
+     "Investigación",
+     "Guardia Civil; Juzgado de Instrucción n.º 1 de Cangas del Narcea"
+    ],
+    [
+     "Investigados",
+     "Uno, nunca acusado formalmente"
+    ],
+    [
+     "Resoluciones",
+     "Archivo en 2007, reapertura en 2015 y nuevo archivo en 2020"
+    ],
+    [
+     "Estado",
+     "Sobreseimiento provisional"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Recorrido judicial",
+   "titulo": "Dos aperturas, dos archivos",
+   "nota": "Elaboración propia de VIRALIX a partir de las notas del Poder Judicial y de la prensa regional. Nadie ha sido juzgado.",
+   "pasos": [
+    [
+     "2004 · El crimen",
+     "Sheila aparece muerta en su coche. La Guardia Civil investiga a un joven de su entorno."
+    ],
+    [
+     "2007 · Primer archivo",
+     "El juzgado de Cangas del Narcea sobresee la causa por falta de pruebas."
+    ],
+    [
+     "2015 · Reapertura",
+     "Se reabre para aplicar técnicas de análisis que no existían en 2004."
+    ],
+    [
+     "2019 · La Fiscalía",
+     "El ministerio público pide un nuevo sobreseimiento provisional."
+    ],
+    [
+     "2020 · Segundo archivo",
+     "El juzgado archiva y la Audiencia Provincial lo confirma."
+    ],
+    [
+     "2024 · Veinte años",
+     "La familia sigue reclamando que el caso no se dé por perdido."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
