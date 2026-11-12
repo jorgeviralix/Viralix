@@ -6,7 +6,7 @@ miga: Sobre VIRALIX
 kicker: Quiénes somos · Medio independiente · España
 h1: SOBRE <span>VIRALIX</span>
 intro: Un medio independiente de true crime, misterios y criminología hecho desde la provincia de Jaén con una idea fija: contar los casos reales con fuentes, contexto y respeto por las víctimas.
-actualizado: 2026-11-04
+actualizado: 2026-11-12
 schema: AboutPage
 ---
 ## Por qué nació VIRALIX
@@ -19,7 +19,7 @@ El *true crime* tiene un problema que cualquiera que lo consuma reconoce ensegui
 
 VIRALIX empezó a publicar en **mayo de 2026** con una serie de casos españoles que siguen generando preguntas, como el de Alcàsser, el de Wanninkhof o el de Marta del Castillo. En los meses siguientes el archivo fue creciendo con nuevos casos españoles y con algunos artículos de ciencia y naturaleza.
 
-En **noviembre de 2026** el archivo dio un salto: hoy reúne **40 artículos** que cubren casos de España desde el siglo XIX hasta hoy, grandes casos internacionales, misterios con base histórica y análisis de criminología. En esa misma etapa se publicaron la [metodología editorial](/metodologia.html), las políticas legales completas y una forma de trabajar con las imágenes basada en material propio y datos abiertos.
+En **noviembre de 2026** el archivo dio un salto: hoy reúne **55 artículos** que cubren casos de España desde el siglo XIX hasta hoy, casos de Latinoamérica, grandes casos internacionales, misterios con base histórica y análisis de criminología. En esa misma etapa se publicaron la [metodología editorial](/metodologia.html), las políticas legales completas y una forma de trabajar con las imágenes basada en material propio y datos abiertos.
 
 Puedes recorrer los casos españoles por orden cronológico en el [timeline del crimen](/timeline.html).
 
@@ -59,8 +59,9 @@ VIRALIX no tiene accionistas, no depende de ningún partido político y no recib
 ## Qué cubrimos
 
 - **True crime España**: casos que marcaron la historia del país, del crimen de la calle Fuencarral (1888) a casos del siglo XXI.
-- **Casos internacionales**: grandes casos documentados, como Jack el Destripador, el Zodiaco o el secuestro Lindbergh.
-- **Misterios con base histórica**: enigmas como el paso Diátlov o el Mary Celeste, separando los hechos de la leyenda.
+- **Casos de Latinoamérica**: crímenes que marcaron a sus países, como el de [María Soledad Morales](/articulo-maria-soledad-morales.html) en Argentina o el del fotógrafo [José Luis Cabezas](/articulo-jose-luis-cabezas.html).
+- **Casos internacionales**: grandes casos documentados, como Jack el Destripador, el Zodiaco, el Monstruo de Florencia o el secuestro Lindbergh.
+- **Misterios internacionales**: enigmas como el paso Diátlov, la mujer de Isdal o el hombre de Somerton, separando los hechos de la leyenda.
 - **Criminología**: análisis divulgativos sobre perfilación criminal o psicopatía, conceptos que el *true crime* suele simplificar.
 - **Ciencia y naturaleza**: fenómenos con impacto real en la sociedad.
 

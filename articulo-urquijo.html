@@ -295,8 +295,8 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 const nav=document.getElementById('navbar');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
 const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08});reveals.forEach(r=>io.observe(r));
 </script>
-<script src="audio-reader.js"></script>
-<script src="cookies-banner.js"></script>
-<script src="article-features.js?v=20261104"></script>
+<script defer src="audio-reader.js"></script>
+<script defer src="cookies-banner.js"></script>
+<script defer src="article-features.js?v=20261104"></script>
 </body>
 </html>

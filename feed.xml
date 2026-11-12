@@ -5,7 +5,7 @@
   <link>https://www.viralixweb.es</link>
   <description>Artículos verificados sobre los crímenes más impactantes de la historia de España. True crime, misterios y casos reales.</description>
   <language>es</language>
-  <lastBuildDate>Wed, 04 Nov 2026 09:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 09:00:00 +0100</lastBuildDate>
   <atom:link href="https://www.viralixweb.es/feed.xml" rel="self" type="application/rss+xml"/>
   <image>
     <url>https://www.viralixweb.es/images/logo-viralix.png</url>
@@ -67,6 +67,60 @@
     <enclosure url="https://www.viralixweb.es/images/articulos/galindos-portada.jpg" type="image/jpeg" length="0"/>
   </item>
   <item>
+    <title>El crimen de Helena Jubany: los anónimos, la azotea de Sabadell y un juicio que tarda 25 años</title>
+    <link>https://www.viralixweb.es/articulo-helena-jubany.html</link>
+    <description>Helena Jubany murió en Sabadell en 2001 tras recibir anónimos con bebidas adulteradas. Cronología del caso, la reapertura, el ADN y el proceso pendiente.</description>
+    <guid>https://www.viralixweb.es/articulo-helena-jubany.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/helena-jubany-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El caso Sheila Barrero: un disparo en el alto de La Collada y veinte años sin juicio</title>
+    <link>https://www.viralixweb.es/articulo-sheila-barrero.html</link>
+    <description>Sheila Barrero murió de un disparo en su coche en Degaña (Asturias) en 2004. Qué se investigó, por qué se archivó dos veces y qué dudas deja el caso.</description>
+    <guid>https://www.viralixweb.es/articulo-sheila-barrero.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/sheila-barrero-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Cristina Bergua: la desaparición de Cornellà que cambió la forma de buscar en España</title>
+    <link>https://www.viralixweb.es/articulo-cristina-bergua.html</link>
+    <description>Cristina Bergua, de 16 años, desapareció en Cornellà el 9 de marzo de 1997. La investigación, la búsqueda en el vertedero y el legado de sus padres.</description>
+    <guid>https://www.viralixweb.es/articulo-cristina-bergua.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/cristina-bergua-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El secuestro de Anabel Segura: 900 días de espera y una voz que delató a los culpables</title>
+    <link>https://www.viralixweb.es/articulo-anabel-segura.html</link>
+    <description>Anabel Segura fue secuestrada en La Moraleja en 1993. Durante 900 días se negoció un rescate por una joven que ya había muerto. Así se resolvió el caso.</description>
+    <guid>https://www.viralixweb.es/articulo-anabel-segura.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/anabel-segura-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El robo del Códice Calixtino: el electricista, la cámara acorazada y un año de misterio</title>
+    <link>https://www.viralixweb.es/articulo-codice-calixtino.html</link>
+    <description>En 2011 desapareció de la catedral de Santiago el Códice Calixtino, una joya del siglo XII. Quién lo robó, cómo se recuperó y qué falló en su custodia.</description>
+    <guid>https://www.viralixweb.es/articulo-codice-calixtino.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/codice-calixtino-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El niño de Somosierra: el accidente de 1986 y la desaparición que nadie ha sabido explicar</title>
+    <link>https://www.viralixweb.es/articulo-somosierra.html</link>
+    <description>En 1986 un camión cisterna volcó en el puerto de Somosierra. Murieron los padres; su hijo de 10 años nunca apareció. Hechos, hipótesis y lo que no se sabe.</description>
+    <guid>https://www.viralixweb.es/articulo-somosierra.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>True Crime España</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/somosierra-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
     <title>El caso Jarabo: el señorito de buena familia que conmocionó el Madrid de 1958</title>
     <link>https://www.viralixweb.es/articulo-jarabo.html</link>
     <description>José María Jarabo, hijo de una familia acomodada, asesinó a cuatro personas en Madrid en julio de 1958. Su caso fue uno de los más mediáticos del franquismo.</description>
@@ -74,6 +128,42 @@
     <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
     <category>True Crime España</category>
     <enclosure url="https://www.viralixweb.es/images/articulos/jarabo-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El caso María Soledad Morales: el crimen de Catamarca que hizo caer a un gobierno</title>
+    <link>https://www.viralixweb.es/articulo-maria-soledad-morales.html</link>
+    <description>María Soledad Morales, de 17 años, fue asesinada en Catamarca en 1990. Las Marchas del Silencio, el encubrimiento, la intervención federal y los dos juicios.</description>
+    <guid>https://www.viralixweb.es/articulo-maria-soledad-morales.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos Latinoamérica</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/maria-soledad-morales-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Pedro Alonso López, el «Monstruo de los Andes»: tres países, una condena de 16 años y un paradero desconocido</title>
+    <link>https://www.viralixweb.es/articulo-pedro-alonso-lopez.html</link>
+    <description>Pedro Alonso López confesó cientos de crímenes en Colombia, Ecuador y Perú. Qué está probado, por qué solo cumplió 14 años y cómo se le perdió el rastro.</description>
+    <guid>https://www.viralixweb.es/articulo-pedro-alonso-lopez.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos Latinoamérica</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/pedro-alonso-lopez-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Juan Fernando Hermosa, el «Niño del Terror»: el adolescente que puso a prueba la justicia de menores de Ecuador</title>
+    <link>https://www.viralixweb.es/articulo-nino-del-terror.html</link>
+    <description>Con 15 años, Juan Fernando Hermosa lideró en Quito una banda a la que se atribuyen una veintena de muertes. Cumplió 4 años. Murió al cumplir los 20.</description>
+    <guid>https://www.viralixweb.es/articulo-nino-del-terror.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos Latinoamérica</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/nino-del-terror-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El crimen de José Luis Cabezas: la fotografía que le costó la vida a un reportero</title>
+    <link>https://www.viralixweb.es/articulo-jose-luis-cabezas.html</link>
+    <description>El fotógrafo José Luis Cabezas fue asesinado en Pinamar en 1997 tras retratar al empresario Alfredo Yabrán. La investigación, el juicio y las condenas.</description>
+    <guid>https://www.viralixweb.es/articulo-jose-luis-cabezas.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos Latinoamérica</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/jose-luis-cabezas-portada.jpg" type="image/jpeg" length="0"/>
   </item>
   <item>
     <title>Jack el Destripador: las cinco mujeres detrás del mito y el asesino que nunca tuvo nombre</title>
@@ -121,6 +211,24 @@
     <enclosure url="https://www.viralixweb.es/images/articulos/lizzie-borden-portada.jpg" type="image/jpeg" length="0"/>
   </item>
   <item>
+    <title>El Monstruo de Florencia: ocho dobles crímenes, tres pistas y una verdad judicial que no convence</title>
+    <link>https://www.viralixweb.es/articulo-monstruo-de-florencia.html</link>
+    <description>Entre 1968 y 1985 murieron 16 personas en las colinas de Florencia. La pista sarda, Pacciani, los «compagni di merende» y las dudas sobre las condenas.</description>
+    <guid>https://www.viralixweb.es/articulo-monstruo-de-florencia.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/monstruo-de-florencia-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El robo del museo Gardner: 81 minutos, trece obras y el mayor botín de arte de la historia</title>
+    <link>https://www.viralixweb.es/articulo-robo-museo-gardner.html</link>
+    <description>En 1990 dos falsos policías robaron en Boston un Vermeer, tres Rembrandt y otras nueve obras. Qué se sabe, quiénes son los sospechosos y dónde puede estar.</description>
+    <guid>https://www.viralixweb.es/articulo-robo-museo-gardner.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Casos internacionales</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/robo-museo-gardner-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
     <title>El incidente del paso Diátlov: nueve montañeros, una tienda rasgada desde dentro y sesenta años de teorías</title>
     <link>https://www.viralixweb.es/articulo-paso-dyatlov.html</link>
     <description>En 1959 nueve montañeros soviéticos murieron en los Urales tras huir de su tienda en plena noche. Las teorías, la investigación oficial y qué dice la ciencia.</description>
@@ -146,6 +254,33 @@
     <pubDate>Tue, 03 Nov 2026 09:00:00 +0100</pubDate>
     <category>Misterios</category>
     <enclosure url="https://www.viralixweb.es/images/articulos/caras-belmez-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>Elisa Lam y el Hotel Cecil: qué ocurrió de verdad, sin fantasmas ni conspiraciones</title>
+    <link>https://www.viralixweb.es/articulo-elisa-lam.html</link>
+    <description>Elisa Lam desapareció en el Hotel Cecil de Los Ángeles en 2013. El vídeo del ascensor, la autopsia y las pruebas que explican el caso sin recurrir al mito.</description>
+    <guid>https://www.viralixweb.es/articulo-elisa-lam.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/elisa-lam-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>La mujer de Isdal: ocho identidades falsas, un valle de Noruega y medio siglo sin nombre</title>
+    <link>https://www.viralixweb.es/articulo-mujer-de-isdal.html</link>
+    <description>En 1970 apareció en un valle de Bergen el cuerpo de una mujer sin identificar. Maletas, pelucas, nombres falsos y lo que la ciencia ha averiguado desde 2017.</description>
+    <guid>https://www.viralixweb.es/articulo-mujer-de-isdal.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/mujer-de-isdal-portada.jpg" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>El hombre de Somerton y «Tamám Shud»: el desconocido de la playa que tardó 74 años en tener nombre</title>
+    <link>https://www.viralixweb.es/articulo-hombre-de-somerton.html</link>
+    <description>En 1948 apareció un hombre muerto en una playa de Adelaida con un papel que decía «Tamám Shud». El código, la maleta y la identificación por ADN de 2022.</description>
+    <guid>https://www.viralixweb.es/articulo-hombre-de-somerton.html</guid>
+    <pubDate>Thu, 12 Nov 2026 09:00:00 +0100</pubDate>
+    <category>Misterios</category>
+    <enclosure url="https://www.viralixweb.es/images/articulos/hombre-de-somerton-portada.jpg" type="image/jpeg" length="0"/>
   </item>
   <item>
     <title>La perfilación criminal: qué hay de ciencia y qué de mito en los «cazadores de mentes»</title>

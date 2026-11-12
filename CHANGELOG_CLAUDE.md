@@ -118,3 +118,14 @@ Objetivo: quitar lo que puede frenar la aprobación de AdSense («contenido de p
 - Completar la biografía del autor con datos reales verificables (formación, foto, redes) y revisar las notas del autor, que están escritas en su voz.
 - Los 23 artículos antiguos siguen firmados como «Equipo VIRALIX» y conservan pasajes gráficos en el cuerpo (p. ej., Alcàsser) que conviene revisar.
 - Opcional: redirección 301 de `/sobre-nosotros.html` a `/sobre.html` en `vercel.json`.
+
+## Lote de noviembre (12-nov-2026, rama `feat/batch-articulos-noviembre-2026`)
+Diagnóstico previo en `AUDITORIA.md`. Un commit por artículo y uno por mejora.
+
+- **15 artículos nuevos** escritos desde Markdown con la plantilla del generador: Helena Jubany, Sheila Barrero, Cristina Bergua, Anabel Segura, el robo del Códice Calixtino, el niño de Somosierra, María Soledad Morales, Pedro Alonso López, Juan Fernando Hermosa, José Luis Cabezas, Elisa Lam, la mujer de Isdal, el hombre de Somerton, el Monstruo de Florencia y el robo del museo Gardner.
+- **Plantilla**: nueva categoría «Casos Latinoamérica», bloque de libro recomendado con la etiqueta de afiliado `viralixweb-21` y aviso de Amazon, botón de Buy Me a Coffee y comentario HTML final con fecha, checklist y *prompts* de imágenes opcionales.
+- **Portada**: bloque «Categorías» generado con recuentos reales, sección de Latinoamérica y `Organization` con `sameAs` (Instagram) y `contactPoint`.
+- **Enlazado interno**: listas de relacionados reequilibradas; bloque de relacionados en `articulo-crimen-rol.html`; seis casos nuevos en el timeline.
+- **Técnico**: `robots.txt` limpio, `defer` en los scripts de las páginas antiguas, versión en la hoja de estilos para saltar la caché.
+- **«Sobre VIRALIX»** actualizada con los 55 artículos y la cobertura de Latinoamérica.
+

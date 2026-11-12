@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: Sacamantecas, Juan Díaz de Garayo, Vitoria, Álava, asesino en serie siglo XIX, garrote vil 1881, antropología criminal, Lombroso
 alt_portada: Ilustración editorial con el mapa de Álava resaltado y un marcador sobre Vitoria, junto a las fechas 1870-1879
 pie_portada: Los crímenes se produjeron en caminos y campos de los alrededores de Vitoria.
-relacionados: arropiero, jack-el-destripador, perfil-criminal, calle-fuencarral
+relacionados: arropiero, jack-el-destripador, perfil-criminal, jarabo
 mapa: {"base":"es","extent":[[-3.35,42.45],[-2.1,43.15]],"resaltar":{"provincias":["Araba/Álava"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Álava, 1870-1879","marcadores":[{"lon":-2.6727,"lat":42.8467,"texto":"Vitoria","sub":"Escenario de la mayoría de los crímenes","lado":"izq"},{"lon":-2.385,"lat":42.86,"texto":"Eguílaz","sub":"Pueblo natal de Garayo"}],"etiquetas":[{"lon":-2.75,"lat":43.08,"texto":"Bizkaia","tipo":"pais"},{"lon":-2.45,"lat":42.55,"texto":"La Rioja","tipo":"pais"}]}
 nota_autor: Muchos hemos oído la palabra «sacamantecas» desde pequeños sin saber que detrás había un caso real y seis mujeres asesinadas. Esa es la parte que me incomoda: el apodo sobrevivió en el habla popular y las víctimas se borraron. Me queda una duda que la documentación disponible no resuelve: cuántos crímenes se le atribuyeron por inercia, solo porque encajaban con el monstruo que la prensa ya había fabricado.
 ---

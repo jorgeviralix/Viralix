@@ -55,8 +55,8 @@ const CREDITOS = {
   world: 'Datos cartográficos: Natural Earth (dominio público)',
   us: 'Datos cartográficos: U.S. Census Bureau y Natural Earth (dominio público)',
 };
-const COLORS = { es: '#ef3b22', intl: '#5b93f7', mist: '#d9b04c', crim: '#a587f3' };
-const LABELS = { es: 'True crime · España', intl: 'Casos internacionales', mist: 'Misterios', crim: 'Criminología' };
+const COLORS = { es: '#ef3b22', latam: '#35c48f', intl: '#5b93f7', mist: '#d9b04c', crim: '#a587f3' };
+const LABELS = { es: 'True crime · España', latam: 'Latinoamérica', intl: 'Casos internacionales', mist: 'Misterios', crim: 'Criminología' };
 
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

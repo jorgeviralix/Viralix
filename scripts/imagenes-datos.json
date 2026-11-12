@@ -800,6 +800,1205 @@
   "diagrama": null
  },
  {
+  "slug": "helena-jubany",
+  "titulo": "El crimen de Helena Jubany",
+  "titulo_corto": "El crimen de Helena Jubany",
+  "titulo_portada": "El crimen de Helena Jubany",
+  "categoria": "es",
+  "anio": "2001",
+  "lugar": "Sabadell, Barcelona",
+  "estado": "Pendiente de juicio",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.55,
+     41.2
+    ],
+    [
+     2.85,
+     41.85
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El Vallès Occidental, otoño de 2001",
+   "marcadores": [
+    {
+     "lon": 2.1089,
+     "lat": 41.5463,
+     "texto": "Sabadell",
+     "sub": "Domicilio de Helena y lugar del hallazgo",
+     "lado": "izq"
+    },
+    {
+     "lon": 2.1356,
+     "lat": 41.6103,
+     "texto": "Sentmenat",
+     "sub": "Biblioteca donde trabajaba",
+     "dy": -8
+    },
+    {
+     "lon": 2.4445,
+     "lat": 41.5381,
+     "texto": "Mataró",
+     "sub": "Ciudad natal"
+    },
+    {
+     "lon": 2.1734,
+     "lat": 41.3851,
+     "texto": "Barcelona",
+     "sub": "Audiencia Provincial"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.55,
+     "lat": 41.3,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "17 sep 2001",
+    "Primer anónimo en la puerta de Helena: una horchata, pastas y una nota."
+   ],
+   [
+    "9 oct 2001",
+    "Segundo anónimo. El zumo contiene benzodiacepinas."
+   ],
+   [
+    "30 nov 2001",
+    "Último día en que se tiene noticia de Helena."
+   ],
+   [
+    "2 dic 2001",
+    "Su cuerpo aparece en el patio de un edificio de Sabadell."
+   ],
+   [
+    "Feb 2002",
+    "Detención de Montse Careta y, después, de Ana Echaguibel."
+   ],
+   [
+    "7 may 2002",
+    "Careta muere en la prisión de Wad-Ras. Deja escrito que es inocente."
+   ],
+   [
+    "2005",
+    "Sobreseimiento provisional de la causa."
+   ],
+   [
+    "2021",
+    "El juzgado reabre el caso semanas antes de la prescripción."
+   ],
+   [
+    "Nov 2024",
+    "Informe de ADN sobre el jersey de la víctima."
+   ],
+   [
+    "Nov 2025",
+    "Prisión provisional para el único investigado."
+   ],
+   [
+    "Ene 2026",
+    "La Audiencia de Barcelona lo deja en libertad provisional."
+   ],
+   [
+    "Oct 2026",
+    "La Fiscalía pide juicio con jurado; la defensa, el archivo."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Helena Jubany i Lorente, 27 años, bibliotecaria"
+    ],
+    [
+     "Lugar",
+     "Sabadell (Barcelona)"
+    ],
+    [
+     "Fecha",
+     "2 de diciembre de 2001"
+    ],
+    [
+     "Hechos previos",
+     "Dos anónimos con comida y bebida en septiembre y octubre de 2001"
+    ],
+    [
+     "Instrucción",
+     "Juzgado de Sabadell; archivo provisional en 2005 y reapertura en 2021"
+    ],
+    [
+     "Investigados",
+     "Varias personas del entorno excursionista; hoy, un único investigado"
+    ],
+    [
+     "Condenas",
+     "Ninguna"
+    ],
+    [
+     "Estado",
+     "Pendiente de decidir la apertura de juicio con jurado"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Recorrido judicial",
+   "titulo": "De la azotea al jurado: 25 años de procedimiento",
+   "nota": "Elaboración propia de VIRALIX a partir de la información judicial publicada. Ninguna persona ha sido condenada.",
+   "pasos": [
+    [
+     "2001 · El crimen",
+     "Dos anónimos en otoño y el hallazgo del cuerpo el 2 de diciembre."
+    ],
+    [
+     "2002 · Detenciones",
+     "Dos mujeres del entorno excursionista son detenidas; una muere en prisión preventiva."
+    ],
+    [
+     "2005 · Archivo",
+     "La causa se sobresee de forma provisional sin acusados."
+    ],
+    [
+     "2021 · Reapertura",
+     "La familia logra reabrirla semanas antes de la prescripción."
+    ],
+    [
+     "2024 · ADN",
+     "Un informe policial halla coincidencias genéticas en el jersey de la víctima."
+    ],
+    [
+     "2026 · Ante el juicio",
+     "La Fiscalía pide jurado popular; la defensa, el archivo."
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "sheila-barrero",
+  "titulo": "El caso Sheila Barrero",
+  "titulo_corto": "El caso Sheila Barrero",
+  "titulo_portada": "El caso Sheila Barrero",
+  "categoria": "es",
+  "anio": "2004",
+  "lugar": "Degaña, Asturias",
+  "estado": "Archivado sin juicio",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -7.25,
+     42.55
+    ],
+    [
+     -5.2,
+     43.75
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Asturias"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Entre Laciana y Degaña, enero de 2004",
+   "marcadores": [
+    {
+     "lon": -6.52,
+     "lat": 42.945,
+     "texto": "Alto de La Collada",
+     "sub": "Lugar del hallazgo · 25 ene 2004",
+     "dy": -10
+    },
+    {
+     "lon": -6.319,
+     "lat": 42.939,
+     "texto": "Villablino (León)",
+     "sub": "Donde trabajaba los fines de semana"
+    },
+    {
+     "lon": -6.549,
+     "lat": 43.177,
+     "texto": "Cangas del Narcea",
+     "sub": "Juzgado de instrucción",
+     "lado": "izq"
+    },
+    {
+     "lon": -5.661,
+     "lat": 43.545,
+     "texto": "Gijón",
+     "sub": "Donde vivía entre semana"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -6.0,
+     "lat": 42.7,
+     "texto": "León",
+     "tipo": "pais"
+    },
+    {
+     "lon": -6.3,
+     "lat": 43.66,
+     "texto": "Mar Cantábrico",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "24 ene 2004",
+    "Sheila trabaja su turno de fin de semana en un pub de Villablino (León)."
+   ],
+   [
+    "25 ene 2004",
+    "De madrugada emprende el regreso a Degaña. A mediodía su hermano encuentra el coche en el alto de La Collada."
+   ],
+   [
+    "2004",
+    "La Guardia Civil investiga a un joven de su entorno. Se le detectan residuos de disparo."
+   ],
+   [
+    "2007",
+    "Primer sobreseimiento provisional por falta de pruebas."
+   ],
+   [
+    "2015",
+    "El juzgado reabre la causa para practicar nuevos análisis."
+   ],
+   [
+    "Dic 2019",
+    "La Fiscalía solicita otra vez el archivo."
+   ],
+   [
+    "2020",
+    "El juzgado de Cangas del Narcea archiva; la Audiencia Provincial lo confirma en septiembre."
+   ],
+   [
+    "Ene 2024",
+    "Se cumplen veinte años del crimen sin que nadie haya sido juzgado."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Sheila Barrero Fernández, 22 años"
+    ],
+    [
+     "Lugar",
+     "Alto de La Collada, concejo de Degaña (Asturias)"
+    ],
+    [
+     "Fecha",
+     "25 de enero de 2004"
+    ],
+    [
+     "Causa de la muerte",
+     "Disparo en la cabeza con un arma corta de pequeño calibre"
+    ],
+    [
+     "Investigación",
+     "Guardia Civil; Juzgado de Instrucción n.º 1 de Cangas del Narcea"
+    ],
+    [
+     "Investigados",
+     "Uno, nunca acusado formalmente"
+    ],
+    [
+     "Resoluciones",
+     "Archivo en 2007, reapertura en 2015 y nuevo archivo en 2020"
+    ],
+    [
+     "Estado",
+     "Sobreseimiento provisional"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Recorrido judicial",
+   "titulo": "Dos aperturas, dos archivos",
+   "nota": "Elaboración propia de VIRALIX a partir de las notas del Poder Judicial y de la prensa regional. Nadie ha sido juzgado.",
+   "pasos": [
+    [
+     "2004 · El crimen",
+     "Sheila aparece muerta en su coche. La Guardia Civil investiga a un joven de su entorno."
+    ],
+    [
+     "2007 · Primer archivo",
+     "El juzgado de Cangas del Narcea sobresee la causa por falta de pruebas."
+    ],
+    [
+     "2015 · Reapertura",
+     "Se reabre para aplicar técnicas de análisis que no existían en 2004."
+    ],
+    [
+     "2019 · La Fiscalía",
+     "El ministerio público pide un nuevo sobreseimiento provisional."
+    ],
+    [
+     "2020 · Segundo archivo",
+     "El juzgado archiva y la Audiencia Provincial lo confirma."
+    ],
+    [
+     "2024 · Veinte años",
+     "La familia sigue reclamando que el caso no se dé por perdido."
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "cristina-bergua",
+  "titulo": "La desaparición de Cristina Bergua",
+  "titulo_corto": "La desaparición de Cristina Bergua",
+  "titulo_portada": "La desaparición de Cristina Bergua",
+  "categoria": "es",
+  "anio": "1997",
+  "lugar": "Cornellà de Llobregat, Barcelona",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.6,
+     41.12
+    ],
+    [
+     2.6,
+     41.62
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El Baix Llobregat, marzo de 1997",
+   "marcadores": [
+    {
+     "lon": 2.0747,
+     "lat": 41.3559,
+     "texto": "Cornellà de Llobregat",
+     "sub": "Desaparición · 9 mar 1997",
+     "lado": "izq",
+     "dy": -6
+    },
+    {
+     "lon": 1.93,
+     "lat": 41.3,
+     "texto": "Vertedero del Garraf",
+     "sub": "Búsqueda tras un anónimo",
+     "lado": "izq",
+     "dy": 10
+    },
+    {
+     "lon": 2.1734,
+     "lat": 41.3851,
+     "texto": "Barcelona",
+     "sub": "A 10 km de Cornellà"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.3,
+     "lat": 41.22,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "9 mar 1997",
+    "Cristina sale de casa en Cornellà. Debe volver a las diez de la noche."
+   ],
+   [
+    "9 mar 1997",
+    "Su pareja declara haberla acompañado parte del camino de vuelta."
+   ],
+   [
+    "Mar 1997",
+    "La familia denuncia y empapela la ciudad con carteles."
+   ],
+   [
+    "1997",
+    "Una carta anónima señala el vertedero del Garraf. La búsqueda dura semanas y no da resultado."
+   ],
+   [
+    "1998",
+    "Los Bergua impulsan, con otras familias, la asociación Inter-SOS."
+   ],
+   [
+    "2010",
+    "El Congreso declara el 9 de marzo Día de las personas desaparecidas sin causa aparente."
+   ],
+   [
+    "Mar 2017",
+    "Se cumplen veinte años: el posible delito alcanza el plazo de prescripción."
+   ],
+   [
+    "2017",
+    "El BOE publica el edicto del expediente de declaración de fallecimiento."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Desaparecida",
+     "Cristina Bergua Vera, 16 años"
+    ],
+    [
+     "Lugar",
+     "Cornellà de Llobregat (Barcelona)"
+    ],
+    [
+     "Fecha",
+     "9 de marzo de 1997"
+    ],
+    [
+     "Última persona que la vio",
+     "Su pareja, según su propia declaración"
+    ],
+    [
+     "Investigación",
+     "Policía Nacional y, después, Mossos d'Esquadra"
+    ],
+    [
+     "Búsquedas",
+     "Vertedero del Garraf, sin resultado"
+    ],
+    [
+     "Acusados",
+     "Ninguno"
+    ],
+    [
+     "Estado",
+     "Sin resolver; el cuerpo no ha aparecido"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Antes y después",
+   "titulo": "Denunciar una desaparición: 1997 frente a hoy",
+   "nota": "Elaboración propia de VIRALIX a partir de la información pública del Ministerio del Interior y del Centro Nacional de Desaparecidos.",
+   "grupos": [
+    {
+     "factor": "1997",
+     "nombre": "La denuncia",
+     "rasgos": [
+      "Sin protocolo nacional unificado",
+      "Las ausencias de adolescentes se trataban a menudo como fugas",
+      "Extendida la idea de esperar 24 o 48 horas"
+     ]
+    },
+    {
+     "factor": "1997",
+     "nombre": "La búsqueda",
+     "rasgos": [
+      "Sin base de datos compartida entre cuerpos",
+      "Carteles y batidas organizados por las familias",
+      "Escasa coordinación entre policías"
+     ]
+    },
+    {
+     "factor": "Hoy",
+     "nombre": "La denuncia",
+     "rasgos": [
+      "Se recoge de inmediato, sin plazos de espera",
+      "Valoración del riesgo desde el primer momento",
+      "Las desapariciones de menores se consideran de alto riesgo"
+     ]
+    },
+    {
+     "factor": "Hoy",
+     "nombre": "La búsqueda",
+     "rasgos": [
+      "Base de datos nacional de personas desaparecidas y restos humanos",
+      "Centro Nacional de Desaparecidos",
+      "Alertas públicas y cotejo de ADN de familiares"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "anabel-segura",
+  "titulo": "El secuestro de Anabel Segura",
+  "titulo_corto": "El secuestro de Anabel Segura",
+  "titulo_portada": "El secuestro de Anabel Segura",
+  "categoria": "es",
+  "anio": "1993",
+  "lugar": "Alcobendas, Madrid",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -4.7,
+     39.65
+    ],
+    [
+     -2.95,
+     40.8
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid",
+     "Toledo"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "De La Moraleja a La Sagra, 1993-1995",
+   "marcadores": [
+    {
+     "lon": -3.635,
+     "lat": 40.515,
+     "texto": "La Moraleja (Alcobendas)",
+     "sub": "Secuestro · 12 abr 1993"
+    },
+    {
+     "lon": -3.848,
+     "lat": 40.075,
+     "texto": "Numancia de la Sagra",
+     "sub": "Fábrica abandonada donde fue hallada",
+     "lado": "izq"
+    },
+    {
+     "lon": -4.024,
+     "lat": 39.857,
+     "texto": "Toledo",
+     "sub": "Audiencia Provincial",
+     "lado": "izq"
+    },
+    {
+     "lon": -3.7038,
+     "lat": 40.4168,
+     "texto": "Madrid",
+     "sub": "",
+     "lado": "izq"
+    }
+   ],
+   "ruta": [
+    [
+     -3.635,
+     40.515
+    ],
+    [
+     -3.62,
+     40.3
+    ],
+    [
+     -3.848,
+     40.075
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -3.3,
+     "lat": 39.8,
+     "texto": "Castilla-La Mancha",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "12 abr 1993",
+    "Anabel Segura es secuestrada mientras corre por La Moraleja. Muere esa misma noche en Toledo."
+   ],
+   [
+    "14 abr 1993",
+    "Primera llamada: los captores piden 150 millones de pesetas."
+   ],
+   [
+    "Abr-may 1993",
+    "Fracasan dos intentos de entrega del rescate."
+   ],
+   [
+    "Jun 1993",
+    "La familia recibe una cinta con una voz que finge ser la de Anabel."
+   ],
+   [
+    "1993-1995",
+    "La policía analiza las grabaciones. Las comunicaciones cesan."
+   ],
+   [
+    "1995",
+    "Se difunde públicamente la voz del secuestrador. Llegan miles de llamadas."
+   ],
+   [
+    "28 sep 1995",
+    "Detención de los tres implicados y hallazgo del cuerpo en Numancia de la Sagra."
+   ],
+   [
+    "Finales de los 90",
+    "Condena de 39 años en Toledo; el Supremo la eleva a 43 años y 10 meses."
+   ],
+   [
+    "2009",
+    "Cándido Ortiz muere en prisión."
+   ],
+   [
+    "2013",
+    "Emilio Muñoz sale en libertad."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "Anabel Segura Foles, 22 años, estudiante"
+    ],
+    [
+     "Lugar del secuestro",
+     "La Moraleja, Alcobendas (Madrid)"
+    ],
+    [
+     "Fecha",
+     "12 de abril de 1993"
+    ],
+    [
+     "Rescate exigido",
+     "150 millones de pesetas"
+    ],
+    [
+     "Hallazgo",
+     "28 de septiembre de 1995, Numancia de la Sagra (Toledo)"
+    ],
+    [
+     "Autores",
+     "Emilio Muñoz Guadix y Cándido Ortiz Añón"
+    ],
+    [
+     "Condena",
+     "39 años, elevada a 43 años y 10 meses por el Tribunal Supremo"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La investigación",
+   "titulo": "De una cinta de casete a dos detenidos",
+   "nota": "Elaboración propia de VIRALIX a partir de las informaciones publicadas sobre la investigación policial.",
+   "pasos": [
+    [
+     "Las llamadas",
+     "Los secuestradores telefonean desde cabinas para exigir el rescate."
+    ],
+    [
+     "La cinta",
+     "Envían una grabación con la voz de una mujer que finge ser Anabel."
+    ],
+    [
+     "El laboratorio",
+     "La policía analiza voces, acentos y ruidos de fondo de las grabaciones."
+    ],
+    [
+     "La difusión",
+     "En 1995 se emite la voz del secuestrador en radio y televisión."
+    ],
+    [
+     "La colaboración",
+     "Miles de ciudadanos llaman. Varias pistas señalan a la misma zona de Toledo."
+    ],
+    [
+     "Las detenciones",
+     "El 28 de septiembre de 1995 caen los autores y se localiza el cuerpo."
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "codice-calixtino",
+  "titulo": "El robo del Códice Calixtino",
+  "titulo_corto": "El robo del Códice Calixtino",
+  "titulo_portada": "El robo del Códice Calixtino",
+  "categoria": "es",
+  "anio": "2011",
+  "lugar": "Santiago de Compostela, A Coruña",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -9.45,
+     42.25
+    ],
+    [
+     -7.55,
+     43.55
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "A Coruña"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Santiago de Compostela, 2011-2012",
+   "marcadores": [
+    {
+     "lon": -8.5448,
+     "lat": 42.8806,
+     "texto": "Catedral de Santiago",
+     "sub": "Archivo · desaparición en julio de 2011",
+     "dy": -10
+    },
+    {
+     "lon": -8.5806,
+     "lat": 42.8456,
+     "texto": "O Milladoiro (Ames)",
+     "sub": "Garaje donde apareció · 4 jul 2012",
+     "lado": "izq",
+     "dy": 12
+    },
+    {
+     "lon": -8.4115,
+     "lat": 43.3623,
+     "texto": "A Coruña",
+     "sub": "Sede de la Audiencia Provincial"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -9.2,
+     "lat": 43.4,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -7.9,
+     "lat": 42.45,
+     "texto": "Ourense",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "Siglo XII",
+    "Se elabora el *Liber Sancti Jacobi*, conservado desde entonces en Santiago."
+   ],
+   [
+    "5 jul 2011",
+    "El archivo catedralicio detecta que el Códice no está en la cámara de seguridad."
+   ],
+   [
+    "Jul 2011",
+    "La Policía Nacional y el Juzgado de Instrucción n.º 2 de Santiago abren la investigación."
+   ],
+   [
+    "2011-2012",
+    "Seguimientos y escuchas al antiguo electricista de la catedral."
+   ],
+   [
+    "3 jul 2012",
+    "Detención de Manuel Fernández Castiñeiras y de tres familiares."
+   ],
+   [
+    "4 jul 2012",
+    "El Códice aparece en un garaje de O Milladoiro, junto a una gran suma en efectivo."
+   ],
+   [
+    "8 jul 2012",
+    "El manuscrito regresa a la catedral."
+   ],
+   [
+    "Feb 2015",
+    "La Audiencia Provincial de A Coruña lo condena a diez años de prisión."
+   ],
+   [
+    "Nov 2015",
+    "El Tribunal Supremo recalifica la sustracción como robo con fuerza y revisa la pena."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Objeto",
+     "Códice Calixtino (*Liber Sancti Jacobi*), siglo XII"
+    ],
+    [
+     "Lugar",
+     "Archivo de la catedral de Santiago de Compostela"
+    ],
+    [
+     "Desaparición",
+     "Detectada el 5 de julio de 2011"
+    ],
+    [
+     "Recuperación",
+     "4 de julio de 2012, en un garaje de O Milladoiro (Ames)"
+    ],
+    [
+     "Autor",
+     "Manuel Fernández Castiñeiras, electricista"
+    ],
+    [
+     "Instrucción",
+     "Juzgado de Instrucción n.º 2 de Santiago"
+    ],
+    [
+     "Condena",
+     "10 años en la Audiencia Provincial; revisada por el Tribunal Supremo"
+    ],
+    [
+     "Estado",
+     "Resuelto; el manuscrito volvió a la catedral sin daños"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Las claves",
+   "titulo": "Un robo sin violencia y con las llaves puestas",
+   "nota": "Elaboración propia de VIRALIX a partir de los hechos probados en la sentencia y de las informaciones publicadas.",
+   "grupos": [
+    {
+     "factor": "El objeto",
+     "nombre": "Códice Calixtino",
+     "rasgos": [
+      "Manuscrito iluminado del siglo XII",
+      "Cinco libros dedicados al apóstol Santiago",
+      "Incluye la primera guía del Camino"
+     ]
+    },
+    {
+     "factor": "El fallo",
+     "nombre": "La custodia",
+     "rasgos": [
+      "Llaves accesibles junto a la cámara",
+      "Controles basados en la confianza personal",
+      "Vigilancia que no cubría el archivo"
+     ]
+    },
+    {
+     "factor": "El autor",
+     "nombre": "Un hombre de la casa",
+     "rasgos": [
+      "Electricista externo durante más de veinte años",
+      "Conocía rutinas, horarios y accesos",
+      "Resentido tras perder el trabajo"
+     ]
+    },
+    {
+     "factor": "El botín",
+     "nombre": "Mucho más que un libro",
+     "rasgos": [
+      "El Códice, intacto",
+      "Más de un millón y medio de euros en efectivo",
+      "Otros documentos del archivo"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "somosierra",
+  "titulo": "El niño de Somosierra",
+  "titulo_corto": "El niño de Somosierra",
+  "titulo_portada": "El niño de Somosierra",
+  "categoria": "es",
+  "anio": "1986",
+  "lugar": "Puerto de Somosierra, Madrid",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -5.6,
+     37.2
+    ],
+    [
+     0.6,
+     43.6
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid",
+     "Murcia"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El último viaje, 24-25 de junio de 1986",
+   "marcadores": [
+    {
+     "lon": -1.1708,
+     "lat": 37.7239,
+     "texto": "Fuente Álamo (Murcia)",
+     "sub": "Salida · tarde del 24 jun"
+    },
+    {
+     "lon": -2.673,
+     "lat": 39.449,
+     "texto": "Las Pedroñeras",
+     "sub": "Parada para cenar"
+    },
+    {
+     "lon": -3.624,
+     "lat": 40.82,
+     "texto": "Cabanillas de la Sierra",
+     "sub": "Última parada confirmada",
+     "lado": "izq",
+     "dy": 8
+    },
+    {
+     "lon": -3.578,
+     "lat": 41.133,
+     "texto": "Puerto de Somosierra",
+     "sub": "Accidente · amanecer del 25 jun",
+     "dy": -10
+    },
+    {
+     "lon": -2.935,
+     "lat": 43.263,
+     "texto": "Bilbao",
+     "sub": "Destino de la carga"
+    }
+   ],
+   "ruta": [
+    [
+     -1.1708,
+     37.7239
+    ],
+    [
+     -1.85,
+     38.5
+    ],
+    [
+     -2.673,
+     39.449
+    ],
+    [
+     -3.5,
+     40.3
+    ],
+    [
+     -3.624,
+     40.82
+    ],
+    [
+     -3.578,
+     41.133
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -0.3,
+     "lat": 38.6,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    },
+    {
+     "lon": -4.6,
+     "lat": 41.9,
+     "texto": "Castilla y León",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "24 jun 1986",
+    "La familia Martínez Gómez sale de Fuente Álamo (Murcia) en un camión cisterna con destino a Bilbao."
+   ],
+   [
+    "Noche del 24 jun",
+    "Paradas de descanso en Murcia y cena en Las Pedroñeras (Cuenca)."
+   ],
+   [
+    "25 jun, 5:30 aprox.",
+    "Desayunan en un bar de Cabanillas de la Sierra. Es la última vez que se ve al niño."
+   ],
+   [
+    "25 jun, madrugada",
+    "El tacógrafo registra una docena de paradas brevísimas durante la subida al puerto."
+   ],
+   [
+    "25 jun, 6:30 aprox.",
+    "El camión vuelca en el kilómetro 95 de la N-I. Mueren Andrés y Carmen."
+   ],
+   [
+    "Jun-jul 1986",
+    "Batidas de la Guardia Civil y voluntarios. Se descarta que el ácido destruyera el cuerpo."
+   ],
+   [
+    "1986-1987",
+    "Se investiga una furgoneta blanca vista por testigos. Sin resultado."
+   ],
+   [
+    "1987",
+    "Primeros testimonios de supuestos avistamientos, nunca confirmados."
+   ],
+   [
+    "2008",
+    "La abuela del niño aporta una muestra de ADN."
+   ],
+   [
+    "Jun 2026",
+    "Se cumplen cuarenta años sin ninguna certeza."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Desaparecido",
+     "Juan Pedro Martínez Gómez, 10 años"
+    ],
+    [
+     "Fallecidos",
+     "Andrés Martínez y Carmen Gómez, sus padres"
+    ],
+    [
+     "Lugar",
+     "Puerto de Somosierra (Madrid), carretera N-I"
+    ],
+    [
+     "Fecha",
+     "25 de junio de 1986"
+    ],
+    [
+     "Vehículo",
+     "Camión cisterna cargado de ácido sulfúrico"
+    ],
+    [
+     "Origen y destino",
+     "Fuente Álamo (Murcia) – Bilbao"
+    ],
+    [
+     "Investigación",
+     "Guardia Civil"
+    ],
+    [
+     "Estado",
+     "Sin resolver; el niño no ha sido localizado"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Las hipótesis",
+   "titulo": "Cuatro explicaciones y sus problemas",
+   "nota": "Elaboración propia de VIRALIX a partir de la información publicada. Ninguna de las hipótesis ha sido probada.",
+   "grupos": [
+    {
+     "factor": "Hipótesis 1",
+     "nombre": "El ácido",
+     "rasgos": [
+      "El vertido habría destruido el cuerpo",
+      "Los expertos la rechazaron: habrían quedado restos",
+      "Se cribó la zona sin hallar nada"
+     ]
+    },
+    {
+     "factor": "Hipótesis 2",
+     "nombre": "Salió por su pie",
+     "rasgos": [
+      "Desorientado, se habría alejado del lugar",
+      "Las batidas cubrieron kilómetros a la redonda",
+      "Nadie lo vio en la carretera"
+     ]
+    },
+    {
+     "factor": "Hipótesis 3",
+     "nombre": "Se lo llevaron",
+     "rasgos": [
+      "Testigos hablaron de una furgoneta blanca",
+      "Se revisaron miles de vehículos",
+      "Ninguna pista condujo a nadie"
+     ]
+    },
+    {
+     "factor": "Hipótesis 4",
+     "nombre": "No iba en el camión",
+     "rasgos": [
+      "El tacógrafo registró paradas anómalas",
+      "Teoría de una coacción previa",
+      "Se apoya en indicios, no en pruebas"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
@@ -929,6 +2128,784 @@
    ]
   },
   "diagrama": null
+ },
+ {
+  "slug": "maria-soledad-morales",
+  "titulo": "El caso María Soledad Morales",
+  "titulo_corto": "El caso María Soledad Morales",
+  "titulo_portada": "El caso María Soledad Morales",
+  "categoria": "latam",
+  "anio": "1990",
+  "lugar": "Catamarca, Argentina",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -74,
+     -40
+    ],
+    [
+     -52,
+     -21
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Argentina"
+    ]
+   },
+   "localizador": [
+    [
+     -85,
+     -56
+    ],
+    [
+     -33,
+     13
+    ]
+   ],
+   "titulo": "Noroeste argentino, septiembre de 1990",
+   "marcadores": [
+    {
+     "lon": -65.7795,
+     "lat": -28.4696,
+     "texto": "San Fernando del Valle de Catamarca",
+     "sub": "Crimen · 8 sep 1990",
+     "lado": "izq"
+    },
+    {
+     "lon": -58.3816,
+     "lat": -34.6037,
+     "texto": "Buenos Aires",
+     "sub": "Gobierno nacional y Congreso"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -71.2,
+     "lat": -33.5,
+     "texto": "Chile",
+     "tipo": "pais"
+    },
+    {
+     "lon": -56,
+     "lat": -37.5,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -57.5,
+     "lat": -23.5,
+     "texto": "Paraguay",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "7 sep 1990",
+    "María Soledad asiste a una fiesta de su curso en la discoteca Le Feu Rouge."
+   ],
+   [
+    "8 sep 1990",
+    "De madrugada se encuentra con Luis Tula. Muere horas después."
+   ],
+   [
+    "10 sep 1990",
+    "Hallan su cuerpo junto a la ruta 38, a las afueras de la capital."
+   ],
+   [
+    "14 sep 1990",
+    "Primera Marcha del Silencio, encabezada por sus compañeras y la hermana Martha Pelloni."
+   ],
+   [
+    "1991",
+    "La Cámara de Diputados expulsa a Ángel Luque por sus declaraciones."
+   ],
+   [
+    "Abr 1991",
+    "El Gobierno nacional interviene la provincia y aparta al gobernador Ramón Saadi."
+   ],
+   [
+    "Feb 1996",
+    "Empieza el primer juicio, televisado. Se anula semanas después."
+   ],
+   [
+    "Ago 1997",
+    "Comienza el segundo juicio."
+   ],
+   [
+    "27 feb 1998",
+    "Condenas: 21 años para Guillermo Luque y 9 para Luis Tula."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "María Soledad Morales, 17 años, estudiante"
+    ],
+    [
+     "Lugar",
+     "San Fernando del Valle de Catamarca (Argentina)"
+    ],
+    [
+     "Fecha",
+     "8 de septiembre de 1990"
+    ],
+    [
+     "Hallazgo",
+     "10 de septiembre, junto a la ruta 38"
+    ],
+    [
+     "Condenados",
+     "Guillermo Luque (21 años) y Luis Tula (9 años)"
+    ],
+    [
+     "Delito",
+     "Violación seguida de muerte agravada por el uso de estupefacientes"
+    ],
+    [
+     "Sentencia",
+     "27 de febrero de 1998, tras un primer juicio anulado"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena; el encubrimiento quedó impune"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Las consecuencias",
+   "titulo": "De un crimen a la caída de una dinastía",
+   "nota": "Elaboración propia de VIRALIX a partir de la cobertura de la prensa argentina y de la sentencia de 1998.",
+   "pasos": [
+    [
+     "Sep 1990 · El crimen",
+     "Aparece el cuerpo de María Soledad. La policía provincial altera pruebas."
+    ],
+    [
+     "Sep 1990 · La calle",
+     "Primera Marcha del Silencio, convocada por sus compañeras y la rectora del colegio."
+    ],
+    [
+     "1990-1991 · La presión",
+     "Decenas de marchas y cobertura nacional. Los sospechosos tienen apellidos de poder."
+    ],
+    [
+     "Abr 1991 · La intervención",
+     "El Gobierno nacional interviene la provincia y aparta al gobernador."
+    ],
+    [
+     "1996 · Juicio nulo",
+     "El primer proceso, televisado, se anula por sospechas de parcialidad."
+    ],
+    [
+     "Feb 1998 · Condenas",
+     "21 años para Guillermo Luque y 9 para Luis Tula."
+    ]
+   ]
+  }
+ },
+ {
+  "slug": "pedro-alonso-lopez",
+  "titulo": "El Monstruo de los Andes",
+  "titulo_corto": "El Monstruo de los Andes",
+  "titulo_portada": "Pedro Alonso López, el Monstruo de los Andes",
+  "categoria": "latam",
+  "anio": "1980",
+  "lugar": "Ambato, Ecuador",
+  "estado": "Condenado; paradero desconocido",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -85,
+     -17
+    ],
+    [
+     -63,
+     11
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Colombia",
+     "Ecuador",
+     "Peru"
+    ]
+   },
+   "localizador": [
+    [
+     -95,
+     -56
+    ],
+    [
+     -33,
+     20
+    ]
+   ],
+   "titulo": "Colombia, Ecuador y Perú, década de 1970",
+   "marcadores": [
+    {
+     "lon": -78.6197,
+     "lat": -1.2491,
+     "texto": "Ambato (Ecuador)",
+     "sub": "Detención · 1980",
+     "lado": "izq"
+    },
+    {
+     "lon": -78.4678,
+     "lat": -0.1807,
+     "texto": "Quito",
+     "sub": "Donde cumplió condena",
+     "dy": -10
+    },
+    {
+     "lon": -75.097,
+     "lat": 4.713,
+     "texto": "Tolima (Colombia)",
+     "sub": "Región natal"
+    },
+    {
+     "lon": -74.2236,
+     "lat": -13.1588,
+     "texto": "Ayacucho (Perú)",
+     "sub": "Según su relato, casi fue ajusticiado"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -82.5,
+     "lat": -9,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -67,
+     "lat": -6,
+     "texto": "Brasil",
+     "tipo": "pais"
+    },
+    {
+     "lon": -66.5,
+     "lat": 7.5,
+     "texto": "Venezuela",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1948",
+    "Nace en el departamento de Tolima (Colombia)."
+   ],
+   [
+    "Años 70",
+    "Según su relato, comete sus primeros crímenes en Perú y es expulsado del país."
+   ],
+   [
+    "1978-1980",
+    "Desaparecen decenas de niñas en la sierra central de Ecuador."
+   ],
+   [
+    "1980",
+    "Una crecida deja al descubierto varios cuerpos cerca de Ambato."
+   ],
+   [
+    "1980",
+    "Es retenido en un mercado de Ambato y entregado a la policía."
+   ],
+   [
+    "1980",
+    "Confiesa y conduce a los agentes hasta las tumbas de más de cincuenta víctimas."
+   ],
+   [
+    "1981",
+    "Condenado a 16 años, la pena máxima en Ecuador."
+   ],
+   [
+    "1994",
+    "Sale de prisión y es deportado a Colombia."
+   ],
+   [
+    "1994-1998",
+    "Internado en un hospital psiquiátrico de Bogotá."
+   ],
+   [
+    "1998",
+    "Queda en libertad. Se pierde su rastro."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Pedro Alonso López, nacido en Tolima (Colombia) en 1948"
+    ],
+    [
+     "Detención",
+     "Ambato (Ecuador), 1980"
+    ],
+    [
+     "Confesión",
+     "Unos 300 asesinatos en Colombia, Ecuador y Perú"
+    ],
+    [
+     "Hallazgos",
+     "Decenas de cuerpos localizados en la provincia de Tungurahua"
+    ],
+    [
+     "Condena",
+     "16 años de prisión en Ecuador (1981), la máxima entonces"
+    ],
+    [
+     "Excarcelación",
+     "1994, tras cumplir unos 14 años"
+    ],
+    [
+     "Colombia",
+     "Internado en un psiquiátrico y liberado en 1998"
+    ],
+    [
+     "Estado",
+     "Paradero desconocido"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Hechos y relato",
+   "titulo": "Qué está documentado y qué solo consta por su confesión",
+   "nota": "Elaboración propia de VIRALIX a partir de la prensa ecuatoriana y colombiana. Las cifras de víctimas fuera de Ecuador proceden únicamente del propio condenado.",
+   "grupos": [
+    {
+     "factor": "Documentado",
+     "nombre": "La causa de Ecuador",
+     "rasgos": [
+      "Decenas de cuerpos localizados cerca de Ambato",
+      "Condena en 1981",
+      "16 años: el máximo legal entonces"
+     ]
+    },
+    {
+     "factor": "Según su relato",
+     "nombre": "Lo que él contó",
+     "rasgos": [
+      "Unos 300 crímenes en tres países",
+      "Su infancia y sus años en Perú",
+      "La captura por una comunidad indígena"
+     ]
+    },
+    {
+     "factor": "Lo que falló",
+     "nombre": "Las instituciones",
+     "rasgos": [
+      "Desapariciones tratadas como fugas",
+      "Ninguna coordinación entre países",
+      "Excarcelado sin seguimiento"
+     ]
+    },
+    {
+     "factor": "El final",
+     "nombre": "Paradero",
+     "rasgos": [
+      "Sale de prisión en Ecuador en 1994",
+      "Internado y liberado en Colombia en 1998",
+      "Desde entonces, desconocido"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nino-del-terror",
+  "titulo": "El Niño del Terror",
+  "titulo_corto": "El Niño del Terror",
+  "titulo_portada": "Juan Fernando Hermosa, el Niño del Terror",
+  "categoria": "latam",
+  "anio": "1991-1992",
+  "lugar": "Quito, Ecuador",
+  "estado": "Medida cumplida; fallecido en 1996",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -82.5,
+     -5.6
+    ],
+    [
+     -74.2,
+     2.6
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Ecuador"
+    ]
+   },
+   "localizador": [
+    [
+     -95,
+     -56
+    ],
+    [
+     -33,
+     20
+    ]
+   ],
+   "titulo": "Ecuador, 1991-1996",
+   "marcadores": [
+    {
+     "lon": -78.4678,
+     "lat": -0.1807,
+     "texto": "Quito",
+     "sub": "Crímenes y detención · 1991-1992",
+     "lado": "izq"
+    },
+    {
+     "lon": -76.887,
+     "lat": 0.085,
+     "texto": "Nueva Loja (Sucumbíos)",
+     "sub": "Hallado muerto · 28 feb 1996"
+    },
+    {
+     "lon": -79.53,
+     "lat": -1.8,
+     "texto": "Los Ríos",
+     "sub": "Provincia natal",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -81.6,
+     "lat": -2.6,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -76.2,
+     "lat": 1.9,
+     "texto": "Colombia",
+     "tipo": "pais"
+    },
+    {
+     "lon": -76.3,
+     "lat": -4.6,
+     "texto": "Perú",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "28 feb 1976",
+    "Nace en la provincia de Los Ríos. Es adoptado y crece en Quito."
+   ],
+   [
+    "22 nov 1991",
+    "Primer crimen atribuido a la banda: un taxista, a la salida de una discoteca."
+   ],
+   [
+    "Nov 1991 – ene 1992",
+    "Una veintena de asesinatos de taxistas y hombres homosexuales en Quito."
+   ],
+   [
+    "Ene 1992",
+    "La policía asalta la casa familiar. Muere su madre adoptiva. Hermosa es detenido con 15 años."
+   ],
+   [
+    "1992",
+    "Se le impone la medida máxima para un menor: cuatro años de internamiento."
+   ],
+   [
+    "1993",
+    "Se fuga del centro; en la evasión muere un policía. Es capturado en Colombia."
+   ],
+   [
+    "Inicios de 1996",
+    "Queda en libertad tras cumplir la medida."
+   ],
+   [
+    "28 feb 1996",
+    "Aparece muerto junto al río Aguarico, en Sucumbíos."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Juan Fernando Hermosa Suárez (1976-1996)"
+    ],
+    [
+     "Lugar",
+     "Quito (Ecuador)"
+    ],
+    [
+     "Periodo",
+     "Noviembre de 1991 – enero de 1992"
+    ],
+    [
+     "Víctimas atribuidas",
+     "Una veintena; 22 según el recuento más citado"
+    ],
+    [
+     "Perfil de las víctimas",
+     "Taxistas y hombres homosexuales, sobre todo"
+    ],
+    [
+     "Detención",
+     "Enero de 1992, con 15 años"
+    ],
+    [
+     "Medida",
+     "4 años de internamiento, el máximo para un menor"
+    ],
+    [
+     "Muerte",
+     "28 de febrero de 1996, en Sucumbíos; sin esclarecer"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Derecho comparado",
+   "titulo": "Qué prevé la ley para un homicida de 15 años",
+   "nota": "Elaboración propia de VIRALIX a partir de la legislación citada en las fuentes. Resumen divulgativo: los plazos dependen de cada caso.",
+   "grupos": [
+    {
+     "factor": "Ecuador, 1992",
+     "nombre": "Código de Menores",
+     "rasgos": [
+      "Internamiento máximo de 4 años",
+      "Centro de menores, no prisión",
+      "Libertad al terminar la medida"
+     ]
+    },
+    {
+     "factor": "Ecuador, hoy",
+     "nombre": "Código de la Niñez",
+     "rasgos": [
+      "Internamiento de hasta 8 años",
+      "Jueces especializados",
+      "Medidas socioeducativas"
+     ]
+    },
+    {
+     "factor": "España, hoy",
+     "nombre": "Ley Orgánica 5/2000",
+     "rasgos": [
+      "Hasta 5 años de internamiento a los 14-15",
+      "Hasta 6 si hay varios delitos graves",
+      "Seguidos de libertad vigilada"
+     ]
+    },
+    {
+     "factor": "Marco internacional",
+     "nombre": "Convención de 1989",
+     "rasgos": [
+      "Ni pena capital ni perpetua irrevisable",
+      "La privación de libertad, último recurso",
+      "La reinserción como fin"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "jose-luis-cabezas",
+  "titulo": "El crimen de José Luis Cabezas",
+  "titulo_corto": "El crimen de José Luis Cabezas",
+  "titulo_portada": "El crimen de José Luis Cabezas",
+  "categoria": "latam",
+  "anio": "1997",
+  "lugar": "Pinamar, Argentina",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -60.8,
+     -38.7
+    ],
+    [
+     -55.2,
+     -33.9
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Argentina"
+    ]
+   },
+   "localizador": [
+    [
+     -85,
+     -56
+    ],
+    [
+     -33,
+     13
+    ]
+   ],
+   "titulo": "Costa atlántica bonaerense, enero de 1997",
+   "marcadores": [
+    {
+     "lon": -56.8612,
+     "lat": -37.1099,
+     "texto": "Pinamar",
+     "sub": "Secuestro · 25 ene 1997"
+    },
+    {
+     "lon": -57.1386,
+     "lat": -37.0019,
+     "texto": "General Madariaga",
+     "sub": "Lugar del hallazgo",
+     "lado": "izq"
+    },
+    {
+     "lon": -57.6792,
+     "lat": -36.3132,
+     "texto": "Dolores",
+     "sub": "Sede del juicio",
+     "lado": "izq"
+    },
+    {
+     "lon": -58.3816,
+     "lat": -34.6037,
+     "texto": "Buenos Aires",
+     "sub": "Redacción de Noticias",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -56.2,
+     "lat": -36.0,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -56.6,
+     "lat": -34.3,
+     "texto": "Uruguay",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1995",
+    "El ministro Domingo Cavallo acusa a Alfredo Yabrán de dirigir una mafia."
+   ],
+   [
+    "3 mar 1996",
+    "*Noticias* publica en portada la primera fotografía de Yabrán, tomada por Cabezas en Pinamar."
+   ],
+   [
+    "25 ene 1997",
+    "Cabezas es secuestrado y asesinado. Su cuerpo aparece en un coche incendiado."
+   ],
+   [
+    "Feb 1997",
+    "Detención de *Los Pepitos*; la pista resulta ser falsa."
+   ],
+   [
+    "1997",
+    "Caen *Los Horneros* y los policías implicados."
+   ],
+   [
+    "20 may 1998",
+    "Yabrán se suicida cuando iba a ser detenido."
+   ],
+   [
+    "2 feb 2000",
+    "Sentencia de Dolores: ocho condenas a prisión perpetua."
+   ],
+   [
+    "2002",
+    "Condena al comisario de Pinamar por liberar la zona."
+   ],
+   [
+    "Años siguientes",
+    "Las instancias superiores reducen penas; los condenados van quedando en libertad."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Víctima",
+     "José Luis Cabezas, 35 años, reportero gráfico de *Noticias*"
+    ],
+    [
+     "Lugar",
+     "Pinamar y General Madariaga (provincia de Buenos Aires)"
+    ],
+    [
+     "Fecha",
+     "25 de enero de 1997"
+    ],
+    [
+     "Señalado como instigador",
+     "Alfredo Yabrán, que se suicidó en 1998 antes de ser detenido"
+    ],
+    [
+     "Juicio",
+     "Dolores; sentencia del 2 de febrero de 2000"
+    ],
+    [
+     "Condenados",
+     "Ocho personas, entre policías, sicarios y un jefe de seguridad"
+    ],
+    [
+     "Penas",
+     "Prisión perpetua, reducidas después en instancias superiores"
+    ],
+    [
+     "Estado",
+     "Resuelto con condena; ningún condenado sigue en prisión"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La trama",
+   "titulo": "Quién hizo qué, según la justicia",
+   "nota": "Elaboración propia de VIRALIX a partir de la sentencia del juicio de Dolores (2000) y de la cobertura de la prensa argentina.",
+   "pasos": [
+    [
+     "El origen",
+     "Una fotografía de 1996 muestra por primera vez a un empresario que rehuía toda exposición."
+    ],
+    [
+     "El instigador",
+     "El jefe de seguridad del empresario encarga «un trabajo» contra el fotógrafo."
+    ],
+    [
+     "El organizador",
+     "Un oficial de la policía bonaerense planifica el secuestro y recluta a los ejecutores."
+    ],
+    [
+     "La vigilancia",
+     "Otros dos policías siguen los movimientos de la víctima en Pinamar."
+    ],
+    [
+     "Los ejecutores",
+     "Cuatro hombres de un barrio de La Plata participan en el secuestro y el crimen."
+    ],
+    [
+     "El amparo",
+     "La zona queda sin vigilancia policial; un comisario será condenado por ello en 2002."
+    ]
+   ]
+  }
  },
  {
   "slug": "jack-el-destripador",
@@ -1707,6 +3684,404 @@
   "diagrama": null
  },
  {
+  "slug": "monstruo-de-florencia",
+  "titulo": "El Monstruo de Florencia",
+  "titulo_corto": "El Monstruo de Florencia",
+  "titulo_portada": "El Monstruo de Florencia",
+  "categoria": "intl",
+  "anio": "1968-1985",
+  "lugar": "Florencia, Italia",
+  "estado": "Condenas parciales",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     10.55,
+     43.42
+    ],
+    [
+     11.95,
+     44.18
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Italy"
+    ]
+   },
+   "localizador": [
+    [
+     5.5,
+     36
+    ],
+    [
+     19.5,
+     47.5
+    ]
+   ],
+   "titulo": "Las colinas de Florencia, 1968-1985",
+   "marcadores": [
+    {
+     "lon": 11.2558,
+     "lat": 43.7696,
+     "texto": "Florencia",
+     "sub": "Sede de los juicios",
+     "dy": -6
+    },
+    {
+     "lon": 11.097,
+     "lat": 43.782,
+     "texto": "Signa",
+     "sub": "Primer crimen · 1968",
+     "lado": "izq"
+    },
+    {
+     "lon": 11.385,
+     "lat": 43.955,
+     "texto": "Borgo San Lorenzo",
+     "sub": "1974",
+     "lado": "izq"
+    },
+    {
+     "lon": 11.465,
+     "lat": 43.932,
+     "texto": "Vicchio",
+     "sub": "1984",
+     "dy": 8
+    },
+    {
+     "lon": 11.186,
+     "lat": 43.657,
+     "texto": "San Casciano Val di Pesa",
+     "sub": "Último crimen · 1985"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 11.7,
+     "lat": 43.55,
+     "texto": "Toscana",
+     "tipo": "pais"
+    },
+    {
+     "lon": 10.85,
+     "lat": 44.08,
+     "texto": "Apeninos",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "21 ago 1968",
+    "Doble crimen de Signa. Stefano Mele, marido de la víctima, es condenado."
+   ],
+   [
+    "14 sep 1974",
+    "Segundo doble crimen, cerca de Borgo San Lorenzo."
+   ],
+   [
+    "Jun y oct 1981",
+    "Dos nuevos ataques. La prensa habla de *il Mostro*."
+   ],
+   [
+    "1982",
+    "La balística vincula la serie con el crimen de 1968."
+   ],
+   [
+    "1982-1984",
+    "Detenciones de la pista sarda. Los crímenes continúan."
+   ],
+   [
+    "Sep 1985",
+    "Último ataque, en San Casciano. El asesino envía una carta a una fiscal."
+   ],
+   [
+    "1989",
+    "Archivo de la pista sarda."
+   ],
+   [
+    "1 nov 1994",
+    "Pietro Pacciani, condenado a cadena perpetua."
+   ],
+   [
+    "13 feb 1996",
+    "Absuelto en apelación. En diciembre, Casación ordena repetir el juicio."
+   ],
+   [
+    "Feb 1998",
+    "Pacciani muere antes del nuevo proceso."
+   ],
+   [
+    "Sep 2000",
+    "Condenas firmes de Mario Vanni y Giancarlo Lotti."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Periodo",
+     "1968-1985"
+    ],
+    [
+     "Lugar",
+     "Provincia de Florencia (Italia)"
+    ],
+    [
+     "Ataques",
+     "Ocho, siempre contra parejas"
+    ],
+    [
+     "Víctimas",
+     "Dieciséis personas"
+    ],
+    [
+     "Arma",
+     "Una pistola Beretta del calibre 22, nunca hallada"
+    ],
+    [
+     "Principal acusado",
+     "Pietro Pacciani, condenado en 1994 y absuelto en 1996"
+    ],
+    [
+     "Condenas firmes",
+     "Mario Vanni (cadena perpetua) y Giancarlo Lotti (26 años), en 2000"
+    ],
+    [
+     "Estado",
+     "Cerrado judicialmente solo en parte"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "La investigación",
+   "titulo": "Cuatro pistas en cuatro décadas",
+   "nota": "Elaboración propia de VIRALIX a partir de las resoluciones judiciales italianas y de la prensa de Florencia.",
+   "grupos": [
+    {
+     "factor": "1982-1989",
+     "nombre": "La pista sarda",
+     "rasgos": [
+      "Parte del doble crimen de 1968",
+      "Varios detenidos del entorno de la primera víctima",
+      "Todos exculpados"
+     ]
+    },
+    {
+     "factor": "1991-1998",
+     "nombre": "Pietro Pacciani",
+     "rasgos": [
+      "Condenado en 1994",
+      "Absuelto en apelación en 1996",
+      "Murió antes de repetirse el juicio"
+     ]
+    },
+    {
+     "factor": "1996-2000",
+     "nombre": "Compagni di merende",
+     "rasgos": [
+      "Un coimputado acusa al grupo",
+      "Vanni y Lotti, condenados en firme",
+      "Solo por cuatro de los ocho ataques"
+     ]
+    },
+    {
+     "factor": "2001-2008",
+     "nombre": "El «segundo nivel»",
+     "rasgos": [
+      "Supuestos instigadores",
+      "Hipótesis de móvil esotérico",
+      "Ninguna condena"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "robo-museo-gardner",
+  "titulo": "El robo del museo Gardner",
+  "titulo_corto": "El robo del museo Gardner",
+  "titulo_portada": "El robo del museo Gardner",
+  "categoria": "intl",
+  "anio": "1990",
+  "lugar": "Boston, Estados Unidos",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -78.5,
+     38.3
+    ],
+    [
+     -68,
+     44.3
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "Massachusetts"
+    ]
+   },
+   "localizador": [
+    [
+     -126,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "Noreste de Estados Unidos, 1990-2013",
+   "marcadores": [
+    {
+     "lon": -71.0589,
+     "lat": 42.3601,
+     "texto": "Boston",
+     "sub": "Museo Gardner · 18 mar 1990"
+    },
+    {
+     "lon": -72.6734,
+     "lat": 41.7658,
+     "texto": "Connecticut",
+     "sub": "Donde el FBI sitúa las obras en los años noventa",
+     "lado": "izq"
+    },
+    {
+     "lon": -75.1652,
+     "lat": 39.9526,
+     "texto": "Filadelfia",
+     "sub": "Intento de venta hacia 2002, según el FBI",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -69.5,
+     "lat": 40.3,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -76.3,
+     "lat": 43.4,
+     "texto": "Nueva York",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1903",
+    "Isabella Stewart Gardner abre su museo en Boston."
+   ],
+   [
+    "1924",
+    "Muere. Su testamento prohíbe cambiar la disposición de la colección."
+   ],
+   [
+    "18 mar 1990, 1:24",
+    "Dos falsos policías entran en el museo."
+   ],
+   [
+    "18 mar 1990, 2:45",
+    "Se marchan con trece obras."
+   ],
+   [
+    "1995",
+    "Prescribe el delito de robo."
+   ],
+   [
+    "2013",
+    "El FBI anuncia que ha identificado a los autores, sin dar nombres."
+   ],
+   [
+    "2015",
+    "Se difunde un vídeo de la noche anterior al robo."
+   ],
+   [
+    "2017",
+    "El museo eleva la recompensa a 10 millones de dólares."
+   ],
+   [
+    "2021",
+    "Muere Robert Gentile, último gran sospechoso de conocer el paradero."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Isabella Stewart Gardner Museum, Boston (Massachusetts)"
+    ],
+    [
+     "Fecha",
+     "18 de marzo de 1990, entre la 1:24 y las 2:45"
+    ],
+    [
+     "Autores",
+     "Dos hombres disfrazados de policías; no identificados oficialmente"
+    ],
+    [
+     "Botín",
+     "Trece obras"
+    ],
+    [
+     "Valor estimado",
+     "Unos 500 millones de dólares"
+    ],
+    [
+     "Investigación",
+     "FBI y fiscalía federal de Massachusetts"
+    ],
+    [
+     "Recompensa",
+     "10 millones de dólares por información que permita recuperarlas"
+    ],
+    [
+     "Estado",
+     "Sin resolver; ninguna obra recuperada"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La noche del robo",
+   "titulo": "81 minutos dentro del museo",
+   "nota": "Elaboración propia de VIRALIX a partir de la reconstrucción publicada por el museo y el FBI. Las horas proceden de los sensores de movimiento.",
+   "pasos": [
+    [
+     "1:24 · La puerta",
+     "Dos hombres vestidos de policía llaman a la entrada de servicio. El vigilante les abre."
+    ],
+    [
+     "Minutos después",
+     "Reducen a los dos vigilantes, los esposan y los inmovilizan en el sótano."
+    ],
+    [
+     "Sala Holandesa",
+     "Se llevan tres Rembrandt, un Vermeer, un paisaje de Flinck y un vaso de bronce chino."
+    ],
+    [
+     "Galería Corta",
+     "Cinco dibujos de Degas y el remate en forma de águila de una bandera napoleónica."
+    ],
+    [
+     "Sala Azul",
+     "Desaparece un Manet. Los sensores no registran allí el paso de los ladrones."
+    ],
+    [
+     "2:45 · La salida",
+     "Se marchan en dos viajes. Nadie da la alarma hasta el cambio de turno."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "paso-dyatlov",
   "titulo": "El incidente del paso Diátlov",
   "titulo_corto": "El incidente del paso Diátlov",
@@ -2158,6 +4533,623 @@
    ]
   },
   "diagrama": null
+ },
+ {
+  "slug": "elisa-lam",
+  "titulo": "Elisa Lam y el Hotel Cecil",
+  "titulo_corto": "Elisa Lam y el Hotel Cecil",
+  "titulo_portada": "Elisa Lam y el Hotel Cecil",
+  "categoria": "mist",
+  "anio": "2013",
+  "lugar": "Los Ángeles, Estados Unidos",
+  "estado": "Muerte accidental",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -127,
+     31.2
+    ],
+    [
+     -111,
+     50.6
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "California"
+    ]
+   },
+   "localizador": [
+    [
+     -130,
+     23
+    ],
+    [
+     -64,
+     52
+    ]
+   ],
+   "titulo": "El viaje por la costa oeste, enero de 2013",
+   "marcadores": [
+    {
+     "lon": -123.1207,
+     "lat": 49.2827,
+     "texto": "Vancouver (Canadá)",
+     "sub": "Su ciudad"
+    },
+    {
+     "lon": -117.1611,
+     "lat": 32.7157,
+     "texto": "San Diego",
+     "sub": "Primera etapa"
+    },
+    {
+     "lon": -118.2437,
+     "lat": 34.0522,
+     "texto": "Los Ángeles",
+     "sub": "Hotel Cecil · desde el 28 ene",
+     "dy": -10
+    },
+    {
+     "lon": -122.4194,
+     "lat": 37.7749,
+     "texto": "San Francisco",
+     "sub": "Destino previsto"
+    }
+   ],
+   "ruta": [
+    [
+     -117.1611,
+     32.7157
+    ],
+    [
+     -118.2437,
+     34.0522
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -125.2,
+     "lat": 40.5,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -115.5,
+     "lat": 39.5,
+     "texto": "Nevada",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "26 ene 2013",
+    "Elisa Lam llega a Los Ángeles desde San Diego."
+   ],
+   [
+    "28 ene 2013",
+    "Se registra en el Hotel Cecil, en una habitación compartida."
+   ],
+   [
+    "30 ene 2013",
+    "El hotel la traslada a una habitación individual tras las quejas de sus compañeras."
+   ],
+   [
+    "31 ene 2013",
+    "Visita una librería. No llama a sus padres. Última vez que se la ve."
+   ],
+   [
+    "1 feb 2013",
+    "Hora aproximada de la grabación del ascensor."
+   ],
+   [
+    "13 feb 2013",
+    "La policía difunde el vídeo."
+   ],
+   [
+    "19 feb 2013",
+    "Un empleado encuentra su cuerpo en un depósito de la azotea."
+   ],
+   [
+    "Jun 2013",
+    "El forense concluye que fue un ahogamiento accidental."
+   ],
+   [
+    "2015",
+    "Se desestima la demanda civil de la familia contra el hotel."
+   ],
+   [
+    "2021",
+    "Un documental revisa el caso y desmonta las principales teorías."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Elisa Lam, 21 años, estudiante canadiense"
+    ],
+    [
+     "Lugar",
+     "Hotel Cecil, centro de Los Ángeles (California)"
+    ],
+    [
+     "Última vez vista",
+     "31 de enero de 2013"
+    ],
+    [
+     "Vídeo del ascensor",
+     "Difundido por la policía el 13 de febrero"
+    ],
+    [
+     "Hallazgo",
+     "19 de febrero, en un depósito de agua de la azotea"
+    ],
+    [
+     "Informe forense",
+     "Ahogamiento accidental; el trastorno bipolar, factor significativo"
+    ],
+    [
+     "Investigación",
+     "Departamento de Policía de Los Ángeles"
+    ],
+    [
+     "Estado",
+     "Caso cerrado sin indicios de delito"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Mito y dato",
+   "titulo": "Cuatro puntos del caso, explicados",
+   "nota": "Elaboración propia de VIRALIX a partir del informe forense del condado de Los Ángeles y de la documentación judicial publicada.",
+   "grupos": [
+    {
+     "factor": "El vídeo",
+     "nombre": "El ascensor",
+     "rasgos": [
+      "No oculta a ninguna otra persona",
+      "Las puertas no cierran por el botón de retención",
+      "Su conducta es compatible con una crisis psicótica"
+     ]
+    },
+    {
+     "factor": "El acceso",
+     "nombre": "La azotea",
+     "rasgos": [
+      "La puerta tenía alarma",
+      "La escalera de incendios, no",
+      "Los depósitos tenían escalera lateral"
+     ]
+    },
+    {
+     "factor": "La autopsia",
+     "nombre": "El informe forense",
+     "rasgos": [
+      "Ahogamiento accidental",
+      "Sin lesiones ni signos de agresión",
+      "Medicación por debajo de lo pautado"
+     ]
+    },
+    {
+     "factor": "Los señalados",
+     "nombre": "El daño colateral",
+     "rasgos": [
+      "Un músico acusado sin pruebas",
+      "No estaba en el país en esas fechas",
+      "Sufrió un acoso masivo"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mujer-de-isdal",
+  "titulo": "La mujer de Isdal",
+  "titulo_corto": "La mujer de Isdal",
+  "titulo_portada": "La mujer de Isdal",
+  "categoria": "mist",
+  "anio": "1970",
+  "lugar": "Bergen, Noruega",
+  "estado": "Sin identificar",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -2,
+     48.2
+    ],
+    [
+     20,
+     65.2
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Norway"
+    ]
+   },
+   "localizador": [
+    [
+     -25,
+     34
+    ],
+    [
+     45,
+     72
+    ]
+   ],
+   "titulo": "Noruega y el norte de Europa, 1970",
+   "marcadores": [
+    {
+     "lon": 5.3221,
+     "lat": 60.3913,
+     "texto": "Bergen",
+     "sub": "Isdalen · hallazgo el 29 nov 1970",
+     "lado": "izq"
+    },
+    {
+     "lon": 5.7331,
+     "lat": 58.97,
+     "texto": "Stavanger",
+     "sub": "Hoteles y compra de las botas",
+     "lado": "izq"
+    },
+    {
+     "lon": 10.3951,
+     "lat": 63.4305,
+     "texto": "Trondheim",
+     "sub": "Otra de sus estancias"
+    },
+    {
+     "lon": 10.7522,
+     "lat": 59.9139,
+     "texto": "Oslo",
+     "sub": "Entrada al país"
+    },
+    {
+     "lon": 11.0767,
+     "lat": 49.4521,
+     "texto": "Núremberg",
+     "sub": "Región de su infancia, según los isótopos"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.5,
+     "lat": 56.5,
+     "texto": "Mar del Norte",
+     "tipo": "mar"
+    },
+    {
+     "lon": 15.5,
+     "lat": 61.5,
+     "texto": "Suecia",
+     "tipo": "pais"
+    },
+    {
+     "lon": 10,
+     "lat": 51.5,
+     "texto": "Alemania",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "Mar-nov 1970",
+    "Una mujer que usa distintos nombres se aloja en hoteles de Oslo, Stavanger, Trondheim y Bergen."
+   ],
+   [
+    "23 nov 1970",
+    "Deja su hotel de Bergen y deposita dos maletas en la consigna de la estación."
+   ],
+   [
+    "29 nov 1970",
+    "Su cuerpo aparece en el valle de Isdalen."
+   ],
+   [
+    "2 dic 1970",
+    "La policía localiza las maletas."
+   ],
+   [
+    "Dic 1970",
+    "Los investigadores reconstruyen sus estancias y descifran el cuaderno."
+   ],
+   [
+    "Dic 1970",
+    "La policía concluye que fue un probable suicidio."
+   ],
+   [
+    "5 feb 1971",
+    "Es enterrada en Bergen en un ataúd de zinc."
+   ],
+   [
+    "2016",
+    "La televisión pública noruega NRK reabre la investigación periodística."
+   ],
+   [
+    "2017",
+    "Los análisis de isótopos sitúan su infancia en la zona de Núremberg."
+   ],
+   [
+    "2018",
+    "NRK y la BBC publican el pódcast *Death in Ice Valley*."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Identidad",
+     "Desconocida"
+    ],
+    [
+     "Lugar",
+     "Isdalen, Bergen (Noruega)"
+    ],
+    [
+     "Hallazgo",
+     "29 de noviembre de 1970"
+    ],
+    [
+     "Causa de la muerte",
+     "Intoxicación por monóxido de carbono y barbitúricos"
+    ],
+    [
+     "Edad estimada",
+     "Entre 30 y 45 años en 1970; nacida hacia 1930"
+    ],
+    [
+     "Identidades usadas",
+     "Al menos ocho nombres falsos"
+    ],
+    [
+     "Conclusión policial",
+     "Probable suicidio (1970)"
+    ],
+    [
+     "Estado",
+     "Sin identificar; caso revisado desde 2016"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "El expediente",
+   "titulo": "Lo que se sabe de una mujer sin nombre",
+   "nota": "Elaboración propia de VIRALIX a partir de la investigación de la policía de Bergen (1970-1971) y de los trabajos de NRK y la BBC (2016-2019).",
+   "grupos": [
+    {
+     "factor": "1970",
+     "nombre": "El cuerpo",
+     "rasgos": [
+      "Hallada en Isdalen el 29 de noviembre",
+      "Monóxido de carbono y barbitúricos",
+      "Etiquetas de la ropa cortadas"
+     ]
+    },
+    {
+     "factor": "1970",
+     "nombre": "Las maletas",
+     "rasgos": [
+      "Consigna de la estación de Bergen",
+      "Pelucas y gafas sin graduar",
+      "Un cuaderno con anotaciones en clave"
+     ]
+    },
+    {
+     "factor": "1970",
+     "nombre": "Las identidades",
+     "rasgos": [
+      "Al menos ocho nombres falsos",
+      "Hoteles de cuatro ciudades",
+      "Decía ser belga"
+     ]
+    },
+    {
+     "factor": "Desde 2017",
+     "nombre": "La ciencia",
+     "rasgos": [
+      "Nacida hacia 1930",
+      "Infancia en la zona de Núremberg",
+      "Traslado posterior hacia Francia"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hombre-de-somerton",
+  "titulo": "El hombre de Somerton",
+  "titulo_corto": "El hombre de Somerton",
+  "titulo_portada": "El hombre de Somerton",
+  "categoria": "mist",
+  "anio": "1948",
+  "lugar": "Adelaida, Australia",
+  "estado": "Identificación propuesta en 2022",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     127,
+     -41
+    ],
+    [
+     153,
+     -29
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Australia"
+    ]
+   },
+   "localizador": [
+    [
+     108,
+     -47
+    ],
+    [
+     160,
+     -8
+    ]
+   ],
+   "titulo": "Sureste de Australia, 1948",
+   "marcadores": [
+    {
+     "lon": 138.513,
+     "lat": -34.99,
+     "texto": "Somerton Park (Adelaida)",
+     "sub": "Hallazgo · 1 dic 1948",
+     "lado": "izq"
+    },
+    {
+     "lon": 144.9631,
+     "lat": -37.8136,
+     "texto": "Melbourne",
+     "sub": "Ciudad natal de Carl Webb",
+     "lado": "izq"
+    },
+    {
+     "lon": 149.13,
+     "lat": -35.2809,
+     "texto": "Canberra",
+     "sub": "Capital federal"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 133,
+     "lat": -37.5,
+     "texto": "Gran Bahía Australiana",
+     "tipo": "mar"
+    },
+    {
+     "lon": 134.5,
+     "lat": -30.5,
+     "texto": "Australia Meridional",
+     "tipo": "pais"
+    },
+    {
+     "lon": 146.5,
+     "lat": -32,
+     "texto": "Nueva Gales del Sur",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "30 nov 1948",
+    "Un hombre deposita una maleta en la estación de Adelaida. Por la tarde, varios testigos lo ven tumbado en la playa de Somerton."
+   ],
+   [
+    "1 dic 1948",
+    "Aparece muerto junto al paseo marítimo."
+   ],
+   [
+    "14 ene 1949",
+    "La policía localiza la maleta. Tres prendas llevan el apellido Keane."
+   ],
+   [
+    "1949",
+    "En un bolsillo oculto se halla el papel con las palabras «Tamám Shud»."
+   ],
+   [
+    "Jun 1949",
+    "La investigación judicial termina sin identidad ni causa de la muerte."
+   ],
+   [
+    "Jul 1949",
+    "Aparece el libro del que se arrancó el papel, con un teléfono y unas líneas de letras."
+   ],
+   [
+    "2009",
+    "El profesor Derek Abbott, de la Universidad de Adelaida, inicia una revisión científica."
+   ],
+   [
+    "19 may 2021",
+    "La policía de Australia Meridional exhuma los restos."
+   ],
+   [
+    "26 jul 2022",
+    "Abbott y la genealogista Colleen Fitzpatrick anuncian que el hombre es Carl Webb."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Hallazgo",
+     "1 de diciembre de 1948, playa de Somerton Park, Adelaida"
+    ],
+    [
+     "Descripción",
+     "Varón de entre 40 y 45 años, bien vestido, sin identificación"
+    ],
+    [
+     "Causa de la muerte",
+     "No determinada; se sospechó de un veneno indetectable"
+    ],
+    [
+     "Pista principal",
+     "Un papel con las palabras «Tamám Shud»"
+    ],
+    [
+     "Otros elementos",
+     "Una maleta, un libro, un número de teléfono y unas líneas de letras"
+    ],
+    [
+     "Investigación judicial",
+     "Instrucción forense de 1949, sin conclusiones"
+    ],
+    [
+     "Exhumación",
+     "19 de mayo de 2021"
+    ],
+    [
+     "Identificación propuesta",
+     "Carl «Charles» Webb, nacido en Melbourne en 1905"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Las pistas",
+   "titulo": "De un papel enrollado a un árbol genealógico",
+   "nota": "Elaboración propia de VIRALIX a partir de la investigación policial de 1948-1949 y de los trabajos de la Universidad de Adelaida (2009-2022).",
+   "pasos": [
+    [
+     "Dic 1948 · El cuerpo",
+     "Un hombre sin documentación ni etiquetas en la ropa aparece muerto en la playa."
+    ],
+    [
+     "Ene 1949 · La maleta",
+     "En la consigna de la estación hay una maleta suya. Tres prendas llevan el apellido Keane."
+    ],
+    [
+     "1949 · El papel",
+     "En un bolsillo oculto aparece un recorte impreso: «Tamám Shud»."
+    ],
+    [
+     "Jul 1949 · El libro",
+     "Se localiza el ejemplar del que se arrancó. Contiene un teléfono y unas líneas de letras."
+    ],
+    [
+     "2021 · La exhumación",
+     "La policía recupera los restos para obtener ADN."
+    ],
+    [
+     "2022 · El nombre",
+     "La genealogía genética apunta a Carl Webb, ingeniero de Melbourne."
+    ]
+   ]
+  }
  },
  {
   "slug": "perfil-criminal",

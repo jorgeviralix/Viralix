@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: caras de Bélmez, Bélmez de la Moraleda, María Gómez Cámara, fenómeno paranormal, pareidolia, parapsicología, Jaén, escepticismo, pensamiento crítico
 alt_portada: Ilustración editorial con el mapa de la provincia de Jaén y un marcador sobre Bélmez de la Moraleda, junto al año 1971
 pie_portada: Bélmez de la Moraleda es un pequeño municipio de la sierra Mágina, en la provincia de Jaén.
-relacionados: falsos-recuerdos, paso-dyatlov, mary-celeste, enriqueta-marti
+relacionados: falsos-recuerdos, paso-dyatlov, mary-celeste, elisa-lam
 mapa: {"base":"es","extent":[[-4.4,37.3],[-2.45,38.35]],"resaltar":{"provincias":["Jaén"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"Provincia de Jaén, agosto de 1971","marcadores":[{"lon":-3.3792,"lat":37.7231,"texto":"Bélmez de la Moraleda","sub":"La «Casa de las Caras»"},{"lon":-3.7849,"lat":37.7796,"texto":"Jaén","sub":"Capital de la provincia","lado":"izq"}],"etiquetas":[{"lon":-3.05,"lat":37.45,"texto":"Granada","tipo":"pais"},{"lon":-3.6,"lat":38.2,"texto":"Sierra Morena","tipo":"pais"}]}
 nota_autor: Bélmez de la Moraleda está en la provincia de Jaén, la misma desde la que escribo, y eso me obliga a tratar el caso con cuidado: forma parte de la identidad de mucha gente de la zona. Mi opinión es que no hay nada paranormal en esas manchas, pero no creo que eso le quite interés al fenómeno. Lo que me sigue intrigando es cómo una historia así resiste cincuenta años de análisis sin perder a sus creyentes.
 ---
