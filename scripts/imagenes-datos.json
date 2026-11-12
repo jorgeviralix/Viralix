@@ -1178,6 +1178,192 @@
   }
  },
  {
+  "slug": "cristina-bergua",
+  "titulo": "La desaparición de Cristina Bergua",
+  "titulo_corto": "La desaparición de Cristina Bergua",
+  "titulo_portada": "La desaparición de Cristina Bergua",
+  "categoria": "es",
+  "anio": "1997",
+  "lugar": "Cornellà de Llobregat, Barcelona",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     1.6,
+     41.12
+    ],
+    [
+     2.6,
+     41.62
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Barcelona"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El Baix Llobregat, marzo de 1997",
+   "marcadores": [
+    {
+     "lon": 2.0747,
+     "lat": 41.3559,
+     "texto": "Cornellà de Llobregat",
+     "sub": "Desaparición · 9 mar 1997",
+     "lado": "izq",
+     "dy": -6
+    },
+    {
+     "lon": 1.93,
+     "lat": 41.3,
+     "texto": "Vertedero del Garraf",
+     "sub": "Búsqueda tras un anónimo",
+     "lado": "izq",
+     "dy": 10
+    },
+    {
+     "lon": 2.1734,
+     "lat": 41.3851,
+     "texto": "Barcelona",
+     "sub": "A 10 km de Cornellà"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 2.3,
+     "lat": 41.22,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "9 mar 1997",
+    "Cristina sale de casa en Cornellà. Debe volver a las diez de la noche."
+   ],
+   [
+    "9 mar 1997",
+    "Su pareja declara haberla acompañado parte del camino de vuelta."
+   ],
+   [
+    "Mar 1997",
+    "La familia denuncia y empapela la ciudad con carteles."
+   ],
+   [
+    "1997",
+    "Una carta anónima señala el vertedero del Garraf. La búsqueda dura semanas y no da resultado."
+   ],
+   [
+    "1998",
+    "Los Bergua impulsan, con otras familias, la asociación Inter-SOS."
+   ],
+   [
+    "2010",
+    "El Congreso declara el 9 de marzo Día de las personas desaparecidas sin causa aparente."
+   ],
+   [
+    "Mar 2017",
+    "Se cumplen veinte años: el posible delito alcanza el plazo de prescripción."
+   ],
+   [
+    "2017",
+    "El BOE publica el edicto del expediente de declaración de fallecimiento."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Desaparecida",
+     "Cristina Bergua Vera, 16 años"
+    ],
+    [
+     "Lugar",
+     "Cornellà de Llobregat (Barcelona)"
+    ],
+    [
+     "Fecha",
+     "9 de marzo de 1997"
+    ],
+    [
+     "Última persona que la vio",
+     "Su pareja, según su propia declaración"
+    ],
+    [
+     "Investigación",
+     "Policía Nacional y, después, Mossos d'Esquadra"
+    ],
+    [
+     "Búsquedas",
+     "Vertedero del Garraf, sin resultado"
+    ],
+    [
+     "Acusados",
+     "Ninguno"
+    ],
+    [
+     "Estado",
+     "Sin resolver; el cuerpo no ha aparecido"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Antes y después",
+   "titulo": "Denunciar una desaparición: 1997 frente a hoy",
+   "nota": "Elaboración propia de VIRALIX a partir de la información pública del Ministerio del Interior y del Centro Nacional de Desaparecidos.",
+   "grupos": [
+    {
+     "factor": "1997",
+     "nombre": "La denuncia",
+     "rasgos": [
+      "Sin protocolo nacional unificado",
+      "Las ausencias de adolescentes se trataban a menudo como fugas",
+      "Extendida la idea de esperar 24 o 48 horas"
+     ]
+    },
+    {
+     "factor": "1997",
+     "nombre": "La búsqueda",
+     "rasgos": [
+      "Sin base de datos compartida entre cuerpos",
+      "Carteles y batidas organizados por las familias",
+      "Escasa coordinación entre policías"
+     ]
+    },
+    {
+     "factor": "Hoy",
+     "nombre": "La denuncia",
+     "rasgos": [
+      "Se recoge de inmediato, sin plazos de espera",
+      "Valoración del riesgo desde el primer momento",
+      "Las desapariciones de menores se consideran de alto riesgo"
+     ]
+    },
+    {
+     "factor": "Hoy",
+     "nombre": "La búsqueda",
+     "rasgos": [
+      "Base de datos nacional de personas desaparecidas y restos humanos",
+      "Centro Nacional de Desaparecidos",
+      "Alertas públicas y cotejo de ADN de familiares"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
