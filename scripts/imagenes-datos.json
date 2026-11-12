@@ -2311,6 +2311,218 @@
   }
  },
  {
+  "slug": "pedro-alonso-lopez",
+  "titulo": "El Monstruo de los Andes",
+  "titulo_corto": "El Monstruo de los Andes",
+  "titulo_portada": "Pedro Alonso López, el Monstruo de los Andes",
+  "categoria": "latam",
+  "anio": "1980",
+  "lugar": "Ambato, Ecuador",
+  "estado": "Condenado; paradero desconocido",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     -85,
+     -17
+    ],
+    [
+     -63,
+     11
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Colombia",
+     "Ecuador",
+     "Peru"
+    ]
+   },
+   "localizador": [
+    [
+     -95,
+     -56
+    ],
+    [
+     -33,
+     20
+    ]
+   ],
+   "titulo": "Colombia, Ecuador y Perú, década de 1970",
+   "marcadores": [
+    {
+     "lon": -78.6197,
+     "lat": -1.2491,
+     "texto": "Ambato (Ecuador)",
+     "sub": "Detención · 1980",
+     "lado": "izq"
+    },
+    {
+     "lon": -78.4678,
+     "lat": -0.1807,
+     "texto": "Quito",
+     "sub": "Donde cumplió condena",
+     "dy": -10
+    },
+    {
+     "lon": -75.097,
+     "lat": 4.713,
+     "texto": "Tolima (Colombia)",
+     "sub": "Región natal"
+    },
+    {
+     "lon": -74.2236,
+     "lat": -13.1588,
+     "texto": "Ayacucho (Perú)",
+     "sub": "Según su relato, casi fue ajusticiado"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -82.5,
+     "lat": -9,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -67,
+     "lat": -6,
+     "texto": "Brasil",
+     "tipo": "pais"
+    },
+    {
+     "lon": -66.5,
+     "lat": 7.5,
+     "texto": "Venezuela",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1948",
+    "Nace en el departamento de Tolima (Colombia)."
+   ],
+   [
+    "Años 70",
+    "Según su relato, comete sus primeros crímenes en Perú y es expulsado del país."
+   ],
+   [
+    "1978-1980",
+    "Desaparecen decenas de niñas en la sierra central de Ecuador."
+   ],
+   [
+    "1980",
+    "Una crecida deja al descubierto varios cuerpos cerca de Ambato."
+   ],
+   [
+    "1980",
+    "Es retenido en un mercado de Ambato y entregado a la policía."
+   ],
+   [
+    "1980",
+    "Confiesa y conduce a los agentes hasta las tumbas de más de cincuenta víctimas."
+   ],
+   [
+    "1981",
+    "Condenado a 16 años, la pena máxima en Ecuador."
+   ],
+   [
+    "1994",
+    "Sale de prisión y es deportado a Colombia."
+   ],
+   [
+    "1994-1998",
+    "Internado en un hospital psiquiátrico de Bogotá."
+   ],
+   [
+    "1998",
+    "Queda en libertad. Se pierde su rastro."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Pedro Alonso López, nacido en Tolima (Colombia) en 1948"
+    ],
+    [
+     "Detención",
+     "Ambato (Ecuador), 1980"
+    ],
+    [
+     "Confesión",
+     "Unos 300 asesinatos en Colombia, Ecuador y Perú"
+    ],
+    [
+     "Hallazgos",
+     "Decenas de cuerpos localizados en la provincia de Tungurahua"
+    ],
+    [
+     "Condena",
+     "16 años de prisión en Ecuador (1981), la máxima entonces"
+    ],
+    [
+     "Excarcelación",
+     "1994, tras cumplir unos 14 años"
+    ],
+    [
+     "Colombia",
+     "Internado en un psiquiátrico y liberado en 1998"
+    ],
+    [
+     "Estado",
+     "Paradero desconocido"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Hechos y relato",
+   "titulo": "Qué está documentado y qué solo consta por su confesión",
+   "nota": "Elaboración propia de VIRALIX a partir de la prensa ecuatoriana y colombiana. Las cifras de víctimas fuera de Ecuador proceden únicamente del propio condenado.",
+   "grupos": [
+    {
+     "factor": "Documentado",
+     "nombre": "La causa de Ecuador",
+     "rasgos": [
+      "Decenas de cuerpos localizados cerca de Ambato",
+      "Condena en 1981",
+      "16 años: el máximo legal entonces"
+     ]
+    },
+    {
+     "factor": "Según su relato",
+     "nombre": "Lo que él contó",
+     "rasgos": [
+      "Unos 300 crímenes en tres países",
+      "Su infancia y sus años en Perú",
+      "La captura por una comunidad indígena"
+     ]
+    },
+    {
+     "factor": "Lo que falló",
+     "nombre": "Las instituciones",
+     "rasgos": [
+      "Desapariciones tratadas como fugas",
+      "Ninguna coordinación entre países",
+      "Excarcelado sin seguimiento"
+     ]
+    },
+    {
+     "factor": "El final",
+     "nombre": "Paradero",
+     "rasgos": [
+      "Sale de prisión en Ecuador en 1994",
+      "Internado y liberado en Colombia en 1998",
+      "Desde entonces, desconocido"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jack-el-destripador",
   "titulo": "Jack el Destripador",
   "titulo_corto": "Jack el Destripador",
