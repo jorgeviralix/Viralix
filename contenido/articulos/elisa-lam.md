@@ -196,5 +196,5 @@ La policía no encontró indicios de delito. Un músico fue acusado en internet 
 - Departamento de Policía de Los Ángeles: comunicados sobre la desaparición (2013). [lapdonline.org](https://www.lapdonline.org/)
 - *Los Angeles Times*: cobertura del caso y de la demanda civil (2013-2015). [latimes.com](https://www.latimes.com/)
 - CBC News (Canadá): información sobre la familia y la investigación. [cbc.ca](https://www.cbc.ca/news)
-- *Crime Scene: The Vanishing at the Cecil Hotel* (Netflix, 2021), documental dirigido por Joe Berlinger. [netflix.com](https://www.netflix.com/title/81183727)
+- *Crime Scene: The Vanishing at the Cecil Hotel* (Netflix, 2021), documental dirigido por Joe Berlinger. [netflix.com](https://www.netflix.com/)
 :::
