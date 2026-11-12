@@ -29,7 +29,7 @@ CONT = ROOT / "contenido"
 IMG_DIR = ROOT / "images" / "articulos"
 OPT_DIR = ROOT / "images" / "optimizadas"
 TMP_PNG = ROOT / "scripts" / ".tmp-png"
-HOY = "2026-11-04"
+HOY = "2026-11-12"
 ADSENSE = "ca-pub-5337247644569859"
 
 CATS = {
@@ -854,7 +854,7 @@ def feed(arts):
     <enclosure url="{SITE}/images/articulos/{a['slug']}-portada.jpg" type="image/jpeg" length="0"/>
   </item>""")
     head_xml = old.split("<item>")[0]
-    head_xml = re.sub(r"<lastBuildDate>.*?</lastBuildDate>", "<lastBuildDate>Wed, 04 Nov 2026 09:00:00 +0100</lastBuildDate>", head_xml)
+    head_xml = re.sub(r"<lastBuildDate>.*?</lastBuildDate>", "<lastBuildDate>Thu, 12 Nov 2026 09:00:00 +0100</lastBuildDate>", head_xml)
     head_xml = head_xml.replace(f"{SITE}/img-og-viralix.png", f"{SITE}/images/logo-viralix.png")
     head_xml = head_xml.rstrip()
     out = head_xml + "".join(new_items) + "".join(old_items) + "\n\n</channel>\n</rss>\n"

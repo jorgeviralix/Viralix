@@ -17,7 +17,7 @@ Motivo del último rechazo de AdSense: «contenido de poco valor».
 | 1 | Volumen de contenido original todavía corto para un medio (40 piezas) y sin casos de Latinoamérica | Alta | Resuelto: 15 artículos nuevos |
 | 2 | Artículos antiguos cortos: `marta-calvo` (≈800 palabras), `wanninkhof-bis` (≈800), `eclipse-2026` (≈890), `crimen-cuenca` (≈920) | Alta | Pendiente (ver PR) |
 | 3 | `articulo-somosierra.html` es una página «Próximamente» de 104 palabras | Media | Resuelto: artículo completo |
-| 4 | Enlazado interno pobre: 7 artículos reciben menos de 2 enlaces desde otros artículos (`crimen-rol`, `marta-calvo` y `wanninkhof-bis` no reciben ninguno) | Alta | Resuelto |
+| 4 | Enlazado interno pobre: 7 artículos reciben menos de 2 enlaces desde otros artículos (`crimen-rol`, `marta-calvo` y `wanninkhof-bis` no reciben ninguno) | Alta | Resuelto: los 55 reciben 2 o más |
 | 5 | `articulo-crimen-rol.html` solo enlaza a 1 artículo | Media | Resuelto |
 | 6 | El bloque de Amazon y el botón de Buy Me a Coffee solo existen en los 23 artículos antiguos; los generados no los tenían. El identificador `viralixweb-21` no aparece en ningún enlace (los antiguos usan enlaces cortos `link.amazon`) | Media | Resuelto en la plantilla |
 | 7 | Schema `Organization` de la portada sin `sameAs` ni `contactPoint` | Media | Resuelto |
@@ -39,7 +39,24 @@ Motivo del último rechazo de AdSense: «contenido de poco valor».
 
 ## 4. Decisiones tomadas en este lote
 
-- **Temas sustituidos** porque ya estaban publicados: Wanninkhof, Puerto Hurraco, Marta Calvo, Fago y D. B. Cooper. En su lugar: Anabel Segura, el robo del Códice Calixtino, los niños de Somosierra, José Luis Cabezas y el robo del museo Gardner.
+- **Temas sustituidos** porque ya estaban publicados: Wanninkhof, Puerto Hurraco, Marta Calvo, Fago y D. B. Cooper. En su lugar: Anabel Segura, el robo del Códice Calixtino, el niño de Somosierra, José Luis Cabezas y el robo del museo Gardner.
 - **Imágenes**: se generan imágenes reales (portada, mapa, cronología, ficha y diagrama) en lugar de dejar `placeholder.jpg`, porque una imagen rota perjudica la revisión de AdSense. Los *prompts* para fotografías de ambiente opcionales quedan en un comentario al final de cada artículo y en el PR.
 - **Autoría**: los artículos nuevos mantienen la firma de Jorge de la Fuente con enlace a su página de autor (decisión de la auditoría del 4 de noviembre), con VIRALIX como `publisher`.
 - **Enlaces de Amazon**: enlaces de búsqueda en amazon.es con la etiqueta `viralixweb-21`, que siempre funcionan y no dependen de un código de producto que no se pueda comprobar.
+
+## 5. Estado al cerrar el lote (12 de noviembre de 2026)
+
+- **55 artículos** publicados: 15 nuevos, de entre 1.850 y 2.360 palabras, cada uno con 6 imágenes propias (portada, mapa, diagrama, cronología y ficha).
+- Enlazado interno: todos los artículos enlazan a 3 o más y reciben enlaces de 2 o más.
+- Metas: títulos y descripciones únicos; las 15 descripciones nuevas tienen entre 148 y 157 caracteres.
+- `sitemap.xml`: 65 URL, con los 15 artículos nuevos fechados el 12 de noviembre.
+- Portada: seis grupos de categorías con recuento automático, sección nueva de Latinoamérica y `Organization` con `sameAs` y `contactPoint`.
+- Comprobado en navegador: ninguna página da errores de consola y los 124 bloques JSON-LD son válidos.
+
+### Pendiente
+
+1. Ampliar los cuatro artículos antiguos más cortos (`marta-calvo`, `wanninkhof-bis`, `eclipse-2026`, `crimen-cuenca`).
+2. Decidir la firma de los 23 artículos antiguos («Equipo VIRALIX»).
+3. Activar en AdSense la CMP certificada de Google.
+4. Revisar los hechos de los 15 artículos nuevos antes de darlos por definitivos, en especial los casos con proceso judicial abierto (Helena Jubany) y las cifras que varían según la fuente (Juan Fernando Hermosa, José Luis Cabezas).
+5. Los enlaces de Amazon son búsquedas con la etiqueta `viralixweb-21`; conviene sustituirlos por el enlace directo al producto cuando se confirme cada libro.
