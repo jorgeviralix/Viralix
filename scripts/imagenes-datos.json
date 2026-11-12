@@ -3900,6 +3900,188 @@
   }
  },
  {
+  "slug": "robo-museo-gardner",
+  "titulo": "El robo del museo Gardner",
+  "titulo_corto": "El robo del museo Gardner",
+  "titulo_portada": "El robo del museo Gardner",
+  "categoria": "intl",
+  "anio": "1990",
+  "lugar": "Boston, Estados Unidos",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -78.5,
+     38.3
+    ],
+    [
+     -68,
+     44.3
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "Massachusetts"
+    ]
+   },
+   "localizador": [
+    [
+     -126,
+     24
+    ],
+    [
+     -66,
+     50
+    ]
+   ],
+   "titulo": "Noreste de Estados Unidos, 1990-2013",
+   "marcadores": [
+    {
+     "lon": -71.0589,
+     "lat": 42.3601,
+     "texto": "Boston",
+     "sub": "Museo Gardner · 18 mar 1990"
+    },
+    {
+     "lon": -72.6734,
+     "lat": 41.7658,
+     "texto": "Connecticut",
+     "sub": "Donde el FBI sitúa las obras en los años noventa",
+     "lado": "izq"
+    },
+    {
+     "lon": -75.1652,
+     "lat": 39.9526,
+     "texto": "Filadelfia",
+     "sub": "Intento de venta hacia 2002, según el FBI",
+     "lado": "izq"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -69.5,
+     "lat": 40.3,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -76.3,
+     "lat": 43.4,
+     "texto": "Nueva York",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "1903",
+    "Isabella Stewart Gardner abre su museo en Boston."
+   ],
+   [
+    "1924",
+    "Muere. Su testamento prohíbe cambiar la disposición de la colección."
+   ],
+   [
+    "18 mar 1990, 1:24",
+    "Dos falsos policías entran en el museo."
+   ],
+   [
+    "18 mar 1990, 2:45",
+    "Se marchan con trece obras."
+   ],
+   [
+    "1995",
+    "Prescribe el delito de robo."
+   ],
+   [
+    "2013",
+    "El FBI anuncia que ha identificado a los autores, sin dar nombres."
+   ],
+   [
+    "2015",
+    "Se difunde un vídeo de la noche anterior al robo."
+   ],
+   [
+    "2017",
+    "El museo eleva la recompensa a 10 millones de dólares."
+   ],
+   [
+    "2021",
+    "Muere Robert Gentile, último gran sospechoso de conocer el paradero."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Lugar",
+     "Isabella Stewart Gardner Museum, Boston (Massachusetts)"
+    ],
+    [
+     "Fecha",
+     "18 de marzo de 1990, entre la 1:24 y las 2:45"
+    ],
+    [
+     "Autores",
+     "Dos hombres disfrazados de policías; no identificados oficialmente"
+    ],
+    [
+     "Botín",
+     "Trece obras"
+    ],
+    [
+     "Valor estimado",
+     "Unos 500 millones de dólares"
+    ],
+    [
+     "Investigación",
+     "FBI y fiscalía federal de Massachusetts"
+    ],
+    [
+     "Recompensa",
+     "10 millones de dólares por información que permita recuperarlas"
+    ],
+    [
+     "Estado",
+     "Sin resolver; ninguna obra recuperada"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "La noche del robo",
+   "titulo": "81 minutos dentro del museo",
+   "nota": "Elaboración propia de VIRALIX a partir de la reconstrucción publicada por el museo y el FBI. Las horas proceden de los sensores de movimiento.",
+   "pasos": [
+    [
+     "1:24 · La puerta",
+     "Dos hombres vestidos de policía llaman a la entrada de servicio. El vigilante les abre."
+    ],
+    [
+     "Minutos después",
+     "Reducen a los dos vigilantes, los esposan y los inmovilizan en el sótano."
+    ],
+    [
+     "Sala Holandesa",
+     "Se llevan tres Rembrandt, un Vermeer, un paisaje de Flinck y un vaso de bronce chino."
+    ],
+    [
+     "Galería Corta",
+     "Cinco dibujos de Degas y el remate en forma de águila de una bandera napoleónica."
+    ],
+    [
+     "Sala Azul",
+     "Desaparece un Manet. Los sensores no registran allí el paso de los ladrones."
+    ],
+    [
+     "2:45 · La salida",
+     "Se marchan en dos viajes. Nadie da la alarma hasta el cambio de turno."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "paso-dyatlov",
   "titulo": "El incidente del paso Diátlov",
   "titulo_corto": "El incidente del paso Diátlov",
