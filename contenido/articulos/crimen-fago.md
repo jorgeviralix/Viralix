@@ -15,7 +15,7 @@ actualizado: 2026-11-04
 palabras_clave: crimen de Fago, Miguel Grima, Santiago Mainar, alcalde de Fago, Huesca, Pirineo, guarda forestal, jurado popular, confesión retractada
 alt_portada: Ilustración editorial con el mapa de la provincia de Huesca y un marcador sobre Fago, en el Pirineo, junto al año 2007
 pie_portada: Fago está en el valle de Ansó, en la comarca de la Jacetania, a pocos kilómetros de la frontera francesa.
-relacionados: puerto-hurraco, crimen-cuenca, galindos, guardia-urbana
+relacionados: puerto-hurraco, crimen-cuenca, galindos, sheila-barrero
 mapa: {"base":"es","extent":[[-1.35,41.95],[0.25,42.95]],"resaltar":{"provincias":["Huesca"]},"localizador":[[-9.6,35.8],[4.5,43.9]],"titulo":"El Pirineo oscense, enero de 2007","marcadores":[{"lon":-0.8806,"lat":42.7342,"texto":"Fago","sub":"Valle de Ansó · unos 30 habitantes","lado":"izq"},{"lon":-0.5498,"lat":42.5705,"texto":"Jaca","sub":"Capital de la Jacetania"},{"lon":-0.4087,"lat":42.1401,"texto":"Huesca","sub":"Sede del juicio con jurado (2009)"}],"etiquetas":[{"lon":-0.65,"lat":42.88,"texto":"Francia","tipo":"pais"},{"lon":-1.15,"lat":42.25,"texto":"Zaragoza","tipo":"pais"}]}
 nota_autor: Fago me recuerda que no hace falta una gran ciudad para que un conflicto se pudra: basta con que nadie medie a tiempo. La condena de Santiago Mainar fue confirmada por los tribunales superiores y la respeto, pero la confesión retirada me sigue pareciendo el punto débil del caso. Si algún día apareciera una prueba material concluyente, en un sentido o en otro, será lo primero que añada a este artículo.
 ---
