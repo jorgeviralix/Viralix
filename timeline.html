@@ -142,6 +142,6 @@ const reveals=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);io.unobserve(e.target)}})},{threshold:0.1});
 reveals.forEach(r=>io.observe(r));
 </script>
-<script src="cookies-banner.js"></script>
+<script defer src="cookies-banner.js"></script>
 </body>
 </html>
