@@ -1,6 +1,6 @@
 ---
 titulo: El crimen de Helena Jubany: los anónimos, la azotea de Sabadell y un juicio que tarda 25 años
-titulo_seo: Crimen de Helena Jubany: el caso de Sabadell (2001)
+titulo_seo: Crimen de Helena Jubany: el caso de Sabadell, 2001
 titulo_corto: El crimen de Helena Jubany
 titulo_portada: El crimen de Helena Jubany
 descripcion: Helena Jubany murió en Sabadell en 2001 tras recibir anónimos con bebidas adulteradas. Cronología del caso, la reapertura, el ADN y el proceso pendiente.
@@ -34,6 +34,8 @@ No fue un crimen impulsivo. Alguien llevaba semanas preparándolo, y Helena hab�
 Helena había nacido en **Mataró** en 1974, en una familia muy vinculada a la cultura: su padre, Joan Jubany, era librero. Estudió Periodismo, colaboró con medios locales y acabó encontrando su sitio entre libros, al frente de la biblioteca municipal de Sentmenat.
 
 En Sabadell se había integrado en la **Unió Excursionista de Sabadell (UES)**, una entidad con décadas de historia y cientos de socios. Participaba en su sección de naturaleza, salía a la montaña los fines de semana y había hecho allí parte de su círculo de amistades.
+
+Quienes la trataron la describen como una persona metódica, discreta y con mucha vida propia: escribía, leía sin parar y tenía proyectos literarios a medias. No constaban enemistades, deudas ni conflictos que explicaran lo que ocurrió.
 
 Ese dato, anodino en cualquier biografía, se convirtió en el eje del caso. Todas las personas que la justicia ha investigado en estos 25 años procedían del mismo entorno: el club excursionista.
 
@@ -70,6 +72,8 @@ El viernes **30 de noviembre** fue el último día en que se tuvo noticia de ell
 
 En la madrugada del domingo 2 de diciembre, vecinos de un bloque de la calle Calvet d'Estrella, en Sabadell, encontraron su cuerpo en el patio de luces. La autopsia estableció que murió a consecuencia de la caída, que antes había ingerido una **dosis muy elevada de somníferos** del mismo tipo que los del zumo y que presentaba quemaduras.
 
+El piso de Helena, en cambio, estaba en orden y sin signos de lucha. Eso llevó a los investigadores a pensar que salió de casa por su propio pie, probablemente para encontrarse con alguien de confianza, y que la sedación se produjo en otro lugar.
+
 La conclusión de los forenses dejó poco margen: Helena estaba inconsciente cuando la subieron a la azotea. Alguien la sedó, la retuvo durante horas y la arrojó al vacío.
 
 ![Mapa de la provincia de Barcelona con Sabadell, Sentmenat, Mataró y Barcelona señalados](mapa "Helena vivía en Sabadell y trabajaba en Sentmenat, a pocos kilómetros. Todo el caso transcurre en un radio muy pequeño del Vallès Occidental.")
@@ -87,6 +91,8 @@ El tercer nombre era el de **Santi Laiglesia**, pareja de Careta y también vinc
 ### Mayo de 2002
 
 El **7 de mayo de 2002**, Montse Careta se quitó la vida en la prisión de Wad-Ras, en Barcelona. Dejó escrito que era inocente.
+
+Había pasado casi tres meses en prisión preventiva. Durante ese tiempo su nombre, su fotografía y su profesión circularon por los medios acompañados de hipótesis que nunca se probaron. Su familia sostiene que no soportó verse señalada por un crimen que no había cometido.
 
 Su muerte condicionó todo lo que vino después. La principal investigada ya no podía defenderse ni ser juzgada, y las pruebas contra el resto eran frágiles: informes caligráficos discutidos, coartadas difíciles de desmontar y ninguna prueba biológica concluyente con la técnica de la época.
 
@@ -159,9 +165,29 @@ Este caso se parece poco a los grandes errores judiciales españoles, como el de
 
 Lo que lo distingue es la **obstinación de una familia**. Sin el trabajo de los Jubany, el sumario habría prescrito en diciembre de 2021 en un archivo de Sabadell. Que la reapertura dependiera de la iniciativa y el dinero de los allegados dice algo incómodo sobre cómo se revisan en España los casos sin resolver.
 
+Hay una segunda lección, menos amable. En 2002 bastaron un peritaje de letra y la coincidencia de un domicilio para mantener a una mujer en una celda. Dos décadas después, con mejores herramientas, el sistema exige más antes de privar a alguien de libertad: así lo demuestra la excarcelación de enero de 2026. Es un avance, pero llega tarde para Montse Careta.
+
 También obliga a una cautela. Un juicio 25 años después, sostenido en un indicio genético de probabilidad limitada, puede terminar en condena o en absolución, y las dos salidas serían legítimas. La presión por «cerrar» el caso no debería pesar más que el estándar de prueba.
 
 Queda, además, una deuda que ningún veredicto saldará del todo: explicar quién preparó aquellas notas y por qué una mujer que ya sabía que la habían drogado no tuvo a tiempo ninguna red que la protegiera.
+
+## Preguntas frecuentes
+
+### ¿Ha prescrito el crimen de Helena Jubany?
+
+No. El plazo de veinte años vencía en diciembre de 2021, pero la causa se reabrió antes y se dirigió contra personas concretas, lo que interrumpe la prescripción según el artículo 132.2 del Código Penal.
+
+### ¿Hay algún condenado?
+
+Ninguno. En 25 años no se ha celebrado juicio. Las dos mujeres detenidas en 2002 nunca fueron acusadas formalmente: una murió en prisión preventiva y la otra quedó en libertad; el ADN la ha descartado después.
+
+### ¿Qué prueba hay contra el único investigado?
+
+Sobre todo, un informe genético que aprecia coincidencias entre su perfil y los restos hallados en el jersey de la víctima, con una probabilidad que la defensa considera insuficiente. Las pruebas caligráficas, en cambio, descartan que escribiera los anónimos.
+
+### ¿Por qué lo juzgaría un jurado popular?
+
+Porque en España los delitos contra la vida consumados, como el homicidio y el asesinato, son competencia del Tribunal del Jurado (Ley Orgánica 5/1995). Nueve ciudadanos decidirían si los hechos están probados.
 
 ![Ficha del caso Helena Jubany con víctima, lugar, fecha, instrucción, investigados y estado](ficha "La ficha del caso, actualizada a noviembre de 2026.")
 
