@@ -4137,6 +4137,219 @@
   "diagrama": null
  },
  {
+  "slug": "elisa-lam",
+  "titulo": "Elisa Lam y el Hotel Cecil",
+  "titulo_corto": "Elisa Lam y el Hotel Cecil",
+  "titulo_portada": "Elisa Lam y el Hotel Cecil",
+  "categoria": "mist",
+  "anio": "2013",
+  "lugar": "Los Ángeles, Estados Unidos",
+  "estado": "Muerte accidental",
+  "mapa": {
+   "base": "us",
+   "extent": [
+    [
+     -127,
+     31.2
+    ],
+    [
+     -111,
+     50.6
+    ]
+   ],
+   "resaltar": {
+    "estados": [
+     "California"
+    ]
+   },
+   "localizador": [
+    [
+     -130,
+     23
+    ],
+    [
+     -64,
+     52
+    ]
+   ],
+   "titulo": "El viaje por la costa oeste, enero de 2013",
+   "marcadores": [
+    {
+     "lon": -123.1207,
+     "lat": 49.2827,
+     "texto": "Vancouver (Canadá)",
+     "sub": "Su ciudad"
+    },
+    {
+     "lon": -117.1611,
+     "lat": 32.7157,
+     "texto": "San Diego",
+     "sub": "Primera etapa"
+    },
+    {
+     "lon": -118.2437,
+     "lat": 34.0522,
+     "texto": "Los Ángeles",
+     "sub": "Hotel Cecil · desde el 28 ene",
+     "dy": -10
+    },
+    {
+     "lon": -122.4194,
+     "lat": 37.7749,
+     "texto": "San Francisco",
+     "sub": "Destino previsto"
+    }
+   ],
+   "ruta": [
+    [
+     -117.1611,
+     32.7157
+    ],
+    [
+     -118.2437,
+     34.0522
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -125.2,
+     "lat": 40.5,
+     "texto": "Océano Pacífico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -115.5,
+     "lat": 39.5,
+     "texto": "Nevada",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "26 ene 2013",
+    "Elisa Lam llega a Los Ángeles desde San Diego."
+   ],
+   [
+    "28 ene 2013",
+    "Se registra en el Hotel Cecil, en una habitación compartida."
+   ],
+   [
+    "30 ene 2013",
+    "El hotel la traslada a una habitación individual tras las quejas de sus compañeras."
+   ],
+   [
+    "31 ene 2013",
+    "Visita una librería. No llama a sus padres. Última vez que se la ve."
+   ],
+   [
+    "1 feb 2013",
+    "Hora aproximada de la grabación del ascensor."
+   ],
+   [
+    "13 feb 2013",
+    "La policía difunde el vídeo."
+   ],
+   [
+    "19 feb 2013",
+    "Un empleado encuentra su cuerpo en un depósito de la azotea."
+   ],
+   [
+    "Jun 2013",
+    "El forense concluye que fue un ahogamiento accidental."
+   ],
+   [
+    "2015",
+    "Se desestima la demanda civil de la familia contra el hotel."
+   ],
+   [
+    "2021",
+    "Un documental revisa el caso y desmonta las principales teorías."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Nombre",
+     "Elisa Lam, 21 años, estudiante canadiense"
+    ],
+    [
+     "Lugar",
+     "Hotel Cecil, centro de Los Ángeles (California)"
+    ],
+    [
+     "Última vez vista",
+     "31 de enero de 2013"
+    ],
+    [
+     "Vídeo del ascensor",
+     "Difundido por la policía el 13 de febrero"
+    ],
+    [
+     "Hallazgo",
+     "19 de febrero, en un depósito de agua de la azotea"
+    ],
+    [
+     "Informe forense",
+     "Ahogamiento accidental; el trastorno bipolar, factor significativo"
+    ],
+    [
+     "Investigación",
+     "Departamento de Policía de Los Ángeles"
+    ],
+    [
+     "Estado",
+     "Caso cerrado sin indicios de delito"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Mito y dato",
+   "titulo": "Cuatro puntos del caso, explicados",
+   "nota": "Elaboración propia de VIRALIX a partir del informe forense del condado de Los Ángeles y de la documentación judicial publicada.",
+   "grupos": [
+    {
+     "factor": "El vídeo",
+     "nombre": "El ascensor",
+     "rasgos": [
+      "No oculta a ninguna otra persona",
+      "Las puertas no cierran por el botón de retención",
+      "Su conducta es compatible con una crisis psicótica"
+     ]
+    },
+    {
+     "factor": "El acceso",
+     "nombre": "La azotea",
+     "rasgos": [
+      "La puerta tenía alarma",
+      "La escalera de incendios, no",
+      "Los depósitos tenían escalera lateral"
+     ]
+    },
+    {
+     "factor": "La autopsia",
+     "nombre": "El informe forense",
+     "rasgos": [
+      "Ahogamiento accidental",
+      "Sin lesiones ni signos de agresión",
+      "Medicación por debajo de lo pautado"
+     ]
+    },
+    {
+     "factor": "Los señalados",
+     "nombre": "El daño colateral",
+     "rasgos": [
+      "Un músico acusado sin pruebas",
+      "No estaba en el país en esas fechas",
+      "Sufrió un acoso masivo"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "perfil-criminal",
   "titulo": "La perfilación criminal",
   "titulo_corto": "La perfilación criminal",
