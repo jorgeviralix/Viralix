@@ -4566,6 +4566,194 @@
   }
  },
  {
+  "slug": "hombre-de-somerton",
+  "titulo": "El hombre de Somerton",
+  "titulo_corto": "El hombre de Somerton",
+  "titulo_portada": "El hombre de Somerton",
+  "categoria": "mist",
+  "anio": "1948",
+  "lugar": "Adelaida, Australia",
+  "estado": "Identificación propuesta en 2022",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     127,
+     -41
+    ],
+    [
+     153,
+     -29
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Australia"
+    ]
+   },
+   "localizador": [
+    [
+     108,
+     -47
+    ],
+    [
+     160,
+     -8
+    ]
+   ],
+   "titulo": "Sureste de Australia, 1948",
+   "marcadores": [
+    {
+     "lon": 138.513,
+     "lat": -34.99,
+     "texto": "Somerton Park (Adelaida)",
+     "sub": "Hallazgo · 1 dic 1948",
+     "lado": "izq"
+    },
+    {
+     "lon": 144.9631,
+     "lat": -37.8136,
+     "texto": "Melbourne",
+     "sub": "Ciudad natal de Carl Webb",
+     "lado": "izq"
+    },
+    {
+     "lon": 149.13,
+     "lat": -35.2809,
+     "texto": "Canberra",
+     "sub": "Capital federal"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 133,
+     "lat": -37.5,
+     "texto": "Gran Bahía Australiana",
+     "tipo": "mar"
+    },
+    {
+     "lon": 134.5,
+     "lat": -30.5,
+     "texto": "Australia Meridional",
+     "tipo": "pais"
+    },
+    {
+     "lon": 146.5,
+     "lat": -32,
+     "texto": "Nueva Gales del Sur",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "30 nov 1948",
+    "Un hombre deposita una maleta en la estación de Adelaida. Por la tarde, varios testigos lo ven tumbado en la playa de Somerton."
+   ],
+   [
+    "1 dic 1948",
+    "Aparece muerto junto al paseo marítimo."
+   ],
+   [
+    "14 ene 1949",
+    "La policía localiza la maleta. Tres prendas llevan el apellido Keane."
+   ],
+   [
+    "1949",
+    "En un bolsillo oculto se halla el papel con las palabras «Tamám Shud»."
+   ],
+   [
+    "Jun 1949",
+    "La investigación judicial termina sin identidad ni causa de la muerte."
+   ],
+   [
+    "Jul 1949",
+    "Aparece el libro del que se arrancó el papel, con un teléfono y unas líneas de letras."
+   ],
+   [
+    "2009",
+    "El profesor Derek Abbott, de la Universidad de Adelaida, inicia una revisión científica."
+   ],
+   [
+    "19 may 2021",
+    "La policía de Australia Meridional exhuma los restos."
+   ],
+   [
+    "26 jul 2022",
+    "Abbott y la genealogista Colleen Fitzpatrick anuncian que el hombre es Carl Webb."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Hallazgo",
+     "1 de diciembre de 1948, playa de Somerton Park, Adelaida"
+    ],
+    [
+     "Descripción",
+     "Varón de entre 40 y 45 años, bien vestido, sin identificación"
+    ],
+    [
+     "Causa de la muerte",
+     "No determinada; se sospechó de un veneno indetectable"
+    ],
+    [
+     "Pista principal",
+     "Un papel con las palabras «Tamám Shud»"
+    ],
+    [
+     "Otros elementos",
+     "Una maleta, un libro, un número de teléfono y unas líneas de letras"
+    ],
+    [
+     "Investigación judicial",
+     "Instrucción forense de 1949, sin conclusiones"
+    ],
+    [
+     "Exhumación",
+     "19 de mayo de 2021"
+    ],
+    [
+     "Identificación propuesta",
+     "Carl «Charles» Webb, nacido en Melbourne en 1905"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "flujo",
+   "kicker": "Las pistas",
+   "titulo": "De un papel enrollado a un árbol genealógico",
+   "nota": "Elaboración propia de VIRALIX a partir de la investigación policial de 1948-1949 y de los trabajos de la Universidad de Adelaida (2009-2022).",
+   "pasos": [
+    [
+     "Dic 1948 · El cuerpo",
+     "Un hombre sin documentación ni etiquetas en la ropa aparece muerto en la playa."
+    ],
+    [
+     "Ene 1949 · La maleta",
+     "En la consigna de la estación hay una maleta suya. Tres prendas llevan el apellido Keane."
+    ],
+    [
+     "1949 · El papel",
+     "En un bolsillo oculto aparece un recorte impreso: «Tamám Shud»."
+    ],
+    [
+     "Jul 1949 · El libro",
+     "Se localiza el ejemplar del que se arrancó. Contiene un teléfono y unas líneas de letras."
+    ],
+    [
+     "2021 · La exhumación",
+     "La policía recupera los restos para obtener ADN."
+    ],
+    [
+     "2022 · El nombre",
+     "La genealogía genética apunta a Carl Webb, ingeniero de Melbourne."
+    ]
+   ]
+  }
+ },
+ {
   "slug": "perfil-criminal",
   "titulo": "La perfilación criminal",
   "titulo_corto": "La perfilación criminal",
