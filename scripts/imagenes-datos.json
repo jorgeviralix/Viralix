@@ -1566,6 +1566,201 @@
   }
  },
  {
+  "slug": "codice-calixtino",
+  "titulo": "El robo del Códice Calixtino",
+  "titulo_corto": "El robo del Códice Calixtino",
+  "titulo_portada": "El robo del Códice Calixtino",
+  "categoria": "es",
+  "anio": "2011",
+  "lugar": "Santiago de Compostela, A Coruña",
+  "estado": "Resuelto con condena",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -9.45,
+     42.25
+    ],
+    [
+     -7.55,
+     43.55
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "A Coruña"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "Santiago de Compostela, 2011-2012",
+   "marcadores": [
+    {
+     "lon": -8.5448,
+     "lat": 42.8806,
+     "texto": "Catedral de Santiago",
+     "sub": "Archivo · desaparición en julio de 2011",
+     "dy": -10
+    },
+    {
+     "lon": -8.5806,
+     "lat": 42.8456,
+     "texto": "O Milladoiro (Ames)",
+     "sub": "Garaje donde apareció · 4 jul 2012",
+     "lado": "izq",
+     "dy": 12
+    },
+    {
+     "lon": -8.4115,
+     "lat": 43.3623,
+     "texto": "A Coruña",
+     "sub": "Sede de la Audiencia Provincial"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": -9.2,
+     "lat": 43.4,
+     "texto": "Océano Atlántico",
+     "tipo": "mar"
+    },
+    {
+     "lon": -7.9,
+     "lat": 42.45,
+     "texto": "Ourense",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "Siglo XII",
+    "Se elabora el *Liber Sancti Jacobi*, conservado desde entonces en Santiago."
+   ],
+   [
+    "5 jul 2011",
+    "El archivo catedralicio detecta que el Códice no está en la cámara de seguridad."
+   ],
+   [
+    "Jul 2011",
+    "La Policía Nacional y el Juzgado de Instrucción n.º 2 de Santiago abren la investigación."
+   ],
+   [
+    "2011-2012",
+    "Seguimientos y escuchas al antiguo electricista de la catedral."
+   ],
+   [
+    "3 jul 2012",
+    "Detención de Manuel Fernández Castiñeiras y de tres familiares."
+   ],
+   [
+    "4 jul 2012",
+    "El Códice aparece en un garaje de O Milladoiro, junto a una gran suma en efectivo."
+   ],
+   [
+    "8 jul 2012",
+    "El manuscrito regresa a la catedral."
+   ],
+   [
+    "Feb 2015",
+    "La Audiencia Provincial de A Coruña lo condena a diez años de prisión."
+   ],
+   [
+    "Nov 2015",
+    "El Tribunal Supremo recalifica la sustracción como robo con fuerza y revisa la pena."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Objeto",
+     "Códice Calixtino (*Liber Sancti Jacobi*), siglo XII"
+    ],
+    [
+     "Lugar",
+     "Archivo de la catedral de Santiago de Compostela"
+    ],
+    [
+     "Desaparición",
+     "Detectada el 5 de julio de 2011"
+    ],
+    [
+     "Recuperación",
+     "4 de julio de 2012, en un garaje de O Milladoiro (Ames)"
+    ],
+    [
+     "Autor",
+     "Manuel Fernández Castiñeiras, electricista"
+    ],
+    [
+     "Instrucción",
+     "Juzgado de Instrucción n.º 2 de Santiago"
+    ],
+    [
+     "Condena",
+     "10 años en la Audiencia Provincial; revisada por el Tribunal Supremo"
+    ],
+    [
+     "Estado",
+     "Resuelto; el manuscrito volvió a la catedral sin daños"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Las claves",
+   "titulo": "Un robo sin violencia y con las llaves puestas",
+   "nota": "Elaboración propia de VIRALIX a partir de los hechos probados en la sentencia y de las informaciones publicadas.",
+   "grupos": [
+    {
+     "factor": "El objeto",
+     "nombre": "Códice Calixtino",
+     "rasgos": [
+      "Manuscrito iluminado del siglo XII",
+      "Cinco libros dedicados al apóstol Santiago",
+      "Incluye la primera guía del Camino"
+     ]
+    },
+    {
+     "factor": "El fallo",
+     "nombre": "La custodia",
+     "rasgos": [
+      "Llaves accesibles junto a la cámara",
+      "Controles basados en la confianza personal",
+      "Vigilancia que no cubría el archivo"
+     ]
+    },
+    {
+     "factor": "El autor",
+     "nombre": "Un hombre de la casa",
+     "rasgos": [
+      "Electricista externo durante más de veinte años",
+      "Conocía rutinas, horarios y accesos",
+      "Resentido tras perder el trabajo"
+     ]
+    },
+    {
+     "factor": "El botín",
+     "nombre": "Mucho más que un libro",
+     "rasgos": [
+      "El Códice, intacto",
+      "Más de un millón y medio de euros en efectivo",
+      "Otros documentos del archivo"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
