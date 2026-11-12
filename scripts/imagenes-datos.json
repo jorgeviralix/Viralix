@@ -3684,6 +3684,222 @@
   "diagrama": null
  },
  {
+  "slug": "monstruo-de-florencia",
+  "titulo": "El Monstruo de Florencia",
+  "titulo_corto": "El Monstruo de Florencia",
+  "titulo_portada": "El Monstruo de Florencia",
+  "categoria": "intl",
+  "anio": "1968-1985",
+  "lugar": "Florencia, Italia",
+  "estado": "Condenas parciales",
+  "mapa": {
+   "base": "world",
+   "extent": [
+    [
+     10.55,
+     43.42
+    ],
+    [
+     11.95,
+     44.18
+    ]
+   ],
+   "resaltar": {
+    "paises": [
+     "Italy"
+    ]
+   },
+   "localizador": [
+    [
+     5.5,
+     36
+    ],
+    [
+     19.5,
+     47.5
+    ]
+   ],
+   "titulo": "Las colinas de Florencia, 1968-1985",
+   "marcadores": [
+    {
+     "lon": 11.2558,
+     "lat": 43.7696,
+     "texto": "Florencia",
+     "sub": "Sede de los juicios",
+     "dy": -6
+    },
+    {
+     "lon": 11.097,
+     "lat": 43.782,
+     "texto": "Signa",
+     "sub": "Primer crimen · 1968",
+     "lado": "izq"
+    },
+    {
+     "lon": 11.385,
+     "lat": 43.955,
+     "texto": "Borgo San Lorenzo",
+     "sub": "1974",
+     "lado": "izq"
+    },
+    {
+     "lon": 11.465,
+     "lat": 43.932,
+     "texto": "Vicchio",
+     "sub": "1984",
+     "dy": 8
+    },
+    {
+     "lon": 11.186,
+     "lat": 43.657,
+     "texto": "San Casciano Val di Pesa",
+     "sub": "Último crimen · 1985"
+    }
+   ],
+   "etiquetas": [
+    {
+     "lon": 11.7,
+     "lat": 43.55,
+     "texto": "Toscana",
+     "tipo": "pais"
+    },
+    {
+     "lon": 10.85,
+     "lat": 44.08,
+     "texto": "Apeninos",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "21 ago 1968",
+    "Doble crimen de Signa. Stefano Mele, marido de la víctima, es condenado."
+   ],
+   [
+    "14 sep 1974",
+    "Segundo doble crimen, cerca de Borgo San Lorenzo."
+   ],
+   [
+    "Jun y oct 1981",
+    "Dos nuevos ataques. La prensa habla de *il Mostro*."
+   ],
+   [
+    "1982",
+    "La balística vincula la serie con el crimen de 1968."
+   ],
+   [
+    "1982-1984",
+    "Detenciones de la pista sarda. Los crímenes continúan."
+   ],
+   [
+    "Sep 1985",
+    "Último ataque, en San Casciano. El asesino envía una carta a una fiscal."
+   ],
+   [
+    "1989",
+    "Archivo de la pista sarda."
+   ],
+   [
+    "1 nov 1994",
+    "Pietro Pacciani, condenado a cadena perpetua."
+   ],
+   [
+    "13 feb 1996",
+    "Absuelto en apelación. En diciembre, Casación ordena repetir el juicio."
+   ],
+   [
+    "Feb 1998",
+    "Pacciani muere antes del nuevo proceso."
+   ],
+   [
+    "Sep 2000",
+    "Condenas firmes de Mario Vanni y Giancarlo Lotti."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Periodo",
+     "1968-1985"
+    ],
+    [
+     "Lugar",
+     "Provincia de Florencia (Italia)"
+    ],
+    [
+     "Ataques",
+     "Ocho, siempre contra parejas"
+    ],
+    [
+     "Víctimas",
+     "Dieciséis personas"
+    ],
+    [
+     "Arma",
+     "Una pistola Beretta del calibre 22, nunca hallada"
+    ],
+    [
+     "Principal acusado",
+     "Pietro Pacciani, condenado en 1994 y absuelto en 1996"
+    ],
+    [
+     "Condenas firmes",
+     "Mario Vanni (cadena perpetua) y Giancarlo Lotti (26 años), en 2000"
+    ],
+    [
+     "Estado",
+     "Cerrado judicialmente solo en parte"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "La investigación",
+   "titulo": "Cuatro pistas en cuatro décadas",
+   "nota": "Elaboración propia de VIRALIX a partir de las resoluciones judiciales italianas y de la prensa de Florencia.",
+   "grupos": [
+    {
+     "factor": "1982-1989",
+     "nombre": "La pista sarda",
+     "rasgos": [
+      "Parte del doble crimen de 1968",
+      "Varios detenidos del entorno de la primera víctima",
+      "Todos exculpados"
+     ]
+    },
+    {
+     "factor": "1991-1998",
+     "nombre": "Pietro Pacciani",
+     "rasgos": [
+      "Condenado en 1994",
+      "Absuelto en apelación en 1996",
+      "Murió antes de repetirse el juicio"
+     ]
+    },
+    {
+     "factor": "1996-2000",
+     "nombre": "Compagni di merende",
+     "rasgos": [
+      "Un coimputado acusa al grupo",
+      "Vanni y Lotti, condenados en firme",
+      "Solo por cuatro de los ocho ataques"
+     ]
+    },
+    {
+     "factor": "2001-2008",
+     "nombre": "El «segundo nivel»",
+     "rasgos": [
+      "Supuestos instigadores",
+      "Hipótesis de móvil esotérico",
+      "Ninguna condena"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "paso-dyatlov",
   "titulo": "El incidente del paso Diátlov",
   "titulo_corto": "El incidente del paso Diátlov",
