@@ -138,6 +138,13 @@
     <image:image><image:loc>https://www.viralixweb.es/images/articulos/codice-calixtino-portada.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.viralixweb.es/articulo-somosierra.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.viralixweb.es/images/articulos/somosierra-portada.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.viralixweb.es/articulo-jarabo.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>

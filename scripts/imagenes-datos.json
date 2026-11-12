@@ -1761,6 +1761,244 @@
   }
  },
  {
+  "slug": "somosierra",
+  "titulo": "El niño de Somosierra",
+  "titulo_corto": "El niño de Somosierra",
+  "titulo_portada": "El niño de Somosierra",
+  "categoria": "es",
+  "anio": "1986",
+  "lugar": "Puerto de Somosierra, Madrid",
+  "estado": "Sin resolver",
+  "mapa": {
+   "base": "es",
+   "extent": [
+    [
+     -5.6,
+     37.2
+    ],
+    [
+     0.6,
+     43.6
+    ]
+   ],
+   "resaltar": {
+    "provincias": [
+     "Madrid",
+     "Murcia"
+    ]
+   },
+   "localizador": [
+    [
+     -9.6,
+     35.8
+    ],
+    [
+     4.5,
+     43.9
+    ]
+   ],
+   "titulo": "El último viaje, 24-25 de junio de 1986",
+   "marcadores": [
+    {
+     "lon": -1.1708,
+     "lat": 37.7239,
+     "texto": "Fuente Álamo (Murcia)",
+     "sub": "Salida · tarde del 24 jun"
+    },
+    {
+     "lon": -2.673,
+     "lat": 39.449,
+     "texto": "Las Pedroñeras",
+     "sub": "Parada para cenar"
+    },
+    {
+     "lon": -3.624,
+     "lat": 40.82,
+     "texto": "Cabanillas de la Sierra",
+     "sub": "Última parada confirmada",
+     "lado": "izq",
+     "dy": 8
+    },
+    {
+     "lon": -3.578,
+     "lat": 41.133,
+     "texto": "Puerto de Somosierra",
+     "sub": "Accidente · amanecer del 25 jun",
+     "dy": -10
+    },
+    {
+     "lon": -2.935,
+     "lat": 43.263,
+     "texto": "Bilbao",
+     "sub": "Destino de la carga"
+    }
+   ],
+   "ruta": [
+    [
+     -1.1708,
+     37.7239
+    ],
+    [
+     -1.85,
+     38.5
+    ],
+    [
+     -2.673,
+     39.449
+    ],
+    [
+     -3.5,
+     40.3
+    ],
+    [
+     -3.624,
+     40.82
+    ],
+    [
+     -3.578,
+     41.133
+    ]
+   ],
+   "etiquetas": [
+    {
+     "lon": -0.3,
+     "lat": 38.6,
+     "texto": "Mar Mediterráneo",
+     "tipo": "mar"
+    },
+    {
+     "lon": -4.6,
+     "lat": 41.9,
+     "texto": "Castilla y León",
+     "tipo": "pais"
+    }
+   ]
+  },
+  "cronologia": [
+   [
+    "24 jun 1986",
+    "La familia Martínez Gómez sale de Fuente Álamo (Murcia) en un camión cisterna con destino a Bilbao."
+   ],
+   [
+    "Noche del 24 jun",
+    "Paradas de descanso en Murcia y cena en Las Pedroñeras (Cuenca)."
+   ],
+   [
+    "25 jun, 5:30 aprox.",
+    "Desayunan en un bar de Cabanillas de la Sierra. Es la última vez que se ve al niño."
+   ],
+   [
+    "25 jun, madrugada",
+    "El tacógrafo registra una docena de paradas brevísimas durante la subida al puerto."
+   ],
+   [
+    "25 jun, 6:30 aprox.",
+    "El camión vuelca en el kilómetro 95 de la N-I. Mueren Andrés y Carmen."
+   ],
+   [
+    "Jun-jul 1986",
+    "Batidas de la Guardia Civil y voluntarios. Se descarta que el ácido destruyera el cuerpo."
+   ],
+   [
+    "1986-1987",
+    "Se investiga una furgoneta blanca vista por testigos. Sin resultado."
+   ],
+   [
+    "1987",
+    "Primeros testimonios de supuestos avistamientos, nunca confirmados."
+   ],
+   [
+    "2008",
+    "La abuela del niño aporta una muestra de ADN."
+   ],
+   [
+    "Jun 2026",
+    "Se cumplen cuarenta años sin ninguna certeza."
+   ]
+  ],
+  "ficha": {
+   "titulo": "Ficha del caso",
+   "filas": [
+    [
+     "Desaparecido",
+     "Juan Pedro Martínez Gómez, 10 años"
+    ],
+    [
+     "Fallecidos",
+     "Andrés Martínez y Carmen Gómez, sus padres"
+    ],
+    [
+     "Lugar",
+     "Puerto de Somosierra (Madrid), carretera N-I"
+    ],
+    [
+     "Fecha",
+     "25 de junio de 1986"
+    ],
+    [
+     "Vehículo",
+     "Camión cisterna cargado de ácido sulfúrico"
+    ],
+    [
+     "Origen y destino",
+     "Fuente Álamo (Murcia) – Bilbao"
+    ],
+    [
+     "Investigación",
+     "Guardia Civil"
+    ],
+    [
+     "Estado",
+     "Sin resolver; el niño no ha sido localizado"
+    ]
+   ]
+  },
+  "diagrama": {
+   "tipo": "facetas",
+   "kicker": "Las hipótesis",
+   "titulo": "Cuatro explicaciones y sus problemas",
+   "nota": "Elaboración propia de VIRALIX a partir de la información publicada. Ninguna de las hipótesis ha sido probada.",
+   "grupos": [
+    {
+     "factor": "Hipótesis 1",
+     "nombre": "El ácido",
+     "rasgos": [
+      "El vertido habría destruido el cuerpo",
+      "Los expertos la rechazaron: habrían quedado restos",
+      "Se cribó la zona sin hallar nada"
+     ]
+    },
+    {
+     "factor": "Hipótesis 2",
+     "nombre": "Salió por su pie",
+     "rasgos": [
+      "Desorientado, se habría alejado del lugar",
+      "Las batidas cubrieron kilómetros a la redonda",
+      "Nadie lo vio en la carretera"
+     ]
+    },
+    {
+     "factor": "Hipótesis 3",
+     "nombre": "Se lo llevaron",
+     "rasgos": [
+      "Testigos hablaron de una furgoneta blanca",
+      "Se revisaron miles de vehículos",
+      "Ninguna pista condujo a nadie"
+     ]
+    },
+    {
+     "factor": "Hipótesis 4",
+     "nombre": "No iba en el camión",
+     "rasgos": [
+      "El tacógrafo registró paradas anómalas",
+      "Teoría de una coacción previa",
+      "Se apoya en indicios, no en pruebas"
+     ]
+    }
+   ]
+  }
+ },
+ {
   "slug": "jarabo",
   "titulo": "El caso Jarabo",
   "titulo_corto": "El caso Jarabo",
