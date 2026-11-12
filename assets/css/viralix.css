@@ -21,6 +21,7 @@
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
   --cat-es: #ef3b22;
   --cat-intl: #5b93f7;
+  --cat-latam: #35c48f;
   --cat-mist: #d9b04c;
   --cat-crim: #a587f3;
   --cat-ciencia: #f39c12;
@@ -52,6 +53,7 @@ html[data-theme="light"] {
   --shadow: 0 18px 50px rgba(20, 20, 30, 0.12);
   --cat-es: #c42810;
   --cat-intl: #2563c9;
+  --cat-latam: #12805a;
   --cat-mist: #8f6a10;
   --cat-crim: #6d45d6;
   --cat-ciencia: #b86b00;
@@ -125,6 +127,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 .chip::before { content: ''; width: 22px; height: 2px; background: currentColor; }
 .cat-es { --cat: var(--cat-es); }
 .cat-intl { --cat: var(--cat-intl); }
+.cat-latam { --cat: var(--cat-latam); }
 .cat-mist { --cat: var(--cat-mist); }
 .cat-crim { --cat: var(--cat-crim); }
 .cat-ciencia { --cat: var(--cat-ciencia); }
@@ -320,3 +323,16 @@ figcaption .credit { display: block; margin-top: 2px; font-size: 12px; opacity: 
   body { background: #fff; color: #000; }
   .prose { color: #000; }
 }
+
+/* ---------- Apoyo al proyecto: libro recomendado (Amazon Afiliados) y Buy Me a Coffee ---------- */
+.libro { margin: 44px 0 14px; padding: 26px 24px; border: 1px solid var(--cat, var(--accent)); border-radius: 10px; background: var(--surface); text-align: center; }
+.libro p { margin: 0; }
+.libro__kicker { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--cat, var(--accent)); }
+.libro__titulo { font-size: 18px; font-weight: 600; color: var(--text); margin-top: 8px !important; }
+.libro__sub { font-size: 14px; color: var(--muted); margin-top: 6px !important; }
+.libro__btn { display: inline-block; margin-top: 16px; padding: 11px 26px; border-radius: 6px; background: var(--cat, var(--accent)); color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; }
+.libro__btn:hover { filter: brightness(1.1); }
+.libro__aviso { font-size: 12px; color: var(--muted); margin-top: 14px !important; }
+.cafe { text-align: center; margin: 18px 0 40px; }
+.cafe a { display: inline-block; padding: 12px 28px; border-radius: 8px; background: #ffdd00; color: #000; font-weight: 700; font-size: 15px; text-decoration: none; }
+.cafe a:hover { filter: brightness(.95); }

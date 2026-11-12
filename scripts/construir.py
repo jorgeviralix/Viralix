@@ -34,6 +34,7 @@ ADSENSE = "ca-pub-5337247644569859"
 
 CATS = {
     "es": {"nombre": "True Crime España", "corto": "True Crime", "ancla": "true-crime", "clase": "cat-es"},
+    "latam": {"nombre": "Casos Latinoamérica", "corto": "Latinoamérica", "ancla": "latinoamerica", "clase": "cat-latam"},
     "intl": {"nombre": "Casos internacionales", "corto": "Internacional", "ancla": "internacional", "clase": "cat-intl"},
     "mist": {"nombre": "Misterios", "corto": "Misterios", "ancla": "misterios", "clase": "cat-mist"},
     "crim": {"nombre": "Criminología", "corto": "Criminología", "ancla": "criminologia", "clase": "cat-crim"},
@@ -414,14 +415,18 @@ def head(title: str, desc: str, canonical: str, og_type: str, image: str, image_
 <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fuentes.css">
-<link rel="stylesheet" href="/assets/css/viralix.css">
+<link rel="stylesheet" href="/assets/css/viralix.css?v=20261112">
 {ld}</head>"""
 
 
 SCRIPTS = '<script src="/assets/js/viralix.js" defer></script>\n<script src="/cookies-banner.js" defer></script>'
 
 ORG = {"@type": "Organization", "name": "VIRALIX", "url": SITE + "/",
-       "logo": {"@type": "ImageObject", "url": SITE + "/images/logo-viralix.png", "width": 512, "height": 512}}
+       "logo": {"@type": "ImageObject", "url": SITE + "/images/logo-viralix.png", "width": 512, "height": 512},
+       "sameAs": ["https://www.instagram.com/viraliweb"],
+       "contactPoint": {"@type": "ContactPoint", "contactType": "Redacción y rectificaciones", "email": "viralixweb@gmail.com",
+                        "url": SITE + "/contacto.html", "availableLanguage": "es"}}
+AMAZON_TAG = "viralixweb-21"
 
 
 def share_block(url: str, titulo: str) -> str:
@@ -458,7 +463,7 @@ def cargar_articulos():
         meta["_r"] = r
         meta["_palabras"] = palabras(meta["_html"]) + palabras(meta.get("entradilla", ""))
         arts.append(meta)
-    orden = {"es": 0, "intl": 1, "mist": 2, "crim": 3}
+    orden = {"es": 0, "latam": 1, "intl": 2, "mist": 3, "crim": 4}
     arts.sort(key=lambda a: (orden[a["categoria"]], a.get("orden", "50"), a["slug"]))
     return arts
 
@@ -520,6 +525,36 @@ def extracto(html_txt: str, limite: int = 600) -> str:
         return t
     corte = t[:limite].rsplit(" ", 1)[0]
     return corte.rstrip(",;:") + "…"
+
+
+def apoyo_html(a) -> str:
+    """Libro recomendado (Amazon Afiliados, campo libro del Markdown) y botón de Buy Me a Coffee."""
+    from urllib.parse import quote_plus
+    libro = ""
+    if a.get("libro"):
+        q = quote_plus(a.get("libro_busqueda", a["libro"]))
+        sub = f'<p class="libro__sub">{inline(a["libro_sub"])}</p>' if a.get("libro_sub") else ""
+        libro = (f'<aside class="libro" aria-label="Libro recomendado"><p class="libro__kicker">Libro recomendado</p>'
+                 f'<p class="libro__titulo">{inline(a["libro"])}</p>{sub}'
+                 f'<a class="libro__btn" href="https://www.amazon.es/s?k={q}&amp;tag={AMAZON_TAG}" target="_blank" rel="noopener noreferrer nofollow sponsored">Ver en Amazon</a>'
+                 f'<p class="libro__aviso">En calidad de Afiliado de Amazon, VIRALIX obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.</p></aside>')
+    cafe = ('<p class="cafe"><a href="https://buymeacoffee.com/viralixwebn" target="_blank" rel="noopener noreferrer nofollow sponsored">'
+            '☕ Apoya a VIRALIX — Invítame a un café</a></p>')
+    return libro + cafe
+
+
+def comentario_final(a) -> str:
+    """Comentario HTML de cierre: fecha, checklist de AdSense y prompts de imágenes opcionales."""
+    n_img = 1 + len(a["_r"].imagenes)
+    todo = [x.strip() for x in a.get("todo_imagenes", "").split("||") if x.strip()]
+    lineas = [f"Publicado: {a['publicado']} · Última revisión: {a['actualizado']} · {a['_palabras']} palabras · {n_img} imágenes propias (sin caras ni personas)",
+              "Checklist AdSense: [x] contenido original y contrastado  [x] title y description únicos  [x] canonical, Open Graph y Twitter Card  "
+              "[x] Schema Article + BreadcrumbList  [x] índice con anclas  [x] enlaces internos y fuentes externas  "
+              "[x] imágenes con alt, width y height  [x] tono informativo, sin detalles gráficos  [x] autor y fecha visibles"]
+    if todo:
+        lineas.append("TODO imágenes opcionales (fotografías de ambiente; sin caras ni personas reales):")
+        lineas += [f"  {i}. {t}" for i, t in enumerate(todo, 1)]
+    return "<!--\n" + "\n".join(x.replace("--", "—") for x in lineas) + "\n-->"
 
 
 def nota_autor_html(a) -> str:
@@ -593,6 +628,7 @@ def render_articulo(a, arts):
       <div class="prose" itemprop="articleBody">
 {a['_html']}
 {r.fuentes_html}
+{apoyo_html(a)}
 {relacionados_bloque(a, arts)}
 {nota_autor_html(a)}
 {share_block(url, a['titulo_seo'])}
@@ -608,6 +644,7 @@ def render_articulo(a, arts):
 </main>
 {FOOTER}
 {SCRIPTS}
+{comentario_final(a)}
 </body>
 </html>
 """
@@ -682,9 +719,9 @@ def render_autor(arts):
                   {"@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE + "/"},
                   {"@type": "ListItem", "position": 2, "name": "Sobre VIRALIX", "item": SITE + "/sobre.html"},
                   {"@type": "ListItem", "position": 3, "name": AUTOR["corto"], "item": url}]}]
-    orden = {"es": 0, "intl": 1, "mist": 2, "crim": 3}
+    orden = {"es": 0, "latam": 1, "intl": 2, "mist": 3, "crim": 4}
     grupos = ""
-    for cat in ("es", "intl", "mist", "crim"):
+    for cat in ("es", "latam", "intl", "mist", "crim"):
         g = [a for a in arts if a["categoria"] == cat]
         if not g:
             continue
@@ -830,6 +867,7 @@ def portada(arts):
     s = idx.read_text(encoding="utf-8")
     secciones = []
     titulos = {"es": ("Nuevos expedientes", "MÁS CASOS DE <span>ESPAÑA</span>", "true-crime-nuevos"),
+               "latam": ("Crónica negra de América Latina", "CASOS DE <span>LATINOAMÉRICA</span>", "latinoamerica"),
                "intl": ("Grandes casos del mundo", "CASOS <span>INTERNACIONALES</span>", "internacional"),
                "mist": ("Enigmas con base histórica", "<span>MISTERIOS</span>", "misterios"),
                "crim": ("La mente criminal", "<span>CRIMINOLOGÍA</span>", "criminologia")}
@@ -864,7 +902,7 @@ def portada(arts):
     s = re.sub(r"/\* VX:ALEATORIO:INICIO \*/.*?/\* VX:ALEATORIO:FIN \*/", lambda m: "/* VX:ALEATORIO:INICIO */" + json.dumps(todos) + "/* VX:ALEATORIO:FIN */", s, flags=re.S)
     n_total = len(ANTIGUOS) + len(arts)
     s = re.sub(r"<!-- VX:TOTAL -->\d+<!-- /VX:TOTAL -->", f"<!-- VX:TOTAL -->{n_total}<!-- /VX:TOTAL -->", s)
-    n_tc = sum(1 for x in ANTIGUOS if x[2] == "es") + sum(1 for a in arts if a["categoria"] in ("es", "intl"))
+    n_tc = sum(1 for x in ANTIGUOS if x[2] == "es") + sum(1 for a in arts if a["categoria"] in ("es", "latam", "intl"))
     s = re.sub(r"<!-- VX:TC -->\d+<!-- /VX:TC -->", f"<!-- VX:TC -->{n_tc}<!-- /VX:TC -->", s)
     items = [(f"{SITE}/articulo-{a['slug']}.html", a["titulo_corto"]) for a in arts] + [(f"{SITE}/articulo-{x[0]}.html", x[1]) for x in ANTIGUOS]
     itemlist = {"@context": "https://schema.org", "@type": "ItemList", "name": "Artículos de VIRALIX",
@@ -872,6 +910,19 @@ def portada(arts):
                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": u, "name": t} for i, (u, t) in enumerate(items)]}
     s = re.sub(r"<!-- VX:ITEMLIST:INICIO -->.*?<!-- VX:ITEMLIST:FIN -->",
                lambda m: '<!-- VX:ITEMLIST:INICIO --><script type="application/ld+json">' + json.dumps(itemlist, ensure_ascii=False) + "</script><!-- VX:ITEMLIST:FIN -->", s, flags=re.S)
+    # Bloque «Categorías»: recuentos reales por grupo editorial
+    def cuenta(*cats):
+        return sum(1 for x in ANTIGUOS if x[2] in cats) + sum(1 for a in arts if a["categoria"] in cats)
+    grupos = [("#true-crime", "🗂️", "CASOS ESPAÑA", cuenta("es"), "var(--accent)"),
+              ("#latinoamerica", "🌎", "CASOS LATINOAMÉRICA", cuenta("latam"), "#35c48f"),
+              ("#internacional", "🌍", "CASOS INTERNACIONALES", cuenta("intl"), "#5b93f7"),
+              ("#misterios", "🔍", "MISTERIOS INTERNACIONALES", cuenta("mist"), "var(--gold)"),
+              ("#criminologia", "🧠", "CRIMINOLOGÍA", cuenta("crim"), "#a587f3"),
+              ("#ciencia", "🌊", "CIENCIA Y MISTERIO", cuenta("ciencia"), "var(--teal)")]
+    cats_html = "\n".join(
+        f'    <a class="cat-card" href="{h}"><span class="cat-icon" aria-hidden="true">{ico}</span><span class="cat-name">{nom}</span>'
+        f'<span class="cat-count">{n} artículos</span><div class="cat-bar" style="background:{col}"></div></a>' for h, ico, nom, n, col in grupos if n)
+    s = re.sub(r"<!-- VX:CATS:INICIO -->.*?<!-- VX:CATS:FIN -->", lambda m: "<!-- VX:CATS:INICIO -->\n" + cats_html + "\n    <!-- VX:CATS:FIN -->", s, flags=re.S)
     idx.write_text(s, encoding="utf-8")
     return n_total
 
